@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="DQM4HEP : A generic data quality monitoring framework for high energy physics">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>DQM4HEP</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/DQM4HEP">View on GitHub</a>
+
+          <h1 id="project_title">DQM4HEP</h1>
+          <h2 id="project_tagline">A generic data quality monitoring framework for high energy physics</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="dqm4hep" class="anchor" href="#dqm4hep" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DQM4HEP</h1>
+
+<h1>
+<a id="a-data-quality-monitoring-for-high-energy-physics" class="anchor" href="#a-data-quality-monitoring-for-high-energy-physics" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A Data Quality Monitoring for High Energy Physics</h1>
+
+<p>Copyright IPNL/CNRS/IN2P3</p>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>INSTALL:</h2>
+
+<p>Can be built standalonly or using <a href="http://ilcsoft.desy.de/portal">ilcsoft</a>.</p>
+
+<p>The install procedure is managed by <a href="http://cmake.org">CMake</a></p>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>All the needed packages are installed on-the-fly by CMake, except two of them :</p>
+
+<ul>
+<li>
+<a href="http://root.cern.ch">ROOT</a>. If you want to build the graphical user interfaces (DQMViz), then <strong>you need to compile ROOT with the flag --enable-qt</strong>
+</li>
+<li>
+<a href="www.qt.io">Qt</a>. Only if you want to build the package with DQMViz</li>
+</ul>
+
+<p>Note that these two packages are provided by ilcsoft.</p>
+
+<h3>
+<a id="standalone-install" class="anchor" href="#standalone-install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Standalone install</h3>
+
+<p>In the root directory :</p>
+
+<div class="highlight highlight-source-shell"><pre>mkdir build
+<span class="pl-c1">cd</span> build
+cmake [-DOPTIONS<span class="pl-k">=</span>...] ..
+make</pre></div>
+
+<p>where OPTIONS can be :</p>
+
+<ul>
+<li>DQM4HEP_VIZ [ON/OFF] to install visualization package</li>
+<li>DQM4HEP_LCIO [ON/OFF] to install <a href="lcio.desy.de">lcio</a> and streamer support</li>
+<li>DQM4HEP_EXAMPLES [ON/OFF] to build example implementations</li>
+<li>DQM4HEP_ELOG [ON/OFF] to install <a href="https://midas.psi.ch/elog/">elog</a> interface (requieres elog installed)</li>
+<li>INSTALL_DOC [ON/OFF] to install <a href="www.doxygen.org">doxygen</a> code documentation</li>
+</ul>
+
+<p>Example :</p>
+
+<div class="highlight highlight-source-shell"><pre>cmake -DDQM4HEP_ELOG=OFF -DDQM4HEP_VIZ=OFF ..</pre></div>
+
+<h3>
+<a id="install-with-ilcsoft" class="anchor" href="#install-with-ilcsoft" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Install with ilcsoft</h3>
+
+<div class="highlight highlight-source-shell"><pre>mkdir build
+<span class="pl-c1">cd</span> build
+cmake [-DOPTIONS<span class="pl-k">=</span>..] -C <span class="pl-smi">$ILCSOFT</span>/ILCSoft.cmake ..
+make</pre></div>
+
+<h3>
+<a id="known-bugs" class="anchor" href="#known-bugs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Known bugs</h3>
+
+<h4>
+<a id="on-mac-osx" class="anchor" href="#on-mac-osx" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>On MAC-OSX:</h4>
+
+<p>if you encounter this error when compiling did (dim sub-package) :<br>
+    "./src/did/did.h:1:10: fatal error: 'Mrm/MrmAppl.h' file not found"<br>
+Check if OpenMotif is installed in /usr/OpenMotif<br>
+If it’s not change MOTIFINC and MOTIFLIB variables in makefile_did accordingly<br>
+Eg if using macport:<br>
+    MOTIFINC = /opt/local/include<br>
+    MOTIFLIB = /opt/local/lib  </p>
+
+<h3>
+<a id="bug-report" class="anchor" href="#bug-report" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug report</h3>
+
+<p>You can send emails to <a href="mailto:dqm4hep@gmail.com">dqm4hep@gmail.com</a>
+or use the <a href="https://github.Com/DQM4HEP/DQM4HEP/issues">github issues interface</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
