@@ -1,0 +1,203 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Network\+Tool Class Reference}
+\label{classdqm4hep_1_1DQMNetworkTool}\index{dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}}
+
+
+\doxyref{D\+Q\+M\+Network\+Tool}{p.}{classdqm4hep_1_1DQMNetworkTool} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Network\+Tool.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf String\+Vector} {\bf get\+Event\+Collectors} ()
+\begin{DoxyCompactList}\small\item\em Returns the event collector list currently running on the network. \end{DoxyCompactList}\item 
+static {\bf String\+Vector} {\bf get\+Monitor\+Element\+Collectors} ()
+\begin{DoxyCompactList}\small\item\em Returns the monitor element collector list currently running on the network. \end{DoxyCompactList}\item 
+static bool {\bf event\+Collector\+Exists} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Whether the data collector is currently running on the network. \end{DoxyCompactList}\item 
+static bool {\bf monitor\+Element\+Collector\+Exists} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Whether the monitor element collector is currently running on the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Network\+Tool}{p.}{classdqm4hep_1_1DQMNetworkTool} class. 
+
+Definition at line 40 of file D\+Q\+M\+Network\+Tool.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}!event\+Collector\+Exists@{event\+Collector\+Exists}}
+\index{event\+Collector\+Exists@{event\+Collector\+Exists}!dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}}
+\subsubsection[{event\+Collector\+Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Network\+Tool\+::event\+Collector\+Exists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMNetworkTool_ab95af921c862f867590a148fbdc737c1}
+
+
+Whether the data collector is currently running on the network. 
+
+
+
+Definition at line 108 of file D\+Q\+M\+Network\+Tool.\+cc.
+
+
+
+References get\+Event\+Collectors().
+
+
+\begin{DoxyCode}
+109 \{
+110   \textcolor{comment}{// get the whole list}
+111   StringVector eventCollectorList = DQMNetworkTool::getEventCollectors();
+112 
+113   \textcolor{comment}{// and find the specific one}
+114   \textcolor{keywordflow}{return} ( std::find(eventCollectorList.begin(), eventCollectorList.end(), collectorName) != 
+      eventCollectorList.end() );
+115 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}!get\+Event\+Collectors@{get\+Event\+Collectors}}
+\index{get\+Event\+Collectors@{get\+Event\+Collectors}!dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}}
+\subsubsection[{get\+Event\+Collectors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Vector} dqm4hep\+::\+D\+Q\+M\+Network\+Tool\+::get\+Event\+Collectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMNetworkTool_ad1f225d0b700c79e633a91ec50e379cf}
+
+
+Returns the event collector list currently running on the network. 
+
+
+
+Definition at line 40 of file D\+Q\+M\+Network\+Tool.\+cc.
+
+
+
+Referenced by event\+Collector\+Exists().
+
+
+\begin{DoxyCode}
+41 \{
+42   DimBrowser browser;
+43   std::string collectorBase = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"};
+44   \textcolor{keywordtype}{int} nServers = browser.getServers();
+45 
+46   \textcolor{keywordflow}{if}(nServers == 0)
+47     \textcolor{keywordflow}{return} StringVector();
+48 
+49   \textcolor{keywordtype}{char} *pServer;
+50   \textcolor{keywordtype}{char} *pNode;
+51 
+52   StringVector collectorNameList;
+53 
+54   \textcolor{comment}{// iterates one servers}
+55   \textcolor{keywordflow}{while}(browser.getNextServer(pServer, pNode))
+56   \{
+57     std::string server = pServer;
+58 
+59     \textcolor{keywordflow}{if}(server.size() < collectorBase.size())
+60       \textcolor{keywordflow}{continue};
+61 
+62     \textcolor{keywordflow}{if}(server.substr(0, collectorBase.size()) == collectorBase)
+63     \{
+64       std::string collectorName = server.substr(collectorBase.size());
+65       collectorNameList.push\_back(collectorName);
+66     \}
+67   \}
+68 
+69   \textcolor{keywordflow}{return} collectorNameList;
+70 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}!get\+Monitor\+Element\+Collectors@{get\+Monitor\+Element\+Collectors}}
+\index{get\+Monitor\+Element\+Collectors@{get\+Monitor\+Element\+Collectors}!dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}}
+\subsubsection[{get\+Monitor\+Element\+Collectors}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Vector} dqm4hep\+::\+D\+Q\+M\+Network\+Tool\+::get\+Monitor\+Element\+Collectors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMNetworkTool_af62b2b2ce226c314277d4f51ef836e7f}
+
+
+Returns the monitor element collector list currently running on the network. 
+
+
+
+Definition at line 74 of file D\+Q\+M\+Network\+Tool.\+cc.
+
+
+
+Referenced by monitor\+Element\+Collector\+Exists().
+
+
+\begin{DoxyCode}
+75 \{
+76   DimBrowser browser;
+77   std::string collectorBase = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"};
+78   \textcolor{keywordtype}{int} nServers = browser.getServers();
+79 
+80   \textcolor{keywordflow}{if}(nServers == 0)
+81     \textcolor{keywordflow}{return} StringVector();
+82 
+83   \textcolor{keywordtype}{char} *pServer;
+84   \textcolor{keywordtype}{char} *pNode;
+85 
+86   StringVector collectorNameList;
+87 
+88   \textcolor{comment}{// iterates one servers}
+89   \textcolor{keywordflow}{while}(browser.getNextServer(pServer, pNode))
+90   \{
+91     std::string server = pServer;
+92 
+93     \textcolor{keywordflow}{if}(server.size() < collectorBase.size())
+94       \textcolor{keywordflow}{continue};
+95 
+96     \textcolor{keywordflow}{if}(server.substr(0, collectorBase.size()) == collectorBase)
+97     \{
+98       std::string collectorName = server.substr(collectorBase.size());
+99       collectorNameList.push\_back(collectorName);
+100     \}
+101   \}
+102 
+103   \textcolor{keywordflow}{return} collectorNameList;
+104 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}!monitor\+Element\+Collector\+Exists@{monitor\+Element\+Collector\+Exists}}
+\index{monitor\+Element\+Collector\+Exists@{monitor\+Element\+Collector\+Exists}!dqm4hep\+::\+D\+Q\+M\+Network\+Tool@{dqm4hep\+::\+D\+Q\+M\+Network\+Tool}}
+\subsubsection[{monitor\+Element\+Collector\+Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Network\+Tool\+::monitor\+Element\+Collector\+Exists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMNetworkTool_afd5b0e89ac74056830f0cb36c888fd26}
+
+
+Whether the monitor element collector is currently running on the network. 
+
+
+
+Definition at line 119 of file D\+Q\+M\+Network\+Tool.\+cc.
+
+
+
+References get\+Monitor\+Element\+Collectors().
+
+
+\begin{DoxyCode}
+120 \{
+121   \textcolor{comment}{// get the whole list}
+122   StringVector monitorElementCollectorList = 
+      DQMNetworkTool::getMonitorElementCollectors();
+123 
+124   \textcolor{comment}{// and find the specific one}
+125   \textcolor{keywordflow}{return} ( std::find(monitorElementCollectorList.begin(), monitorElementCollectorList.end(), collectorName)
+       != monitorElementCollectorList.end() );
+126 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Network\+Tool.\+h}\item 
+{\bf D\+Q\+M\+Network\+Tool.\+cc}\end{DoxyCompactItemize}

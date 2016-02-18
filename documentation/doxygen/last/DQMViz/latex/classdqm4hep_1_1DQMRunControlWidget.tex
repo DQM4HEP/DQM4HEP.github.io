@@ -1,0 +1,1180 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Run\+Control\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMRunControlWidget}\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Run\+Control\+Widget}{p.}{classdqm4hep_1_1DQMRunControlWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Run\+Control\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Run\+Control\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMRunControlWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf start\+New\+Run} ()
+\begin{DoxyCompactList}\small\item\em Start a new run. \end{DoxyCompactList}\item 
+void {\bf end\+Current\+Run} ()
+\begin{DoxyCompactList}\small\item\em End the current run. \end{DoxyCompactList}\item 
+void {\bf add\+New\+Row} ()
+\begin{DoxyCompactList}\small\item\em Add row to Table Widget. \end{DoxyCompactList}\item 
+void {\bf delete\+Row} ()
+\begin{DoxyCompactList}\small\item\em Add row to Table Widget. \end{DoxyCompactList}\item 
+void {\bf import\+File} ()
+\item 
+void {\bf import\+File} (const std\+::string \&file\+Name)
+\item 
+void {\bf export\+File} ()
+\item 
+void {\bf export\+File} (const std\+::string \&file\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Widget} (D\+Q\+M\+Logger $\ast$p\+Logger=0, Q\+Widget $\ast$p\+Parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor with logger and parent widget (optional) \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Run\+Control\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf set\+Run\+Control\+Name} (const Q\+String \&name)
+\begin{DoxyCompactList}\small\item\em Set the run control name. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Run\+Control\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the run control name. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Detector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the detector name. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Description} () const 
+\begin{DoxyCompactList}\small\item\em Get the run description as displayed on the widget. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Start\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the start time of the current run in h\+:m\+:s string format. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+End\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the end time of the last run in h\+:m\+:s string format. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Status} () const 
+\begin{DoxyCompactList}\small\item\em Get the run control status (running or stopped) as a string. \end{DoxyCompactList}\item 
+int {\bf get\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Get the run number as shown on the spin box. \end{DoxyCompactList}\item 
+void {\bf start} ()
+\begin{DoxyCompactList}\small\item\em Start the run control service. \end{DoxyCompactList}\item 
+void {\bf stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the run control service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Group\+Box $\ast$ {\bf m\+\_\+p\+Run\+Action\+Group\+Box}
+\item 
+Q\+Line\+Edit $\ast$ {\bf m\+\_\+p\+Detector\+Name\+Edit}
+\item 
+Q\+Text\+Edit $\ast$ {\bf m\+\_\+p\+Run\+Description\+Text\+Edit}
+\item 
+Q\+Table\+Widget $\ast$ {\bf m\+\_\+p\+Run\+Parameters\+Table\+Widget}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Add\+Parameter\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Delete\+Parameter\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Start\+Of\+Run\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+End\+Of\+Run\+Button}
+\item 
+Q\+Spin\+Box $\ast$ {\bf m\+\_\+p\+Run\+Number\+Spin\+Box}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Run\+Number\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Run\+State\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Run\+Start\+Time\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Run\+End\+Time\+Label}
+\item 
+D\+Q\+M\+Run\+Control\+Service $\ast$ {\bf m\+\_\+p\+Run\+Control\+Service}
+\item 
+D\+Q\+M\+Logger $\ast$ {\bf m\+\_\+p\+Logger}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Run\+Control\+Widget}{p.}{classdqm4hep_1_1DQMRunControlWidget} class. 
+
+A Q\+Group\+Box widget providing the run control commands for dqm 
+
+Definition at line 53 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!D\+Q\+M\+Run\+Control\+Widget@{D\+Q\+M\+Run\+Control\+Widget}}
+\index{D\+Q\+M\+Run\+Control\+Widget@{D\+Q\+M\+Run\+Control\+Widget}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{D\+Q\+M\+Run\+Control\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::\+D\+Q\+M\+Run\+Control\+Widget (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Logger $\ast$}]{p\+Logger = {\ttfamily 0}, }
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlWidget_aef5aeb2caccf0a0cb0dc5896bb8b5caa}
+
+
+Constructor with logger and parent widget (optional) 
+
+
+
+Definition at line 47 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References add\+New\+Row(), delete\+Row(), end\+Current\+Run(), m\+\_\+p\+Add\+Parameter\+Button, m\+\_\+p\+Delete\+Parameter\+Button, m\+\_\+p\+Detector\+Name\+Edit, m\+\_\+p\+End\+Of\+Run\+Button, m\+\_\+p\+Run\+Action\+Group\+Box, m\+\_\+p\+Run\+Control\+Service, m\+\_\+p\+Run\+Description\+Text\+Edit, m\+\_\+p\+Run\+End\+Time\+Label, m\+\_\+p\+Run\+Number\+Label, m\+\_\+p\+Run\+Number\+Spin\+Box, m\+\_\+p\+Run\+Parameters\+Table\+Widget, m\+\_\+p\+Run\+Start\+Time\+Label, m\+\_\+p\+Run\+State\+Label, m\+\_\+p\+Start\+Of\+Run\+Button, and start\+New\+Run().
+
+
+\begin{DoxyCode}
+47                                                                              :
+48     QWidget(pParent),
+49     m_pLogger(pLogger)
+50 \{
+51     \textcolor{comment}{// Main layout}
+52     QVBoxLayout *pRunControlLayout = \textcolor{keyword}{new} QVBoxLayout();
+53     setLayout(pRunControlLayout);
+54 
+55     \textcolor{comment}{// Run action group box}
+56     m_pRunActionGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Run info"}, \textcolor{keyword}{this});
+57     QFormLayout *pRunActionLayout = \textcolor{keyword}{new} QFormLayout();
+58     pRunActionLayout->setFieldGrowthPolicy(QFormLayout::ExpandingFieldsGrow);
+59     m_pRunActionGroupBox->setLayout(pRunActionLayout);
+60     pRunControlLayout->addWidget(m_pRunActionGroupBox);
+61 
+62     m_pRunNumberSpinBox = \textcolor{keyword}{new} QSpinBox();
+63     m_pRunNumberSpinBox->setMinimum(1);
+64     m_pRunNumberSpinBox->setMaximum(std::numeric\_limits<int>::max());
+65     m_pRunNumberSpinBox->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+66     m_pRunNumberSpinBox->setAlignment(Qt::AlignRight);
+67     pRunActionLayout->addRow(\textcolor{stringliteral}{"Run number : "}, m_pRunNumberSpinBox);
+68 
+69     m_pRunDescriptionTextEdit = \textcolor{keyword}{new} QTextEdit();
+70     pRunActionLayout->addRow(\textcolor{stringliteral}{"Run description : "}, m_pRunDescriptionTextEdit);
+71 
+72     m_pRunParametersTableWidget = \textcolor{keyword}{new} QTableWidget(0,2);
+73     m_pRunParametersTableWidget->setSelectionMode(QTableWidget::ExtendedSelection);
+74 
+75 
+76     m_pRunParametersTableWidget->setHorizontalHeaderLabels(QStringList() << \textcolor{stringliteral}{"Parameter"} << \textcolor{stringliteral}{"Value"});
+77     QHeaderView* pHeaderView = m_pRunParametersTableWidget->horizontalHeader();
+78     pHeaderView->setResizeMode(QHeaderView::Stretch);
+79     pRunActionLayout->addRow(\textcolor{stringliteral}{"Run Parameters : "}, m_pRunParametersTableWidget);
+80 
+81     QWidget *pParameterButtonWidget = \textcolor{keyword}{new} QWidget();
+82     QHBoxLayout *pParameterButtonLayout = \textcolor{keyword}{new} QHBoxLayout();
+83     pParameterButtonWidget->setLayout(pParameterButtonLayout);
+84 
+85     pParameterButtonLayout->addSpacerItem(\textcolor{keyword}{new} QSpacerItem(1, 0, QSizePolicy::Expanding, 
+      QSizePolicy::Minimum));
+86 
+87     m_pAddParameterButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Add Parameter"});
+88     pParameterButtonLayout->addWidget(m_pAddParameterButton);
+89 
+90     connect(m_pAddParameterButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(addNewRow()));
+91 
+92     m_pDeleteParameterButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Delete Parameter"});
+93     pParameterButtonLayout->addWidget(m_pDeleteParameterButton);
+94     connect(m_pDeleteParameterButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(deleteRow()));
+95     pRunActionLayout->addWidget(pParameterButtonWidget);
+96 
+97     m_pDetectorNameEdit = \textcolor{keyword}{new} QLineEdit();
+98     pRunActionLayout->addRow(\textcolor{stringliteral}{"Detector name : "}, m_pDetectorNameEdit);
+99 
+100 
+101 
+102     QWidget *pRunActionButtonWidget = \textcolor{keyword}{new} QWidget();
+103     QHBoxLayout *pRunActionButtonLayout = \textcolor{keyword}{new} QHBoxLayout();
+104     pRunActionButtonWidget->setLayout(pRunActionButtonLayout);
+105 
+106     QFont buttonFont;
+107     buttonFont.setWeight(QFont::Bold);
+108     buttonFont.setPointSize(15);
+109 
+110     m_pStartOfRunButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Start run"});
+111     m_pStartOfRunButton->setMinimumHeight(70);
+112     m_pStartOfRunButton->setFont(buttonFont);
+113     pRunActionButtonLayout->addWidget(m_pStartOfRunButton);
+114 
+115     m_pEndOfRunButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"End run"});
+116     pRunActionButtonLayout->addWidget(m_pEndOfRunButton);
+117     m_pEndOfRunButton->setMinimumHeight(70);
+118     m_pEndOfRunButton->setFont(buttonFont);
+119     m_pEndOfRunButton->setEnabled(\textcolor{keyword}{false});
+120 
+121     pRunControlLayout->addWidget(pRunActionButtonWidget);
+122 
+123     m_pRunControlService = \textcolor{keyword}{new} DQMRunControlService();
+124 
+125     \textcolor{comment}{// run status group box}
+126     QGroupBox *pRunStatusGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Run status"});
+127     QGridLayout *pRunStatusLayout = \textcolor{keyword}{new} QGridLayout();
+128     pRunStatusGroupBox->setLayout(pRunStatusLayout);
+129     pRunControlLayout->addWidget(pRunStatusGroupBox);
+130 
+131     pRunStatusLayout->addWidget(\textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Run number"}), 0, 0, Qt::AlignCenter);
+132     pRunStatusLayout->addWidget(\textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Run state"}), 0, 1, Qt::AlignCenter);
+133     pRunStatusLayout->addWidget(\textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Started at"}), 0, 2, Qt::AlignCenter);
+134     pRunStatusLayout->addWidget(\textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Ended at"}), 0, 3, Qt::AlignCenter);
+135 
+136     m_pRunNumberLabel = \textcolor{keyword}{new} QLabel(QString(\textcolor{stringliteral}{"<b>NONE</b>"}));
+137     pRunStatusLayout->addWidget(m_pRunNumberLabel, 1, 0, Qt::AlignCenter);
+138     m_pRunStateLabel = \textcolor{keyword}{new} QLabel(stateToString(m_pRunControlService->getRunState()).c\_str());
+139     pRunStatusLayout->addWidget(m_pRunStateLabel, 1, 1, Qt::AlignCenter);
+140     m_pRunStartTimeLabel = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"NONE"});
+141     pRunStatusLayout->addWidget(m_pRunStartTimeLabel, 1, 2, Qt::AlignCenter);
+142     m_pRunEndTimeLabel = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"NONE"});
+143     pRunStatusLayout->addWidget(m_pRunEndTimeLabel, 1, 3, Qt::AlignCenter);
+144 
+145     connect(m_pStartOfRunButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(startNewRun()));
+146     connect(m_pEndOfRunButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(endCurrentRun()));
+147 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!````~D\+Q\+M\+Run\+Control\+Widget@{$\sim$\+D\+Q\+M\+Run\+Control\+Widget}}
+\index{````~D\+Q\+M\+Run\+Control\+Widget@{$\sim$\+D\+Q\+M\+Run\+Control\+Widget}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Run\+Control\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::$\sim$\+D\+Q\+M\+Run\+Control\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlWidget_a54dc53956ba410f0f7e4f25b07b3caaf}
+
+
+Destructor. 
+
+
+
+Definition at line 151 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Control\+Service.
+
+
+\begin{DoxyCode}
+152 \{
+153     \textcolor{keywordflow}{if}(m_pRunControlService->isRunning())
+154         m_pRunControlService->stop();
+155 
+156     \textcolor{keyword}{delete} m_pRunControlService;
+157 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!add\+New\+Row@{add\+New\+Row}}
+\index{add\+New\+Row@{add\+New\+Row}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{add\+New\+Row}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::add\+New\+Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a10368edd077245a48c569f05c9e75af8}
+
+
+Add row to Table Widget. 
+
+
+
+Definition at line 392 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Parameters\+Table\+Widget.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+
+\begin{DoxyCode}
+393 \{
+394     m_pRunParametersTableWidget->insertRow(m_pRunParametersTableWidget->rowCount());
+395 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!delete\+Row@{delete\+Row}}
+\index{delete\+Row@{delete\+Row}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{delete\+Row}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::delete\+Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a912452db10023b3eee8c7b514a91544f}
+
+
+Add row to Table Widget. 
+
+
+
+Definition at line 398 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Parameters\+Table\+Widget.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+
+\begin{DoxyCode}
+399 \{
+400     QList<QTableWidgetSelectionRange> selectedRanges = 
+      m_pRunParametersTableWidget->selectedRanges();
+401     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i< selectedRanges.size(); i++ )
+402     \{
+403         \textcolor{keywordtype}{int} topRow = selectedRanges.at(i).topRow();
+404         \textcolor{keywordtype}{int} botRow = selectedRanges.at(i).bottomRow();
+405         \textcolor{keywordtype}{int} inc = topRow;
+406         \textcolor{keywordflow}{while}(inc <= botRow)
+407         \{
+408             m_pRunParametersTableWidget->removeRow(topRow);
+409             inc++;
+410         \}
+411     \}
+412     m_pRunParametersTableWidget->setCurrentCell(-1,-1);
+413 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!end\+Current\+Run@{end\+Current\+Run}}
+\index{end\+Current\+Run@{end\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{end\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::end\+Current\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a6236e6d9a7cc554013f16b41fcbfe811}
+
+
+End the current run. 
+
+
+
+Definition at line 358 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+End\+Of\+Run\+Button, m\+\_\+p\+Logger, m\+\_\+p\+Run\+Control\+Service, m\+\_\+p\+Run\+End\+Time\+Label, m\+\_\+p\+Run\+State\+Label, and m\+\_\+p\+Start\+Of\+Run\+Button.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+
+\begin{DoxyCode}
+359 \{
+360     \textcolor{keywordflow}{if}(m_pRunControlService->isRunning())
+361     \{
+362         \textcolor{keywordflow}{try}
+363         \{
+364             \textcolor{keywordflow}{if}(m_pLogger)
+365                 m_pLogger->log(MESSAGE, \textcolor{stringliteral}{"Stopping current run"});
+366 
+367             THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->endCurrentRun());
+368 
+369             time\_t endTime = time(NULL);
+370             std::string startTimeStdStr;
+371             DQMCoreTool::timeToHMS(endTime, startTimeStdStr);
+372 
+373             m_pRunStateLabel->setText(stateToString(m_pRunControlService->getRunState()).c\_str());
+374             m_pRunEndTimeLabel->setText(startTimeStdStr.c\_str());
+375         \}
+376         \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+377         \{
+378             \textcolor{keywordflow}{if}(m_pLogger)
+379                 m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't end current run : "} + exception.toString());
+380             \textcolor{keywordflow}{return};
+381         \}
+382     \}
+383     \textcolor{keywordflow}{else}
+384         \textcolor{keywordflow}{return};
+385 
+386     m_pStartOfRunButton->setEnabled(\textcolor{keyword}{true});
+387     m_pEndOfRunButton->setEnabled(\textcolor{keyword}{false});
+388 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!export\+File@{export\+File}}
+\index{export\+File@{export\+File}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{export\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::export\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a4e3b0815f89bbc70dc4bcfc4516e583b}
+
+
+Definition at line 513 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+514 \{
+515     QString fileName = QFileDialog::getSaveFileName(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Export"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{"XML (*.xml)"});
+516     exportFile(fileName.toStdString());
+517 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!export\+File@{export\+File}}
+\index{export\+File@{export\+File}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{export\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::export\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a68ce0640aaf73160645112a5bfc94103}
+
+
+Definition at line 521 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Detector\+Name\+Edit, m\+\_\+p\+Run\+Description\+Text\+Edit, m\+\_\+p\+Run\+Number\+Spin\+Box, and m\+\_\+p\+Run\+Parameters\+Table\+Widget.
+
+
+\begin{DoxyCode}
+522 \{
+523   TiXmlDocument document;
+524 
+525   TiXmlDeclaration *pDeclaration = \textcolor{keyword}{new} TiXmlDeclaration( \textcolor{stringliteral}{"1.0"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""} );
+526   document.LinkEndChild(pDeclaration);
+527 
+528   TiXmlElement *pRootElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"dqm4hep"});
+529   document.LinkEndChild(pRootElement);
+530 
+531   TiXmlElement *pRunInfoElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"runinfo"});
+532   pRootElement->LinkEndChild(pRunInfoElement);
+533 
+534   TiXmlElement *pRunNumberElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"runnumber"});
+535   pRunNumberElement->SetAttribute(\textcolor{stringliteral}{"value"}, static\_cast<int>(m_pRunNumberSpinBox->value()));
+536   pRunInfoElement->LinkEndChild(pRunNumberElement);
+537 
+538   TiXmlElement *pDetectorElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"detector"});
+539   pDetectorElement->SetAttribute(\textcolor{stringliteral}{"name"}, m_pDetectorNameEdit->text().toStdString());
+540   pRunInfoElement->LinkEndChild(pDetectorElement);
+541 
+542   TiXmlElement *pDescriptionElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"description"});
+543   pDescriptionElement->SetAttribute(\textcolor{stringliteral}{"value"}, m_pRunDescriptionTextEdit->toPlainText().toStdString());
+544   pRunInfoElement->LinkEndChild(pDescriptionElement);
+545 
+546 
+547     \textcolor{keywordflow}{if}(m_pRunParametersTableWidget->rowCount() > 0)
+548     \{
+549       TiXmlElement *pParametersElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"parameters"});
+550       pRunInfoElement->LinkEndChild(pParametersElement);
+551 
+552         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pRunParametersTableWidget->rowCount() ; i++)
+553         \{
+554             QTableWidgetItem *pKeyItem = m_pRunParametersTableWidget->item(i, 0);
+555             QTableWidgetItem *pValueItem = m_pRunParametersTableWidget->item(i, 1);
+556 
+557             \textcolor{keywordflow}{if}(!pKeyItem || !pValueItem)
+558                 \textcolor{keywordflow}{continue};
+559 
+560           TiXmlElement *pParameterElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"parameter"});
+561           pParameterElement->SetAttribute(\textcolor{stringliteral}{"name"}, pKeyItem->text().toStdString());
+562           pParameterElement->SetAttribute(\textcolor{stringliteral}{"value"}, pValueItem->text().toStdString());
+563           pParametersElement->LinkEndChild(pParameterElement);
+564         \}
+565     \}
+566 
+567   document.SaveFile(fileName);
+568 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Description}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_a0b28183dd7c6078315e32341f2a0585a}
+
+
+Get the run description as displayed on the widget. 
+
+
+
+Definition at line 256 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Description\+Text\+Edit.
+
+
+
+Referenced by start\+New\+Run().
+
+
+\begin{DoxyCode}
+257 \{
+258     \textcolor{keywordflow}{return} m_pRunDescriptionTextEdit->toPlainText();
+259 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Detector\+Name@{get\+Detector\+Name}}
+\index{get\+Detector\+Name@{get\+Detector\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Detector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Detector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_abf2336fe28083be3fa9f669f2dcb1da6}
+
+
+Get the detector name. 
+
+
+
+Definition at line 249 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Detector\+Name\+Edit.
+
+
+
+Referenced by start\+New\+Run().
+
+
+\begin{DoxyCode}
+250 \{
+251     \textcolor{keywordflow}{return} m_pDetectorNameEdit->text();
+252 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+End\+Time@{get\+End\+Time}}
+\index{get\+End\+Time@{get\+End\+Time}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+End\+Time}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+End\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_a4938f0204bf35f5c3eb0032f1cbd7940}
+
+
+Get the end time of the last run in h\+:m\+:s string format. 
+
+Returns an empty string if running 
+
+Definition at line 270 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+271 \{
+272     \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{""});
+273 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Run\+Control\+Name@{get\+Run\+Control\+Name}}
+\index{get\+Run\+Control\+Name@{get\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_af7fc667c5dd2e7d5955156e12ffe08eb}
+
+
+Get the run control name. 
+
+
+
+Definition at line 235 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Control\+Service.
+
+
+
+Referenced by start().
+
+
+\begin{DoxyCode}
+236 \{
+237     \textcolor{keywordflow}{return} QString(m_pRunControlService->getRunControlName().c\_str());
+238 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Run\+Number@{get\+Run\+Number}}
+\index{get\+Run\+Number@{get\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_ad2c78e488d3d2d08082fb962fdf138d8}
+
+
+Get the run number as shown on the spin box. 
+
+
+
+Definition at line 284 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Number\+Spin\+Box.
+
+
+\begin{DoxyCode}
+285 \{
+286     \textcolor{keywordflow}{return} m_pRunNumberSpinBox->value();
+287 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Start\+Time@{get\+Start\+Time}}
+\index{get\+Start\+Time@{get\+Start\+Time}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Start\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_af45802af5ff6bf92506c2796e127da07}
+
+
+Get the start time of the current run in h\+:m\+:s string format. 
+
+Returns an empty string if not running 
+
+Definition at line 263 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{keywordflow}{return} QString(\textcolor{stringliteral}{""});
+266 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!get\+Status@{get\+Status}}
+\index{get\+Status@{get\+Status}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{get\+Status}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::get\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlWidget_a48fd9a2129a8796ccf4d5c9fc01c70b3}
+
+
+Get the run control status (running or stopped) as a string. 
+
+
+
+Definition at line 277 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Control\+Service.
+
+
+\begin{DoxyCode}
+278 \{
+279     \textcolor{keywordflow}{return} QString(stateToString(m_pRunControlService->getRunState()).c\_str());
+280 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!import\+File@{import\+File}}
+\index{import\+File@{import\+File}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{import\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::import\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_a062f29e369c4323d85076e7706d9adbf}
+
+
+Definition at line 417 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+418 \{
+419     QString fileName = QFileDialog::getOpenFileName(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Import"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{"Xml (*.xml)"});
+420     this->importFile(fileName.toStdString());
+421 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!import\+File@{import\+File}}
+\index{import\+File@{import\+File}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{import\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::import\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_ac62280dadb6f8d1fbd7e357c9071147b}
+
+
+Definition at line 425 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Detector\+Name\+Edit, m\+\_\+p\+Run\+Description\+Text\+Edit, m\+\_\+p\+Run\+Number\+Spin\+Box, and m\+\_\+p\+Run\+Parameters\+Table\+Widget.
+
+
+\begin{DoxyCode}
+426 \{
+427     TiXmlDocument xmlDocument(fileName);
+428 
+429     \textcolor{keywordflow}{if} (!xmlDocument.LoadFile())
+430     \{
+431         QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Warning"}, \textcolor{stringliteral}{"Invalid xml file"});
+432         \textcolor{keywordflow}{return};
+433     \}
+434 
+435     \textcolor{keyword}{const} TiXmlHandle xmlDocumentHandle(&xmlDocument);
+436     \textcolor{keyword}{const} TiXmlHandle xmlHandle = TiXmlHandle(xmlDocumentHandle.FirstChildElement().Element());
+437 
+438     TiXmlElement *\textcolor{keyword}{const} pRunInfoElement = xmlHandle.FirstChildElement(\textcolor{stringliteral}{"runinfo"}).Element();
+439 
+440     \textcolor{keywordflow}{if}(!pRunInfoElement)
+441     \{
+442         QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Warning"}, \textcolor{stringliteral}{"Invalid xml file : Couldn't find <runinfo> element !"});
+443         \textcolor{keywordflow}{return};
+444     \}
+445 
+446     TiXmlHandle runInfoHandle(pRunInfoElement);
+447 
+448     \textcolor{keywordtype}{int} runNumber = 0;
+449     std::string detectorName;
+450     std::string description;
+451 
+452     m_pRunParametersTableWidget->clearContents();
+453     \textcolor{keywordflow}{while} (m_pRunParametersTableWidget->rowCount() > 0)
+454         m_pRunParametersTableWidget->removeRow(0);
+455 
+456     \textcolor{keywordflow}{try}
+457     \{
+458         TiXmlElement *\textcolor{keyword}{const} pRunNumberElement = runInfoHandle.FirstChildElement(\textcolor{stringliteral}{"runnumber"}).Element();
+459         TiXmlElement *\textcolor{keyword}{const} pDetectorElement = runInfoHandle.FirstChildElement(\textcolor{stringliteral}{"detector"}).Element();
+460         TiXmlElement *\textcolor{keyword}{const} pDescriptionElement = runInfoHandle.FirstChildElement(\textcolor{stringliteral}{"description"}).Element();
+461         TiXmlElement *\textcolor{keyword}{const} pParametersElement = runInfoHandle.FirstChildElement(\textcolor{stringliteral}{"parameters"}).Element();
+462 
+463         \textcolor{keywordflow}{if}(pRunNumberElement)
+464         \{
+465           THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pRunNumberElement, \textcolor{stringliteral}{"value"}, 
+      runNumber));
+466         \}
+467 
+468         \textcolor{keywordflow}{if}(pDetectorElement)
+469         \{
+470           THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pDetectorElement, \textcolor{stringliteral}{"name"}, 
+      detectorName));
+471         \}
+472 
+473         \textcolor{keywordflow}{if}(pDescriptionElement)
+474         \{
+475           THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pDescriptionElement, \textcolor{stringliteral}{"value"},
+       description));
+476         \}
+477 
+478         \textcolor{keywordflow}{if}(pParametersElement)
+479         \{
+480           TiXmlHandle parametersHandle(pParametersElement);
+481 
+482             \textcolor{keywordflow}{for} (TiXmlElement *pXmlElement = parametersHandle.FirstChild(\textcolor{stringliteral}{"parameter"}).Element(); NULL != 
+      pXmlElement;
+483                 pXmlElement = pXmlElement->NextSiblingElement(\textcolor{stringliteral}{"parameter"}))
+484             \{
+485               std::string name;
+486               std::string value;
+487 
+488               THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"name"}, name
+      ));
+489               THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"value"}, 
+      value));
+490 
+491                 \textcolor{keywordtype}{int} row = m_pRunParametersTableWidget->rowCount();
+492 
+493                 m_pRunParametersTableWidget->insertRow(row);
+494                 m_pRunParametersTableWidget->setItem(row, 0, \textcolor{keyword}{new} QTableWidgetItem(name.c\_str()));
+495                 m_pRunParametersTableWidget->setItem(row, 1, \textcolor{keyword}{new} QTableWidgetItem(value.c\_str()));
+496             \}
+497         \}
+498     \}
+499   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+500   \{
+501         QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Warning"}, (\textcolor{stringliteral}{"Invalid xml file : Couldn't parse it : "} + exception.
+      toString()).c\_str());
+502         \textcolor{keywordflow}{return};
+503   \}
+504 
+505     m_pRunNumberSpinBox->setValue(runNumber);
+506     m_pRunDescriptionTextEdit->clear();
+507     m_pRunDescriptionTextEdit->setText(description.c\_str());
+508     m_pDetectorNameEdit->setText(detectorName.c\_str());
+509 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!set\+Run\+Control\+Name@{set\+Run\+Control\+Name}}
+\index{set\+Run\+Control\+Name@{set\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{set\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::set\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlWidget_aee26aded319596b9bd38eb4e3134c157}
+
+
+Set the run control name. 
+
+Can be set only if the service is not already running 
+
+Definition at line 242 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Control\+Service.
+
+
+\begin{DoxyCode}
+243 \{
+244     m_pRunControlService->setRunControlName(name.toStdString());
+245 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!start@{start}}
+\index{start@{start}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlWidget_a5cdf2057d24b47919c2c02ba347260f4}
+
+
+Start the run control service. 
+
+See \doxyref{start\+New\+Run()}{p.}{classdqm4hep_1_1DQMRunControlWidget_adae54abe149e06da917663cf5dd3661b} to start a run. 
+
+Definition at line 161 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References get\+Run\+Control\+Name(), m\+\_\+p\+Logger, and m\+\_\+p\+Run\+Control\+Service.
+
+
+\begin{DoxyCode}
+162 \{
+163     \textcolor{keywordflow}{if}(m_pRunControlService->isRunning())
+164     \{
+165         \textcolor{keywordflow}{try}
+166         \{
+167             \textcolor{keywordflow}{if}(m_pLogger)
+168                 m_pLogger->log(WARNING, \textcolor{stringliteral}{"Stopping run control service"});
+169 
+170             THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->stop());
+171         \}
+172         \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+173         \{
+174             \textcolor{keywordflow}{if}(m_pLogger)
+175                 m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't stop run control : "} + exception.toString());
+176             \textcolor{keywordflow}{return};
+177         \}
+178     \}
+179 
+180     \textcolor{keywordflow}{try}
+181     \{
+182         QString runControlName = getRunControlName();
+183         THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->setRunControlName(runControlName.
+      toStdString()));
+184 
+185         \textcolor{keywordflow}{if}(m_pLogger)
+186         \{
+187             std::stringstream message;
+188             message << \textcolor{stringliteral}{"Starting run control service "} << runControlName.toStdString();
+189             m_pLogger->log(MESSAGE, message.str());
+190         \}
+191 
+192         THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->start());
+193     \}
+194     \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+195     \{
+196         \textcolor{keywordflow}{if}(m_pLogger)
+197             m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't start run control : "} + exception.toString());
+198         \textcolor{keywordflow}{return};
+199     \}
+200 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!start\+New\+Run@{start\+New\+Run}}
+\index{start\+New\+Run@{start\+New\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{start\+New\+Run}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::start\+New\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRunControlWidget_adae54abe149e06da917663cf5dd3661b}
+
+
+Start a new run. 
+
+The run number is taken from the spin box 
+
+Definition at line 291 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References get\+Description(), get\+Detector\+Name(), m\+\_\+p\+End\+Of\+Run\+Button, m\+\_\+p\+Logger, m\+\_\+p\+Run\+Control\+Service, m\+\_\+p\+Run\+End\+Time\+Label, m\+\_\+p\+Run\+Number\+Label, m\+\_\+p\+Run\+Number\+Spin\+Box, m\+\_\+p\+Run\+Parameters\+Table\+Widget, m\+\_\+p\+Run\+Start\+Time\+Label, m\+\_\+p\+Run\+State\+Label, and m\+\_\+p\+Start\+Of\+Run\+Button.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+
+\begin{DoxyCode}
+292 \{
+293     \textcolor{keywordflow}{if}(RUNNING\_STATE == m_pRunControlService->getRunState())
+294     \{
+295         \textcolor{keywordflow}{try}
+296         \{
+297             \textcolor{keywordflow}{if}(m_pLogger)
+298                 m_pLogger->log(WARNING, \textcolor{stringliteral}{"Stopping current run"});
+299 
+300             THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->endCurrentRun());
+301         \}
+302         \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+303         \{
+304             \textcolor{keywordflow}{if}(m_pLogger)
+305                 m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't end current run : "} + exception.toString());
+306             \textcolor{keywordflow}{return};
+307         \}
+308     \}
+309 
+310     \textcolor{keywordflow}{try}
+311     \{
+312         \textcolor{keywordtype}{int} runNumber = m_pRunNumberSpinBox->value();
+313 
+314         \textcolor{keywordflow}{if}(m_pLogger)
+315         \{
+316             std::stringstream message;
+317             message << \textcolor{stringliteral}{"Starting new run no "} << runNumber;
+318             m_pLogger->log(MESSAGE, message.str());
+319         \}
+320 
+321         DQMRun *pRun = \textcolor{keyword}{new} DQMRun(runNumber, getDescription().toStdString(), 
+      getDetectorName().toStdString());
+322 
+323         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pRunParametersTableWidget->rowCount() ; i++)
+324         \{
+325             QTableWidgetItem *pKeyItem = m_pRunParametersTableWidget->item(i, 0);
+326             QTableWidgetItem *pValueItem = m_pRunParametersTableWidget->item(i, 1);
+327 
+328             \textcolor{keywordflow}{if}(!pKeyItem || !pValueItem)
+329                 \textcolor{keywordflow}{continue};
+330 
+331             pRun->setParameter(pKeyItem->text().toStdString(), pValueItem->text().toStdString());
+332         \}
+333 
+334         THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->startNewRun(pRun));
+335 
+336         time\_t startTime = m_pRunControlService->getCurrentRun()->getStartTime();
+337         std::string startTimeStdStr;
+338         DQMCoreTool::timeToHMS(startTime, startTimeStdStr);
+339 
+340         m_pRunNumberLabel->setText(QString(\textcolor{stringliteral}{"<b>%1</b>"}).arg(runNumber));
+341         m_pRunStateLabel->setText(stateToString(m_pRunControlService->getRunState()).c\_str());
+342         m_pRunStartTimeLabel->setText(startTimeStdStr.c\_str());
+343         m_pRunEndTimeLabel->setText(\textcolor{stringliteral}{"NONE"});
+344     \}
+345     \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+346     \{
+347         \textcolor{keywordflow}{if}(m_pLogger)
+348             m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't start new run : "} + exception.toString());
+349         \textcolor{keywordflow}{return};
+350     \}
+351 
+352     m_pStartOfRunButton->setEnabled(\textcolor{keyword}{false});
+353     m_pEndOfRunButton->setEnabled(\textcolor{keyword}{true});
+354 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!stop@{stop}}
+\index{stop@{stop}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlWidget_a6c46dfcaff0f7a1f64329a122e228062}
+
+
+Stop the run control service. 
+
+Stop the current run if running. See \doxyref{end\+Current\+Run()}{p.}{classdqm4hep_1_1DQMRunControlWidget_a6236e6d9a7cc554013f16b41fcbfe811} 
+
+Definition at line 204 of file D\+Q\+M\+Run\+Control\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Logger, and m\+\_\+p\+Run\+Control\+Service.
+
+
+\begin{DoxyCode}
+205 \{
+206     \textcolor{comment}{// if running, do not stop the service !}
+207     \textcolor{keywordflow}{if}(RUNNING\_STATE == m_pRunControlService->getRunState())
+208     \{
+209         \textcolor{keywordflow}{if}(m_pLogger)
+210             m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't stop run control ! Please stop the current run before !"});
+211 
+212         \textcolor{keywordflow}{return};
+213     \}
+214 
+215     \textcolor{keywordflow}{if}(m_pRunControlService->isRunning())
+216     \{
+217         \textcolor{keywordflow}{try}
+218         \{
+219             \textcolor{keywordflow}{if}(m_pLogger)
+220                 m_pLogger->log(MESSAGE, \textcolor{stringliteral}{"Stopping run control "});
+221 
+222             THROW\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlService->stop());
+223         \}
+224         \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+225         \{
+226             \textcolor{keywordflow}{if}(m_pLogger)
+227                 m_pLogger->log(ERROR, \textcolor{stringliteral}{"Couldn't stop run control service : "} + exception.toString());
+228             \textcolor{keywordflow}{return};
+229         \}
+230     \}
+231 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Add\+Parameter\+Button@{m\+\_\+p\+Add\+Parameter\+Button}}
+\index{m\+\_\+p\+Add\+Parameter\+Button@{m\+\_\+p\+Add\+Parameter\+Button}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Add\+Parameter\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Add\+Parameter\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a4e25610c1e7754dbc9a1d78f1df3eb58}
+
+
+Definition at line 156 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Delete\+Parameter\+Button@{m\+\_\+p\+Delete\+Parameter\+Button}}
+\index{m\+\_\+p\+Delete\+Parameter\+Button@{m\+\_\+p\+Delete\+Parameter\+Button}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Delete\+Parameter\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Delete\+Parameter\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_ab336d54286e07767cb934ab503b285a3}
+
+
+Definition at line 157 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Detector\+Name\+Edit@{m\+\_\+p\+Detector\+Name\+Edit}}
+\index{m\+\_\+p\+Detector\+Name\+Edit@{m\+\_\+p\+Detector\+Name\+Edit}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Detector\+Name\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Detector\+Name\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_af186f9e89dca48036644129b83c4eca1}
+
+
+Definition at line 153 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), export\+File(), get\+Detector\+Name(), and import\+File().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+End\+Of\+Run\+Button@{m\+\_\+p\+End\+Of\+Run\+Button}}
+\index{m\+\_\+p\+End\+Of\+Run\+Button@{m\+\_\+p\+End\+Of\+Run\+Button}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+End\+Of\+Run\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+End\+Of\+Run\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a5b8eb1153d98cfff5f8088ff922660f8}
+
+
+Definition at line 159 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), end\+Current\+Run(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Logger@{m\+\_\+p\+Logger}}
+\index{m\+\_\+p\+Logger@{m\+\_\+p\+Logger}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Logger}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Logger$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Logger\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_ae039e5c74e3d49c6e76846d576df0fbe}
+
+
+Definition at line 169 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by end\+Current\+Run(), start(), start\+New\+Run(), and stop().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Action\+Group\+Box@{m\+\_\+p\+Run\+Action\+Group\+Box}}
+\index{m\+\_\+p\+Run\+Action\+Group\+Box@{m\+\_\+p\+Run\+Action\+Group\+Box}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Action\+Group\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Action\+Group\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a71e2335225e74d419bbe1c019170b066}
+
+
+Definition at line 152 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Control\+Service@{m\+\_\+p\+Run\+Control\+Service}}
+\index{m\+\_\+p\+Run\+Control\+Service@{m\+\_\+p\+Run\+Control\+Service}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Control\+Service}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Run\+Control\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Control\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a1e1dbe042e982e58577da8dccd7253ce}
+
+
+Definition at line 167 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), end\+Current\+Run(), get\+Run\+Control\+Name(), get\+Status(), set\+Run\+Control\+Name(), start(), start\+New\+Run(), stop(), and $\sim$\+D\+Q\+M\+Run\+Control\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Description\+Text\+Edit@{m\+\_\+p\+Run\+Description\+Text\+Edit}}
+\index{m\+\_\+p\+Run\+Description\+Text\+Edit@{m\+\_\+p\+Run\+Description\+Text\+Edit}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Description\+Text\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Description\+Text\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_ab82782aeb025a2344908e943a68711a3}
+
+
+Definition at line 154 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), export\+File(), get\+Description(), and import\+File().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+End\+Time\+Label@{m\+\_\+p\+Run\+End\+Time\+Label}}
+\index{m\+\_\+p\+Run\+End\+Time\+Label@{m\+\_\+p\+Run\+End\+Time\+Label}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+End\+Time\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+End\+Time\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a4b200379c7791d0d805d95bbe61f3c46}
+
+
+Definition at line 165 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), end\+Current\+Run(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Number\+Label@{m\+\_\+p\+Run\+Number\+Label}}
+\index{m\+\_\+p\+Run\+Number\+Label@{m\+\_\+p\+Run\+Number\+Label}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Number\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Number\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_ab0a79c9824c6ac0c6e4848af32f57521}
+
+
+Definition at line 162 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Number\+Spin\+Box@{m\+\_\+p\+Run\+Number\+Spin\+Box}}
+\index{m\+\_\+p\+Run\+Number\+Spin\+Box@{m\+\_\+p\+Run\+Number\+Spin\+Box}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Number\+Spin\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Number\+Spin\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_af87cf91c4eec0ddf0b0c5c599a5263a1}
+
+
+Definition at line 160 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), export\+File(), get\+Run\+Number(), import\+File(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Parameters\+Table\+Widget@{m\+\_\+p\+Run\+Parameters\+Table\+Widget}}
+\index{m\+\_\+p\+Run\+Parameters\+Table\+Widget@{m\+\_\+p\+Run\+Parameters\+Table\+Widget}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Parameters\+Table\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Table\+Widget$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Parameters\+Table\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_afaf185cf3c0ba206e804508c12f49781}
+
+
+Definition at line 155 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by add\+New\+Row(), delete\+Row(), D\+Q\+M\+Run\+Control\+Widget(), export\+File(), import\+File(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+Start\+Time\+Label@{m\+\_\+p\+Run\+Start\+Time\+Label}}
+\index{m\+\_\+p\+Run\+Start\+Time\+Label@{m\+\_\+p\+Run\+Start\+Time\+Label}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+Start\+Time\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+Start\+Time\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a1c1848e457c1ef702aa09270e007b673}
+
+
+Definition at line 164 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Run\+State\+Label@{m\+\_\+p\+Run\+State\+Label}}
+\index{m\+\_\+p\+Run\+State\+Label@{m\+\_\+p\+Run\+State\+Label}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Run\+State\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Run\+State\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a4fb6d7d6f96915c331c620a36d33bd91}
+
+
+Definition at line 163 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), end\+Current\+Run(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}!m\+\_\+p\+Start\+Of\+Run\+Button@{m\+\_\+p\+Start\+Of\+Run\+Button}}
+\index{m\+\_\+p\+Start\+Of\+Run\+Button@{m\+\_\+p\+Start\+Of\+Run\+Button}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+Of\+Run\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Widget\+::m\+\_\+p\+Start\+Of\+Run\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlWidget_a0f7109771d06944825a07b4ce50d6c47}
+
+
+Definition at line 158 of file D\+Q\+M\+Run\+Control\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Widget(), end\+Current\+Run(), and start\+New\+Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Run\+Control\+Widget.\+cc}\end{DoxyCompactItemize}

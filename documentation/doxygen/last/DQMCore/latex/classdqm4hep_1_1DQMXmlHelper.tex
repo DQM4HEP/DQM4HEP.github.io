@@ -1,0 +1,574 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Xml\+Helper Class Reference}
+\label{classdqm4hep_1_1DQMXmlHelper}\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+
+
+\doxyref{D\+Q\+M\+Xml\+Helper}{p.}{classdqm4hep_1_1DQMXmlHelper} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Xml\+Helper.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$$>$ }\\{\bf Status\+Code} {\bf read\+Value} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&xml\+Element\+Name, bool \&t)
+\item 
+{\footnotesize template$<$$>$ }\\{\bf Status\+Code} {\bf get\+Attribute} (const {\bf Ti\+Xml\+Element} $\ast$const p\+Xml\+Element, const std\+::string \&attribute\+Name, std\+::string \&attribute\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf read\+Value} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&xml\+Element\+Name, T \&t)
+\begin{DoxyCompactList}\small\item\em Read a value from an xml element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf read\+Vector\+Of\+Values} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&xml\+Element\+Name, std\+::vector$<$ T $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Read a vector of values from a (space separated) list in an xml element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf read2\+D\+Vector\+Of\+Values} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&xml\+Element\+Name, const std\+::string \&row\+Name, std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Read a two-\/dimensional array of values into a vector of vectors. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf get\+Attribute} (const {\bf Ti\+Xml\+Element} $\ast$const p\+Xml\+Element, const std\+::string \&attribute\+Name, T \&attribute\+Value)
+\begin{DoxyCompactList}\small\item\em Get the attribute of the xml element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Validator $>$ }\\static {\bf Status\+Code} {\bf get\+Attribute} (const {\bf Ti\+Xml\+Element} $\ast$const p\+Xml\+Element, const std\+::string \&attribute\+Name, T \&attribute\+Value, Validator validator)
+\begin{DoxyCompactList}\small\item\em Get the attribute of the xml element and use a validator to validate the value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf read\+Parameter\+Value} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&parameter\+Name, T \&t)
+\begin{DoxyCompactList}\small\item\em Read a parameter value from an xml element. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static {\bf Status\+Code} {\bf read\+Parameter\+Values} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&parameter\+Name, std\+::vector$<$ T $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Read a vector of values for a parameter from a (space separated) list in an xml element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf create\+Quality\+Test} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&quality\+Test\+Name)
+\begin{DoxyCompactList}\small\item\em Create a quality test. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const {\bf Ti\+Xml\+Handle} \&xml\+Handle, const std\+::string \&me\+String\+Id, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Create a built-\/in monitor element from a xml handle. \end{DoxyCompactList}\item 
+static void {\bf tokenize\+String} (const std\+::string \&input\+String, {\bf String\+Vector} \&tokens, const std\+::string \&delimiter=\char`\"{} \char`\"{})
+\begin{DoxyCompactList}\small\item\em Tokenize a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Xml\+Helper}{p.}{classdqm4hep_1_1DQMXmlHelper} class. 
+
+Definition at line 43 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!book\+Monitor\+Element@{book\+Monitor\+Element}}
+\index{book\+Monitor\+Element@{book\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{book\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::book\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{me\+String\+Id, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_a9226ec0095d9797cb2b04bcf86f8e03f}
+
+
+Create a built-\/in monitor element from a xml handle. 
+
+
+
+Definition at line 74 of file D\+Q\+M\+Xml\+Helper.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Monitor\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), get\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling\+Element(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+76 \{
+77     \textcolor{keywordflow}{for} (TiXmlElement *pXmlElement = xmlHandle.FirstChild(\textcolor{stringliteral}{"monitorElement"}).Element(); NULL != pXmlElement;
+78         pXmlElement = pXmlElement->NextSiblingElement(\textcolor{stringliteral}{"monitorElement"}))
+79     \{
+80       std::string meId;
+81       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"ID"}, meId));
+82 
+83       \textcolor{keywordflow}{if}(meId != meStringId)
+84         \textcolor{keywordflow}{continue};
+85 
+86       \textcolor{keywordflow}{return} DQMModuleApi::bookMonitorElement(pModule, pXmlElement, pMonitorElement);
+87     \}
+88 
+89   \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+90 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!create\+Quality\+Test@{create\+Quality\+Test}}
+\index{create\+Quality\+Test@{create\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{create\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::create\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{quality\+Test\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_ab9f7c28624d0e04482898d1f913981c2}
+
+
+Create a quality test. 
+
+Works if the quality test factory has been registered first 
+
+Definition at line 53 of file D\+Q\+M\+Xml\+Helper.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::create\+Quality\+Test(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), get\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling\+Element(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{for} (TiXmlElement *pXmlElement = xmlHandle.FirstChild(\textcolor{stringliteral}{"qualitytest"}).Element(); NULL != pXmlElement;
+56         pXmlElement = pXmlElement->NextSiblingElement(\textcolor{stringliteral}{"qualitytest"}))
+57     \{
+58       std::string name;
+59       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"name"}, name));
+60 
+61       \textcolor{keywordflow}{if}(name != qualityTestName)
+62         \textcolor{keywordflow}{continue};
+63 
+64       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMModuleApi::createQualityTest(pModule, pXmlElement));
+65 
+66       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+67     \}
+68 
+69     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+70 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!get\+Attribute@{get\+Attribute}}
+\index{get\+Attribute@{get\+Attribute}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{get\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} $\ast$const}]{p\+Xml\+Element, }
+\item[{const std\+::string \&}]{attribute\+Name, }
+\item[{T \&}]{attribute\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_ac0f698853cca6a8832df320c9184fcd9}
+
+
+Get the attribute of the xml element. 
+
+
+
+Definition at line 210 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute(), and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+
+Referenced by book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Archiver(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Module(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network(), create\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::create\+Quality\+Test(), read\+Parameter\+Value(), read\+Parameter\+Values(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+211 \{
+212   \textcolor{keywordflow}{if}(NULL == pXmlElement)
+213     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+214 
+215   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pAttributePtr(pXmlElement->Attribute(attributeName.c\_str()));
+216 
+217   \textcolor{keywordflow}{if}(NULL == pAttributePtr)
+218     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+219 
+220   std::string attributeStr(pAttributePtr);
+221 
+222   \textcolor{keywordflow}{if}(!DQM4HEP::stringToType(attributeStr, attributeValue))
+223     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+224 
+225   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+226 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!get\+Attribute@{get\+Attribute}}
+\index{get\+Attribute@{get\+Attribute}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{get\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename Validator $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} $\ast$const}]{p\+Xml\+Element, }
+\item[{const std\+::string \&}]{attribute\+Name, }
+\item[{T \&}]{attribute\+Value, }
+\item[{Validator}]{validator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_a661676f024c9b793f8e193e53eec6fff}
+
+
+Get the attribute of the xml element and use a validator to validate the value. 
+
+
+
+Definition at line 231 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+232 \{
+233   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute<T>(pXmlElement, attributeName, 
+      attributeValue));
+234 
+235   \textcolor{keywordflow}{if}(!validator(attributeValue))
+236     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+237 
+238   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+239 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!get\+Attribute@{get\+Attribute}}
+\index{get\+Attribute@{get\+Attribute}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{get\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} $\ast$const}]{p\+Xml\+Element, }
+\item[{const std\+::string \&}]{attribute\+Name, }
+\item[{std\+::string \&}]{attribute\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMXmlHelper_a4961b628d785c02587403d477c5504f5}
+
+
+Definition at line 244 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute().
+
+
+\begin{DoxyCode}
+245 \{
+246   \textcolor{keywordflow}{if}(NULL == pXmlElement)
+247     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+248 
+249   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pAttributePtr(pXmlElement->Attribute(attributeName.c\_str()));
+250 
+251   \textcolor{keywordflow}{if}(NULL == pAttributePtr)
+252     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+253 
+254   attributeValue = pAttributePtr;
+255 
+256   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+257 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read2\+D\+Vector\+Of\+Values@{read2\+D\+Vector\+Of\+Values}}
+\index{read2\+D\+Vector\+Of\+Values@{read2\+D\+Vector\+Of\+Values}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read2\+D\+Vector\+Of\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read2\+D\+Vector\+Of\+Values (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{xml\+Element\+Name, }
+\item[{const std\+::string \&}]{row\+Name, }
+\item[{std\+::vector$<$ std\+::vector$<$ T $>$ $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_ad0b0caddb1a37c41d418e164b41a160c}
+
+
+Read a two-\/dimensional array of values into a vector of vectors. 
+
+Each row of values must be contained within $<$rowname$>$$<$/rowname$>$ xml tags, whilst the values in the row must be space separated 
+
+Definition at line 171 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Get\+Text(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling\+Element(), dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type(), and tokenize\+String().
+
+
+\begin{DoxyCode}
+173 \{
+174     TiXmlElement *pXmlElement = xmlHandle.FirstChild(xmlElementName).Element();
+175 
+176     \textcolor{keywordflow}{if} (NULL == pXmlElement)
+177         \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+178 
+179     TiXmlElement *pXmlRowElement = TiXmlHandle(pXmlElement).FirstChild(rowName).Element();
+180 
+181     \textcolor{keywordflow}{if} (NULL == pXmlRowElement)
+182         \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+183 
+184     \textcolor{keywordflow}{for} ( ; NULL != pXmlRowElement; pXmlRowElement = pXmlRowElement->NextSiblingElement(rowName))
+185     \{
+186         std::vector<T> rowVector;
+187 
+188         StringVector tokens;
+189         tokenizeString(pXmlRowElement->GetText(), tokens);
+190 
+191         \textcolor{keywordflow}{for} (StringVector::const\_iterator iter = tokens.begin(), iterEnd = tokens.end(); iter != iterEnd; +
+      +iter)
+192         \{
+193             T t;
+194 
+195             \textcolor{keywordflow}{if} (!DQM4HEP::stringToType(*iter, t))
+196                 \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+197 
+198             rowVector.push\_back(t);
+199         \}
+200 
+201         vector.push\_back(rowVector);
+202     \}
+203 
+204     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+205 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read\+Parameter\+Value@{read\+Parameter\+Value}}
+\index{read\+Parameter\+Value@{read\+Parameter\+Value}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read\+Parameter\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Parameter\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{parameter\+Name, }
+\item[{T \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_a1c161215561c5743dfd2ea76b96c82ae}
+
+
+Read a parameter value from an xml element. 
+
+
+
+Definition at line 262 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), get\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling\+Element(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+263 \{
+264     \textcolor{keywordflow}{for} (TiXmlElement *pXmlElement = xmlHandle.FirstChild(\textcolor{stringliteral}{"parameter"}).Element(); NULL != pXmlElement;
+265         pXmlElement = pXmlElement->NextSiblingElement(\textcolor{stringliteral}{"parameter"}))
+266     \{
+267       std::string name;
+268       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"name"}, name));
+269 
+270       \textcolor{keywordflow}{if}(name != parameterName)
+271         \textcolor{keywordflow}{continue};
+272 
+273         \textcolor{keywordflow}{if} (!DQM4HEP::stringToType(pXmlElement->GetText(), t))
+274             \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+275 
+276         \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+277     \}
+278 
+279     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+280 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read\+Parameter\+Values@{read\+Parameter\+Values}}
+\index{read\+Parameter\+Values@{read\+Parameter\+Values}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read\+Parameter\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Parameter\+Values (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{parameter\+Name, }
+\item[{std\+::vector$<$ T $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_a0102144e0fba84935500594dc411bf52}
+
+
+Read a vector of values for a parameter from a (space separated) list in an xml element. 
+
+
+
+Definition at line 285 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), get\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling\+Element(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type(), and tokenize\+String().
+
+
+\begin{DoxyCode}
+286 \{
+287     \textcolor{keywordflow}{for} (TiXmlElement *pXmlElement = xmlHandle.FirstChild(\textcolor{stringliteral}{"parameter"}).Element(); NULL != pXmlElement;
+288         pXmlElement = pXmlElement->NextSiblingElement(\textcolor{stringliteral}{"parameter"}))
+289     \{
+290       std::string name;
+291       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"name"}, name));
+292 
+293       \textcolor{keywordflow}{if}(name != parameterName)
+294         \textcolor{keywordflow}{continue};
+295 
+296         StringVector tokens;
+297         tokenizeString(pXmlElement->GetText(), tokens);
+298 
+299         \textcolor{keywordflow}{for} (StringVector::const\_iterator iter = tokens.begin(), iterEnd = tokens.end(); iter != iterEnd; +
+      +iter)
+300         \{
+301             T t;
+302 
+303             \textcolor{keywordflow}{if} (!DQM4HEP::stringToType(*iter, t))
+304                 \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+305 
+306             vector.push\_back(t);
+307         \}
+308 
+309         \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+310     \}
+311 
+312     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+313 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read\+Value@{read\+Value}}
+\index{read\+Value@{read\+Value}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{xml\+Element\+Name, }
+\item[{T \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_af9fe5ddf537ecc27bebdc426239d4373}
+
+
+Read a value from an xml element. 
+
+
+
+Definition at line 101 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Get\+Text(), and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::read\+Settings().
+
+
+\begin{DoxyCode}
+102 \{
+103     \textcolor{keyword}{const} TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChild(xmlElementName).Element();
+104 
+105     \textcolor{keywordflow}{if} (NULL == pXmlElement)
+106         \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+107 
+108     \textcolor{keywordflow}{if} (!DQM4HEP::stringToType(pXmlElement->GetText(), t))
+109         \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+110 
+111     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+112 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read\+Value@{read\+Value}}
+\index{read\+Value@{read\+Value}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Value (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{xml\+Element\+Name, }
+\item[{bool \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMXmlHelper_a9a936da74129f67dad819ff515157d04}
+
+
+Definition at line 117 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Get\+Text().
+
+
+\begin{DoxyCode}
+118 \{
+119     \textcolor{keyword}{const} TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChild(xmlElementName).Element();
+120 
+121     \textcolor{keywordflow}{if} (NULL == pXmlElement)
+122         \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+123 
+124     \textcolor{keyword}{const} std::string xmlElementString = pXmlElement->GetText();
+125 
+126     \textcolor{keywordflow}{if} ((xmlElementString == \textcolor{stringliteral}{"1"}) || (xmlElementString == \textcolor{stringliteral}{"true"}))
+127     \{
+128         t = \textcolor{keyword}{true};
+129     \}
+130     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((xmlElementString == \textcolor{stringliteral}{"0"}) || (xmlElementString == \textcolor{stringliteral}{"false"}))
+131     \{
+132         t = \textcolor{keyword}{false};
+133     \}
+134     \textcolor{keywordflow}{else}
+135     \{
+136         \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+137     \}
+138 
+139     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+140 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!read\+Vector\+Of\+Values@{read\+Vector\+Of\+Values}}
+\index{read\+Vector\+Of\+Values@{read\+Vector\+Of\+Values}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{read\+Vector\+Of\+Values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Vector\+Of\+Values (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle, }
+\item[{const std\+::string \&}]{xml\+Element\+Name, }
+\item[{std\+::vector$<$ T $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_af94bb9be8f1ce055c33b868b03dca048}
+
+
+Read a vector of values from a (space separated) list in an xml element. 
+
+
+
+Definition at line 145 of file D\+Q\+M\+Xml\+Helper.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Get\+Text(), dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type(), and tokenize\+String().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::read\+Settings().
+
+
+\begin{DoxyCode}
+146 \{
+147     \textcolor{keyword}{const} TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChild(xmlElementName).Element();
+148 
+149     \textcolor{keywordflow}{if} (NULL == pXmlElement)
+150         \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+151 
+152     StringVector tokens;
+153     tokenizeString(pXmlElement->GetText(), tokens);
+154 
+155     \textcolor{keywordflow}{for} (StringVector::const\_iterator iter = tokens.begin(), iterEnd = tokens.end(); iter != iterEnd; ++
+      iter)
+156     \{
+157         T t;
+158 
+159         \textcolor{keywordflow}{if} (!DQM4HEP::stringToType(*iter, t))
+160             \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+161 
+162         vector.push\_back(t);
+163     \}
+164 
+165     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+166 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}!tokenize\+String@{tokenize\+String}}
+\index{tokenize\+String@{tokenize\+String}!dqm4hep\+::\+D\+Q\+M\+Xml\+Helper@{dqm4hep\+::\+D\+Q\+M\+Xml\+Helper}}
+\subsubsection[{tokenize\+String}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::tokenize\+String (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{input\+String, }
+\item[{{\bf String\+Vector} \&}]{tokens, }
+\item[{const std\+::string \&}]{delimiter = {\ttfamily \char`\"{}~\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMXmlHelper_ad0c7a5f57cd52dfc3db847c0e031cbda}
+
+
+Tokenize a string. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+Xml\+Helper.\+cc.
+
+
+
+Referenced by read2\+D\+Vector\+Of\+Values(), read\+Parameter\+Values(), and read\+Vector\+Of\+Values().
+
+
+\begin{DoxyCode}
+39 \{
+40     std::string::size\_type lastPos = inputString.find\_first\_not\_of(delimiter, 0);
+41     std::string::size\_type pos     = inputString.find\_first\_of(delimiter, lastPos);
+42 
+43     \textcolor{keywordflow}{while} ((std::string::npos != pos) || (std::string::npos != lastPos))
+44     \{
+45         tokens.push\_back(inputString.substr(lastPos, pos - lastPos));
+46         lastPos = inputString.find\_first\_not\_of(delimiter, pos);
+47         pos = inputString.find\_first\_of(delimiter, lastPos);
+48     \}
+49 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Xml\+Helper.\+h}\item 
+{\bf D\+Q\+M\+Xml\+Helper.\+cc}\end{DoxyCompactItemize}

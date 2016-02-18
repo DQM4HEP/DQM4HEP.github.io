@@ -1,0 +1,100 @@
+\section{dqm4hep\+:\+:Interval\+Validator$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1IntervalValidator}\index{dqm4hep\+::\+Interval\+Validator$<$ T $>$@{dqm4hep\+::\+Interval\+Validator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$D\+Q\+M4\+H\+E\+P.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Interval\+Validator} (const T \&min, const T \&max)
+\item 
+bool {\bf validate} (const T \&t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T {\bf m\+\_\+min}
+\item 
+T {\bf m\+\_\+max}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+Interval\+Validator$<$ T $>$}
+
+
+
+Definition at line 610 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}!Interval\+Validator@{Interval\+Validator}}
+\index{Interval\+Validator@{Interval\+Validator}!dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}}
+\subsubsection[{Interval\+Validator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+Interval\+Validator}$<$ T $>$\+::{\bf Interval\+Validator} (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{min, }
+\item[{const T \&}]{max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1IntervalValidator_a4806f3422c0f1686eba5fe0e668f9f44}
+
+
+Definition at line 613 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+\begin{DoxyCode}
+613 : m_min(min), m_max(max) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}!validate@{validate}}
+\index{validate@{validate}!dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf dqm4hep\+::\+Interval\+Validator}$<$ T $>$\+::validate (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1IntervalValidator_a7950e820bb3368bdcb503cd00e8472c5}
+
+
+Definition at line 615 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+References dqm4hep\+::\+Interval\+Validator$<$ T $>$\+::m\+\_\+max, and dqm4hep\+::\+Interval\+Validator$<$ T $>$\+::m\+\_\+min.
+
+
+\begin{DoxyCode}
+615 \{ \textcolor{keywordflow}{return} t>m_min && t<m_max; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}!m\+\_\+max@{m\+\_\+max}}
+\index{m\+\_\+max@{m\+\_\+max}!dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}}
+\subsubsection[{m\+\_\+max}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf dqm4hep\+::\+Interval\+Validator}$<$ T $>$\+::m\+\_\+max\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1IntervalValidator_a7bb3ba71fe1774451d871379572b5cf3}
+
+
+Definition at line 618 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Interval\+Validator$<$ T $>$\+::validate().
+
+\index{dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}!m\+\_\+min@{m\+\_\+min}}
+\index{m\+\_\+min@{m\+\_\+min}!dqm4hep\+::\+Interval\+Validator@{dqm4hep\+::\+Interval\+Validator}}
+\subsubsection[{m\+\_\+min}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf dqm4hep\+::\+Interval\+Validator}$<$ T $>$\+::m\+\_\+min\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1IntervalValidator_ad927af65b7196ee77914beecaa7a228f}
+
+
+Definition at line 617 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Interval\+Validator$<$ T $>$\+::validate().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M4\+H\+E\+P.\+h}\end{DoxyCompactItemize}

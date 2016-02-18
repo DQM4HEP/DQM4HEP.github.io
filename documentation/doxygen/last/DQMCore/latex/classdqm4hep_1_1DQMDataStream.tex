@@ -1,0 +1,831 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Data\+Stream Class Reference}
+\label{classdqm4hep_1_1DQMDataStream}\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+
+
+\doxyref{D\+Q\+M\+Data\+Stream}{p.}{classdqm4hep_1_1DQMDataStream} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Data\+Stream.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} ({\bf dqm\+\_\+uint} max\+Buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Constructor with an initial buffer size. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Data\+Stream} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Reset the buffer ptr to beginning of the buffer. \end{DoxyCompactList}\item 
+char $\ast$ {\bf get\+Buffer} () const 
+\begin{DoxyCompactList}\small\item\em Get the buffer. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Buffer} (char $\ast$p\+Buffer, {\bf dqm\+\_\+uint} size)
+\begin{DoxyCompactList}\small\item\em Set the buffer with its size. \end{DoxyCompactList}\item 
+{\bf dqm\+\_\+uint} {\bf get\+Max\+Buffer\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the maximum size of the allocated buffer. \end{DoxyCompactList}\item 
+{\bf dqm\+\_\+uint} {\bf get\+Buffer\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the current buffer size. \end{DoxyCompactList}\item 
+{\bf dqm\+\_\+uint} {\bf get\+Available\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Get remaining size in the buffer. \end{DoxyCompactList}\item 
+bool {\bf is\+Valid} () const 
+\begin{DoxyCompactList}\small\item\em Whether the buffer is valid. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf seek} ({\bf dqm\+\_\+uint} pos=0)
+\begin{DoxyCompactList}\small\item\em Seek the current buffer ptr to given position (in bytes) \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf write} (const T \&value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf write} (const T $\ast$p\+Value, {\bf dqm\+\_\+uint} n\+Vals)
+\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf read} (T \&value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf read} (T $\ast$\&p\+Value, {\bf dqm\+\_\+uint} \&n\+Vals)
+\item 
+{\bf Status\+Code} {\bf write\+Address} (const void $\ast$\&p\+Address)
+\item 
+{\bf Status\+Code} {\bf read\+Address} (void $\ast$\&p\+Address)
+\item 
+{\footnotesize template$<$$>$ }\\{\bf Status\+Code} {\bf write} (const std\+::string \&value)
+\item 
+{\footnotesize template$<$$>$ }\\{\bf Status\+Code} {\bf read} ({\bf dqm\+\_\+char} $\ast$\&p\+Value, {\bf dqm\+\_\+uint} \&n\+Vals)
+\item 
+{\footnotesize template$<$$>$ }\\{\bf Status\+Code} {\bf read} (std\+::string \&value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf realloc\+Buffer} ({\bf dqm\+\_\+uint} new\+Size, bool copy\+Current\+Buffer=true)
+\begin{DoxyCompactList}\small\item\em Reallocate the buffer with a new size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf dqm\+\_\+uint} {\bf m\+\_\+max\+Buffer\+Size}
+\item 
+char $\ast$ {\bf m\+\_\+p\+Buffer}
+\item 
+char $\ast$ {\bf m\+\_\+p\+Buffer\+Ptr}
+\item 
+{\bf dqm\+\_\+uint} {\bf m\+\_\+buffer\+Size}
+\item 
+bool {\bf m\+\_\+is\+Valid}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Data\+Stream}{p.}{classdqm4hep_1_1DQMDataStream} class. 
+
+Definition at line 42 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!D\+Q\+M\+Data\+Stream@{D\+Q\+M\+Data\+Stream}}
+\index{D\+Q\+M\+Data\+Stream@{D\+Q\+M\+Data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{D\+Q\+M\+Data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::\+D\+Q\+M\+Data\+Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm\+\_\+uint}}]{max\+Buffer\+Size}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a98baab73d8b7614b37e19426f2438bc7}
+
+
+Constructor with an initial buffer size. 
+
+The buffer can be reallocated if there is not enough place to write bytes. Then max\+Buffer\+Size will change according to needed size 
+
+Definition at line 37 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+p\+Buffer, and m\+\_\+p\+Buffer\+Ptr.
+
+
+\begin{DoxyCode}
+37                                                    :
+38     m_maxBufferSize(maxBufferSize),
+39     m_isValid(\textcolor{keyword}{false}),
+40     m_bufferSize(0)
+41 \{
+42   m_pBuffer = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[maxBufferSize];
+43   m_pBufferPtr = m_pBuffer;
+44   memset(m_pBuffer, 0, maxBufferSize);
+45 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!````~D\+Q\+M\+Data\+Stream@{$\sim$\+D\+Q\+M\+Data\+Stream}}
+\index{````~D\+Q\+M\+Data\+Stream@{$\sim$\+D\+Q\+M\+Data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::$\sim$\+D\+Q\+M\+Data\+Stream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDataStream_a5599fc8b6dae217a33d489c4f30942bc}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+p\+Buffer, and m\+\_\+p\+Buffer\+Ptr.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{keyword}{delete} [] m_pBuffer;
+52   m_pBuffer = NULL;
+53   m_pBufferPtr = NULL;
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!get\+Available\+Size@{get\+Available\+Size}}
+\index{get\+Available\+Size@{get\+Available\+Size}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{get\+Available\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Available\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDataStream_a4040296d33de49b65703f790bd6a246b}
+
+
+Get remaining size in the buffer. 
+
+
+
+Definition at line 127 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References get\+Buffer\+Size(), and get\+Max\+Buffer\+Size().
+
+
+\begin{DoxyCode}
+128 \{
+129   \textcolor{keywordflow}{return} getMaxBufferSize() - getBufferSize();
+130 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!get\+Buffer@{get\+Buffer}}
+\index{get\+Buffer@{get\+Buffer}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{get\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDataStream_a686d546f3a2eea2e76b3c4af1e221a7d}
+
+
+Get the buffer. 
+
+
+
+Definition at line 75 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+p\+Buffer.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Query(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::notify\+Watched\+Me(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Available\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::send\+Me\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::start(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::start\+Collector(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::update\+Event\+Service().
+
+
+\begin{DoxyCode}
+76 \{
+77   \textcolor{keywordflow}{return} m_pBuffer;
+78 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!get\+Buffer\+Size@{get\+Buffer\+Size}}
+\index{get\+Buffer\+Size@{get\+Buffer\+Size}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{get\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDataStream_a3cafd81c9ceae3005384917641dfa88a}
+
+
+Get the current buffer size. 
+
+
+
+Definition at line 120 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+buffer\+Size.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), get\+Available\+Size(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Query(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::notify\+Watched\+Me(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Available\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements(), realloc\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), seek(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::send\+Me\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::start(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::start\+Collector(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::update\+Event\+Service(), and write().
+
+
+\begin{DoxyCode}
+121 \{
+122   \textcolor{keywordflow}{return} m_bufferSize;
+123 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!get\+Max\+Buffer\+Size@{get\+Max\+Buffer\+Size}}
+\index{get\+Max\+Buffer\+Size@{get\+Max\+Buffer\+Size}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{get\+Max\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Max\+Buffer\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDataStream_a947c7eb1a7b403c059576813e3f41a6a}
+
+
+Get the maximum size of the allocated buffer. 
+
+
+
+Definition at line 113 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+max\+Buffer\+Size.
+
+
+
+Referenced by get\+Available\+Size(), set\+Buffer(), and write().
+
+
+\begin{DoxyCode}
+114 \{
+115   \textcolor{keywordflow}{return} m_maxBufferSize;
+116 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDataStream_a9707ae02d6731437bdac858a45287491}
+
+
+Whether the buffer is valid. 
+
+Returns true if the set buffer has been called after a reset call 
+
+Definition at line 68 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+buffer\+Size.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize().
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{return} (m_bufferSize != 0);
+71 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!read@{read}}
+\index{read@{read}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read (
+\begin{DoxyParamCaption}
+\item[{T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_a2c1bc55569b5460a1a1d9a1c54dc4e33}
+
+
+Definition at line 212 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+References m\+\_\+p\+Buffer\+Ptr.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Version\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Run\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List\+Name\+Request\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Raw\+Calorimeter\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Float\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Int\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Available\+List\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::info\+Handler(), and read\+Address().
+
+
+\begin{DoxyCode}
+213 \{
+214   dqm_uint *pCurrBuff = (dqm_uint *) m_pBufferPtr;
+215 
+216   \textcolor{comment}{// get the size of the next values to read}
+217   dqm_uint size = pCurrBuff[0] & 0xFFFFFF;
+218 
+219   \textcolor{keywordflow}{if}(\textcolor{keyword}{sizeof}(T) != size)
+220     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+221 
+222   \textcolor{comment}{// increment the buffer ptr}
+223   m_pBufferPtr += \textcolor{keyword}{sizeof}(dqm_uint);
+224 
+225   \textcolor{comment}{// read and copy the asked buffer region}
+226   memcpy(&value, m_pBufferPtr, size);
+227 
+228   \textcolor{comment}{// increment the buffer ptr}
+229   m_pBufferPtr += size;
+230 
+231   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+232 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!read@{read}}
+\index{read@{read}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read (
+\begin{DoxyParamCaption}
+\item[{T $\ast$\&}]{p\+Value, }
+\item[{{\bf dqm\+\_\+uint} \&}]{n\+Vals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_a4d53bc4cb70d5ecc33f5d7c89efdcb1a}
+
+
+Definition at line 269 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+References m\+\_\+p\+Buffer\+Ptr.
+
+
+\begin{DoxyCode}
+270 \{
+271   pValue = NULL;
+272 
+273   dqm_uint *pCurrBuff = (dqm_uint *) m_pBufferPtr;
+274 
+275   \textcolor{comment}{// get the size of the next values to read}
+276   dqm_uint size = pCurrBuff[0] & 0xFFFFFF;
+277 
+278   \textcolor{keywordflow}{if}(size%\textcolor{keyword}{sizeof}(T) != 0)
+279     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+280 
+281   \textcolor{comment}{// valid operation because of the previous check}
+282   nVals = size/\textcolor{keyword}{sizeof}(T);
+283 
+284   \textcolor{comment}{// increment the buffer ptr}
+285   m_pBufferPtr += \textcolor{keyword}{sizeof}(dqm_uint);
+286 
+287   \textcolor{comment}{// valid even if size is 0, then nothing happens while copying memory}
+288   pValue = \textcolor{keyword}{new} T[nVals];
+289 
+290   \textcolor{comment}{// read and copy the asked buffer region}
+291   memcpy(pValue, m_pBufferPtr, size);
+292 
+293   \textcolor{comment}{// increment the buffer ptr}
+294   m_pBufferPtr += size;
+295 
+296   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+297 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!read@{read}}
+\index{read@{read}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm\+\_\+char} $\ast$\&}]{p\+Value, }
+\item[{{\bf dqm\+\_\+uint} \&}]{n\+Vals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_adb5b66de9abdc46b6cbf80b269cd6e7c}
+
+
+Definition at line 184 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+References m\+\_\+p\+Buffer\+Ptr.
+
+
+\begin{DoxyCode}
+185 \{
+186   dqm_uint *pCurrBuff = (dqm_uint *) m_pBufferPtr;
+187 
+188   \textcolor{comment}{// get the size of the next values to read}
+189   dqm_uint size = pCurrBuff[0] & 0xFFFFFF;
+190   nVals = size;
+191 
+192   \textcolor{comment}{// increment the buffer ptr}
+193   m_pBufferPtr += \textcolor{keyword}{sizeof}(dqm_uint);
+194 
+195   \textcolor{comment}{// allocate the new buffer}
+196   pValue = \textcolor{keyword}{new} dqm_char[size+1];
+197   pValue[size] = \textcolor{charliteral}{'\(\backslash\)0'};
+198   memset(pValue, 0, size);
+199 
+200   \textcolor{comment}{// read and copy the asked buffer region}
+201   memcpy(pValue, m_pBufferPtr, size);
+202 
+203   \textcolor{comment}{// increment the buffer ptr}
+204   m_pBufferPtr += size;
+205 
+206   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+207 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!read@{read}}
+\index{read@{read}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_a8016cbbc1e37bb9409527048af7461f4}
+
+
+Definition at line 237 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+References m\+\_\+p\+Buffer\+Ptr.
+
+
+\begin{DoxyCode}
+238 \{
+239   dqm_uint *pCurrBuff = (dqm_uint *) m_pBufferPtr;
+240 
+241   \textcolor{comment}{// get the size of the next values to read}
+242   dqm_uint size = pCurrBuff[0] & 0xFFFFFF;
+243 
+244   \textcolor{keywordtype}{char} *pString = NULL;
+245   StatusCode statusCode = read<char>(pString, size);
+246 
+247   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+248   \{
+249     \textcolor{keyword}{delete} [] pString;
+250     \textcolor{keywordflow}{return} statusCode;
+251   \}
+252 
+253   \textcolor{keywordflow}{if}(NULL == pString)
+254     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+255 
+256   \textcolor{keywordflow}{if}(0 == size)
+257     value.clear();
+258   \textcolor{keywordflow}{else}
+259     value = pString;
+260 
+261   \textcolor{keyword}{delete} [] pString;
+262   
+263   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+264 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!read\+Address@{read\+Address}}
+\index{read\+Address@{read\+Address}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{read\+Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read\+Address (
+\begin{DoxyParamCaption}
+\item[{void $\ast$\&}]{p\+Address}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a1b578e419861e7a8b3f05a9ca6040676}
+
+
+Definition at line 179 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+180 \{
+181   dqm_int address;
+182   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->read(address));
+183 
+184   pAddress = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void} *\textcolor{keyword}{>}(address);
+185 
+186   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+187 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!realloc\+Buffer@{realloc\+Buffer}}
+\index{realloc\+Buffer@{realloc\+Buffer}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{realloc\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::realloc\+Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm\+\_\+uint}}]{new\+Size, }
+\item[{bool}]{copy\+Current\+Buffer = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_ab9140f4e895e097eb656a1c5ba449d24}
+
+
+Reallocate the buffer with a new size. 
+
+The buffer is copied if the flag is true (default) 
+
+Definition at line 134 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References get\+Buffer\+Size(), m\+\_\+max\+Buffer\+Size, m\+\_\+p\+Buffer, m\+\_\+p\+Buffer\+Ptr, and seek().
+
+
+
+Referenced by set\+Buffer(), and write().
+
+
+\begin{DoxyCode}
+135 \{
+136   dqm_uint bufferSize = getBufferSize();
+137   dqm_uint currentPos = m_pBufferPtr - m_pBuffer;
+138 
+139   \textcolor{comment}{// can not shrink the current buffer or allocate 0 size buffer}
+140   \textcolor{keywordflow}{if}(newSize < bufferSize || 0 == newSize)
+141     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+142 
+143   \textcolor{keywordtype}{char} *pNewBuffer = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[newSize];
+144 
+145   \textcolor{keywordflow}{if}(NULL != m\_pBuffer)
+146   \{
+147     \textcolor{keywordflow}{if}(copyCurrentBuffer && 0 != bufferSize)
+148     \{
+149       memcpy(pNewBuffer, m\_pBuffer, bufferSize);
+150     \}
+151     \textcolor{keywordflow}{else}
+152     \{
+153       memset(pNewBuffer, 0, newSize);
+154     \}
+155 
+156     \textcolor{keyword}{delete} [] m_pBuffer;
+157   \}
+158   \textcolor{keywordflow}{else}
+159   \{
+160     memset(pNewBuffer, 0, newSize);
+161   \}
+162 
+163   m\_pBuffer = pNewBuffer;
+164   m_maxBufferSize = newSize;
+165   seek(currentPos);
+166 
+167   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+168 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!reset@{reset}}
+\index{reset@{reset}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a2ffc79b073bcd79695af9d8af7214f78}
+
+
+Reset the buffer ptr to beginning of the buffer. 
+
+
+
+Definition at line 58 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References m\+\_\+buffer\+Size, m\+\_\+is\+Valid, m\+\_\+max\+Buffer\+Size, m\+\_\+p\+Buffer, and m\+\_\+p\+Buffer\+Ptr.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Available\+List\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Request\+List(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Unsubscription(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+Collector\+Info\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Collect\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+List\+Name\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Query(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::notify\+Watched\+Me(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Available\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::send\+Me\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements(), set\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::stop\+Collector(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::update\+Event\+Service().
+
+
+\begin{DoxyCode}
+59 \{
+60   m_pBufferPtr = m_pBuffer;
+61   memset(m_pBuffer, 0, m_maxBufferSize);
+62   m_bufferSize = 0;
+63   m_isValid = \textcolor{keyword}{false};
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!seek@{seek}}
+\index{seek@{seek}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{seek}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::seek (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm\+\_\+uint}}]{pos = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a3737494a50e25c3a48faa20acc002619}
+
+
+Seek the current buffer ptr to given position (in bytes) 
+
+
+
+Definition at line 101 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References get\+Buffer\+Size(), m\+\_\+p\+Buffer, and m\+\_\+p\+Buffer\+Ptr.
+
+
+
+Referenced by realloc\+Buffer().
+
+
+\begin{DoxyCode}
+102 \{
+103   \textcolor{keywordflow}{if}(pos > getBufferSize())
+104     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+105 
+106   m_pBufferPtr = m_pBuffer + pos;
+107 
+108   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!set\+Buffer@{set\+Buffer}}
+\index{set\+Buffer@{set\+Buffer}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{set\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{p\+Buffer, }
+\item[{{\bf dqm\+\_\+uint}}]{size}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a786eeb852d40efd3ff152db72f839903}
+
+
+Set the buffer with its size. 
+
+
+
+Definition at line 82 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References get\+Max\+Buffer\+Size(), m\+\_\+buffer\+Size, m\+\_\+is\+Valid, m\+\_\+p\+Buffer, m\+\_\+p\+Buffer\+Ptr, realloc\+Buffer(), reset(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Available\+List\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Request\+List(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Unsubscription(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+Collector\+Info\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Collect\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+List\+Name\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Query(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler().
+
+
+\begin{DoxyCode}
+83 \{
+84   \textcolor{keywordflow}{if}(size > this->getMaxBufferSize())
+85   \{
+86     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, reallocBuffer(size, \textcolor{keyword}{false}));
+87   \}
+88   \textcolor{keywordflow}{else}
+89     reset();
+90 
+91   memcpy(m_pBuffer, pBuffer, size);
+92   m_bufferSize = size;
+93   m_isValid = \textcolor{keyword}{true};
+94   m_pBufferPtr = m_pBuffer;
+95 
+96   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+97 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!write@{write}}
+\index{write@{write}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_a15db30fc082efe595c7f3a3f05a55c68}
+
+
+Definition at line 127 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+D\+Q\+M\+Dim\+Event\+Collector(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::\+D\+Q\+M\+Monitor\+Element\+Collector(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::notify\+Watched\+Me(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Version\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List\+Name\+Request\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Raw\+Calorimeter\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Float\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Int\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::stop\+Collector(), and write\+Address().
+
+
+\begin{DoxyCode}
+128 \{
+129   \textcolor{keywordflow}{return} write<T>(&value, 1);
+130 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!write@{write}}
+\index{write@{write}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{p\+Value, }
+\item[{{\bf dqm\+\_\+uint}}]{n\+Vals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_a0cda3822ccb249aad36a68516c2cda7f}
+
+
+Definition at line 143 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+References get\+Buffer\+Size(), get\+Max\+Buffer\+Size(), m\+\_\+buffer\+Size, m\+\_\+max\+Buffer\+Size, m\+\_\+p\+Buffer\+Ptr, realloc\+Buffer(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+144 \{
+145   \textcolor{keywordflow}{if}(NULL == pValue)
+146     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+147 
+148   dqm_uint size = \textcolor{keyword}{sizeof}(T)*nVals;
+149   dqm_uint availableSize = getMaxBufferSize() - getBufferSize();
+150 
+151   \textcolor{keywordflow}{if}(availableSize <= size+\textcolor{keyword}{sizeof}(dqm_uint))
+152   \{
+153     dqm_uint newSize = m_maxBufferSize + 1*1024*1024;
+154 
+155     \textcolor{keywordflow}{if}(size + \textcolor{keyword}{sizeof}(dqm_uint) > 1*1024*1024)
+156       newSize = size + \textcolor{keyword}{sizeof}(dqm_uint);
+157 
+158     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, reallocBuffer(newSize));
+159   \}
+160 
+161   \textcolor{comment}{// get the current buffer ptr}
+162   dqm_uint *pCurrBuff = (dqm_uint *) m_pBufferPtr;
+163 
+164   \textcolor{comment}{// write the packet size}
+165   pCurrBuff[0] = size;
+166 
+167   \textcolor{comment}{// increment the buffer}
+168   m_pBufferPtr += \textcolor{keyword}{sizeof}(dqm_uint);
+169   m_bufferSize += \textcolor{keyword}{sizeof}(dqm_uint);
+170 
+171   \textcolor{comment}{// write the packet in the buffer}
+172   memcpy(m_pBufferPtr, (\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)pValue, size);
+173 
+174   \textcolor{comment}{// increment again the buffer}
+175   m_pBufferPtr += size;
+176   m_bufferSize += size;
+177 
+178   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+179 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!write@{write}}
+\index{write@{write}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDataStream_aa824e33d49d3e3351b2f1246f16bfa77}
+
+
+Definition at line 135 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+\begin{DoxyCode}
+136 \{
+137   \textcolor{keywordflow}{return} write<char>(value.c\_str(), value.size());
+138 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!write\+Address@{write\+Address}}
+\index{write\+Address@{write\+Address}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{write\+Address}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write\+Address (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$\&}]{p\+Address}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDataStream_a3a37cda3e4dbcb79bd1c781482e3a5b4}
+
+
+Definition at line 172 of file D\+Q\+M\+Data\+Stream.\+cc.
+
+
+
+References write().
+
+
+\begin{DoxyCode}
+173 \{
+174   \textcolor{keywordflow}{return} this->write(reinterpret\_cast<dqm\_int>(pAddress));
+175 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!m\+\_\+buffer\+Size@{m\+\_\+buffer\+Size}}
+\index{m\+\_\+buffer\+Size@{m\+\_\+buffer\+Size}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{m\+\_\+buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::m\+\_\+buffer\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_a8f9b1859e56faa02978b8720769d5073}
+
+
+Definition at line 119 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by get\+Buffer\+Size(), is\+Valid(), reset(), set\+Buffer(), and write().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!m\+\_\+is\+Valid@{m\+\_\+is\+Valid}}
+\index{m\+\_\+is\+Valid@{m\+\_\+is\+Valid}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{m\+\_\+is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::m\+\_\+is\+Valid\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_a467af836c8f60c7844b0682056627430}
+
+
+Definition at line 120 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by reset(), and set\+Buffer().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!m\+\_\+max\+Buffer\+Size@{m\+\_\+max\+Buffer\+Size}}
+\index{m\+\_\+max\+Buffer\+Size@{m\+\_\+max\+Buffer\+Size}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{m\+\_\+max\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::m\+\_\+max\+Buffer\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_a7d74d30f943c9137af17192ae1db24d4}
+
+
+Definition at line 116 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by get\+Max\+Buffer\+Size(), realloc\+Buffer(), reset(), and write().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}}
+\index{m\+\_\+p\+Buffer@{m\+\_\+p\+Buffer}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{m\+\_\+p\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::m\+\_\+p\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_a39810d87add9532a6b780d081cac61cd}
+
+
+Definition at line 117 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by D\+Q\+M\+Data\+Stream(), get\+Buffer(), realloc\+Buffer(), reset(), seek(), set\+Buffer(), and $\sim$\+D\+Q\+M\+Data\+Stream().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}!m\+\_\+p\+Buffer\+Ptr@{m\+\_\+p\+Buffer\+Ptr}}
+\index{m\+\_\+p\+Buffer\+Ptr@{m\+\_\+p\+Buffer\+Ptr}!dqm4hep\+::\+D\+Q\+M\+Data\+Stream@{dqm4hep\+::\+D\+Q\+M\+Data\+Stream}}
+\subsubsection[{m\+\_\+p\+Buffer\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::m\+\_\+p\+Buffer\+Ptr\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMDataStream_a6b5e8f6ea3c4df71db6c241c3e30b6cb}
+
+
+Definition at line 118 of file D\+Q\+M\+Data\+Stream.\+h.
+
+
+
+Referenced by D\+Q\+M\+Data\+Stream(), read(), realloc\+Buffer(), reset(), seek(), set\+Buffer(), write(), and $\sim$\+D\+Q\+M\+Data\+Stream().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Data\+Stream.\+h}\item 
+{\bf D\+Q\+M\+Data\+Stream.\+cc}\end{DoxyCompactItemize}

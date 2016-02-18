@@ -1,0 +1,439 @@
+\section{T\+C\+L\+A\+P\+:\+:Unlabeled\+Multi\+Arg$<$ T $>$ Class Template Reference}
+\label{classTCLAP_1_1UnlabeledMultiArg}\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$}}
+
+
+Just like a \doxyref{Multi\+Arg}{p.}{classTCLAP_1_1MultiArg}, except that the arguments are unlabeled.  
+
+
+
+
+{\ttfamily \#include $<$Unlabeled\+Multi\+Arg.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Unlabeled\+Multi\+Arg$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1UnlabeledMultiArg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Unlabeled\+Multi\+Arg} (const std\+::string \&name, const std\+::string \&desc, bool req, const std\+::string \&type\+Desc, bool ignoreable=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Unlabeled\+Multi\+Arg} (const std\+::string \&name, const std\+::string \&desc, bool req, const std\+::string \&type\+Desc, {\bf Cmd\+Line\+Interface} \&parser, bool ignoreable=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Unlabeled\+Multi\+Arg} (const std\+::string \&name, const std\+::string \&desc, bool req, {\bf Constraint}$<$ T $>$ $\ast$constraint, bool ignoreable=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Unlabeled\+Multi\+Arg} (const std\+::string \&name, const std\+::string \&desc, bool req, {\bf Constraint}$<$ T $>$ $\ast$constraint, {\bf Cmd\+Line\+Interface} \&parser, bool ignoreable=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual bool {\bf process\+Arg} (int $\ast$i, std\+::vector$<$ std\+::string $>$ \&args)
+\begin{DoxyCompactList}\small\item\em Handles the processing of the argument. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns the a short id string. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf long\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns the a long id string. \end{DoxyCompactList}\item 
+virtual bool {\bf operator==} (const {\bf Arg} \&a) const 
+\begin{DoxyCompactList}\small\item\em Opertor ==. \end{DoxyCompactList}\item 
+virtual void {\bf add\+To\+List} (std\+::list$<$ {\bf Arg} $\ast$ $>$ \&arg\+List) const 
+\begin{DoxyCompactList}\small\item\em Pushes this to back of list rather than front. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$}
+
+Just like a \doxyref{Multi\+Arg}{p.}{classTCLAP_1_1MultiArg}, except that the arguments are unlabeled. 
+
+Basically, this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} will slurp up everything that hasn't been matched to another \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. 
+
+Definition at line 40 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}}
+\index{Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{Unlabeled\+Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::{\bf Unlabeled\+Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{bool}]{ignoreable = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1UnlabeledMultiArg_a776c124bf343d0ecfb73e7cc28423807}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ The name of the \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. Note that this is used for identification, not as a long flag. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em ignoreable} & -\/ Whether or not this argument can be ignored using the \char`\"{}-\/-\/\char`\"{} flag. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable, T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::check(), and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+\begin{DoxyCode}
+193 : MultiArg<T>(\textcolor{stringliteral}{""}, name, desc,  req, typeDesc, v)
+194 \{ 
+195   _ignoreable = ignoreable;
+196   OptionalUnlabeledTracker::check(\textcolor{keyword}{true}, toString());
+197 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}}
+\index{Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{Unlabeled\+Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::{\bf Unlabeled\+Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{bool}]{ignoreable = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1UnlabeledMultiArg_a5c81005897f6b9673b39f5d1107f4074}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ The name of the \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. Note that this is used for identification, not as a long flag. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em ignoreable} & -\/ Whether or not this argument can be ignored using the \char`\"{}-\/-\/\char`\"{} flag. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 200 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable, T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add(), T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::check(), and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+\begin{DoxyCode}
+207 : MultiArg<T>(\textcolor{stringliteral}{""}, name, desc,  req, typeDesc, v)
+208 \{ 
+209   _ignoreable = ignoreable;
+210   OptionalUnlabeledTracker::check(\textcolor{keyword}{true}, toString());
+211   parser.add( \textcolor{keyword}{this} );
+212 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}}
+\index{Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{Unlabeled\+Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::{\bf Unlabeled\+Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{bool}]{ignoreable = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1UnlabeledMultiArg_aa065c76cd23b4acfe62c4b31d73dcf87}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ The name of the \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. Note that this is used for identification, not as a long flag. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em ignoreable} & -\/ Whether or not this argument can be ignored using the \char`\"{}-\/-\/\char`\"{} flag. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 216 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable, T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::check(), and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+\begin{DoxyCode}
+222 : MultiArg<T>(\textcolor{stringliteral}{""}, name, desc,  req, constraint, v)
+223 \{ 
+224   _ignoreable = ignoreable;
+225   OptionalUnlabeledTracker::check(\textcolor{keyword}{true}, toString());
+226 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}}
+\index{Unlabeled\+Multi\+Arg@{Unlabeled\+Multi\+Arg}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{Unlabeled\+Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::{\bf Unlabeled\+Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{bool}]{ignoreable = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1UnlabeledMultiArg_ad3d8c37cd3c71deb2275b48115a59f11}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ The name of the \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. Note that this is used for identification, not as a long flag. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em ignoreable} & -\/ Whether or not this argument can be ignored using the \char`\"{}-\/-\/\char`\"{} flag. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 229 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable, T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add(), T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::check(), and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+\begin{DoxyCode}
+236 : MultiArg<T>(\textcolor{stringliteral}{""}, name, desc,  req, constraint, v)
+237 \{ 
+238   _ignoreable = ignoreable;
+239   OptionalUnlabeledTracker::check(\textcolor{keyword}{true}, toString());
+240   parser.add( \textcolor{keyword}{this} );
+241 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!add\+To\+List@{add\+To\+List}}
+\index{add\+To\+List@{add\+To\+List}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{add\+To\+List}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::add\+To\+List (
+\begin{DoxyParamCaption}
+\item[{std\+::list$<$ {\bf Arg} $\ast$ $>$ \&}]{arg\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1UnlabeledMultiArg_a290b15792de11abb5a4cf1c312d6a0d7}
+
+
+Pushes this to back of list rather than front. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg\+List} & -\/ The list this should be added to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a9ff1564beeea2ef855f7fa483c37d0e2}.
+
+
+
+Definition at line 294 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+295 \{
+296   argList.push\_back( const\_cast<Arg*>(static\_cast<const Arg* const>(\textcolor{keyword}{this})) );
+297 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!long\+I\+D@{long\+I\+D}}
+\index{long\+I\+D@{long\+I\+D}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{long\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::long\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1UnlabeledMultiArg_a1e7262967b850fb30e1003890a45f1ca}
+
+
+Returns the a long id string. 
+
+Used in the usage. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_a16c00fbce6876bceabb3dab4723f7e79}.
+
+
+
+Definition at line 278 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+279 \{
+280   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+281   \textcolor{keywordflow}{return} std::string(\textcolor{stringliteral}{"<"}) + _typeDesc + \textcolor{stringliteral}{">  (accepted multiple times)"};
+282 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!operator==@{operator==}}
+\index{operator==@{operator==}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} \&}]{a}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1UnlabeledMultiArg_a059fa00203a9f643a10334fedbd43e39}
+
+
+Opertor ==. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ The \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to be compared to this. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a657a8d2842b7de9ced5a5a55db01d367}.
+
+
+
+Definition at line 285 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::get\+Description(), and T\+C\+L\+A\+P\+::\+Arg\+::get\+Name().
+
+
+\begin{DoxyCode}
+286 \{
+287   \textcolor{keywordflow}{if} ( _name == a.getName() || _description == a.getDescription() )
+288     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+289   \textcolor{keywordflow}{else}
+290     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+291 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!process\+Arg@{process\+Arg}}
+\index{process\+Arg@{process\+Arg}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{process\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::process\+Arg (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{i, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1UnlabeledMultiArg_aa5a35665519518dcb60e53d3a4858802}
+
+
+Handles the processing of the argument. 
+
+This re-\/implements the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} version of this method to set the \+\_\+value of the argument appropriately. It knows the difference between labeled and unlabeled. 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ Pointer the the current argument in the list. \\
+\hline
+{\em args} & -\/ Mutable list of strings. Passed from main(). \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_a344d3cf2128c510f92825e421ea667c7}.
+
+
+
+Definition at line 245 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+246 \{
+247 
+248   \textcolor{keywordflow}{if} ( _hasBlanks( args[*i] ) )
+249     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+250 
+251   \textcolor{comment}{// never ignore an unlabeled multi arg}
+252 
+253 
+254   \textcolor{comment}{// always take the first value, regardless of the start string }
+255   _extractValue( args[(*i)] );
+256 
+257   \textcolor{comment}{/*}
+258 \textcolor{comment}{  // continue taking args until we hit the end or a start string }
+259 \textcolor{comment}{  while ( (unsigned int)(*i)+1 < args.size() &&}
+260 \textcolor{comment}{      args[(*i)+1].find\_first\_of( Arg::flagStartString() ) != 0 &&}
+261 \textcolor{comment}{            args[(*i)+1].find\_first\_of( Arg::nameStartString() ) != 0 ) }
+262 \textcolor{comment}{    \_extractValue( args[++(*i)] );}
+263 \textcolor{comment}{  */}
+264 
+265   _alreadySet = \textcolor{keyword}{true};
+266 
+267   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+268 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg}$<$ T $>$\+::short\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1UnlabeledMultiArg_a5971af8f29fa4d798ffde3293504c15b}
+
+
+Returns the a short id string. 
+
+Used in the usage. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_ac2c962112704b899f4c8b8565f2c4bb3}.
+
+
+
+Definition at line 271 of file Unlabeled\+Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+272 \{
+273   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+274   \textcolor{keywordflow}{return} std::string(\textcolor{stringliteral}{"<"}) + _typeDesc + \textcolor{stringliteral}{"> ..."};
+275 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Unlabeled\+Multi\+Arg.\+h}\end{DoxyCompactItemize}

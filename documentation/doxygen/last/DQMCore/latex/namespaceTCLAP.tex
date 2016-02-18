@@ -1,0 +1,291 @@
+\section{T\+C\+L\+A\+P Namespace Reference}
+\label{namespaceTCLAP}\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Arg}
+\begin{DoxyCompactList}\small\item\em A virtual base class that defines the essential data for all arguments. \end{DoxyCompactList}\item 
+class {\bf Arg\+Exception}
+\begin{DoxyCompactList}\small\item\em A simple class that defines and argument exception. \end{DoxyCompactList}\item 
+class {\bf Arg\+Parse\+Exception}
+\begin{DoxyCompactList}\small\item\em Thrown from within the child \doxyref{Arg}{p.}{classTCLAP_1_1Arg} classes when it fails to properly parse the argument it has been passed. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits}
+\begin{DoxyCompactList}\small\item\em \doxyref{Arg}{p.}{classTCLAP_1_1Arg} traits are used to get compile type specialization when parsing argument values. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ bool $>$}
+\begin{DoxyCompactList}\small\item\em bools have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ char $>$}
+\begin{DoxyCompactList}\small\item\em chars have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ double $>$}
+\begin{DoxyCompactList}\small\item\em doubles have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ float $>$}
+\begin{DoxyCompactList}\small\item\em floats have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ int $>$}
+\begin{DoxyCompactList}\small\item\em ints have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ long $>$}
+\begin{DoxyCompactList}\small\item\em longs have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ short $>$}
+\begin{DoxyCompactList}\small\item\em shorts have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ std\+::string $>$}
+\begin{DoxyCompactList}\small\item\em Strings have string like argument traits. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ unsigned char $>$}
+\begin{DoxyCompactList}\small\item\em unsigned chars have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ unsigned int $>$}
+\begin{DoxyCompactList}\small\item\em unsigned ints have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ unsigned long $>$}
+\begin{DoxyCompactList}\small\item\em unsigned longs have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ unsigned short $>$}
+\begin{DoxyCompactList}\small\item\em unsigned shorts have value-\/like semantics. \end{DoxyCompactList}\item 
+struct {\bf Arg\+Traits$<$ wchar\+\_\+t $>$}
+\begin{DoxyCompactList}\small\item\em wchar\+\_\+ts have value-\/like semantics. \end{DoxyCompactList}\item 
+class {\bf Cmd\+Line}
+\begin{DoxyCompactList}\small\item\em The base class that manages the command line definition and passes along the parsing to the appropriate \doxyref{Arg}{p.}{classTCLAP_1_1Arg} classes. \end{DoxyCompactList}\item 
+class {\bf Cmd\+Line\+Interface}
+\begin{DoxyCompactList}\small\item\em The base class that manages the command line definition and passes along the parsing to the appropriate \doxyref{Arg}{p.}{classTCLAP_1_1Arg} classes. \end{DoxyCompactList}\item 
+class {\bf Cmd\+Line\+Output}
+\begin{DoxyCompactList}\small\item\em The interface that any output object must implement. \end{DoxyCompactList}\item 
+class {\bf Cmd\+Line\+Parse\+Exception}
+\begin{DoxyCompactList}\small\item\em Thrown from \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when the arguments on the command line are not properly specified, e.\+g. \end{DoxyCompactList}\item 
+class {\bf Constraint}
+\begin{DoxyCompactList}\small\item\em The interface that defines the interaction between the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. \end{DoxyCompactList}\item 
+class {\bf Doc\+Book\+Output}
+\begin{DoxyCompactList}\small\item\em A class that generates Doc\+Book output for \doxyref{usage()}{p.}{classTCLAP_1_1DocBookOutput_adc1ec93f3f7e5e912690be01c5e7d6e2} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args. \end{DoxyCompactList}\item 
+class {\bf Exit\+Exception}
+\item 
+class {\bf Help\+Visitor}
+\begin{DoxyCompactList}\small\item\em A \doxyref{Visitor}{p.}{classTCLAP_1_1Visitor} object that calls the usage method of the given \doxyref{Cmd\+Line\+Output}{p.}{classTCLAP_1_1CmdLineOutput} object for the specified \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object. \end{DoxyCompactList}\item 
+class {\bf Ignore\+Rest\+Visitor}
+\begin{DoxyCompactList}\small\item\em A Vistor that tells the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} to begin ignoring arguments after this one is parsed. \end{DoxyCompactList}\item 
+class {\bf Multi\+Arg}
+\begin{DoxyCompactList}\small\item\em An argument that allows multiple values of type T to be specified. \end{DoxyCompactList}\item 
+class {\bf Multi\+Switch\+Arg}
+\begin{DoxyCompactList}\small\item\em A multiple switch argument. \end{DoxyCompactList}\item 
+class {\bf Optional\+Unlabeled\+Tracker}
+\item 
+class {\bf Specification\+Exception}
+\begin{DoxyCompactList}\small\item\em Thrown from \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is improperly specified, e.\+g. \end{DoxyCompactList}\item 
+class {\bf Std\+Output}
+\begin{DoxyCompactList}\small\item\em A class that isolates any output from the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object so that it may be easily modified. \end{DoxyCompactList}\item 
+struct {\bf String\+Like}
+\begin{DoxyCompactList}\small\item\em A string like argument value type is a value that can be set using operator=(string). \end{DoxyCompactList}\item 
+struct {\bf String\+Like\+Trait}
+\begin{DoxyCompactList}\small\item\em A class can inherit from this object to make it have string like traits. \end{DoxyCompactList}\item 
+class {\bf Switch\+Arg}
+\begin{DoxyCompactList}\small\item\em A simple switch argument. \end{DoxyCompactList}\item 
+class {\bf Unlabeled\+Multi\+Arg}
+\begin{DoxyCompactList}\small\item\em Just like a \doxyref{Multi\+Arg}{p.}{classTCLAP_1_1MultiArg}, except that the arguments are unlabeled. \end{DoxyCompactList}\item 
+class {\bf Unlabeled\+Value\+Arg}
+\begin{DoxyCompactList}\small\item\em The basic unlabeled argument that parses a value. \end{DoxyCompactList}\item 
+class {\bf Value\+Arg}
+\begin{DoxyCompactList}\small\item\em The basic labeled argument that parses a value. \end{DoxyCompactList}\item 
+struct {\bf Value\+Like}
+\begin{DoxyCompactList}\small\item\em A value like argument value type is a value that can be set using operator$>$$>$. \end{DoxyCompactList}\item 
+struct {\bf Value\+Like\+Trait}
+\begin{DoxyCompactList}\small\item\em A class can inherit from this object to make it have value like traits. \end{DoxyCompactList}\item 
+class {\bf Values\+Constraint}
+\begin{DoxyCompactList}\small\item\em A \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} that constrains the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to only those values specified in the constraint. \end{DoxyCompactList}\item 
+class {\bf Version\+Visitor}
+\begin{DoxyCompactList}\small\item\em A Vistor that will call the version method of the given \doxyref{Cmd\+Line\+Output}{p.}{classTCLAP_1_1CmdLineOutput} for the specified \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object and then exit. \end{DoxyCompactList}\item 
+class {\bf Visitor}
+\begin{DoxyCompactList}\small\item\em A base class that defines the interface for visitors. \end{DoxyCompactList}\item 
+class {\bf Xor\+Handler}
+\begin{DoxyCompactList}\small\item\em This class handles lists of \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s that are to be X\+O\+R'd on the command line. \end{DoxyCompactList}\item 
+class {\bf Zsh\+Completion\+Output}
+\begin{DoxyCompactList}\small\item\em A class that generates a Zsh completion function as output from the \doxyref{usage()}{p.}{classTCLAP_1_1ZshCompletionOutput_a3ea685b174fce7ddf2353129863b49d7} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::list$<$ {\bf Arg} $\ast$ $>$\\*
+\+::iterator {\bf Arg\+List\+Iterator}
+\begin{DoxyCompactList}\small\item\em Typedef of an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} list iterator. \end{DoxyCompactList}\item 
+typedef std\+::vector$<$ {\bf Arg} $\ast$ $>$\\*
+\+::iterator {\bf Arg\+Vector\+Iterator}
+\begin{DoxyCompactList}\small\item\em Typedef of an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} vector iterator. \end{DoxyCompactList}\item 
+typedef std\+::list$<$ {\bf Visitor} $\ast$ $>$\\*
+\+::iterator {\bf Visitor\+List\+Iterator}
+\begin{DoxyCompactList}\small\item\em Typedef of a \doxyref{Visitor}{p.}{classTCLAP_1_1Visitor} list iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf Extract\+Value} (T \&dest\+Val, const std\+::string \&str\+Val, {\bf Value\+Like} vl)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf Extract\+Value} (T \&dest\+Val, const std\+::string \&str\+Val, {\bf String\+Like} sl)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf Del\+Ptr} (T ptr)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf Clear\+Container} (C \&c)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf Set\+String} (T \&dst, const std\+::string \&src)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Arg\+List\+Iterator@{Arg\+List\+Iterator}}
+\index{Arg\+List\+Iterator@{Arg\+List\+Iterator}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Arg\+List\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::list$<${\bf Arg}$\ast$$>$\+::iterator {\bf T\+C\+L\+A\+P\+::\+Arg\+List\+Iterator}}\label{namespaceTCLAP_aa7d6a803e0690c3c8b1db57c145648c5}
+
+
+Typedef of an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} list iterator. 
+
+
+
+Definition at line 396 of file Arg.\+h.
+
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Arg\+Vector\+Iterator@{Arg\+Vector\+Iterator}}
+\index{Arg\+Vector\+Iterator@{Arg\+Vector\+Iterator}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Arg\+Vector\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Arg}$\ast$$>$\+::iterator {\bf T\+C\+L\+A\+P\+::\+Arg\+Vector\+Iterator}}\label{namespaceTCLAP_a04213af1ffc3178ce5f771d21d5164a2}
+
+
+Typedef of an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} vector iterator. 
+
+
+
+Definition at line 401 of file Arg.\+h.
+
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Visitor\+List\+Iterator@{Visitor\+List\+Iterator}}
+\index{Visitor\+List\+Iterator@{Visitor\+List\+Iterator}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Visitor\+List\+Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::list$<${\bf Visitor}$\ast$$>$\+::iterator {\bf T\+C\+L\+A\+P\+::\+Visitor\+List\+Iterator}}\label{namespaceTCLAP_a30300bc675a64eacafa1298268de1101}
+
+
+Typedef of a \doxyref{Visitor}{p.}{classTCLAP_1_1Visitor} list iterator. 
+
+
+
+Definition at line 406 of file Arg.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Clear\+Container@{Clear\+Container}}
+\index{Clear\+Container@{Clear\+Container}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Clear\+Container}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void T\+C\+L\+A\+P\+::\+Clear\+Container (
+\begin{DoxyParamCaption}
+\item[{C \&}]{c}
+\end{DoxyParamCaption}
+)}\label{namespaceTCLAP_ac0852ccd31a36e9281090f1eec77652b}
+
+
+Definition at line 58 of file Cmd\+Line.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::$\sim$\+Cmd\+Line().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{keyword}{typedef} \textcolor{keyword}{typename} C::value\_type value\_type;
+61   std::for\_each(c.begin(), c.end(), DelPtr<value\_type>);
+62   c.clear();
+63 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Del\+Ptr@{Del\+Ptr}}
+\index{Del\+Ptr@{Del\+Ptr}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Del\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void T\+C\+L\+A\+P\+::\+Del\+Ptr (
+\begin{DoxyParamCaption}
+\item[{T}]{ptr}
+\end{DoxyParamCaption}
+)}\label{namespaceTCLAP_a92889c51d265522dcbd9764f6a329879}
+
+
+Definition at line 53 of file Cmd\+Line.\+h.
+
+
+\begin{DoxyCode}
+54 \{
+55   \textcolor{keyword}{delete} ptr;
+56 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Extract\+Value@{Extract\+Value}}
+\index{Extract\+Value@{Extract\+Value}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Extract\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void T\+C\+L\+A\+P\+::\+Extract\+Value (
+\begin{DoxyParamCaption}
+\item[{T \&}]{dest\+Val, }
+\item[{const std\+::string \&}]{str\+Val, }
+\item[{Value\+Like}]{vl}
+\end{DoxyParamCaption}
+)}\label{namespaceTCLAP_af5bcb51791e31b88ad7de17b0f238dfb}
+
+
+Definition at line 415 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::\+\_\+extract\+Value(), and T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::\+\_\+extract\+Value().
+
+
+\begin{DoxyCode}
+416 \{
+417     \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(vl); \textcolor{comment}{// Avoid warning about unused vl}
+418     std::istringstream is(strVal);
+419 
+420     \textcolor{keywordtype}{int} valuesRead = 0;
+421     \textcolor{keywordflow}{while} ( is.good() ) \{
+422   \textcolor{keywordflow}{if} ( is.peek() != EOF )
+423 #ifdef TCLAP\_SETBASE\_ZERO
+424       is >> std::setbase(0) >> destVal;
+425 \textcolor{preprocessor}{#else}
+426       is >> destVal;
+427 \textcolor{preprocessor}{#endif}
+428   \textcolor{keywordflow}{else}
+429       \textcolor{keywordflow}{break};
+430 
+431   valuesRead++;
+432     \}
+433 
+434     \textcolor{keywordflow}{if} ( is.fail() )
+435   \textcolor{keywordflow}{throw}( ArgParseException(\textcolor{stringliteral}{"Couldn't read argument value "}
+436          \textcolor{stringliteral}{"from string '"} + strVal + \textcolor{stringliteral}{"'"}));
+437 
+438 
+439     \textcolor{keywordflow}{if} ( valuesRead > 1 )
+440   \textcolor{keywordflow}{throw}( ArgParseException(\textcolor{stringliteral}{"More than one valid value parsed from "}
+441          \textcolor{stringliteral}{"string '"} + strVal + \textcolor{stringliteral}{"'"}));
+442 
+443 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Extract\+Value@{Extract\+Value}}
+\index{Extract\+Value@{Extract\+Value}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Extract\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void T\+C\+L\+A\+P\+::\+Extract\+Value (
+\begin{DoxyParamCaption}
+\item[{T \&}]{dest\+Val, }
+\item[{const std\+::string \&}]{str\+Val, }
+\item[{String\+Like}]{sl}
+\end{DoxyParamCaption}
+)}\label{namespaceTCLAP_a5aed21a9cca57b42a03b783d15be417e}
+
+
+Definition at line 452 of file Arg.\+h.
+
+
+
+References Set\+String().
+
+
+\begin{DoxyCode}
+453 \{
+454     \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(sl); \textcolor{comment}{// Avoid warning about unused sl}
+455     SetString(destVal, strVal);
+456 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P@{T\+C\+L\+A\+P}!Set\+String@{Set\+String}}
+\index{Set\+String@{Set\+String}!T\+C\+L\+A\+P@{T\+C\+L\+A\+P}}
+\subsubsection[{Set\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void T\+C\+L\+A\+P\+::\+Set\+String (
+\begin{DoxyParamCaption}
+\item[{T \&}]{dst, }
+\item[{const std\+::string \&}]{src}
+\end{DoxyParamCaption}
+)}\label{namespaceTCLAP_aa537f6ad6d9293215127810ba24260c6}
+
+
+Definition at line 200 of file Standard\+Traits.\+h.
+
+
+
+Referenced by Extract\+Value().
+
+
+\begin{DoxyCode}
+201 \{
+202     dst = src;
+203 \}
+\end{DoxyCode}

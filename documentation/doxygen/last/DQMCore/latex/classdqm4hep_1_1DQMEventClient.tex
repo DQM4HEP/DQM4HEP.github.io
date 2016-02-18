@@ -1,0 +1,941 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Client Class Reference}
+\label{classdqm4hep_1_1DQMEventClient}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+
+
+\doxyref{D\+Q\+M\+Event\+Client}{p.}{classdqm4hep_1_1DQMEventClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Event\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMEventClient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Client} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Event\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the collector to connect to. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Event\+Streamer} ({\bf D\+Q\+M\+Event\+Streamer} $\ast$p\+Event\+Streamer, bool owner=true)
+\begin{DoxyCompactList}\small\item\em Set the streamer that will stream in/out the sent/received event(s). \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Event\+Streamer} $\ast$ {\bf get\+Event\+Streamer} () const 
+\begin{DoxyCompactList}\small\item\em Get the event streamer. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Maximum\+Queue\+Size} (unsigned int queue\+Size)
+\begin{DoxyCompactList}\small\item\em Set the queue size that stores the received events. \end{DoxyCompactList}\item 
+virtual unsigned int {\bf get\+Maximum\+Queue\+Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the maximum number of events that the client can store in its event queue. \end{DoxyCompactList}\item 
+virtual void {\bf clear\+Queue} ()
+\begin{DoxyCompactList}\small\item\em Clear the event queue. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Sub\+Event\+Identifier} (const std\+::string \&identifier)
+\begin{DoxyCompactList}\small\item\em Set the sub event identifier. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Sub\+Event\+Identifier} () const 
+\begin{DoxyCompactList}\small\item\em Get the sub event identifier. \end{DoxyCompactList}\item 
+void {\bf take\+Event} ({\bf D\+Q\+M\+Event} $\ast$\&p\+Event)
+\begin{DoxyCompactList}\small\item\em Take an event from the event queue (pop front) and return the pointer to the caller. \end{DoxyCompactList}\item 
+void {\bf add\+Listener} ({\bf D\+Q\+M\+Event\+Client\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Add a listener to this event client. \end{DoxyCompactList}\item 
+void {\bf remove\+Listener} ({\bf D\+Q\+M\+Event\+Client\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Remove a listener from this event client. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf connect\+To\+Service} ()
+\begin{DoxyCompactList}\small\item\em Connect to the collector service (server) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf disconnect\+From\+Service} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the client from the collector (server) \end{DoxyCompactList}\item 
+virtual bool {\bf is\+Connected\+To\+Service} () const =0
+\begin{DoxyCompactList}\small\item\em Whether the client is connected to the collector (server) \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf send\+Event} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Event)=0
+\begin{DoxyCompactList}\small\item\em Send an event to the collector (server). \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf query\+Event} ({\bf D\+Q\+M\+Event} $\ast$\&p\+Event, int timeout)=0
+\begin{DoxyCompactList}\small\item\em Query an event to the collector (server) with a timeout and handle it without pushing it into the internal queue. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf query\+Event} ()=0
+\begin{DoxyCompactList}\small\item\em Query an event to the collector. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Update\+Mode} (bool update\+Mode)=0
+\begin{DoxyCompactList}\small\item\em Set the update mode. \end{DoxyCompactList}\item 
+virtual bool {\bf get\+Update\+Mode} () const =0
+\begin{DoxyCompactList}\small\item\em Whether the update mode is set. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf read\+Settings} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle)=0
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Status\+Code} {\bf perform\+Service\+Connection} ()=0
+\begin{DoxyCompactList}\small\item\em Workhorse of the service connection. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf perform\+Service\+Disconnection} ()=0
+\begin{DoxyCompactList}\small\item\em Workhorse of the service connection. \end{DoxyCompactList}\item 
+void {\bf push\+Event} ({\bf D\+Q\+M\+Event} $\ast$p\+Event)
+\begin{DoxyCompactList}\small\item\em Push a new event in the event queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+event\+Streamer\+Owner}
+\item 
+{\bf D\+Q\+M\+Event\+Streamer} $\ast$ {\bf m\+\_\+p\+Event\+Streamer}
+\item 
+std\+::string {\bf m\+\_\+collector\+Name}
+\item 
+std\+::string {\bf m\+\_\+sub\+Event\+Identifier}
+\item 
+{\bf D\+Q\+M\+Event\+Queue} {\bf m\+\_\+event\+Queue}
+\item 
+unsigned int {\bf m\+\_\+maximum\+Queue\+Size}
+\item 
+std\+::set\\*
+$<$ {\bf D\+Q\+M\+Event\+Client\+Listener} $\ast$ $>$ {\bf m\+\_\+listeners}
+\item 
+pthread\+\_\+mutex\+\_\+t {\bf m\+\_\+mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event\+Client}{p.}{classdqm4hep_1_1DQMEventClient} class. 
+
+Main interface for sending events to a collector (server part) and for event queries.
+
+Note that pushing/taking events in the event queue is thread-\/safe. 
+
+Definition at line 80 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!D\+Q\+M\+Event\+Client@{D\+Q\+M\+Event\+Client}}
+\index{D\+Q\+M\+Event\+Client@{D\+Q\+M\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{D\+Q\+M\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::\+D\+Q\+M\+Event\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_ad0282690a4ab8dc26784ebaefdd16ea3}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+36                                :
+37     m_pEventStreamer(NULL),
+38     m_maximumQueueSize(100),
+39     m_eventStreamerOwner(\textcolor{keyword}{true})
+40 \{
+41   pthread\_mutex\_init(&m_mutex, NULL);
+42 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!````~D\+Q\+M\+Event\+Client@{$\sim$\+D\+Q\+M\+Event\+Client}}
+\index{````~D\+Q\+M\+Event\+Client@{$\sim$\+D\+Q\+M\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::$\sim$\+D\+Q\+M\+Event\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a0c5bda759a3912ca99748974e108e00d}
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References clear\+Queue(), m\+\_\+event\+Streamer\+Owner, m\+\_\+mutex, and m\+\_\+p\+Event\+Streamer.
+
+
+\begin{DoxyCode}
+47 \{
+48   this->clearQueue();
+49 
+50   \textcolor{keywordflow}{if}( m_eventStreamerOwner && NULL != m_pEventStreamer )
+51     \textcolor{keyword}{delete} m_pEventStreamer;
+52 
+53   pthread\_mutex\_destroy(&m_mutex);
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_aa6aac26ee1286d2adfbe5879f6c3215d}
+
+
+Add a listener to this event client. 
+
+
+
+Definition at line 160 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+listeners, and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+161 \{
+162   scoped\_lock( & this->m_mutex);
+163 
+164   \textcolor{keywordflow}{if}(NULL == pListener)
+165     \textcolor{keywordflow}{return};
+166 
+167   m_listeners.insert(pListener);
+168 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!clear\+Queue@{clear\+Queue}}
+\index{clear\+Queue@{clear\+Queue}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{clear\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::clear\+Queue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a57e2b09e0035463be5772d5681e13b42}
+
+
+Clear the event queue. 
+
+
+
+Definition at line 120 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+event\+Queue, and m\+\_\+mutex.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), and $\sim$\+D\+Q\+M\+Event\+Client().
+
+
+\begin{DoxyCode}
+121 \{
+122   scoped\_lock( & this->m_mutex);
+123 
+124   \textcolor{keywordflow}{while}( ! m_eventQueue.empty() )
+125   \{
+126     \textcolor{keyword}{delete} m_eventQueue.front();
+127     m_eventQueue.pop();
+128   \}
+129 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!connect\+To\+Service@{connect\+To\+Service}}
+\index{connect\+To\+Service@{connect\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{connect\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::connect\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_a535302ffc201aff823c210d9a834937c}
+
+
+Connect to the collector service (server) 
+
+
+
+Definition at line 209 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+listeners, perform\+Service\+Connection(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::start\+Services(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::stop\+Services().
+
+
+\begin{DoxyCode}
+210 \{
+211   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->performServiceConnection());
+212 
+213   \textcolor{keywordflow}{for}(std::set<DQMEventClientListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+214       endIter != iter ; ++iter)
+215     (*iter)->onEventClientConnnect(\textcolor{keyword}{this});
+216 
+217   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+218 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!disconnect\+From\+Service@{disconnect\+From\+Service}}
+\index{disconnect\+From\+Service@{disconnect\+From\+Service}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{disconnect\+From\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::disconnect\+From\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_a469dc13739fc07759a50d258990179b1}
+
+
+Disconnect the client from the collector (server) 
+
+
+
+Definition at line 222 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+listeners, perform\+Service\+Disconnection(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::$\sim$\+D\+Q\+M\+Dim\+Event\+Client().
+
+
+\begin{DoxyCode}
+223 \{
+224   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->performServiceDisconnection());
+225 
+226   \textcolor{keywordflow}{for}(std::set<DQMEventClientListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+227       endIter != iter ; ++iter)
+228     (*iter)->onEventClientDisconnnect(\textcolor{keyword}{this});
+229 
+230   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+231 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventClient_a39d24fd0151e0c95318b7b1000fb7573}
+
+
+Get the collector name. 
+
+
+
+Definition at line 69 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+collector\+Name.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::perform\+Service\+Connection(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::perform\+Service\+Disconnection(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::set\+Sub\+Event\+Identifier(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::set\+Update\+Mode().
+
+
+\begin{DoxyCode}
+70 \{
+71   \textcolor{keywordflow}{return} m_collectorName;
+72 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!get\+Event\+Streamer@{get\+Event\+Streamer}}
+\index{get\+Event\+Streamer@{get\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{get\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Streamer} $\ast$ dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventClient_a2fce96936f18cc5db5ddade3bd826774}
+
+
+Get the event streamer. 
+
+
+
+Definition at line 87 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+p\+Event\+Streamer.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event().
+
+
+\begin{DoxyCode}
+88 \{
+89   \textcolor{keywordflow}{return} m_pEventStreamer;
+90 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!get\+Maximum\+Queue\+Size@{get\+Maximum\+Queue\+Size}}
+\index{get\+Maximum\+Queue\+Size@{get\+Maximum\+Queue\+Size}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{get\+Maximum\+Queue\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Maximum\+Queue\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a36c326731a7e6a3d56a1d37bb334bafa}
+
+
+Get the maximum number of events that the client can store in its event queue. 
+
+
+
+Definition at line 113 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+maximum\+Queue\+Size.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+114 \{
+115   \textcolor{keywordflow}{return} m_maximumQueueSize;
+116 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!get\+Sub\+Event\+Identifier@{get\+Sub\+Event\+Identifier}}
+\index{get\+Sub\+Event\+Identifier@{get\+Sub\+Event\+Identifier}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{get\+Sub\+Event\+Identifier}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Sub\+Event\+Identifier (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventClient_ad3143137f96dab6b91ce2a0c1e9f2d21}
+
+
+Get the sub event identifier. 
+
+
+
+Definition at line 140 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+sub\+Event\+Identifier.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+141 \{
+142   \textcolor{keywordflow}{return} m_subEventIdentifier;
+143 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!get\+Update\+Mode@{get\+Update\+Mode}}
+\index{get\+Update\+Mode@{get\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{get\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Update\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_aafe333631227e6aa3a66cfd19a8b79c2}
+
+
+Whether the update mode is set. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a81a3b8cea6ac80fd86b4d4ed95d31dcb}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!is\+Connected\+To\+Service@{is\+Connected\+To\+Service}}
+\index{is\+Connected\+To\+Service@{is\+Connected\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{is\+Connected\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::is\+Connected\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a2fd723aa31328fa1b97632e1e2ac31dc}
+
+
+Whether the client is connected to the collector (server) 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_aa177def491c8eb9a10c2f2adfe0d9432}.
+
+
+
+Referenced by set\+Collector\+Name(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::stop\+Services().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!perform\+Service\+Connection@{perform\+Service\+Connection}}
+\index{perform\+Service\+Connection@{perform\+Service\+Connection}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{perform\+Service\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::perform\+Service\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a5d69c657028c105556a4b5897ce0ed0b}
+
+
+Workhorse of the service connection. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a50266fbdaed8b2728f9d6e373412fb07}.
+
+
+
+Referenced by connect\+To\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!perform\+Service\+Disconnection@{perform\+Service\+Disconnection}}
+\index{perform\+Service\+Disconnection@{perform\+Service\+Disconnection}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{perform\+Service\+Disconnection}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::perform\+Service\+Disconnection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_aefc43840571a501d5bb7296afed49926}
+
+
+Workhorse of the service connection. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a218c10d82a8d24f95b912d714018041b}.
+
+
+
+Referenced by disconnect\+From\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!push\+Event@{push\+Event}}
+\index{push\+Event@{push\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{push\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::push\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMEventClient_abe629415c01a7a00b0679f9d88d2da20}
+
+
+Push a new event in the event queue. 
+
+If the event queue has reaches its maximum size the front element of the queue is first deleted and popped.
+
+Listeners are notified of a 'push event' 
+
+Definition at line 184 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+event\+Queue, m\+\_\+listeners, m\+\_\+maximum\+Queue\+Size, and m\+\_\+mutex.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception().
+
+
+\begin{DoxyCode}
+185 \{
+186   \textcolor{keywordflow}{if}(NULL == pEvent)
+187     \textcolor{keywordflow}{return};
+188 
+189   pthread\_mutex\_lock(& this->m_mutex);
+190 
+191   \textcolor{keywordflow}{if}( m_eventQueue.size() == m_maximumQueueSize )
+192   \{
+193     \textcolor{keyword}{delete} m_eventQueue.front();
+194     m_eventQueue.pop();
+195   \}
+196 
+197   m_eventQueue.push(pEvent);
+198 
+199   \textcolor{comment}{// need unlock before notifying}
+200   pthread\_mutex\_unlock(& this->m_mutex );
+201 
+202   \textcolor{keywordflow}{for}(std::set<DQMEventClientListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+203       endIter != iter ; ++iter)
+204     (*iter)->eventPushed(\textcolor{keyword}{this});
+205 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!query\+Event@{query\+Event}}
+\index{query\+Event@{query\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{query\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::query\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$\&}]{p\+Event, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_ac885ac90ae365a2d6452f0836b23323c}
+
+
+Query an event to the collector (server) with a timeout and handle it without pushing it into the internal queue. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a57cf87d97f33281fda6cf0c10271155d}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!query\+Event@{query\+Event}}
+\index{query\+Event@{query\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{query\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::query\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a3ddc2fcf08a76390dbbfb1ee63b8efe8}
+
+
+Query an event to the collector. 
+
+A command is send to the collector in order to send back an event. This method does not wait for the event reception.
+
+To query a single event that is directly handled by the caller, use query\+Single\+Event().
+
+The received event is push in an internal event queue. 
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a90a7d76cb0d30c12e4435415fd00347b}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a4b1465a91d073d1c2adc957f3df5d8cd}
+
+
+Read settings from the xml handle. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a1f272b17a6207fd5f575487775069035}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_aa0b4bc69f0e96cc7c4191fdfe8e839f1}
+
+
+Remove a listener from this event client. 
+
+
+
+Definition at line 172 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+listeners, and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+173 \{
+174   scoped\_lock( & this->m_mutex);
+175 
+176   \textcolor{keywordflow}{if}(NULL == pListener)
+177     \textcolor{keywordflow}{return};
+178 
+179   m_listeners.erase(pListener);
+180 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!send\+Event@{send\+Event}}
+\index{send\+Event@{send\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{send\+Event}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::send\+Event (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a5c322b91355b4751235fad57ab650152}
+
+
+Send an event to the collector (server). 
+
+Possible only if a connection has been created (\doxyref{connect\+To\+Service()}{p.}{classdqm4hep_1_1DQMEventClient_a535302ffc201aff823c210d9a834937c}) and an event streamer set. 
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a79b251a13d340fac99bd32ef67fbfe46}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::process\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_ab81532be3cc27110b8295d7189805cd1}
+
+
+Set the collector to connect to. 
+
+Can set the name only if client not yet connected 
+
+Definition at line 58 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), and m\+\_\+collector\+Name.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{comment}{// if connected to service, can't change collector name}
+61   \textcolor{keywordflow}{if}( this->isConnectedToService() )
+62     \textcolor{keywordflow}{return};
+63 
+64   m_collectorName = collectorName;
+65 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!set\+Event\+Streamer@{set\+Event\+Streamer}}
+\index{set\+Event\+Streamer@{set\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{set\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Event\+Streamer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Streamer} $\ast$}]{p\+Event\+Streamer, }
+\item[{bool}]{owner = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a068fa99a364f790541d2ac911e2e624e}
+
+
+Set the streamer that will stream in/out the sent/received event(s). 
+
+No default streamer is provided. User must provide one before querying/sending events from/to collector (server). Note that the client does not own the streamer ! 
+
+Definition at line 76 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+event\+Streamer\+Owner, and m\+\_\+p\+Event\+Streamer.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+77 \{
+78   \textcolor{keywordflow}{if}( m_eventStreamerOwner && NULL != m_pEventStreamer )
+79     \textcolor{keyword}{delete} m_pEventStreamer;
+80 
+81   m_pEventStreamer = pEventStreamer;
+82   m_eventStreamerOwner = owner;
+83 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!set\+Maximum\+Queue\+Size@{set\+Maximum\+Queue\+Size}}
+\index{set\+Maximum\+Queue\+Size@{set\+Maximum\+Queue\+Size}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{set\+Maximum\+Queue\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Maximum\+Queue\+Size (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{queue\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a210936955c64682e7243b3efca7110cc}
+
+
+Set the queue size that stores the received events. 
+
+
+
+Definition at line 94 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+event\+Queue, m\+\_\+maximum\+Queue\+Size, and m\+\_\+mutex.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keywordflow}{if}( 0 == maxQueueSize )
+97     \textcolor{keywordflow}{return};
+98 
+99   m_maximumQueueSize = maxQueueSize;
+100 
+101   scoped\_lock( & this->m_mutex);
+102 
+103   \textcolor{comment}{// shrink the queue to fit the new max queue size}
+104   \textcolor{keywordflow}{while}( m_eventQueue.size() >  m_maximumQueueSize )
+105   \{
+106     \textcolor{keyword}{delete} m_eventQueue.front();
+107     m_eventQueue.pop();
+108   \}
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!set\+Sub\+Event\+Identifier@{set\+Sub\+Event\+Identifier}}
+\index{set\+Sub\+Event\+Identifier@{set\+Sub\+Event\+Identifier}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{set\+Sub\+Event\+Identifier}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Sub\+Event\+Identifier (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{identifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClient_a81d480f9afc5cf984bd2d7915f9961ad}
+
+
+Set the sub event identifier. 
+
+This string is sent while querying events. The received event will be a sub event matching this identifier 
+
+Reimplemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a13060fe0f26dcd57fab027fc2a3cb7e2}.
+
+
+
+Definition at line 133 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+sub\+Event\+Identifier.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::set\+Sub\+Event\+Identifier().
+
+
+\begin{DoxyCode}
+134 \{
+135   m_subEventIdentifier = identifier;
+136 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{update\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClient_a6fcfec76087d886b2a9923e4e1a027a9}
+
+
+Set the update mode. 
+
+If the update mode is set to true, a command is sent to the server in order to update the client as soon as an event is received in the collector server. 
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMDimEventClient_a12c8e0e2fd6668a79042d1ab31036516}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!take\+Event@{take\+Event}}
+\index{take\+Event@{take\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{take\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::take\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$\&}]{p\+Event}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventClient_a20618b3251bd9936f64d3caba6abdab3}
+
+
+Take an event from the event queue (pop front) and return the pointer to the caller. 
+
+The event is removed from the queue, meaning that the caller is responsible for the event deletion. If no event is available, the queue remains unchanged and the pointer is not set 
+
+Definition at line 147 of file D\+Q\+M\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+event\+Queue, and m\+\_\+mutex.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+148 \{
+149   scoped\_lock( & this->m_mutex);
+150 
+151   \textcolor{keywordflow}{if}( ! m_eventQueue.empty() )
+152   \{
+153     pEvent = m_eventQueue.front();
+154     m_eventQueue.pop();
+155   \}
+156 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+collector\+Name@{m\+\_\+collector\+Name}}
+\index{m\+\_\+collector\+Name@{m\+\_\+collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+collector\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a90cc5a303e3e0fbe868ef19432b27577}
+
+
+Definition at line 222 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by get\+Collector\+Name(), and set\+Collector\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+event\+Queue@{m\+\_\+event\+Queue}}
+\index{m\+\_\+event\+Queue@{m\+\_\+event\+Queue}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+event\+Queue}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Queue} dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+event\+Queue\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a3f7c87c26645c695d4faa877c76c4f68}
+
+
+Definition at line 224 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by clear\+Queue(), push\+Event(), set\+Maximum\+Queue\+Size(), and take\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+event\+Streamer\+Owner@{m\+\_\+event\+Streamer\+Owner}}
+\index{m\+\_\+event\+Streamer\+Owner@{m\+\_\+event\+Streamer\+Owner}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+event\+Streamer\+Owner}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+event\+Streamer\+Owner\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a8951595967bd385108082d6787869767}
+
+
+Definition at line 220 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by set\+Event\+Streamer(), and $\sim$\+D\+Q\+M\+Event\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+listeners@{m\+\_\+listeners}}
+\index{m\+\_\+listeners@{m\+\_\+listeners}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+listeners}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<${\bf D\+Q\+M\+Event\+Client\+Listener}$\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+listeners\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_afbb6de73b2240483acaa182cf00538a4}
+
+
+Definition at line 226 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by add\+Listener(), connect\+To\+Service(), disconnect\+From\+Service(), push\+Event(), and remove\+Listener().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+maximum\+Queue\+Size@{m\+\_\+maximum\+Queue\+Size}}
+\index{m\+\_\+maximum\+Queue\+Size@{m\+\_\+maximum\+Queue\+Size}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+maximum\+Queue\+Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+maximum\+Queue\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a2ad8b923c3afb9575cf85265b5d2e852}
+
+
+Definition at line 225 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by get\+Maximum\+Queue\+Size(), push\+Event(), and set\+Maximum\+Queue\+Size().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+mutex@{m\+\_\+mutex}}
+\index{m\+\_\+mutex@{m\+\_\+mutex}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+mutex\+\_\+t dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a0f9472daad6ac90f13f3604023572903}
+
+
+Definition at line 227 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by add\+Listener(), clear\+Queue(), D\+Q\+M\+Event\+Client(), push\+Event(), remove\+Listener(), set\+Maximum\+Queue\+Size(), take\+Event(), and $\sim$\+D\+Q\+M\+Event\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+p\+Event\+Streamer@{m\+\_\+p\+Event\+Streamer}}
+\index{m\+\_\+p\+Event\+Streamer@{m\+\_\+p\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+p\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Streamer}$\ast$ dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+p\+Event\+Streamer\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_a2c25d0a76a08bea2df52d95e006986ae}
+
+
+Definition at line 221 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by get\+Event\+Streamer(), set\+Event\+Streamer(), and $\sim$\+D\+Q\+M\+Event\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}!m\+\_\+sub\+Event\+Identifier@{m\+\_\+sub\+Event\+Identifier}}
+\index{m\+\_\+sub\+Event\+Identifier@{m\+\_\+sub\+Event\+Identifier}!dqm4hep\+::\+D\+Q\+M\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Event\+Client}}
+\subsubsection[{m\+\_\+sub\+Event\+Identifier}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::m\+\_\+sub\+Event\+Identifier\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventClient_ab87e955bc7d5c457269d62f0b599a01d}
+
+
+Definition at line 223 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+Referenced by get\+Sub\+Event\+Identifier(), and set\+Sub\+Event\+Identifier().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Client.\+h}\item 
+{\bf D\+Q\+M\+Event\+Client.\+cc}\end{DoxyCompactItemize}

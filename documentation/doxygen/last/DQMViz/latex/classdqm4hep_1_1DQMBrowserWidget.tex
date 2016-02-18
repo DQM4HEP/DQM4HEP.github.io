@@ -1,0 +1,1000 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Browser\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMBrowserWidget}\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Browser\+Widget}{p.}{classdqm4hep_1_1DQMBrowserWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Browser\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Browser\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMBrowserWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf update\+Collector\+List} ()
+\begin{DoxyCompactList}\small\item\em Update the collector list (combo box) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf key\+Press\+Event} (Q\+Key\+Event $\ast$)
+\begin{DoxyCompactList}\small\item\em Key pressed event emitted in the tree widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Browser\+Widget} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Browser\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+Q\+String {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Collector\+Selection} (int index)
+\item 
+void {\bf query\+Search} ()
+\begin{DoxyCompactList}\small\item\em Send the query for monitor element browsing on the collector. \end{DoxyCompactList}\item 
+void {\bf clear\+Search} ()
+\begin{DoxyCompactList}\small\item\em Clear the search interface. \end{DoxyCompactList}\item 
+void {\bf fill\+Module\+Name\+List} (const D\+Q\+M\+Monitor\+Element\+Info\+List \&name\+List)
+\begin{DoxyCompactList}\small\item\em Fill the module name list. \end{DoxyCompactList}\item 
+void {\bf check\+Item} (Q\+Tree\+Widget\+Item $\ast$p\+Item, int)
+\begin{DoxyCompactList}\small\item\em Check/uncheck the given item. \end{DoxyCompactList}\item 
+void {\bf check\+Selected\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Check all the selected items. \end{DoxyCompactList}\item 
+void {\bf handle\+Key\+Press\+Event} (Q\+Key\+Event $\ast$p\+Key\+Event)
+\begin{DoxyCompactList}\small\item\em Handle the key press event. \end{DoxyCompactList}\item 
+void {\bf select\+All\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Select all items. \end{DoxyCompactList}\item 
+void {\bf handle\+Update\+Button\+Clicked} ()
+\item 
+void {\bf handle\+Replace\+Button\+Clicked} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf build\+Monitor\+Element\+Info\+List} (D\+Q\+M\+Monitor\+Element\+Info\+List \&info\+List) const 
+\begin{DoxyCompactList}\small\item\em Build the monitor element info list of the current selection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+Q\+Combo\+Box $\ast$ {\bf m\+\_\+p\+Collector\+Name\+Combo\+Box}
+\item 
+Q\+Line\+Edit $\ast$ {\bf m\+\_\+p\+Module\+Name\+Edit}
+\item 
+Q\+Line\+Edit $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Name\+Edit}
+\item 
+Q\+Combo\+Box $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box}
+\item 
+Q\+Tree\+Widget $\ast$ {\bf m\+\_\+p\+Search\+Tree\+Widget}
+\item 
+Q\+Group\+Box $\ast$ {\bf m\+\_\+p\+Option\+Group\+Box}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Replace\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Append\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Close\+Button}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Browser\+Widget}{p.}{classdqm4hep_1_1DQMBrowserWidget} class. 
+
+A browser to find monitor elements over the network. Uses a Dim\+Browser to perform the service finding, a monitor element client as the interface to the server and a qt handler for request call back functions received by the server. 
+
+Definition at line 58 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!D\+Q\+M\+Browser\+Widget@{D\+Q\+M\+Browser\+Widget}}
+\index{D\+Q\+M\+Browser\+Widget@{D\+Q\+M\+Browser\+Widget}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{D\+Q\+M\+Browser\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::\+D\+Q\+M\+Browser\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMBrowserWidget_a4406e30b8d4bd73573edfb3672e818fd}
+
+
+Constructor. 
+
+
+
+Definition at line 55 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References check\+Item(), clear\+Search(), handle\+Collector\+Selection(), handle\+Key\+Press\+Event(), handle\+Replace\+Button\+Clicked(), handle\+Update\+Button\+Clicked(), key\+Press\+Event(), m\+\_\+p\+Append\+Button, m\+\_\+p\+Close\+Button, m\+\_\+p\+Collector\+Name\+Combo\+Box, m\+\_\+p\+Module\+Name\+Edit, m\+\_\+p\+Monitor\+Element\+Name\+Edit, m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box, m\+\_\+p\+Option\+Group\+Box, m\+\_\+p\+Replace\+Button, m\+\_\+p\+Search\+Tree\+Widget, query\+Search(), and update\+Collector\+List().
+
+
+\begin{DoxyCode}
+55                                                              :
+56     QWidget(0),
+57     m_pMonitoring(pMonitoring),
+58     m_pMonitorElementClient(NULL)
+59 \{
+60   setLayout(\textcolor{keyword}{new} QVBoxLayout());
+61 
+62   \textcolor{keywordtype}{char} *pDnsNode = getenv(\textcolor{stringliteral}{"DIM\_DNS\_NODE"});
+63   QString dimDnsNode = pDnsNode == NULL ? \textcolor{stringliteral}{"UNKNOWN"} : pDnsNode;
+64 
+65   \textcolor{comment}{// monitor element collector}
+66   QGroupBox *pCollectorGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Monitor element collectors (DIM\_DNS\_NODE = "} + dimDnsNode 
+      + \textcolor{stringliteral}{")"});
+67   QFormLayout *pCollectorLayout = \textcolor{keyword}{new} QFormLayout();
+68   pCollectorGroupBox->setLayout(pCollectorLayout);
+69   layout()->addWidget(pCollectorGroupBox);
+70 
+71   QWidget *pCollectorNameWidget = \textcolor{keyword}{new} QWidget();
+72   QHBoxLayout *pCollectorNameLayout = \textcolor{keyword}{new} QHBoxLayout();
+73   pCollectorNameWidget->setLayout(pCollectorNameLayout);
+74   pCollectorLayout->addRow(\textcolor{stringliteral}{"Monitor element collector : "}, pCollectorNameWidget);
+75   m_pCollectorNameComboBox = \textcolor{keyword}{new} QComboBox();
+76   pCollectorNameLayout->addWidget(m_pCollectorNameComboBox);
+77   QPushButton *pUpdateCollectorListButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Update list"});
+78   pUpdateCollectorListButton->setMaximumWidth(150);
+79   pCollectorNameLayout->addWidget(pUpdateCollectorListButton);
+80 
+81   \textcolor{comment}{// search options with form and buttons}
+82   m_pOptionGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Search option"}, \textcolor{keyword}{this});
+83   QFormLayout *pOptionFormLayout = \textcolor{keyword}{new} QFormLayout();
+84   m_pOptionGroupBox->setLayout(pOptionFormLayout);
+85   m_pModuleNameEdit = \textcolor{keyword}{new} QLineEdit();
+86   pOptionFormLayout->addRow(\textcolor{stringliteral}{"Module name"}, m_pModuleNameEdit);
+87   m_pMonitorElementNameEdit = \textcolor{keyword}{new} QLineEdit();
+88   pOptionFormLayout->addRow(\textcolor{stringliteral}{"Monitor element name"}, m_pMonitorElementNameEdit);
+89   m_pMonitorElementTypeComboBox = \textcolor{keyword}{new} QComboBox();
+90   m_pMonitorElementTypeComboBox->addItem(\textcolor{stringliteral}{"All"}, NO\_ELEMENT\_TYPE);
+91   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(INT\_ELEMENT\_TYPE).c\_str(), 
+      INT\_ELEMENT\_TYPE);
+92   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(REAL\_ELEMENT\_TYPE).c\_str(), 
+      REAL\_ELEMENT\_TYPE);
+93   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(SHORT\_ELEMENT\_TYPE).c\_str(), 
+      SHORT\_ELEMENT\_TYPE);
+94   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(STRING\_ELEMENT\_TYPE).c\_str(), 
+      STRING\_ELEMENT\_TYPE);
+95   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE).c\_str(),
+       INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE);
+96   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(REAL\_HISTOGRAM\_1D\_ELEMENT\_TYPE).c\_str()
+      , REAL\_HISTOGRAM\_1D\_ELEMENT\_TYPE);
+97   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(SHORT\_HISTOGRAM\_1D\_ELEMENT\_TYPE).c\_str(
+      ), SHORT\_HISTOGRAM\_1D\_ELEMENT\_TYPE);
+98   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE).c\_str()
+      , CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE);
+99   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(INT\_HISTOGRAM\_2D\_ELEMENT\_TYPE).c\_str(),
+       INT\_HISTOGRAM\_2D\_ELEMENT\_TYPE);
+100   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(REAL\_HISTOGRAM\_2D\_ELEMENT\_TYPE).c\_str()
+      , REAL\_HISTOGRAM\_2D\_ELEMENT\_TYPE);
+101   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(CHAR\_HISTOGRAM\_2D\_ELEMENT\_TYPE).c\_str()
+      , CHAR\_HISTOGRAM\_2D\_ELEMENT\_TYPE);
+102   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(SHORT\_HISTOGRAM\_2D\_ELEMENT\_TYPE).c\_str(
+      ), SHORT\_HISTOGRAM\_2D\_ELEMENT\_TYPE);
+103   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(PROFILE\_1D\_ELEMENT\_TYPE).c\_str(), 
+      PROFILE\_1D\_ELEMENT\_TYPE);
+104   m_pMonitorElementTypeComboBox->addItem(monitorElementTypeToString(PROFILE\_2D\_ELEMENT\_TYPE).c\_str(), 
+      PROFILE\_2D\_ELEMENT\_TYPE);
+105   pOptionFormLayout->addRow(\textcolor{stringliteral}{"Monitor element type"}, 
+      m_pMonitorElementTypeComboBox);
+106   QWidget *pSearchButtonAreaWidget = \textcolor{keyword}{new} QWidget();
+107   pOptionFormLayout->addRow(\textcolor{stringliteral}{""}, pSearchButtonAreaWidget);
+108   QHBoxLayout *pSearchAreaLayout = \textcolor{keyword}{new} QHBoxLayout();
+109   pSearchButtonAreaWidget->setLayout(pSearchAreaLayout);
+110   QPushButton *pStartSearchButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Search"});
+111   pStartSearchButton->setMaximumWidth(150);
+112   pSearchAreaLayout->addWidget(pStartSearchButton);
+113   QPushButton *pClearSelectionButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Clear"});
+114   pClearSelectionButton->setMaximumWidth(150);
+115   pSearchAreaLayout->addWidget(pClearSelectionButton);
+116   layout()->addWidget(m_pOptionGroupBox);
+117 
+118   \textcolor{comment}{// search result main view}
+119   QGroupBox *pSearchResultGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Search result"});
+120   layout()->addWidget(pSearchResultGroupBox);
+121   QHBoxLayout *pSearchResultLayout = \textcolor{keyword}{new} QHBoxLayout();
+122   pSearchResultGroupBox->setLayout(pSearchResultLayout);
+123   m_pSearchTreeWidget = \textcolor{keyword}{new} QTreeWidget();
+124   m_pSearchTreeWidget->setHeaderLabels(QStringList() << \textcolor{stringliteral}{"Module"} << \textcolor{stringliteral}{"Directory"} << \textcolor{stringliteral}{"Name"} << \textcolor{stringliteral}{"Type"});
+125   pSearchResultLayout->addWidget(m_pSearchTreeWidget);
+126 
+127   \textcolor{comment}{// bottom button area}
+128   QWidget *pBottomButtonAreaWidget = \textcolor{keyword}{new} QWidget();
+129   layout()->addWidget(pBottomButtonAreaWidget);
+130   QHBoxLayout *pBottomAreaLayout = \textcolor{keyword}{new} QHBoxLayout();
+131   pBottomButtonAreaWidget->setLayout(pBottomAreaLayout);
+132 
+133   m_pReplaceButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Replace"});
+134   m_pReplaceButton->setMaximumWidth(150);
+135   m_pReplaceButton->setEnabled(\textcolor{keyword}{false});
+136   pBottomAreaLayout->addWidget(m_pReplaceButton);
+137 
+138   m_pAppendButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Append"});
+139   m_pAppendButton->setMaximumWidth(150);
+140   m_pAppendButton->setEnabled(\textcolor{keyword}{false});
+141   pBottomAreaLayout->addWidget(m_pAppendButton);
+142 
+143   m_pCloseButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Close"});
+144   m_pCloseButton->setMaximumWidth(150);
+145   pBottomAreaLayout->addWidget(m_pCloseButton);
+146 
+147   connect(m_pCloseButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(close()));
+148   connect(pUpdateCollectorListButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      updateCollectorList()));
+149 
+150   connect(m_pCollectorNameComboBox, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      handleCollectorSelection(\textcolor{keywordtype}{int})));
+151   connect(pClearSelectionButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(clearSearch()));
+152   connect(pStartSearchButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(querySearch()));
+153   connect(m_pSearchTreeWidget, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, \textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      checkItem(QTreeWidgetItem*, \textcolor{keywordtype}{int})));
+154   connect(\textcolor{keyword}{this}, SIGNAL(keyPressEvent(QKeyEvent*)), \textcolor{keyword}{this}, SLOT(
+      handleKeyPressEvent(QKeyEvent*)));
+155   connect(m_pAppendButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      handleUpdateButtonClicked()));
+156   connect(m_pReplaceButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      handleReplaceButtonClicked()));
+157 
+158   updateCollectorList();
+159 
+160   resize(700, 700);
+161 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!````~D\+Q\+M\+Browser\+Widget@{$\sim$\+D\+Q\+M\+Browser\+Widget}}
+\index{````~D\+Q\+M\+Browser\+Widget@{$\sim$\+D\+Q\+M\+Browser\+Widget}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Browser\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::$\sim$\+D\+Q\+M\+Browser\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMBrowserWidget_ac5d62dc4a89aa1d7304a7330d4836fd5}
+
+
+Destructor. 
+
+
+
+Definition at line 165 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Client.
+
+
+\begin{DoxyCode}
+166 \{
+167   \textcolor{keywordflow}{if}(m_pMonitorElementClient)
+168     m_pMonitorElementClient->deleteLater();
+169 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!build\+Monitor\+Element\+Info\+List@{build\+Monitor\+Element\+Info\+List}}
+\index{build\+Monitor\+Element\+Info\+List@{build\+Monitor\+Element\+Info\+List}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{build\+Monitor\+Element\+Info\+List}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::build\+Monitor\+Element\+Info\+List (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Info\+List \&}]{info\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a6c3246d59774f957c42b4f4f403b8bd9}
+
+
+Build the monitor element info list of the current selection. 
+
+
+
+Definition at line 384 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Search\+Tree\+Widget.
+
+
+
+Referenced by handle\+Replace\+Button\+Clicked(), and handle\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+385 \{
+386   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pSearchTreeWidget->topLevelItemCount() ; i++)
+387   \{
+388     \textcolor{keywordflow}{if}(Qt::Checked == m_pSearchTreeWidget->topLevelItem(i)->checkState(0))
+389     \{
+390       DQMMonitorElementInfo info;
+391 
+392       info.m\_moduleName = m_pSearchTreeWidget->topLevelItem(i)->text(0).toStdString();
+393       info.m\_monitorElementFullPath = m_pSearchTreeWidget->topLevelItem(i)->text(1).toStdString();
+394       info.m\_monitorElementName = m_pSearchTreeWidget->topLevelItem(i)->text(2).toStdString();
+395       info.m\_monitorElementType = m_pSearchTreeWidget->topLevelItem(i)->text(3).toStdString();
+396       info.m\_monitorElementDescription = m_pSearchTreeWidget->topLevelItem(i)->toolTip(0).toStdString();
+397 
+398       infoList.push\_back(info);
+399     \}
+400   \}
+401 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!check\+Item@{check\+Item}}
+\index{check\+Item@{check\+Item}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{check\+Item}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::check\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+Widget\+Item $\ast$}]{p\+Item, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a8580a0179efc06b6abd93f132d3984e0}
+
+
+Check/uncheck the given item. 
+
+
+
+Definition at line 332 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+333 \{
+334   Qt::CheckState state = pItem->checkState(0);
+335   pItem->setCheckState(0, state == Qt::Checked ? Qt::Unchecked : Qt::Checked);
+336 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!check\+Selected\+Elements@{check\+Selected\+Elements}}
+\index{check\+Selected\+Elements@{check\+Selected\+Elements}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{check\+Selected\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::check\+Selected\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_abdc1d55fe66b90d63d84797d3f0916eb}
+
+
+Check all the selected items. 
+
+
+
+Definition at line 350 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Search\+Tree\+Widget.
+
+
+
+Referenced by handle\+Key\+Press\+Event().
+
+
+\begin{DoxyCode}
+351 \{
+352   QList<QTreeWidgetItem *> selectedItems = m_pSearchTreeWidget->selectedItems();
+353 
+354   \textcolor{keywordflow}{if}(selectedItems.isEmpty())
+355     \textcolor{keywordflow}{return};
+356 
+357   Qt::CheckState state = Qt::Checked;
+358 
+359   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<selectedItems.size() ; i++)
+360   \{
+361     \textcolor{keywordflow}{if}(i == 0)
+362     \{
+363       QTreeWidgetItem *pFirstItem = selectedItems.at(i);
+364 
+365       \textcolor{keywordflow}{if}(pFirstItem->checkState(0) == Qt::Checked)
+366         state = Qt::Unchecked;
+367     \}
+368 
+369     QTreeWidgetItem *pItem = selectedItems.at(i);
+370     pItem->setCheckState(0, state);
+371   \}
+372 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!clear\+Search@{clear\+Search}}
+\index{clear\+Search@{clear\+Search}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{clear\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::clear\+Search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_aaec84c952b61584e4179ccb65dc755c4}
+
+
+Clear the search interface. 
+
+
+
+Definition at line 273 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Module\+Name\+Edit, m\+\_\+p\+Monitor\+Element\+Name\+Edit, m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box, and m\+\_\+p\+Search\+Tree\+Widget.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget(), handle\+Collector\+Selection(), and update\+Collector\+List().
+
+
+\begin{DoxyCode}
+274 \{
+275   m_pModuleNameEdit->clear();
+276   m_pMonitorElementNameEdit->clear();
+277   m_pMonitorElementTypeComboBox->setCurrentIndex(0);
+278   m_pSearchTreeWidget->clear();
+279 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!fill\+Module\+Name\+List@{fill\+Module\+Name\+List}}
+\index{fill\+Module\+Name\+List@{fill\+Module\+Name\+List}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{fill\+Module\+Name\+List}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::fill\+Module\+Name\+List (
+\begin{DoxyParamCaption}
+\item[{const D\+Q\+M\+Monitor\+Element\+Info\+List \&}]{name\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a2adda23c93a75cf8e52e73ec7d9f75a4}
+
+
+Fill the module name list. 
+
+
+
+Definition at line 298 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Search\+Tree\+Widget.
+
+
+
+Referenced by handle\+Collector\+Selection().
+
+
+\begin{DoxyCode}
+299 \{
+300   m_pSearchTreeWidget->clear();
+301 
+302   \textcolor{keywordflow}{if}(nameList.empty())
+303     \textcolor{keywordflow}{return};
+304 
+305   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<nameList.size() ; i++)
+306   \{
+307     QString moduleName = nameList.at(i).m\_moduleName.c\_str();
+308     QString monitorElementFullPath = nameList.at(i).m\_monitorElementFullPath.c\_str();
+309     QString monitorElementName = nameList.at(i).m\_monitorElementName.c\_str();
+310     QString monitorElementType = nameList.at(i).m\_monitorElementType.c\_str();
+311     QString monitorElementDescription = nameList.at(i).m\_monitorElementDescription.c\_str();
+312 
+313     QStringList itemColumns;
+314     itemColumns << moduleName << monitorElementFullPath << monitorElementName << monitorElementType;
+315 
+316     QTreeWidgetItem *pItem = \textcolor{keyword}{new} QTreeWidgetItem(itemColumns);
+317 
+318     pItem->setCheckState(0, Qt::Checked);
+319     pItem->setToolTip(0, monitorElementDescription);
+320     pItem->setToolTip(1, monitorElementDescription);
+321     pItem->setToolTip(2, monitorElementDescription);
+322     pItem->setToolTip(3, monitorElementDescription);
+323 
+324     m_pSearchTreeWidget->addTopLevelItem(pItem);
+325   \}
+326 
+327   m_pSearchTreeWidget->header()->resizeSections(QHeaderView::Stretch);
+328 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMBrowserWidget_a730ffbb078275be046d612caa8a62a09}
+
+
+Get the collector name. 
+
+
+
+Definition at line 180 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Name\+Combo\+Box.
+
+
+
+Referenced by handle\+Replace\+Button\+Clicked(), handle\+Update\+Button\+Clicked(), and update\+Collector\+List().
+
+
+\begin{DoxyCode}
+181 \{
+182   \textcolor{keywordflow}{if}(m_pCollectorNameComboBox->currentIndex() != 0)
+183     \textcolor{keywordflow}{return} m_pCollectorNameComboBox->currentText();
+184 
+185   \textcolor{keywordflow}{return} QString();
+186 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMBrowserWidget_a5c969f26b48a5c5c63ae5aa202faabf2}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 173 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by handle\+Collector\+Selection(), handle\+Replace\+Button\+Clicked(), and handle\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+174 \{
+175   \textcolor{keywordflow}{return} m_pMonitoring;
+176 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!handle\+Collector\+Selection@{handle\+Collector\+Selection}}
+\index{handle\+Collector\+Selection@{handle\+Collector\+Selection}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{handle\+Collector\+Selection}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Collector\+Selection (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a9b5482b0637abd55d602530ff67de4ad}
+
+
+Definition at line 217 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References clear\+Search(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Client(), fill\+Module\+Name\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), get\+Monitoring(), m\+\_\+p\+Append\+Button, m\+\_\+p\+Collector\+Name\+Combo\+Box, m\+\_\+p\+Monitor\+Element\+Client, m\+\_\+p\+Replace\+Button, and query\+Search().
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+218 \{
+219   \textcolor{keywordflow}{if}(index < 0)
+220     \textcolor{keywordflow}{return};
+221 
+222   \textcolor{keywordflow}{if}(index == 0)
+223   \{
+224     clearSearch();
+225 
+226     \textcolor{keywordflow}{if}(m_pMonitorElementClient)
+227     \{
+228       m_pMonitorElementClient->deleteLater();
+229       m_pMonitorElementClient = 0;
+230     \}
+231 
+232     m_pReplaceButton->setEnabled(\textcolor{keyword}{false});
+233     m_pAppendButton->setEnabled(\textcolor{keyword}{false});
+234 
+235     \textcolor{keywordflow}{return};
+236   \}
+237 
+238   m_pReplaceButton->setEnabled(\textcolor{keyword}{true});
+239   m_pAppendButton->setEnabled(\textcolor{keyword}{true});
+240 
+241   QString newCollectorName = m_pCollectorNameComboBox->itemText(index);
+242 
+243   \textcolor{keywordflow}{if}(m_pMonitorElementClient)
+244   \{
+245     \textcolor{keywordtype}{bool} sameCollectorName =
+246         newCollectorName.toStdString()
+247         ==
+248         m_pMonitorElementClient->getMonitorElementClient()->getCollectorName();
+249 
+250     \textcolor{keywordflow}{if}(!sameCollectorName)
+251     \{
+252       m_pMonitorElementClient->deleteLater();
+253       m_pMonitorElementClient = 0;
+254     \}
+255   \}
+256 
+257 
+258   \textcolor{keywordflow}{if}(!m_pMonitorElementClient)
+259   \{
+260     m_pMonitorElementClient = this->getMonitoring()->getController()->
+      createClient(newCollectorName.toStdString());
+261     m_pMonitorElementClient->getMonitorElementClient()->connectToService();
+262 
+263     connect(m_pMonitorElementClient, SIGNAL(monitorElementListNameReceived(\textcolor{keyword}{const} DQMMonitorElementInfoList 
+      &)),
+264         \textcolor{keyword}{this}, SLOT(fillModuleNameList(\textcolor{keyword}{const} DQMMonitorElementInfoList &)));
+265 
+266     clearSearch();
+267     querySearch();
+268   \}
+269 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!handle\+Key\+Press\+Event@{handle\+Key\+Press\+Event}}
+\index{handle\+Key\+Press\+Event@{handle\+Key\+Press\+Event}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{handle\+Key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{p\+Key\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_aae8d192a53bbb61afef7b1eaea5c0cc6}
+
+
+Handle the key press event. 
+
+
+\begin{DoxyItemize}
+\item Key Alt+\+A \+: select all elements in the list
+\item Key enter \+: check all the selected items 
+\end{DoxyItemize}
+
+Definition at line 340 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References check\+Selected\+Elements(), and select\+All\+Elements().
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+341 \{
+342   \textcolor{keywordflow}{if}(pKeyEvent->key() == Qt::Key\_Return)
+343     checkSelectedElements();
+344   \textcolor{keywordflow}{if}(pKeyEvent->key() == Qt::Key\_A)
+345     selectAllElements();
+346 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!handle\+Replace\+Button\+Clicked@{handle\+Replace\+Button\+Clicked}}
+\index{handle\+Replace\+Button\+Clicked@{handle\+Replace\+Button\+Clicked}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{handle\+Replace\+Button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Replace\+Button\+Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a57da030ef6f77229a57640e60fea277a}
+
+
+Definition at line 424 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References build\+Monitor\+Element\+Info\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+View\+And\+Model(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Empty\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Client(), get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), and get\+Monitoring().
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+425 \{
+426   DQMMonitorElementInfoList infoList;
+427   this->buildMonitorElementInfoList(infoList);
+428 
+429   std::string collectorName = this->getCollectorName().toStdString();
+430 
+431   \textcolor{keywordflow}{if}(infoList.empty() || collectorName.empty())
+432     \textcolor{keywordflow}{return};
+433 
+434   this->getMonitoring()->getController()->clearViewAndModel();
+435 
+436   \textcolor{comment}{// create the client instance (owned by the controller)}
+437   this->getMonitoring()->getController()->getClient(collectorName);
+438 
+439   \textcolor{comment}{// create the list in view}
+440   this->getMonitoring()->getController()->createEmptyMonitorElements(collectorName, infoList);
+441 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!handle\+Update\+Button\+Clicked@{handle\+Update\+Button\+Clicked}}
+\index{handle\+Update\+Button\+Clicked@{handle\+Update\+Button\+Clicked}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{handle\+Update\+Button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Update\+Button\+Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_aa93a957f87377f6a91c354d6ce246273}
+
+
+Definition at line 405 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References build\+Monitor\+Element\+Info\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Empty\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Client(), get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), and get\+Monitoring().
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+406 \{
+407   DQMMonitorElementInfoList infoList;
+408   this->buildMonitorElementInfoList(infoList);
+409 
+410   std::string collectorName = this->getCollectorName().toStdString();
+411 
+412   \textcolor{keywordflow}{if}(infoList.empty() || collectorName.empty())
+413     \textcolor{keywordflow}{return};
+414 
+415   \textcolor{comment}{// create the client instance (owned by the controller)}
+416   this->getMonitoring()->getController()->getClient(collectorName);
+417 
+418   \textcolor{comment}{// create the list in view}
+419   this->getMonitoring()->getController()->createEmptyMonitorElements(collectorName, infoList);
+420 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!key\+Press\+Event@{key\+Press\+Event}}
+\index{key\+Press\+Event@{key\+Press\+Event}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{key\+Press\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::key\+Press\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Key\+Event $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMBrowserWidget_a7f0671cef326a5ddc9f2ec2544152ce1}
+
+
+Key pressed event emitted in the tree widget. 
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!query\+Search@{query\+Search}}
+\index{query\+Search@{query\+Search}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{query\+Search}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::query\+Search (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a3c1831ee701496212b291cae2a2e6811}
+
+
+Send the query for monitor element browsing on the collector. 
+
+
+
+Definition at line 283 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), m\+\_\+p\+Module\+Name\+Edit, m\+\_\+p\+Monitor\+Element\+Client, m\+\_\+p\+Monitor\+Element\+Name\+Edit, and m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget(), and handle\+Collector\+Selection().
+
+
+\begin{DoxyCode}
+284 \{
+285   \textcolor{keywordflow}{if}(!m_pMonitorElementClient)
+286     \textcolor{keywordflow}{return};
+287 
+288   DQMMonitorElementListNameRequest request;
+289   request.m\_moduleName = m_pModuleNameEdit->text().toStdString();
+290   request.m\_monitorElementName = m_pMonitorElementNameEdit->text().toStdString();
+291   request.m\_monitorElementType = \textcolor{keyword}{static\_cast<}DQMMonitorElementType\textcolor{keyword}{>}(
+      m_pMonitorElementTypeComboBox->currentIndex());
+292 
+293   m_pMonitorElementClient->getMonitorElementClient()->queryAvailableMonitorElements(request);
+294 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!select\+All\+Elements@{select\+All\+Elements}}
+\index{select\+All\+Elements@{select\+All\+Elements}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{select\+All\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::select\+All\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_a57fa5279c4ca3f079bbbbfbea6f84019}
+
+
+Select all items. 
+
+
+
+Definition at line 376 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Search\+Tree\+Widget.
+
+
+
+Referenced by handle\+Key\+Press\+Event().
+
+
+\begin{DoxyCode}
+377 \{
+378   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pSearchTreeWidget->topLevelItemCount() ; i++)
+379     m_pSearchTreeWidget->topLevelItem(i)->setSelected(\textcolor{keyword}{true});
+380 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!update\+Collector\+List@{update\+Collector\+List}}
+\index{update\+Collector\+List@{update\+Collector\+List}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{update\+Collector\+List}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::update\+Collector\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMBrowserWidget_af6a66331a0de9c8100cb30100f693080}
+
+
+Update the collector list (combo box) 
+
+
+
+Definition at line 190 of file D\+Q\+M\+Browser\+Widget.\+cc.
+
+
+
+References clear\+Search(), get\+Collector\+Name(), and m\+\_\+p\+Collector\+Name\+Combo\+Box.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+
+\begin{DoxyCode}
+191 \{
+192   QString collectorName = getCollectorName();
+193 
+194   StringVector collectorList = DQMNetworkTool::getMonitorElementCollectors();
+195   m_pCollectorNameComboBox->clear();
+196   m_pCollectorNameComboBox->addItem(\textcolor{stringliteral}{"-- Collector list --"});
+197 
+198   \textcolor{keywordflow}{for}(StringVector::iterator iter = collectorList.begin() , endIter = collectorList.end() ;
+199       endIter != iter ; ++iter)
+200     m_pCollectorNameComboBox->addItem(iter->c\_str());
+201 
+202   \textcolor{comment}{// retrieve the collector in the new list}
+203   \textcolor{keywordtype}{int} collectorIndex = m_pCollectorNameComboBox->findText(collectorName);
+204 
+205   \textcolor{keywordflow}{if}(collectorIndex > 0)
+206   \{
+207     m_pCollectorNameComboBox->setCurrentIndex(collectorIndex);
+208   \}
+209   \textcolor{keywordflow}{else}
+210   \{
+211     clearSearch();
+212   \}
+213 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Append\+Button@{m\+\_\+p\+Append\+Button}}
+\index{m\+\_\+p\+Append\+Button@{m\+\_\+p\+Append\+Button}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Append\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Append\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a8c5472c82f915242b3f6185922029ad6}
+
+
+Definition at line 148 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget(), and handle\+Collector\+Selection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Close\+Button@{m\+\_\+p\+Close\+Button}}
+\index{m\+\_\+p\+Close\+Button@{m\+\_\+p\+Close\+Button}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Close\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Close\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_ad10799e1759a1e482e454d3b63941ddd}
+
+
+Definition at line 149 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Collector\+Name\+Combo\+Box@{m\+\_\+p\+Collector\+Name\+Combo\+Box}}
+\index{m\+\_\+p\+Collector\+Name\+Combo\+Box@{m\+\_\+p\+Collector\+Name\+Combo\+Box}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Collector\+Name\+Combo\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Collector\+Name\+Combo\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a2b892bdd1da092e17e7a7f2d5a4503c1}
+
+
+Definition at line 141 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget(), get\+Collector\+Name(), handle\+Collector\+Selection(), and update\+Collector\+List().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Module\+Name\+Edit@{m\+\_\+p\+Module\+Name\+Edit}}
+\index{m\+\_\+p\+Module\+Name\+Edit@{m\+\_\+p\+Module\+Name\+Edit}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Module\+Name\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Module\+Name\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a783147773fdf69fb2d36c460912b3ba6}
+
+
+Definition at line 142 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by clear\+Search(), D\+Q\+M\+Browser\+Widget(), and query\+Search().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Monitor\+Element\+Client@{m\+\_\+p\+Monitor\+Element\+Client}}
+\index{m\+\_\+p\+Monitor\+Element\+Client@{m\+\_\+p\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Monitor\+Element\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a27750987d5e7721058f5f585d8af112f}
+
+
+Definition at line 151 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by handle\+Collector\+Selection(), query\+Search(), and $\sim$\+D\+Q\+M\+Browser\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Monitor\+Element\+Name\+Edit@{m\+\_\+p\+Monitor\+Element\+Name\+Edit}}
+\index{m\+\_\+p\+Monitor\+Element\+Name\+Edit@{m\+\_\+p\+Monitor\+Element\+Name\+Edit}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Name\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Monitor\+Element\+Name\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_aa4d776d003152cb015d53fd5764b728e}
+
+
+Definition at line 143 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by clear\+Search(), D\+Q\+M\+Browser\+Widget(), and query\+Search().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box@{m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box}}
+\index{m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box@{m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Monitor\+Element\+Type\+Combo\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_ae448c630a6aca69f8cbdc40468196105}
+
+
+Definition at line 144 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by clear\+Search(), D\+Q\+M\+Browser\+Widget(), and query\+Search().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a90f298edd9f25dd7b50aaa26006a1172}
+
+
+Definition at line 139 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Option\+Group\+Box@{m\+\_\+p\+Option\+Group\+Box}}
+\index{m\+\_\+p\+Option\+Group\+Box@{m\+\_\+p\+Option\+Group\+Box}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Option\+Group\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Group\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Option\+Group\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_a5418b718a927278c893b3b931e07d0ad}
+
+
+Definition at line 146 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Replace\+Button@{m\+\_\+p\+Replace\+Button}}
+\index{m\+\_\+p\+Replace\+Button@{m\+\_\+p\+Replace\+Button}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Replace\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Replace\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_ae3ba3156beef2fdae1540457db806cd6}
+
+
+Definition at line 147 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Browser\+Widget(), and handle\+Collector\+Selection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}!m\+\_\+p\+Search\+Tree\+Widget@{m\+\_\+p\+Search\+Tree\+Widget}}
+\index{m\+\_\+p\+Search\+Tree\+Widget@{m\+\_\+p\+Search\+Tree\+Widget}!dqm4hep\+::\+D\+Q\+M\+Browser\+Widget@{dqm4hep\+::\+D\+Q\+M\+Browser\+Widget}}
+\subsubsection[{m\+\_\+p\+Search\+Tree\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tree\+Widget$\ast$ dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::m\+\_\+p\+Search\+Tree\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMBrowserWidget_acdbc5d7e1ed29a581fc021ad691e420a}
+
+
+Definition at line 145 of file D\+Q\+M\+Browser\+Widget.\+h.
+
+
+
+Referenced by build\+Monitor\+Element\+Info\+List(), check\+Selected\+Elements(), clear\+Search(), D\+Q\+M\+Browser\+Widget(), fill\+Module\+Name\+List(), and select\+All\+Elements().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Browser\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Browser\+Widget.\+cc}\end{DoxyCompactItemize}

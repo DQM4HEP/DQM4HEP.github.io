@@ -1,0 +1,274 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Cluster\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMClusterStreamer}\index{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+Cluster\+Streamer}{p.}{classdqm4hep_1_1DQMClusterStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Cluster\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMClusterStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize an Cluster. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a Cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Cluster\+Streamer}{p.}{classdqm4hep_1_1DQMClusterStreamer} class. 
+
+Definition at line 209 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMClusterStreamer_ae63075575f5da2b6aa1fe0319e54171a}
+
+
+Deserialize a Cluster. 
+
+The object is allocated in this function 
+
+Definition at line 1000 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+1001 \{
+1002   IMPL::ClusterImpl *pCluster = \textcolor{keyword}{new} IMPL::ClusterImpl();
+1003 
+1004   \textcolor{keywordflow}{try}
+1005   \{
+1006     dqm_int type = 0;
+1007     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(type));
+1008 
+1009     std::bitset<32> clusterBitSet(type);
+1010 
+1011     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<clusterBitSet.size() ; i++)
+1012       pCluster->setTypeBit(i, clusterBitSet[i]);
+1013 
+1014     dqm_float energy = 0.f;
+1015     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(energy));
+1016     pCluster->setEnergy(energy);
+1017 
+1018     dqm_float energyError = 0;
+1019     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(energyError));
+1020     pCluster->setEnergyError(energyError);
+1021 
+1022     dqm_float *pPosition = 0;
+1023     dqm_uint nPos = 0;
+1024     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(pPosition, nPos));
+1025 
+1026     \textcolor{keywordflow}{if}(nPos != 3)
+1027       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+1028 
+1029     pCluster->setPosition(pPosition);
+1030     \textcolor{keyword}{delete} [] pPosition;
+1031 
+1032     dqm_uint nPositionErrors = 0;
+1033     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nPositionErrors));
+1034 
+1035     EVENT::FloatVec positionErrors;
+1036 
+1037     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nPositionErrors ; i++)
+1038     \{
+1039       dqm_float positionError = 0;
+1040       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(positionError));
+1041       positionErrors.push\_back(positionError);
+1042     \}
+1043 
+1044     pCluster->setPositionError(positionErrors);
+1045 
+1046     dqm_float iTheta = 0;
+1047     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(iTheta));
+1048     pCluster->setITheta(iTheta);
+1049 
+1050     dqm_float iPhi = 0;
+1051     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(iPhi));
+1052     pCluster->setIPhi(iPhi);
+1053 
+1054     dqm_uint nDirectionErrors = 0;
+1055     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nDirectionErrors));
+1056 
+1057     EVENT::FloatVec directionErrors;
+1058 
+1059     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nDirectionErrors ; i++)
+1060     \{
+1061       dqm_float directionError = 0;
+1062       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(directionError));
+1063       directionErrors.push\_back(directionError);
+1064     \}
+1065 
+1066     pCluster->setDirectionError(directionErrors);
+1067 
+1068     dqm_uint nShapes = 0;
+1069     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nShapes));
+1070 
+1071     EVENT::FloatVec shapes;
+1072 
+1073     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nShapes ; i++)
+1074     \{
+1075       dqm_float shape = 0;
+1076       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(shape));
+1077       shapes.push\_back(shape);
+1078     \}
+1079 
+1080     pCluster->setShape(shapes);
+1081 
+1082     dqm_uint nParticleIDs = 0;
+1083     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nParticleIDs));
+1084 
+1085     DQMParticleIDStreamer particleIDStreamer;
+1086 
+1087     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nParticleIDs ; i++)
+1088     \{
+1089       EVENT::LCObject *pParticleID = 0;
+1090       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, particleIDStreamer.deserialize(pParticleID, pDataStream));
+1091       pCluster->addParticleID(dynamic\_cast<EVENT::ParticleID*>(pParticleID));
+1092     \}
+1093 
+1094     dqm_uint nSubdetectorEnergies = 0;
+1095     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nSubdetectorEnergies));
+1096 
+1097     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nSubdetectorEnergies ; i++)
+1098     \{
+1099       dqm_float subdetectorEnergy = 0;
+1100       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(subdetectorEnergy));
+1101       pCluster->subdetectorEnergies().push\_back(subdetectorEnergy);
+1102     \}
+1103   \}
+1104   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+1105   \{
+1106     \textcolor{keyword}{delete} pCluster;
+1107     pCluster = 0;
+1108 
+1109     \textcolor{keywordflow}{return} exception.getStatusCode();
+1110   \}
+1111 
+1112   pLCObject = pCluster;
+1113 
+1114   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+1115 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMClusterStreamer_a2c1e88f1d76de9c33925c298d4ff78b2}
+
+
+Serialize an Cluster. 
+
+
+
+Definition at line 923 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+924 \{
+925   \textcolor{keyword}{const} EVENT::Cluster *\textcolor{keyword}{const} pCluster = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::Cluster *const\textcolor{keyword}{>}(pLCObject);
+926 
+927   \textcolor{keywordflow}{if}(NULL == pCluster)
+928     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+929 
+930   dqm_int type = pCluster->getType();
+931   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(type));
+932 
+933   dqm_float energy = pCluster->getEnergy();
+934   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(energy));
+935 
+936   dqm_float energyError = pCluster->getEnergyError();
+937   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(energyError));
+938 
+939   \textcolor{keyword}{const} dqm_float *pPosition = pCluster->getPosition();
+940   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(pPosition, 3));
+941 
+942   dqm_uint nPositionErrors = pCluster->getPositionError().size();
+943   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nPositionErrors));
+944 
+945   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nPositionErrors ; i++)
+946   \{
+947     dqm_float positionError = pCluster->getPositionError().at(i);
+948     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(positionError));
+949   \}
+950 
+951   dqm_float iTheta = pCluster->getITheta();
+952   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(iTheta));
+953 
+954   dqm_float iPhi = pCluster->getIPhi();
+955   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(iPhi));
+956 
+957   dqm_uint nDirectionErrors = pCluster->getDirectionError().size();
+958   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nDirectionErrors));
+959 
+960   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nDirectionErrors ; i++)
+961   \{
+962     dqm_float directionError = pCluster->getDirectionError().at(i);
+963     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(directionError));
+964   \}
+965 
+966   dqm_uint nShapes = pCluster->getShape().size();
+967   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nShapes));
+968 
+969   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nShapes ; i++)
+970   \{
+971     dqm_float shape = pCluster->getShape().at(i);
+972     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(shape));
+973   \}
+974 
+975   dqm_uint nParticleIDs = pCluster->getParticleIDs().size();
+976   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nParticleIDs));
+977 
+978   DQMParticleIDStreamer particleIDStreamer;
+979 
+980   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nParticleIDs ; i++)
+981   \{
+982     EVENT::ParticleID *pParticleID = pCluster->getParticleIDs().at(i);
+983     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, particleIDStreamer.serialize(pParticleID, pDataStream));
+984   \}
+985 
+986   dqm_uint nSubdetectorEnergies = pCluster->getSubdetectorEnergies().size();
+987   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nSubdetectorEnergies));
+988 
+989   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nSubdetectorEnergies ; i++)
+990   \{
+991     dqm_float subdetectorEnergy = pCluster->getSubdetectorEnergies().at(i);
+992     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(subdetectorEnergy));
+993   \}
+994 
+995   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+996 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

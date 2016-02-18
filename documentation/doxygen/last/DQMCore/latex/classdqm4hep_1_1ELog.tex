@@ -1,0 +1,942 @@
+\section{dqm4hep\+:\+:E\+Log Class Reference}
+\label{classdqm4hep_1_1ELog}\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+
+
+{\ttfamily \#include $<$E\+Log\+Interface.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf E\+Log} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\bf E\+Log} (const std\+::string \&host, int port)
+\begin{DoxyCompactList}\small\item\em Constructor with host and port. \end{DoxyCompactList}\item 
+{\bf E\+Log} (const std\+::string \&host, int port, const std\+::string \&user\+Name, const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Constructor with host, port, user name and password. \end{DoxyCompactList}\item 
+void {\bf set\+Host} (const std\+::string \&host)
+\begin{DoxyCompactList}\small\item\em Set the host of the logbook. \end{DoxyCompactList}\item 
+void {\bf set\+Port} (int port)
+\begin{DoxyCompactList}\small\item\em Set the port on which the entries will be logged. \end{DoxyCompactList}\item 
+void {\bf set\+User} (const std\+::string \&user)
+\begin{DoxyCompactList}\small\item\em Set the user name for the logbook. \end{DoxyCompactList}\item 
+void {\bf set\+Password} (const std\+::string \&password)
+\begin{DoxyCompactList}\small\item\em Set the password for the logbook. \end{DoxyCompactList}\item 
+void {\bf set\+Logbook} (const std\+::string \&logbook)
+\begin{DoxyCompactList}\small\item\em Set the logbook in which the entries will be published. \end{DoxyCompactList}\item 
+void {\bf use\+S\+S\+L} (bool use\+S\+S\+L)
+\begin{DoxyCompactList}\small\item\em Whether to use ssl to log. \end{DoxyCompactList}\item 
+void {\bf set\+Encoding} ({\bf Encoding} encoding)
+\begin{DoxyCompactList}\small\item\em Set the logbook encoding. \end{DoxyCompactList}\item 
+void {\bf suppress\+Email\+Notification} (bool suppress)
+\begin{DoxyCompactList}\small\item\em Whether to suppres notification. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf add\+Entry} (const std\+::string \&name, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Add an entry to the next logbook publication. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf add\+Entry} (const {\bf Logbook\+Entry} \&entry)
+\begin{DoxyCompactList}\small\item\em Add an entry to the next logbook publication. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf add\+Entries} (const {\bf Logbook\+Entry\+Map} \&entry\+Map)
+\begin{DoxyCompactList}\small\item\em Add entries to the next logbook publication. \end{DoxyCompactList}\item 
+void {\bf set\+Message} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Set the message that will goes in the next logged entry. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf log} ()
+\begin{DoxyCompactList}\small\item\em Log in the logbook. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf log} (const {\bf Logbook\+Entry\+Map} \&entry\+Map, const std\+::string \&message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Log in the logbook. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf log} (const std\+::string \&logbook)
+\begin{DoxyCompactList}\small\item\em Log in the logbook. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf log} (const std\+::string \&logbook, const {\bf Logbook\+Entry\+Map} \&entry\+Map, const std\+::string \&message=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Log in the logbook. \end{DoxyCompactList}\item 
+void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the \doxyref{E\+Log}{p.}{classdqm4hep_1_1ELog} interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Encoding} \{ {\bf E\+L\+O\+G\+\_\+\+C\+O\+D\+E}, 
+{\bf P\+L\+A\+I\+N}, 
+{\bf H\+T\+M\+L}
+ \}
+\begin{DoxyCompactList}\small\item\em Encoding enumerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf check\+Consistency} () const 
+\item 
+int {\bf process\+E\+Log\+Command} () const 
+\begin{DoxyCompactList}\small\item\em Process the elog command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+e\+Log\+Command}
+\item 
+std\+::string {\bf m\+\_\+host}
+\item 
+int {\bf m\+\_\+port}
+\item 
+std\+::string {\bf m\+\_\+user\+Name}
+\item 
+std\+::string {\bf m\+\_\+password}
+\item 
+std\+::string {\bf m\+\_\+logbook}
+\item 
+std\+::string {\bf m\+\_\+message}
+\item 
+{\bf Logbook\+Entry\+Map} {\bf m\+\_\+logbook\+Entry\+Map}
+\item 
+{\bf Encoding} {\bf m\+\_\+encoding}
+\item 
+bool {\bf m\+\_\+use\+S\+S\+L}
+\item 
+bool {\bf m\+\_\+suppresss\+Email\+Notification}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file E\+Log\+Interface.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{Encoding}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dqm4hep\+::\+E\+Log\+::\+Encoding}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a90bb0b53f3e6aea9924c111959a4c020}
+
+
+Encoding enumerator. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{E\+L\+O\+G\+\_\+\+C\+O\+D\+E@{E\+L\+O\+G\+\_\+\+C\+O\+D\+E}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!E\+L\+O\+G\+\_\+\+C\+O\+D\+E@{E\+L\+O\+G\+\_\+\+C\+O\+D\+E}}\item[{\em 
+E\+L\+O\+G\+\_\+\+C\+O\+D\+E\label{classdqm4hep_1_1ELog_a90bb0b53f3e6aea9924c111959a4c020ae53f22bbbf4d84c6f13953a938bab4fe}
+}]\index{P\+L\+A\+I\+N@{P\+L\+A\+I\+N}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!P\+L\+A\+I\+N@{P\+L\+A\+I\+N}}\item[{\em 
+P\+L\+A\+I\+N\label{classdqm4hep_1_1ELog_a90bb0b53f3e6aea9924c111959a4c020aeef0f74343d9111a8810ef6ae7e3772a}
+}]\index{H\+T\+M\+L@{H\+T\+M\+L}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!H\+T\+M\+L@{H\+T\+M\+L}}\item[{\em 
+H\+T\+M\+L\label{classdqm4hep_1_1ELog_a90bb0b53f3e6aea9924c111959a4c020a523e86f9b110b2faa70f56a998a08ad5}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 45 of file E\+Log\+Interface.\+h.
+
+
+\begin{DoxyCode}
+46   \{
+47     ELOG_CODE,
+48     PLAIN,
+49     HTML
+50   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!E\+Log@{E\+Log}}
+\index{E\+Log@{E\+Log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{E\+Log}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+E\+Log\+::\+E\+Log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_aefbecdb5de1e09fedd2e0ae3459c926d}
+
+
+Default constructor. 
+
+Default command is defined as D\+Q\+M4\+H\+E\+P\+\_\+\+E\+L\+O\+G\+\_\+\+C\+O\+M\+M\+A\+N\+D in \doxyref{D\+Q\+M\+Core\+Config.\+h}{p.}{DQMCoreConfig_8h} 
+
+Definition at line 38 of file E\+Log\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+38            :
+39     m_eLogCommand(DQM4HEP_ELOG_EXECUTABLE),
+40     m_host(\textcolor{stringliteral}{""}),
+41     m_port(80),
+42     m_userName(\textcolor{stringliteral}{""}),
+43     m_password(\textcolor{stringliteral}{""}),
+44     m_logbook(\textcolor{stringliteral}{""}),
+45     m_encoding(ELog::PLAIN),
+46     m_useSSL(\textcolor{keyword}{false}),
+47     m_suppresssEmailNotification(\textcolor{keyword}{false})
+48 \{
+49 \textcolor{preprocessor}{#ifndef DQM4HEP\_USE\_ELOG}
+50   \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_COE\_FAILURE);
+51 \textcolor{preprocessor}{#endif}
+52 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!E\+Log@{E\+Log}}
+\index{E\+Log@{E\+Log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{E\+Log}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+E\+Log\+::\+E\+Log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a6e9ef7107eed291c52df20171169b597}
+
+
+Constructor with host and port. 
+
+
+
+Definition at line 56 of file E\+Log\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+56                                           :
+57     m_eLogCommand(DQM4HEP_ELOG_EXECUTABLE),
+58     m_host(host),
+59     m_port(port),
+60     m_userName(\textcolor{stringliteral}{""}),
+61     m_password(\textcolor{stringliteral}{""}),
+62     m_logbook(\textcolor{stringliteral}{""}),
+63     m_encoding(ELog::PLAIN),
+64     m_useSSL(\textcolor{keyword}{false}),
+65     m_suppresssEmailNotification(\textcolor{keyword}{false})
+66 \{
+67 \textcolor{preprocessor}{#ifndef DQM4HEP\_USE\_ELOG}
+68   \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_COE\_FAILURE);
+69 \textcolor{preprocessor}{#endif}
+70 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!E\+Log@{E\+Log}}
+\index{E\+Log@{E\+Log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{E\+Log}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+E\+Log\+::\+E\+Log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host, }
+\item[{int}]{port, }
+\item[{const std\+::string \&}]{user\+Name, }
+\item[{const std\+::string \&}]{password}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a69f840906badd3a344c948c071cdf106}
+
+
+Constructor with host, port, user name and password. 
+
+
+
+Definition at line 74 of file E\+Log\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+74                                                                                                 :
+75     m_eLogCommand(DQM4HEP_ELOG_EXECUTABLE),
+76     m_host(host),
+77     m_port(port),
+78     m_userName(userName),
+79     m_password(password),
+80     m_logbook(\textcolor{stringliteral}{""}),
+81     m_encoding(ELog::PLAIN),
+82     m_useSSL(\textcolor{keyword}{false}),
+83     m_suppresssEmailNotification(\textcolor{keyword}{false})
+84 \{
+85 \textcolor{preprocessor}{#ifndef DQM4HEP\_USE\_ELOG}
+86   \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_COE\_FAILURE);
+87 \textcolor{preprocessor}{#endif}
+88 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!add\+Entries@{add\+Entries}}
+\index{add\+Entries@{add\+Entries}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{add\+Entries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::add\+Entries (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logbook\+Entry\+Map} \&}]{entry\+Map}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_ad31d00492697c4cf6a360f0acccb17d7}
+
+
+Add entries to the next logbook publication. 
+
+
+
+Definition at line 172 of file E\+Log\+Interface.\+cc.
+
+
+
+References add\+Entry(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+173 \{
+174   \textcolor{keywordflow}{for}(LogbookEntryMap::const\_iterator iter = entryMap.begin(), endIter = entryMap.end() ;
+175       endIter != iter ; ++iter)
+176   \{
+177     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, addEntry(iter->first, iter->second));
+178   \}
+179 
+180   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+181 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!add\+Entry@{add\+Entry}}
+\index{add\+Entry@{add\+Entry}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{add\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::add\+Entry (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a62e08b6a13ad97db04565031518f8ca2}
+
+
+Add an entry to the next logbook publication. 
+
+
+
+Definition at line 148 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+logbook\+Entry\+Map.
+
+
+
+Referenced by add\+Entries().
+
+
+\begin{DoxyCode}
+149 \{
+150   \textcolor{keywordflow}{if}(name.empty())
+151     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+152 
+153   m_logbookEntryMap[name] = value;
+154 
+155   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+156 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!add\+Entry@{add\+Entry}}
+\index{add\+Entry@{add\+Entry}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{add\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::add\+Entry (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logbook\+Entry} \&}]{entry}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a365d80aaefc3d4ca269421e863f1ecc1}
+
+
+Add an entry to the next logbook publication. 
+
+
+
+Definition at line 160 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+logbook\+Entry\+Map.
+
+
+\begin{DoxyCode}
+161 \{
+162   \textcolor{keywordflow}{if}(entry.first.empty())
+163     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+164 
+165   m_logbookEntryMap[entry.first] = entry.second;
+166 
+167   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+168 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!check\+Consistency@{check\+Consistency}}
+\index{check\+Consistency@{check\+Consistency}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{check\+Consistency}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+E\+Log\+::check\+Consistency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a597605a0a6a3faefe35dd989a7086547}
+
+
+Definition at line 235 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+e\+Log\+Command, m\+\_\+host, m\+\_\+logbook, m\+\_\+logbook\+Entry\+Map, m\+\_\+password, and m\+\_\+user\+Name.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+236 \{
+237   \textcolor{keywordflow}{if}(m_eLogCommand.empty()
+238   || m_host.empty()
+239   || m_userName.empty()
+240   || m_password.empty()
+241   || m_logbook.empty()
+242   || m_logbookEntryMap.empty())
+243     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+244 
+245   \textcolor{keywordflow}{if}(m_logbookEntryMap.size() > 50)
+246     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+247 
+248   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+249 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a4c6485bb42534ea0e9e9bca5c6ba2832}
+
+
+Clear the \doxyref{E\+Log}{p.}{classdqm4hep_1_1ELog} interface. 
+
+Remove all previously added entries 
+
+Definition at line 284 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+logbook\+Entry\+Map.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+285 \{
+286   m_logbookEntryMap.clear();
+287 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a7e4d87166d47d2e08d7603cddeffcfbf}
+
+
+Log in the logbook. 
+
+User must have set the logbook name, user name and password. Command not run if nothing was added with \doxyref{add\+Entry()}{p.}{classdqm4hep_1_1ELog_a62e08b6a13ad97db04565031518f8ca2} functions 
+
+Definition at line 192 of file E\+Log\+Interface.\+cc.
+
+
+
+References check\+Consistency(), clear(), and process\+E\+Log\+Command().
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+193 \{
+194   \textcolor{keywordflow}{if}(!checkConsistency())
+195     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+196 
+197   \textcolor{keywordflow}{if}(processELogCommand())
+198     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+199 
+200   clear();
+201 
+202   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+203 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::log (
+\begin{DoxyParamCaption}
+\item[{const {\bf Logbook\+Entry\+Map} \&}]{entry\+Map, }
+\item[{const std\+::string \&}]{message = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a87c955276a984f3f70387fda180ecd72}
+
+
+Log in the logbook. 
+
+User must have set the logbook name, user name and password. Command not run if the map is empty. 
+
+Definition at line 207 of file E\+Log\+Interface.\+cc.
+
+
+
+References add\+Entries(), clear(), log(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and set\+Message().
+
+
+\begin{DoxyCode}
+208 \{
+209   clear();
+210   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, addEntries(entryMap));
+211   setMessage(message);
+212   \textcolor{keywordflow}{return} this->log();
+213 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{logbook}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a16038f9d4bee3a84178617db85d52fcf}
+
+
+Log in the logbook. 
+
+User must have set the user name, password. Command not run if nothing was added with \doxyref{add\+Entry()}{p.}{classdqm4hep_1_1ELog_a62e08b6a13ad97db04565031518f8ca2} functions 
+
+Definition at line 217 of file E\+Log\+Interface.\+cc.
+
+
+
+References log(), and set\+Logbook().
+
+
+\begin{DoxyCode}
+218 \{
+219   setLogbook(logbook);
+220   \textcolor{keywordflow}{return} this->log();
+221 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+E\+Log\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{logbook, }
+\item[{const {\bf Logbook\+Entry\+Map} \&}]{entry\+Map, }
+\item[{const std\+::string \&}]{message = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a4bd830210cc4d5e86fb69ada08b7959a}
+
+
+Log in the logbook. 
+
+User must have set the user name, password. Command not run if the map is empty. 
+
+Definition at line 225 of file E\+Log\+Interface.\+cc.
+
+
+
+References add\+Entries(), log(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, set\+Logbook(), and set\+Message().
+
+
+\begin{DoxyCode}
+226 \{
+227   setLogbook(logbook);
+228   setMessage(message);
+229   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, addEntries(entryMap));
+230   \textcolor{keywordflow}{return} this->log();
+231 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!process\+E\+Log\+Command@{process\+E\+Log\+Command}}
+\index{process\+E\+Log\+Command@{process\+E\+Log\+Command}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{process\+E\+Log\+Command}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+E\+Log\+::process\+E\+Log\+Command (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a63ef1afb0c5e24d85e8d95b98437090b}
+
+
+Process the elog command. 
+
+The user input has to be valid (see \doxyref{check\+Consistency()}{p.}{classdqm4hep_1_1ELog_a597605a0a6a3faefe35dd989a7086547}) 
+
+Definition at line 253 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+e\+Log\+Command, m\+\_\+encoding, m\+\_\+host, m\+\_\+logbook, m\+\_\+logbook\+Entry\+Map, m\+\_\+message, m\+\_\+password, m\+\_\+port, m\+\_\+suppresss\+Email\+Notification, m\+\_\+user\+Name, m\+\_\+use\+S\+S\+L, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+254 \{
+255   std::stringstream command;
+256   command << m_eLogCommand
+257       << \textcolor{stringliteral}{" -h \(\backslash\)""} << m_host << \textcolor{stringliteral}{"\(\backslash\)""}
+258       << \textcolor{stringliteral}{" -p "} << m_port
+259       << \textcolor{stringliteral}{" -u \(\backslash\)""} << m_userName << \textcolor{stringliteral}{"\(\backslash\)" \(\backslash\)""} << m_password << \textcolor{stringliteral}{"\(\backslash\)""}
+260       << \textcolor{stringliteral}{" -l \(\backslash\)""} << m_logbook << \textcolor{stringliteral}{"\(\backslash\)""};
+261 
+262   \textcolor{keywordflow}{for}(LogbookEntryMap::const\_iterator iter = m_logbookEntryMap.begin(), endIter = 
+      m_logbookEntryMap.end() ;
+263       endIter != iter ; ++iter)
+264   \{
+265     command << \textcolor{stringliteral}{" -a \(\backslash\)""} << iter->first << \textcolor{stringliteral}{"\(\backslash\)"=\(\backslash\)""} << iter->second << \textcolor{stringliteral}{"\(\backslash\)""};
+266   \}
+267 
+268   command << \textcolor{stringliteral}{" -n "} << m_encoding;
+269 
+270   \textcolor{keywordflow}{if}(m_useSSL)
+271     command << \textcolor{stringliteral}{" -s "};
+272 
+273   \textcolor{keywordflow}{if}(m_suppresssEmailNotification)
+274     command << \textcolor{stringliteral}{" -x "};
+275 
+276   command << \textcolor{stringliteral}{" \(\backslash\)""} << m_message << \textcolor{stringliteral}{"\(\backslash\)""};
+277 
+278   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Processing logbook command : '"} << command.str() << \textcolor{stringliteral}{"'"} << std::endl;
+279   \textcolor{keywordflow}{return} system(command.str().c\_str());
+280 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Encoding@{set\+Encoding}}
+\index{set\+Encoding@{set\+Encoding}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Encoding}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Encoding (
+\begin{DoxyParamCaption}
+\item[{{\bf Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a93e1abbdc9805a853e05766fd27b00cb}
+
+
+Set the logbook encoding. 
+
+Default is \doxyref{E\+Log\+::\+P\+L\+A\+I\+N}{p.}{classdqm4hep_1_1ELog_a90bb0b53f3e6aea9924c111959a4c020aeef0f74343d9111a8810ef6ae7e3772a} 
+
+Definition at line 134 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+encoding.
+
+
+\begin{DoxyCode}
+135 \{
+136   m_encoding = encoding;
+137 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Host@{set\+Host}}
+\index{set\+Host@{set\+Host}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Host}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Host (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_ab3b304939de5b62c6bd071516471fe1c}
+
+
+Set the host of the logbook. 
+
+
+
+Definition at line 92 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+host.
+
+
+\begin{DoxyCode}
+93 \{
+94   m_host = host;
+95 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Logbook@{set\+Logbook}}
+\index{set\+Logbook@{set\+Logbook}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Logbook}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Logbook (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{logbook}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a3d603de5f871e2e84e07100fae06da95}
+
+
+Set the logbook in which the entries will be published. 
+
+
+
+Definition at line 120 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+logbook.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+121 \{
+122   m_logbook = logbook;
+123 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Message@{set\+Message}}
+\index{set\+Message@{set\+Message}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Message}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Message (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a06f8a9123639c83e7905b90b5583e218}
+
+
+Set the message that will goes in the next logged entry. 
+
+
+
+Definition at line 185 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+message.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+186 \{
+187   m_message = message;
+188 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Password@{set\+Password}}
+\index{set\+Password@{set\+Password}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Password}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Password (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{password}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_ac0073d3b7236c1dccbf125ac5aeaaaef}
+
+
+Set the password for the logbook. 
+
+
+
+Definition at line 113 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+password.
+
+
+\begin{DoxyCode}
+114 \{
+115   m_password = password;
+116 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+Port@{set\+Port}}
+\index{set\+Port@{set\+Port}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+Port}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+Port (
+\begin{DoxyParamCaption}
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a9ec304a1b132d9ad16be0fac9842fce1}
+
+
+Set the port on which the entries will be logged. 
+
+
+
+Definition at line 99 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+port.
+
+
+\begin{DoxyCode}
+100 \{
+101   m_port = port;
+102 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!set\+User@{set\+User}}
+\index{set\+User@{set\+User}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{set\+User}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::set\+User (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{user}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a24cf2dfdd448ce89505a5cc2915d6e5a}
+
+
+Set the user name for the logbook. 
+
+
+
+Definition at line 106 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+user\+Name.
+
+
+\begin{DoxyCode}
+107 \{
+108   m_userName = user;
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!suppress\+Email\+Notification@{suppress\+Email\+Notification}}
+\index{suppress\+Email\+Notification@{suppress\+Email\+Notification}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{suppress\+Email\+Notification}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::suppress\+Email\+Notification (
+\begin{DoxyParamCaption}
+\item[{bool}]{suppress}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_a4db060dc7fcfefc1bf369e984efa6fcb}
+
+
+Whether to suppres notification. 
+
+Default is false 
+
+Definition at line 141 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+suppresss\+Email\+Notification.
+
+
+\begin{DoxyCode}
+142 \{
+143   m_suppresssEmailNotification = suppress;
+144 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!use\+S\+S\+L@{use\+S\+S\+L}}
+\index{use\+S\+S\+L@{use\+S\+S\+L}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{use\+S\+S\+L}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+E\+Log\+::use\+S\+S\+L (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\+S\+S\+L}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ELog_ab90075e4b50f37d810810622ae594607}
+
+
+Whether to use ssl to log. 
+
+Default is false 
+
+Definition at line 127 of file E\+Log\+Interface.\+cc.
+
+
+
+References m\+\_\+use\+S\+S\+L.
+
+
+\begin{DoxyCode}
+128 \{
+129   m_useSSL = useSSL;
+130 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+e\+Log\+Command@{m\+\_\+e\+Log\+Command}}
+\index{m\+\_\+e\+Log\+Command@{m\+\_\+e\+Log\+Command}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+e\+Log\+Command}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+e\+Log\+Command\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a2a40472f09c9ea2796f617c74a779e14}
+
+
+Definition at line 170 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by check\+Consistency(), and process\+E\+Log\+Command().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+encoding@{m\+\_\+encoding}}
+\index{m\+\_\+encoding@{m\+\_\+encoding}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+encoding}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Encoding} dqm4hep\+::\+E\+Log\+::m\+\_\+encoding\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a32fabacbf557af584e43bead54b9d61b}
+
+
+Definition at line 178 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by process\+E\+Log\+Command(), and set\+Encoding().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+host@{m\+\_\+host}}
+\index{m\+\_\+host@{m\+\_\+host}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+host\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a0b5634e31fc6acc018984ab7a4f30a26}
+
+
+Definition at line 171 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by check\+Consistency(), process\+E\+Log\+Command(), and set\+Host().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+logbook@{m\+\_\+logbook}}
+\index{m\+\_\+logbook@{m\+\_\+logbook}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+logbook}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+logbook\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a2cf69eed19105f9cb8fd69136306fbb7}
+
+
+Definition at line 175 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by check\+Consistency(), process\+E\+Log\+Command(), and set\+Logbook().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+logbook\+Entry\+Map@{m\+\_\+logbook\+Entry\+Map}}
+\index{m\+\_\+logbook\+Entry\+Map@{m\+\_\+logbook\+Entry\+Map}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+logbook\+Entry\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Logbook\+Entry\+Map} dqm4hep\+::\+E\+Log\+::m\+\_\+logbook\+Entry\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a7685f069d5eb2a35b44a52907b38e014}
+
+
+Definition at line 177 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by add\+Entry(), check\+Consistency(), clear(), and process\+E\+Log\+Command().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+message@{m\+\_\+message}}
+\index{m\+\_\+message@{m\+\_\+message}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+message\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a6fb7747bac3ab5d28ad980929d86cffe}
+
+
+Definition at line 176 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by process\+E\+Log\+Command(), and set\+Message().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+password@{m\+\_\+password}}
+\index{m\+\_\+password@{m\+\_\+password}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+password}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+password\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a699bdd8eed2d2932d18756a45fe162c5}
+
+
+Definition at line 174 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by check\+Consistency(), process\+E\+Log\+Command(), and set\+Password().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+port@{m\+\_\+port}}
+\index{m\+\_\+port@{m\+\_\+port}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+port}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+E\+Log\+::m\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a2303bd8f5dacae7d98eda27d5ff571f9}
+
+
+Definition at line 172 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by process\+E\+Log\+Command(), and set\+Port().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+suppresss\+Email\+Notification@{m\+\_\+suppresss\+Email\+Notification}}
+\index{m\+\_\+suppresss\+Email\+Notification@{m\+\_\+suppresss\+Email\+Notification}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+suppresss\+Email\+Notification}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+E\+Log\+::m\+\_\+suppresss\+Email\+Notification\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a21d76810a307366fb0daa0d57ba67189}
+
+
+Definition at line 180 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by process\+E\+Log\+Command(), and suppress\+Email\+Notification().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+user\+Name@{m\+\_\+user\+Name}}
+\index{m\+\_\+user\+Name@{m\+\_\+user\+Name}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+user\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+E\+Log\+::m\+\_\+user\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_abeb1ca4f8c673565263bbac7942afee8}
+
+
+Definition at line 173 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by check\+Consistency(), process\+E\+Log\+Command(), and set\+User().
+
+\index{dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}!m\+\_\+use\+S\+S\+L@{m\+\_\+use\+S\+S\+L}}
+\index{m\+\_\+use\+S\+S\+L@{m\+\_\+use\+S\+S\+L}!dqm4hep\+::\+E\+Log@{dqm4hep\+::\+E\+Log}}
+\subsubsection[{m\+\_\+use\+S\+S\+L}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+E\+Log\+::m\+\_\+use\+S\+S\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ELog_a55946a7dc9b7b8eeb639681954b8324b}
+
+
+Definition at line 179 of file E\+Log\+Interface.\+h.
+
+
+
+Referenced by process\+E\+Log\+Command(), and use\+S\+S\+L().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf E\+Log\+Interface.\+h}\item 
+{\bf E\+Log\+Interface.\+cc}\end{DoxyCompactItemize}

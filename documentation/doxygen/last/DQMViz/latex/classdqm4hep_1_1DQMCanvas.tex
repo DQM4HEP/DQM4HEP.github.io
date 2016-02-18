@@ -1,0 +1,255 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Canvas Class Reference}
+\label{classdqm4hep_1_1DQMCanvas}\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+
+
+\doxyref{D\+Q\+M\+Canvas}{p.}{classdqm4hep_1_1DQMCanvas} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Canvas.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Canvas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCanvas}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf draw} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Draw the monitor element on the root widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Canvas} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ {\bf get\+Current\+Monitor\+Element} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitor element currently drawn. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Root\+Widget} $\ast$ {\bf get\+Root\+Widget} () const 
+\begin{DoxyCompactList}\small\item\em Get the embedded root widget. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+{\bf D\+Q\+M\+Root\+Widget} $\ast$ {\bf m\+\_\+p\+Root\+Widget}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Canvas}{p.}{classdqm4hep_1_1DQMCanvas} class. 
+
+Definition at line 46 of file D\+Q\+M\+Canvas.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!D\+Q\+M\+Canvas@{D\+Q\+M\+Canvas}}
+\index{D\+Q\+M\+Canvas@{D\+Q\+M\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{D\+Q\+M\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+::\+D\+Q\+M\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvas_ac19a5d5b36a897717d04344f06ea24cb}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Canvas.\+cc.
+
+
+
+References get\+Monitoring(), m\+\_\+p\+Root\+Widget, and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Canvas().
+
+
+\begin{DoxyCode}
+36                                                :
+37     m_pMonitoring(pMonitoring)
+38 \{
+39   m_pRootWidget = \textcolor{keyword}{new} DQMRootWidget(this->getMonitoring());
+40   m_pRootWidget->setCanvas(\textcolor{keyword}{this});
+41 
+42   setWidget(m_pRootWidget);
+43 
+44   resize(400, 250);
+45 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!````~D\+Q\+M\+Canvas@{$\sim$\+D\+Q\+M\+Canvas}}
+\index{````~D\+Q\+M\+Canvas@{$\sim$\+D\+Q\+M\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+::$\sim$\+D\+Q\+M\+Canvas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvas_a7e55d1ca54821f015ea5ab1b0bb7ca21}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Canvas.\+cc.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{comment}{/* nop */}
+52 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!draw@{draw}}
+\index{draw@{draw}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvas_a062ba344e8e88cb03850b96f287da06d}
+
+
+Draw the monitor element on the root widget. 
+
+
+
+Definition at line 77 of file D\+Q\+M\+Canvas.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::draw(), and m\+\_\+p\+Root\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::create\+Canvas(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::draw().
+
+
+\begin{DoxyCode}
+78 \{
+79   m_pRootWidget->draw(pMonitorElement);
+80 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!get\+Current\+Monitor\+Element@{get\+Current\+Monitor\+Element}}
+\index{get\+Current\+Monitor\+Element@{get\+Current\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{get\+Current\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Current\+Monitor\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvas_ac32261666c125ffecfea5afbb972e15c}
+
+
+Get the monitor element currently drawn. 
+
+
+
+Definition at line 63 of file D\+Q\+M\+Canvas.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::get\+Current\+Monitor\+Element(), and m\+\_\+p\+Root\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+64 \{
+65   \textcolor{keywordflow}{return} m_pRootWidget->getCurrentMonitorElement();
+66 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvas_a5f36da20fc6efa8534537105e00a2435}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 56 of file D\+Q\+M\+Canvas.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by D\+Q\+M\+Canvas(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+57 \{
+58   \textcolor{keywordflow}{return} m_pMonitoring;
+59 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!get\+Root\+Widget@{get\+Root\+Widget}}
+\index{get\+Root\+Widget@{get\+Root\+Widget}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{get\+Root\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Root\+Widget} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Root\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvas_a15616d4e28a33c0519bac3dfbc1957c4}
+
+
+Get the embedded root widget. 
+
+
+
+Definition at line 70 of file D\+Q\+M\+Canvas.\+cc.
+
+
+
+References m\+\_\+p\+Root\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As().
+
+
+\begin{DoxyCode}
+71 \{
+72   \textcolor{keywordflow}{return} m_pRootWidget;
+73 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMCanvas_a07d8a9c5b01ada3e3d09051a715f4edc}
+
+
+Definition at line 78 of file D\+Q\+M\+Canvas.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}!m\+\_\+p\+Root\+Widget@{m\+\_\+p\+Root\+Widget}}
+\index{m\+\_\+p\+Root\+Widget@{m\+\_\+p\+Root\+Widget}!dqm4hep\+::\+D\+Q\+M\+Canvas@{dqm4hep\+::\+D\+Q\+M\+Canvas}}
+\subsubsection[{m\+\_\+p\+Root\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Root\+Widget}$\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+::m\+\_\+p\+Root\+Widget\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMCanvas_aa7604413c7830ec687edaafbb5b91d16}
+
+
+Definition at line 79 of file D\+Q\+M\+Canvas.\+h.
+
+
+
+Referenced by D\+Q\+M\+Canvas(), draw(), get\+Current\+Monitor\+Element(), and get\+Root\+Widget().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas.\+h}\item 
+{\bf D\+Q\+M\+Canvas.\+cc}\end{DoxyCompactItemize}

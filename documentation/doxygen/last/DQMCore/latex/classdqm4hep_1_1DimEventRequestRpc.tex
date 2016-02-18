@@ -1,0 +1,112 @@
+\section{dqm4hep\+:\+:Dim\+Event\+Request\+Rpc Class Reference}
+\label{classdqm4hep_1_1DimEventRequestRpc}\index{dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}}
+
+
+\doxyref{Dim\+Event\+Request\+Rpc}{p.}{classdqm4hep_1_1DimEventRequestRpc} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Event\+Collector.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Dim\+Event\+Request\+Rpc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DimEventRequestRpc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Dim\+Event\+Request\+Rpc} ({\bf D\+Q\+M\+Dim\+Event\+Collector} $\ast$p\+Collector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf rpc\+Handler} ()
+\begin{DoxyCompactList}\small\item\em The rpc handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector} $\ast$ {\bf m\+\_\+p\+Collector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Dim\+Event\+Request\+Rpc}{p.}{classdqm4hep_1_1DimEventRequestRpc} class. 
+
+Definition at line 46 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}!Dim\+Event\+Request\+Rpc@{Dim\+Event\+Request\+Rpc}}
+\index{Dim\+Event\+Request\+Rpc@{Dim\+Event\+Request\+Rpc}!dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}}
+\subsubsection[{Dim\+Event\+Request\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Dim\+Event\+Request\+Rpc\+::\+Dim\+Event\+Request\+Rpc (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Dim\+Event\+Collector} $\ast$}]{p\+Collector}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DimEventRequestRpc_a117aa0f80fe1e9d0e76157757d3fac24}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+36                                                                        :
+37   DimRpc((\textcolor{keywordtype}{char}*)(\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + pCollector->getCollectorName() + \textcolor{stringliteral}{"/EVENT\_RAW\_REQUEST"}).c\_str()
+      , \textcolor{stringliteral}{"C"}, \textcolor{stringliteral}{"C"}),
+38   m_pCollector(pCollector)
+39 \{
+40   \textcolor{comment}{/* nop */}
+41 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}!rpc\+Handler@{rpc\+Handler}}
+\index{rpc\+Handler@{rpc\+Handler}!dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}}
+\subsubsection[{rpc\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Dim\+Event\+Request\+Rpc\+::rpc\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DimEventRequestRpc_ad496ce317a28b5d1e63bec88db992fdd}
+
+
+The rpc handler. 
+
+
+
+Definition at line 45 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), and m\+\_\+p\+Collector.
+
+
+\begin{DoxyCode}
+46 \{
+47   m_pCollector->handleEventRequest(\textcolor{keyword}{this});
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}!m\+\_\+p\+Collector@{m\+\_\+p\+Collector}}
+\index{m\+\_\+p\+Collector@{m\+\_\+p\+Collector}!dqm4hep\+::\+Dim\+Event\+Request\+Rpc@{dqm4hep\+::\+Dim\+Event\+Request\+Rpc}}
+\subsubsection[{m\+\_\+p\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Dim\+Event\+Collector}$\ast$ dqm4hep\+::\+Dim\+Event\+Request\+Rpc\+::m\+\_\+p\+Collector\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DimEventRequestRpc_a0ee47d9867cf28f96ef8d1ec8fa3be4c}
+
+
+Definition at line 59 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,1326 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Document Class Reference}
+\label{classdqm4hep_1_1TiXmlDocument}\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+
+
+Always the top level node.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Document\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1TiXmlDocument}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Document} ()
+\begin{DoxyCompactList}\small\item\em Create an empty document, that has no name. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Document} (const char $\ast$document\+Name)
+\begin{DoxyCompactList}\small\item\em Create a document with a name. The name of the document is also the filename of the xml. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Document} (const std\+::string \&document\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Document} (const {\bf Ti\+Xml\+Document} \&copy)
+\item 
+void {\bf operator=} (const {\bf Ti\+Xml\+Document} \&copy)
+\item 
+virtual {\bf $\sim$\+Ti\+Xml\+Document} ()
+\item 
+bool {\bf Load\+File} ({\bf Ti\+Xml\+Encoding} encoding={\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G})
+\begin{DoxyCompactList}\small\item\em Load a file using the current document value. \end{DoxyCompactList}\item 
+bool {\bf Save\+File} () const 
+\begin{DoxyCompactList}\small\item\em Save a file using the current document value. Returns true if successful. \end{DoxyCompactList}\item 
+bool {\bf Load\+File} (const char $\ast$filename, {\bf Ti\+Xml\+Encoding} encoding={\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G})
+\begin{DoxyCompactList}\small\item\em Load a file using the given filename. Returns true if successful. \end{DoxyCompactList}\item 
+bool {\bf Save\+File} (const char $\ast$filename) const 
+\begin{DoxyCompactList}\small\item\em Save a file using the given filename. Returns true if successful. \end{DoxyCompactList}\item 
+bool {\bf Load\+File} (F\+I\+L\+E $\ast$, {\bf Ti\+Xml\+Encoding} encoding={\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G})
+\begin{DoxyCompactList}\small\item\em Load a file using the given F\+I\+L\+E$\ast$. \end{DoxyCompactList}\item 
+bool {\bf Save\+File} (F\+I\+L\+E $\ast$) const 
+\begin{DoxyCompactList}\small\item\em Save a file using the given F\+I\+L\+E$\ast$. Returns true if successful. \end{DoxyCompactList}\item 
+bool {\bf Load\+File} (const std\+::string \&filename, {\bf Ti\+Xml\+Encoding} encoding={\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G})
+\item 
+bool {\bf Save\+File} (const std\+::string \&filename) const 
+\begin{DoxyCompactList}\small\item\em $<$ S\+T\+L std\+::string version. \end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf Parse} (const char $\ast$p, {\bf Ti\+Xml\+Parsing\+Data} $\ast$data=0, {\bf Ti\+Xml\+Encoding} encoding={\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G})
+\begin{DoxyCompactList}\small\item\em Parse the given null terminated block of xml data. \end{DoxyCompactList}\item 
+const {\bf Ti\+Xml\+Element} $\ast$ {\bf Root\+Element} () const 
+\begin{DoxyCompactList}\small\item\em Get the root element -- the only top level element -- of the document. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Element} $\ast$ {\bf Root\+Element} ()
+\item 
+bool {\bf Error} () const 
+\begin{DoxyCompactList}\small\item\em If an error occurs, Error will be set to true. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf Error\+Desc} () const 
+\begin{DoxyCompactList}\small\item\em Contains a textual (english) description of the error if one occurs. \end{DoxyCompactList}\item 
+int {\bf Error\+Id} () const 
+\begin{DoxyCompactList}\small\item\em Generally, you probably want the error string ( \doxyref{Error\+Desc()}{p.}{classdqm4hep_1_1TiXmlDocument_a6433995bd954f43f47949c66668c34e7} ). \end{DoxyCompactList}\item 
+int {\bf Error\+Row} () const 
+\begin{DoxyCompactList}\small\item\em Returns the location (if known) of the error. \end{DoxyCompactList}\item 
+int {\bf Error\+Col} () const 
+\begin{DoxyCompactList}\small\item\em The column where the error occured. See \doxyref{Error\+Row()}{p.}{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b} \end{DoxyCompactList}\item 
+void {\bf Set\+Tab\+Size} (int \+\_\+tabsize)
+\begin{DoxyCompactList}\small\item\em \doxyref{Set\+Tab\+Size()}{p.}{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d} allows the error reporting functions (\doxyref{Error\+Row()}{p.}{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b} and \doxyref{Error\+Col()}{p.}{classdqm4hep_1_1TiXmlDocument_aa0573ae7699ccf075d4e470992d84780}) to report the correct values for row and column. \end{DoxyCompactList}\item 
+int {\bf Tab\+Size} () const 
+\item 
+void {\bf Clear\+Error} ()
+\begin{DoxyCompactList}\small\item\em If you have handled the error, it can be reset with this call. \end{DoxyCompactList}\item 
+void {\bf Print} () const 
+\begin{DoxyCompactList}\small\item\em Write the document to standard out using formatted printing (\char`\"{}pretty print\char`\"{}). \end{DoxyCompactList}\item 
+virtual void {\bf Print} (F\+I\+L\+E $\ast$cfile, int depth=0) const 
+\begin{DoxyCompactList}\small\item\em Print this Document to a F\+I\+L\+E stream. \end{DoxyCompactList}\item 
+void {\bf Set\+Error} (int err, const char $\ast${\bf error\+Location}, {\bf Ti\+Xml\+Parsing\+Data} $\ast$prev\+Data, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+virtual const {\bf Ti\+Xml\+Document} $\ast$ {\bf To\+Document} () const 
+\begin{DoxyCompactList}\small\item\em Cast to a more defined type. Will return null not of the requested type. \end{DoxyCompactList}\item 
+virtual {\bf Ti\+Xml\+Document} $\ast$ {\bf To\+Document} ()
+\begin{DoxyCompactList}\small\item\em Cast to a more defined type. Will return null not of the requested type. \end{DoxyCompactList}\item 
+virtual bool {\bf Accept} ({\bf Ti\+Xml\+Visitor} $\ast$content) const 
+\begin{DoxyCompactList}\small\item\em Walk the X\+M\+L tree visiting this node and all of its children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Ti\+Xml\+Node} $\ast$ {\bf Clone} () const 
+\begin{DoxyCompactList}\small\item\em Create an exact duplicate of this node and return it. \end{DoxyCompactList}\item 
+virtual void {\bf Stream\+In} (std\+::istream $\ast$in, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$tag)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Copy\+To} ({\bf Ti\+Xml\+Document} $\ast$target) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf error}
+\item 
+int {\bf error\+Id}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf error\+Desc}
+\item 
+int {\bf tabsize}
+\item 
+{\bf Ti\+Xml\+Cursor} {\bf error\+Location}
+\item 
+bool {\bf use\+Microsoft\+B\+O\+M}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Always the top level node. 
+
+A document binds together all the X\+M\+L pieces. It can be saved, loaded, and printed to the screen. The 'value' of a document node is the xml file name. 
+
+Definition at line 1392 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Document\+::\+Ti\+Xml\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a8ba36fb7b95b67b5290f17a362eae4c6}
+
+
+Create an empty document, that has no name. 
+
+
+
+Definition at line 872 of file tinyxml.\+cc.
+
+
+
+References Clear\+Error(), tabsize, and use\+Microsoft\+B\+O\+M.
+
+
+
+Referenced by Clone().
+
+
+\begin{DoxyCode}
+872                              : TiXmlNode( TiXmlNode::TINYXML_DOCUMENT )
+873 \{
+874   tabsize = 4;
+875   useMicrosoftBOM = \textcolor{keyword}{false};
+876   ClearError();
+877 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Document\+::\+Ti\+Xml\+Document (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{document\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a67b25e1edde1419425f66cb2c7d86b9c}
+
+
+Create a document with a name. The name of the document is also the filename of the xml. 
+
+
+
+Definition at line 879 of file tinyxml.\+cc.
+
+
+
+References Clear\+Error(), tabsize, use\+Microsoft\+B\+O\+M, and dqm4hep\+::\+Ti\+Xml\+Node\+::value.
+
+
+\begin{DoxyCode}
+879                                                         : TiXmlNode( 
+      TiXmlNode::TINYXML_DOCUMENT )
+880 \{
+881   tabsize = 4;
+882   useMicrosoftBOM = \textcolor{keyword}{false};
+883   value = documentName;
+884   ClearError();
+885 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Document\+::\+Ti\+Xml\+Document (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{document\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a455099bebb0d26baf7796b614cd175a5}
+
+
+Constructor. 
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Document\+::\+Ti\+Xml\+Document (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{copy}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_aeaaa08f97ada6e0a8bce4a396dc6ec9d}
+
+
+Definition at line 899 of file tinyxml.\+cc.
+
+
+
+References Copy\+To().
+
+
+\begin{DoxyCode}
+899                                                         : TiXmlNode( 
+      TiXmlNode::TINYXML_DOCUMENT )
+900 \{
+901   copy.CopyTo( \textcolor{keyword}{this} );
+902 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!````~Ti\+Xml\+Document@{$\sim$\+Ti\+Xml\+Document}}
+\index{````~Ti\+Xml\+Document@{$\sim$\+Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{$\sim$\+Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+Ti\+Xml\+Document\+::$\sim$\+Ti\+Xml\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_ada6e57100aa795c77620ae5dd01d2ac8}
+
+
+Definition at line 1408 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+1408 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Accept@{Accept}}
+\index{Accept@{Accept}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Visitor} $\ast$}]{content}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_af3acdc8900fc0f250e6dc15bc5085bc7}
+
+
+Walk the X\+M\+L tree visiting this node and all of its children. 
+
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_afcc32ba29e1a4af7b4303d8cb53f7ea6}.
+
+
+
+Definition at line 1114 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling(), dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Enter(), and dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Exit().
+
+
+\begin{DoxyCode}
+1115 \{
+1116   \textcolor{keywordflow}{if} ( visitor->VisitEnter( *\textcolor{keyword}{this} ) )
+1117   \{
+1118     \textcolor{keywordflow}{for} ( \textcolor{keyword}{const} TiXmlNode* node=FirstChild(); node; node=node->NextSibling() )
+1119     \{
+1120       \textcolor{keywordflow}{if} ( !node->Accept( visitor ) )
+1121         \textcolor{keywordflow}{break};
+1122     \}
+1123   \}
+1124   \textcolor{keywordflow}{return} visitor->VisitExit( *\textcolor{keyword}{this} );
+1125 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Clear\+Error@{Clear\+Error}}
+\index{Clear\+Error@{Clear\+Error}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Clear\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Clear\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_aaa74c96f55e3380f7fdec346f2285ab0}
+
+
+If you have handled the error, it can be reset with this call. 
+
+The error state is automatically cleared if you Parse a new X\+M\+L block. 
+
+Definition at line 1510 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, error, error\+Desc, error\+Id, error\+Location, and dqm4hep\+::\+Ti\+Xml\+Cursor\+::row.
+
+
+
+Referenced by Parse(), and Ti\+Xml\+Document().
+
+
+\begin{DoxyCode}
+1510                               \{ error = \textcolor{keyword}{false}; 
+1511                         errorId = 0; 
+1512                         errorDesc = \textcolor{stringliteral}{""}; 
+1513                         errorLocation.row = errorLocation.col = 0; 
+1514                         \textcolor{comment}{//errorLocation.last = 0; }
+1515                       \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Clone@{Clone}}
+\index{Clone@{Clone}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Node} $\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_a4e1348a31ec30ad87ad53e15b9d6b744}
+
+
+Create an exact duplicate of this node and return it. 
+
+The memory must be deleted by the caller. 
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_a008af87c4f1478c5720580104e80da2f}.
+
+
+
+Definition at line 1092 of file tinyxml.\+cc.
+
+
+
+References Copy\+To(), and Ti\+Xml\+Document().
+
+
+\begin{DoxyCode}
+1093 \{
+1094   TiXmlDocument* clone = \textcolor{keyword}{new} TiXmlDocument();
+1095   \textcolor{keywordflow}{if} ( !clone )
+1096     \textcolor{keywordflow}{return} 0;
+1097 
+1098   CopyTo( clone );
+1099   \textcolor{keywordflow}{return} clone;
+1100 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Copy\+To}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Copy\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Document} $\ast$}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_aab3a6da37e2ed09283d7a785a9ab9a1b}
+
+
+Definition at line 1073 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+Clone(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Copy\+To(), error, error\+Desc, error\+Id, error\+Location, dqm4hep\+::\+Ti\+Xml\+Node\+::first\+Child, dqm4hep\+::\+Ti\+Xml\+Node\+::\+Link\+End\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling(), tabsize, and use\+Microsoft\+B\+O\+M.
+
+
+
+Referenced by Clone(), operator=(), and Ti\+Xml\+Document().
+
+
+\begin{DoxyCode}
+1074 \{
+1075   TiXmlNode::CopyTo( target );
+1076 
+1077   target->error = error;
+1078   target->errorId = errorId;
+1079   target->errorDesc = errorDesc;
+1080   target->tabsize = tabsize;
+1081   target->errorLocation = errorLocation;
+1082   target->useMicrosoftBOM = useMicrosoftBOM;
+1083 
+1084   TiXmlNode* node = 0;
+1085   \textcolor{keywordflow}{for} ( node = firstChild; node; node = node->NextSibling() )
+1086   \{
+1087     target->LinkEndChild( node->Clone() );
+1088   \} 
+1089 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Error@{Error}}
+\index{Error@{Error}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a54dacea8d9496000c6310959328115d3}
+
+
+If an error occurs, Error will be set to true. 
+
+Also,
+\begin{DoxyItemize}
+\item The \doxyref{Error\+Id()}{p.}{classdqm4hep_1_1TiXmlDocument_a528910728d85cb5cbebc2e58965c691b} will contain the integer identifier of the error (not generally useful)
+\item The \doxyref{Error\+Desc()}{p.}{classdqm4hep_1_1TiXmlDocument_a6433995bd954f43f47949c66668c34e7} method will return the name of the error. (very useful)
+\item The \doxyref{Error\+Row()}{p.}{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b} and \doxyref{Error\+Col()}{p.}{classdqm4hep_1_1TiXmlDocument_aa0573ae7699ccf075d4e470992d84780} will return the location of the error (if known) 
+\end{DoxyItemize}
+
+Definition at line 1459 of file tinyxml.\+h.
+
+
+
+References error.
+
+
+
+Referenced by Load\+File().
+
+
+\begin{DoxyCode}
+1459 \{ \textcolor{keywordflow}{return} error; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Error\+Col@{Error\+Col}}
+\index{Error\+Col@{Error\+Col}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Error\+Col}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::\+Error\+Col (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_aa0573ae7699ccf075d4e470992d84780}
+
+
+The column where the error occured. See \doxyref{Error\+Row()}{p.}{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b} 
+
+
+
+Definition at line 1477 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, and error\+Location.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Error\+Desc@{Error\+Desc}}
+\index{Error\+Desc@{Error\+Desc}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Error\+Desc}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+Error\+Desc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a6433995bd954f43f47949c66668c34e7}
+
+
+Contains a textual (english) description of the error if one occurs. 
+
+
+
+Definition at line 1462 of file tinyxml.\+h.
+
+
+
+References error\+Desc.
+
+
+\begin{DoxyCode}
+1462 \{ \textcolor{keywordflow}{return} errorDesc.c\_str (); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Error\+Id@{Error\+Id}}
+\index{Error\+Id@{Error\+Id}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Error\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::\+Error\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a528910728d85cb5cbebc2e58965c691b}
+
+
+Generally, you probably want the error string ( \doxyref{Error\+Desc()}{p.}{classdqm4hep_1_1TiXmlDocument_a6433995bd954f43f47949c66668c34e7} ). 
+
+But if you prefer the Error\+Id, this function will fetch it. 
+
+Definition at line 1467 of file tinyxml.\+h.
+
+
+
+References error\+Id.
+
+
+\begin{DoxyCode}
+1467 \{ \textcolor{keywordflow}{return} errorId; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Error\+Row@{Error\+Row}}
+\index{Error\+Row@{Error\+Row}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Error\+Row}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::\+Error\+Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b}
+
+
+Returns the location (if known) of the error. 
+
+The first column is column 1, and the first row is row 1. A value of 0 means the row and column wasn't applicable (memory errors, for example, have no row/column) or the parser lost the error. (An error in the error reporting, in that case.)
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Set\+Tab\+Size}{p.}{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d}, \doxyref{Row}{p.}{classdqm4hep_1_1TiXmlBase_a1a246aa6e2878e6e03e710513c273d92}, \doxyref{Column}{p.}{classdqm4hep_1_1TiXmlBase_a3c309b9c143202c959964353b7173ba2} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1476 of file tinyxml.\+h.
+
+
+
+References error\+Location, and dqm4hep\+::\+Ti\+Xml\+Cursor\+::row.
+
+
+\begin{DoxyCode}
+1476 \{ \textcolor{keywordflow}{return} errorLocation.row+1; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Load\+File@{Load\+File}}
+\index{Load\+File@{Load\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Load\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding = {\ttfamily {\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a71d341459df81280ef38e0718d0f2b79}
+
+
+Load a file using the current document value. 
+
+Returns true if successful. Will delete any existing document data before loading. 
+
+Definition at line 912 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+
+Referenced by Load\+File(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+913 \{
+914   \textcolor{keywordflow}{return} LoadFile( Value(), encoding );
+915 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Load\+File@{Load\+File}}
+\index{Load\+File@{Load\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Load\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding = {\ttfamily {\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a98925e7ef6510e5efd3690b7d072832b}
+
+
+Load a file using the given filename. Returns true if successful. 
+
+
+
+Definition at line 923 of file tinyxml.\+cc.
+
+
+
+References Load\+File(), Set\+Error(), dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N, dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G, dqm4hep\+::\+Ti\+Xml\+F\+Open(), and dqm4hep\+::\+Ti\+Xml\+Node\+::value.
+
+
+\begin{DoxyCode}
+924 \{
+925   TIXML_STRING filename( \_filename );
+926   value = filename;
+927 
+928   \textcolor{comment}{// reading in binary mode so that tinyxml can normalize the EOL}
+929   FILE* file = TiXmlFOpen( value.c\_str (), \textcolor{stringliteral}{"rb"} );  
+930 
+931   \textcolor{keywordflow}{if} ( file )
+932   \{
+933     \textcolor{keywordtype}{bool} result = LoadFile( file, encoding );
+934     fclose( file );
+935     \textcolor{keywordflow}{return} result;
+936   \}
+937   \textcolor{keywordflow}{else}
+938   \{
+939     SetError( TIXML_ERROR_OPENING_FILE, 0, 0, TIXML_ENCODING_UNKNOWN );
+940     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+941   \}
+942 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Load\+File@{Load\+File}}
+\index{Load\+File@{Load\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Load\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding = {\ttfamily {\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a207a4ed5d05033a018c291b4d9f763d5}
+
+
+Load a file using the given F\+I\+L\+E$\ast$. 
+
+Returns true if successful. Note that this method doesn't stream -\/ the entire object pointed at by the F\+I\+L\+E$\ast$ will be interpreted as an X\+M\+L file. Tiny\+X\+M\+L doesn't stream in X\+M\+L from the current file location. Streaming may be added in the future. 
+
+Definition at line 944 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::\+Clear(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Clear(), Error(), dqm4hep\+::\+Ti\+Xml\+Base\+::location, Parse(), Set\+Error(), dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N, dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y, and dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E.
+
+
+\begin{DoxyCode}
+945 \{
+946   \textcolor{keywordflow}{if} ( !file ) 
+947   \{
+948     SetError( TIXML_ERROR_OPENING_FILE, 0, 0, TIXML_ENCODING_UNKNOWN );
+949     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+950   \}
+951 
+952   \textcolor{comment}{// Delete the existing data:}
+953   Clear();
+954   location.Clear();
+955 
+956   \textcolor{comment}{// Get the file size, so we can pre-allocate the string. HUGE speed impact.}
+957   \textcolor{keywordtype}{long} length = 0;
+958   fseek( file, 0, SEEK\_END );
+959   length = ftell( file );
+960   fseek( file, 0, SEEK\_SET );
+961 
+962   \textcolor{comment}{// Strange case, but good to handle up front.}
+963   \textcolor{keywordflow}{if} ( length <= 0 )
+964   \{
+965     SetError( TIXML_ERROR_DOCUMENT_EMPTY, 0, 0, TIXML_ENCODING_UNKNOWN );
+966     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+967   \}
+968 
+969   \textcolor{comment}{// Subtle bug here. TinyXml did use fgets. But from the XML spec:}
+970   \textcolor{comment}{// 2.11 End-of-Line Handling}
+971   \textcolor{comment}{// <snip>}
+972   \textcolor{comment}{// <quote>}
+973   \textcolor{comment}{// ...the XML processor MUST behave as if it normalized all line breaks in external }
+974   \textcolor{comment}{// parsed entities (including the document entity) on input, before parsing, by translating }
+975   \textcolor{comment}{// both the two-character sequence #xD #xA and any #xD that is not followed by #xA to }
+976   \textcolor{comment}{// a single #xA character.}
+977   \textcolor{comment}{// </quote>}
+978   \textcolor{comment}{//}
+979   \textcolor{comment}{// It is not clear fgets does that, and certainly isn't clear it works cross platform. }
+980   \textcolor{comment}{// Generally, you expect fgets to translate from the convention of the OS to the c/unix}
+981   \textcolor{comment}{// convention, and not work generally.}
+982 
+983   \textcolor{comment}{/*}
+984 \textcolor{comment}{  while( fgets( buf, sizeof(buf), file ) )}
+985 \textcolor{comment}{  \{}
+986 \textcolor{comment}{    data += buf;}
+987 \textcolor{comment}{  \}}
+988 \textcolor{comment}{  */}
+989 
+990   \textcolor{keywordtype}{char}* buf = \textcolor{keyword}{new} \textcolor{keywordtype}{char}[ length+1 ];
+991   buf[0] = 0;
+992 
+993   \textcolor{keywordflow}{if} ( fread( buf, length, 1, file ) != 1 ) \{
+994     \textcolor{keyword}{delete} [] buf;
+995     SetError( TIXML_ERROR_OPENING_FILE, 0, 0, TIXML_ENCODING_UNKNOWN );
+996     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+997   \}
+998 
+999   \textcolor{comment}{// Process the buffer in place to normalize new lines. (See comment above.)}
+1000   \textcolor{comment}{// Copies from the 'p' to 'q' pointer, where p can advance faster if}
+1001   \textcolor{comment}{// a newline-carriage return is hit.}
+1002   \textcolor{comment}{//}
+1003   \textcolor{comment}{// Wikipedia:}
+1004   \textcolor{comment}{// Systems based on ASCII or a compatible character set use either LF  (Line feed, '\(\backslash\)n', 0x0A, 10 in
+       decimal) or }
+1005   \textcolor{comment}{// CR (Carriage return, '\(\backslash\)r', 0x0D, 13 in decimal) individually, or CR followed by LF (CR+LF, 0x0D
+       0x0A)...}
+1006   \textcolor{comment}{//    * LF:    Multics, Unix and Unix-like systems (GNU/Linux, AIX, Xenix, Mac OS X, FreeBSD, etc.),
+       BeOS, Amiga, RISC OS, and others}
+1007     \textcolor{comment}{//    * CR+LF: DEC RT-11 and most other early non-Unix, non-IBM OSes, CP/M, MP/M, DOS, OS/2, Microsoft
+       Windows, Symbian OS}
+1008     \textcolor{comment}{//    * CR:    Commodore 8-bit machines, Apple II family, Mac OS up to version 9 and OS-9}
+1009 
+1010   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* p = buf;  \textcolor{comment}{// the read head}
+1011   \textcolor{keywordtype}{char}* q = buf;      \textcolor{comment}{// the write head}
+1012   \textcolor{keyword}{const} \textcolor{keywordtype}{char} CR = 0x0d;
+1013   \textcolor{keyword}{const} \textcolor{keywordtype}{char} LF = 0x0a;
+1014 
+1015   buf[length] = 0;
+1016   \textcolor{keywordflow}{while}( *p ) \{
+1017     assert( p < (buf+length) );
+1018     assert( q <= (buf+length) );
+1019     assert( q <= p );
+1020 
+1021     \textcolor{keywordflow}{if} ( *p == CR ) \{
+1022       *q++ = LF;
+1023       p++;
+1024       \textcolor{keywordflow}{if} ( *p == LF ) \{   \textcolor{comment}{// check for CR+LF (and skip LF)}
+1025         p++;
+1026       \}
+1027     \}
+1028     \textcolor{keywordflow}{else} \{
+1029       *q++ = *p++;
+1030     \}
+1031   \}
+1032   assert( q <= (buf+length) );
+1033   *q = 0;
+1034 
+1035   Parse( buf, 0, encoding );
+1036 
+1037   \textcolor{keyword}{delete} [] buf;
+1038   \textcolor{keywordflow}{return} !Error();
+1039 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Load\+File@{Load\+File}}
+\index{Load\+File@{Load\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Load\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding = {\ttfamily {\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a08dee625a49330d1b76edbdf1c81aae0}
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & S\+T\+L std\+::string version. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1431 of file tinyxml.\+h.
+
+
+
+References Load\+File().
+
+
+\begin{DoxyCode}
+1432   \{
+1433     \textcolor{keywordflow}{return} LoadFile( filename.c\_str(), encoding );
+1434   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{copy}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a60c66e77405569612baab42ef1759c4a}
+
+
+Definition at line 905 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+Clear(), and Copy\+To().
+
+
+\begin{DoxyCode}
+906 \{
+907   Clear();
+908   copy.CopyTo( \textcolor{keyword}{this} );
+909 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Parse@{Parse}}
+\index{Parse@{Parse}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf Ti\+Xml\+Parsing\+Data} $\ast$}]{data = {\ttfamily 0}, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding = {\ttfamily {\bf T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_a91113eb7f2ddd172896a9424d6dfbc34}
+
+
+Parse the given null terminated block of xml data. 
+
+Passing in an encoding to this method (either T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+L\+E\+G\+A\+C\+Y or T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8 will force Tiny\+Xml to use that encoding, regardless of what Tiny\+Xml might otherwise try to detect. 
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_a41f23afd7594cbf3c16706a42b5c4c4b}.
+
+
+
+Definition at line 707 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::\+Clear(), Clear\+Error(), dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Cursor(), dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::cursor, dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Encoding(), dqm4hep\+::\+Ti\+Xml\+Node\+::first\+Child, dqm4hep\+::\+Ti\+Xml\+Node\+::\+Identify(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Link\+End\+Child(), dqm4hep\+::\+Ti\+Xml\+Base\+::location, dqm4hep\+::\+Ti\+Xml\+Base\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Cursor\+::row, Set\+Error(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Skip\+White\+Space(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+String\+Equal(), Tab\+Size(), dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+L\+E\+G\+A\+C\+Y, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8, dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y, dqm4hep\+::\+Ti\+Xml\+Node\+::\+To\+Declaration(), and use\+Microsoft\+B\+O\+M.
+
+
+
+Referenced by Load\+File().
+
+
+\begin{DoxyCode}
+708 \{
+709   ClearError();
+710 
+711   \textcolor{comment}{// Parse away, at the document level. Since a document}
+712   \textcolor{comment}{// contains nothing but other tags, most of what happens}
+713   \textcolor{comment}{// here is skipping white space.}
+714   \textcolor{keywordflow}{if} ( !p || !*p )
+715   \{
+716     SetError( TIXML_ERROR_DOCUMENT_EMPTY, 0, 0, TIXML_ENCODING_UNKNOWN );
+717     \textcolor{keywordflow}{return} 0;
+718   \}
+719 
+720   \textcolor{comment}{// Note that, for a document, this needs to come}
+721   \textcolor{comment}{// before the while space skip, so that parsing}
+722   \textcolor{comment}{// starts from the pointer we are given.}
+723   location.Clear();
+724   \textcolor{keywordflow}{if} ( prevData )
+725   \{
+726     location.row = prevData->cursor.row;
+727     location.col = prevData->cursor.col;
+728   \}
+729   \textcolor{keywordflow}{else}
+730   \{
+731     location.row = 0;
+732     location.col = 0;
+733   \}
+734   TiXmlParsingData data( p, TabSize(), location.row, location.col );
+735   location = data.Cursor();
+736 
+737   \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UNKNOWN )
+738   \{
+739     \textcolor{comment}{// Check for the Microsoft UTF-8 lead bytes.}
+740     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* pU = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)p;
+741     \textcolor{keywordflow}{if} (  *(pU+0) && *(pU+0) == TIXML_UTF_LEAD_0
+742        && *(pU+1) && *(pU+1) == TIXML_UTF_LEAD_1
+743        && *(pU+2) && *(pU+2) == TIXML_UTF_LEAD_2 )
+744     \{
+745       encoding = TIXML_ENCODING_UTF8;
+746       useMicrosoftBOM = \textcolor{keyword}{true};
+747     \}
+748   \}
+749 
+750     p = SkipWhiteSpace( p, encoding );
+751   \textcolor{keywordflow}{if} ( !p )
+752   \{
+753     SetError( TIXML_ERROR_DOCUMENT_EMPTY, 0, 0, TIXML_ENCODING_UNKNOWN );
+754     \textcolor{keywordflow}{return} 0;
+755   \}
+756 
+757   \textcolor{keywordflow}{while} ( p && *p )
+758   \{
+759     TiXmlNode* node = Identify( p, encoding );
+760     \textcolor{keywordflow}{if} ( node )
+761     \{
+762       p = node->Parse( p, &data, encoding );
+763       LinkEndChild( node );
+764     \}
+765     \textcolor{keywordflow}{else}
+766     \{
+767       \textcolor{keywordflow}{break};
+768     \}
+769 
+770     \textcolor{comment}{// Did we get encoding info?}
+771     \textcolor{keywordflow}{if} (    encoding == TIXML_ENCODING_UNKNOWN
+772        && node->ToDeclaration() )
+773     \{
+774       TiXmlDeclaration* dec = node->ToDeclaration();
+775       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* enc = dec->Encoding();
+776       assert( enc );
+777 
+778       \textcolor{keywordflow}{if} ( *enc == 0 )
+779         encoding = TIXML_ENCODING_UTF8;
+780       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( StringEqual( enc, \textcolor{stringliteral}{"UTF-8"}, \textcolor{keyword}{true}, TIXML_ENCODING_UNKNOWN ) )
+781         encoding = TIXML_ENCODING_UTF8;
+782       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( StringEqual( enc, \textcolor{stringliteral}{"UTF8"}, \textcolor{keyword}{true}, TIXML_ENCODING_UNKNOWN ) )
+783         encoding = TIXML_ENCODING_UTF8; \textcolor{comment}{// incorrect, but be nice}
+784       \textcolor{keywordflow}{else} 
+785         encoding = TIXML_ENCODING_LEGACY;
+786     \}
+787 
+788     p = SkipWhiteSpace( p, encoding );
+789   \}
+790 
+791   \textcolor{comment}{// Was this empty?}
+792   \textcolor{keywordflow}{if} ( !firstChild ) \{
+793     SetError( TIXML_ERROR_DOCUMENT_EMPTY, 0, 0, encoding );
+794     \textcolor{keywordflow}{return} 0;
+795   \}
+796 
+797   \textcolor{comment}{// All is well.}
+798   \textcolor{keywordflow}{return} p;
+799 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a4d4aebbd2ba6615d7e1e7bba4ad2a73a}
+
+
+Write the document to standard out using formatted printing (\char`\"{}pretty print\char`\"{}). 
+
+
+
+Definition at line 1518 of file tinyxml.\+h.
+
+
+
+References Print().
+
+
+
+Referenced by Print(), and Save\+File().
+
+
+\begin{DoxyCode}
+1518 \{ Print( stdout, 0 ); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{cfile, }
+\item[{int}]{depth = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_aacb44356c721cf7bc017d8dae407e146}
+
+
+Print this Document to a F\+I\+L\+E stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_ad5adc7976f1def10cb903144cfb11127}.
+
+
+
+Definition at line 1103 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Next\+Sibling().
+
+
+\begin{DoxyCode}
+1104 \{
+1105   assert( cfile );
+1106   \textcolor{keywordflow}{for} ( \textcolor{keyword}{const} TiXmlNode* node=FirstChild(); node; node=node->NextSibling() )
+1107   \{
+1108     node->Print( cfile, depth );
+1109     fprintf( cfile, \textcolor{stringliteral}{"\(\backslash\)n"} );
+1110   \}
+1111 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Root\+Element@{Root\+Element}}
+\index{Root\+Element@{Root\+Element}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Root\+Element}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Element}$\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+Root\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a9b68b95d32490542f65e393c987875a7}
+
+
+Get the root element -- the only top level element -- of the document. 
+
+In well formed X\+M\+L, there should only be one. Tiny\+Xml is tolerant of multiple elements at the document level. 
+
+Definition at line 1451 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child\+Element().
+
+
+\begin{DoxyCode}
+1451 \{ \textcolor{keywordflow}{return} FirstChildElement(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Root\+Element@{Root\+Element}}
+\index{Root\+Element@{Root\+Element}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Root\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Element}$\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+Root\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a190dcd96c113f467ce8fa050493e4571}
+
+
+Definition at line 1452 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child\+Element().
+
+
+\begin{DoxyCode}
+1452 \{ \textcolor{keywordflow}{return} FirstChildElement(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Save\+File@{Save\+File}}
+\index{Save\+File@{Save\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Save\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Save\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlDocument_a06d9e3d1db7412e5593da31bcba8de86}
+
+
+Save a file using the current document value. Returns true if successful. 
+
+
+
+Definition at line 918 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+
+Referenced by Save\+File().
+
+
+\begin{DoxyCode}
+919 \{
+920   \textcolor{keywordflow}{return} SaveFile( Value() );
+921 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Save\+File@{Save\+File}}
+\index{Save\+File@{Save\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Save\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Save\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlDocument_a1392cbd8476c5e3593c92088f9862eb0}
+
+
+Save a file using the given filename. Returns true if successful. 
+
+
+
+Definition at line 1042 of file tinyxml.\+cc.
+
+
+
+References Save\+File(), and dqm4hep\+::\+Ti\+Xml\+F\+Open().
+
+
+\begin{DoxyCode}
+1043 \{
+1044   \textcolor{comment}{// The old c stuff lives on...}
+1045   FILE* fp = TiXmlFOpen( filename, \textcolor{stringliteral}{"w"} );
+1046   \textcolor{keywordflow}{if} ( fp )
+1047   \{
+1048     \textcolor{keywordtype}{bool} result = SaveFile( fp );
+1049     fclose( fp );
+1050     \textcolor{keywordflow}{return} result;
+1051   \}
+1052   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1053 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Save\+File@{Save\+File}}
+\index{Save\+File@{Save\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Save\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Save\+File (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fp}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlDocument_a305decc02baeec09ed308cca49ec2169}
+
+
+Save a file using the given F\+I\+L\+E$\ast$. Returns true if successful. 
+
+
+
+Definition at line 1056 of file tinyxml.\+cc.
+
+
+
+References Print(), dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+U\+T\+F\+\_\+\+L\+E\+A\+D\+\_\+0, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+U\+T\+F\+\_\+\+L\+E\+A\+D\+\_\+1, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+U\+T\+F\+\_\+\+L\+E\+A\+D\+\_\+2, and use\+Microsoft\+B\+O\+M.
+
+
+\begin{DoxyCode}
+1057 \{
+1058   \textcolor{keywordflow}{if} ( useMicrosoftBOM ) 
+1059   \{
+1060     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TIXML_UTF_LEAD_0 = 0xefU;
+1061     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TIXML_UTF_LEAD_1 = 0xbbU;
+1062     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} TIXML_UTF_LEAD_2 = 0xbfU;
+1063 
+1064     fputc( TIXML\_UTF\_LEAD\_0, fp );
+1065     fputc( TIXML\_UTF\_LEAD\_1, fp );
+1066     fputc( TIXML\_UTF\_LEAD\_2, fp );
+1067   \}
+1068   Print( fp, 0 );
+1069   \textcolor{keywordflow}{return} (ferror(fp) == 0);
+1070 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Save\+File@{Save\+File}}
+\index{Save\+File@{Save\+File}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Save\+File}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::\+Save\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{filename}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_a9d2cd9b65c37e3c3ae573f607894c04c}
+
+
+$<$ S\+T\+L std\+::string version. 
+
+
+
+Definition at line 1435 of file tinyxml.\+h.
+
+
+
+References Save\+File().
+
+
+\begin{DoxyCode}
+1436   \{
+1437     \textcolor{keywordflow}{return} SaveFile( filename.c\_str() );
+1438   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Set\+Error@{Set\+Error}}
+\index{Set\+Error@{Set\+Error}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Set\+Error}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error (
+\begin{DoxyParamCaption}
+\item[{int}]{err, }
+\item[{const char $\ast$}]{error\+Location, }
+\item[{{\bf Ti\+Xml\+Parsing\+Data} $\ast$}]{prev\+Data, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlDocument_a73dff2042de5c555bce44bfb19098eda}
+
+
+Definition at line 801 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::\+Clear(), dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Cursor(), error, error\+Desc, error\+Id, error\+Location, dqm4hep\+::\+Ti\+Xml\+Base\+::error\+String, dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Stamp(), and dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Insert\+After\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Insert\+Before\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Insert\+End\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Link\+End\+Child(), Load\+File(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Parse(), Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Replace\+Child().
+
+
+\begin{DoxyCode}
+802 \{ 
+803   \textcolor{comment}{// The first error in a chain is more accurate - don't set again!}
+804   \textcolor{keywordflow}{if} ( error )
+805     \textcolor{keywordflow}{return};
+806 
+807   assert( err > 0 && err < TIXML_ERROR_STRING_COUNT );
+808   error   = \textcolor{keyword}{true};
+809   errorId = err;
+810   errorDesc = errorString[ errorId ];
+811 
+812   errorLocation.Clear();
+813   \textcolor{keywordflow}{if} ( pError && data )
+814   \{
+815     data->Stamp( pError, encoding );
+816     errorLocation = data->Cursor();
+817   \}
+818 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Set\+Tab\+Size@{Set\+Tab\+Size}}
+\index{Set\+Tab\+Size@{Set\+Tab\+Size}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Set\+Tab\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Tab\+Size (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+tabsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d}
+
+
+\doxyref{Set\+Tab\+Size()}{p.}{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d} allows the error reporting functions (\doxyref{Error\+Row()}{p.}{classdqm4hep_1_1TiXmlDocument_a7c0a961466ff753138e5aa5360c2e67b} and \doxyref{Error\+Col()}{p.}{classdqm4hep_1_1TiXmlDocument_aa0573ae7699ccf075d4e470992d84780}) to report the correct values for row and column. 
+
+It does not change the output or input in any way.
+
+By calling this method, with a tab size greater than 0, the row and column of each node and attribute is stored when the file is loaded. Very useful for tracking the D\+O\+M back in to the source file.
+
+The tab size is required for calculating the location of nodes. If not set, the default of 4 is used. The tabsize is set per document. Setting the tabsize to 0 disables row/column tracking.
+
+Note that row and column tracking is not supported when using operator$>$$>$.
+
+The tab size needs to be enabled before the parse or load. Correct usage\+: \begin{DoxyVerb}TiXmlDocument doc;
+doc.SetTabSize( 8 );
+doc.Load( "myfile.xml" );
+\end{DoxyVerb}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Row}{p.}{classdqm4hep_1_1TiXmlBase_a1a246aa6e2878e6e03e710513c273d92}, \doxyref{Column}{p.}{classdqm4hep_1_1TiXmlBase_a3c309b9c143202c959964353b7173ba2} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1503 of file tinyxml.\+h.
+
+
+
+References tabsize.
+
+
+\begin{DoxyCode}
+1503 \{ tabsize = \_tabsize; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Stream\+In@{Stream\+In}}
+\index{Stream\+In@{Stream\+In}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Stream\+In}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+Ti\+Xml\+Document\+::\+Stream\+In (
+\begin{DoxyParamCaption}
+\item[{std\+::istream $\ast$}]{in, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_a6d66ae4dc7cfd3e7727e34ad094939da}
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_adea69fa1c7b9fc1831c26b3a76496859}.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!Tab\+Size@{Tab\+Size}}
+\index{Tab\+Size@{Tab\+Size}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{Tab\+Size}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::\+Tab\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlDocument_ab4ac30add9e0efe1d8b1c420e8fa0d97}
+
+
+Definition at line 1505 of file tinyxml.\+h.
+
+
+
+References tabsize.
+
+
+
+Referenced by Parse().
+
+
+\begin{DoxyCode}
+1505 \{ \textcolor{keywordflow}{return} tabsize; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!To\+Document@{To\+Document}}
+\index{To\+Document@{To\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{To\+Document}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Ti\+Xml\+Document}$\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+To\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_a326e62ce0a3b894d50034cc52fc58bc4}
+
+
+Cast to a more defined type. Will return null not of the requested type. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_a61dd0faed884e7abe2749c54d728a27c}.
+
+
+
+Definition at line 1531 of file tinyxml.\+h.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!To\+Document@{To\+Document}}
+\index{To\+Document@{To\+Document}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{To\+Document}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Ti\+Xml\+Document}$\ast$ dqm4hep\+::\+Ti\+Xml\+Document\+::\+To\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlDocument_a9dc32d38c758e2269fcaff2ed3f2fd7e}
+
+
+Cast to a more defined type. Will return null not of the requested type. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_afd555c50305e0fe188d9dbf9e9187722}.
+
+
+
+Definition at line 1532 of file tinyxml.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!error@{error}}
+\index{error@{error}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::error\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_a96b67428105a15111c8b4119a49e25c3}
+
+
+Definition at line 1548 of file tinyxml.\+h.
+
+
+
+Referenced by Clear\+Error(), Copy\+To(), Error(), and Set\+Error().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!error\+Desc@{error\+Desc}}
+\index{error\+Desc@{error\+Desc}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{error\+Desc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Document\+::error\+Desc\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_a747abd604a766d6934a8a8f379e33be8}
+
+
+Definition at line 1550 of file tinyxml.\+h.
+
+
+
+Referenced by Clear\+Error(), Copy\+To(), Error\+Desc(), and Set\+Error().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!error\+Id@{error\+Id}}
+\index{error\+Id@{error\+Id}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{error\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::error\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_ac144082aa2ac1da94439b697ab5e13cb}
+
+
+Definition at line 1549 of file tinyxml.\+h.
+
+
+
+Referenced by Clear\+Error(), Copy\+To(), Error\+Id(), and Set\+Error().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!error\+Location@{error\+Location}}
+\index{error\+Location@{error\+Location}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{error\+Location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Cursor} dqm4hep\+::\+Ti\+Xml\+Document\+::error\+Location\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_aecece1de194c86cd021de5c4619139d4}
+
+
+Definition at line 1552 of file tinyxml.\+h.
+
+
+
+Referenced by Clear\+Error(), Copy\+To(), Error\+Col(), Error\+Row(), and Set\+Error().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!tabsize@{tabsize}}
+\index{tabsize@{tabsize}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{tabsize}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Document\+::tabsize\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_a81a33463b9394601c98b07c1aa7c6d11}
+
+
+Definition at line 1551 of file tinyxml.\+h.
+
+
+
+Referenced by Copy\+To(), Set\+Tab\+Size(), Tab\+Size(), and Ti\+Xml\+Document().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}!use\+Microsoft\+B\+O\+M@{use\+Microsoft\+B\+O\+M}}
+\index{use\+Microsoft\+B\+O\+M@{use\+Microsoft\+B\+O\+M}!dqm4hep\+::\+Ti\+Xml\+Document@{dqm4hep\+::\+Ti\+Xml\+Document}}
+\subsubsection[{use\+Microsoft\+B\+O\+M}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Document\+::use\+Microsoft\+B\+O\+M\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlDocument_a84a4da0ca1a50846d5725bb71f6df15f}
+
+
+Definition at line 1553 of file tinyxml.\+h.
+
+
+
+Referenced by Copy\+To(), Parse(), Save\+File(), and Ti\+Xml\+Document().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\item 
+{\bf tinyxmlparser.\+cc}\end{DoxyCompactItemize}

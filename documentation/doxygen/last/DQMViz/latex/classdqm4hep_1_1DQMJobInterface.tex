@@ -1,0 +1,252 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Job\+Interface Class Reference}
+\label{classdqm4hep_1_1DQMJobInterface}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+
+
+\doxyref{D\+Q\+M\+Job\+Interface}{p.}{classdqm4hep_1_1DQMJobInterface} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Job\+Interface.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Job\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMJobInterface}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf start\+Update} (int n\+Seconds)
+\begin{DoxyCompactList}\small\item\em Start update. \end{DoxyCompactList}\item 
+void {\bf stop\+Update} ()
+\begin{DoxyCompactList}\small\item\em Stop update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf status\+Received} (const Q\+String \&host\+Name)
+\begin{DoxyCompactList}\small\item\em Signal emitted when job status are received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Job\+Interface} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Job\+Interface} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool {\bf started} () const 
+\begin{DoxyCompactList}\small\item\em Whether the automatic update mode has been started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf status\+Received} (const std\+::string \&host\+Name)
+\begin{DoxyCompactList}\small\item\em Call back method when jobs status are received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+started}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Job\+Interface}{p.}{classdqm4hep_1_1DQMJobInterface} class. 
+
+Definition at line 43 of file D\+Q\+M\+Job\+Interface.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!D\+Q\+M\+Job\+Interface@{D\+Q\+M\+Job\+Interface}}
+\index{D\+Q\+M\+Job\+Interface@{D\+Q\+M\+Job\+Interface}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{D\+Q\+M\+Job\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::\+D\+Q\+M\+Job\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMJobInterface_aade700478dee032ddfa1d8ad07c534fa}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+34                                  :
+35     DimJobInterface(),
+36     m_started(\textcolor{keyword}{false})
+37 \{
+38   \textcolor{comment}{/* nop */}
+39 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!````~D\+Q\+M\+Job\+Interface@{$\sim$\+D\+Q\+M\+Job\+Interface}}
+\index{````~D\+Q\+M\+Job\+Interface@{$\sim$\+D\+Q\+M\+Job\+Interface}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Job\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::$\sim$\+D\+Q\+M\+Job\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMJobInterface_a0753c68b3ca76ca2543ad312a64518cf}
+
+
+Destructor. 
+
+
+
+Definition at line 43 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+44 \{
+45   \textcolor{comment}{/* nop */}
+46 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!started@{started}}
+\index{started@{started}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{started}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMJobInterface_acf2d6830a087e828e3335537452ae8b4}
+
+
+Whether the automatic update mode has been started. 
+
+
+
+Definition at line 50 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+
+References m\+\_\+started.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Button\+Clicked(), and dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Value\+Changed().
+
+
+\begin{DoxyCode}
+51 \{
+52   \textcolor{keywordflow}{return} m_started;
+53 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!start\+Update@{start\+Update}}
+\index{start\+Update@{start\+Update}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{start\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::start\+Update (
+\begin{DoxyParamCaption}
+\item[{int}]{n\+Seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterface_a7b6f7b149ba51af3223760d0d9c52787}
+
+
+Start update. 
+
+Alias slot function for start\+Timer(n\+Seconds) 
+
+Definition at line 57 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+
+References m\+\_\+started.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Button\+Clicked(), and dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Value\+Changed().
+
+
+\begin{DoxyCode}
+58 \{
+59   \textcolor{keywordflow}{if}(m_started)
+60     DimJobInterface::stopTimer();
+61 
+62   DimJobInterface::startTimer(nSeconds);
+63   m_started = \textcolor{keyword}{true};
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!status\+Received@{status\+Received}}
+\index{status\+Received@{status\+Received}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{status\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::status\+Received (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterface_a5b6386494112b9210198b7d4b4146b1b}
+
+
+Call back method when jobs status are received. 
+
+
+
+Definition at line 78 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+79 \{
+80   emit statusReceived(QString(hostName.c\_str()));
+81 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!status\+Received@{status\+Received}}
+\index{status\+Received@{status\+Received}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{status\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::status\+Received (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{host\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMJobInterface_a9790fab51e895ab8798dd5441394a99e}
+
+
+Signal emitted when job status are received. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!stop\+Update@{stop\+Update}}
+\index{stop\+Update@{stop\+Update}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{stop\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::stop\+Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterface_a6e24685b7416c7f7af4295030bc995dc}
+
+
+Stop update. 
+
+Alias slot function for stop\+Timer() 
+
+Definition at line 68 of file D\+Q\+M\+Job\+Interface.\+cc.
+
+
+
+References m\+\_\+started.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Button\+Clicked(), and dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Value\+Changed().
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{if}(m_started)
+71     DimJobInterface::stopTimer();
+72 
+73   m_started = \textcolor{keyword}{false};
+74 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}!m\+\_\+started@{m\+\_\+started}}
+\index{m\+\_\+started@{m\+\_\+started}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface}}
+\subsubsection[{m\+\_\+started}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::m\+\_\+started\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterface_a6b071eb9d7006e71f3b5bf0ead16ac0b}
+
+
+Definition at line 83 of file D\+Q\+M\+Job\+Interface.\+h.
+
+
+
+Referenced by started(), start\+Update(), and stop\+Update().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Job\+Interface.\+h}\item 
+{\bf D\+Q\+M\+Job\+Interface.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,378 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Collector\+Application Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Collector\+Application}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Collector\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementCollectorApplication}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector\+Application} ()
+\begin{DoxyCompactList}\small\item\em Constructor with collector name. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf run} ()
+\begin{DoxyCompactList}\small\item\em Run the application. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf exit} (int return\+Code)
+\begin{DoxyCompactList}\small\item\em Stop the application. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the application name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Type} () const 
+\begin{DoxyCompactList}\small\item\em Get the application type. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the monitor element collector name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf read\+Settings} (const std\+::string \&settings\+File=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em No settings to read. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+should\+Exit}
+\item 
+std\+::string {\bf m\+\_\+type}
+\item 
+{\bf D\+Q\+M\+State} {\bf m\+\_\+application\+State}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Collector}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Collector\+Application}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication} class. 
+
+Definition at line 41 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!D\+Q\+M\+Monitor\+Element\+Collector\+Application@{D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\index{D\+Q\+M\+Monitor\+Element\+Collector\+Application@{D\+Q\+M\+Monitor\+Element\+Collector\+Application}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Collector\+Application}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_ae7b453b7888ecb3cb0bcd60bd504d2db}
+
+
+Constructor with collector name. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Collector.
+
+
+\begin{DoxyCode}
+38                                                                              :
+39     m_applicationState(STOPPED\_STATE),
+40     m_shouldExit(\textcolor{keyword}{false}),
+41     m_type(\textcolor{stringliteral}{"MonitorElementCollector"})
+42 \{
+43   m_pMonitorElementCollector = \textcolor{keyword}{new} DQMMonitorElementCollector();
+44 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!````~D\+Q\+M\+Monitor\+Element\+Collector\+Application@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\index{````~D\+Q\+M\+Monitor\+Element\+Collector\+Application@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::$\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_ab9f96ca2a868ea31d47069d0b7aa8e51}
+
+
+Destructor. 
+
+
+
+Definition at line 48 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::is\+Running(), m\+\_\+p\+Monitor\+Element\+Collector, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::stop().
+
+
+\begin{DoxyCode}
+49 \{
+50   \textcolor{keywordflow}{if}(m_pMonitorElementCollector->isRunning())
+51     m_pMonitorElementCollector->stop();
+52 
+53   \textcolor{keyword}{delete} m_pMonitorElementCollector;
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!exit@{exit}}
+\index{exit@{exit}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::exit (
+\begin{DoxyParamCaption}
+\item[{int}]{return\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a490f3e5f3678bde74a21e7f3f6c51927}
+
+
+Stop the application. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMApplication_ad61139a41c4ba6669d26e3a0013c0f6d}.
+
+
+
+Definition at line 83 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References m\+\_\+application\+State, m\+\_\+p\+Monitor\+Element\+Collector, m\+\_\+should\+Exit, dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+S, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::stop().
+
+
+\begin{DoxyCode}
+84 \{
+85   \textcolor{keywordflow}{if}(m_applicationState == STOPPED\_STATE)
+86     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+87 
+88   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pMonitorElementCollector->stop());
+89 
+90   m_shouldExit = \textcolor{keyword}{true};
+91   m_applicationState = STOPPED\_STATE;
+92 
+93   StatusCode returnStatusCode;
+94 
+95   \textcolor{keywordflow}{if}(returnCode >= 0 && returnCode < NUMBER_OF_STATUS_CODES)
+96     returnStatusCode = \textcolor{keyword}{static\_cast<}StatusCode\textcolor{keyword}{>}(returnCode);
+97   \textcolor{keywordflow}{else}
+98     returnStatusCode = STATUS\_CODE\_FAILURE;
+99 
+100   \textcolor{keywordflow}{return} returnStatusCode;
+101 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a8b014998c8c2dafbd6c54ad4fb935fe4}
+
+
+Get the application name. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMApplication_a90d2e587390835cf90b38888498e922b}.
+
+
+
+Definition at line 105 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::get\+Collector\+Name(), and m\+\_\+p\+Monitor\+Element\+Collector.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+106 \{
+107   \textcolor{keywordflow}{return} m_pMonitorElementCollector->getCollectorName();
+108 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a120fd6fc6660b27f850cbdcfe0b7e5eb}
+
+
+Get the application type. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMApplication_aff587d33b27ff25115a7da7655e5ab3b}.
+
+
+
+Definition at line 112 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References m\+\_\+type.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+113 \{
+114   \textcolor{keywordflow}{return} m_type;
+115 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{settings\+File = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_afab8d464da2e7430b46667262d6b3e8a}
+
+
+No settings to read. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMApplication_a8b2e28cf09eef6b6a8bde547949c37dc}.
+
+
+
+Definition at line 75 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+\begin{DoxyCode}
+75 \{ \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!run@{run}}
+\index{run@{run}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_afac92cccea4c52718235c2a59349623f}
+
+
+Run the application. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMApplication_aa9a37abef624ec9656478c7211cc5a48}.
+
+
+
+Definition at line 58 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References get\+Name(), get\+Type(), m\+\_\+application\+State, m\+\_\+p\+Monitor\+Element\+Collector, m\+\_\+should\+Exit, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::start().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{keywordflow}{if}(m_applicationState == RUNNING\_STATE)
+61     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+62 
+63   m_applicationState = RUNNING\_STATE;
+64 
+65   DimServer::addClientExitHandler(m_pMonitorElementCollector);
+66   DimServer::start( (\textcolor{stringliteral}{"DQM4HEP/"} + getType() + \textcolor{stringliteral}{"/"} + getName()).c\_str() );
+67 
+68   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pMonitorElementCollector->start());
+69 
+70   \textcolor{keywordflow}{while}(!m_shouldExit)
+71   \{
+72     timespec timesleep;
+73       timesleep.tv\_sec = 0;
+74       timesleep.tv\_nsec = 100000L;
+75     nanosleep(&timesleep, NULL);
+76   \}
+77 
+78   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+79 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a5776769465e9273190afb73ac02570a0}
+
+
+Set the monitor element collector name. 
+
+
+
+Definition at line 119 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Collector, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::set\+Collector\+Name().
+
+
+\begin{DoxyCode}
+120 \{
+121   \textcolor{keywordflow}{return} m_pMonitorElementCollector->setCollectorName(collectorName);
+122 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!m\+\_\+application\+State@{m\+\_\+application\+State}}
+\index{m\+\_\+application\+State@{m\+\_\+application\+State}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{m\+\_\+application\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::m\+\_\+application\+State\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a1a74602792de48a37134917ad28a8c4c}
+
+
+Definition at line 79 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+
+Referenced by exit(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!m\+\_\+p\+Monitor\+Element\+Collector@{m\+\_\+p\+Monitor\+Element\+Collector}}
+\index{m\+\_\+p\+Monitor\+Element\+Collector@{m\+\_\+p\+Monitor\+Element\+Collector}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Collector}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::m\+\_\+p\+Monitor\+Element\+Collector\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_acaa3bfb898440d648cbfb2c629bb47b1}
+
+
+Definition at line 80 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+
+Referenced by D\+Q\+M\+Monitor\+Element\+Collector\+Application(), exit(), get\+Name(), run(), set\+Collector\+Name(), and $\sim$\+D\+Q\+M\+Monitor\+Element\+Collector\+Application().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!m\+\_\+should\+Exit@{m\+\_\+should\+Exit}}
+\index{m\+\_\+should\+Exit@{m\+\_\+should\+Exit}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{m\+\_\+should\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::m\+\_\+should\+Exit\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a3984d370d4748e12bb46c4f3e95c2efe}
+
+
+Definition at line 77 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+
+Referenced by exit(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a26190e62e98a59347923b1f9ad57d1ac}
+
+
+Definition at line 78 of file D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h.
+
+
+
+Referenced by get\+Type().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector\+Application.\+cc}\end{DoxyCompactItemize}

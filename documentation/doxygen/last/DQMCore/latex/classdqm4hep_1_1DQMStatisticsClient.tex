@@ -1,0 +1,438 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Statistics\+Client Class Reference}
+\label{classdqm4hep_1_1DQMStatisticsClient}\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+
+
+\doxyref{D\+Q\+M\+Statistics\+Client}{p.}{classdqm4hep_1_1DQMStatisticsClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Statistics\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Statistics\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMStatisticsClient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Statistics\+Client} (const std\+::string \&base\+Service\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Statistics\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int {\bf get\+Last\+Update\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the last update time. \end{DoxyCompactList}\item 
+float {\bf get\+Rate} () const 
+\begin{DoxyCompactList}\small\item\em Get the service rate. \end{DoxyCompactList}\item 
+float {\bf get\+Mean\+Stats} () const 
+\begin{DoxyCompactList}\small\item\em Get the mean statistics recorded by the service. \end{DoxyCompactList}\item 
+float {\bf get\+Last\+Stats} () const 
+\begin{DoxyCompactList}\small\item\em Get the last statistics received by the service. \end{DoxyCompactList}\item 
+virtual void {\bf updated} ()
+\begin{DoxyCompactList}\small\item\em Call back method called when one of the services is updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim call back methods when data are received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\+\_\+last\+Stats\+Timestamp}
+\item 
+float {\bf m\+\_\+rate}
+\item 
+float {\bf m\+\_\+mean\+Stats}
+\item 
+int {\bf m\+\_\+last\+Statistics}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Last\+Update\+Time\+Info}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Rate\+Info}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Mean\+Stats\+Info}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Last\+Update\+Statistics\+Info}
+\item 
+pthread\+\_\+mutex\+\_\+t {\bf m\+\_\+mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Statistics\+Client}{p.}{classdqm4hep_1_1DQMStatisticsClient} class. 
+
+Definition at line 45 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!D\+Q\+M\+Statistics\+Client@{D\+Q\+M\+Statistics\+Client}}
+\index{D\+Q\+M\+Statistics\+Client@{D\+Q\+M\+Statistics\+Client}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{D\+Q\+M\+Statistics\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::\+D\+Q\+M\+Statistics\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{base\+Service\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStatisticsClient_a64857d797ff2965f362b112241d62b87}
+
+
+Constructor. 
+
+
+
+Definition at line 33 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+mutex, m\+\_\+p\+Last\+Update\+Statistics\+Info, m\+\_\+p\+Last\+Update\+Time\+Info, m\+\_\+p\+Mean\+Stats\+Info, and m\+\_\+p\+Rate\+Info.
+
+
+\begin{DoxyCode}
+33                                                                          :
+34     m_lastStatsTimestamp(0),
+35     m_rate(0.f),
+36     m_meanStats(0.f),
+37     m_lastStatistics(0)
+38 \{
+39   m_pLastUpdateTimeInfo = \textcolor{keyword}{new} DimUpdatedInfo((baseServiceName + \textcolor{stringliteral}{"/LAST\_UPDATE\_TIME"}).c\_str(), 
+      static\_cast<int>(0), \textcolor{keyword}{this});
+40   m_pRateInfo = \textcolor{keyword}{new} DimUpdatedInfo((baseServiceName + \textcolor{stringliteral}{"/RATE"}).c\_str(), static\_cast<float>(0.f), \textcolor{keyword}{this});
+41   m_pMeanStatsInfo = \textcolor{keyword}{new} DimUpdatedInfo((baseServiceName + \textcolor{stringliteral}{"/MEAN\_STATS"}).c\_str(), static\_cast<float>(0.f),
+       \textcolor{keyword}{this});
+42   m_pLastUpdateStatisticsInfo = \textcolor{keyword}{new} DimUpdatedInfo((baseServiceName + \textcolor{stringliteral}{"/LAST\_UPDATE\_STATS"}).c\_str(), 
+      static\_cast<int>(0), \textcolor{keyword}{this});
+43 
+44   pthread\_mutex\_init(&m_mutex, NULL);
+45 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!````~D\+Q\+M\+Statistics\+Client@{$\sim$\+D\+Q\+M\+Statistics\+Client}}
+\index{````~D\+Q\+M\+Statistics\+Client@{$\sim$\+D\+Q\+M\+Statistics\+Client}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Statistics\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::$\sim$\+D\+Q\+M\+Statistics\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStatisticsClient_a9e60bd905b0b70e8fefc7d1c2983be24}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+mutex, m\+\_\+p\+Last\+Update\+Statistics\+Info, m\+\_\+p\+Last\+Update\+Time\+Info, m\+\_\+p\+Mean\+Stats\+Info, and m\+\_\+p\+Rate\+Info.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{keyword}{delete} m_pLastUpdateTimeInfo;
+52   \textcolor{keyword}{delete} m_pRateInfo;
+53   \textcolor{keyword}{delete} m_pMeanStatsInfo;
+54   \textcolor{keyword}{delete} m_pLastUpdateStatisticsInfo;
+55 
+56   pthread\_mutex\_destroy(&m_mutex);
+57 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!get\+Last\+Stats@{get\+Last\+Stats}}
+\index{get\+Last\+Stats@{get\+Last\+Stats}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{get\+Last\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::get\+Last\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMStatisticsClient_a931516a18b64cc9327de913835e4c2f8}
+
+
+Get the last statistics received by the service. 
+
+
+
+Definition at line 94 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+last\+Statistics, and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+95 \{
+96   pthread\_mutex\_lock(&m_mutex);
+97   \textcolor{keywordtype}{int} lastStatistics = m_lastStatistics;
+98   pthread\_mutex\_unlock(&m_mutex);
+99 
+100   \textcolor{keywordflow}{return} lastStatistics;
+101 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!get\+Last\+Update\+Time@{get\+Last\+Update\+Time}}
+\index{get\+Last\+Update\+Time@{get\+Last\+Update\+Time}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{get\+Last\+Update\+Time}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::get\+Last\+Update\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMStatisticsClient_a773f5155d4526b9c67ceaa12695b2639}
+
+
+Get the last update time. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+last\+Stats\+Timestamp, and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+62 \{
+63   pthread\_mutex\_lock(&m_mutex);
+64   \textcolor{keywordtype}{int} lastStatsTimestamp = m_lastStatsTimestamp;
+65   pthread\_mutex\_unlock(&m_mutex);
+66 
+67   \textcolor{keywordflow}{return} lastStatsTimestamp;
+68 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!get\+Mean\+Stats@{get\+Mean\+Stats}}
+\index{get\+Mean\+Stats@{get\+Mean\+Stats}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{get\+Mean\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::get\+Mean\+Stats (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMStatisticsClient_a11a70d28024f4714813bb52d9081160d}
+
+
+Get the mean statistics recorded by the service. 
+
+
+
+Definition at line 83 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+mean\+Stats, and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+84 \{
+85   pthread\_mutex\_lock(&m_mutex);
+86   \textcolor{keywordtype}{int} meanStats = m_meanStats;
+87   pthread\_mutex\_unlock(&m_mutex);
+88 
+89   \textcolor{keywordflow}{return} meanStats;
+90 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!get\+Rate@{get\+Rate}}
+\index{get\+Rate@{get\+Rate}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{get\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::get\+Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMStatisticsClient_a7af4ec62f52add9733eaeccde8214532}
+
+
+Get the service rate. 
+
+
+
+Definition at line 72 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+mutex, and m\+\_\+rate.
+
+
+\begin{DoxyCode}
+73 \{
+74   pthread\_mutex\_lock(&m_mutex);
+75   \textcolor{keywordtype}{int} rate = m_rate;
+76   pthread\_mutex\_unlock(&m_mutex);
+77 
+78   \textcolor{keywordflow}{return} rate;
+79 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!info\+Handler@{info\+Handler}}
+\index{info\+Handler@{info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_ac1e706c425736f27e32309c68d54dacc}
+
+
+Dim call back methods when data are received. 
+
+W\+A\+R\+N\+I\+N\+G \+: this method is called in a different thread 
+
+Definition at line 112 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+References m\+\_\+last\+Statistics, m\+\_\+last\+Stats\+Timestamp, m\+\_\+mean\+Stats, m\+\_\+mutex, m\+\_\+p\+Last\+Update\+Statistics\+Info, m\+\_\+p\+Last\+Update\+Time\+Info, m\+\_\+p\+Mean\+Stats\+Info, m\+\_\+p\+Rate\+Info, m\+\_\+rate, and updated().
+
+
+\begin{DoxyCode}
+113 \{
+114   DimInfo *pCurrentInfo = getInfo();
+115 
+116   pthread\_mutex\_lock(&m_mutex);
+117 
+118   \textcolor{keywordflow}{if}(pCurrentInfo == m_pLastUpdateTimeInfo)
+119   \{
+120     m_lastStatsTimestamp = pCurrentInfo->getInt();
+121   \}
+122   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCurrentInfo == m_pRateInfo)
+123   \{
+124     m_rate = pCurrentInfo->getFloat();
+125   \}
+126   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCurrentInfo == m_pMeanStatsInfo)
+127   \{
+128     m_meanStats = pCurrentInfo->getFloat();
+129   \}
+130   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCurrentInfo == m_pLastUpdateStatisticsInfo)
+131   \{
+132     m_lastStatistics = pCurrentInfo->getInt();
+133   \}
+134 
+135   pthread\_mutex\_unlock(&m_mutex);
+136 
+137   this->updated();
+138 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!updated@{updated}}
+\index{updated@{updated}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{updated}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::updated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMStatisticsClient_a4ca78168835cb5bdf505b74f0bb59990}
+
+
+Call back method called when one of the services is updated. 
+
+
+
+Definition at line 105 of file D\+Q\+M\+Statistics\+Client.\+cc.
+
+
+
+Referenced by info\+Handler().
+
+
+\begin{DoxyCode}
+106 \{
+107   \textcolor{comment}{/* nop */}
+108 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+last\+Statistics@{m\+\_\+last\+Statistics}}
+\index{m\+\_\+last\+Statistics@{m\+\_\+last\+Statistics}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+last\+Statistics}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+last\+Statistics\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_ab7ade07ef980e27c8a1662047a697720}
+
+
+Definition at line 86 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by get\+Last\+Stats(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+last\+Stats\+Timestamp@{m\+\_\+last\+Stats\+Timestamp}}
+\index{m\+\_\+last\+Stats\+Timestamp@{m\+\_\+last\+Stats\+Timestamp}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+last\+Stats\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+last\+Stats\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a485feb430f21ffd4b5f5f129bb76d29e}
+
+
+Definition at line 83 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by get\+Last\+Update\+Time(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+mean\+Stats@{m\+\_\+mean\+Stats}}
+\index{m\+\_\+mean\+Stats@{m\+\_\+mean\+Stats}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+mean\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+mean\+Stats\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a47b7c5167d718bec0768c88fa516d007}
+
+
+Definition at line 85 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by get\+Mean\+Stats(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+mutex@{m\+\_\+mutex}}
+\index{m\+\_\+mutex@{m\+\_\+mutex}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+mutex\+\_\+t dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_afd63f47c2258081c90fc14fe3323c199}
+
+
+Definition at line 93 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Client(), get\+Last\+Stats(), get\+Last\+Update\+Time(), get\+Mean\+Stats(), get\+Rate(), info\+Handler(), and $\sim$\+D\+Q\+M\+Statistics\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+p\+Last\+Update\+Statistics\+Info@{m\+\_\+p\+Last\+Update\+Statistics\+Info}}
+\index{m\+\_\+p\+Last\+Update\+Statistics\+Info@{m\+\_\+p\+Last\+Update\+Statistics\+Info}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+p\+Last\+Update\+Statistics\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+p\+Last\+Update\+Statistics\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a29e25ab9ea8dca7407b2896d441c1409}
+
+
+Definition at line 91 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Client(), info\+Handler(), and $\sim$\+D\+Q\+M\+Statistics\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+p\+Last\+Update\+Time\+Info@{m\+\_\+p\+Last\+Update\+Time\+Info}}
+\index{m\+\_\+p\+Last\+Update\+Time\+Info@{m\+\_\+p\+Last\+Update\+Time\+Info}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+p\+Last\+Update\+Time\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+p\+Last\+Update\+Time\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a38d107cf93f3530b035cf56a46230469}
+
+
+Definition at line 88 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Client(), info\+Handler(), and $\sim$\+D\+Q\+M\+Statistics\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+p\+Mean\+Stats\+Info@{m\+\_\+p\+Mean\+Stats\+Info}}
+\index{m\+\_\+p\+Mean\+Stats\+Info@{m\+\_\+p\+Mean\+Stats\+Info}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+p\+Mean\+Stats\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+p\+Mean\+Stats\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a620d07f0f505657863db7de3d5bba34a}
+
+
+Definition at line 90 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Client(), info\+Handler(), and $\sim$\+D\+Q\+M\+Statistics\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+p\+Rate\+Info@{m\+\_\+p\+Rate\+Info}}
+\index{m\+\_\+p\+Rate\+Info@{m\+\_\+p\+Rate\+Info}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+p\+Rate\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+p\+Rate\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_a4b4b7addf3c2e792980a8aaca52d6716}
+
+
+Definition at line 89 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Client(), info\+Handler(), and $\sim$\+D\+Q\+M\+Statistics\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}!m\+\_\+rate@{m\+\_\+rate}}
+\index{m\+\_\+rate@{m\+\_\+rate}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Client@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Client}}
+\subsubsection[{m\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Client\+::m\+\_\+rate\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsClient_af0a0040e05ad0416fe4f14e3330a13b0}
+
+
+Definition at line 84 of file D\+Q\+M\+Statistics\+Client.\+h.
+
+
+
+Referenced by get\+Rate(), and info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Statistics\+Client.\+h}\item 
+{\bf D\+Q\+M\+Statistics\+Client.\+cc}\end{DoxyCompactItemize}

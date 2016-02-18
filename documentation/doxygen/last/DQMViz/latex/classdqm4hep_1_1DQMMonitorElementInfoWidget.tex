@@ -1,0 +1,823 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementInfoWidget}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Info\+Widget}{p.}{classdqm4hep_1_1DQMMonitorElementInfoWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementInfoWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Tab} \{ {\bf M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O} = 0, 
+{\bf Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Info\+Widget} (Q\+Widget $\ast$p\+Parent\+Widget=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Info\+Widget} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Gui\+Monitor\+Element, Q\+Widget $\ast$p\+Parent\+Widget=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Monitor\+Element\+Info\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf fill\+Infos} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Gui\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Fill the widget information with the given monitor element. \end{DoxyCompactList}\item 
+void {\bf show\+Tab} ({\bf Tab} tab)
+\begin{DoxyCompactList}\small\item\em Show the given tab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf fill\+Infos} ()
+\begin{DoxyCompactList}\small\item\em Fill the widget information. \end{DoxyCompactList}\item 
+void {\bf load\+Quality\+Test\+Result} (int index)
+\item 
+void {\bf handle\+Update\+Check\+State\+Changed} (int state)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf build\+Widget} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Check\+Box $\ast$ {\bf m\+\_\+p\+Update\+Box}
+\item 
+Q\+Tab\+Widget $\ast$ {\bf m\+\_\+p\+Tab\+Widget}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Name\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Title\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Type\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label}
+\item 
+Q\+Text\+Edit $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+N\+Q\+Tests\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+N\+Success\+Q\+Tests\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+N\+Fail\+Q\+Tests\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label}
+\item 
+Q\+Combo\+Box $\ast$ {\bf m\+\_\+p\+Q\+Tests\+Combo\+Box}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Quality\+Test\+Type\+Label}
+\item 
+Q\+Text\+Edit $\ast$ {\bf m\+\_\+p\+Quality\+Test\+Message\+Edit}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Quality\+Test\+Quality\+Label}
+\item 
+Q\+Label $\ast$ {\bf m\+\_\+p\+Quality\+Test\+Success\+Label}
+\item 
+std\+::map$<$ std\+::string, \\*
+D\+Q\+M\+Quality\+Test\+Result $>$ {\bf m\+\_\+quality\+Test\+Result\+Map}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ {\bf m\+\_\+p\+Gui\+Monitor\+Element}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Info\+Widget}{p.}{classdqm4hep_1_1DQMMonitorElementInfoWidget} class. 
+
+Definition at line 56 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!Tab@{Tab}}
+\index{Tab@{Tab}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{Tab}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::\+Tab}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a4578459f3077efd1dcac7f5ff121f79d}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O@{M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O@{M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O}}\item[{\em 
+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a4578459f3077efd1dcac7f5ff121f79da7d31e08e0a6031324c6a060e75fd7531}
+}]\index{Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S@{Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S@{Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S}}\item[{\em 
+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a4578459f3077efd1dcac7f5ff121f79dac705f40eaf88945c6c4db9b7579924ed}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 62 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+\begin{DoxyCode}
+63   \{
+64     MONITOR_ELEMENT_INFO = 0,
+65     QUALITY_TEST_RESULTS = 1
+66   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!D\+Q\+M\+Monitor\+Element\+Info\+Widget@{D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\index{D\+Q\+M\+Monitor\+Element\+Info\+Widget@{D\+Q\+M\+Monitor\+Element\+Info\+Widget}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Info\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{p\+Parent\+Widget = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a6afd30953bc7e3c93bd32a3018bd8eeb}
+
+
+Constructor. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References build\+Widget().
+
+
+\begin{DoxyCode}
+44                                                                                :
+45     QWidget(pParentWidget),
+46     m_pGuiMonitorElement(0)
+47 \{
+48   buildWidget();
+49 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!D\+Q\+M\+Monitor\+Element\+Info\+Widget@{D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\index{D\+Q\+M\+Monitor\+Element\+Info\+Widget@{D\+Q\+M\+Monitor\+Element\+Info\+Widget}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Info\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Gui\+Monitor\+Element, }
+\item[{Q\+Widget $\ast$}]{p\+Parent\+Widget = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a5415914418e50fc051267475f7205c4e}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References build\+Widget(), and fill\+Infos().
+
+
+\begin{DoxyCode}
+34                                                                                                            
+                    :
+35     QWidget(pParentWidget),
+36     m_pGuiMonitorElement(pGuiMonitorElement)
+37 \{
+38   buildWidget();
+39   fillInfos(pGuiMonitorElement);
+40 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!````~D\+Q\+M\+Monitor\+Element\+Info\+Widget@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\index{````~D\+Q\+M\+Monitor\+Element\+Info\+Widget@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::$\sim$\+D\+Q\+M\+Monitor\+Element\+Info\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a2786d9f0c54fc8c59717f02377642503}
+
+
+Destructor. 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+54 \{
+55   \textcolor{comment}{/* nop */}
+56 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!build\+Widget@{build\+Widget}}
+\index{build\+Widget@{build\+Widget}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{build\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::build\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a851ba871f62718864571d911afd3356f}
+
+
+Definition at line 67 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References handle\+Update\+Check\+State\+Changed(), load\+Quality\+Test\+Result(), m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label, m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit, m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label, m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label, m\+\_\+p\+Monitor\+Element\+Name\+Label, m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label, m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label, m\+\_\+p\+Monitor\+Element\+Title\+Label, m\+\_\+p\+Monitor\+Element\+Type\+Label, m\+\_\+p\+N\+Fail\+Q\+Tests\+Label, m\+\_\+p\+N\+Q\+Tests\+Label, m\+\_\+p\+N\+Success\+Q\+Tests\+Label, m\+\_\+p\+Q\+Tests\+Combo\+Box, m\+\_\+p\+Quality\+Test\+Message\+Edit, m\+\_\+p\+Quality\+Test\+Quality\+Label, m\+\_\+p\+Quality\+Test\+Success\+Label, m\+\_\+p\+Quality\+Test\+Type\+Label, m\+\_\+p\+Tab\+Widget, and m\+\_\+p\+Update\+Box.
+
+
+
+Referenced by D\+Q\+M\+Monitor\+Element\+Info\+Widget().
+
+
+\begin{DoxyCode}
+68 \{
+69   QVBoxLayout *pMainLayout = \textcolor{keyword}{new} QVBoxLayout();
+70   setLayout(pMainLayout);
+71 
+72   m_pUpdateBox = \textcolor{keyword}{new} QCheckBox(\textcolor{stringliteral}{"Update info on monitor element update"});
+73   m_pUpdateBox->setCheckState(Qt::Unchecked);
+74 
+75   pMainLayout->addWidget(m_pUpdateBox);
+76 
+77   m_pTabWidget = \textcolor{keyword}{new} QTabWidget();
+78   pMainLayout->addWidget(m_pTabWidget);
+79 
+80   \textcolor{comment}{// description tab}
+81   QWidget *pDescriptionTab = \textcolor{keyword}{new} QWidget();
+82   QFormLayout *pDescriptionLayout = \textcolor{keyword}{new} QFormLayout();
+83   pDescriptionTab->setLayout(pDescriptionLayout);
+84 
+85   m_pMonitorElementNameLabel = \textcolor{keyword}{new} QLabel();
+86   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Name : "}, m_pMonitorElementNameLabel);
+87 
+88   m_pMonitorElementTitleLabel = \textcolor{keyword}{new} QLabel();
+89   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Title : "}, m_pMonitorElementTitleLabel);
+90 
+91   m_pMonitorElementTypeLabel = \textcolor{keyword}{new} QLabel();
+92   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Type : "}, m_pMonitorElementTypeLabel);
+93 
+94   m_pMonitorElementResetPolicyLabel = \textcolor{keyword}{new} QLabel();
+95   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Reset policy : "}, 
+      m_pMonitorElementResetPolicyLabel);
+96 
+97   m_pMonitorElementDescriptionTextEdit = \textcolor{keyword}{new} QTextEdit();
+98   m_pMonitorElementDescriptionTextEdit->setReadOnly(\textcolor{keyword}{true});
+99   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Description : "}, 
+      m_pMonitorElementDescriptionTextEdit);
+100 
+101   m_pMonitorElementDrawOptionLabel = \textcolor{keyword}{new} QLabel();
+102   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Draw option : "}, m_pMonitorElementDrawOptionLabel);
+103 
+104   m_pMonitorElementRunNumberLabel = \textcolor{keyword}{new} QLabel();
+105   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Run number : "}, m_pMonitorElementRunNumberLabel);
+106 
+107   m_pMonitorElementFullPathLabel = \textcolor{keyword}{new} QLabel();
+108   pDescriptionLayout->addRow(\textcolor{stringliteral}{"Full path : "}, m_pMonitorElementFullPathLabel);
+109 
+110   m_pTabWidget->addTab(pDescriptionTab, \textcolor{stringliteral}{"Description"});
+111 
+112   \textcolor{comment}{// quality test tab}
+113   QWidget *pQualityTestTab = \textcolor{keyword}{new} QWidget();
+114 
+115   QVBoxLayout *pQualityTestLayout = \textcolor{keyword}{new} QVBoxLayout();
+116   pQualityTestTab->setLayout(pQualityTestLayout);
+117 
+118   \textcolor{comment}{// global q test results}
+119   QGroupBox *pGlobalQTestGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Global"});
+120   QFormLayout *pGlobalQTestLayout = \textcolor{keyword}{new} QFormLayout();
+121   pGlobalQTestGroupBox->setLayout(pGlobalQTestLayout);
+122 
+123   \textcolor{comment}{// fill the global q test area}
+124   m_pNQTestsLabel = \textcolor{keyword}{new} QLabel();
+125   pGlobalQTestLayout->addRow(\textcolor{stringliteral}{"Number of quality tests : "}, m_pNQTestsLabel);
+126 
+127   m_pNSuccessQTestsLabel = \textcolor{keyword}{new} QLabel();
+128   m_pNSuccessQTestsLabel->setStyleSheet(\textcolor{stringliteral}{"QLabel \{ color: green; \}"});
+129   pGlobalQTestLayout->addRow(\textcolor{stringliteral}{"Number of successes : "}, m_pNSuccessQTestsLabel);
+130 
+131   m_pNFailQTestsLabel = \textcolor{keyword}{new} QLabel();
+132   m_pNFailQTestsLabel->setStyleSheet(\textcolor{stringliteral}{"QLabel \{ color: red; \}"});
+133   pGlobalQTestLayout->addRow(\textcolor{stringliteral}{"Number of fails : "}, m_pNFailQTestsLabel);
+134 
+135   m_pMeanQualityQTestsLabel = \textcolor{keyword}{new} QLabel();
+136   pGlobalQTestLayout->addRow(\textcolor{stringliteral}{"Mean quality : "}, m_pMeanQualityQTestsLabel);
+137 
+138   pQualityTestLayout->addWidget(pGlobalQTestGroupBox);
+139 
+140   \textcolor{comment}{// detailed view of quality tests}
+141   QGroupBox *pDetailQTestGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Detail"});
+142   QFormLayout *pDetailQTestLayout = \textcolor{keyword}{new} QFormLayout();
+143   pDetailQTestGroupBox->setLayout(pDetailQTestLayout);
+144 
+145   m_pQTestsComboBox = \textcolor{keyword}{new} QComboBox();
+146   pDetailQTestLayout->addRow(\textcolor{stringliteral}{"Quality test : "}, m_pQTestsComboBox);
+147 
+148   m_pQualityTestTypeLabel = \textcolor{keyword}{new} QLabel();
+149   pDetailQTestLayout->addRow(\textcolor{stringliteral}{"Type : "}, m_pQualityTestTypeLabel);
+150 
+151   m_pQualityTestMessageEdit = \textcolor{keyword}{new} QTextEdit();
+152   m_pQualityTestMessageEdit->setReadOnly(\textcolor{keyword}{true});
+153   pDetailQTestLayout->addRow(\textcolor{stringliteral}{"Message : "}, m_pQualityTestMessageEdit);
+154 
+155   m_pQualityTestQualityLabel = \textcolor{keyword}{new} QLabel();
+156   pDetailQTestLayout->addRow(\textcolor{stringliteral}{"Quality : "}, m_pQualityTestQualityLabel);
+157 
+158   m_pQualityTestSuccessLabel = \textcolor{keyword}{new} QLabel();
+159   pDetailQTestLayout->addRow(\textcolor{stringliteral}{"Success : "}, m_pQualityTestSuccessLabel);
+160 
+161   pQualityTestLayout->addWidget(pDetailQTestGroupBox);
+162 
+163   m_pTabWidget->addTab(pQualityTestTab, \textcolor{stringliteral}{"Quality tests"});
+164 
+165   connect(m_pQTestsComboBox, SIGNAL(currentIndexChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      loadQualityTestResult(\textcolor{keywordtype}{int})));
+166   connect(m_pUpdateBox, SIGNAL(stateChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      handleUpdateCheckStateChanged(\textcolor{keywordtype}{int})));
+167 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!fill\+Infos@{fill\+Infos}}
+\index{fill\+Infos@{fill\+Infos}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{fill\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::fill\+Infos (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Gui\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a9ffadabd4e75410c5e0411e142122aa3}
+
+
+Fill the widget information with the given monitor element. 
+
+
+
+Definition at line 178 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), load\+Quality\+Test\+Result(), m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label, m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit, m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label, m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label, m\+\_\+p\+Monitor\+Element\+Name\+Label, m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label, m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label, m\+\_\+p\+Monitor\+Element\+Title\+Label, m\+\_\+p\+Monitor\+Element\+Type\+Label, m\+\_\+p\+N\+Fail\+Q\+Tests\+Label, m\+\_\+p\+N\+Q\+Tests\+Label, m\+\_\+p\+N\+Success\+Q\+Tests\+Label, m\+\_\+p\+Q\+Tests\+Combo\+Box, and m\+\_\+quality\+Test\+Result\+Map.
+
+
+\begin{DoxyCode}
+179 \{
+180   \textcolor{keywordflow}{if}(NULL == pGuiMonitorElement)
+181     \textcolor{keywordflow}{return};
+182 
+183   DQMMonitorElement *pMonitorElement = pGuiMonitorElement->getMonitorElement();
+184 
+185   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+186     \textcolor{keywordflow}{return};
+187 
+188   \textcolor{comment}{//}
+189   \textcolor{comment}{// Global infos}
+190   \textcolor{comment}{//}
+191   \textcolor{comment}{// name}
+192   m_pMonitorElementNameLabel->setText(QString(pMonitorElement->getName().c\_str()));
+193 
+194   \textcolor{comment}{//title}
+195   m_pMonitorElementTitleLabel->setText(QString(pMonitorElement->getTitle().c\_str()));
+196 
+197   \textcolor{comment}{// type}
+198   m_pMonitorElementTypeLabel->setText(QString(monitorElementTypeToString(pMonitorElement->getType()).c\_str(
+      )));
+199 
+200   \textcolor{comment}{// reset policy}
+201   m_pMonitorElementResetPolicyLabel->setText(QString(resetPolicyToString(pMonitorElement->getResetPolicy())
+      .c\_str()));
+202 
+203   \textcolor{comment}{// description}
+204   m_pMonitorElementDescriptionTextEdit->clear();
+205   m_pMonitorElementDescriptionTextEdit->append(QString(pMonitorElement->getDescription().c\_str()));
+206 
+207   \textcolor{comment}{// draw option}
+208   m_pMonitorElementDrawOptionLabel->setText(QString(pMonitorElement->getDrawOption().c\_str()));
+209 
+210   \textcolor{comment}{// run number}
+211   m_pMonitorElementRunNumberLabel->setText(QString::number(pMonitorElement->getRunNumber()));
+212 
+213   \textcolor{comment}{// full path}
+214   m_pMonitorElementFullPathLabel->setText(QString(pMonitorElement->getPath().getPath().c\_str()));
+215 
+216   \textcolor{comment}{//}
+217   \textcolor{comment}{// Q tests}
+218   \textcolor{comment}{//}
+219   m_qualityTestResultMap = pMonitorElement->getQualityTestResults();
+220   m_pQTestsComboBox->clear();
+221 
+222   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nSuccess = 0;
+223   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} nFail = 0;
+224   \textcolor{keywordtype}{float} meanQuality = 0.f;
+225 
+226   \textcolor{keywordflow}{for}(std::map<std::string, DQMQualityTestResult>::const\_iterator iter = 
+      m_qualityTestResultMap.begin(),
+227       endIter = m_qualityTestResultMap.end() ; endIter != iter ; ++iter)
+228   \{
+229     m_pQTestsComboBox->addItem(QString(iter->first.c\_str()));
+230 
+231     \textcolor{keywordflow}{if}(iter->second.m\_isSuccessful)
+232       nSuccess++;
+233     \textcolor{keywordflow}{else}
+234       nFail++;
+235 
+236     meanQuality += \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(iter->second.m\_quality);
+237   \}
+238 
+239   \textcolor{comment}{// n quality tests}
+240   m_pNQTestsLabel->setText(QString::number(m_qualityTestResultMap.size()));
+241 
+242   \textcolor{comment}{// n successful q tests}
+243   m_pNSuccessQTestsLabel->setText(QString::number(nSuccess));
+244 
+245   \textcolor{comment}{// n failed q tests}
+246   m_pNFailQTestsLabel->setText(QString::number(nFail));
+247 
+248   \textcolor{keywordflow}{if}(!m_qualityTestResultMap.empty())
+249   \{
+250     meanQuality /= m_qualityTestResultMap.size();
+251 
+252     \textcolor{comment}{// mean quality rate}
+253     m_pMeanQualityQTestsLabel->setText(QString::number(meanQuality) + \textcolor{stringliteral}{" / 5"});
+254 
+255     loadQualityTestResult(0);
+256   \}
+257   \textcolor{keywordflow}{else}
+258   \{
+259     m_pMeanQualityQTestsLabel->setText(\textcolor{stringliteral}{"NONE"});
+260   \}
+261 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!fill\+Infos@{fill\+Infos}}
+\index{fill\+Infos@{fill\+Infos}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{fill\+Infos}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::fill\+Infos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a6cce3cd9043184053f3a4e97febfc5c6}
+
+
+Fill the widget information. 
+
+
+
+Definition at line 171 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Gui\+Monitor\+Element.
+
+
+
+Referenced by D\+Q\+M\+Monitor\+Element\+Info\+Widget(), and handle\+Update\+Check\+State\+Changed().
+
+
+\begin{DoxyCode}
+172 \{
+173   fillInfos(m_pGuiMonitorElement);
+174 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!handle\+Update\+Check\+State\+Changed@{handle\+Update\+Check\+State\+Changed}}
+\index{handle\+Update\+Check\+State\+Changed@{handle\+Update\+Check\+State\+Changed}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{handle\+Update\+Check\+State\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::handle\+Update\+Check\+State\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a8e90d7986706e3f8ad054b48ec12ed96}
+
+
+Definition at line 285 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References fill\+Infos(), and m\+\_\+p\+Gui\+Monitor\+Element.
+
+
+
+Referenced by build\+Widget().
+
+
+\begin{DoxyCode}
+286 \{
+287   \textcolor{keywordflow}{if}(!m_pGuiMonitorElement)
+288     \textcolor{keywordflow}{return};
+289 
+290   \textcolor{keywordflow}{if}(state == Qt::Checked)
+291   \{
+292     connect(m_pGuiMonitorElement, SIGNAL(updated()), \textcolor{keyword}{this}, SLOT(fillInfos()), Qt::UniqueConnection);
+293   \}
+294   \textcolor{keywordflow}{else}
+295   \{
+296     disconnect(m_pGuiMonitorElement, SIGNAL(updated()), \textcolor{keyword}{this}, SLOT(fillInfos()));
+297   \}
+298 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!load\+Quality\+Test\+Result@{load\+Quality\+Test\+Result}}
+\index{load\+Quality\+Test\+Result@{load\+Quality\+Test\+Result}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{load\+Quality\+Test\+Result}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::load\+Quality\+Test\+Result (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ac780537000592add90be8c61ea40ebae}
+
+
+Definition at line 265 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Q\+Tests\+Combo\+Box, m\+\_\+p\+Quality\+Test\+Message\+Edit, m\+\_\+p\+Quality\+Test\+Quality\+Label, m\+\_\+p\+Quality\+Test\+Success\+Label, m\+\_\+p\+Quality\+Test\+Type\+Label, and m\+\_\+quality\+Test\+Result\+Map.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+
+\begin{DoxyCode}
+266 \{
+267   \textcolor{keywordflow}{if}(index < 0 || m\_pQTestsComboBox->count() == 0 || index >= m_pQTestsComboBox->count())
+268     \textcolor{keywordflow}{return};
+269 
+270   \textcolor{comment}{// find the quality test result}
+271   std::string qualityTestName = m_pQTestsComboBox->itemText(index).toStdString();
+272   std::map<std::string, DQMQualityTestResult>::const\_iterator findIter = 
+      m_qualityTestResultMap.find(qualityTestName);
+273 
+274   \textcolor{keywordflow}{if}(findIter == m_qualityTestResultMap.end())
+275     \textcolor{keywordflow}{return};
+276 
+277   m_pQualityTestTypeLabel->setText(findIter->second.m\_qualityTestType.c\_str());
+278   m_pQualityTestMessageEdit->clear();
+279   m_pQualityTestMessageEdit->append(findIter->second.m\_message.c\_str());
+280   m_pQualityTestQualityLabel->setText(qualityToString(findIter->second.m\_quality).c\_str());
+281   m_pQualityTestSuccessLabel->setText(DQM4HEP::typeToString(findIter->second.m\_isSuccessful).c\_str());
+282 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!show\+Tab@{show\+Tab}}
+\index{show\+Tab@{show\+Tab}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{show\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::show\+Tab (
+\begin{DoxyParamCaption}
+\item[{{\bf Tab}}]{tab}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a501829f0c8799b81f63c46c4aebdcdc4}
+
+
+Show the given tab. 
+
+
+
+Definition at line 60 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Monitor\+Element\+Info(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Quality\+Test\+Results().
+
+
+\begin{DoxyCode}
+61 \{
+62   m_pTabWidget->setCurrentIndex(tab);
+63 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Gui\+Monitor\+Element@{m\+\_\+p\+Gui\+Monitor\+Element}}
+\index{m\+\_\+p\+Gui\+Monitor\+Element@{m\+\_\+p\+Gui\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Gui\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Gui\+Monitor\+Element\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ab6b68c27296cc274094aa8be9d45619a}
+
+
+Definition at line 134 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by fill\+Infos(), and handle\+Update\+Check\+State\+Changed().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label@{m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label}}
+\index{m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label@{m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Mean\+Quality\+Q\+Tests\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_acc3935d3a75e16ed5ea5740ae974677f}
+
+
+Definition at line 124 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit@{m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit}}
+\index{m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit@{m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Description\+Text\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_aa9c9a3b5275eb0a3fb9aa05f90a28c8f}
+
+
+Definition at line 115 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label@{m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label@{m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Draw\+Option\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ab17f410b7a5740bc1884beea6d11e024}
+
+
+Definition at line 116 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label@{m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label@{m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Full\+Path\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a94579ca2963a096dfcfb7aa3f2d3e607}
+
+
+Definition at line 118 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Name\+Label@{m\+\_\+p\+Monitor\+Element\+Name\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Name\+Label@{m\+\_\+p\+Monitor\+Element\+Name\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Name\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Name\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a8e4127f996c2f65f1a33a80ec24f687f}
+
+
+Definition at line 111 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label@{m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label@{m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Reset\+Policy\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a19cd939812addf0e4fb04ec7f73a1115}
+
+
+Definition at line 114 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label@{m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label@{m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Run\+Number\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ab5c3e3cd5c99e492fb2ab3e47ef8ad56}
+
+
+Definition at line 117 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Title\+Label@{m\+\_\+p\+Monitor\+Element\+Title\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Title\+Label@{m\+\_\+p\+Monitor\+Element\+Title\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Title\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Title\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ad097aa81537df1bceafa1df55732bded}
+
+
+Definition at line 112 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Monitor\+Element\+Type\+Label@{m\+\_\+p\+Monitor\+Element\+Type\+Label}}
+\index{m\+\_\+p\+Monitor\+Element\+Type\+Label@{m\+\_\+p\+Monitor\+Element\+Type\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Type\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Monitor\+Element\+Type\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_aba3fcb68c3400b0a306ff0528a848888}
+
+
+Definition at line 113 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+N\+Fail\+Q\+Tests\+Label@{m\+\_\+p\+N\+Fail\+Q\+Tests\+Label}}
+\index{m\+\_\+p\+N\+Fail\+Q\+Tests\+Label@{m\+\_\+p\+N\+Fail\+Q\+Tests\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+N\+Fail\+Q\+Tests\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+N\+Fail\+Q\+Tests\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a79c7ed6112f94d578350aaa160ab371e}
+
+
+Definition at line 123 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+N\+Q\+Tests\+Label@{m\+\_\+p\+N\+Q\+Tests\+Label}}
+\index{m\+\_\+p\+N\+Q\+Tests\+Label@{m\+\_\+p\+N\+Q\+Tests\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+N\+Q\+Tests\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+N\+Q\+Tests\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a3129f08cc8ea323dc9624ec51e80307e}
+
+
+Definition at line 121 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+N\+Success\+Q\+Tests\+Label@{m\+\_\+p\+N\+Success\+Q\+Tests\+Label}}
+\index{m\+\_\+p\+N\+Success\+Q\+Tests\+Label@{m\+\_\+p\+N\+Success\+Q\+Tests\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+N\+Success\+Q\+Tests\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+N\+Success\+Q\+Tests\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a46fd8698eff06543526a4e5f7b7b322f}
+
+
+Definition at line 122 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and fill\+Infos().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Q\+Tests\+Combo\+Box@{m\+\_\+p\+Q\+Tests\+Combo\+Box}}
+\index{m\+\_\+p\+Q\+Tests\+Combo\+Box@{m\+\_\+p\+Q\+Tests\+Combo\+Box}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Q\+Tests\+Combo\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Q\+Tests\+Combo\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a5d46ffad311228dd68ea402c5415dd9b}
+
+
+Definition at line 126 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), fill\+Infos(), and load\+Quality\+Test\+Result().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Quality\+Test\+Message\+Edit@{m\+\_\+p\+Quality\+Test\+Message\+Edit}}
+\index{m\+\_\+p\+Quality\+Test\+Message\+Edit@{m\+\_\+p\+Quality\+Test\+Message\+Edit}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Quality\+Test\+Message\+Edit}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Quality\+Test\+Message\+Edit\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_afdca416ac72918eeff2fbaca6cc92d84}
+
+
+Definition at line 128 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and load\+Quality\+Test\+Result().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Quality\+Test\+Quality\+Label@{m\+\_\+p\+Quality\+Test\+Quality\+Label}}
+\index{m\+\_\+p\+Quality\+Test\+Quality\+Label@{m\+\_\+p\+Quality\+Test\+Quality\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Quality\+Test\+Quality\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Quality\+Test\+Quality\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ada11ecd0d93558dede778abaec6ab97a}
+
+
+Definition at line 129 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and load\+Quality\+Test\+Result().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Quality\+Test\+Success\+Label@{m\+\_\+p\+Quality\+Test\+Success\+Label}}
+\index{m\+\_\+p\+Quality\+Test\+Success\+Label@{m\+\_\+p\+Quality\+Test\+Success\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Quality\+Test\+Success\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Quality\+Test\+Success\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_adb6deb89a3545755710513cec62ce57d}
+
+
+Definition at line 130 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and load\+Quality\+Test\+Result().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Quality\+Test\+Type\+Label@{m\+\_\+p\+Quality\+Test\+Type\+Label}}
+\index{m\+\_\+p\+Quality\+Test\+Type\+Label@{m\+\_\+p\+Quality\+Test\+Type\+Label}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Quality\+Test\+Type\+Label}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Label$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Quality\+Test\+Type\+Label\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_aae1b74352251393d3a1dd552d7cd0b62}
+
+
+Definition at line 127 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and load\+Quality\+Test\+Result().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Tab\+Widget@{m\+\_\+p\+Tab\+Widget}}
+\index{m\+\_\+p\+Tab\+Widget@{m\+\_\+p\+Tab\+Widget}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Tab\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tab\+Widget$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Tab\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a344083ea7e88c2b57c9de292f3aba9a6}
+
+
+Definition at line 108 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget(), and show\+Tab().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+p\+Update\+Box@{m\+\_\+p\+Update\+Box}}
+\index{m\+\_\+p\+Update\+Box@{m\+\_\+p\+Update\+Box}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+p\+Update\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Check\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+p\+Update\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_a6deafeb6b3f29c224d322aa5ca7c22e7}
+
+
+Definition at line 106 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by build\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}!m\+\_\+quality\+Test\+Result\+Map@{m\+\_\+quality\+Test\+Result\+Map}}
+\index{m\+\_\+quality\+Test\+Result\+Map@{m\+\_\+quality\+Test\+Result\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget}}
+\subsubsection[{m\+\_\+quality\+Test\+Result\+Map}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, D\+Q\+M\+Quality\+Test\+Result$>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::m\+\_\+quality\+Test\+Result\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementInfoWidget_ae53bbcf66fd183c5c07660d182fa79c7}
+
+
+Definition at line 132 of file D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h.
+
+
+
+Referenced by fill\+Infos(), and load\+Quality\+Test\+Result().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Info\+Widget.\+cc}\end{DoxyCompactItemize}

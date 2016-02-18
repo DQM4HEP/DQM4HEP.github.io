@@ -1,0 +1,692 @@
+\section{dqm4hep\+:\+:Module\+Me\+Info Class Reference}
+\label{classdqm4hep_1_1ModuleMeInfo}\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+
+
+\doxyref{Module\+Me\+Info}{p.}{classdqm4hep_1_1ModuleMeInfo} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Collector.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Me\+Info}
+\begin{DoxyCompactList}\small\item\em \doxyref{Me\+Info}{p.}{structdqm4hep_1_1ModuleMeInfo_1_1MeInfo} struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Module\+Me\+Info} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+Module\+Me\+Info} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf set\+Available\+Me\+List} (const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \&me\+Name\+List)
+\begin{DoxyCompactList}\small\item\em Set the list of monitor element available on the module application. \end{DoxyCompactList}\item 
+const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \& {\bf get\+Available\+Me\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the list of monitor element available on the module application. \end{DoxyCompactList}\item 
+bool {\bf update\+Monitor\+Element} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Update the monitor element entry. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element} $\ast$ {\bf get\+Monitor\+Element} (const std\+::string \&me\+Name, bool partial\+Compare=false, bool lower\+Case\+Compare=false) const 
+\begin{DoxyCompactList}\small\item\em Get a specific monitor element. \end{DoxyCompactList}\item 
+{\bf String\+Set} {\bf get\+Subscribed\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the subscribed me name list. \end{DoxyCompactList}\item 
+{\bf String\+Set} {\bf get\+Subscribed\+List} (int client\+I\+D) const 
+\begin{DoxyCompactList}\small\item\em Get the subscribed me name list for a particular client. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+List} {\bf get\+Subscribed\+Me\+List} (int client\+I\+D) const 
+\begin{DoxyCompactList}\small\item\em Get the subscribed me list for a particular client. \end{DoxyCompactList}\item 
+std\+::pair$<$ size\+\_\+t, bool $>$ {\bf subscribe} (int client\+I\+D, const std\+::string \&me\+Name)
+\begin{DoxyCompactList}\small\item\em Subscribe client to a monitor element. \end{DoxyCompactList}\item 
+std\+::pair$<$ size\+\_\+t, bool $>$ {\bf unsubscribe} (int client\+I\+D, const std\+::string \&me\+Name)
+\begin{DoxyCompactList}\small\item\em Un-\/subscribe client from a monitor element. \end{DoxyCompactList}\item 
+bool {\bf unsubscribe} (int client\+I\+D)
+\begin{DoxyCompactList}\small\item\em Unsubscribe all the elements for this client. \end{DoxyCompactList}\item 
+size\+\_\+t {\bf get\+N\+Subscribers} (const std\+::string \&me\+Name) const 
+\begin{DoxyCompactList}\small\item\em Get the number of clients that have subscribe from a particular a monitor element. \end{DoxyCompactList}\item 
+size\+\_\+t {\bf get\+N\+Subscribers} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of clients that have subscribes to this module. \end{DoxyCompactList}\item 
+std\+::set$<$ int $>$ {\bf get\+Subscribers} (const std\+::string \&me\+Name) const 
+\begin{DoxyCompactList}\small\item\em Get the list of subscribers for a particular monitor element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, \\*
+{\bf Me\+Info} $\ast$ $>$ {\bf Me\+Info\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Info\+List} {\bf m\+\_\+available\+Me\+List}
+\item 
+{\bf String\+Set} {\bf m\+\_\+requested\+Me\+List}
+\item 
+{\bf Me\+Info\+Map} {\bf m\+\_\+me\+Info\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Module\+Me\+Info}{p.}{classdqm4hep_1_1ModuleMeInfo} class. 
+
+Definition at line 48 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!Me\+Info\+Map@{Me\+Info\+Map}}
+\index{Me\+Info\+Map@{Me\+Info\+Map}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{Me\+Info\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$std\+::string, {\bf Me\+Info} $\ast$$>$ {\bf dqm4hep\+::\+Module\+Me\+Info\+::\+Me\+Info\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ModuleMeInfo_aeeff92455df13542fd1cafde5c4009da}
+
+
+Definition at line 58 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!Module\+Me\+Info@{Module\+Me\+Info}}
+\index{Module\+Me\+Info@{Module\+Me\+Info}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{Module\+Me\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Module\+Me\+Info\+::\+Module\+Me\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a97161381a43ba5e3e782aefa2a8a77cc}
+
+
+Constructor. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+45 \{
+46   \textcolor{comment}{/* nop */}
+47 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!````~Module\+Me\+Info@{$\sim$\+Module\+Me\+Info}}
+\index{````~Module\+Me\+Info@{$\sim$\+Module\+Me\+Info}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{$\sim$\+Module\+Me\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Module\+Me\+Info\+::$\sim$\+Module\+Me\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a7b664e3a0e9e6e45d494efdb7be92d75}
+
+
+Destructor. 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+52 \{
+53   \textcolor{keywordflow}{for}(MeInfoMap::iterator iter = m_meInfoMap.begin(), endIter = m_meInfoMap.end() ;
+54       endIter != iter ; ++iter)
+55   \{
+56     \textcolor{keywordflow}{if}(NULL != iter->second->m\_pMonitorElement)
+57       \textcolor{keyword}{delete} iter->second->m\_pMonitorElement;
+58 
+59     \textcolor{keyword}{delete} iter->second;
+60   \}
+61 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Available\+Me\+List@{get\+Available\+Me\+List}}
+\index{get\+Available\+Me\+List@{get\+Available\+Me\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Available\+Me\+List}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \& dqm4hep\+::\+Module\+Me\+Info\+::get\+Available\+Me\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_aa8584e0633a37a67c19cc1508934eaaa}
+
+
+Get the list of monitor element available on the module application. 
+
+
+
+Definition at line 72 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+available\+Me\+List.
+
+
+\begin{DoxyCode}
+73 \{
+74   \textcolor{keywordflow}{return} m_availableMeList;
+75 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element} $\ast$ dqm4hep\+::\+Module\+Me\+Info\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{me\+Name, }
+\item[{bool}]{partial\+Compare = {\ttfamily false}, }
+\item[{bool}]{lower\+Case\+Compare = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_ad38d9c763bbcf34b53c82c24e119eb62}
+
+
+Get a specific monitor element. 
+
+Return N\+U\+L\+L is the entry doesn't exists 
+
+Definition at line 126 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+127 \{
+128   std::string elementNameToCompare = meName;
+129 
+130   \textcolor{keywordflow}{if}(lowerCaseCompare)
+131     std::transform(elementNameToCompare.begin(), elementNameToCompare.end(), elementNameToCompare.begin(), 
+      ::tolower);
+132 
+133   \textcolor{keywordflow}{for}(MeInfoMap::const\_iterator iter = m_meInfoMap.begin(), endIter = 
+      m_meInfoMap.end() ;
+134       endIter != iter ; ++iter)
+135   \{
+136     std::string elementName = iter->first;
+137 
+138     \textcolor{keywordflow}{if}(lowerCaseCompare)
+139       std::transform(elementName.begin(), elementName.end(), elementName.begin(), ::tolower);
+140 
+141     \textcolor{keywordflow}{if}(partialCompare)
+142     \{
+143       \textcolor{keywordflow}{if}(elementName.find(elementNameToCompare) == std::string::npos)
+144         \textcolor{keywordflow}{continue};
+145     \}
+146     \textcolor{keywordflow}{else}
+147     \{
+148       \textcolor{keywordflow}{if}(elementName != elementNameToCompare)
+149         \textcolor{keywordflow}{continue};
+150     \}
+151 
+152     \textcolor{keywordflow}{return} iter->second->m\_pMonitorElement;
+153   \}
+154 
+155   \textcolor{keywordflow}{return} NULL;
+156 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+N\+Subscribers@{get\+N\+Subscribers}}
+\index{get\+N\+Subscribers@{get\+N\+Subscribers}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+N\+Subscribers}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dqm4hep\+::\+Module\+Me\+Info\+::get\+N\+Subscribers (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{me\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_a9e44132d647ca5e362aad5e762895685}
+
+
+Get the number of clients that have subscribe from a particular a monitor element. 
+
+
+
+Definition at line 289 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+290 \{
+291   MeInfoMap::const\_iterator findIter = m_meInfoMap.find(meName);
+292   \textcolor{keywordflow}{return} ( ( findIter == m_meInfoMap.end() ) ? 0 : findIter->second->m\_clientList.size() );
+293 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+N\+Subscribers@{get\+N\+Subscribers}}
+\index{get\+N\+Subscribers@{get\+N\+Subscribers}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+N\+Subscribers}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dqm4hep\+::\+Module\+Me\+Info\+::get\+N\+Subscribers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_a2f5e69f3d1d114165f475df08efa6cd8}
+
+
+Get the number of clients that have subscribes to this module. 
+
+
+
+Definition at line 297 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+298 \{
+299   std::set<int> clientList;
+300 
+301   \textcolor{keywordflow}{for}(MeInfoMap::const\_iterator iter = m_meInfoMap.begin(), endIter = 
+      m_meInfoMap.end() ;
+302       endIter != iter ; ++iter)
+303   \{
+304     clientList.insert(iter->second->m\_clientList.begin(), iter->second->m\_clientList.end());
+305   \}
+306 
+307   \textcolor{keywordflow}{return} clientList.size();
+308 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Subscribed\+List@{get\+Subscribed\+List}}
+\index{get\+Subscribed\+List@{get\+Subscribed\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Subscribed\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Set} dqm4hep\+::\+Module\+Me\+Info\+::get\+Subscribed\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_aabc946a842f5d5104df98077249a0c0a}
+
+
+Get the subscribed me name list. 
+
+Simply iterate over stored monitor element and add the element to list if a client has subscribed to it 
+
+Definition at line 160 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+161 \{
+162   StringSet requestedMeList;
+163 
+164   \textcolor{keywordflow}{for}(MeInfoMap::const\_iterator iter = m_meInfoMap.begin(), endIter = 
+      m_meInfoMap.end() ;
+165       endIter != iter ; ++iter)
+166   \{
+167     \textcolor{keywordflow}{if}( ! iter->second->m\_clientList.empty() )
+168       requestedMeList.insert( iter->first );
+169   \}
+170 
+171   \textcolor{keywordflow}{return} requestedMeList;
+172 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Subscribed\+List@{get\+Subscribed\+List}}
+\index{get\+Subscribed\+List@{get\+Subscribed\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Subscribed\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Set} dqm4hep\+::\+Module\+Me\+Info\+::get\+Subscribed\+List (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_af4fe0763b13bcdebf9c5ab1b7b0dc7d4}
+
+
+Get the subscribed me name list for a particular client. 
+
+
+
+Definition at line 176 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+177 \{
+178   StringSet requestedMeList;
+179 
+180   \textcolor{keywordflow}{for}(MeInfoMap::const\_iterator iter = m_meInfoMap.begin(), endIter = 
+      m_meInfoMap.end() ;
+181       endIter != iter ; ++iter)
+182   \{
+183     \textcolor{keywordflow}{if}( iter->second->m\_clientList.find(clientID) != iter->second->m\_clientList.end() )
+184       requestedMeList.insert( iter->first );
+185   \}
+186 
+187   \textcolor{keywordflow}{return} requestedMeList;
+188 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Subscribed\+Me\+List@{get\+Subscribed\+Me\+List}}
+\index{get\+Subscribed\+Me\+List@{get\+Subscribed\+Me\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Subscribed\+Me\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+List} dqm4hep\+::\+Module\+Me\+Info\+::get\+Subscribed\+Me\+List (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_a1ec89fd39f554dbc0dc34c0da88d21a5}
+
+
+Get the subscribed me list for a particular client. 
+
+
+
+Definition at line 192 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+E\+B\+U\+G, and m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+193 \{
+194   DQMMonitorElementList meList;
+195 
+196   \textcolor{keywordflow}{for}(MeInfoMap::const\_iterator iter = m_meInfoMap.begin(), endIter = 
+      m_meInfoMap.end() ;
+197       endIter != iter ; ++iter)
+198   \{
+199     streamlog\_out(DEBUG) << \textcolor{stringliteral}{"getSubscribedMeList(), me : "} << iter->first << std::endl;
+200 
+201     \textcolor{keywordflow}{if}( iter->second->m\_clientList.find(clientID) != iter->second->m\_clientList.end() )
+202     \{
+203       streamlog\_out(DEBUG) << \textcolor{stringliteral}{"client "} << clientID << \textcolor{stringliteral}{" subscribed to it !"} << std::endl;
+204 
+205       \textcolor{keywordflow}{if}( NULL != iter->second->m\_pMonitorElement )
+206       \{
+207         streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Element is not null. Pushed back !"} << std::endl;
+208         meList.push\_back( iter->second->m\_pMonitorElement );
+209       \}
+210     \}
+211   \}
+212 
+213   \textcolor{keywordflow}{return} meList;
+214 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!get\+Subscribers@{get\+Subscribers}}
+\index{get\+Subscribers@{get\+Subscribers}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{get\+Subscribers}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<$ int $>$ dqm4hep\+::\+Module\+Me\+Info\+::get\+Subscribers (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{me\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ModuleMeInfo_a218bf0dea0c5809318314e91d480886d}
+
+
+Get the list of subscribers for a particular monitor element. 
+
+
+
+Definition at line 312 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+313 \{
+314   MeInfoMap::const\_iterator findIter = m_meInfoMap.find(meName);
+315 
+316   \textcolor{keywordflow}{if}(findIter != m_meInfoMap.end())
+317     \textcolor{keywordflow}{return} findIter->second->m\_clientList;
+318 
+319   \textcolor{keywordflow}{return} std::set<int>();
+320 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!set\+Available\+Me\+List@{set\+Available\+Me\+List}}
+\index{set\+Available\+Me\+List@{set\+Available\+Me\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{set\+Available\+Me\+List}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Module\+Me\+Info\+::set\+Available\+Me\+List (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \&}]{me\+Name\+List}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_af9e790d6678e2092a3536039ac343249}
+
+
+Set the list of monitor element available on the module application. 
+
+
+
+Definition at line 65 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+available\+Me\+List.
+
+
+\begin{DoxyCode}
+66 \{
+67   m_availableMeList = meNameList;
+68 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ size\+\_\+t, bool $>$ dqm4hep\+::\+Module\+Me\+Info\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D, }
+\item[{const std\+::string \&}]{me\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a19b72a8c4956e5e3bf9d65ed23a59d0b}
+
+
+Subscribe client to a monitor element. 
+
+Return a pair \+:
+\begin{DoxyItemize}
+\item first -\/$>$ the new size of the subscriber clients
+\item second -\/$>$ whether the client was inserted in the subscriber list 
+\end{DoxyItemize}
+
+Definition at line 218 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+available\+Me\+List, and m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+219 \{
+220   MeInfoMap::iterator findIter = m_meInfoMap.find(meName);
+221 
+222   \textcolor{comment}{// if not existing, look if available}
+223   \textcolor{keywordflow}{if}(findIter == m_meInfoMap.end())
+224   \{
+225     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+226 
+227     \textcolor{keywordflow}{for}(DQMMonitorElementInfoList::iterator iter = m_availableMeList.begin(), endIter = 
+      m_availableMeList.end() ;
+228         endIter != iter ; ++iter)
+229     \{
+230       std::string fullName = (DQMPath(iter->m\_monitorElementFullPath) + iter->m\_monitorElementName).getPath
+      ();
+231 
+232       \textcolor{keywordflow}{if}(fullName.at(0) != \textcolor{charliteral}{'/'})
+233         fullName = \textcolor{stringliteral}{"/"} + fullName;
+234 
+235       \textcolor{keywordflow}{if}(fullName == meName)
+236       \{
+237         found = \textcolor{keyword}{true};
+238         \textcolor{keywordflow}{break};
+239       \}
+240     \}
+241 
+242     \textcolor{keywordflow}{if}(found)
+243       findIter = m_meInfoMap.insert(MeInfoMap::value\_type(meName, \textcolor{keyword}{new} MeInfo())).first;
+244     \textcolor{keywordflow}{else}
+245       \textcolor{keywordflow}{return} std::pair<size\_t, bool>( 0 , false );
+246   \}
+247 
+248   \textcolor{comment}{// add client and return (new) size of client list}
+249   \textcolor{keywordtype}{bool} inserted = findIter->second->m\_clientList.insert(clientID).second;
+250   \textcolor{keywordtype}{size\_t} newSize = findIter->second->m\_clientList.size();
+251 
+252   \textcolor{keywordflow}{return} std::pair<size\_t, bool>( newSize , inserted );
+253 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ size\+\_\+t, bool $>$ dqm4hep\+::\+Module\+Me\+Info\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D, }
+\item[{const std\+::string \&}]{me\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a8357d510b8a0237077c481b898eed803}
+
+
+Un-\/subscribe client from a monitor element. 
+
+Return a pair \+:
+\begin{DoxyItemize}
+\item first -\/$>$ the new size of the subscriber clients
+\item second -\/$>$ whether the client was erased from the subscriber list 
+\end{DoxyItemize}
+
+Definition at line 257 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+258 \{
+259   MeInfoMap::iterator findIter = m_meInfoMap.find(meName);
+260 
+261   \textcolor{keywordflow}{if}(findIter == m_meInfoMap.end())
+262     \textcolor{keywordflow}{return} std::pair<size\_t, bool>( 0 , \textcolor{keyword}{true} );
+263 
+264   \textcolor{comment}{// remove client id and return (new) size of client list}
+265   \textcolor{keywordtype}{bool} erased = ( findIter->second->m\_clientList.erase(clientID) != 0 );
+266   \textcolor{keywordtype}{size\_t} newSize = findIter->second->m\_clientList.size();
+267 
+268   \textcolor{keywordflow}{return} std::pair<size\_t, bool>( newSize , erased );
+269 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Module\+Me\+Info\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a44cd781a99b493c278293e6c0a402b9e}
+
+
+Unsubscribe all the elements for this client. 
+
+Return true if the client at least unsubscribe to one element 
+
+Definition at line 273 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+me\+Info\+Map.
+
+
+\begin{DoxyCode}
+274 \{
+275   \textcolor{keywordtype}{bool} unsubscribeAtLeastToOne = \textcolor{keyword}{false};
+276 
+277   \textcolor{keywordflow}{for}(MeInfoMap::iterator iter = m_meInfoMap.begin(), endIter = m_meInfoMap.end() ;
+278       endIter != iter ; ++iter)
+279   \{
+280     \textcolor{keywordflow}{if}(iter->second->m\_clientList.erase(clientID))
+281       unsubscribeAtLeastToOne = \textcolor{keyword}{true};
+282   \}
+283 
+284   \textcolor{keywordflow}{return} unsubscribeAtLeastToOne;
+285 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!update\+Monitor\+Element@{update\+Monitor\+Element}}
+\index{update\+Monitor\+Element@{update\+Monitor\+Element}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{update\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Module\+Me\+Info\+::update\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ModuleMeInfo_a2a5c39fcc7ee436f3d164c9028b36063}
+
+
+Update the monitor element entry. 
+
+Return whether the monitor element was updated 
+
+Definition at line 79 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Path(), m\+\_\+me\+Info\+Map, and dqm4hep\+::\+Module\+Me\+Info\+::\+Me\+Info\+::m\+\_\+p\+Monitor\+Element.
+
+
+\begin{DoxyCode}
+80 \{
+81   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+82     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+83 
+84   \textcolor{comment}{// full name = path + name}
+85   std::string fullName = (pMonitorElement->getPath() + pMonitorElement->getName()).getPath();
+86 
+87   \textcolor{keywordflow}{if}(fullName.at(0) != \textcolor{charliteral}{'/'})
+88     fullName = \textcolor{stringliteral}{"/"} + fullName;
+89 
+90   \textcolor{comment}{// look for an existing entry}
+91   MeInfoMap::iterator findIter = m_meInfoMap.find(fullName);
+92 
+93   \textcolor{keywordflow}{if}(findIter == m_meInfoMap.end())
+94   \{
+95     MeInfo *pMeInfo = \textcolor{keyword}{new} MeInfo();
+96     std::pair<MeInfoMap::iterator, bool> ret = m_meInfoMap.insert(MeInfoMap::value\_type(fullName, pMeInfo))
+      ;
+97 
+98     \textcolor{keywordflow}{if}(!ret.second)
+99     \{
+100       \textcolor{keyword}{delete} pMeInfo;
+101       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+102     \}
+103 
+104     findIter = ret.first;
+105 
+106     \textcolor{comment}{// initialize monitor element pointer}
+107     findIter->second->m\_pMonitorElement = NULL;
+108   \}
+109 
+110   \textcolor{comment}{// here, findIter is always defined !}
+111   \textcolor{keywordflow}{if}(NULL != findIter->second->m\_pMonitorElement)
+112   \{
+113     \textcolor{comment}{// destroy it !}
+114     \textcolor{keyword}{delete} findIter->second->m\_pMonitorElement;
+115     findIter->second->m\_pMonitorElement = NULL;
+116   \}
+117 
+118   \textcolor{comment}{// replace it !}
+119   findIter->second->m\_pMonitorElement = pMonitorElement;
+120 
+121   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+122 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!m\+\_\+available\+Me\+List@{m\+\_\+available\+Me\+List}}
+\index{m\+\_\+available\+Me\+List@{m\+\_\+available\+Me\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{m\+\_\+available\+Me\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Info\+List} dqm4hep\+::\+Module\+Me\+Info\+::m\+\_\+available\+Me\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ModuleMeInfo_a9d43495e96c6a6df4b0f8d51518a59eb}
+
+
+Definition at line 134 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by get\+Available\+Me\+List(), set\+Available\+Me\+List(), and subscribe().
+
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!m\+\_\+me\+Info\+Map@{m\+\_\+me\+Info\+Map}}
+\index{m\+\_\+me\+Info\+Map@{m\+\_\+me\+Info\+Map}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{m\+\_\+me\+Info\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Me\+Info\+Map} dqm4hep\+::\+Module\+Me\+Info\+::m\+\_\+me\+Info\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ModuleMeInfo_a1844cf4dc5461321c7ccf89734ffca78}
+
+
+Definition at line 136 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by get\+Monitor\+Element(), get\+N\+Subscribers(), get\+Subscribed\+List(), get\+Subscribed\+Me\+List(), get\+Subscribers(), subscribe(), unsubscribe(), update\+Monitor\+Element(), and $\sim$\+Module\+Me\+Info().
+
+\index{dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}!m\+\_\+requested\+Me\+List@{m\+\_\+requested\+Me\+List}}
+\index{m\+\_\+requested\+Me\+List@{m\+\_\+requested\+Me\+List}!dqm4hep\+::\+Module\+Me\+Info@{dqm4hep\+::\+Module\+Me\+Info}}
+\subsubsection[{m\+\_\+requested\+Me\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Set} dqm4hep\+::\+Module\+Me\+Info\+::m\+\_\+requested\+Me\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ModuleMeInfo_a9824cd1405c8630d5ed786ebe1e90aea}
+
+
+Definition at line 135 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+cc}\end{DoxyCompactItemize}

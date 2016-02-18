@@ -1,0 +1,983 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Directory Class Reference}
+\label{classdqm4hep_1_1DQMDirectory}\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+
+
+\doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Directory.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Directory} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Directory} (const std\+::string \&name, {\bf D\+Q\+M\+Directory} $\ast$p\+Parent\+Dir=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor with name and parent dir. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Directory} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf mkdir} (const std\+::string \&dir\+Name)
+\begin{DoxyCompactList}\small\item\em Create a new directory. \end{DoxyCompactList}\item 
+void {\bf ls} (bool recursive=false) const 
+\begin{DoxyCompactList}\small\item\em List the directory contents and subdirs if asked. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Returns the directory name. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Directory} $\ast$ {\bf get\+Parent\+Dir} () const 
+\begin{DoxyCompactList}\small\item\em Returns the parent directory. \end{DoxyCompactList}\item 
+const std\+::vector\\*
+$<$ {\bf D\+Q\+M\+Directory} $\ast$ $>$ \& {\bf get\+Sub\+Dir\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the sub directory list. \end{DoxyCompactList}\item 
+bool {\bf contains\+Dir} (const std\+::string \&dir\+Name) const 
+\begin{DoxyCompactList}\small\item\em Whether the directory contains the sub dir. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf find\+Dir} (const std\+::string \&dir\+Name, {\bf D\+Q\+M\+Directory} $\ast$\&p\+Directory) const 
+\begin{DoxyCompactList}\small\item\em Find the sub directory by name. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf add\+Monitor\+Element} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Add a monitor elements to the directory. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf find\+Monitor\+Element} (const std\+::string \&name, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Find a monitor element with a given name in the directory. \end{DoxyCompactList}\item 
+bool {\bf contains\+Monitor\+Element} (const {\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the directory contains the monitor element (search by ptr compare) \end{DoxyCompactList}\item 
+bool {\bf contains\+Monitor\+Element} (const std\+::string \&monitor\+Element\+Name) const 
+\begin{DoxyCompactList}\small\item\em Whether the directory contains the monitor element (search by name compare) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf remove\+Monitor\+Element} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Remove the monitor element from the directory. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf remove\+Monitor\+Element} (const std\+::string \&monitor\+Element\+Name)
+\begin{DoxyCompactList}\small\item\em Remove the monitor element from the directory. \end{DoxyCompactList}\item 
+const std\+::vector\\*
+$<$ {\bf D\+Q\+M\+Monitor\+Element} $\ast$ $>$ \& {\bf get\+Monitor\+Element\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitor element list. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf remove\+Dir} (const std\+::string \&dir\+Name, bool deep\+Clean=false)
+\begin{DoxyCompactList}\small\item\em Remove the directory and its contents Delete monitor element if deep\+Clean set to true. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf clear} (bool deep\+Clean=false)
+\begin{DoxyCompactList}\small\item\em Clear the directory by calling delete on each sub-\/dirs and clear the monitor element list by calling delete if asked. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} {\bf get\+Full\+Path\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the full path name of the directory. \end{DoxyCompactList}\item 
+bool {\bf is\+Root\+Dir} () const 
+\begin{DoxyCompactList}\small\item\em Whether the directory is a root directory. \end{DoxyCompactList}\item 
+bool {\bf is\+Empty} () const 
+\begin{DoxyCompactList}\small\item\em Whether the directory is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf ls} (int depth) const 
+\begin{DoxyCompactList}\small\item\em Recursive print of sub directory structure (dirs and contents) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+name}
+\item 
+{\bf D\+Q\+M\+Directory} $\ast$ {\bf m\+\_\+p\+Parent\+Dir}
+\item 
+std\+::vector$<$ {\bf D\+Q\+M\+Directory} $\ast$ $>$ {\bf m\+\_\+directory\+List}
+\item 
+std\+::vector$<$ {\bf D\+Q\+M\+Monitor\+Element} $\ast$ $>$ {\bf m\+\_\+contents\+List}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory} class. 
+
+A directory is the owner of its sub-\/directories. Monitor elements owning depends on how the method are called (default \+: not owner)
+
+This interface doesn't allow moving sub-\/directories 
+
+Definition at line 49 of file D\+Q\+M\+Directory.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!D\+Q\+M\+Directory@{D\+Q\+M\+Directory}}
+\index{D\+Q\+M\+Directory@{D\+Q\+M\+Directory}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{D\+Q\+M\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Directory\+::\+D\+Q\+M\+Directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_ac7153e642eb1ba4b52f23a6f5b38fd46}
+
+
+Default constructor. 
+
+
+
+Definition at line 37 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+Referenced by mkdir().
+
+
+\begin{DoxyCode}
+37                            :
+38   m_name(\textcolor{stringliteral}{""}),
+39   m_pParentDir(NULL)
+40 \{
+41   \textcolor{comment}{/* nop */}
+42 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!D\+Q\+M\+Directory@{D\+Q\+M\+Directory}}
+\index{D\+Q\+M\+Directory@{D\+Q\+M\+Directory}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{D\+Q\+M\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Directory\+::\+D\+Q\+M\+Directory (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{{\bf D\+Q\+M\+Directory} $\ast$}]{p\+Parent\+Dir = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a29f39ec352e46d18a3887cae1cb4c902}
+
+
+Constructor with name and parent dir. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+Directory.\+cc.
+
+
+\begin{DoxyCode}
+46                                                                           :
+47   m_name(name),
+48   m_pParentDir(pParentDir)
+49 \{
+50   \textcolor{comment}{/* nop */}
+51 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!````~D\+Q\+M\+Directory@{$\sim$\+D\+Q\+M\+Directory}}
+\index{````~D\+Q\+M\+Directory@{$\sim$\+D\+Q\+M\+Directory}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Directory\+::$\sim$\+D\+Q\+M\+Directory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a48f107543aee2ae5d159356eaedb15e2}
+
+
+Destructor. 
+
+Delete the subdirectories but not the contents 
+
+Definition at line 55 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References clear().
+
+
+\begin{DoxyCode}
+56 \{
+57   clear();
+58 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!add\+Monitor\+Element@{add\+Monitor\+Element}}
+\index{add\+Monitor\+Element@{add\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{add\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::add\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a42b1bc21ac7cbd225668cbc6010519f5}
+
+
+Add a monitor elements to the directory. 
+
+
+
+Definition at line 175 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References contains\+Monitor\+Element(), and m\+\_\+contents\+List.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::add\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+176 \{
+177   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+178     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+179 
+180   \textcolor{keywordflow}{if}(containsMonitorElement(pMonitorElement))
+181     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_PRESENT;
+182 
+183   m_contentsList.push\_back(pMonitorElement);
+184 
+185   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+186 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::clear (
+\begin{DoxyParamCaption}
+\item[{bool}]{deep\+Clean = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a37b2d897ed05b7cdd7d86bf1e6985eeb}
+
+
+Clear the directory by calling delete on each sub-\/dirs and clear the monitor element list by calling delete if asked. 
+
+The operation is done recursively 
+
+Definition at line 282 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References clear(), m\+\_\+contents\+List, m\+\_\+directory\+List, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by clear(), dqm4hep\+::\+D\+Q\+M\+Storage\+::clear(), remove\+Dir(), and $\sim$\+D\+Q\+M\+Directory().
+
+
+\begin{DoxyCode}
+283 \{
+284   \textcolor{keywordflow}{if}(deepClean)
+285   \{
+286     \textcolor{keywordflow}{for}(std::vector<DQMMonitorElement*>::const\_iterator iter = m_contentsList.begin(), endIter = 
+      m_contentsList.end() ;
+287         endIter != iter ; ++iter)
+288     \{
+289       DQMMonitorElement *pMonitorElement = *iter;
+290       \textcolor{keyword}{delete} pMonitorElement;
+291     \}
+292   \}
+293 
+294   m_contentsList.clear();
+295 
+296 
+297 
+298   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+299       endIter != iter ; ++iter)
+300   \{
+301     DQMDirectory *pDirectory = *iter;
+302     \textcolor{comment}{// clear recursively the sub dir}
+303     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDirectory->clear(deepClean));
+304     \textcolor{comment}{// delete ptr}
+305     \textcolor{keyword}{delete} pDirectory;
+306   \}
+307 
+308   m_directoryList.clear();
+309 
+310   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+311 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!contains\+Dir@{contains\+Dir}}
+\index{contains\+Dir@{contains\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{contains\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Directory\+::contains\+Dir (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dir\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a3f38ca78665c0533a40674f11293f2d6}
+
+
+Whether the directory contains the sub dir. 
+
+
+
+Definition at line 135 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::contains\+Special\+Characters(), get\+Name(), and m\+\_\+directory\+List.
+
+
+
+Referenced by mkdir(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir().
+
+
+\begin{DoxyCode}
+136 \{
+137   \textcolor{keywordflow}{if}(dirName.find(\textcolor{stringliteral}{"/"}) != std::string::npos || 
+      DQMCoreTool::containsSpecialCharacters(dirName) || dirName.empty())
+138     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+139 
+140   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::const\_iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+141       endIter != iter ; ++iter)
+142   \{
+143     DQMDirectory *pDirectory = *iter;
+144 
+145     \textcolor{keywordflow}{if}(pDirectory->getName() == dirName)
+146       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+147   \}
+148 
+149   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+150 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!contains\+Monitor\+Element@{contains\+Monitor\+Element}}
+\index{contains\+Monitor\+Element@{contains\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{contains\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Directory\+::contains\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a1389bb38f9c79863bebaa067a464f0a7}
+
+
+Whether the directory contains the monitor element (search by ptr compare) 
+
+
+
+Definition at line 212 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name().
+
+
+
+Referenced by add\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::monitor\+Element\+Exists().
+
+
+\begin{DoxyCode}
+213 \{
+214   \textcolor{keywordflow}{return} containsMonitorElement(pMonitorElement->getName());
+215 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!contains\+Monitor\+Element@{contains\+Monitor\+Element}}
+\index{contains\+Monitor\+Element@{contains\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{contains\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Directory\+::contains\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{monitor\+Element\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a6e3ab71aec1b4ca92e6f64c7eb753528}
+
+
+Whether the directory contains the monitor element (search by name compare) 
+
+
+
+Definition at line 219 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References find\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+220 \{
+221   DQMMonitorElement *pMonitorElement = NULL;
+222   \textcolor{keywordflow}{return} findMonitorElement(monitorElementName, pMonitorElement) == STATUS\_CODE\_SUCCESS;
+223 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!find\+Dir@{find\+Dir}}
+\index{find\+Dir@{find\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{find\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::find\+Dir (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dir\+Name, }
+\item[{{\bf D\+Q\+M\+Directory} $\ast$\&}]{p\+Directory}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a6da0415416e8da80da8b36f7014b68f0}
+
+
+Find the sub directory by name. 
+
+
+
+Definition at line 154 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References get\+Name(), and m\+\_\+directory\+List.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::cd(), dqm4hep\+::\+D\+Q\+M\+Storage\+::find\+Dir(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir().
+
+
+\begin{DoxyCode}
+155 \{
+156   pDirectory = NULL;
+157 
+158   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::const\_iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+159       endIter != iter ; ++iter)
+160   \{
+161     DQMDirectory *pDir = *iter;
+162 
+163     \textcolor{keywordflow}{if}(pDir->getName() == dirName)
+164     \{
+165       pDirectory = pDir;
+166       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+167     \}
+168   \}
+169 
+170   \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+171 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!find\+Monitor\+Element@{find\+Monitor\+Element}}
+\index{find\+Monitor\+Element@{find\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{find\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::find\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_addbf7057f9ff505273b7a9f9e2ec2a28}
+
+
+Find a monitor element with a given name in the directory. 
+
+
+
+Definition at line 190 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), and m\+\_\+contents\+List.
+
+
+
+Referenced by contains\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Storage\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::remove\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+191 \{
+192   pMonitorElement = NULL;
+193 
+194   \textcolor{comment}{// print contents first}
+195   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElement*>::const\_iterator iter = m_contentsList.begin(), endIter = 
+      m_contentsList.end() ;
+196       endIter != iter ; ++iter)
+197   \{
+198     DQMMonitorElement *pME = *iter;
+199 
+200     \textcolor{keywordflow}{if}(pME->getName() == name)
+201     \{
+202       pMonitorElement = pME;
+203       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+204     \}
+205   \}
+206 
+207   \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+208 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!get\+Full\+Path\+Name@{get\+Full\+Path\+Name}}
+\index{get\+Full\+Path\+Name@{get\+Full\+Path\+Name}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{get\+Full\+Path\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Full\+Path\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_ad6ef7078ba8db43ab06485f09cd6ea07}
+
+
+Get the full path name of the directory. 
+
+
+
+Definition at line 315 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References get\+Name(), and get\+Parent\+Dir().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::add\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Current\+Directory\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Full\+Path\+Name(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir().
+
+
+\begin{DoxyCode}
+316 \{
+317   DQMPath fullPath = this->getName();
+318   \textcolor{keyword}{const} DQMDirectory *pDir = \textcolor{keyword}{this};
+319 
+320   \textcolor{keywordflow}{while}(1)
+321   \{
+322     \textcolor{keyword}{const} DQMDirectory *pParentDir = pDir->getParentDir();
+323 
+324     \textcolor{keywordflow}{if}(NULL != pParentDir)
+325     \{
+326       fullPath = pParentDir->getName() + fullPath;
+327       pDir = pParentDir;
+328     \}
+329     \textcolor{keywordflow}{else}
+330       \textcolor{keywordflow}{break};
+331   \}
+332 
+333   \textcolor{keywordflow}{return} fullPath;
+334 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!get\+Monitor\+Element\+List@{get\+Monitor\+Element\+List}}
+\index{get\+Monitor\+Element\+List@{get\+Monitor\+Element\+List}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{get\+Monitor\+Element\+List}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf D\+Q\+M\+Monitor\+Element} $\ast$ $>$ \& dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Monitor\+Element\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_ac143ca3d53c6df35c3d346721597e363}
+
+
+Get the monitor element list. 
+
+
+
+Definition at line 253 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+contents\+List.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::recursive\+Content\+List(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill(), and dqm4hep\+::\+D\+Q\+M\+Archiver\+::write\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+254 \{
+255   \textcolor{keywordflow}{return} m_contentsList;
+256 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a3ab98865b568c8b2c1be35288b56c9e7}
+
+
+Returns the directory name. 
+
+
+
+Definition at line 98 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+name.
+
+
+
+Referenced by contains\+Dir(), find\+Dir(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Current\+Directory\+Name(), get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Storage\+::pwd(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill(), remove\+Dir(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir().
+
+
+\begin{DoxyCode}
+99 \{
+100   \textcolor{keywordflow}{return} m_name;
+101 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!get\+Parent\+Dir@{get\+Parent\+Dir}}
+\index{get\+Parent\+Dir@{get\+Parent\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{get\+Parent\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Directory} $\ast$ dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Parent\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a2ff4f2f461304b8a780ba18cf9463b58}
+
+
+Returns the parent directory. 
+
+
+
+Definition at line 105 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+p\+Parent\+Dir.
+
+
+
+Referenced by get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Storage\+::go\+Up(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir().
+
+
+\begin{DoxyCode}
+106 \{
+107   \textcolor{keywordflow}{return} m_pParentDir;
+108 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!get\+Sub\+Dir\+List@{get\+Sub\+Dir\+List}}
+\index{get\+Sub\+Dir\+List@{get\+Sub\+Dir\+List}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{get\+Sub\+Dir\+List}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ {\bf D\+Q\+M\+Directory} $\ast$ $>$ \& dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Sub\+Dir\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_ac4117c55d0bfe47122c38052601886f3}
+
+
+Get the sub directory list. 
+
+
+
+Definition at line 112 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+directory\+List.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::recursive\+Content\+List(), and dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill().
+
+
+\begin{DoxyCode}
+113 \{
+114   \textcolor{keywordflow}{return} m_directoryList;
+115 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Directory\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a12c6c70250adacb24b78edecd134f99a}
+
+
+Whether the directory is empty. 
+
+
+
+Definition at line 370 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+contents\+List, and m\+\_\+directory\+List.
+
+
+\begin{DoxyCode}
+371 \{
+372   \textcolor{keywordflow}{return} (m_directoryList.empty() && m_contentsList.empty());
+373 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!is\+Root\+Dir@{is\+Root\+Dir}}
+\index{is\+Root\+Dir@{is\+Root\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{is\+Root\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Directory\+::is\+Root\+Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_afe5e6fb0e383c2de9a82c1021cb5772e}
+
+
+Whether the directory is a root directory. 
+
+
+
+Definition at line 363 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References m\+\_\+p\+Parent\+Dir.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::go\+Up().
+
+
+\begin{DoxyCode}
+364 \{
+365   \textcolor{keywordflow}{return} (m_pParentDir == NULL);
+366 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!ls@{ls}}
+\index{ls@{ls}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Directory\+::ls (
+\begin{DoxyParamCaption}
+\item[{bool}]{recursive = {\ttfamily false}}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDirectory_a7a788a1adb5c86232f14c98ca89f1ede}
+
+
+List the directory contents and subdirs if asked. 
+
+
+
+Definition at line 62 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), ls(), m\+\_\+contents\+List, m\+\_\+directory\+List, m\+\_\+name, m\+\_\+p\+Parent\+Dir, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+
+Referenced by ls(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::ls().
+
+
+\begin{DoxyCode}
+63 \{
+64   \textcolor{keywordtype}{int} depth = 0;
+65   std::string parentDirName = m_pParentDir == NULL ? \textcolor{stringliteral}{"\(\backslash\)"\(\backslash\)""} : m_pParentDir->
+      m_name;
+66 
+67   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Directory "} << m_name << \textcolor{stringliteral}{" (parent = "} << parentDirName << \textcolor{stringliteral}{") :"} << std::endl;
+68 
+69   \textcolor{comment}{// print contents first}
+70   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElement*>::const\_iterator iter = m_contentsList.begin(), endIter = 
+      m_contentsList.end() ;
+71       endIter != iter ; ++iter)
+72   \{
+73     DQMMonitorElement *pMonitorElement = *iter;
+74     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{" [ME]  "} << pMonitorElement->getName() << std::endl;
+75   \}
+76 
+77   \textcolor{comment}{// print sub-directories}
+78   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::const\_iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+79       endIter != iter ; ++iter)
+80   \{
+81     DQMDirectory *pDirectory = *iter;
+82 
+83     \textcolor{keywordflow}{if}(recursive)
+84     \{
+85       pDirectory->ls(depth+1);
+86     \}
+87     \textcolor{keywordflow}{else}
+88     \{
+89       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{" [DIR] "} << pDirectory->m\_name << std::endl;
+90     \}
+91   \}
+92 
+93   streamlog\_out(MESSAGE) << std::endl;
+94 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!ls@{ls}}
+\index{ls@{ls}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Directory\+::ls (
+\begin{DoxyParamCaption}
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDirectory_a4b51b54d871f25fc78135ed1c6eddfaa}
+
+
+Recursive print of sub directory structure (dirs and contents) 
+
+
+
+Definition at line 338 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), ls(), m\+\_\+contents\+List, m\+\_\+directory\+List, m\+\_\+name, m\+\_\+p\+Parent\+Dir, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+\begin{DoxyCode}
+339 \{
+340   std::string parentDirName = m_pParentDir == NULL ? \textcolor{stringliteral}{"\(\backslash\)"\(\backslash\)""} : m_pParentDir->
+      m_name;
+341 
+342   streamlog\_out(MESSAGE) << std::string(depth*3, \textcolor{charliteral}{' '}) << \textcolor{stringliteral}{"Directory "} << m_name << \textcolor{stringliteral}{" (parent = "} << 
+      parentDirName << \textcolor{stringliteral}{") :"} << std::endl;
+343 
+344   \textcolor{comment}{// print contents first}
+345   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElement*>::const\_iterator iter = m_contentsList.begin(), endIter = 
+      m_contentsList.end() ;
+346       endIter != iter ; ++iter)
+347   \{
+348     DQMMonitorElement *pMonitorElement = *iter;
+349     streamlog\_out(MESSAGE) << std::string(depth*3, \textcolor{charliteral}{' '}) << \textcolor{stringliteral}{" [ME]  "} << pMonitorElement->getName() << 
+      std::endl;
+350   \}
+351 
+352   \textcolor{comment}{// print sub dirs}
+353   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::const\_iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+354       endIter != iter ; ++iter)
+355   \{
+356     DQMDirectory *pDirectory = *iter;
+357     pDirectory->ls(depth+1);
+358   \}
+359 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::mkdir (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dir\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a7740388427ba5f0bb72c5b38393272fd}
+
+
+Create a new directory. 
+
+
+
+Definition at line 119 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References contains\+Dir(), dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::contains\+Special\+Characters(), D\+Q\+M\+Directory(), and m\+\_\+directory\+List.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir(), and dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill().
+
+
+\begin{DoxyCode}
+120 \{
+121   \textcolor{keywordflow}{if}(containsDir(dirName))
+122     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_PRESENT;
+123 
+124   \textcolor{keywordflow}{if}(dirName.find(\textcolor{stringliteral}{"/"}) != std::string::npos || 
+      DQMCoreTool::containsSpecialCharacters(dirName) || dirName.empty())
+125     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+126 
+127   DQMDirectory *pNewDirectory = \textcolor{keyword}{new} DQMDirectory(dirName, \textcolor{keyword}{this});
+128   m_directoryList.push\_back(pNewDirectory);
+129 
+130   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+131 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!remove\+Dir@{remove\+Dir}}
+\index{remove\+Dir@{remove\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{remove\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::remove\+Dir (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{dir\+Name, }
+\item[{bool}]{deep\+Clean = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a7f5848fd500d19ed66cf1536eb8f23dc}
+
+
+Remove the directory and its contents Delete monitor element if deep\+Clean set to true. 
+
+
+
+Definition at line 260 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References clear(), get\+Name(), m\+\_\+directory\+List, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir().
+
+
+\begin{DoxyCode}
+261 \{
+262   \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::iterator iter = m_directoryList.begin(), endIter = 
+      m_directoryList.end() ;
+263       endIter != iter ; ++iter)
+264   \{
+265     DQMDirectory *pDirectory = *iter;
+266 
+267     \textcolor{keywordflow}{if}(pDirectory->getName() == dirName)
+268     \{
+269       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDirectory->clear(deepClean));
+270       \textcolor{keyword}{delete} pDirectory;
+271       m_directoryList.erase(iter);
+272 
+273       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+274     \}
+275   \}
+276 
+277   \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+278 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!remove\+Monitor\+Element@{remove\+Monitor\+Element}}
+\index{remove\+Monitor\+Element@{remove\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{remove\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::remove\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_aa3cfe4196512c5e384e2aa974e48e682}
+
+
+Remove the monitor element from the directory. 
+
+
+
+Definition at line 227 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::remove\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+228 \{
+229   \textcolor{keywordflow}{return} removeMonitorElement(pMonitorElement->getName());
+230 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!remove\+Monitor\+Element@{remove\+Monitor\+Element}}
+\index{remove\+Monitor\+Element@{remove\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{remove\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Directory\+::remove\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{monitor\+Element\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDirectory_a88ad53d27ca85b1753222bdc84815cc0}
+
+
+Remove the monitor element from the directory. 
+
+
+
+Definition at line 234 of file D\+Q\+M\+Directory.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), and m\+\_\+contents\+List.
+
+
+\begin{DoxyCode}
+235 \{
+236   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElement*>::iterator iter = m_contentsList.begin(), endIter = 
+      m_contentsList.end() ;
+237       endIter != iter ; ++iter)
+238   \{
+239     DQMMonitorElement *pME = *iter;
+240 
+241     \textcolor{keywordflow}{if}(pME->getName() == monitorElementName)
+242     \{
+243       m_contentsList.erase(iter);
+244       \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+245     \}
+246   \}
+247 
+248   \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+249 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!m\+\_\+contents\+List@{m\+\_\+contents\+List}}
+\index{m\+\_\+contents\+List@{m\+\_\+contents\+List}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{m\+\_\+contents\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf D\+Q\+M\+Monitor\+Element}$\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Directory\+::m\+\_\+contents\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDirectory_af1f88470e78505ac4d715e4145d81987}
+
+
+Definition at line 154 of file D\+Q\+M\+Directory.\+h.
+
+
+
+Referenced by add\+Monitor\+Element(), clear(), find\+Monitor\+Element(), get\+Monitor\+Element\+List(), is\+Empty(), ls(), and remove\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!m\+\_\+directory\+List@{m\+\_\+directory\+List}}
+\index{m\+\_\+directory\+List@{m\+\_\+directory\+List}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{m\+\_\+directory\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf D\+Q\+M\+Directory}$\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Directory\+::m\+\_\+directory\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDirectory_aff22484a3b9c946f4ed1fd636cab1f3e}
+
+
+Definition at line 153 of file D\+Q\+M\+Directory.\+h.
+
+
+
+Referenced by clear(), contains\+Dir(), find\+Dir(), get\+Sub\+Dir\+List(), is\+Empty(), ls(), mkdir(), and remove\+Dir().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{m\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Directory\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDirectory_a13da241e86012942963ed89764297783}
+
+
+Definition at line 151 of file D\+Q\+M\+Directory.\+h.
+
+
+
+Referenced by get\+Name(), and ls().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}!m\+\_\+p\+Parent\+Dir@{m\+\_\+p\+Parent\+Dir}}
+\index{m\+\_\+p\+Parent\+Dir@{m\+\_\+p\+Parent\+Dir}!dqm4hep\+::\+D\+Q\+M\+Directory@{dqm4hep\+::\+D\+Q\+M\+Directory}}
+\subsubsection[{m\+\_\+p\+Parent\+Dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Directory}$\ast$ dqm4hep\+::\+D\+Q\+M\+Directory\+::m\+\_\+p\+Parent\+Dir\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDirectory_a3efb9727a11f75cfde41d8215742bcaa}
+
+
+Definition at line 152 of file D\+Q\+M\+Directory.\+h.
+
+
+
+Referenced by get\+Parent\+Dir(), is\+Root\+Dir(), and ls().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Directory.\+h}\item 
+{\bf D\+Q\+M\+Directory.\+cc}\end{DoxyCompactItemize}

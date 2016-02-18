@@ -1,0 +1,375 @@
+\section{dqm4hep\+:\+:T\+Scalar\+Object$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1TScalarObject}\index{dqm4hep\+::\+T\+Scalar\+Object$<$ T $>$@{dqm4hep\+::\+T\+Scalar\+Object$<$ T $>$}}
+
+
+\doxyref{T\+Scalar\+Object}{p.}{classdqm4hep_1_1TScalarObject} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:T\+Scalar\+Object$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TScalarObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf T\+Scalar\+Object} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\bf T\+Scalar\+Object} (const T \&scalar)
+\begin{DoxyCompactList}\small\item\em Constructor with scalar value. \end{DoxyCompactList}\item 
+{\bf $\sim$\+T\+Scalar\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf Clear} (Option\+\_\+t $\ast$option=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Clear the scalar object. \end{DoxyCompactList}\item 
+void {\bf Draw} (Option\+\_\+t $\ast$option=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Draw the scalar object (using a T\+Pave\+Text) \end{DoxyCompactList}\item 
+void {\bf Set} (const T \&value)
+\begin{DoxyCompactList}\small\item\em The scalar value. \end{DoxyCompactList}\item 
+const T \& {\bf Get} () const 
+\begin{DoxyCompactList}\small\item\em Get the scalar value. \end{DoxyCompactList}\item 
+std\+::string {\bf To\+String} () const 
+\begin{DoxyCompactList}\small\item\em Convert the scalar value to std\+::string. \end{DoxyCompactList}\item 
+{\footnotesize template$<$$>$ }\\void {\bf Clear} (Option\+\_\+t $\ast$option)
+\item 
+{\footnotesize template$<$$>$ }\\std\+::string {\bf To\+String} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the scalar object (called only in C'tor) \end{DoxyCompactList}\item 
+{\bf Class\+Def} ({\bf T\+Scalar\+Object}, 1)
+\item 
+{\footnotesize template$<$$>$ }\\void {\bf Init} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T {\bf m\+\_\+scalar}
+\begin{DoxyCompactList}\small\item\em The scalar value. \end{DoxyCompactList}\item 
+T\+Pave\+Text $\ast$ {\bf m\+\_\+p\+Pave\+Text}
+\begin{DoxyCompactList}\small\item\em The pave text on which to draw the scalar value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+T\+Scalar\+Object$<$ T $>$}
+
+\doxyref{T\+Scalar\+Object}{p.}{classdqm4hep_1_1TScalarObject} class. 
+
+Extension of a T\+Object for scalar values like int, float, double or string. 
+
+Definition at line 258 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!T\+Scalar\+Object@{T\+Scalar\+Object}}
+\index{T\+Scalar\+Object@{T\+Scalar\+Object}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{T\+Scalar\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::{\bf T\+Scalar\+Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_a054e3920e3ac6f6472f8c64e9e03a2cc}
+
+
+Default constructor. 
+
+
+
+Definition at line 318 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+319 \{
+320   Init();
+321 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!T\+Scalar\+Object@{T\+Scalar\+Object}}
+\index{T\+Scalar\+Object@{T\+Scalar\+Object}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{T\+Scalar\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::{\bf T\+Scalar\+Object} (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{scalar}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_a5c125023b53dc3d25c9870ff0e35416e}
+
+
+Constructor with scalar value. 
+
+
+
+Definition at line 326 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+326                                                :
+327  m_scalar(scalar),
+328  m_pPaveText(0)
+329 \{
+330 
+331 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!````~T\+Scalar\+Object@{$\sim$\+T\+Scalar\+Object}}
+\index{````~T\+Scalar\+Object@{$\sim$\+T\+Scalar\+Object}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{$\sim$\+T\+Scalar\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::$\sim${\bf T\+Scalar\+Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_a1290da2577c45895adb736ccd9e9dad3}
+
+
+Destructor. 
+
+
+
+Definition at line 336 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+337 \{
+338   \textcolor{keywordflow}{if}(0 != m_pPaveText)
+339   \{
+340     \textcolor{keyword}{delete} m_pPaveText;
+341     m_pPaveText = 0;
+342   \}
+343 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Class\+Def@{Class\+Def}}
+\index{Class\+Def@{Class\+Def}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Class\+Def}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Class\+Def (
+\begin{DoxyParamCaption}
+\item[{{\bf T\+Scalar\+Object}$<$ T $>$}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TScalarObject_a0400f9b3962ad6567bf5fe43fd7e94e0}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Clear@{Clear}}
+\index{Clear@{Clear}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Clear (
+\begin{DoxyParamCaption}
+\item[{Option\+\_\+t $\ast$}]{option = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_a243765238b6414a15aea3a5dc691e401}
+
+
+Clear the scalar object. 
+
+
+
+Definition at line 348 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+349 \{
+350   \textcolor{keywordflow}{if}(0 != m_pPaveText)
+351     m_pPaveText->Clear(option);
+352 
+353   m_scalar = 0;
+354 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Clear@{Clear}}
+\index{Clear@{Clear}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ std\+::string $>$\+::Clear (
+\begin{DoxyParamCaption}
+\item[{Option\+\_\+t $\ast$}]{option}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TScalarObject_a33414879863310b4463a0f00beed7b06}
+
+
+Definition at line 411 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+412 \{
+413   \textcolor{keywordflow}{if}(NULL != m_pPaveText)
+414     m_pPaveText->Clear(option);
+415 
+416   m_scalar.clear();
+417 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Draw@{Draw}}
+\index{Draw@{Draw}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Draw}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Draw (
+\begin{DoxyParamCaption}
+\item[{Option\+\_\+t $\ast$}]{option = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_a54307e782e6a9e2183f846fc483d55a6}
+
+
+Draw the scalar object (using a T\+Pave\+Text) 
+
+
+
+Definition at line 359 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+360 \{
+361   std::string scalarStr = ToString();
+362 
+363   \textcolor{keywordflow}{if}(0 == m_pPaveText)
+364     m_pPaveText = \textcolor{keyword}{new} TPaveText(0.1, 0.1, 0.9, 0.9, \textcolor{stringliteral}{"NDC"});
+365 
+366   m_pPaveText->Clear();
+367   m_pPaveText->AddText(scalarStr.c\_str());
+368   m_pPaveText->Draw(option);
+369 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Get@{Get}}
+\index{Get@{Get}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ const T \& {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TScalarObject_a69f3b8ec2ad4e2d2920680781c223383}
+
+
+Get the scalar value. 
+
+
+
+Definition at line 382 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+383 \{
+384   \textcolor{keywordflow}{return} m_scalar;
+385 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Init@{Init}}
+\index{Init@{Init}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TScalarObject_a0214a12b719c3b02dc9203aa48893e0d}
+
+
+Initialize the scalar object (called only in C'tor) 
+
+
+
+Definition at line 400 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+401 \{
+402   m_scalar = 0;
+403   m_pPaveText = 0;
+404 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Init@{Init}}
+\index{Init@{Init}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ std\+::string $>$\+::Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TScalarObject_af4d377c0719608e1ca7a8be7b55cd57c}
+
+
+Definition at line 430 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+431 \{
+432   m_scalar = \textcolor{stringliteral}{""};
+433   m_pPaveText = 0;
+434 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!Set@{Set}}
+\index{Set@{Set}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::Set (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TScalarObject_aedf509513241d8fb9682d6f035dd445d}
+
+
+The scalar value. 
+
+
+
+Definition at line 374 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+375 \{
+376   m_scalar = value;
+377 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\+::string {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TScalarObject_abf88e126fdc1f63fc7c25fa7e177b733}
+
+
+Convert the scalar value to std\+::string. 
+
+
+
+Definition at line 390 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+391 \{
+392   std::stringstream ss;
+393   ss << m_scalar;
+394   \textcolor{keywordflow}{return} ss.str();
+395 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{To\+String}]{\setlength{\rightskip}{0pt plus 5cm}template$<$$>$ std\+::string {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ std\+::string $>$\+::To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TScalarObject_a8b5b9d9286a8ba27e49f02bc7d72ee03}
+
+
+Definition at line 422 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+\begin{DoxyCode}
+423 \{
+424   \textcolor{keywordflow}{return} m_scalar;
+425 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!m\+\_\+p\+Pave\+Text@{m\+\_\+p\+Pave\+Text}}
+\index{m\+\_\+p\+Pave\+Text@{m\+\_\+p\+Pave\+Text}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{m\+\_\+p\+Pave\+Text}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\+Pave\+Text$\ast$ {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::m\+\_\+p\+Pave\+Text\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TScalarObject_a362997b119b7ccb5c38b499585a4daa0}
+
+
+The pave text on which to draw the scalar value. 
+
+
+
+Definition at line 300 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}!m\+\_\+scalar@{m\+\_\+scalar}}
+\index{m\+\_\+scalar@{m\+\_\+scalar}!dqm4hep\+::\+T\+Scalar\+Object@{dqm4hep\+::\+T\+Scalar\+Object}}
+\subsubsection[{m\+\_\+scalar}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf dqm4hep\+::\+T\+Scalar\+Object}$<$ T $>$\+::m\+\_\+scalar\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TScalarObject_abd5cd090bd14bad4bd25c6756c6673a1}
+
+
+The scalar value. 
+
+
+
+Definition at line 299 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,755 @@
+\section{T\+C\+L\+A\+P\+:\+:Multi\+Arg$<$ T $>$ Class Template Reference}
+\label{classTCLAP_1_1MultiArg}\index{T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$@{T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$}}
+
+
+An argument that allows multiple values of type T to be specified.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Arg.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Multi\+Arg$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1MultiArg}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ T $>$ {\bf container\+\_\+type}
+\item 
+typedef container\+\_\+type\+::iterator {\bf iterator}
+\item 
+typedef \\*
+container\+\_\+type\+::const\+\_\+iterator {\bf const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Multi\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, const std\+::string \&type\+Desc, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Multi\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, const std\+::string \&type\+Desc, {\bf Cmd\+Line\+Interface} \&parser, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Multi\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, {\bf Constraint}$<$ T $>$ $\ast$constraint, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Multi\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, {\bf Constraint}$<$ T $>$ $\ast$constraint, {\bf Cmd\+Line\+Interface} \&parser, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual bool {\bf process\+Arg} (int $\ast$i, std\+::vector$<$ std\+::string $>$ \&args)
+\begin{DoxyCompactList}\small\item\em Handles the processing of the argument. \end{DoxyCompactList}\item 
+const std\+::vector$<$ T $>$ \& {\bf get\+Value} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of type T containing the values parsed from the command line. \end{DoxyCompactList}\item 
+{\bf const\+\_\+iterator} {\bf begin} () const 
+\begin{DoxyCompactList}\small\item\em Returns an iterator over the values parsed from the command line. \end{DoxyCompactList}\item 
+{\bf const\+\_\+iterator} {\bf end} () const 
+\begin{DoxyCompactList}\small\item\em Returns the end of the values parsed from the command line. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns the a short id string. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf long\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns the a long id string. \end{DoxyCompactList}\item 
+virtual bool {\bf is\+Required} () const 
+\begin{DoxyCompactList}\small\item\em Once we've matched the first value, then the arg is no longer required. \end{DoxyCompactList}\item 
+virtual bool {\bf allow\+More} ()
+\begin{DoxyCompactList}\small\item\em Used for Multi\+Args and \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to determine whether args can still be set. \end{DoxyCompactList}\item 
+virtual void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \+\_\+extract\+Value} (const std\+::string \&val)
+\begin{DoxyCompactList}\small\item\em Extracts the value from the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ {\bf \+\_\+values}
+\begin{DoxyCompactList}\small\item\em The list of values parsed from the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+type\+Desc}
+\begin{DoxyCompactList}\small\item\em The description of type T to be used in the usage. \end{DoxyCompactList}\item 
+{\bf Constraint}$<$ T $>$ $\ast$ {\bf \+\_\+constraint}
+\begin{DoxyCompactList}\small\item\em A list of constraint on this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+allow\+More}
+\begin{DoxyCompactList}\small\item\em Used by \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to decide whether to keep parsing for this arg. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Multi\+Arg} (const {\bf Multi\+Arg}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Prevent accidental copying. \end{DoxyCompactList}\item 
+{\bf Multi\+Arg}$<$ T $>$ \& {\bf operator=} (const {\bf Multi\+Arg}$<$ T $>$ \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$}
+
+An argument that allows multiple values of type T to be specified. 
+
+Very similar to a \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg}, except a vector of values will be returned instead of just one. 
+
+Definition at line 39 of file Multi\+Arg.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{const\+\_\+iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef container\+\_\+type\+::const\+\_\+iterator {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf const\+\_\+iterator}}\label{classTCLAP_1_1MultiArg_a3f8e9e8f5dcc7d3e6a518f42134cf64f}
+
+
+Definition at line 44 of file Multi\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!container\+\_\+type@{container\+\_\+type}}
+\index{container\+\_\+type@{container\+\_\+type}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{container\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef std\+::vector$<$T$>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf container\+\_\+type}}\label{classTCLAP_1_1MultiArg_adae435f03fdde769bca57327487aab78}
+
+
+Definition at line 42 of file Multi\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!iterator@{iterator}}
+\index{iterator@{iterator}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ typedef container\+\_\+type\+::iterator {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf iterator}}\label{classTCLAP_1_1MultiArg_a34196784baca2bd5aa079d639d49a7ca}
+
+
+Definition at line 43 of file Multi\+Arg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!Multi\+Arg@{Multi\+Arg}}
+\index{Multi\+Arg@{Multi\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1MultiArg_a49b5437c7f06cd6864c07dc59814a953}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+accepts\+Multiple\+Values.
+
+
+\begin{DoxyCode}
+239                                   :
+240    Arg( flag, name, desc, req, \textcolor{keyword}{true}, v ),
+241   _values(std::vector<T>()),
+242   _typeDesc( typeDesc ),
+243   _constraint( NULL ),
+244   _allowMore(\textcolor{keyword}{false})
+245 \{ 
+246   _acceptsMultipleValues = \textcolor{keyword}{true};
+247 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!Multi\+Arg@{Multi\+Arg}}
+\index{Multi\+Arg@{Multi\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1MultiArg_a48c90a873389280f72fb5d6ef707b400}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+accepts\+Multiple\+Values, and T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add().
+
+
+\begin{DoxyCode}
+257 : Arg( flag, name, desc, req, \textcolor{keyword}{true}, v ),
+258   _values(std::vector<T>()),
+259   _typeDesc( typeDesc ),
+260   _constraint( NULL ),
+261   _allowMore(\textcolor{keyword}{false})
+262 \{ 
+263   parser.add( \textcolor{keyword}{this} );
+264   _acceptsMultipleValues = \textcolor{keyword}{true};
+265 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!Multi\+Arg@{Multi\+Arg}}
+\index{Multi\+Arg@{Multi\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1MultiArg_a38b1e32a8189356bd1e5ec7c2d43c1a3}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 271 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+accepts\+Multiple\+Values.
+
+
+\begin{DoxyCode}
+277 : Arg( flag, name, desc, req, \textcolor{keyword}{true}, v ),
+278   _values(std::vector<T>()),
+279   _typeDesc( constraint->shortID() ),
+280   _constraint( constraint ),
+281   _allowMore(\textcolor{keyword}{false})
+282 \{ 
+283   _acceptsMultipleValues = \textcolor{keyword}{true};
+284 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!Multi\+Arg@{Multi\+Arg}}
+\index{Multi\+Arg@{Multi\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1MultiArg_ad4fcd892de2f1ef275c30dc499215208}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 287 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+accepts\+Multiple\+Values, and T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add().
+
+
+\begin{DoxyCode}
+294 : Arg( flag, name, desc, req, \textcolor{keyword}{true}, v ),
+295   _values(std::vector<T>()),
+296   _typeDesc( constraint->shortID() ),
+297   _constraint( constraint ),
+298   _allowMore(\textcolor{keyword}{false})
+299 \{ 
+300   parser.add( \textcolor{keyword}{this} );
+301   _acceptsMultipleValues = \textcolor{keyword}{true};
+302 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!Multi\+Arg@{Multi\+Arg}}
+\index{Multi\+Arg@{Multi\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{Multi\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::{\bf Multi\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Arg}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1MultiArg_afee487984c8a7a3bdb5221cfd0bd9e51}
+
+
+Prevent accidental copying. 
+
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!\+\_\+extract\+Value@{\+\_\+extract\+Value}}
+\index{\+\_\+extract\+Value@{\+\_\+extract\+Value}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{\+\_\+extract\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::\+\_\+extract\+Value (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1MultiArg_a26cbf5e86ac66d876f9285f1fda22470}
+
+
+Extracts the value from the string. 
+
+Attempts to parse string as type T, if this fails an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ The string to be read. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+Exception\+::error(), and T\+C\+L\+A\+P\+::\+Extract\+Value().
+
+
+\begin{DoxyCode}
+399 \{
+400     \textcolor{keywordflow}{try} \{
+401   T tmp;
+402   ExtractValue(tmp, val, \textcolor{keyword}{typename} ArgTraits<T>::ValueCategory());
+403   _values.push\_back(tmp);
+404     \} \textcolor{keywordflow}{catch}( ArgParseException &e) \{
+405   \textcolor{keywordflow}{throw} ArgParseException(e.error(), toString());
+406     \}
+407 
+408     \textcolor{keywordflow}{if} ( _constraint != NULL )
+409   \textcolor{keywordflow}{if} ( ! _constraint->check( _values.back() ) )
+410       \textcolor{keywordflow}{throw}( CmdLineParseException( \textcolor{stringliteral}{"Value '"} + val +
+411             \textcolor{stringliteral}{"' does not meet constraint: "} +
+412             _constraint->description(), 
+413             toString() ) );
+414 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!allow\+More@{allow\+More}}
+\index{allow\+More@{allow\+More}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{allow\+More}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::allow\+More (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_ab05097627c81cd65975fa1b99fae9bd0}
+
+
+Used for Multi\+Args and \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to determine whether args can still be set. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a9aef735d37ef95ca1b7dc7a07850b984}.
+
+
+
+Definition at line 417 of file Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+418 \{
+419   \textcolor{keywordtype}{bool} am = _allowMore;
+420   _allowMore = \textcolor{keyword}{true};
+421   \textcolor{keywordflow}{return} am;
+422 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!begin@{begin}}
+\index{begin@{begin}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf const\+\_\+iterator} {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1MultiArg_a48058500cdc9ef8b9c2c9e6394ab499d}
+
+
+Returns an iterator over the values parsed from the command line. 
+
+
+
+Definition at line 194 of file Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+194 \{ \textcolor{keywordflow}{return} _values.begin(); \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!end@{end}}
+\index{end@{end}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf const\+\_\+iterator} {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1MultiArg_ac30e414b799158ff6710fb1e7ce83aee}
+
+
+Returns the end of the values parsed from the command line. 
+
+
+
+Definition at line 200 of file Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+200 \{ \textcolor{keywordflow}{return} _values.end(); \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ const std\+::vector$<$ T $>$ \& {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1MultiArg_aff4ff7f8d854dd668aaaf80511d8002b}
+
+
+Returns a vector of type T containing the values parsed from the command line. 
+
+
+
+Definition at line 305 of file Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+305 \{ \textcolor{keywordflow}{return} _values; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!is\+Required@{is\+Required}}
+\index{is\+Required@{is\+Required}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{is\+Required}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::is\+Required (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_a3cb7fec92f3d70e0e455c6bc33fbebab}
+
+
+Once we've matched the first value, then the arg is no longer required. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a00a3cfdb2b6e9a111ad39cbd4978b96c}.
+
+
+
+Definition at line 383 of file Multi\+Arg.\+h.
+
+
+\begin{DoxyCode}
+384 \{
+385   \textcolor{keywordflow}{if} ( _required )
+386   \{
+387     \textcolor{keywordflow}{if} ( _values.size() > 1 )
+388       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+389     \textcolor{keywordflow}{else}
+390       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+391     \}
+392     \textcolor{keywordflow}{else}
+393     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+394 
+395 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!long\+I\+D@{long\+I\+D}}
+\index{long\+I\+D@{long\+I\+D}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{long\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::long\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_a16c00fbce6876bceabb3dab4723f7e79}
+
+
+Returns the a long id string. 
+
+Used in the usage. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_aad93aff46e1fc67e3853765f565bfa96}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a1e7262967b850fb30e1003890a45f1ca}.
+
+
+
+Definition at line 372 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::long\+I\+D().
+
+
+\begin{DoxyCode}
+373 \{
+374   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+375   \textcolor{keywordflow}{return} Arg::longID(_typeDesc) + \textcolor{stringliteral}{"  (accepted multiple times)"};
+376 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Multi\+Arg}$<$T$>$\& {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Multi\+Arg}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1MultiArg_a1f1eec634dac18c948124ef580cc972f}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!process\+Arg@{process\+Arg}}
+\index{process\+Arg@{process\+Arg}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{process\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::process\+Arg (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{i, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_a344d3cf2128c510f92825e421ea667c7}
+
+
+Handles the processing of the argument. 
+
+This re-\/implements the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} version of this method to set the \+\_\+value of the argument appropriately. It knows the difference between labeled and unlabeled. 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ Pointer the the current argument in the list. \\
+\hline
+{\em args} & -\/ Mutable list of strings. Passed from main(). \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a61ffe2f660a76111d256f7b22a686146}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_aa5a35665519518dcb60e53d3a4858802}.
+
+
+
+Definition at line 308 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::delimiter(), and T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest().
+
+
+\begin{DoxyCode}
+309 \{
+310   \textcolor{keywordflow}{if} ( _ignoreable && Arg::ignoreRest() )
+311     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+312 
+313   \textcolor{keywordflow}{if} ( _hasBlanks( args[*i] ) )
+314     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+315 
+316   std::string flag = args[*i];
+317   std::string value = \textcolor{stringliteral}{""};
+318 
+319     trimFlag( flag, value );
+320 
+321     \textcolor{keywordflow}{if} ( argMatches( flag ) )
+322     \{
+323       \textcolor{keywordflow}{if} ( Arg::delimiter() != \textcolor{charliteral}{' '} && value == \textcolor{stringliteral}{""} )
+324       \textcolor{keywordflow}{throw}( ArgParseException( 
+325                  \textcolor{stringliteral}{"Couldn't find delimiter for this argument!"},
+326              toString() ) );
+327 
+328     \textcolor{comment}{// always take the first one, regardless of start string}
+329     \textcolor{keywordflow}{if} ( value == \textcolor{stringliteral}{""} )
+330     \{
+331       (*i)++;
+332       \textcolor{keywordflow}{if} ( static\_cast<unsigned int>(*i) < args.size() )
+333         _extractValue( args[*i] );
+334       \textcolor{keywordflow}{else}
+335         \textcolor{keywordflow}{throw}( ArgParseException(\textcolor{stringliteral}{"Missing a value for this argument!"},
+336                                          toString() ) );
+337     \} 
+338     \textcolor{keywordflow}{else}
+339       _extractValue( value );
+340 
+341     \textcolor{comment}{/*}
+342 \textcolor{comment}{    // continuing taking the args until we hit one with a start string }
+343 \textcolor{comment}{    while ( (unsigned int)(*i)+1 < args.size() &&}
+344 \textcolor{comment}{        args[(*i)+1].find\_first\_of( Arg::flagStartString() ) != 0 &&}
+345 \textcolor{comment}{            args[(*i)+1].find\_first\_of( Arg::nameStartString() ) != 0 ) }
+346 \textcolor{comment}{        \_extractValue( args[++(*i)] );}
+347 \textcolor{comment}{    */}
+348 
+349     _alreadySet = \textcolor{keyword}{true};
+350     _checkWithVisitor();
+351 
+352     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+353   \}
+354   \textcolor{keywordflow}{else}
+355     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+356 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!reset@{reset}}
+\index{reset@{reset}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_ab21f01f22978a1c0eea716399e9ff89b}
+
+
+Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_ab5b5dc9a9b0381561f0684523f943a2c}.
+
+
+
+Definition at line 425 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::reset().
+
+
+\begin{DoxyCode}
+426 \{
+427   Arg::reset();
+428   _values.clear();
+429 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::short\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1MultiArg_ac2c962112704b899f4c8b8565f2c4bb3}
+
+
+Returns the a short id string. 
+
+Used in the usage. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_aef8efaf3811162b2b2b2a84c6db280fa}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a5971af8f29fa4d798ffde3293504c15b}.
+
+
+
+Definition at line 362 of file Multi\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::short\+I\+D().
+
+
+\begin{DoxyCode}
+363 \{
+364   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+365   \textcolor{keywordflow}{return} Arg::shortID(_typeDesc) + \textcolor{stringliteral}{" ... "};
+366 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!\+\_\+allow\+More@{\+\_\+allow\+More}}
+\index{\+\_\+allow\+More@{\+\_\+allow\+More}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{\+\_\+allow\+More}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::\+\_\+allow\+More\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1MultiArg_a93a3ef586f763d46839c0e737689b85f}
+
+
+Used by \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to decide whether to keep parsing for this arg. 
+
+
+
+Definition at line 74 of file Multi\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!\+\_\+constraint@{\+\_\+constraint}}
+\index{\+\_\+constraint@{\+\_\+constraint}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Constraint}$<$T$>$$\ast$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::\+\_\+constraint\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1MultiArg_afc754048b66bc3a251268947273ea906}
+
+
+A list of constraint on this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. 
+
+
+
+Definition at line 61 of file Multi\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!\+\_\+type\+Desc@{\+\_\+type\+Desc}}
+\index{\+\_\+type\+Desc@{\+\_\+type\+Desc}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{\+\_\+type\+Desc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::\+\_\+type\+Desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1MultiArg_a0f6a2b04fe15d1ede95165fc6e1949e8}
+
+
+The description of type T to be used in the usage. 
+
+
+
+Definition at line 56 of file Multi\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}!\+\_\+values@{\+\_\+values}}
+\index{\+\_\+values@{\+\_\+values}!T\+C\+L\+A\+P\+::\+Multi\+Arg@{T\+C\+L\+A\+P\+::\+Multi\+Arg}}
+\subsubsection[{\+\_\+values}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::vector$<$T$>$ {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg}$<$ T $>$\+::\+\_\+values\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1MultiArg_aabcab153e09608343713a6ffef431783}
+
+
+The list of values parsed from the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}. 
+
+
+
+Definition at line 51 of file Multi\+Arg.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Multi\+Arg.\+h}\end{DoxyCompactItemize}

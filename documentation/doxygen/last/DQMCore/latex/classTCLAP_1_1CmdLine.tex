@@ -1,0 +1,1282 @@
+\section{T\+C\+L\+A\+P\+:\+:Cmd\+Line Class Reference}
+\label{classTCLAP_1_1CmdLine}\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+
+
+The base class that manages the command line definition and passes along the parsing to the appropriate \doxyref{Arg}{p.}{classTCLAP_1_1Arg} classes.  
+
+
+
+
+{\ttfamily \#include $<$Cmd\+Line.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Cmd\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1CmdLine}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cmd\+Line} (const std\+::string \&message, const char delimiter= ' ', const std\+::string \&version=\char`\"{}none\char`\"{}, bool help\+And\+Version=true)
+\begin{DoxyCompactList}\small\item\em Command line constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Cmd\+Line} ()
+\begin{DoxyCompactList}\small\item\em Deletes any resources allocated by a \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object. \end{DoxyCompactList}\item 
+void {\bf add} ({\bf Arg} \&a)
+\begin{DoxyCompactList}\small\item\em Adds an argument to the list of arguments to be parsed. \end{DoxyCompactList}\item 
+void {\bf add} ({\bf Arg} $\ast$a)
+\begin{DoxyCompactList}\small\item\em An alternative add. \end{DoxyCompactList}\item 
+void {\bf xor\+Add} ({\bf Arg} \&a, {\bf Arg} \&b)
+\begin{DoxyCompactList}\small\item\em Add two Args that will be xor'd. \end{DoxyCompactList}\item 
+void {\bf xor\+Add} (std\+::vector$<$ {\bf Arg} $\ast$ $>$ \&xors)
+\begin{DoxyCompactList}\small\item\em Add a list of Args that will be xor'd. \end{DoxyCompactList}\item 
+void {\bf parse} (int argc, const char $\ast$const $\ast$argv)
+\begin{DoxyCompactList}\small\item\em Parses the command line. \end{DoxyCompactList}\item 
+void {\bf parse} (std\+::vector$<$ std\+::string $>$ \&args)
+\begin{DoxyCompactList}\small\item\em Parses the command line. \end{DoxyCompactList}\item 
+{\bf Cmd\+Line\+Output} $\ast$ {\bf get\+Output} ()
+\begin{DoxyCompactList}\small\item\em Returns the \doxyref{Cmd\+Line\+Output}{p.}{classTCLAP_1_1CmdLineOutput} object. \end{DoxyCompactList}\item 
+void {\bf set\+Output} ({\bf Cmd\+Line\+Output} $\ast$co)
+\item 
+std\+::string \& {\bf get\+Version} ()
+\begin{DoxyCompactList}\small\item\em Returns the version string. \end{DoxyCompactList}\item 
+std\+::string \& {\bf get\+Program\+Name} ()
+\begin{DoxyCompactList}\small\item\em Returns the program name string. \end{DoxyCompactList}\item 
+std\+::list$<$ {\bf Arg} $\ast$ $>$ \& {\bf get\+Arg\+List} ()
+\begin{DoxyCompactList}\small\item\em Returns the arg\+List. \end{DoxyCompactList}\item 
+{\bf Xor\+Handler} \& {\bf get\+Xor\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Returns the \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler}. \end{DoxyCompactList}\item 
+char {\bf get\+Delimiter} ()
+\begin{DoxyCompactList}\small\item\em Returns the delimiter string. \end{DoxyCompactList}\item 
+std\+::string \& {\bf get\+Message} ()
+\begin{DoxyCompactList}\small\item\em Returns the message string. \end{DoxyCompactList}\item 
+bool {\bf has\+Help\+And\+Version} ()
+\begin{DoxyCompactList}\small\item\em Indicates whether or not the help and version switches were created automatically. \end{DoxyCompactList}\item 
+void {\bf set\+Exception\+Handling} (const bool state)
+\begin{DoxyCompactList}\small\item\em Disables or enables \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}'s internal parsing exception handling. \end{DoxyCompactList}\item 
+bool {\bf get\+Exception\+Handling} () const 
+\begin{DoxyCompactList}\small\item\em Returns the current state of the internal exception handling. \end{DoxyCompactList}\item 
+void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Allows the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object to be reused. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf missing\+Args\+Exception} ()
+\begin{DoxyCompactList}\small\item\em Throws an exception listing the missing args. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+empty\+Combined} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Checks whether a name/flag string matches entirely matches the \doxyref{Arg\+::blank\+Char}{p.}{classTCLAP_1_1Arg_a0abd38f46dbf7d267078134a4817fbb2}. \end{DoxyCompactList}\item 
+void {\bf delete\+On\+Exit} ({\bf Arg} $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Perform a delete ptr; operation on ptr when this object is deleted. \end{DoxyCompactList}\item 
+void {\bf delete\+On\+Exit} ({\bf Visitor} $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Perform a delete ptr; operation on ptr when this object is deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ {\bf Arg} $\ast$ $>$ {\bf \+\_\+arg\+List}
+\begin{DoxyCompactList}\small\item\em The list of arguments that will be tested against the command line. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+prog\+Name}
+\begin{DoxyCompactList}\small\item\em The name of the program. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+message}
+\begin{DoxyCompactList}\small\item\em A message used to describe the program. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+version}
+\begin{DoxyCompactList}\small\item\em The version to be displayed with the --version switch. \end{DoxyCompactList}\item 
+int {\bf \+\_\+num\+Required}
+\begin{DoxyCompactList}\small\item\em The number of arguments that are required to be present on the command line. \end{DoxyCompactList}\item 
+char {\bf \+\_\+delimiter}
+\begin{DoxyCompactList}\small\item\em The character that is used to separate the argument flag/name from the value. \end{DoxyCompactList}\item 
+{\bf Xor\+Handler} {\bf \+\_\+xor\+Handler}
+\begin{DoxyCompactList}\small\item\em The handler that manages xoring lists of args. \end{DoxyCompactList}\item 
+std\+::list$<$ {\bf Arg} $\ast$ $>$ {\bf \+\_\+arg\+Delete\+On\+Exit\+List}
+\begin{DoxyCompactList}\small\item\em A list of Args to be explicitly deleted when the destructor is called. \end{DoxyCompactList}\item 
+std\+::list$<$ {\bf Visitor} $\ast$ $>$ {\bf \+\_\+visitor\+Delete\+On\+Exit\+List}
+\begin{DoxyCompactList}\small\item\em A list of Visitors to be explicitly deleted when the destructor is called. \end{DoxyCompactList}\item 
+{\bf Cmd\+Line\+Output} $\ast$ {\bf \+\_\+output}
+\begin{DoxyCompactList}\small\item\em Object that handles all output for the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+handle\+Exceptions}
+\begin{DoxyCompactList}\small\item\em Should \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} handle parsing exceptions internally? \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cmd\+Line} (const {\bf Cmd\+Line} \&rhs)
+\begin{DoxyCompactList}\small\item\em Prevent accidental copying. \end{DoxyCompactList}\item 
+{\bf Cmd\+Line} \& {\bf operator=} (const {\bf Cmd\+Line} \&rhs)
+\item 
+void {\bf \+\_\+constructor} ()
+\begin{DoxyCompactList}\small\item\em Encapsulates the code common to the constructors (which is all of it). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \+\_\+user\+Set\+Output}
+\begin{DoxyCompactList}\small\item\em Is set to true when a user sets the output object. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+help\+And\+Version}
+\begin{DoxyCompactList}\small\item\em Whether or not to automatically create help and version switches. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class that manages the command line definition and passes along the parsing to the appropriate \doxyref{Arg}{p.}{classTCLAP_1_1Arg} classes. 
+
+Definition at line 70 of file Cmd\+Line.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!Cmd\+Line@{Cmd\+Line}}
+\index{Cmd\+Line@{Cmd\+Line}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{Cmd\+Line}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+Cmd\+Line (
+\begin{DoxyParamCaption}
+\item[{const {\bf Cmd\+Line} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1CmdLine_ac6479892319106c49ec644bbc68a255e}
+
+
+Prevent accidental copying. 
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!Cmd\+Line@{Cmd\+Line}}
+\index{Cmd\+Line@{Cmd\+Line}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{Cmd\+Line}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+Cmd\+Line (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message, }
+\item[{const char}]{delimiter = {\ttfamily '~'}, }
+\item[{const std\+::string \&}]{version = {\ttfamily \char`\"{}none\char`\"{}}, }
+\item[{bool}]{help\+And\+Version = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1CmdLine_a2e62a3493f8700afb49a7deb872a5b96}
+
+
+Command line constructor. 
+
+Defines how the arguments will be parsed. 
+\begin{DoxyParams}{Parameters}
+{\em message} & -\/ The message to be used in the usage output. \\
+\hline
+{\em delimiter} & -\/ The character that is used to separate the argument flag/name from the value. Defaults to ' ' (space). \\
+\hline
+{\em version} & -\/ The version number to be used in the --version switch. \\
+\hline
+{\em help\+And\+Version} & -\/ Whether or not to create the Help and Version switches. Defaults to true. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 323 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+constructor().
+
+
+\begin{DoxyCode}
+327     :
+328   _argList(std::list<Arg*>()),
+329   _progName(\textcolor{stringliteral}{"not\_set\_yet"}),
+330   _message(m),
+331   _version(v),
+332   _numRequired(0),
+333   _delimiter(delim),
+334   _xorHandler(XorHandler()),
+335   _argDeleteOnExitList(std::list<Arg*>()),
+336   _visitorDeleteOnExitList(std::list<Visitor*>()),
+337   _output(0),
+338   _handleExceptions(\textcolor{keyword}{true}),
+339   _userSetOutput(\textcolor{keyword}{false}),
+340   _helpAndVersion(help)
+341 \{
+342   _constructor();
+343 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!````~Cmd\+Line@{$\sim$\+Cmd\+Line}}
+\index{````~Cmd\+Line@{$\sim$\+Cmd\+Line}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{$\sim$\+Cmd\+Line}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Cmd\+Line\+::$\sim$\+Cmd\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a8a7bddba32c3d96e2a01e4c8e160e6fa}
+
+
+Deletes any resources allocated by a \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object. 
+
+
+
+Definition at line 345 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+Delete\+On\+Exit\+List, \+\_\+output, \+\_\+user\+Set\+Output, \+\_\+visitor\+Delete\+On\+Exit\+List, and T\+C\+L\+A\+P\+::\+Clear\+Container().
+
+
+\begin{DoxyCode}
+346 \{
+347   ClearContainer(_argDeleteOnExitList);
+348   ClearContainer(_visitorDeleteOnExitList);
+349 
+350   \textcolor{keywordflow}{if} ( !_userSetOutput ) \{
+351     \textcolor{keyword}{delete} _output;
+352     _output = 0;
+353   \}
+354 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+constructor@{\+\_\+constructor}}
+\index{\+\_\+constructor@{\+\_\+constructor}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+constructor}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+constructor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTCLAP_1_1CmdLine_a955b1935c7b2e5118b2573bd2fbb958c}
+
+
+Encapsulates the code common to the constructors (which is all of it). 
+
+
+
+Definition at line 356 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+delimiter, \+\_\+help\+And\+Version, \+\_\+output, add(), delete\+On\+Exit(), T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+String(), T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Name\+String(), and T\+C\+L\+A\+P\+::\+Arg\+::set\+Delimiter().
+
+
+
+Referenced by Cmd\+Line().
+
+
+\begin{DoxyCode}
+357 \{
+358   _output = \textcolor{keyword}{new} StdOutput;
+359 
+360   Arg::setDelimiter( _delimiter );
+361 
+362   Visitor* v;
+363 
+364   \textcolor{keywordflow}{if} ( _helpAndVersion )
+365   \{
+366     v = \textcolor{keyword}{new} HelpVisitor( \textcolor{keyword}{this}, &_output );
+367     SwitchArg* help = \textcolor{keyword}{new} SwitchArg(\textcolor{stringliteral}{"h"},\textcolor{stringliteral}{"help"},
+368                           \textcolor{stringliteral}{"Displays usage information and exits."},
+369                           \textcolor{keyword}{false}, v);
+370     add( help );
+371     deleteOnExit(help);
+372     deleteOnExit(v);
+373 
+374     v = \textcolor{keyword}{new} VersionVisitor( \textcolor{keyword}{this}, &_output );
+375     SwitchArg* vers = \textcolor{keyword}{new} SwitchArg(\textcolor{stringliteral}{""},\textcolor{stringliteral}{"version"},
+376                           \textcolor{stringliteral}{"Displays version information and exits."},
+377                           \textcolor{keyword}{false}, v);
+378     add( vers );
+379     deleteOnExit(vers);
+380     deleteOnExit(v);
+381   \}
+382 
+383   v = \textcolor{keyword}{new} IgnoreRestVisitor();
+384   SwitchArg* ignore  = \textcolor{keyword}{new} SwitchArg(Arg::flagStartString(),
+385             Arg::ignoreNameString(),
+386             \textcolor{stringliteral}{"Ignores the rest of the labeled arguments following this flag."},
+387             \textcolor{keyword}{false}, v);
+388   add( ignore );
+389   deleteOnExit(ignore);
+390   deleteOnExit(v);
+391 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+empty\+Combined@{\+\_\+empty\+Combined}}
+\index{\+\_\+empty\+Combined@{\+\_\+empty\+Combined}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+empty\+Combined}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+empty\+Combined (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a170a4e711c2a6d58a05e9ad3bc03c08a}
+
+
+Checks whether a name/flag string matches entirely matches the \doxyref{Arg\+::blank\+Char}{p.}{classTCLAP_1_1Arg_a0abd38f46dbf7d267078134a4817fbb2}. 
+
+Used when multiple switches are combined into a single argument. 
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ The message to be used in the usage. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 512 of file Cmd\+Line.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::blank\+Char(), and T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+Char().
+
+
+
+Referenced by parse().
+
+
+\begin{DoxyCode}
+513 \{
+514   \textcolor{keywordflow}{if} ( s.length() > 0 && s[0] != Arg::flagStartChar() )
+515     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+516 
+517   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 1; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < s.length(); i++ )
+518     \textcolor{keywordflow}{if} ( s[i] != Arg::blankChar() )
+519       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+520 
+521   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+522 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!add@{add}}
+\index{add@{add}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a94c511d4735ad9b8c97edaa3827f8bbf}
+
+
+Adds an argument to the list of arguments to be parsed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ Argument to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a13b29ab754c030185e58f779dc355631}.
+
+
+
+Definition at line 413 of file Cmd\+Line.\+h.
+
+
+
+Referenced by \+\_\+constructor(), and xor\+Add().
+
+
+\begin{DoxyCode}
+414 \{
+415   add( &a );
+416 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!add@{add}}
+\index{add@{add}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::add (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_ab8a08e8f4d3ca7709c85416f76e805a3}
+
+
+An alternative add. 
+
+Functionally identical. 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ Argument to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a7c6a097c0f2a09dd1987e9da1af8b457}.
+
+
+
+Definition at line 418 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+List, \+\_\+num\+Required, T\+C\+L\+A\+P\+::\+Arg\+::add\+To\+List(), T\+C\+L\+A\+P\+::\+Arg\+::is\+Required(), and T\+C\+L\+A\+P\+::\+Arg\+::long\+I\+D().
+
+
+\begin{DoxyCode}
+419 \{
+420   \textcolor{keywordflow}{for}( ArgListIterator it = _argList.begin(); it != _argList.end(); it++ )
+421     \textcolor{keywordflow}{if} ( *a == *(*it) )
+422       \textcolor{keywordflow}{throw}( SpecificationException(
+423               \textcolor{stringliteral}{"Argument with same flag/name already exists!"},
+424               a->longID() ) );
+425 
+426   a->addToList( _argList );
+427 
+428   \textcolor{keywordflow}{if} ( a->isRequired() )
+429     _numRequired++;
+430 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!delete\+On\+Exit@{delete\+On\+Exit}}
+\index{delete\+On\+Exit@{delete\+On\+Exit}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{delete\+On\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::delete\+On\+Exit (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a42d669ed2037ac24fc78883aa8600655}
+
+
+Perform a delete ptr; operation on ptr when this object is deleted. 
+
+
+
+Definition at line 551 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+Delete\+On\+Exit\+List.
+
+
+
+Referenced by \+\_\+constructor().
+
+
+\begin{DoxyCode}
+552 \{
+553   _argDeleteOnExitList.push\_back(ptr);
+554 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!delete\+On\+Exit@{delete\+On\+Exit}}
+\index{delete\+On\+Exit@{delete\+On\+Exit}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{delete\+On\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::delete\+On\+Exit (
+\begin{DoxyParamCaption}
+\item[{{\bf Visitor} $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a262b8d929eb5b0dfbfc17637c1325c36}
+
+
+Perform a delete ptr; operation on ptr when this object is deleted. 
+
+
+
+Definition at line 556 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+visitor\+Delete\+On\+Exit\+List.
+
+
+\begin{DoxyCode}
+557 \{
+558   _visitorDeleteOnExitList.push\_back(ptr);
+559 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Arg\+List@{get\+Arg\+List}}
+\index{get\+Arg\+List@{get\+Arg\+List}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Arg\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<$ {\bf Arg} $\ast$ $>$ \& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Arg\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a3c281da929a281fb883ea47632b7ad38}
+
+
+Returns the arg\+List. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a4de8d988f5a6f3007c4dfb0fc9dad476}.
+
+
+
+Definition at line 584 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+List.
+
+
+\begin{DoxyCode}
+585 \{
+586   \textcolor{keywordflow}{return} _argList;
+587 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Delimiter@{get\+Delimiter}}
+\index{get\+Delimiter@{get\+Delimiter}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}char T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Delimiter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a3e9f0ac2c1e97d1f8527da713ddd5a8f}
+
+
+Returns the delimiter string. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a7d6a64cff6b3a30e2cf1e81d7b1d4521}.
+
+
+
+Definition at line 594 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+delimiter.
+
+
+\begin{DoxyCode}
+595 \{
+596   \textcolor{keywordflow}{return} _delimiter;
+597 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Exception\+Handling@{get\+Exception\+Handling}}
+\index{get\+Exception\+Handling@{get\+Exception\+Handling}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Exception\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Exception\+Handling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1CmdLine_af2cd748a91e22df97c878d7eff8c4ca3}
+
+
+Returns the current state of the internal exception handling. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em true} & Parsing exceptions are handled internally. \\
+\hline
+{\em false} & Parsing exceptions are propagated to the caller. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 614 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+handle\+Exceptions.
+
+
+\begin{DoxyCode}
+615 \{
+616   \textcolor{keywordflow}{return} _handleExceptions;
+617 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Message@{get\+Message}}
+\index{get\+Message@{get\+Message}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Message}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string \& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a8f61a8c201e31ada985fa998180fd40f}
+
+
+Returns the message string. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a30175a2567f7ab78a2c6bbea9269a2fa}.
+
+
+
+Definition at line 599 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+message.
+
+
+\begin{DoxyCode}
+600 \{
+601   \textcolor{keywordflow}{return} _message;
+602 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Output@{get\+Output}}
+\index{get\+Output@{get\+Output}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cmd\+Line\+Output} $\ast$ T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_ad8aea2617edf53bbc20c8964ee5476e6}
+
+
+Returns the \doxyref{Cmd\+Line\+Output}{p.}{classTCLAP_1_1CmdLineOutput} object. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_aebc72daedeaeb03e06bb2e6e0f00363d}.
+
+
+
+Definition at line 561 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+output.
+
+
+\begin{DoxyCode}
+562 \{
+563   \textcolor{keywordflow}{return} _output;
+564 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Program\+Name@{get\+Program\+Name}}
+\index{get\+Program\+Name@{get\+Program\+Name}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Program\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string \& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Program\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a47a6d496980ee11ffc42e27144a61797}
+
+
+Returns the program name string. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a1a5672df72a6b5021cd70b37c4dbd0a7}.
+
+
+
+Definition at line 579 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+prog\+Name.
+
+
+\begin{DoxyCode}
+580 \{
+581   \textcolor{keywordflow}{return} _progName;
+582 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Version@{get\+Version}}
+\index{get\+Version@{get\+Version}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Version}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string \& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a85b5653d1a5b48fe6accead64615cf33}
+
+
+Returns the version string. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a0a552fa57212800dfb8aec84fb07b8bb}.
+
+
+
+Definition at line 574 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+version.
+
+
+\begin{DoxyCode}
+575 \{
+576   \textcolor{keywordflow}{return} _version;
+577 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!get\+Xor\+Handler@{get\+Xor\+Handler}}
+\index{get\+Xor\+Handler@{get\+Xor\+Handler}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{get\+Xor\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Xor\+Handler} \& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::get\+Xor\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a805433b7718d1bc5bc9317bbd061449b}
+
+
+Returns the \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler}. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a11ce9c77a1111960741f05e343849e4e}.
+
+
+
+Definition at line 589 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+xor\+Handler.
+
+
+\begin{DoxyCode}
+590 \{
+591   \textcolor{keywordflow}{return} _xorHandler;
+592 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!has\+Help\+And\+Version@{has\+Help\+And\+Version}}
+\index{has\+Help\+And\+Version@{has\+Help\+And\+Version}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{has\+Help\+And\+Version}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::has\+Help\+And\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a5b23895feae4f4110b77dae372226475}
+
+
+Indicates whether or not the help and version switches were created automatically. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a441b06b764836a62083b163508210905}.
+
+
+
+Definition at line 604 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+help\+And\+Version.
+
+
+\begin{DoxyCode}
+605 \{
+606   \textcolor{keywordflow}{return} _helpAndVersion;
+607 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!missing\+Args\+Exception@{missing\+Args\+Exception}}
+\index{missing\+Args\+Exception@{missing\+Args\+Exception}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{missing\+Args\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::missing\+Args\+Exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a698f47333350312eb949aa1ae4f89ad1}
+
+
+Throws an exception listing the missing args. 
+
+
+
+Definition at line 524 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+List.
+
+
+
+Referenced by parse().
+
+
+\begin{DoxyCode}
+525 \{
+526     \textcolor{keywordtype}{int} count = 0;
+527 
+528     std::string missingArgList;
+529     \textcolor{keywordflow}{for} (ArgListIterator it = _argList.begin(); it != _argList.end(); it++)
+530     \{
+531       \textcolor{keywordflow}{if} ( (*it)->isRequired() && !(*it)->isSet() )
+532       \{
+533         missingArgList += (*it)->getName();
+534         missingArgList += \textcolor{stringliteral}{", "};
+535         count++;
+536       \}
+537     \}
+538     missingArgList = missingArgList.substr(0,missingArgList.length()-2);
+539 
+540     std::string msg;
+541     \textcolor{keywordflow}{if} ( count > 1 )
+542       msg = \textcolor{stringliteral}{"Required arguments missing: "};
+543     \textcolor{keywordflow}{else}
+544       msg = \textcolor{stringliteral}{"Required argument missing: "};
+545 
+546     msg += missingArgList;
+547 
+548     \textcolor{keywordflow}{throw}(CmdLineParseException(msg));
+549 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cmd\+Line}\& T\+C\+L\+A\+P\+::\+Cmd\+Line\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Cmd\+Line} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1CmdLine_a46fd7d72c7a5cfeeacf5e9d0ff2cacf7}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!parse@{parse}}
+\index{parse@{parse}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::parse (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{const char $\ast$const $\ast$}]{argv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_acb07daf5a1370c176a7b4a6e4119fe6e}
+
+
+Parses the command line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & -\/ Number of arguments. \\
+\hline
+{\em argv} & -\/ Array of arguments. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a6649336bddfc8421148718a691fd89b4}.
+
+
+
+Definition at line 433 of file Cmd\+Line.\+h.
+
+
+\begin{DoxyCode}
+434 \{
+435     \textcolor{comment}{// this step is necessary so that we have easy access to}
+436     \textcolor{comment}{// mutable strings.}
+437     std::vector<std::string> args;
+438     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < argc; i++)
+439       args.push\_back(argv[i]);
+440 
+441     parse(args);
+442 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!parse@{parse}}
+\index{parse@{parse}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::parse (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1CmdLine_a712c3edf86aa0a8a28fb0b6d504d945a}
+
+
+Parses the command line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & -\/ A vector of strings representing the args. args[0] is still the program name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 444 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+List, \+\_\+empty\+Combined(), \+\_\+handle\+Exceptions, \+\_\+num\+Required, \+\_\+output, \+\_\+prog\+Name, \+\_\+xor\+Handler, T\+C\+L\+A\+P\+::\+Xor\+Handler\+::check(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output\+::failure(), T\+C\+L\+A\+P\+::\+Exit\+Exception\+::get\+Exit\+Status(), T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest(), and missing\+Args\+Exception().
+
+
+\begin{DoxyCode}
+445 \{
+446   \textcolor{keywordtype}{bool} shouldExit = \textcolor{keyword}{false};
+447   \textcolor{keywordtype}{int} estat = 0;
+448 
+449   \textcolor{keywordflow}{try} \{
+450     _progName = args.front();
+451     args.erase(args.begin());
+452 
+453     \textcolor{keywordtype}{int} requiredCount = 0;
+454 
+455     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < args.size(); i++) 
+456     \{
+457 
+458       \textcolor{keywordtype}{bool} matched = \textcolor{keyword}{false};
+459       \textcolor{keywordflow}{for} (ArgListIterator it = _argList.begin();
+460            it != _argList.end(); it++) \{
+461         \textcolor{keywordflow}{if} ( (*it)->processArg( &i, args ) )
+462         \{
+463           requiredCount += _xorHandler.check( *it );
+464           matched = \textcolor{keyword}{true};
+465           \textcolor{keywordflow}{break};
+466         \}
+467       \}
+468 
+469       \textcolor{comment}{// checks to see if the argument is an empty combined}
+470       \textcolor{comment}{// switch and if so, then we've actually matched it}
+471       \textcolor{keywordflow}{if} ( !matched && _emptyCombined( args[i] ) )
+472         matched = \textcolor{keyword}{true};
+473 
+474       \textcolor{keywordflow}{if} ( !matched && !Arg::ignoreRest() )
+475         \textcolor{keywordflow}{throw}(CmdLineParseException(\textcolor{stringliteral}{"Couldn't find match "}
+476                                     \textcolor{stringliteral}{"for argument"},
+477                                     args[i]));
+478     \}
+479 
+480     \textcolor{keywordflow}{if} ( requiredCount < _numRequired )
+481       missingArgsException();
+482 
+483     \textcolor{keywordflow}{if} ( requiredCount > _numRequired )
+484       \textcolor{keywordflow}{throw}(CmdLineParseException(\textcolor{stringliteral}{"Too many arguments!"}));
+485 
+486   \} \textcolor{keywordflow}{catch} ( ArgException& e ) \{
+487     \textcolor{comment}{// If we're not handling the exceptions, rethrow.}
+488     \textcolor{keywordflow}{if} ( !_handleExceptions) \{
+489       \textcolor{keywordflow}{throw};
+490     \}
+491 
+492     \textcolor{keywordflow}{try} \{
+493       _output->failure(*\textcolor{keyword}{this},e);
+494     \} \textcolor{keywordflow}{catch} ( ExitException &ee ) \{
+495       estat = ee.getExitStatus();
+496       shouldExit = \textcolor{keyword}{true};
+497     \}
+498   \} \textcolor{keywordflow}{catch} (ExitException &ee) \{
+499     \textcolor{comment}{// If we're not handling the exceptions, rethrow.}
+500     \textcolor{keywordflow}{if} ( !_handleExceptions) \{
+501       \textcolor{keywordflow}{throw};
+502     \}
+503 
+504     estat = ee.getExitStatus();
+505     shouldExit = \textcolor{keyword}{true};
+506   \}
+507 
+508   \textcolor{keywordflow}{if} (shouldExit)
+509     exit(estat);
+510 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!reset@{reset}}
+\index{reset@{reset}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a1721ec47c9d9f5ea2eca2f385fcfd2da}
+
+
+Allows the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object to be reused. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a6b1fac8a9948ba7e28bc7844a18f39e4}.
+
+
+
+Definition at line 619 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+arg\+List, and \+\_\+prog\+Name.
+
+
+\begin{DoxyCode}
+620 \{
+621   \textcolor{keywordflow}{for}( ArgListIterator it = _argList.begin(); it != _argList.end(); it++ )
+622     (*it)->reset();
+623   
+624   _progName.clear();
+625 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!set\+Exception\+Handling@{set\+Exception\+Handling}}
+\index{set\+Exception\+Handling@{set\+Exception\+Handling}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{set\+Exception\+Handling}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::set\+Exception\+Handling (
+\begin{DoxyParamCaption}
+\item[{const bool}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1CmdLine_aa02055d8f4864bfa9b505e2d26bbbd87}
+
+
+Disables or enables \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}'s internal parsing exception handling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Should \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} handle parsing exceptions internally? \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 609 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+handle\+Exceptions.
+
+
+\begin{DoxyCode}
+610 \{
+611   _handleExceptions = state;
+612 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!set\+Output@{set\+Output}}
+\index{set\+Output@{set\+Output}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{set\+Output}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::set\+Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Output} $\ast$}]{co}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_a4506e305cd10437c7ce5a5ba34cfed0f}
+
+\begin{DoxyParams}{Parameters}
+{\em co} & -\/ \doxyref{Cmd\+Line\+Output}{p.}{classTCLAP_1_1CmdLineOutput} object that we want to use instead. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_ab208b32bd9489781509d7ecddf8a92a0}.
+
+
+
+Definition at line 566 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+output, and \+\_\+user\+Set\+Output.
+
+
+\begin{DoxyCode}
+567 \{
+568   \textcolor{keywordflow}{if} ( !_userSetOutput )
+569     \textcolor{keyword}{delete} _output;
+570   _userSetOutput = \textcolor{keyword}{true};
+571   _output = co;
+572 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!xor\+Add@{xor\+Add}}
+\index{xor\+Add@{xor\+Add}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{xor\+Add}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::xor\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} \&}]{a, }
+\item[{{\bf Arg} \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_afbaa2071d0c3276b383089acabdc0dd2}
+
+
+Add two Args that will be xor'd. 
+
+If this method is used, add does not need to be called. 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ Argument to be added and xor'd. \\
+\hline
+{\em b} & -\/ Argument to be added and xor'd. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a69859e3713623eb06c9c335248d9c83f}.
+
+
+
+Definition at line 405 of file Cmd\+Line.\+h.
+
+
+\begin{DoxyCode}
+406 \{
+407   std::vector<Arg*> ors;
+408   ors.push\_back( &a );
+409   ors.push\_back( &b );
+410   xorAdd( ors );
+411 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!xor\+Add@{xor\+Add}}
+\index{xor\+Add@{xor\+Add}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{xor\+Add}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Cmd\+Line\+::xor\+Add (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Arg} $\ast$ $>$ \&}]{xors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1CmdLine_ac7f2d7ee32a5157f625ad9833ab148cf}
+
+
+Add a list of Args that will be xor'd. 
+
+If this method is used, add does not need to be called. 
+\begin{DoxyParams}{Parameters}
+{\em xors} & -\/ List of Args to be added and xor'd. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface} \doxyref{}{p.}{classTCLAP_1_1CmdLineInterface_a6a94140e522bcf6104928fcf0c434ab8}.
+
+
+
+Definition at line 393 of file Cmd\+Line.\+h.
+
+
+
+References \+\_\+xor\+Handler, T\+C\+L\+A\+P\+::\+Xor\+Handler\+::add(), and add().
+
+
+\begin{DoxyCode}
+394 \{
+395   _xorHandler.add( ors );
+396 
+397   \textcolor{keywordflow}{for} (ArgVectorIterator it = ors.begin(); it != ors.end(); it++)
+398   \{
+399     (*it)->forceRequired();
+400     (*it)->setRequireLabel( \textcolor{stringliteral}{"OR required"} );
+401     add( *it );
+402   \}
+403 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+arg\+Delete\+On\+Exit\+List@{\+\_\+arg\+Delete\+On\+Exit\+List}}
+\index{\+\_\+arg\+Delete\+On\+Exit\+List@{\+\_\+arg\+Delete\+On\+Exit\+List}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+arg\+Delete\+On\+Exit\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<${\bf Arg}$\ast$$>$ T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+arg\+Delete\+On\+Exit\+List\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_af8d37fbf9d0b60b6acbd737af380f3e5}
+
+
+A list of Args to be explicitly deleted when the destructor is called. 
+
+At the moment, this only includes the three default Args. 
+
+Definition at line 118 of file Cmd\+Line.\+h.
+
+
+
+Referenced by delete\+On\+Exit(), and $\sim$\+Cmd\+Line().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+arg\+List@{\+\_\+arg\+List}}
+\index{\+\_\+arg\+List@{\+\_\+arg\+List}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+arg\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<${\bf Arg}$\ast$$>$ T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+arg\+List\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a4d70f73542d8184e077688bff3801baf}
+
+
+The list of arguments that will be tested against the command line. 
+
+
+
+Definition at line 78 of file Cmd\+Line.\+h.
+
+
+
+Referenced by add(), get\+Arg\+List(), missing\+Args\+Exception(), parse(), and reset().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+delimiter@{\+\_\+delimiter}}
+\index{\+\_\+delimiter@{\+\_\+delimiter}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+delimiter}]{\setlength{\rightskip}{0pt plus 5cm}char T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+delimiter\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a602e65692dc07ea872134f354026a54f}
+
+
+The character that is used to separate the argument flag/name from the value. 
+
+Defaults to ' ' (space). 
+
+Definition at line 106 of file Cmd\+Line.\+h.
+
+
+
+Referenced by \+\_\+constructor(), and get\+Delimiter().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+handle\+Exceptions@{\+\_\+handle\+Exceptions}}
+\index{\+\_\+handle\+Exceptions@{\+\_\+handle\+Exceptions}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+handle\+Exceptions}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+handle\+Exceptions\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a3609d0c13886053b367d1df80efbe67b}
+
+
+Should \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} handle parsing exceptions internally? 
+
+
+
+Definition at line 135 of file Cmd\+Line.\+h.
+
+
+
+Referenced by get\+Exception\+Handling(), parse(), and set\+Exception\+Handling().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+help\+And\+Version@{\+\_\+help\+And\+Version}}
+\index{\+\_\+help\+And\+Version@{\+\_\+help\+And\+Version}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+help\+And\+Version}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+help\+And\+Version\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1CmdLine_aea29ec639729a22384ee8759069a5017}
+
+
+Whether or not to automatically create help and version switches. 
+
+
+
+Definition at line 184 of file Cmd\+Line.\+h.
+
+
+
+Referenced by \+\_\+constructor(), and has\+Help\+And\+Version().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+message@{\+\_\+message}}
+\index{\+\_\+message@{\+\_\+message}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+message\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a3ccd2ae40f6eb97aebca3de9a02f10cf}
+
+
+A message used to describe the program. 
+
+Used in the usage output. 
+
+Definition at line 88 of file Cmd\+Line.\+h.
+
+
+
+Referenced by get\+Message().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+num\+Required@{\+\_\+num\+Required}}
+\index{\+\_\+num\+Required@{\+\_\+num\+Required}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+num\+Required}]{\setlength{\rightskip}{0pt plus 5cm}int T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+num\+Required\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a2285207b528d5fad18c82a2ee8155f37}
+
+
+The number of arguments that are required to be present on the command line. 
+
+This is set dynamically, based on the Args added to the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object. 
+
+Definition at line 100 of file Cmd\+Line.\+h.
+
+
+
+Referenced by add(), and parse().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+output@{\+\_\+output}}
+\index{\+\_\+output@{\+\_\+output}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Cmd\+Line\+Output}$\ast$ T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+output\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a5152bf4ef26217583a3bc708aa0ea83e}
+
+
+Object that handles all output for the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine}. 
+
+
+
+Definition at line 130 of file Cmd\+Line.\+h.
+
+
+
+Referenced by \+\_\+constructor(), get\+Output(), parse(), set\+Output(), and $\sim$\+Cmd\+Line().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+prog\+Name@{\+\_\+prog\+Name}}
+\index{\+\_\+prog\+Name@{\+\_\+prog\+Name}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+prog\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+prog\+Name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a8b856dadc54fa30d0dddba4588ef9344}
+
+
+The name of the program. 
+
+Set to argv[0]. 
+
+Definition at line 83 of file Cmd\+Line.\+h.
+
+
+
+Referenced by get\+Program\+Name(), parse(), and reset().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+user\+Set\+Output@{\+\_\+user\+Set\+Output}}
+\index{\+\_\+user\+Set\+Output@{\+\_\+user\+Set\+Output}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+user\+Set\+Output}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+user\+Set\+Output\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1CmdLine_ab78aec340244f230a41dd946d0138aba}
+
+
+Is set to true when a user sets the output object. 
+
+We use this so that we don't delete objects that are created outside of this lib. 
+
+Definition at line 179 of file Cmd\+Line.\+h.
+
+
+
+Referenced by set\+Output(), and $\sim$\+Cmd\+Line().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+version@{\+\_\+version}}
+\index{\+\_\+version@{\+\_\+version}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+version}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+version\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a2b2b52fffed2dcb7df3cdfc582ec8fd1}
+
+
+The version to be displayed with the --version switch. 
+
+
+
+Definition at line 93 of file Cmd\+Line.\+h.
+
+
+
+Referenced by get\+Version().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+visitor\+Delete\+On\+Exit\+List@{\+\_\+visitor\+Delete\+On\+Exit\+List}}
+\index{\+\_\+visitor\+Delete\+On\+Exit\+List@{\+\_\+visitor\+Delete\+On\+Exit\+List}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+visitor\+Delete\+On\+Exit\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::list$<${\bf Visitor}$\ast$$>$ T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+visitor\+Delete\+On\+Exit\+List\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a79b8a947f8100de977574b45b91117ac}
+
+
+A list of Visitors to be explicitly deleted when the destructor is called. 
+
+At the moment, these are the Vistors created for the default Args. 
+
+Definition at line 125 of file Cmd\+Line.\+h.
+
+
+
+Referenced by delete\+On\+Exit(), and $\sim$\+Cmd\+Line().
+
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}!\+\_\+xor\+Handler@{\+\_\+xor\+Handler}}
+\index{\+\_\+xor\+Handler@{\+\_\+xor\+Handler}!T\+C\+L\+A\+P\+::\+Cmd\+Line@{T\+C\+L\+A\+P\+::\+Cmd\+Line}}
+\subsubsection[{\+\_\+xor\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Xor\+Handler} T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+xor\+Handler\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1CmdLine_a33846aa10c62ecd61640c93c16ac315d}
+
+
+The handler that manages xoring lists of args. 
+
+
+
+Definition at line 111 of file Cmd\+Line.\+h.
+
+
+
+Referenced by get\+Xor\+Handler(), parse(), and xor\+Add().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Cmd\+Line.\+h}\end{DoxyCompactItemize}

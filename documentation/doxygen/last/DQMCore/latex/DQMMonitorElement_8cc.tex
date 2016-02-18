@@ -1,0 +1,617 @@
+\section{D\+Q\+M\+Monitor\+Element.\+cc File Reference}
+\label{DQMMonitorElement_8cc}\index{D\+Q\+M\+Monitor\+Element.\+cc@{D\+Q\+M\+Monitor\+Element.\+cc}}
+{\ttfamily \#include \char`\"{}dqm4hep/\+D\+Q\+M\+Monitor\+Element.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dqm4hep/\+D\+Q\+M\+Data\+Stream.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+Object.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+Named.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+Buffer\+File.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H1.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H1\+F.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H1\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H1\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H1\+C.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H2.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H2\+F.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H2\+I.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H2\+S.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+H2\+C.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+Profile.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}T\+Profile2\+D.\+h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf template\+Class\+Imp} ({\bf dqm4hep\+::\+T\+Scalar\+Object}) namespace dqm4hep
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{D\+Q\+M\+Monitor\+Element.\+cc@{D\+Q\+M\+Monitor\+Element.\+cc}!template\+Class\+Imp@{template\+Class\+Imp}}
+\index{template\+Class\+Imp@{template\+Class\+Imp}!D\+Q\+M\+Monitor\+Element.\+cc@{D\+Q\+M\+Monitor\+Element.\+cc}}
+\subsubsection[{template\+Class\+Imp}]{\setlength{\rightskip}{0pt plus 5cm}template\+Class\+Imp (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm4hep\+::\+T\+Scalar\+Object}}]{}
+\end{DoxyParamCaption}
+)}\label{DQMMonitorElement_8cc_a3df4395ee480b385bd5e80259402b48f}
+
+
+Definition at line 49 of file D\+Q\+M\+Monitor\+Element.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+52 \{
+53 
+54 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+55 
+56 DQMMonitorElement::DQMMonitorElement(DQMMonitorElementType type,
+57     \textcolor{keyword}{const} std::string &name, \textcolor{keyword}{const} std::string &title,
+58     \textcolor{keyword}{const} std::string &moduleName) :
+59     m\_type(type),
+60     m\_name(name),
+61     m\_title(title),
+62     m\_moduleName(moduleName),
+63     m\_description(\textcolor{stringliteral}{""}),
+64     m\_drawOption(\textcolor{stringliteral}{""}),
+65     m\_quality(NO\_QUALITY),
+66     m\_resetPolicy(END\_OF\_RUN\_RESET\_POLICY),
+67     m\_runNumber(0),
+68     m\_toPublish(true),
+69     m\_pObject(0)
+70 \{
+71   \textcolor{comment}{/* nop */}
+72 \}
+73 
+74 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+75 
+76 DQMMonitorElement::DQMMonitorElement(TObject *pObject, DQMMonitorElementType type,
+77     \textcolor{keyword}{const} std::string &name, \textcolor{keyword}{const} std::string &title,
+78     \textcolor{keyword}{const} std::string &moduleName) :
+79     m\_type(type),
+80     m\_name(name),
+81     m\_title(title),
+82     m\_description(\textcolor{stringliteral}{""}),
+83     m\_moduleName(moduleName),
+84     m\_drawOption(\textcolor{stringliteral}{""}),
+85     m\_quality(NO\_QUALITY),
+86     m\_resetPolicy(END\_OF\_RUN\_RESET\_POLICY),
+87     m\_runNumber(0),
+88     m\_toPublish(true),
+89     m\_pObject(pObject)
+90 \{
+91   \textcolor{keywordflow}{if}(NULL == m\_pObject)
+92     \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_INVALID\_PARAMETER);
+93 \}
+94 
+95 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+96 
+97 DQMMonitorElement::~DQMMonitorElement()
+98 \{
+99   \textcolor{keywordflow}{if}(NULL != m\_pObject)
+100     \textcolor{keyword}{delete} m\_pObject;
+101 
+102   m\_qualityTestMap.clear();
+103   m\_qualityTestResultMap.clear();
+104 \}
+105 
+106 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+107 
+108 \textcolor{keyword}{const} std::string &DQMMonitorElement::getModuleName()\textcolor{keyword}{ const}
+109 \textcolor{keyword}{}\{
+110   \textcolor{keywordflow}{return} m\_moduleName;
+111 \}
+112 
+113 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+114 
+115 DQMQuality DQMMonitorElement::getQuality()\textcolor{keyword}{ const}
+116 \textcolor{keyword}{}\{
+117   \textcolor{keywordflow}{return} m\_quality;
+118 \}
+119 
+120 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+121 
+122 \textcolor{keywordtype}{void} DQMMonitorElement::setQuality(DQMQuality quality)
+123 \{
+124   m\_quality = quality;
+125 \}
+126 
+127 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+128 
+129 DQMResetPolicy DQMMonitorElement::getResetPolicy()\textcolor{keyword}{ const}
+130 \textcolor{keyword}{}\{
+131   \textcolor{keywordflow}{return} m\_resetPolicy;
+132 \}
+133 
+134 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+135 
+136 \textcolor{keywordtype}{void} DQMMonitorElement::setResetPolicy(DQMResetPolicy policy)
+137 \{
+138   m\_resetPolicy = policy;
+139 \}
+140 
+141 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+142 
+143 DQMMonitorElementType DQMMonitorElement::getType()\textcolor{keyword}{ const}
+144 \textcolor{keyword}{}\{
+145   \textcolor{keywordflow}{return} m\_type;
+146 \}
+147 
+148 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+149 
+150 \textcolor{keyword}{const} std::string &DQMMonitorElement::getName()\textcolor{keyword}{ const}
+151 \textcolor{keyword}{}\{
+152   \textcolor{keywordflow}{return} m\_name;
+153 \}
+154 
+155 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+156 
+157 \textcolor{keyword}{const} std::string &DQMMonitorElement::getTitle()\textcolor{keyword}{ const}
+158 \textcolor{keyword}{}\{
+159   \textcolor{keywordflow}{return} m\_title;
+160 \}
+161 
+162 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+163 
+164 \textcolor{keywordtype}{void} DQMMonitorElement::setTitle(\textcolor{keyword}{const} std::string &title)
+165 \{
+166   m\_title = title;
+167 
+168   \textcolor{keywordflow}{if}(m\_pObject)
+169   \{
+170     TNamed *pNamed = \textcolor{keyword}{dynamic\_cast<}TNamed*\textcolor{keyword}{>}(m\_pObject);
+171 
+172     \textcolor{keywordflow}{if}(pNamed)
+173       pNamed->SetTitle(title.c\_str());
+174   \}
+175 \}
+176 
+177 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+178 
+179 \textcolor{keyword}{const} std::string &DQMMonitorElement::getDescription()\textcolor{keyword}{ const}
+180 \textcolor{keyword}{}\{
+181   \textcolor{keywordflow}{return} m\_description;
+182 \}
+183 
+184 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+185 
+186 \textcolor{keywordtype}{void} DQMMonitorElement::setDescription(\textcolor{keyword}{const} std::string &description)
+187 \{
+188   m\_description = description;
+189 \}
+190 
+191 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+192 
+193 \textcolor{keyword}{const} std::string &DQMMonitorElement::getDrawOption()\textcolor{keyword}{ const}
+194 \textcolor{keyword}{}\{
+195   \textcolor{keywordflow}{return} m\_drawOption;
+196 \}
+197 
+198 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+199 
+200 \textcolor{keywordtype}{void} DQMMonitorElement::setDrawOption(\textcolor{keyword}{const} std::string &drawOption)
+201 \{
+202   m\_drawOption = drawOption;
+203 
+204   \textcolor{keywordflow}{if}(m\_pObject)
+205     m\_pObject->SetDrawOption(drawOption.c\_str());
+206 \}
+207 
+208 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+209 
+210 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} DQMMonitorElement::getRunNumber()\textcolor{keyword}{ const}
+211 \textcolor{keyword}{}\{
+212   \textcolor{keywordflow}{return} m\_runNumber;
+213 \}
+214 
+215 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+216 
+217 \textcolor{keywordtype}{void} DQMMonitorElement::setToPublish(\textcolor{keywordtype}{bool} toPublish)
+218 \{
+219   m\_toPublish = toPublish;
+220 \}
+221 
+222 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+223 
+224 \textcolor{keywordtype}{bool} DQMMonitorElement::isToPublish()\textcolor{keyword}{ const}
+225 \textcolor{keyword}{}\{
+226   \textcolor{keywordflow}{return} m\_toPublish;
+227 \}
+228 
+229 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+230 
+231 \textcolor{keywordtype}{void} DQMMonitorElement::setRunNumber(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} runNumber)
+232 \{
+233   m\_runNumber = runNumber;
+234 \}
+235 
+236 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+237 
+238 TObject *DQMMonitorElement::getObject()\textcolor{keyword}{ const}
+239 \textcolor{keyword}{}\{
+240   \textcolor{keywordflow}{return} m\_pObject;
+241 \}
+242 
+243 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+244 
+245 \textcolor{keywordtype}{void} DQMMonitorElement::reset()
+246 \{
+247   m\_pObject->Clear();
+248 
+249   \textcolor{comment}{// special case for histograms}
+250   TH1 *pHistogram = \textcolor{keyword}{dynamic\_cast<}TH1 *\textcolor{keyword}{>}(m\_pObject);
+251 
+252   \textcolor{keywordflow}{if}(NULL != pHistogram)
+253     pHistogram->Reset();
+254 \}
+255 
+256 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+257 
+258 \textcolor{keywordtype}{bool} DQMMonitorElement::isHistogram()\textcolor{keyword}{ const}
+259 \textcolor{keyword}{}\{
+260   \textcolor{keywordflow}{if}(m\_type >= INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE && m\_type <= PROFILE\_2D\_ELEMENT\_TYPE)
+261     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+262 
+263   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+264 \}
+265 
+266 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+267 
+268 \textcolor{keywordtype}{bool} DQMMonitorElement::isScalar()\textcolor{keyword}{ const}
+269 \textcolor{keyword}{}\{
+270   \textcolor{keywordflow}{if}(m\_type >= INT\_ELEMENT\_TYPE && m\_type <= STRING\_ELEMENT\_TYPE)
+271     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+272 
+273   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+274 \}
+275 
+276 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+277 
+278 \textcolor{keyword}{const} DQMPath &DQMMonitorElement::getPath()\textcolor{keyword}{ const}
+279 \textcolor{keyword}{}\{
+280   \textcolor{keywordflow}{return} m\_path;
+281 \}
+282 
+283 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+284 
+285 \textcolor{keywordtype}{void} DQMMonitorElement::setPath(\textcolor{keyword}{const} DQMPath &path)
+286 \{
+287   m\_path = path;
+288 \}
+289 
+290 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+291 
+292 \textcolor{keyword}{const} std::string &DQMMonitorElement::getCollectorName()\textcolor{keyword}{ const}
+293 \textcolor{keyword}{}\{
+294   \textcolor{keywordflow}{return} m\_collectorName;
+295 \}
+296 
+297 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+298 
+299 \textcolor{keywordtype}{void} DQMMonitorElement::setCollectorName(\textcolor{keyword}{const} std::string &collectorName)
+300 \{
+301   m\_collectorName = collectorName;
+302 \}
+303 
+304 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+305 
+306 \textcolor{keyword}{const} DQMQualityTestResultMap &DQMMonitorElement::getQualityTestResults()\textcolor{keyword}{ const}
+307 \textcolor{keyword}{}\{
+308   \textcolor{keywordflow}{return} m\_qualityTestResultMap;
+309 \}
+310 
+311 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+312 
+313 StatusCode DQMMonitorElement::serialize(DQMDataStream *\textcolor{keyword}{const} pDataStream)\textcolor{keyword}{ const}
+314 \textcolor{keyword}{}\{
+315   dqm_int elementType = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(getType());
+316   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(elementType));
+317 
+318   std::string elementName = getName();
+319   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(elementName));
+320 
+321   std::string elementTitle = getTitle();
+322   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(elementTitle));
+323 
+324   TObject *pObject = getObject();
+325 
+326   dqm_bool hasTObject = (NULL != pObject);
+327   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(hasTObject));
+328 
+329   \textcolor{keywordflow}{if}(hasTObject)
+330   \{
+331     \textcolor{keywordflow}{if}(elementType == INT\_ELEMENT\_TYPE)
+332     \{
+333       dqm_int value = get<TScalarInt>()->Get();
+334       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+335     \}
+336     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == REAL\_ELEMENT\_TYPE)
+337     \{
+338       dqm_float value = get<TScalarReal>()->Get();
+339       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+340     \}
+341     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == SHORT\_ELEMENT\_TYPE)
+342     \{
+343       dqm_short value = get<TScalarShort>()->Get();
+344       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+345     \}
+346     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == STRING\_ELEMENT\_TYPE)
+347     \{
+348       std::string value = get<TScalarString>()->Get();
+349       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+350     \}
+351     \textcolor{keywordflow}{else}
+352     \{
+353       \textcolor{comment}{// serialize}
+354       TBufferFile bufferFile(TBuffer::kWrite);
+355       bufferFile.WriteObject(pObject);
+356 
+357       \textcolor{comment}{// get the buffer and length}
+358       \textcolor{keyword}{const} dqm_char *pRawBuffer = bufferFile.Buffer();
+359       dqm_int bufferSize = bufferFile.BufferSize();
+360 
+361       \textcolor{comment}{// and write it}
+362       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(pRawBuffer, bufferSize));
+363     \}
+364   \}
+365 
+366   dqm_int elementQuality = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(getQuality());
+367   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(elementQuality));
+368 
+369   std::string drawOption = getDrawOption();
+370   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(drawOption));
+371 
+372   std::string path = getPath().getPath();
+373   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(path));
+374 
+375   std::string collectorName = getCollectorName();
+376   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(collectorName));
+377 
+378   std::string moduleName = getModuleName();
+379   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(moduleName));
+380 
+381   std::string elementDescription = getDescription();
+382   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(elementDescription));
+383 
+384   dqm_int resetPolicy = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(getResetPolicy());
+385   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(resetPolicy));
+386 
+387   dqm_uint runNumber = \textcolor{keyword}{static\_cast<}dqm_uint\textcolor{keyword}{>}(getRunNumber());
+388   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(runNumber));
+389 
+390   dqm_bool isToPublish = this->isToPublish();
+391   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(isToPublish));
+392 
+393   dqm_uint nQTestResults = m\_qualityTestResultMap.size();
+394   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nQTestResults));
+395 
+396   \textcolor{keywordflow}{for}(std::map<std::string, DQMQualityTestResult>::const\_iterator iter = m\_qualityTestResultMap.begin(),
+397       endIter = m\_qualityTestResultMap.end() ; endIter != iter ; ++iter)
+398   \{
+399     \textcolor{comment}{// write qtest name}
+400     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(iter->first));
+401 
+402     \textcolor{comment}{// write qtest result}
+403     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, iter->second.serialize(pDataStream));
+404   \}
+405 
+406   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+407 \}
+408 
+409 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+410 
+411 StatusCode DQMMonitorElement::deserialize(DQMDataStream *\textcolor{keyword}{const} pDataStream)
+412 \{
+413   dqm_int elementType = 0;
+414   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(elementType));
+415 
+416   std::string elementName;
+417   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(elementName));
+418 
+419   std::string elementTitle;
+420   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(elementTitle));
+421 
+422   dqm_bool hasTObject;
+423   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(hasTObject));
+424 
+425   TObject *pObject = NULL;
+426 
+427   \textcolor{keywordflow}{if}(hasTObject)
+428   \{
+429     \textcolor{keywordflow}{if}(elementType == INT\_ELEMENT\_TYPE)
+430     \{
+431       dqm_int value;
+432       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+433       pObject = \textcolor{keyword}{new} TScalarInt(value);
+434     \}
+435     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == REAL\_ELEMENT\_TYPE)
+436     \{
+437       dqm_float value;
+438       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+439       pObject = \textcolor{keyword}{new} TScalarReal(value);
+440     \}
+441     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == SHORT\_ELEMENT\_TYPE)
+442     \{
+443       dqm_short value;
+444       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+445       pObject = \textcolor{keyword}{new} TScalarShort(value);
+446     \}
+447     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(elementType == STRING\_ELEMENT\_TYPE)
+448     \{
+449       std::string value;
+450       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+451       pObject = \textcolor{keyword}{new} TScalarString(value);
+452     \}
+453     \textcolor{keywordflow}{else}
+454     \{
+455       dqm_char *pBuffer = NULL;
+456       dqm_uint bufferSize = 0;
+457       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(pBuffer, bufferSize));
+458 
+459       TBufferFile bufferFile(TBuffer::kRead, bufferSize, pBuffer);
+460       pObject = bufferFile.ReadObject(0);
+461     \}
+462 
+463     \textcolor{keywordflow}{if}(NULL == pObject)
+464       \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+465   \}
+466 
+467   dqm_int elementQuality = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(NO\_QUALITY);
+468   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(elementQuality));
+469 
+470   std::string drawOption;
+471   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(drawOption));
+472 
+473   std::string path;
+474   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(path));
+475 
+476   std::string collectorName;
+477   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(collectorName));
+478 
+479   std::string moduleName;
+480   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(moduleName));
+481 
+482   std::string elementDescription;
+483   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(elementDescription));
+484 
+485   dqm_int resetPolicy = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(NO\_RESET\_POLICY);
+486   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(resetPolicy));
+487 
+488   dqm_uint runNumber = 0;
+489   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(runNumber));
+490 
+491   dqm_bool isToPublish = \textcolor{keyword}{true};
+492   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(isToPublish));
+493 
+494   dqm_uint nQTestResults = 0;
+495   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nQTestResults));
+496 
+497   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} q=0 ; q<nQTestResults ; q++)
+498   \{
+499     std::string qTestName;
+500     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(qTestName));
+501 
+502     DQMQualityTestResult qTestResult;
+503     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, qTestResult.deserialize(pDataStream));
+504 
+505     m\_qualityTestResultMap[qTestName] = qTestResult;
+506   \}
+507 
+508   \textcolor{keywordflow}{if}(0 != m\_pObject)
+509   \{
+510     \textcolor{keyword}{delete} m\_pObject;
+511     m\_pObject = 0;
+512   \}
+513 
+514   m\_pObject = pObject;
+515 
+516   \textcolor{keywordflow}{if}(m\_pObject)
+517   \{
+518     TNamed *pNamed = \textcolor{keyword}{dynamic\_cast<}TNamed*\textcolor{keyword}{>}(m\_pObject);
+519 
+520     \textcolor{keywordflow}{if}(pNamed)
+521       pNamed->SetName((DQMPath(path) + elementName).getPath().c\_str());
+522   \}
+523 
+524   m\_name = elementName;
+525   m\_type = \textcolor{keyword}{static\_cast<}DQMMonitorElementType\textcolor{keyword}{>}(elementType);
+526   m\_moduleName = moduleName;
+527 
+528   this->setTitle(elementTitle);
+529   this->setQuality(static\_cast<DQMQuality>(elementQuality));
+530   this->setDrawOption(drawOption);
+531   this->setPath(DQMPath(path));
+532   this->setCollectorName(collectorName);
+533   this->setDescription(elementDescription);
+534   this->setResetPolicy(static\_cast<DQMResetPolicy>(resetPolicy));
+535   this->setRunNumber(runNumber);
+536   this->setToPublish(isToPublish);
+537 
+538   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+539 \}
+540 
+541 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+542 
+543 StatusCode DQMMonitorElement::runQualityTest(\textcolor{keyword}{const} std::string &qualityTestName)
+544 \{
+545   std::map<std::string, DQMQualityTest*>::iterator findIter = m\_qualityTestMap.find(qualityTestName);
+546 
+547   \textcolor{keywordflow}{if}(findIter == m\_qualityTestMap.end())
+548     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+549 
+550   DQMQualityTest *pQualityTest = findIter->second;
+551   DQMQualityTestResult result;
+552 
+553   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pQualityTest->run(\textcolor{keyword}{this}, result));
+554 
+555   m\_qualityTestResultMap[pQualityTest->getName()] = result;
+556 
+557   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+558 \}
+559 
+560 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+561 
+562 StatusCode DQMMonitorElement::runQualityTests()
+563 \{
+564   \textcolor{keywordflow}{for}(std::map<std::string, DQMQualityTest*>::iterator iter = m\_qualityTestMap.begin(), endIter = 
+      m\_qualityTestMap.end() ;
+565       endIter != iter ; ++iter)
+566   \{
+567     DQMQualityTest *pQualityTest = iter->second;
+568     DQMQualityTestResult result;
+569 
+570     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pQualityTest->run(\textcolor{keyword}{this}, result));
+571 
+572     m\_qualityTestResultMap[pQualityTest->getName()] = result;
+573   \}
+574 
+575   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+576 \}
+577 
+578 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+579 
+580 StatusCode DQMMonitorElement::addQualityTest(DQMQualityTest *pQualityTest)
+581 \{
+582   \textcolor{keywordflow}{if}(NULL == pQualityTest)
+583     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+584 
+585   std::map<std::string, DQMQualityTest*>::iterator findIter = m\_qualityTestMap.find(pQualityTest->getName()
+      );
+586 
+587   \textcolor{keywordflow}{if}(m\_qualityTestMap.end() != findIter)
+588     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_PRESENT;
+589 
+590   \textcolor{keywordflow}{if}(!m\_qualityTestMap.insert(std::map<std::string, DQMQualityTest*>::value\_type(pQualityTest->getName(), 
+      pQualityTest)).second)
+591     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+592 
+593   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+594 \}
+595 
+596 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+597 
+598 StatusCode DQMMonitorElement::removeQualityTest(DQMQualityTest *pQualityTest)
+599 \{
+600   \textcolor{keywordflow}{if}(NULL == pQualityTest)
+601     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+602 
+603   \textcolor{keywordflow}{return} removeQualityTest(pQualityTest->getName());
+604 \}
+605 
+606 \textcolor{comment}{//-------------------------------------------------------------------------------------------------}
+607 
+608 StatusCode DQMMonitorElement::removeQualityTest(\textcolor{keyword}{const} std::string &qualityTestName)
+609 \{
+610   std::map<std::string, DQMQualityTest*>::iterator findIter = m\_qualityTestMap.find(qualityTestName);
+611 
+612   \textcolor{keywordflow}{if}(m\_qualityTestMap.end() == findIter)
+613     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+614 
+615   m\_qualityTestMap.erase(findIter);
+616 
+617   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+618 \}
+619 
+620 \} 
+\end{DoxyCode}

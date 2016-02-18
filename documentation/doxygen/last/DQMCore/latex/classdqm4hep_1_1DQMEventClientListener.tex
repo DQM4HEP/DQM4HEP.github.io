@@ -1,0 +1,92 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Client\+Listener Class Reference}
+\label{classdqm4hep_1_1DQMEventClientListener}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}}
+
+
+\doxyref{D\+Q\+M\+Event\+Client\+Listener}{p.}{classdqm4hep_1_1DQMEventClientListener} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event\+Client.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Event\+Client\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Event\+Client\+Connnect} ({\bf D\+Q\+M\+Event\+Client} $\ast$const p\+Client)=0
+\begin{DoxyCompactList}\small\item\em Called back when an event client connects to the service. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Event\+Client\+Disconnnect} ({\bf D\+Q\+M\+Event\+Client} $\ast$const p\+Client)=0
+\begin{DoxyCompactList}\small\item\em Called back when an event client disconnects from the service. \end{DoxyCompactList}\item 
+virtual void {\bf event\+Pushed} ({\bf D\+Q\+M\+Event\+Client} $\ast$const p\+Client)=0
+\begin{DoxyCompactList}\small\item\em Called back when an event has been pushed in the queue of the event client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event\+Client\+Listener}{p.}{classdqm4hep_1_1DQMEventClientListener} class. 
+
+Definition at line 47 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}!````~D\+Q\+M\+Event\+Client\+Listener@{$\sim$\+D\+Q\+M\+Event\+Client\+Listener}}
+\index{````~D\+Q\+M\+Event\+Client\+Listener@{$\sim$\+D\+Q\+M\+Event\+Client\+Listener}!dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Client\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener\+::$\sim$\+D\+Q\+M\+Event\+Client\+Listener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventClientListener_a17cc91696a0545752cfe20fd93310e71}
+
+
+Destructor. 
+
+
+
+Definition at line 52 of file D\+Q\+M\+Event\+Client.\+h.
+
+
+\begin{DoxyCode}
+52 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}!event\+Pushed@{event\+Pushed}}
+\index{event\+Pushed@{event\+Pushed}!dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}}
+\subsubsection[{event\+Pushed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener\+::event\+Pushed (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client} $\ast$const}]{p\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClientListener_a26aea9aa132d53edbf97adc5ed1037a5}
+
+
+Called back when an event has been pushed in the queue of the event client. 
+
+Listeners can accessed to the oldest event pushed in the queue of the client using \doxyref{D\+Q\+M\+Event\+Client\+::take\+Event(\+D\+Q\+M\+Event $\ast$\&p\+Event)}{p.}{classdqm4hep_1_1DQMEventClient_a20618b3251bd9936f64d3caba6abdab3} \index{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}!on\+Event\+Client\+Connnect@{on\+Event\+Client\+Connnect}}
+\index{on\+Event\+Client\+Connnect@{on\+Event\+Client\+Connnect}!dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}}
+\subsubsection[{on\+Event\+Client\+Connnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener\+::on\+Event\+Client\+Connnect (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client} $\ast$const}]{p\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClientListener_a3fb6e3d644af249806330d0568e96ea9}
+
+
+Called back when an event client connects to the service. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}!on\+Event\+Client\+Disconnnect@{on\+Event\+Client\+Disconnnect}}
+\index{on\+Event\+Client\+Disconnnect@{on\+Event\+Client\+Disconnnect}!dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener}}
+\subsubsection[{on\+Event\+Client\+Disconnnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Event\+Client\+Listener\+::on\+Event\+Client\+Disconnnect (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client} $\ast$const}]{p\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventClientListener_afcda7ca25441ec13c66c6774e9cf0b49}
+
+
+Called back when an event client disconnects from the service. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Client.\+h}\end{DoxyCompactItemize}

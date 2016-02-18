@@ -1,0 +1,1179 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Client Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementClient}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Client}{p.}{classdqm4hep_1_1DQMMonitorElementClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementClient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Monitor\+Element\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the collector name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf connect\+To\+Service} ()
+\begin{DoxyCompactList}\small\item\em Connect the client to the service. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf disconnect\+From\+Service} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the client from the service. \end{DoxyCompactList}\item 
+bool {\bf is\+Connected\+To\+Service} () const 
+\begin{DoxyCompactList}\small\item\em Whether the client is connected to the service. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Collector\+Info} ()
+\begin{DoxyCompactList}\small\item\em Sent a request to the collector to get back the collector informations. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Available\+Monitor\+Elements} (const {\bf D\+Q\+M\+Monitor\+Element\+List\+Name\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Send a request to get back monitor element list name (small packet info) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf subscribe} (const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Unsubscribe to monitor elements. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf unsubscribe} (const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Subscribe to monitor elements. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf replace\+Subscription} (const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Unsubscribe to all monitor elements the client has already subscribed and subscribe to monitor elements. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Subscribed\+Monitor\+Elements} (const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&request)
+\begin{DoxyCompactList}\small\item\em Send a command to query the monitor element list. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Subscribed\+Monitor\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Send a command to query the monitor element list that the client subscribed. \end{DoxyCompactList}\item 
+void {\bf set\+Update\+Mode} (bool update\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the update mode. \end{DoxyCompactList}\item 
+bool {\bf get\+Update\+Mode} () const 
+\begin{DoxyCompactList}\small\item\em Get the update mode. \end{DoxyCompactList}\item 
+bool {\bf is\+Collector\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Whether the collector is running. \end{DoxyCompactList}\item 
+bool {\bf add\+Listener} ({\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Add a listener to this client (observer pattern). \end{DoxyCompactList}\item 
+void {\bf remove\+Listener} ({\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Remove a listener from this client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string {\bf m\+\_\+empty\+Buffer\+Str} = \char`\"{}E\+M\+P\+T\+Y\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Me\+Collector\+Info\+Rpc\+Info} (Dim\+Rpc\+Info $\ast$p\+Rpc\+Info)
+\begin{DoxyCompactList}\small\item\em Handle the collector info rpc callback. \end{DoxyCompactList}\item 
+void {\bf handle\+Me\+List\+Name\+Rpc\+Info} (Dim\+Rpc\+Info $\ast$p\+Rpc\+Info)
+\begin{DoxyCompactList}\small\item\em Handle the me name list rpc callback. \end{DoxyCompactList}\item 
+void {\bf info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim info handler. \end{DoxyCompactList}\item 
+void {\bf clear\+Publication} ({\bf D\+Q\+M\+Monitor\+Element\+Publication} \&publication)
+\begin{DoxyCompactList}\small\item\em Deep clear of publication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dim\+Rpc\+Info $\ast$ {\bf m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info}
+\item 
+Dim\+Rpc\+Info $\ast$ {\bf m\+\_\+p\+Me\+List\+Name\+Rpc\+Info}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Me\+Update\+Info}
+\item 
+Dim\+Info $\ast$ {\bf m\+\_\+p\+Collector\+State\+Info}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+in\+Data\+Stream}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+out\+Data\+Stream}
+\item 
+std\+::string {\bf m\+\_\+collector\+Name}
+\item 
+bool {\bf m\+\_\+is\+Connected}
+\item 
+bool {\bf m\+\_\+update\+Mode}
+\item 
+bool {\bf m\+\_\+is\+Collector\+Running}
+\item 
+std\+::vector\\*
+$<$ {\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$ $>$ {\bf m\+\_\+listeners}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}
+\item 
+class {\bf D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Client}{p.}{classdqm4hep_1_1DQMMonitorElementClient} class. 
+
+Definition at line 122 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!D\+Q\+M\+Monitor\+Element\+Client@{D\+Q\+M\+Monitor\+Element\+Client}}
+\index{D\+Q\+M\+Monitor\+Element\+Client@{D\+Q\+M\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::\+D\+Q\+M\+Monitor\+Element\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_af0685bb980fdcbc5b80d64cce49efe21}
+
+
+Constructor. 
+
+
+
+Definition at line 78 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+\begin{DoxyCode}
+78                                                  :
+79     m_isConnected(\textcolor{keyword}{false}),
+80     m_pMeCollectorInfoRpcInfo(NULL),
+81     m_pMeListNameRpcInfo(NULL),
+82     m_inDataStream(4*1024*1024),
+83     m_outDataStream(1024*1024),
+84     m_updateMode(\textcolor{keyword}{false}),
+85     m_isCollectorRunning(\textcolor{keyword}{false})
+86 \{
+87   \textcolor{comment}{/* nop */}
+88 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!````~D\+Q\+M\+Monitor\+Element\+Client@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client}}
+\index{````~D\+Q\+M\+Monitor\+Element\+Client@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::$\sim$\+D\+Q\+M\+Monitor\+Element\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a6b7e228eddd6fc062142d62efe9683fc}
+
+
+Destructor. 
+
+
+
+Definition at line 92 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References disconnect\+From\+Service(), and is\+Connected\+To\+Service().
+
+
+\begin{DoxyCode}
+93 \{
+94   \textcolor{keywordflow}{if}(isConnectedToService())
+95     disconnectFromService();
+96 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_ada19ca74696b7b0411c15be4790caabb}
+
+
+Add a listener to this client (observer pattern). 
+
+
+
+Definition at line 323 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+\begin{DoxyCode}
+324 \{
+325   \textcolor{keywordflow}{if}(NULL == pListener)
+326     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+327 
+328   std::vector<DQMMonitorElementClientListener *>::iterator findIter = std::find( 
+      m_listeners.begin(), m_listeners.end(), pListener );
+329 
+330   \textcolor{comment}{// if already added, return ok}
+331   \textcolor{keywordflow}{if}(m_listeners.end() != findIter)
+332     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+333 
+334   m_listeners.push\_back(pListener);
+335 
+336   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+337 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!clear\+Publication@{clear\+Publication}}
+\index{clear\+Publication@{clear\+Publication}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{clear\+Publication}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::clear\+Publication (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Publication} \&}]{publication}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a8365bc3030e2977b970069ede94c9216}
+
+
+Deep clear of publication. 
+
+
+
+Definition at line 497 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+Referenced by info\+Handler().
+
+
+\begin{DoxyCode}
+498 \{
+499   \textcolor{keywordflow}{for}(DQMMonitorElementPublication::iterator iter = publication.begin(), endIter = publication.end() ;
+500       endIter != iter ; ++iter)
+501   \{
+502     \textcolor{keywordflow}{for}(DQMMonitorElementList::iterator meIter = iter->second.begin(), meEndIter = iter->second.end() ;
+503         meEndIter != meIter ; ++meIter)
+504     \{
+505       \textcolor{keyword}{delete} *meIter;
+506     \}
+507   \}
+508 
+509   publication.clear();
+510 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!connect\+To\+Service@{connect\+To\+Service}}
+\index{connect\+To\+Service@{connect\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{connect\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::connect\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_ad04a041285d5b9621f06292bf0d8404a}
+
+
+Connect the client to the service. 
+
+
+
+Definition at line 122 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info, D\+Q\+M\+Me\+List\+Name\+Rpc\+Info, get\+Update\+Mode(), is\+Connected\+To\+Service(), m\+\_\+collector\+Name, m\+\_\+is\+Connected, m\+\_\+listeners, m\+\_\+p\+Collector\+State\+Info, m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info, m\+\_\+p\+Me\+List\+Name\+Rpc\+Info, m\+\_\+p\+Me\+Update\+Info, and set\+Update\+Mode().
+
+
+\begin{DoxyCode}
+123 \{
+124   \textcolor{keywordflow}{if}(isConnectedToService())
+125     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+126 
+127   std::string collectorName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + 
+      m_collectorName + \textcolor{stringliteral}{"/"};
+128   std::stringstream ss;
+129 
+130   ss << collectorName << \textcolor{stringliteral}{"COLLECTOR\_INFO\_RPC"};
+131   m_pMeCollectorInfoRpcInfo = \textcolor{keyword}{new} DQMMeCollectorInfoRpcInfo((\textcolor{keywordtype}{char}*) ss.str().c\_str(), \textcolor{keyword}{this});
+132 
+133   ss.str(\textcolor{stringliteral}{""});
+134   ss << collectorName << \textcolor{stringliteral}{"MONITOR\_ELEMENT\_NAME\_LIST\_RPC"};
+135   m_pMeListNameRpcInfo = \textcolor{keyword}{new} DQMMeListNameRpcInfo((\textcolor{keywordtype}{char}*) ss.str().c\_str(), \textcolor{keyword}{this});
+136 
+137   ss.str(\textcolor{stringliteral}{""});
+138   ss << collectorName << \textcolor{stringliteral}{"ME\_UPDATE\_SVC"};
+139   m_pMeUpdateInfo = \textcolor{keyword}{new} DimUpdatedInfo( (\textcolor{keywordtype}{char}*) ss.str().c\_str() , (\textcolor{keywordtype}{void} *) NULL , 0, \textcolor{keyword}{this} );
+140 
+141   ss.str(\textcolor{stringliteral}{""});
+142   ss << collectorName << \textcolor{stringliteral}{"COLLECTOR\_STATE\_SVC"};
+143   m_pCollectorStateInfo = \textcolor{keyword}{new} DimInfo( (\textcolor{keywordtype}{char}*) ss.str().c\_str() , \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(STOPPED\_STATE) , \textcolor{keyword}{this} );
+144 
+145   m_isConnected = \textcolor{keyword}{true};
+146 
+147   this->setUpdateMode(this->getUpdateMode());
+148 
+149   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+150       endIter != iter ; ++iter)
+151     (*iter)->onMonitorElementClientConnect(\textcolor{keyword}{this});
+152 
+153   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+154 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!disconnect\+From\+Service@{disconnect\+From\+Service}}
+\index{disconnect\+From\+Service@{disconnect\+From\+Service}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{disconnect\+From\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::disconnect\+From\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_aade12b321bce1e34b7cb6687cbf3eac8}
+
+
+Disconnect the client from the service. 
+
+
+
+Definition at line 158 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), m\+\_\+is\+Connected, m\+\_\+listeners, m\+\_\+p\+Collector\+State\+Info, m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info, m\+\_\+p\+Me\+List\+Name\+Rpc\+Info, and m\+\_\+p\+Me\+Update\+Info.
+
+
+
+Referenced by $\sim$\+D\+Q\+M\+Monitor\+Element\+Client().
+
+
+\begin{DoxyCode}
+159 \{
+160   \textcolor{keywordflow}{if}(!isConnectedToService())
+161     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+162 
+163   \textcolor{keyword}{delete} m_pMeCollectorInfoRpcInfo; m_pMeCollectorInfoRpcInfo = NULL;
+164   \textcolor{keyword}{delete} m_pMeListNameRpcInfo; m_pMeListNameRpcInfo = NULL;
+165   \textcolor{keyword}{delete} m_pMeUpdateInfo; m_pMeUpdateInfo = NULL;
+166   \textcolor{keyword}{delete} m_pCollectorStateInfo; m_pCollectorStateInfo = NULL;
+167 
+168   m_isConnected = \textcolor{keyword}{false};
+169 
+170   \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+171       endIter != iter ; ++iter)
+172     (*iter)->onMonitorElementClientDisconnect(\textcolor{keyword}{this});
+173 
+174   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+175 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementClient_a5d5c335de0bfba4b57e3348cccdac549}
+
+
+Get the collector name. 
+
+
+
+Definition at line 115 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+collector\+Name.
+
+
+\begin{DoxyCode}
+116 \{
+117   \textcolor{keywordflow}{return} m_collectorName;
+118 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!get\+Update\+Mode@{get\+Update\+Mode}}
+\index{get\+Update\+Mode@{get\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{get\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::get\+Update\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementClient_a71057f98bc7e129542053c39aee4581d}
+
+
+Get the update mode. 
+
+
+
+Definition at line 316 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+update\+Mode.
+
+
+
+Referenced by connect\+To\+Service(), and info\+Handler().
+
+
+\begin{DoxyCode}
+317 \{
+318   \textcolor{keywordflow}{return} m_updateMode;
+319 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!handle\+Me\+Collector\+Info\+Rpc\+Info@{handle\+Me\+Collector\+Info\+Rpc\+Info}}
+\index{handle\+Me\+Collector\+Info\+Rpc\+Info@{handle\+Me\+Collector\+Info\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{handle\+Me\+Collector\+Info\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+Collector\+Info\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{Dim\+Rpc\+Info $\ast$}]{p\+Rpc\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a09746fd53f5639560f7f4ea38f3fb8ef}
+
+
+Handle the collector info rpc callback. 
+
+
+
+Definition at line 356 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+in\+Data\+Stream, m\+\_\+listeners, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info\+::rpc\+Info\+Handler().
+
+
+\begin{DoxyCode}
+357 \{
+358   \textcolor{keywordflow}{try}
+359   \{
+360     \textcolor{keywordflow}{if}(m_listeners.empty())
+361       \textcolor{keywordflow}{return};
+362 
+363     dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char *\textcolor{keyword}{>}(pRpcInfo->getData());
+364     dqm_uint bufferSize = pRpcInfo->getSize();
+365 
+366     \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+367       \textcolor{keywordflow}{return};
+368 
+369     m_inDataStream.reset();
+370     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_inDataStream.setBuffer(pBuffer, bufferSize));
+371 
+372     \textcolor{comment}{// deserialize and notify}
+373     DQMCollectorInfo collectorInfo;
+374     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, collectorInfo.deserialize(&
+      m_inDataStream));
+375 
+376     \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+377         endIter != iter ; ++iter)
+378       (*iter)->monitorElementCollectorInfoReceived(\textcolor{keyword}{this}, collectorInfo);
+379   \}
+380   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+381   \{
+382   \}
+383   \textcolor{keywordflow}{catch}(...)
+384   \{
+385   \}
+386 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!handle\+Me\+List\+Name\+Rpc\+Info@{handle\+Me\+List\+Name\+Rpc\+Info}}
+\index{handle\+Me\+List\+Name\+Rpc\+Info@{handle\+Me\+List\+Name\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{handle\+Me\+List\+Name\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+List\+Name\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{Dim\+Rpc\+Info $\ast$}]{p\+Rpc\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a171749b4a10ed37c3d75c751892cb8b2}
+
+
+Handle the me name list rpc callback. 
+
+
+
+Definition at line 390 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+in\+Data\+Stream, m\+\_\+listeners, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info\+::rpc\+Info\+Handler().
+
+
+\begin{DoxyCode}
+391 \{
+392   \textcolor{keywordflow}{try}
+393   \{
+394     \textcolor{keywordflow}{if}(m_listeners.empty())
+395       \textcolor{keywordflow}{return};
+396 
+397     dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char*\textcolor{keyword}{>}(pRpcInfo->getData());
+398     dqm_uint bufferSize = pRpcInfo->getSize();
+399 
+400     \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+401       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+402 
+403     m_inDataStream.reset();
+404     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_inDataStream.setBuffer(pBuffer, bufferSize));
+405 
+406     \textcolor{comment}{// deserialize and notify}
+407     DQMMonitorElementInfoList monitorElementInfoList;
+408     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, monitorElementInfoList.deserialize(&
+      m_inDataStream));
+409 
+410     \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+411         endIter != iter ; ++iter)
+412       (*iter)->availableMonitorElementListReceived(\textcolor{keyword}{this}, monitorElementInfoList);
+413   \}
+414   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+415   \{
+416   \}
+417   \textcolor{keywordflow}{catch}(...)
+418   \{
+419   \}
+420 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!info\+Handler@{info\+Handler}}
+\index{info\+Handler@{info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a60254d6777128eeee051c3372ae09c41}
+
+
+Dim info handler. 
+
+
+
+Definition at line 424 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References clear\+Publication(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::deserialize(), get\+Update\+Mode(), is\+Collector\+Running(), m\+\_\+in\+Data\+Stream, m\+\_\+is\+Collector\+Running, m\+\_\+listeners, m\+\_\+p\+Collector\+State\+Info, m\+\_\+p\+Me\+Update\+Info, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), set\+Update\+Mode(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+425 \{
+426   DimInfo *pInfo = getInfo();
+427 
+428   std::cout << \textcolor{stringliteral}{"Received info : "} << pInfo->getName() << std::endl;
+429 
+430   \textcolor{keywordflow}{if}(pInfo == m_pMeUpdateInfo)
+431   \{
+432     DQMMonitorElementPublication monitorElementPublication;
+433 
+434     \textcolor{keywordflow}{try}
+435     \{
+436       \textcolor{keywordflow}{if}(m_listeners.empty())
+437         \textcolor{keywordflow}{return};
+438 
+439       dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char *\textcolor{keyword}{>}(m_pMeUpdateInfo->getData());
+440       dqm_uint bufferSize = m_pMeUpdateInfo->getSize();
+441 
+442       \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+443         \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+444 
+445       m_inDataStream.reset();
+446       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_inDataStream.setBuffer(pBuffer, bufferSize));
+447 
+448       \textcolor{comment}{// deserialize and call the user call back function}
+449       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, monitorElementPublication.deserialize(&
+      m_inDataStream));
+450 
+451       \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+452           endIter != iter ; ++iter)
+453         (*iter)->monitorElementsReceived(\textcolor{keyword}{this}, monitorElementPublication);
+454     \}
+455     \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+456     \{
+457     \}
+458     \textcolor{keywordflow}{catch}(...)
+459     \{
+460     \}
+461 
+462     std::cout << \textcolor{stringliteral}{"Clearing publication !"} << std::endl;
+463     this->clearPublication(monitorElementPublication);
+464   \}
+465   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pInfo == m_pCollectorStateInfo)
+466   \{
+467     \textcolor{keywordtype}{bool} isCollectorRunning = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(m_pCollectorStateInfo->getInt());
+468     std::cout << \textcolor{stringliteral}{"Received collector state : "} << isCollectorRunning << std::endl;
+469 
+470     \textcolor{keywordflow}{if}(isCollectorRunning == m_isCollectorRunning)
+471       \textcolor{keywordflow}{return};
+472 
+473     m_isCollectorRunning = isCollectorRunning;
+474 
+475     \textcolor{keywordflow}{if}(m_isCollectorRunning)
+476     \{
+477       \textcolor{comment}{// send back update mode info to collector}
+478       this->setUpdateMode(this->getUpdateMode());
+479 
+480       \textcolor{comment}{// notify server state !}
+481       \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+482           endIter != iter ; ++iter)
+483         (*iter)->onServerStartup(\textcolor{keyword}{this});
+484     \}
+485     \textcolor{keywordflow}{else}
+486     \{
+487       \textcolor{comment}{// notify server state !}
+488       \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementClientListener *>::iterator iter = 
+      m_listeners.begin(), endIter = m_listeners.end() ;
+489           endIter != iter ; ++iter)
+490         (*iter)->onServerShutdown(\textcolor{keyword}{this});
+491     \}
+492   \}
+493 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!is\+Collector\+Running@{is\+Collector\+Running}}
+\index{is\+Collector\+Running@{is\+Collector\+Running}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{is\+Collector\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::is\+Collector\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementClient_a23be9f1ce7f14f261ab26dec46418d79}
+
+
+Whether the collector is running. 
+
+
+
+Definition at line 514 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+is\+Collector\+Running.
+
+
+
+Referenced by info\+Handler().
+
+
+\begin{DoxyCode}
+515 \{
+516   \textcolor{keywordflow}{return} m_isCollectorRunning;
+517 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!is\+Connected\+To\+Service@{is\+Connected\+To\+Service}}
+\index{is\+Connected\+To\+Service@{is\+Connected\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{is\+Connected\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::is\+Connected\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementClient_a25b7d5d325cedf1b3016b3261fbdb8af}
+
+
+Whether the client is connected to the service. 
+
+
+
+Definition at line 179 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+is\+Connected.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), query\+Available\+Monitor\+Elements(), query\+Collector\+Info(), query\+Subscribed\+Monitor\+Elements(), replace\+Subscription(), set\+Collector\+Name(), set\+Update\+Mode(), subscribe(), unsubscribe(), and $\sim$\+D\+Q\+M\+Monitor\+Element\+Client().
+
+
+\begin{DoxyCode}
+180 \{
+181   \textcolor{keywordflow}{return} m_isConnected;
+182 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!query\+Available\+Monitor\+Elements@{query\+Available\+Monitor\+Elements}}
+\index{query\+Available\+Monitor\+Elements@{query\+Available\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{query\+Available\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Available\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+List\+Name\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a575caef703179df7c02ccfb705d402c9}
+
+
+Send a request to get back monitor element list name (small packet info) 
+
+
+
+Definition at line 199 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Connected\+To\+Service(), m\+\_\+out\+Data\+Stream, m\+\_\+p\+Me\+List\+Name\+Rpc\+Info, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List\+Name\+Request\+::serialize().
+
+
+\begin{DoxyCode}
+200 \{
+201   \textcolor{keywordflow}{if}(!isConnectedToService())
+202     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+203 
+204   \textcolor{comment}{// serialize the list}
+205   m_outDataStream.reset();
+206   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, request.serialize(&m_outDataStream));
+207 
+208   \textcolor{comment}{// send query}
+209   m_pMeListNameRpcInfo->setData((\textcolor{keywordtype}{void} *) m_outDataStream.getBuffer(), 
+      m_outDataStream.getBufferSize());
+210 
+211   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+212 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!query\+Collector\+Info@{query\+Collector\+Info}}
+\index{query\+Collector\+Info@{query\+Collector\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{query\+Collector\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Collector\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a6a7a86107d6c9d702b491c7272975bda}
+
+
+Sent a request to the collector to get back the collector informations. 
+
+
+
+Definition at line 186 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), and m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info.
+
+
+\begin{DoxyCode}
+187 \{
+188   \textcolor{keywordflow}{if}(!isConnectedToService())
+189     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+190 
+191   \textcolor{keywordtype}{char} buf[] = \textcolor{stringliteral}{"\(\backslash\)0"};
+192   m_pMeCollectorInfoRpcInfo->setData((\textcolor{keywordtype}{void} *) &buf[0], 1);
+193 
+194   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+195 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}}
+\index{query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{query\+Subscribed\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_aa8eee2730c0eccfdd8d119ceb9046d2f}
+
+
+Send a command to query the monitor element list. 
+
+The element in the list are first subscribed. Then a query is sent to update only the element in the request 
+
+Definition at line 216 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Connected\+To\+Service(), m\+\_\+collector\+Name, m\+\_\+out\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize().
+
+
+\begin{DoxyCode}
+217 \{
+218   \textcolor{keywordflow}{if}(!isConnectedToService())
+219     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+220 
+221   \textcolor{comment}{// serialize the request}
+222   m_outDataStream.reset();
+223   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, request.serialize(&m_outDataStream));
+224 
+225   \textcolor{comment}{// send the request}
+226   std::string commandName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + m_collectorName + \textcolor{stringliteral}{"/QUERY\_ME\_CMD"};
+227   DimClient::sendCommandNB( commandName.c\_str() , (\textcolor{keywordtype}{void} *) m_outDataStream.
+      getBuffer() , m_outDataStream.getBufferSize() );
+228 
+229   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+230 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}}
+\index{query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{query\+Subscribed\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a0d39210a4c198fefdd64909fdf1a6483}
+
+
+Send a command to query the monitor element list that the client subscribed. 
+
+
+
+Definition at line 234 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+\begin{DoxyCode}
+235 \{
+236   \textcolor{comment}{// send empty request.}
+237   DQMMonitorElementRequest request;
+238   \textcolor{keywordflow}{return} this->querySubscribedMonitorElements(request);
+239 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_aa728443b8806d9303d4412aa9d90adc4}
+
+
+Remove a listener from this client. 
+
+
+
+Definition at line 341 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+\begin{DoxyCode}
+342 \{
+343   \textcolor{keywordflow}{if}(NULL == pListener)
+344     \textcolor{keywordflow}{return};
+345 
+346   std::vector<DQMMonitorElementClientListener *>::iterator findIter = std::find( 
+      m_listeners.begin(), m_listeners.end(), pListener );
+347 
+348   \textcolor{keywordflow}{if}(m_listeners.end() == findIter)
+349     \textcolor{keywordflow}{return};
+350 
+351   m_listeners.erase(findIter);
+352 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!replace\+Subscription@{replace\+Subscription}}
+\index{replace\+Subscription@{replace\+Subscription}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{replace\+Subscription}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a16b6f37dc28811430e1fd260af525cfc}
+
+
+Unsubscribe to all monitor elements the client has already subscribed and subscribe to monitor elements. 
+
+
+
+Definition at line 285 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Connected\+To\+Service(), m\+\_\+collector\+Name, m\+\_\+out\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize().
+
+
+\begin{DoxyCode}
+286 \{
+287   \textcolor{keywordflow}{if}(!isConnectedToService())
+288     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+289 
+290   \textcolor{comment}{// serialize the request}
+291   m_outDataStream.reset();
+292   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=,  request.serialize(&m_outDataStream));
+293 
+294   \textcolor{comment}{// send the request}
+295   std::string commandName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + m_collectorName + \textcolor{stringliteral}{"/SET\_SUBSCRIPTION\_CMD"};
+296   DimClient::sendCommandNB( commandName.c\_str() , (\textcolor{keywordtype}{void} *) m_outDataStream.
+      getBuffer( ), m_outDataStream.getBufferSize() );
+297 
+298   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+299 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a8ac3e435b0a66a34c5cc8d6b0a5dc9bd}
+
+
+Set the collector name. 
+
+Can be done only if the client is not yet connected to collector service 
+
+Definition at line 100 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), and m\+\_\+collector\+Name.
+
+
+\begin{DoxyCode}
+101 \{
+102   \textcolor{keywordflow}{if}(collectorName.empty())
+103     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+104 
+105   \textcolor{keywordflow}{if}(isConnectedToService())
+106     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+107 
+108   m_collectorName = collectorName;
+109 
+110   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+111 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{update\+Mode}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_a2b0a1f9b3337e46b4610484f58f0ade4}
+
+
+Set the update mode. 
+
+If set to true, subscribed monitor elements will be received when an update is performed on the collector server side 
+
+Definition at line 303 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), m\+\_\+collector\+Name, and m\+\_\+update\+Mode.
+
+
+
+Referenced by connect\+To\+Service(), and info\+Handler().
+
+
+\begin{DoxyCode}
+304 \{
+305   \textcolor{keywordflow}{if}(this->isConnectedToService())
+306   \{
+307     std::string commandName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + 
+      m_collectorName + \textcolor{stringliteral}{"/SET\_UPDATE\_MODE\_CMD"};
+308     DimClient::sendCommandNB( commandName.c\_str() , \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(updateMode) );
+309   \}
+310 
+311   m_updateMode = updateMode;
+312 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_aafd4fc2c4009fb8fc8b2f237797c6b57}
+
+
+Unsubscribe to monitor elements. 
+
+
+
+Definition at line 243 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Connected\+To\+Service(), m\+\_\+collector\+Name, m\+\_\+out\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize().
+
+
+\begin{DoxyCode}
+244 \{
+245   \textcolor{keywordflow}{if}(!isConnectedToService())
+246     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+247 
+248   \textcolor{keywordflow}{for}(DQMMonitorElementRequest::const\_iterator iter = request.begin(), endIter = request.end() ;
+249       endIter != iter ; ++iter)
+250   \{
+251     std::cout << \textcolor{stringliteral}{"Sending subscription : "} << iter->first << \textcolor{stringliteral}{" , "} << iter->second << std::endl;
+252   \}
+253 
+254   \textcolor{comment}{// serialize the request}
+255   m_outDataStream.reset();
+256   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=,  request.serialize(&m_outDataStream));
+257 
+258   \textcolor{comment}{// send the request}
+259   std::string commandName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + m_collectorName + \textcolor{stringliteral}{"/SUBSCRIBE\_CMD"};
+260   DimClient::sendCommandNB( commandName.c\_str() , (\textcolor{keywordtype}{void} *) m_outDataStream.
+      getBuffer( ), m_outDataStream.getBufferSize() );
+261 
+262   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+263 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Request} \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementClient_aec219f7ed920ceb11c69ac3a440f3f26}
+
+
+Subscribe to monitor elements. 
+
+
+
+Definition at line 267 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Connected\+To\+Service(), m\+\_\+collector\+Name, m\+\_\+out\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize().
+
+
+\begin{DoxyCode}
+268 \{
+269   \textcolor{keywordflow}{if}(!isConnectedToService())
+270     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+271 
+272   \textcolor{comment}{// serialize the request}
+273   m_outDataStream.reset();
+274   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=,  request.serialize(&m_outDataStream));
+275 
+276   \textcolor{comment}{// send the request}
+277   std::string commandName = \textcolor{stringliteral}{"DQM4HEP/MonitorElementCollector/"} + m_collectorName + \textcolor{stringliteral}{"/UNSUBSCRIBE\_CMD"};
+278   DimClient::sendCommandNB( commandName.c\_str() , (\textcolor{keywordtype}{void} *) m_outDataStream.
+      getBuffer( ), m_outDataStream.getBufferSize() );
+279 
+280   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+281 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+\index{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a559e26adcf17f905d99e1fa48a297ffe}
+
+
+Definition at line 243 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+\index{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a372668af714472b28dbbf6be9cc1d703}
+
+
+Definition at line 244 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service().
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+collector\+Name@{m\+\_\+collector\+Name}}
+\index{m\+\_\+collector\+Name@{m\+\_\+collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+collector\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a64db47b2a487654a48de63c176acb873}
+
+
+Definition at line 235 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), get\+Collector\+Name(), query\+Subscribed\+Monitor\+Elements(), replace\+Subscription(), set\+Collector\+Name(), set\+Update\+Mode(), subscribe(), and unsubscribe().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+empty\+Buffer\+Str@{m\+\_\+empty\+Buffer\+Str}}
+\index{m\+\_\+empty\+Buffer\+Str@{m\+\_\+empty\+Buffer\+Str}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+empty\+Buffer\+Str}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+empty\+Buffer\+Str = \char`\"{}E\+M\+P\+T\+Y\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a7cbc6558bb3c8da7e7b32600e446ca8e}
+
+
+Definition at line 207 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+in\+Data\+Stream@{m\+\_\+in\+Data\+Stream}}
+\index{m\+\_\+in\+Data\+Stream@{m\+\_\+in\+Data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+in\+Data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+in\+Data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_af11092e4544e3b989b029a7cd6a9d599}
+
+
+Definition at line 232 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by handle\+Me\+Collector\+Info\+Rpc\+Info(), handle\+Me\+List\+Name\+Rpc\+Info(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+is\+Collector\+Running@{m\+\_\+is\+Collector\+Running}}
+\index{m\+\_\+is\+Collector\+Running@{m\+\_\+is\+Collector\+Running}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+is\+Collector\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+is\+Collector\+Running\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a9de05968c161472a3f2033bc3880db85}
+
+
+Definition at line 238 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by info\+Handler(), and is\+Collector\+Running().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+is\+Connected@{m\+\_\+is\+Connected}}
+\index{m\+\_\+is\+Connected@{m\+\_\+is\+Connected}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+is\+Connected\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_ab1aa221ad648c5ac299e97de8f130e79}
+
+
+Definition at line 236 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and is\+Connected\+To\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+listeners@{m\+\_\+listeners}}
+\index{m\+\_\+listeners@{m\+\_\+listeners}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+listeners}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf D\+Q\+M\+Monitor\+Element\+Client\+Listener} $\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+listeners\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a977fd57252dbfefc9eb1f0a58507aae7}
+
+
+Definition at line 241 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by add\+Listener(), connect\+To\+Service(), disconnect\+From\+Service(), handle\+Me\+Collector\+Info\+Rpc\+Info(), handle\+Me\+List\+Name\+Rpc\+Info(), info\+Handler(), and remove\+Listener().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+out\+Data\+Stream@{m\+\_\+out\+Data\+Stream}}
+\index{m\+\_\+out\+Data\+Stream@{m\+\_\+out\+Data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+out\+Data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+out\+Data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a3426d894fc911cc2cbee309556ac4a04}
+
+
+Definition at line 233 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by query\+Available\+Monitor\+Elements(), query\+Subscribed\+Monitor\+Elements(), replace\+Subscription(), subscribe(), and unsubscribe().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+p\+Collector\+State\+Info@{m\+\_\+p\+Collector\+State\+Info}}
+\index{m\+\_\+p\+Collector\+State\+Info@{m\+\_\+p\+Collector\+State\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+p\+Collector\+State\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+p\+Collector\+State\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_aa6e87944d2687351c975db7139a8cbdf}
+
+
+Definition at line 230 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info@{m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info}}
+\index{m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info@{m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Rpc\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+p\+Me\+Collector\+Info\+Rpc\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a10954b9273077a94424af298e34396d9}
+
+
+Definition at line 227 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and query\+Collector\+Info().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+p\+Me\+List\+Name\+Rpc\+Info@{m\+\_\+p\+Me\+List\+Name\+Rpc\+Info}}
+\index{m\+\_\+p\+Me\+List\+Name\+Rpc\+Info@{m\+\_\+p\+Me\+List\+Name\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+p\+Me\+List\+Name\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Rpc\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+p\+Me\+List\+Name\+Rpc\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_ab46d9f9bfa02051fc94eb0af0670065a}
+
+
+Definition at line 228 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and query\+Available\+Monitor\+Elements().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+p\+Me\+Update\+Info@{m\+\_\+p\+Me\+Update\+Info}}
+\index{m\+\_\+p\+Me\+Update\+Info@{m\+\_\+p\+Me\+Update\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+p\+Me\+Update\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+p\+Me\+Update\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_a9319cf5b64f8e99af2a0c672f15f5b04}
+
+
+Definition at line 229 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}!m\+\_\+update\+Mode@{m\+\_\+update\+Mode}}
+\index{m\+\_\+update\+Mode@{m\+\_\+update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::m\+\_\+update\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementClient_ad01e49e4c4440f0fcb63ffd279e38a01}
+
+
+Definition at line 237 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by get\+Update\+Mode(), and set\+Update\+Mode().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+cc}\end{DoxyCompactItemize}

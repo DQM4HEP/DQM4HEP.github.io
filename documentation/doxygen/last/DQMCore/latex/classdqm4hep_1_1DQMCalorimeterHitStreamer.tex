@@ -1,0 +1,159 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Calorimeter\+Hit\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMCalorimeterHitStreamer}\index{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+Calorimeter\+Hit\+Streamer}{p.}{classdqm4hep_1_1DQMCalorimeterHitStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Calorimeter\+Hit\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCalorimeterHitStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize an Calorimeter\+Hit. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a Calorimeter\+Hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Calorimeter\+Hit\+Streamer}{p.}{classdqm4hep_1_1DQMCalorimeterHitStreamer} class. 
+
+Definition at line 158 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCalorimeterHitStreamer_a8f6c255b6871fb5546faf780b23d5526}
+
+
+Deserialize a Calorimeter\+Hit. 
+
+The object is allocated in this function 
+
+Definition at line 713 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+715 \{
+716   pLCObject = NULL;
+717 
+718   IMPL::CalorimeterHitImpl *pTmpCaloHit = \textcolor{keyword}{new} IMPL::CalorimeterHitImpl();
+719 
+720   dqm_int cellID0 = 0;
+721   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(cellID0));
+722   pTmpCaloHit->setCellID0(cellID0);
+723 
+724   dqm_int cellID1 = 0;
+725   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(cellID1));
+726   pTmpCaloHit->setCellID1(cellID1);
+727 
+728   dqm_float energy = 0.f;
+729   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(energy));
+730   pTmpCaloHit->setEnergy(energy);
+731 
+732   dqm_float energyError = 0.f;
+733   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(energyError));
+734   pTmpCaloHit->setEnergyError(energyError);
+735 
+736   dqm_float time = 0.f;
+737   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(time));
+738   pTmpCaloHit->setTime(time);
+739 
+740   dqm_int type = 0;
+741   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(type));
+742   pTmpCaloHit->setType(type);
+743 
+744   dqm_float *pPosition = 0;
+745   dqm_uint nReceivedSize = 0;
+746   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(pPosition, nReceivedSize));
+747 
+748   \textcolor{keywordflow}{if}(nReceivedSize != 3)
+749     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+750 
+751   pTmpCaloHit->setPosition(pPosition);
+752   \textcolor{keyword}{delete} [] pPosition;
+753 
+754   pLCObject = pTmpCaloHit;
+755 
+756   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+757 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCalorimeterHitStreamer_a9aea22628438c2227f24670739256009}
+
+
+Serialize an Calorimeter\+Hit. 
+
+
+
+Definition at line 679 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+681 \{
+682   \textcolor{keyword}{const} EVENT::CalorimeterHit *\textcolor{keyword}{const} pCaloHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::CalorimeterHit *const\textcolor{keyword}{>}(pLCObject)
+      ;
+683 
+684   \textcolor{keywordflow}{if}(NULL == pCaloHit)
+685     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+686 
+687   dqm_int cellID0 = pCaloHit->getCellID0();
+688   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(cellID0));
+689 
+690   dqm_int cellID1 = pCaloHit->getCellID1();
+691   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(cellID1));
+692 
+693   dqm_float energy = pCaloHit->getEnergy();
+694   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(energy));
+695 
+696   dqm_float energyError = pCaloHit->getEnergyError();
+697   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(energyError));
+698 
+699   dqm_float time = pCaloHit->getTime();
+700   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(time));
+701 
+702   dqm_int type = pCaloHit->getType();
+703   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(type));
+704 
+705   \textcolor{keyword}{const} dqm_float *position = pCaloHit->getPosition();
+706   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(position, 3));
+707 
+708   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+709 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

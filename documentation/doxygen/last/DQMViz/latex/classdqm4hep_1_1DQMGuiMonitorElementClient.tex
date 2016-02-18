@@ -1,0 +1,448 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Gui\+Monitor\+Element\+Client Class Reference}
+\label{classdqm4hep_1_1DQMGuiMonitorElementClient}\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+
+
+\doxyref{D\+Q\+M\+Gui\+Monitor\+Element\+Client}{p.}{classdqm4hep_1_1DQMGuiMonitorElementClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Gui\+Monitor\+Element\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMGuiMonitorElementClient}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf collector\+Info\+Received} (const D\+Q\+M\+Collector\+Info \&)
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the dim handler receives a collector info structure. \end{DoxyCompactList}\item 
+void {\bf monitor\+Element\+List\+Name\+Received} (const D\+Q\+M\+Monitor\+Element\+Info\+List \&)
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the dim handler receives an info list on monitor elements. \end{DoxyCompactList}\item 
+void {\bf monitor\+Element\+Publication\+Received} (const D\+Q\+M\+Monitor\+Element\+Publication \&)
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the dim handler receives a monitor element publication. \end{DoxyCompactList}\item 
+void {\bf on\+Monitor\+Element\+Client\+Connect} ()
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the client is connected. \end{DoxyCompactList}\item 
+void {\bf on\+Monitor\+Element\+Client\+Disconnect} ()
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the client is disconnected. \end{DoxyCompactList}\item 
+void {\bf on\+Server\+Startup} ()
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the collector server is started. \end{DoxyCompactList}\item 
+void {\bf on\+Server\+Shutdown} ()
+\begin{DoxyCompactList}\small\item\em Qt signal emitted when the collector server is shut down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+D\+Q\+M\+Monitor\+Element\+Client $\ast$ {\bf get\+Monitor\+Element\+Client} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitor element client instance (dqm core class) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf on\+Monitor\+Element\+Client\+Connect} (D\+Q\+M\+Monitor\+Element\+Client $\ast$)
+\item 
+void {\bf on\+Monitor\+Element\+Client\+Disconnect} (D\+Q\+M\+Monitor\+Element\+Client $\ast$)
+\item 
+void {\bf on\+Server\+Startup} (D\+Q\+M\+Monitor\+Element\+Client $\ast$)
+\item 
+void {\bf on\+Server\+Shutdown} (D\+Q\+M\+Monitor\+Element\+Client $\ast$)
+\item 
+void {\bf available\+Monitor\+Element\+List\+Received} (D\+Q\+M\+Monitor\+Element\+Client $\ast$, const D\+Q\+M\+Monitor\+Element\+Info\+List \&)
+\item 
+void {\bf monitor\+Element\+Collector\+Info\+Received} (D\+Q\+M\+Monitor\+Element\+Client $\ast$, const D\+Q\+M\+Collector\+Info \&)
+\item 
+void {\bf monitor\+Elements\+Received} (D\+Q\+M\+Monitor\+Element\+Client $\ast$, D\+Q\+M\+Monitor\+Element\+Publication \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+D\+Q\+M\+Monitor\+Element\+Client $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+Client}
+\item 
+D\+Q\+M\+Monitor\+Element\+Publication {\bf m\+\_\+publication}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Gui\+Monitor\+Element\+Client}{p.}{classdqm4hep_1_1DQMGuiMonitorElementClient} class. 
+
+Definition at line 42 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!D\+Q\+M\+Gui\+Monitor\+Element\+Client@{D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\index{D\+Q\+M\+Gui\+Monitor\+Element\+Client@{D\+Q\+M\+Gui\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{D\+Q\+M\+Gui\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a7f3838ba6f21b205eaf7ab04084e5f0a}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Client.
+
+
+\begin{DoxyCode}
+34                                                                                      :
+35     m_pMonitorElementClient(NULL)
+36 \{
+37   m_pMonitorElementClient = \textcolor{keyword}{new} DQMMonitorElementClient();
+38   m_pMonitorElementClient->addListener(\textcolor{keyword}{this});
+39   m_pMonitorElementClient->setCollectorName(collectorName);
+40 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!````~D\+Q\+M\+Gui\+Monitor\+Element\+Client@{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\index{````~D\+Q\+M\+Gui\+Monitor\+Element\+Client@{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a9b6118c118f30c9e74fe272e77301260}
+
+
+Destructor. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Client.
+
+
+\begin{DoxyCode}
+45 \{
+46   \textcolor{keyword}{delete} m_pMonitorElementClient;
+47 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!available\+Monitor\+Element\+List\+Received@{available\+Monitor\+Element\+List\+Received}}
+\index{available\+Monitor\+Element\+List\+Received@{available\+Monitor\+Element\+List\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{available\+Monitor\+Element\+List\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::available\+Monitor\+Element\+List\+Received (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{, }
+\item[{const D\+Q\+M\+Monitor\+Element\+Info\+List \&}]{info\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_afadd33d7c31ed8f5b4919fefef5f1e05}
+
+
+Definition at line 65 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References monitor\+Element\+List\+Name\+Received().
+
+
+\begin{DoxyCode}
+66 \{
+67   emit monitorElementListNameReceived(infoList);
+68 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!collector\+Info\+Received@{collector\+Info\+Received}}
+\index{collector\+Info\+Received@{collector\+Info\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{collector\+Info\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::collector\+Info\+Received (
+\begin{DoxyParamCaption}
+\item[{const D\+Q\+M\+Collector\+Info \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a28de411f61b6b7316e37095c6b3757c0}
+
+
+Qt signal emitted when the dim handler receives a collector info structure. 
+
+
+
+Referenced by monitor\+Element\+Collector\+Info\+Received().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!get\+Monitor\+Element\+Client@{get\+Monitor\+Element\+Client}}
+\index{get\+Monitor\+Element\+Client@{get\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{get\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Monitor\+Element\+Client $\ast$ dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a6eaf5a063d6a62c3098fa284a4b28706}
+
+
+Get the monitor element client instance (dqm core class) 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+Client.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Collector\+Selection(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup(), dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::query\+Search(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::subscribe(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::unsubscribe().
+
+
+\begin{DoxyCode}
+52 \{
+53   \textcolor{keywordflow}{return} m_pMonitorElementClient;
+54 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!monitor\+Element\+Collector\+Info\+Received@{monitor\+Element\+Collector\+Info\+Received}}
+\index{monitor\+Element\+Collector\+Info\+Received@{monitor\+Element\+Collector\+Info\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{monitor\+Element\+Collector\+Info\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::monitor\+Element\+Collector\+Info\+Received (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{, }
+\item[{const D\+Q\+M\+Collector\+Info \&}]{collector\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a12b8e824b375344a967b7c568894ef06}
+
+
+Definition at line 58 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References collector\+Info\+Received().
+
+
+\begin{DoxyCode}
+59 \{
+60   emit collectorInfoReceived(collectorInfo);
+61 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!monitor\+Element\+List\+Name\+Received@{monitor\+Element\+List\+Name\+Received}}
+\index{monitor\+Element\+List\+Name\+Received@{monitor\+Element\+List\+Name\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{monitor\+Element\+List\+Name\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::monitor\+Element\+List\+Name\+Received (
+\begin{DoxyParamCaption}
+\item[{const D\+Q\+M\+Monitor\+Element\+Info\+List \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a204565410ba871032495a8c80cfa7105}
+
+
+Qt signal emitted when the dim handler receives an info list on monitor elements. 
+
+
+
+Referenced by available\+Monitor\+Element\+List\+Received().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!monitor\+Element\+Publication\+Received@{monitor\+Element\+Publication\+Received}}
+\index{monitor\+Element\+Publication\+Received@{monitor\+Element\+Publication\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{monitor\+Element\+Publication\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::monitor\+Element\+Publication\+Received (
+\begin{DoxyParamCaption}
+\item[{const D\+Q\+M\+Monitor\+Element\+Publication \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_acd6751e8ffb7ddb8a28043703e0d355d}
+
+
+Qt signal emitted when the dim handler receives a monitor element publication. 
+
+
+
+Referenced by monitor\+Elements\+Received().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!monitor\+Elements\+Received@{monitor\+Elements\+Received}}
+\index{monitor\+Elements\+Received@{monitor\+Elements\+Received}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{monitor\+Elements\+Received}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::monitor\+Elements\+Received (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{, }
+\item[{D\+Q\+M\+Monitor\+Element\+Publication \&}]{publication}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a23c09dd2b24e3b727e58a8411bb6d2f5}
+
+
+Definition at line 72 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References monitor\+Element\+Publication\+Received().
+
+
+\begin{DoxyCode}
+73 \{
+74   \textcolor{comment}{// get copy of publication and clear the one in argument}
+75   DQMMonitorElementPublication publicationCopy(publication);
+76   publication.clear();
+77   emit monitorElementPublicationReceived(publicationCopy);
+78 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}}
+\index{on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Monitor\+Element\+Client\+Connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a80fb3902011eb4ac86a44bc9bb56605f}
+
+
+Qt signal emitted when the client is connected. 
+
+
+
+Referenced by on\+Monitor\+Element\+Client\+Connect().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}}
+\index{on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Monitor\+Element\+Client\+Connect (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_ace764db279586aca06bfc09c9594a356}
+
+
+Definition at line 82 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References on\+Monitor\+Element\+Client\+Connect().
+
+
+\begin{DoxyCode}
+83 \{
+84   emit onMonitorElementClientConnect();
+85 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}}
+\index{on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Monitor\+Element\+Client\+Disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a04065b4cae54513d54b03d8d705f363f}
+
+
+Qt signal emitted when the client is disconnected. 
+
+
+
+Referenced by on\+Monitor\+Element\+Client\+Disconnect().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}}
+\index{on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Monitor\+Element\+Client\+Disconnect (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_ae89e31b92a676cffb0cb9e1b29a449ee}
+
+
+Definition at line 89 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References on\+Monitor\+Element\+Client\+Disconnect().
+
+
+\begin{DoxyCode}
+90 \{
+91   emit onMonitorElementClientDisconnect();
+92 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Server\+Shutdown@{on\+Server\+Shutdown}}
+\index{on\+Server\+Shutdown@{on\+Server\+Shutdown}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Server\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Server\+Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_adcf32289f2b7eb3b8a1021273b174d60}
+
+
+Qt signal emitted when the collector server is shut down. 
+
+
+
+Referenced by on\+Server\+Shutdown().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Server\+Shutdown@{on\+Server\+Shutdown}}
+\index{on\+Server\+Shutdown@{on\+Server\+Shutdown}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Server\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Server\+Shutdown (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_ac65c02a264e8b5fea0f991e594d27da2}
+
+
+Definition at line 103 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References on\+Server\+Shutdown().
+
+
+\begin{DoxyCode}
+104 \{
+105   emit onServerShutdown();
+106 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Server\+Startup@{on\+Server\+Startup}}
+\index{on\+Server\+Startup@{on\+Server\+Startup}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Server\+Startup}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Server\+Startup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a732a45fabdc4bb607eca5d92904f13f3}
+
+
+Qt signal emitted when the collector server is started. 
+
+
+
+Referenced by on\+Server\+Startup().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!on\+Server\+Startup@{on\+Server\+Startup}}
+\index{on\+Server\+Startup@{on\+Server\+Startup}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{on\+Server\+Startup}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::on\+Server\+Startup (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element\+Client $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_a0b5d99b3034c845afa9bfe9926329e59}
+
+
+Definition at line 96 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc.
+
+
+
+References on\+Server\+Startup().
+
+
+\begin{DoxyCode}
+97 \{
+98   emit onServerStartup();
+99 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!m\+\_\+p\+Monitor\+Element\+Client@{m\+\_\+p\+Monitor\+Element\+Client}}
+\index{m\+\_\+p\+Monitor\+Element\+Client@{m\+\_\+p\+Monitor\+Element\+Client}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+Client}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Monitor\+Element\+Client$\ast$ dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::m\+\_\+p\+Monitor\+Element\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_abd5492033210a2460b1f038daca119bc}
+
+
+Definition at line 98 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by D\+Q\+M\+Gui\+Monitor\+Element\+Client(), get\+Monitor\+Element\+Client(), and $\sim$\+D\+Q\+M\+Gui\+Monitor\+Element\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}!m\+\_\+publication@{m\+\_\+publication}}
+\index{m\+\_\+publication@{m\+\_\+publication}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client}}
+\subsubsection[{m\+\_\+publication}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Monitor\+Element\+Publication dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::m\+\_\+publication\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMGuiMonitorElementClient_ad7e2e679b43b092c8b6faa282b1f2fb8}
+
+
+Definition at line 99 of file D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+h}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client.\+cc}\end{DoxyCompactItemize}

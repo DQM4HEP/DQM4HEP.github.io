@@ -1,0 +1,171 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+T\+P\+C\+Hit\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMTPCHitStreamer}\index{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+T\+P\+C\+Hit\+Streamer}{p.}{classdqm4hep_1_1DQMTPCHitStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMTPCHitStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize a T\+P\+C\+Hit. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a T\+P\+C\+Hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+T\+P\+C\+Hit\+Streamer}{p.}{classdqm4hep_1_1DQMTPCHitStreamer} class. 
+
+Definition at line 192 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMTPCHitStreamer_a5c41251633dc8443a7ab98d3152bed8c}
+
+
+Deserialize a T\+P\+C\+Hit. 
+
+The object is allocated in this function 
+
+Definition at line 861 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+863 \{
+864   pLCObject = 0;
+865 
+866   IMPL::TPCHitImpl *pTPCHit = \textcolor{keyword}{new} IMPL::TPCHitImpl();
+867 
+868   \textcolor{keywordflow}{try}
+869   \{
+870     dqm_int cellID = 0;
+871     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(cellID));
+872     pTPCHit->setCellID(cellID);
+873 
+874     dqm_int time = 0;
+875     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(time));
+876     pTPCHit->setTime(time);
+877 
+878     dqm_float charge = 0.f;
+879     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(charge));
+880     pTPCHit->setCharge(charge);
+881 
+882     dqm_int quality = 0;
+883     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(quality));
+884     pTPCHit->setQuality(quality);
+885 
+886     dqm_uint nRawDataWords = 0.f;
+887     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nRawDataWords));
+888 
+889     \textcolor{keywordtype}{int} *pRawData = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[nRawDataWords];
+890 
+891     \textcolor{keywordflow}{try}
+892     \{
+893       \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nRawDataWords ; i++)
+894       \{
+895         dqm_int rawDataWord = 0;
+896         THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(rawDataWord));
+897         pRawData[i] = rawDataWord;
+898       \}
+899 
+900       pTPCHit->setRawData(pRawData, nRawDataWords);
+901     \}
+902     \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+903     \{
+904       \textcolor{keyword}{delete} [] pRawData;
+905       \textcolor{keywordflow}{throw} StatusCodeException(exception.getStatusCode());
+906     \}
+907   \}
+908   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+909   \{
+910     \textcolor{keyword}{delete} pTPCHit;
+911     pTPCHit = 0;
+912     pLCObject = 0;
+913   \}
+914 
+915   pLCObject = pTPCHit;
+916 
+917   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+918 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer@{dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMTPCHitStreamer_a4805a4726184fc7a540d1f5938326c32}
+
+
+Serialize a T\+P\+C\+Hit. 
+
+
+
+Definition at line 827 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+829 \{
+830   \textcolor{keyword}{const} EVENT::TPCHit *\textcolor{keyword}{const} pTPCHit = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::TPCHit *const\textcolor{keyword}{>}(pLCObject);
+831 
+832   \textcolor{keywordflow}{if}(NULL == pTPCHit)
+833     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+834 
+835   dqm_int cellID = pTPCHit->getCellID();
+836   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(cellID));
+837 
+838   dqm_float time = pTPCHit->getTime();
+839   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(time));
+840 
+841   dqm_float charge = pTPCHit->getCharge();
+842   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(charge));
+843 
+844   dqm_int quality = pTPCHit->getQuality();
+845   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(quality));
+846 
+847   dqm_uint nRawDataWords = pTPCHit->getNRawDataWords();
+848   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nRawDataWords));
+849 
+850   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nRawDataWords ; i++)
+851   \{
+852     dqm_uint rawDataWord = pTPCHit->getRawDataWord(i);
+853     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(rawDataWord));
+854   \}
+855 
+856   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+857 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

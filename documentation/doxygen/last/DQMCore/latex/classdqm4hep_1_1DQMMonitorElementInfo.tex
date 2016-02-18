@@ -1,0 +1,195 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementInfo}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Info}{p.}{classdqm4hep_1_1DQMMonitorElementInfo} class Short summary of a \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} that is sent through the network.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Messaging.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize a monitor element publication and store it in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em De-\/serialize a monitor element publication from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+module\+Name}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Full\+Path}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Type}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Name}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Description}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Info}{p.}{classdqm4hep_1_1DQMMonitorElementInfo} class Short summary of a \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} that is sent through the network. 
+
+Definition at line 59 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementInfo_af3ad7b9e053d7c8ecedb262813cbfcd6}
+
+
+De-\/serialize a monitor element publication from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 110 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References m\+\_\+module\+Name, m\+\_\+monitor\+Element\+Description, m\+\_\+monitor\+Element\+Full\+Path, m\+\_\+monitor\+Element\+Name, m\+\_\+monitor\+Element\+Type, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::deserialize().
+
+
+\begin{DoxyCode}
+111 \{
+112   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_moduleName));
+113   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_monitorElementFullPath));
+114   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_monitorElementName));
+115   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_monitorElementDescription));
+116   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_monitorElementType));
+117 
+118   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+119 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementInfo_a29d1b6bfab67c69679073697f02bcd63}
+
+
+Serialize a monitor element publication and store it in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 97 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References m\+\_\+module\+Name, m\+\_\+monitor\+Element\+Description, m\+\_\+monitor\+Element\+Full\+Path, m\+\_\+monitor\+Element\+Name, m\+\_\+monitor\+Element\+Type, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+98 \{
+99   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_moduleName));
+100   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_monitorElementFullPath));
+101   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_monitorElementName));
+102   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_monitorElementDescription));
+103   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_monitorElementType));
+104 
+105   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+106 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!m\+\_\+module\+Name@{m\+\_\+module\+Name}}
+\index{m\+\_\+module\+Name@{m\+\_\+module\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{m\+\_\+module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::m\+\_\+module\+Name}\label{classdqm4hep_1_1DQMMonitorElementInfo_a68158e1aa5378a9b31b8b31b1c51ee3a}
+
+
+Definition at line 71 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!m\+\_\+monitor\+Element\+Description@{m\+\_\+monitor\+Element\+Description}}
+\index{m\+\_\+monitor\+Element\+Description@{m\+\_\+monitor\+Element\+Description}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{m\+\_\+monitor\+Element\+Description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::m\+\_\+monitor\+Element\+Description}\label{classdqm4hep_1_1DQMMonitorElementInfo_aa236b81c7692e5659d0f099b0aecac5d}
+
+
+Definition at line 75 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!m\+\_\+monitor\+Element\+Full\+Path@{m\+\_\+monitor\+Element\+Full\+Path}}
+\index{m\+\_\+monitor\+Element\+Full\+Path@{m\+\_\+monitor\+Element\+Full\+Path}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{m\+\_\+monitor\+Element\+Full\+Path}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::m\+\_\+monitor\+Element\+Full\+Path}\label{classdqm4hep_1_1DQMMonitorElementInfo_a047edebe7ad4beb79a6522c54803de51}
+
+
+Definition at line 72 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!m\+\_\+monitor\+Element\+Name@{m\+\_\+monitor\+Element\+Name}}
+\index{m\+\_\+monitor\+Element\+Name@{m\+\_\+monitor\+Element\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{m\+\_\+monitor\+Element\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::m\+\_\+monitor\+Element\+Name}\label{classdqm4hep_1_1DQMMonitorElementInfo_acb008984d7064344bf52367883fc6b23}
+
+
+Definition at line 74 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}!m\+\_\+monitor\+Element\+Type@{m\+\_\+monitor\+Element\+Type}}
+\index{m\+\_\+monitor\+Element\+Type@{m\+\_\+monitor\+Element\+Type}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info}}
+\subsubsection[{m\+\_\+monitor\+Element\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::m\+\_\+monitor\+Element\+Type}\label{classdqm4hep_1_1DQMMonitorElementInfo_aada506ea6af3fb4481b99dde99bc5a85}
+
+
+Definition at line 73 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Messaging.\+h}\item 
+{\bf D\+Q\+M\+Messaging.\+cc}\end{DoxyCompactItemize}

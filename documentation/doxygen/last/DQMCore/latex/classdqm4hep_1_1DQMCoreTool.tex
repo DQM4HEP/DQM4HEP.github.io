@@ -1,0 +1,192 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Core\+Tool Class Reference}
+\label{classdqm4hep_1_1DQMCoreTool}\index{dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}}
+
+
+\doxyref{D\+Q\+M\+Core\+Tool}{p.}{classdqm4hep_1_1DQMCoreTool} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Core\+Tool.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf time\+To\+H\+M\+S} (time\+\_\+t t, int \&hours, int \&minutes, int \&seconds)
+\begin{DoxyCompactList}\small\item\em Convert time\+\_\+t to hour, minutes and seconds. \end{DoxyCompactList}\item 
+static void {\bf time\+To\+H\+M\+S} (time\+\_\+t t, std\+::string \&time\+Str)
+\begin{DoxyCompactList}\small\item\em Convert time\+\_\+t to string format as \char`\"{}\+H\+O\+U\+R\+Sh M\+I\+N\+U\+T\+E\+Sm S\+E\+C\+O\+N\+D\+Ss\char`\"{}. \end{DoxyCompactList}\item 
+static {\bf String\+Vector} {\bf get\+Special\+Character\+List} ()
+\begin{DoxyCompactList}\small\item\em Get the special character list that are to be avoided in some strings. \end{DoxyCompactList}\item 
+static bool {\bf contains\+Special\+Characters} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Whether the string contains a special character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Core\+Tool}{p.}{classdqm4hep_1_1DQMCoreTool} class. 
+
+Definition at line 40 of file D\+Q\+M\+Core\+Tool.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}!contains\+Special\+Characters@{contains\+Special\+Characters}}
+\index{contains\+Special\+Characters@{contains\+Special\+Characters}!dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}}
+\subsubsection[{contains\+Special\+Characters}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::contains\+Special\+Characters (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMCoreTool_a90531cf2a723212b726001a336e92575}
+
+
+Whether the string contains a special character. 
+
+
+
+Definition at line 92 of file D\+Q\+M\+Core\+Tool.\+cc.
+
+
+
+References get\+Special\+Character\+List().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Float(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Object(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+String(), dqm4hep\+::\+D\+Q\+M\+Directory\+::contains\+Dir(), dqm4hep\+::\+D\+Q\+M\+Path\+::is\+Valid(), and dqm4hep\+::\+D\+Q\+M\+Directory\+::mkdir().
+
+
+\begin{DoxyCode}
+93 \{
+94   StringVector specialCharacterList = DQMCoreTool::getSpecialCharacterList();
+95 
+96   \textcolor{keywordflow}{for}(StringVector::iterator iter = specialCharacterList.begin(), endIter = specialCharacterList.end() ;
+97       endIter != iter ; ++iter)
+98   \{
+99     \textcolor{keywordflow}{if}(str.find(*iter) != std::string::npos)
+100       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+101   \}
+102 
+103   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+104 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}!get\+Special\+Character\+List@{get\+Special\+Character\+List}}
+\index{get\+Special\+Character\+List@{get\+Special\+Character\+List}!dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}}
+\subsubsection[{get\+Special\+Character\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Vector} dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::get\+Special\+Character\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMCoreTool_a68c88f676f13db4e815fcc43ddb1706b}
+
+
+Get the special character list that are to be avoided in some strings. 
+
+
+
+Definition at line 60 of file D\+Q\+M\+Core\+Tool.\+cc.
+
+
+
+Referenced by contains\+Special\+Characters().
+
+
+\begin{DoxyCode}
+61 \{
+62   StringVector specialCharacterList;
+63 
+64   specialCharacterList.push\_back(\textcolor{stringliteral}{"|"});
+65   specialCharacterList.push\_back(\textcolor{stringliteral}{"&"});
+66   specialCharacterList.push\_back(\textcolor{stringliteral}{";"});
+67   specialCharacterList.push\_back(\textcolor{stringliteral}{"<"});
+68   specialCharacterList.push\_back(\textcolor{stringliteral}{">"});
+69   specialCharacterList.push\_back(\textcolor{stringliteral}{"("});
+70   specialCharacterList.push\_back(\textcolor{stringliteral}{")"});
+71   specialCharacterList.push\_back(\textcolor{stringliteral}{"$"});
+72   specialCharacterList.push\_back(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)"});
+73   specialCharacterList.push\_back(\textcolor{stringliteral}{"\(\backslash\)'"});
+74   specialCharacterList.push\_back(\textcolor{stringliteral}{"\(\backslash\)""});
+75   specialCharacterList.push\_back(\textcolor{stringliteral}{"\(\backslash\)t"});
+76   specialCharacterList.push\_back(\textcolor{stringliteral}{"\(\backslash\)n"});
+77   specialCharacterList.push\_back(\textcolor{stringliteral}{"*"});
+78   specialCharacterList.push\_back(\textcolor{stringliteral}{"?"});
+79   specialCharacterList.push\_back(\textcolor{stringliteral}{","});
+80   specialCharacterList.push\_back(\textcolor{stringliteral}{"["});
+81   specialCharacterList.push\_back(\textcolor{stringliteral}{"]"});
+82   specialCharacterList.push\_back(\textcolor{stringliteral}{"#"});
+83   specialCharacterList.push\_back(\textcolor{stringliteral}{"~"});
+84   specialCharacterList.push\_back(\textcolor{stringliteral}{"="});
+85   specialCharacterList.push\_back(\textcolor{stringliteral}{"%"});
+86 
+87   \textcolor{keywordflow}{return} specialCharacterList;
+88 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}!time\+To\+H\+M\+S@{time\+To\+H\+M\+S}}
+\index{time\+To\+H\+M\+S@{time\+To\+H\+M\+S}!dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}}
+\subsubsection[{time\+To\+H\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::time\+To\+H\+M\+S (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{t, }
+\item[{int \&}]{hours, }
+\item[{int \&}]{minutes, }
+\item[{int \&}]{seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMCoreTool_a652b7872b386bfc958bedb10d59740f5}
+
+
+Convert time\+\_\+t to hour, minutes and seconds. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Core\+Tool.\+cc.
+
+
+
+Referenced by time\+To\+H\+M\+S().
+
+
+\begin{DoxyCode}
+35 \{
+36   \textcolor{keyword}{struct }tm *pTmTime = \textcolor{keyword}{new} tm();
+37   localtime\_r(&t, pTmTime);
+38   hours = pTmTime->tm\_hour;
+39   minutes = pTmTime->tm\_min;
+40   seconds = pTmTime->tm\_sec;
+41   \textcolor{keyword}{delete} pTmTime;
+42 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}!time\+To\+H\+M\+S@{time\+To\+H\+M\+S}}
+\index{time\+To\+H\+M\+S@{time\+To\+H\+M\+S}!dqm4hep\+::\+D\+Q\+M\+Core\+Tool@{dqm4hep\+::\+D\+Q\+M\+Core\+Tool}}
+\subsubsection[{time\+To\+H\+M\+S}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::time\+To\+H\+M\+S (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{t, }
+\item[{std\+::string \&}]{time\+Str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMCoreTool_ada42bd20fccb24e18409a5f9b6c96f4c}
+
+
+Convert time\+\_\+t to string format as \char`\"{}\+H\+O\+U\+R\+Sh M\+I\+N\+U\+T\+E\+Sm S\+E\+C\+O\+N\+D\+Ss\char`\"{}. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+Core\+Tool.\+cc.
+
+
+
+References time\+To\+H\+M\+S().
+
+
+\begin{DoxyCode}
+47 \{
+48   \textcolor{comment}{// get h m and s}
+49   \textcolor{keywordtype}{int} hours, minutes, seconds;
+50   DQMCoreTool::timeToHMS(t, hours, minutes, seconds);
+51 
+52   \textcolor{comment}{// convert to str}
+53   std::stringstream ss;
+54   ss << hours << \textcolor{stringliteral}{"h "} << minutes << \textcolor{stringliteral}{"m "} << seconds << \textcolor{stringliteral}{"s"};
+55   timeStr = ss.str();
+56 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Core\+Tool.\+h}\item 
+{\bf D\+Q\+M\+Core\+Tool.\+cc}\end{DoxyCompactItemize}

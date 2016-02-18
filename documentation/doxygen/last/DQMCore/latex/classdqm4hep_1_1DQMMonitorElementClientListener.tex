@@ -1,0 +1,205 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Client\+Listener Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementClientListener}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Client\+Listener}{p.}{classdqm4hep_1_1DQMMonitorElementClientListener} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Client.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Monitor\+Element\+Client\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Monitor\+Element\+Client\+Connect} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$)
+\begin{DoxyCompactList}\small\item\em Called back on client connection. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Monitor\+Element\+Client\+Disconnect} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$)
+\begin{DoxyCompactList}\small\item\em Called back on client disconnection. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Server\+Startup} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$)
+\begin{DoxyCompactList}\small\item\em Called back on server connection. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Server\+Shutdown} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$)
+\begin{DoxyCompactList}\small\item\em Called back when the server is shutdown. \end{DoxyCompactList}\item 
+virtual void {\bf available\+Monitor\+Element\+List\+Received} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$, const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \&)
+\begin{DoxyCompactList}\small\item\em Called back when available me list is received. \end{DoxyCompactList}\item 
+virtual void {\bf monitor\+Element\+Collector\+Info\+Received} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$, const {\bf D\+Q\+M\+Collector\+Info} \&)
+\begin{DoxyCompactList}\small\item\em Called back when me collector info is received. \end{DoxyCompactList}\item 
+virtual void {\bf monitor\+Elements\+Received} ({\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$, {\bf D\+Q\+M\+Monitor\+Element\+Publication} \&)
+\begin{DoxyCompactList}\small\item\em Called back when monitor elements are received. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Client\+Listener}{p.}{classdqm4hep_1_1DQMMonitorElementClientListener} class. 
+
+Listeners receive notifications for each of the callback methods above 
+
+Definition at line 77 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!````~D\+Q\+M\+Monitor\+Element\+Client\+Listener@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\index{````~D\+Q\+M\+Monitor\+Element\+Client\+Listener@{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::$\sim$\+D\+Q\+M\+Monitor\+Element\+Client\+Listener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_a3c14c635a75906e92cfe7b90dd6b101b}
+
+
+Destructor. 
+
+
+
+Definition at line 82 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+82 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!available\+Monitor\+Element\+List\+Received@{available\+Monitor\+Element\+List\+Received}}
+\index{available\+Monitor\+Element\+List\+Received@{available\+Monitor\+Element\+List\+Received}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{available\+Monitor\+Element\+List\+Received}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::available\+Monitor\+Element\+List\+Received (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{, }
+\item[{const {\bf D\+Q\+M\+Monitor\+Element\+Info\+List} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_a851a926d19442efeb7c57db15b47c482}
+
+
+Called back when available me list is received. 
+
+
+
+Definition at line 102 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+102 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!monitor\+Element\+Collector\+Info\+Received@{monitor\+Element\+Collector\+Info\+Received}}
+\index{monitor\+Element\+Collector\+Info\+Received@{monitor\+Element\+Collector\+Info\+Received}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{monitor\+Element\+Collector\+Info\+Received}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::monitor\+Element\+Collector\+Info\+Received (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{, }
+\item[{const {\bf D\+Q\+M\+Collector\+Info} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_af11c3a286a2c00f46ac5b696721eb220}
+
+
+Called back when me collector info is received. 
+
+
+
+Definition at line 106 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+106 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!monitor\+Elements\+Received@{monitor\+Elements\+Received}}
+\index{monitor\+Elements\+Received@{monitor\+Elements\+Received}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{monitor\+Elements\+Received}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::monitor\+Elements\+Received (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Publication} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_ae96c88b60a21f9a5b30549eacace47fe}
+
+
+Called back when monitor elements are received. 
+
+W\+A\+R\+N\+I\+N\+G ! The client owns the publication passed in argument. After notifying the publication is cleared and monitor elements deleted. Since the publication is not constant, the listener can take elements and remove them from the publication. 
+
+Definition at line 114 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+114 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}}
+\index{on\+Monitor\+Element\+Client\+Connect@{on\+Monitor\+Element\+Client\+Connect}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Connect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::on\+Monitor\+Element\+Client\+Connect (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_a206202a6962037e11f14fd67cc0b51d9}
+
+
+Called back on client connection. 
+
+
+
+Definition at line 86 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+86 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}}
+\index{on\+Monitor\+Element\+Client\+Disconnect@{on\+Monitor\+Element\+Client\+Disconnect}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{on\+Monitor\+Element\+Client\+Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::on\+Monitor\+Element\+Client\+Disconnect (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_a178f11dccebb8d9069fe090a15ab810d}
+
+
+Called back on client disconnection. 
+
+
+
+Definition at line 90 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+90 \{\};
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!on\+Server\+Shutdown@{on\+Server\+Shutdown}}
+\index{on\+Server\+Shutdown@{on\+Server\+Shutdown}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{on\+Server\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::on\+Server\+Shutdown (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_a7ac5b99d07080a4d1311c3dc66970cee}
+
+
+Called back when the server is shutdown. 
+
+
+
+Definition at line 98 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+98 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}!on\+Server\+Startup@{on\+Server\+Startup}}
+\index{on\+Server\+Startup@{on\+Server\+Startup}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener}}
+\subsubsection[{on\+Server\+Startup}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+Listener\+::on\+Server\+Startup (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementClientListener_adb0fbf46ede6cbee21574ddfd2851faf}
+
+
+Called back on server connection. 
+
+
+
+Definition at line 94 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+\begin{DoxyCode}
+94 \{\}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+h}\end{DoxyCompactItemize}

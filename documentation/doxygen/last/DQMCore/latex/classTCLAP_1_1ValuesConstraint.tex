@@ -1,0 +1,242 @@
+\section{T\+C\+L\+A\+P\+:\+:Values\+Constraint$<$ T $>$ Class Template Reference}
+\label{classTCLAP_1_1ValuesConstraint}\index{T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$@{T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$}}
+
+
+A \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} that constrains the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to only those values specified in the constraint.  
+
+
+
+
+{\ttfamily \#include $<$Values\+Constraint.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Values\+Constraint$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1ValuesConstraint}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Values\+Constraint} (std\+::vector$<$ T $>$ \&allowed)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Values\+Constraint} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf description} () const 
+\begin{DoxyCompactList}\small\item\em Returns a description of the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} () const 
+\begin{DoxyCompactList}\small\item\em Returns the short I\+D for the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. \end{DoxyCompactList}\item 
+virtual bool {\bf check} (const T \&value) const 
+\begin{DoxyCompactList}\small\item\em The method used to verify that the value parsed from the command line meets the constraint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ {\bf \+\_\+allowed}
+\begin{DoxyCompactList}\small\item\em The list of valid values. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+type\+Desc}
+\begin{DoxyCompactList}\small\item\em The string used to describe the allowed values of this constraint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$}
+
+A \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} that constrains the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to only those values specified in the constraint. 
+
+Definition at line 51 of file Values\+Constraint.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!Values\+Constraint@{Values\+Constraint}}
+\index{Values\+Constraint@{Values\+Constraint}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{Values\+Constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::{\bf Values\+Constraint} (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ T $>$ \&}]{allowed}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValuesConstraint_a8ab127461012bb1dcfac159e17105db9}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em allowed} & -\/ vector of allowed values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 99 of file Values\+Constraint.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$\+::\+\_\+allowed, and T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$\+::\+\_\+type\+Desc.
+
+
+\begin{DoxyCode}
+100 : _allowed(allowed),
+101   _typeDesc(\textcolor{stringliteral}{""})
+102 \{ 
+103     \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < _allowed.size(); i++ )
+104     \{
+105 
+106 \textcolor{preprocessor}{#if defined(HAVE\_SSTREAM)}
+107         std::ostringstream os;
+108 \textcolor{preprocessor}{#elif defined(HAVE\_STRSTREAM)}
+109         std::ostrstream os;
+110 \textcolor{preprocessor}{#else}
+111 \textcolor{preprocessor}{#error "Need a stringstream (sstream or strstream) to compile!"}
+112 \textcolor{preprocessor}{#endif}
+113 
+114         os << _allowed[i];
+115 
+116         std::string temp( os.str() ); 
+117 
+118         \textcolor{keywordflow}{if} ( i > 0 )
+119       _typeDesc += \textcolor{stringliteral}{"|"};
+120         _typeDesc += temp;
+121     \}
+122 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!````~Values\+Constraint@{$\sim$\+Values\+Constraint}}
+\index{````~Values\+Constraint@{$\sim$\+Values\+Constraint}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{$\sim$\+Values\+Constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ virtual {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::$\sim${\bf Values\+Constraint} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1ValuesConstraint_a9b0c218300a9e0937386f2e566ba21bd}
+
+
+Virtual destructor. 
+
+
+
+Definition at line 65 of file Values\+Constraint.\+h.
+
+
+\begin{DoxyCode}
+65 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!check@{check}}
+\index{check@{check}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::check (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValuesConstraint_ae132b185413cf5dea5cc040f60e7ede6}
+
+
+The method used to verify that the value parsed from the command line meets the constraint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & -\/ The value that will be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1Constraint_a773c3e16d0150523c1c92b7b24868c34}.
+
+
+
+Definition at line 125 of file Values\+Constraint.\+h.
+
+
+\begin{DoxyCode}
+126 \{
+127   \textcolor{keywordflow}{if} ( std::find(_allowed.begin(),_allowed.end(),val) == _allowed.end() )
+128     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+129   \textcolor{keywordflow}{else} 
+130     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+131 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!description@{description}}
+\index{description@{description}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValuesConstraint_a07b08c05a7bfcbe5815895353ffef1d5}
+
+
+Returns a description of the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1Constraint_ae16dd80aa217fb56c0862af5478afe01}.
+
+
+
+Definition at line 140 of file Values\+Constraint.\+h.
+
+
+\begin{DoxyCode}
+141 \{
+142     \textcolor{keywordflow}{return} _typeDesc; 
+143 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::short\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValuesConstraint_a1bbe12afcb1f185ee7ac808d69e2d345}
+
+
+Returns the short I\+D for the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. 
+
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1Constraint_a39f707895311da682439810a0bec4a5f}.
+
+
+
+Definition at line 134 of file Values\+Constraint.\+h.
+
+
+\begin{DoxyCode}
+135 \{
+136     \textcolor{keywordflow}{return} _typeDesc; 
+137 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!\+\_\+allowed@{\+\_\+allowed}}
+\index{\+\_\+allowed@{\+\_\+allowed}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{\+\_\+allowed}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::vector$<$T$>$ {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::\+\_\+allowed\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValuesConstraint_ac43fa83688358c0ad06157053cce347a}
+
+
+The list of valid values. 
+
+
+
+Definition at line 89 of file Values\+Constraint.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$\+::\+Values\+Constraint().
+
+\index{T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}!\+\_\+type\+Desc@{\+\_\+type\+Desc}}
+\index{\+\_\+type\+Desc@{\+\_\+type\+Desc}!T\+C\+L\+A\+P\+::\+Values\+Constraint@{T\+C\+L\+A\+P\+::\+Values\+Constraint}}
+\subsubsection[{\+\_\+type\+Desc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint}$<$ T $>$\+::\+\_\+type\+Desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValuesConstraint_a6ebc63fa5eea116a50aa5f76aee56fd6}
+
+
+The string used to describe the allowed values of this constraint. 
+
+
+
+Definition at line 94 of file Values\+Constraint.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$\+::\+Values\+Constraint().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Values\+Constraint.\+h}\end{DoxyCompactItemize}

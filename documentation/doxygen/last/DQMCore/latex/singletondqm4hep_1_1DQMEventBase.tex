@@ -1,0 +1,121 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Base$<$ T $>$ Class Template Reference}
+\label{singletondqm4hep_1_1DQMEventBase}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$@{dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Event\+Base$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{singletondqm4hep_1_1DQMEventBase}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Event\+Base} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual T $\ast$ {\bf get\+Event} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the stored event. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Event} (T $\ast$p\+Event)=0
+\begin{DoxyCompactList}\small\item\em Set the handled event. \end{DoxyCompactList}\item 
+virtual void {\bf clear} ()=0
+\begin{DoxyCompactList}\small\item\em Clear the handler by deleting the handled event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$}
+
+
+
+Definition at line 39 of file D\+Q\+M\+Event.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}!````~D\+Q\+M\+Event\+Base@{$\sim$\+D\+Q\+M\+Event\+Base}}
+\index{````~D\+Q\+M\+Event\+Base@{$\sim$\+D\+Q\+M\+Event\+Base}!dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Base}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base}$<$ T $>$\+::$\sim${\bf D\+Q\+M\+Event\+Base} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{singletondqm4hep_1_1DQMEventBase_aa778e7eb791f8b24138cf8ed57a7d421}
+
+
+Destructor. 
+
+
+
+Definition at line 180 of file D\+Q\+M\+Event.\+h.
+
+
+\begin{DoxyCode}
+181 \{
+182 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual void {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base}$<$ T $>$\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{singletondqm4hep_1_1DQMEventBase_afe7236fd5fe7e2fa719a1464e2195636}
+
+
+Clear the handler by deleting the handled event. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEvent_a47b8653da5ab6d64277b756f553758bd}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+::clear().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}}
+\subsubsection[{get\+Event}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual T$\ast$ {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base}$<$ T $>$\+::get\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{singletondqm4hep_1_1DQMEventBase_a2363bc09cadffa4806098fc9f031543f}
+
+
+Returns the stored event. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEvent_a3e2a3489740b65b9359decc4766fcee7}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+::get\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}!set\+Event@{set\+Event}}
+\index{set\+Event@{set\+Event}!dqm4hep\+::\+D\+Q\+M\+Event\+Base@{dqm4hep\+::\+D\+Q\+M\+Event\+Base}}
+\subsubsection[{set\+Event}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ virtual void {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base}$<$ T $>$\+::set\+Event (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{singletondqm4hep_1_1DQMEventBase_afe393ecc545e9eb6dead7309c119f436}
+
+
+Set the handled event. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEvent_a9085e7483f683553be7d0b8bde36c260}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+::set\+Event().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event.\+h}\end{DoxyCompactItemize}

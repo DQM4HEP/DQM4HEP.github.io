@@ -1,0 +1,277 @@
+\section{T\+C\+L\+A\+P\+:\+:Arg\+Exception Class Reference}
+\label{classTCLAP_1_1ArgException}\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+
+
+A simple class that defines and argument exception.  
+
+
+
+
+{\ttfamily \#include $<$Arg\+Exception.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Arg\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.758621cm]{classTCLAP_1_1ArgException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Arg\+Exception} (const std\+::string \&text=\char`\"{}undefined exception\char`\"{}, const std\+::string \&id=\char`\"{}undefined\char`\"{}, const std\+::string \&td=\char`\"{}Generic {\bf Arg\+Exception}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Arg\+Exception} ()  throw ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::string {\bf error} () const 
+\begin{DoxyCompactList}\small\item\em Returns the error text. \end{DoxyCompactList}\item 
+std\+::string {\bf arg\+Id} () const 
+\begin{DoxyCompactList}\small\item\em Returns the argument id. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf what} () const   throw ()
+\begin{DoxyCompactList}\small\item\em Returns the arg id and error text. \end{DoxyCompactList}\item 
+std\+::string {\bf type\+Description} () const 
+\begin{DoxyCompactList}\small\item\em Returns the type of the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf \+\_\+error\+Text}
+\begin{DoxyCompactList}\small\item\em The text of the exception message. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+arg\+Id}
+\begin{DoxyCompactList}\small\item\em The argument related to this exception. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+type\+Description}
+\begin{DoxyCompactList}\small\item\em Describes the type of the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple class that defines and argument exception. 
+
+Should be caught whenever a \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} is created and parsed. 
+
+Definition at line 36 of file Arg\+Exception.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!Arg\+Exception@{Arg\+Exception}}
+\index{Arg\+Exception@{Arg\+Exception}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{Arg\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Arg\+Exception\+::\+Arg\+Exception (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{text = {\ttfamily \char`\"{}undefined~exception\char`\"{}}, }
+\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}undefined\char`\"{}}, }
+\item[{const std\+::string \&}]{td = {\ttfamily \char`\"{}Generic~{\bf Arg\+Exception}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1ArgException_a67389912b628e95d530f8bb8de97b309}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ The text of the exception. \\
+\hline
+{\em id} & -\/ The text identifying the argument source. \\
+\hline
+{\em td} & -\/ Text describing the type of \doxyref{Arg\+Exception}{p.}{classTCLAP_1_1ArgException} it is. of the exception. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 47 of file Arg\+Exception.\+h.
+
+
+\begin{DoxyCode}
+50       : std::exception(), 
+51         _errorText(text), 
+52         _argId( \textcolor{keywordtype}{id} ), 
+53         _typeDescription(td)
+54     \{ \} 
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!````~Arg\+Exception@{$\sim$\+Arg\+Exception}}
+\index{````~Arg\+Exception@{$\sim$\+Arg\+Exception}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{$\sim$\+Arg\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}virtual T\+C\+L\+A\+P\+::\+Arg\+Exception\+::$\sim$\+Arg\+Exception (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) throw  ) \hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1ArgException_a5c5df6a814b05c623a01607fb82980f4}
+
+
+Destructor. 
+
+
+
+Definition at line 59 of file Arg\+Exception.\+h.
+
+
+\begin{DoxyCode}
+59 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!arg\+Id@{arg\+Id}}
+\index{arg\+Id@{arg\+Id}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{arg\+Id}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::arg\+Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1ArgException_a18ffd1ad34c1799865f8e03df4ebdff1}
+
+
+Returns the argument id. 
+
+
+
+Definition at line 69 of file Arg\+Exception.\+h.
+
+
+
+References \+\_\+arg\+Id.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Std\+Output\+::failure().
+
+
+\begin{DoxyCode}
+70     \{ 
+71       \textcolor{keywordflow}{if} ( _argId == \textcolor{stringliteral}{"undefined"} )
+72         \textcolor{keywordflow}{return} \textcolor{stringliteral}{" "};
+73       \textcolor{keywordflow}{else}
+74         \textcolor{keywordflow}{return} ( \textcolor{stringliteral}{"Argument: "} + _argId ); 
+75     \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!error@{error}}
+\index{error@{error}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1ArgException_a0656dab88a7129bc288821bacd653d08}
+
+
+Returns the error text. 
+
+
+
+Definition at line 64 of file Arg\+Exception.\+h.
+
+
+
+References \+\_\+error\+Text.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::\+\_\+extract\+Value(), T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::\+\_\+extract\+Value(), and T\+C\+L\+A\+P\+::\+Std\+Output\+::failure().
+
+
+\begin{DoxyCode}
+64 \{ \textcolor{keywordflow}{return} ( _errorText ); \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!type\+Description@{type\+Description}}
+\index{type\+Description@{type\+Description}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{type\+Description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::type\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1ArgException_abd271955e1b808bb92f8db7a16ea7c95}
+
+
+Returns the type of the exception. 
+
+Used to explain and distinguish between different child exceptions. 
+
+Definition at line 91 of file Arg\+Exception.\+h.
+
+
+
+References \+\_\+type\+Description.
+
+
+\begin{DoxyCode}
+92     \{
+93       \textcolor{keywordflow}{return} _typeDescription; 
+94     \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!what@{what}}
+\index{what@{what}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ T\+C\+L\+A\+P\+::\+Arg\+Exception\+::what (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const throw  ) \hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1ArgException_af51c89da2e4ae54fc9d05038ea484c83}
+
+
+Returns the arg id and error text. 
+
+
+
+Definition at line 80 of file Arg\+Exception.\+h.
+
+
+
+References \+\_\+arg\+Id, and \+\_\+error\+Text.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::failure(), and T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::failure().
+
+
+\begin{DoxyCode}
+81     \{
+82       \textcolor{keyword}{static} std::string ex; 
+83       ex = _argId + \textcolor{stringliteral}{" -- "} + _errorText;
+84       \textcolor{keywordflow}{return} ex.c\_str();
+85     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!\+\_\+arg\+Id@{\+\_\+arg\+Id}}
+\index{\+\_\+arg\+Id@{\+\_\+arg\+Id}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{\+\_\+arg\+Id}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::\+\_\+arg\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1ArgException_a6bfa7ed4e5cc1404d6b4cc5d28cb1f28}
+
+
+The argument related to this exception. 
+
+
+
+Definition at line 107 of file Arg\+Exception.\+h.
+
+
+
+Referenced by arg\+Id(), and what().
+
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!\+\_\+error\+Text@{\+\_\+error\+Text}}
+\index{\+\_\+error\+Text@{\+\_\+error\+Text}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{\+\_\+error\+Text}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::\+\_\+error\+Text\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1ArgException_ad94d68e5948f6b74aacb8b2023e96c50}
+
+
+The text of the exception message. 
+
+
+
+Definition at line 102 of file Arg\+Exception.\+h.
+
+
+
+Referenced by error(), and what().
+
+\index{T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}!\+\_\+type\+Description@{\+\_\+type\+Description}}
+\index{\+\_\+type\+Description@{\+\_\+type\+Description}!T\+C\+L\+A\+P\+::\+Arg\+Exception@{T\+C\+L\+A\+P\+::\+Arg\+Exception}}
+\subsubsection[{\+\_\+type\+Description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+Exception\+::\+\_\+type\+Description\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1ArgException_a7c69e599ae4a5b874a3e19cd4cf7c910}
+
+
+Describes the type of the exception. 
+
+Used to distinguish between different child exceptions. 
+
+Definition at line 113 of file Arg\+Exception.\+h.
+
+
+
+Referenced by type\+Description().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arg\+Exception.\+h}\end{DoxyCompactItemize}

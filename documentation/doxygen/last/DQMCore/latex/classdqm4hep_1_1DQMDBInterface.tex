@@ -1,0 +1,969 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+D\+B\+Interface Class Reference}
+\label{classdqm4hep_1_1DQMDBInterface}\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+
+
+\doxyref{D\+Q\+M\+D\+B\+Interface}{p.}{classdqm4hep_1_1DQMDBInterface} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+D\+B\+Interface.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+D\+B\+Interface} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+D\+B\+Interface} (const std\+::string \&host, const std\+::string \&user, const std\+::string \&password, const std\+::string \&database)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+D\+B\+Interface} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf connect} ()
+\begin{DoxyCompactList}\small\item\em Connect to the mysql server. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf disconnect} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from the database. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf connect} (const std\+::string \&host, const std\+::string \&user, const std\+::string \&password, const std\+::string \&database)
+\begin{DoxyCompactList}\small\item\em Connect to the database. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set} (const std\+::string \&host, const std\+::string \&user, const std\+::string \&password, const std\+::string \&database)
+\begin{DoxyCompactList}\small\item\em Set host, user, password and database. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Host} () const 
+\begin{DoxyCompactList}\small\item\em Get the host. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+User} () const 
+\begin{DoxyCompactList}\small\item\em Get the user name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Password} () const 
+\begin{DoxyCompactList}\small\item\em Get the password. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Data\+Base} () const 
+\begin{DoxyCompactList}\small\item\em Get the data base name. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Raw} (const std\+::string \&{\bf query}, void $\ast$\&p\+Result)
+\begin{DoxyCompactList}\small\item\em Send query to database The result is not converted. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf query} (const std\+::string \&query, T \&result)
+\begin{DoxyCompactList}\small\item\em Send query to database. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf Status\+Code} {\bf query\+Vector} (const std\+::string \&{\bf query}, std\+::vector$<$ T $>$ \&result)
+\begin{DoxyCompactList}\small\item\em Send query to database. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf execute} (const std\+::string \&{\bf query})
+\begin{DoxyCompactList}\small\item\em Execute the query (no result expected) \end{DoxyCompactList}\item 
+bool {\bf is\+Connected} ()
+\begin{DoxyCompactList}\small\item\em Whether a connection is being handled. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Config\+File\+Content} (const std\+::string \&config\+File\+Name, std\+::string \&file\+Contents)
+\begin{DoxyCompactList}\small\item\em Query a config file content stored in the \doxyref{D\+Q\+M4\+H\+E\+P}{p.}{classdqm4hep_1_1DQM4HEP} data base (table C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+E\+S) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Config\+File\+Description} (const std\+::string \&config\+File\+Name, std\+::string \&file\+Description)
+\begin{DoxyCompactList}\small\item\em Query a config file description. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf insert\+Config\+File} (const std\+::string \&local\+File\+Name, const std\+::string \&file\+Name\+Entry, const std\+::string \&file\+Description=\char`\"{}\char`\"{}, bool force\+Replace=false)
+\begin{DoxyCompactList}\small\item\em Insert a new new config file entry in the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+M\+Y\+S\+Q\+L $\ast$ {\bf m\+\_\+p\+My\+S\+Q\+L}
+\item 
+std\+::string {\bf m\+\_\+host}
+\item 
+std\+::string {\bf m\+\_\+user}
+\item 
+std\+::string {\bf m\+\_\+password}
+\item 
+std\+::string {\bf m\+\_\+database}
+\item 
+bool {\bf m\+\_\+is\+Connected}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+D\+B\+Interface}{p.}{classdqm4hep_1_1DQMDBInterface} class. 
+
+Definition at line 43 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!D\+Q\+M\+D\+B\+Interface@{D\+Q\+M\+D\+B\+Interface}}
+\index{D\+Q\+M\+D\+B\+Interface@{D\+Q\+M\+D\+B\+Interface}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{D\+Q\+M\+D\+B\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::\+D\+Q\+M\+D\+B\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_ad19a63cf3d18ce116fb5e29c293a7bbf}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+\begin{DoxyCode}
+36                                :
+37     m_pMySQL(NULL),
+38     m_isConnected(\textcolor{keyword}{false})
+39 \{
+40 
+41 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!D\+Q\+M\+D\+B\+Interface@{D\+Q\+M\+D\+B\+Interface}}
+\index{D\+Q\+M\+D\+B\+Interface@{D\+Q\+M\+D\+B\+Interface}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{D\+Q\+M\+D\+B\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::\+D\+Q\+M\+D\+B\+Interface (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host, }
+\item[{const std\+::string \&}]{user, }
+\item[{const std\+::string \&}]{password, }
+\item[{const std\+::string \&}]{database}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_aaebeffb91f98b21866652afc6cffafef}
+
+
+Constructor. 
+
+Connect to data base 
+
+Definition at line 45 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References connect(), and set().
+
+
+\begin{DoxyCode}
+45                                                                                                            
+                            :
+46     m_pMySQL(NULL),
+47     m_isConnected(\textcolor{keyword}{false})
+48 \{
+49   this->set(host, user, password, database);
+50   this->connect();
+51 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!````~D\+Q\+M\+D\+B\+Interface@{$\sim$\+D\+Q\+M\+D\+B\+Interface}}
+\index{````~D\+Q\+M\+D\+B\+Interface@{$\sim$\+D\+Q\+M\+D\+B\+Interface}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{$\sim$\+D\+Q\+M\+D\+B\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::$\sim$\+D\+Q\+M\+D\+B\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDBInterface_a695a628d92f386c0464ac57b1134ee90}
+
+
+Destructor. 
+
+
+
+Definition at line 55 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References disconnect(), and is\+Connected().
+
+
+\begin{DoxyCode}
+56 \{
+57   \textcolor{keywordflow}{if}(this->isConnected())
+58     this->disconnect();
+59 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!connect@{connect}}
+\index{connect@{connect}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::connect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_af1a245e65824536dd1ec4845be027576}
+
+
+Connect to the mysql server. 
+
+
+
+Definition at line 63 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, execute(), dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), is\+Connected(), m\+\_\+database, m\+\_\+host, m\+\_\+is\+Connected, m\+\_\+password, m\+\_\+p\+My\+S\+Q\+L, m\+\_\+user, query(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by connect(), dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download(), and D\+Q\+M\+D\+B\+Interface().
+
+
+\begin{DoxyCode}
+64 \{
+65   \textcolor{keywordflow}{if}(this->isConnected())
+66     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_INITIALIZED;
+67 
+68   \textcolor{keywordflow}{try}
+69   \{
+70     \textcolor{comment}{// create mysql instance}
+71     m_pMySQL = mysql\_init(NULL);
+72 
+73     \textcolor{keywordflow}{if}(!m_pMySQL)
+74     \{
+75       streamlog\_out(ERROR) << \textcolor{stringliteral}{"Couldn't create mysql instance : "} << mysql\_error(
+      m_pMySQL) << std::endl;
+76       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+77     \}
+78 
+79     \textcolor{comment}{// create connection to database}
+80     \textcolor{keywordflow}{if}(NULL == mysql\_real\_connect(m_pMySQL, m_host.c\_str(), m_user.c\_str(), 
+      m_password.c\_str(),
+81                              NULL, 0, NULL, 0))
+82     \{
+83       streamlog\_out(ERROR) << \textcolor{stringliteral}{"Couldn't initialize mysql connection : "} << mysql\_error(
+      m_pMySQL) << std::endl;
+84       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+85     \}
+86 
+87     m_isConnected = \textcolor{keyword}{true};
+88 
+89     \textcolor{comment}{// select data base}
+90     std::stringstream query;
+91     query << \textcolor{stringliteral}{"USE "} << m_database << \textcolor{stringliteral}{" ;"};
+92 
+93     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(query.str()));
+94   \}
+95   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+96   \{
+97     \textcolor{keywordflow}{if}(m_pMySQL)
+98       mysql\_close(m_pMySQL);
+99 
+100     m_isConnected = \textcolor{keyword}{false};
+101 
+102     \textcolor{keywordflow}{return} exception.getStatusCode();
+103   \}
+104 
+105   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+106 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!connect@{connect}}
+\index{connect@{connect}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::connect (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host, }
+\item[{const std\+::string \&}]{user, }
+\item[{const std\+::string \&}]{password, }
+\item[{const std\+::string \&}]{database}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a2b673e52fbf7898477b3918b591957f0}
+
+
+Connect to the database. 
+
+Not possible if a connection is being handled. Use \doxyref{disconnect()}{p.}{classdqm4hep_1_1DQMDBInterface_a38b368a37ddf9f4eff4fbaa11c75d5e3} first and then \doxyref{connect()}{p.}{classdqm4hep_1_1DQMDBInterface_af1a245e65824536dd1ec4845be027576} 
+
+Definition at line 125 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References connect(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and set().
+
+
+\begin{DoxyCode}
+126 \{
+127   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->set(host, user, password, database));
+128   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->connect());
+129 
+130   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+131 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{disconnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::disconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a38b368a37ddf9f4eff4fbaa11c75d5e3}
+
+
+Disconnect from the database. 
+
+
+
+Definition at line 110 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References is\+Connected(), m\+\_\+is\+Connected, and m\+\_\+p\+My\+S\+Q\+L.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download(), and $\sim$\+D\+Q\+M\+D\+B\+Interface().
+
+
+\begin{DoxyCode}
+111 \{
+112   \textcolor{keywordflow}{if}(this->isConnected())
+113     \textcolor{keywordflow}{return} STATUS\_CODE\_UNCHANGED;
+114 
+115   \textcolor{keywordflow}{if}(m_pMySQL)
+116     mysql\_close(m_pMySQL);
+117 
+118   m_isConnected = \textcolor{keyword}{false};
+119 
+120   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+121 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!execute@{execute}}
+\index{execute@{execute}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::execute (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{query}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a5603d2fbe70b3f8866dc1c8d5bf5393e}
+
+
+Execute the query (no result expected) 
+
+
+
+Definition at line 213 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, is\+Connected(), and m\+\_\+p\+My\+S\+Q\+L.
+
+
+
+Referenced by connect(), insert\+Config\+File(), query\+Config\+File\+Content(), and query\+Config\+File\+Description().
+
+
+\begin{DoxyCode}
+214 \{
+215   \textcolor{keywordflow}{if}(!this->isConnected())
+216     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+217 
+218   \textcolor{keywordflow}{if}(mysql\_query(m_pMySQL, query.c\_str()))
+219   \{
+220     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL query failed : "} << mysql\_error(m_pMySQL) << std::endl;
+221     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+222   \}
+223 
+224   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+225 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!get\+Data\+Base@{get\+Data\+Base}}
+\index{get\+Data\+Base@{get\+Data\+Base}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{get\+Data\+Base}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::get\+Data\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDBInterface_ad7b5ee4b7250c23bffe4d8b2979a0cc5}
+
+
+Get the data base name. 
+
+
+
+Definition at line 171 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References m\+\_\+database.
+
+
+\begin{DoxyCode}
+172 \{
+173   \textcolor{keywordflow}{return} m_database;
+174 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!get\+Host@{get\+Host}}
+\index{get\+Host@{get\+Host}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{get\+Host}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::get\+Host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDBInterface_a13b2809e22cda4eff01473c56d6e24fe}
+
+
+Get the host. 
+
+
+
+Definition at line 150 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References m\+\_\+host.
+
+
+\begin{DoxyCode}
+151 \{
+152   \textcolor{keywordflow}{return} m_host;
+153 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!get\+Password@{get\+Password}}
+\index{get\+Password@{get\+Password}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{get\+Password}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::get\+Password (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDBInterface_a5a002ef0898357de67b7b8da30cc310c}
+
+
+Get the password. 
+
+
+
+Definition at line 164 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References m\+\_\+password.
+
+
+\begin{DoxyCode}
+165 \{
+166   \textcolor{keywordflow}{return} m_password;
+167 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!get\+User@{get\+User}}
+\index{get\+User@{get\+User}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{get\+User}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::get\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMDBInterface_aed4f5ec0410422dbc0d8bedb04ed792c}
+
+
+Get the user name. 
+
+
+
+Definition at line 157 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References m\+\_\+user.
+
+
+\begin{DoxyCode}
+158 \{
+159   \textcolor{keywordflow}{return} m_user;
+160 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!insert\+Config\+File@{insert\+Config\+File}}
+\index{insert\+Config\+File@{insert\+Config\+File}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{insert\+Config\+File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::insert\+Config\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{local\+File\+Name, }
+\item[{const std\+::string \&}]{file\+Name\+Entry, }
+\item[{const std\+::string \&}]{file\+Description = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{bool}]{force\+Replace = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_af61cfdc2e3f485d9bb310b6e7b448fd9}
+
+
+Insert a new new config file entry in the database. 
+
+
+
+Definition at line 312 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, execute(), is\+Connected(), m\+\_\+database, query(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+314 \{
+315   \textcolor{keywordflow}{if}(localFileName.empty() || fileNameEntry.empty())
+316     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+317 
+318   \textcolor{keywordflow}{if}(!this->isConnected())
+319     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+320 
+321   std::ifstream ifile;
+322   ifile.open(localFileName.c\_str(), std::ios::in);
+323 
+324   \textcolor{keywordflow}{if}(!ifile.is\_open())
+325   \{
+326     streamlog\_out(ERROR) << \textcolor{stringliteral}{"Couln't open file '"} << localFileName << \textcolor{stringliteral}{"' !"} << std::endl;
+327     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+328   \}
+329 
+330   std::string fileContents;
+331 
+332   \textcolor{keywordflow}{while}(!ifile.eof())
+333   \{
+334     std::string str;
+335     getline(ifile, str);
+336     fileContents += str + \textcolor{stringliteral}{"\(\backslash\)n"};
+337   \}
+338 
+339   \textcolor{keywordflow}{if}(fileContents.empty())
+340     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+341 
+342   std::string queryUse = \textcolor{stringliteral}{"USE "} + m_database + \textcolor{stringliteral}{" ;"};
+343 
+344   \textcolor{comment}{// construct the mysql query}
+345   std::stringstream query;
+346 
+347   \textcolor{keywordflow}{if}(forceReplace)
+348     query << \textcolor{stringliteral}{"REPLACE "};
+349   \textcolor{keywordflow}{else}
+350     query << \textcolor{stringliteral}{"INSERT "};
+351 
+352   query << \textcolor{stringliteral}{"INTO CONFIG\_FILES VALUES "}
+353       << \textcolor{stringliteral}{"('"} << fileNameEntry << \textcolor{stringliteral}{"' ,"}
+354       << \textcolor{stringliteral}{"'"} << fileDescription << \textcolor{stringliteral}{"' ,"}
+355       << \textcolor{stringliteral}{"'"} << fileContents << \textcolor{stringliteral}{"') ;"};
+356 
+357   \textcolor{comment}{// select DQM4HEP database}
+358   \textcolor{keywordflow}{if}(m_database != \textcolor{stringliteral}{"DQM4HEP"})
+359     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(\textcolor{stringliteral}{"USE DQM4HEP ;"}));
+360 
+361   StatusCode statusCode = this->execute(query.str());
+362 
+363   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+364   \{
+365     \textcolor{comment}{// select again the current database}
+366     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+367 
+368     \textcolor{keywordflow}{return} statusCode;
+369   \}
+370 
+371   \textcolor{comment}{// select again the current database}
+372   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+373 
+374   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+375 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!is\+Connected@{is\+Connected}}
+\index{is\+Connected@{is\+Connected}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::is\+Connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_ab2c5f57ae704a855112521281f3fa4ca}
+
+
+Whether a connection is being handled. 
+
+
+
+Definition at line 229 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References m\+\_\+is\+Connected.
+
+
+
+Referenced by connect(), disconnect(), dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download(), execute(), insert\+Config\+File(), query(), query\+Config\+File\+Content(), query\+Config\+File\+Description(), query\+Raw(), query\+Vector(), set(), and $\sim$\+D\+Q\+M\+D\+B\+Interface().
+
+
+\begin{DoxyCode}
+230 \{
+231   \textcolor{keywordflow}{return} m_isConnected;
+232 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!query@{query}}
+\index{query@{query}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{query, }
+\item[{T \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDBInterface_a11fa8e6ba898532c4480de938374cb97}
+
+
+Send query to database. 
+
+The result is streamed in type T using \doxyref{D\+Q\+M4\+H\+E\+P\+::string\+To\+Type()}{p.}{classdqm4hep_1_1DQM4HEP_a68fb565179589334d701c6a5e2ebfef7} 
+
+Definition at line 154 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, is\+Connected(), m\+\_\+p\+My\+S\+Q\+L, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+
+Referenced by connect(), insert\+Config\+File(), query\+Config\+File\+Content(), and query\+Config\+File\+Description().
+
+
+\begin{DoxyCode}
+155 \{
+156   \textcolor{keywordflow}{if}(!this->isConnected())
+157     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+158 
+159   \textcolor{keywordflow}{if}(mysql\_query(m_pMySQL, query.c\_str()))
+160   \{
+161     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL query failed : "} << mysql\_error(m_pMySQL) << std::endl;
+162     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+163   \}
+164 
+165   MYSQL\_RES *pMySQLResult = mysql\_store\_result(m_pMySQL);
+166 
+167   \textcolor{keywordflow}{if}(!pMySQLResult)
+168   \{
+169     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL store result failed : "} << mysql\_error(
+      m_pMySQL) << std::endl;
+170     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+171   \}
+172 
+173   MYSQL\_ROW row = mysql\_fetch\_row(pMySQLResult);
+174 
+175   std::cout << \textcolor{stringliteral}{"DQMDBInterface::query : MySQL row[0] = "} << row[0] << std::endl;
+176 
+177   \textcolor{keywordflow}{if}(!DQM4HEP::stringToType(row[0], result))
+178   \{
+179     mysql\_free\_result(pMySQLResult);
+180     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+181   \}
+182 
+183   std::cout << \textcolor{stringliteral}{"DQMDBInterface::query : MySQL result = "} << result << std::endl;
+184 
+185   mysql\_free\_result(pMySQLResult);
+186 
+187   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+188 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!query\+Config\+File\+Content@{query\+Config\+File\+Content}}
+\index{query\+Config\+File\+Content@{query\+Config\+File\+Content}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{query\+Config\+File\+Content}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Config\+File\+Content (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{config\+File\+Name, }
+\item[{std\+::string \&}]{file\+Contents}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a0cac0fdcfe4853c487c6720d5724d432}
+
+
+Query a config file content stored in the \doxyref{D\+Q\+M4\+H\+E\+P}{p.}{classdqm4hep_1_1DQM4HEP} data base (table C\+O\+N\+F\+I\+G\+\_\+\+F\+I\+L\+E\+S) 
+
+
+
+Definition at line 236 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References execute(), is\+Connected(), m\+\_\+database, query(), query\+Raw(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download().
+
+
+\begin{DoxyCode}
+237 \{
+238   \textcolor{keywordflow}{if}(configFileName.empty())
+239     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+240 
+241   \textcolor{keywordflow}{if}(!this->isConnected())
+242     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+243 
+244   \textcolor{comment}{// select DQM4HEP database}
+245   \textcolor{keywordflow}{if}(m_database != \textcolor{stringliteral}{"DQM4HEP"})
+246     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(\textcolor{stringliteral}{"USE DQM4HEP ;"}));
+247 
+248   std::string queryUse = \textcolor{stringliteral}{"USE "} + m_database + \textcolor{stringliteral}{" ;"};
+249 
+250   std::stringstream query;
+251   query << \textcolor{stringliteral}{"SELECT CONTENTS FROM CONFIG\_FILES WHERE FILE\_NAME=\(\backslash\)""} << configFileName << \textcolor{stringliteral}{"\(\backslash\)" ;"};
+252 
+253   \textcolor{keywordtype}{void} *pFileContent = NULL;
+254   StatusCode statusCode = this->queryRaw(query.str(), pFileContent);
+255 
+256   \textcolor{keywordflow}{if}(statusCode != STATUS\_CODE\_SUCCESS)
+257   \{
+258     \textcolor{comment}{// select again the current database}
+259     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+260 
+261     \textcolor{keywordflow}{return} statusCode;
+262   \}
+263 
+264   fileContents = (\textcolor{keywordtype}{char} *) pFileContent;
+265 
+266   \textcolor{comment}{// select again the current database}
+267   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+268 
+269   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+270 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!query\+Config\+File\+Description@{query\+Config\+File\+Description}}
+\index{query\+Config\+File\+Description@{query\+Config\+File\+Description}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{query\+Config\+File\+Description}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Config\+File\+Description (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{config\+File\+Name, }
+\item[{std\+::string \&}]{file\+Description}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a52baec59f990896792e19a452f8b3944}
+
+
+Query a config file description. 
+
+
+
+Definition at line 274 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References execute(), is\+Connected(), m\+\_\+database, query(), query\+Raw(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+275 \{
+276   \textcolor{keywordflow}{if}(configFileName.empty())
+277     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+278 
+279   \textcolor{keywordflow}{if}(!this->isConnected())
+280     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+281 
+282   \textcolor{comment}{// select DQM4HEP database}
+283   \textcolor{keywordflow}{if}(m_database != \textcolor{stringliteral}{"DQM4HEP"})
+284     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(\textcolor{stringliteral}{"USE DQM4HEP ;"}));
+285 
+286   std::string queryUse = \textcolor{stringliteral}{"USE "} + m_database + \textcolor{stringliteral}{" ;"};
+287 
+288   std::stringstream query;
+289   query << \textcolor{stringliteral}{"SELECT DESCRIPTION FROM CONFIG\_FILES WHERE FILE\_NAME=\(\backslash\)""} << configFileName << \textcolor{stringliteral}{"\(\backslash\)" ;"};
+290 
+291   \textcolor{keywordtype}{void} *pFileDescription = NULL;
+292   StatusCode statusCode = this->queryRaw(query.str(), pFileDescription);
+293 
+294   \textcolor{keywordflow}{if}(statusCode != STATUS\_CODE\_SUCCESS)
+295   \{
+296     \textcolor{comment}{// select again the current database}
+297     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+298 
+299     \textcolor{keywordflow}{return} statusCode;
+300   \}
+301 
+302   fileDescription = (\textcolor{keywordtype}{char} *) pFileDescription;
+303 
+304   \textcolor{comment}{// select again the current database}
+305   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->execute(queryUse));
+306 
+307   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+308 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!query\+Raw@{query\+Raw}}
+\index{query\+Raw@{query\+Raw}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{query\+Raw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Raw (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{query, }
+\item[{void $\ast$\&}]{p\+Result}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a1658f3bdcd114937e0179fc89e1ba896}
+
+
+Send query to database The result is not converted. 
+
+
+
+Definition at line 178 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, is\+Connected(), and m\+\_\+p\+My\+S\+Q\+L.
+
+
+
+Referenced by query\+Config\+File\+Content(), and query\+Config\+File\+Description().
+
+
+\begin{DoxyCode}
+179 \{
+180   pResult = NULL;
+181 
+182   \textcolor{keywordflow}{if}(!this->isConnected())
+183     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+184 
+185   \textcolor{keywordflow}{if}(mysql\_query(m_pMySQL, query.c\_str()))
+186   \{
+187     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL query failed : "} << mysql\_error(m_pMySQL) << std::endl;
+188     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+189   \}
+190 
+191   MYSQL\_RES *pMySQLResult = mysql\_store\_result(m_pMySQL);
+192 
+193   \textcolor{keywordflow}{if}(!pMySQLResult)
+194   \{
+195     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL store result failed : "} << mysql\_error(
+      m_pMySQL) << std::endl;
+196     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+197   \}
+198 
+199   MYSQL\_ROW row = mysql\_fetch\_row(pMySQLResult);
+200 
+201   pResult = (\textcolor{keywordtype}{void} *) row[0];
+202 
+203   mysql\_free\_result(pMySQLResult);
+204 
+205   \textcolor{keywordflow}{if}(NULL == pResult)
+206     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+207 
+208   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+209 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!query\+Vector@{query\+Vector}}
+\index{query\+Vector@{query\+Vector}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{query\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Vector (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{query, }
+\item[{std\+::vector$<$ T $>$ \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDBInterface_a4dba8c9f88cf00e6a49cd7c335fe8bd5}
+
+
+Send query to database. 
+
+The result is streamed in a vector. Each value of the vector is streamed using \doxyref{D\+Q\+M4\+H\+E\+P\+::string\+To\+Type()}{p.}{classdqm4hep_1_1DQM4HEP_a68fb565179589334d701c6a5e2ebfef7} 
+
+Definition at line 193 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, is\+Connected(), m\+\_\+p\+My\+S\+Q\+L, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+\begin{DoxyCode}
+194 \{
+195   \textcolor{keywordflow}{if}(!this->isConnected())
+196     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+197 
+198   \textcolor{keywordflow}{if}(mysql\_query(m_pMySQL, query.c\_str()))
+199   \{
+200     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL query failed : "} << mysql\_error(m_pMySQL) << std::endl;
+201     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+202   \}
+203 
+204   MYSQL\_RES *pMySQLResult = mysql\_store\_result(m_pMySQL);
+205 
+206   \textcolor{keywordflow}{if}(!pMySQLResult)
+207   \{
+208     streamlog\_out(ERROR) << \textcolor{stringliteral}{"MySQL store result failed : "} << mysql\_error(
+      m_pMySQL) << std::endl;
+209     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+210   \}
+211 
+212   MYSQL\_ROW row;
+213 
+214   \textcolor{keywordflow}{while}( (row = mysql\_fetch\_row(pMySQLResult)) )
+215   \{
+216     T value = T();
+217 
+218     \textcolor{keywordflow}{if}(!DQM4HEP::stringToType(row[0], value))
+219       \textcolor{keywordflow}{continue};
+220 
+221     result.push\_back(value);
+222   \}
+223 
+224   mysql\_free\_result(pMySQLResult);
+225 
+226   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+227 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!set@{set}}
+\index{set@{set}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::set (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host, }
+\item[{const std\+::string \&}]{user, }
+\item[{const std\+::string \&}]{password, }
+\item[{const std\+::string \&}]{database}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBInterface_a7adb3968d6e3e205e54508f4a6681c5c}
+
+
+Set host, user, password and database. 
+
+Not possible if a connection is being handled. Use \doxyref{disconnect()}{p.}{classdqm4hep_1_1DQMDBInterface_a38b368a37ddf9f4eff4fbaa11c75d5e3} first and then \doxyref{connect()}{p.}{classdqm4hep_1_1DQMDBInterface_af1a245e65824536dd1ec4845be027576} 
+
+Definition at line 135 of file D\+Q\+M\+D\+B\+Interface.\+cc.
+
+
+
+References is\+Connected(), m\+\_\+database, m\+\_\+host, m\+\_\+password, and m\+\_\+user.
+
+
+
+Referenced by connect(), and D\+Q\+M\+D\+B\+Interface().
+
+
+\begin{DoxyCode}
+136 \{
+137   \textcolor{keywordflow}{if}(this->isConnected())
+138     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+139 
+140   m_host = host;
+141   m_user = user;
+142   m_password = password;
+143   m_database = database;
+144 
+145   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+146 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+database@{m\+\_\+database}}
+\index{m\+\_\+database@{m\+\_\+database}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+database}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+database\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_abf72094813417c21255de037a3ec6fa0}
+
+
+Definition at line 145 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), get\+Data\+Base(), insert\+Config\+File(), query\+Config\+File\+Content(), query\+Config\+File\+Description(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+host@{m\+\_\+host}}
+\index{m\+\_\+host@{m\+\_\+host}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+host}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+host\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_a1e4f220cd0196bd2abfe69348728ae84}
+
+
+Definition at line 142 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), get\+Host(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+is\+Connected@{m\+\_\+is\+Connected}}
+\index{m\+\_\+is\+Connected@{m\+\_\+is\+Connected}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+is\+Connected\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_a6e6bfcfca61f37006732dd49c726c00f}
+
+
+Definition at line 147 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), disconnect(), and is\+Connected().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+password@{m\+\_\+password}}
+\index{m\+\_\+password@{m\+\_\+password}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+password}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+password\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_ad3b5e985dcf27bdcf5c8978571498c76}
+
+
+Definition at line 144 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), get\+Password(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+p\+My\+S\+Q\+L@{m\+\_\+p\+My\+S\+Q\+L}}
+\index{m\+\_\+p\+My\+S\+Q\+L@{m\+\_\+p\+My\+S\+Q\+L}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+p\+My\+S\+Q\+L}]{\setlength{\rightskip}{0pt plus 5cm}M\+Y\+S\+Q\+L$\ast$ dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+p\+My\+S\+Q\+L\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_a37ff87a1f26d0beaeba3a0c25462fbc2}
+
+
+Definition at line 140 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), disconnect(), execute(), query(), query\+Raw(), and query\+Vector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}!m\+\_\+user@{m\+\_\+user}}
+\index{m\+\_\+user@{m\+\_\+user}!dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface@{dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface}}
+\subsubsection[{m\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::m\+\_\+user\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBInterface_ab7b6d8c14629c967a0bd1193464f58e0}
+
+
+Definition at line 143 of file D\+Q\+M\+D\+B\+Interface.\+h.
+
+
+
+Referenced by connect(), get\+User(), and set().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+D\+B\+Interface.\+h}\item 
+{\bf D\+Q\+M\+D\+B\+Interface.\+cc}\end{DoxyCompactItemize}

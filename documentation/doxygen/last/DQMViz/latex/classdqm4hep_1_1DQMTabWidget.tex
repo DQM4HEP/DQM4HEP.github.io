@@ -1,0 +1,85 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Tab\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMTabWidget}\index{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget@{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Tab\+Widget}{p.}{classdqm4hep_1_1DQMTabWidget} class.  
+
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Tab\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMTabWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Tab\+Widget} (Q\+Widget $\ast$p\+Parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+Q\+Tab\+Bar $\ast$ {\bf tab\+Bar} () const 
+\begin{DoxyCompactList}\small\item\em Get the tab bar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Tab\+Widget}{p.}{classdqm4hep_1_1DQMTabWidget} class. 
+
+Definition at line 53 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget@{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget}!D\+Q\+M\+Tab\+Widget@{D\+Q\+M\+Tab\+Widget}}
+\index{D\+Q\+M\+Tab\+Widget@{D\+Q\+M\+Tab\+Widget}!dqm4hep\+::\+D\+Q\+M\+Tab\+Widget@{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget}}
+\subsubsection[{D\+Q\+M\+Tab\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Tab\+Widget\+::\+D\+Q\+M\+Tab\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMTabWidget_a201c540aa9757d2cec860d2da93d0cf4}
+
+
+Constructor. 
+
+
+
+Definition at line 68 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+\begin{DoxyCode}
+69   : QTabWidget(pParent)
+70 \{
+71   \textcolor{comment}{/* nop */}
+72 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget@{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget}!tab\+Bar@{tab\+Bar}}
+\index{tab\+Bar@{tab\+Bar}!dqm4hep\+::\+D\+Q\+M\+Tab\+Widget@{dqm4hep\+::\+D\+Q\+M\+Tab\+Widget}}
+\subsubsection[{tab\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tab\+Bar $\ast$ dqm4hep\+::\+D\+Q\+M\+Tab\+Widget\+::tab\+Bar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMTabWidget_ab4fdfaaa6ded22bc663e52decd6e1c5b}
+
+
+Get the tab bar. 
+
+
+
+Definition at line 76 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::create\+Context\+Menu(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::event\+Filter().
+
+
+\begin{DoxyCode}
+77 \{
+78   \textcolor{keywordflow}{return} QTabWidget::tabBar();
+79 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas\+View.\+cc}\end{DoxyCompactItemize}

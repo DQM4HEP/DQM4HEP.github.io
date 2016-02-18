@@ -1,0 +1,287 @@
+\section{T\+C\+L\+A\+P\+:\+:Xor\+Handler Class Reference}
+\label{classTCLAP_1_1XorHandler}\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+
+
+This class handles lists of \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s that are to be X\+O\+R'd on the command line.  
+
+
+
+
+{\ttfamily \#include $<$Xor\+Handler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Xor\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf add} (std\+::vector$<$ {\bf Arg} $\ast$ $>$ \&ors)
+\begin{DoxyCompactList}\small\item\em Add a list of Arg$\ast$'s that will be orred together. \end{DoxyCompactList}\item 
+int {\bf check} (const {\bf Arg} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Checks whether the specified \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is in one of the xor lists and if it does match one, returns the size of the xor list that the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} matched. \end{DoxyCompactList}\item 
+std\+::string {\bf short\+Usage} ()
+\begin{DoxyCompactList}\small\item\em Returns the X\+O\+R specific short usage. \end{DoxyCompactList}\item 
+void {\bf print\+Long\+Usage} (std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Prints the X\+O\+R specific long usage. \end{DoxyCompactList}\item 
+bool {\bf contains} (const {\bf Arg} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Simply checks whether the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is contained in one of the arg lists. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ {\bf Arg} $\ast$ $>$ $>$ \& {\bf get\+Xor\+List} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::vector$<$ {\bf Arg} $\ast$ $>$ $>$ {\bf \+\_\+or\+List}
+\begin{DoxyCompactList}\small\item\em The list of of lists of \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s to be or'd together. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class handles lists of \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s that are to be X\+O\+R'd on the command line. 
+
+This is used by \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and you shouldn't ever use it. 
+
+Definition at line 38 of file Xor\+Handler.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!Xor\+Handler@{Xor\+Handler}}
+\index{Xor\+Handler@{Xor\+Handler}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{Xor\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Xor\+Handler\+::\+Xor\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1XorHandler_a195391f50b7fe5eb939c2f6d236f571e}
+
+
+Constructor. 
+
+Does nothing. 
+
+Definition at line 52 of file Xor\+Handler.\+h.
+
+
+\begin{DoxyCode}
+52 : _orList(std::vector< std::vector<Arg*> >()) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!add@{add}}
+\index{add@{add}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Xor\+Handler\+::add (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf Arg} $\ast$ $>$ \&}]{ors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1XorHandler_a76f156bf36a8aede334801aa242f31b9}
+
+
+Add a list of Arg$\ast$'s that will be orred together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ors} & -\/ list of Arg$\ast$ that will be xor'd. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Xor\+Handler.\+h.
+
+
+
+References \+\_\+or\+List.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::xor\+Add().
+
+
+\begin{DoxyCode}
+96 \{ 
+97   _orList.push\_back( ors );
+98 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!check@{check}}
+\index{check@{check}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}int T\+C\+L\+A\+P\+::\+Xor\+Handler\+::check (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} $\ast$}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1XorHandler_a3df7722e4c4c5d331de69fc902336b00}
+
+
+Checks whether the specified \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is in one of the xor lists and if it does match one, returns the size of the xor list that the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} matched. 
+
+If the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} matches, then it also sets the rest of the \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s in the list. You shouldn't use this. 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ The \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Xor\+Handler.\+h.
+
+
+
+References \+\_\+or\+List, T\+C\+L\+A\+P\+::\+Arg\+::is\+Required(), and T\+C\+L\+A\+P\+::\+Arg\+::is\+Set().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::parse().
+
+
+\begin{DoxyCode}
+101 \{
+102   \textcolor{comment}{// iterate over each XOR list}
+103   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < _orList.size(); i++ )
+104   \{
+105     \textcolor{comment}{// if the XOR list contains the arg..}
+106     ArgVectorIterator ait = std::find( _orList[i].begin(), 
+107                                        _orList[i].end(), a );
+108     \textcolor{keywordflow}{if} ( ait != _orList[i].end() )
+109     \{
+110       \textcolor{comment}{// first check to see if a mutually exclusive switch}
+111       \textcolor{comment}{// has not already been set}
+112       \textcolor{keywordflow}{for} ( ArgVectorIterator it = _orList[i].begin(); 
+113           it != _orList[i].end(); 
+114           it++ )
+115         \textcolor{keywordflow}{if} ( a != (*it) && (*it)->isSet() )
+116           \textcolor{keywordflow}{throw}(CmdLineParseException(
+117                 \textcolor{stringliteral}{"Mutually exclusive argument already set!"},
+118                 (*it)->toString()));
+119 
+120       \textcolor{comment}{// go through and set each arg that is not a}
+121       \textcolor{keywordflow}{for} ( ArgVectorIterator it = _orList[i].begin(); 
+122           it != _orList[i].end(); 
+123           it++ )
+124         \textcolor{keywordflow}{if} ( a != (*it) )
+125           (*it)->xorSet();
+126 
+127       \textcolor{comment}{// return the number of required args that have now been set}
+128       \textcolor{keywordflow}{if} ( (*ait)->allowMore() )
+129         \textcolor{keywordflow}{return} 0;
+130       \textcolor{keywordflow}{else}
+131         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(_orList[i].size());
+132     \}
+133   \}
+134 
+135   \textcolor{keywordflow}{if} ( a->isRequired() )
+136     \textcolor{keywordflow}{return} 1;
+137   \textcolor{keywordflow}{else}
+138     \textcolor{keywordflow}{return} 0;
+139 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!contains@{contains}}
+\index{contains@{contains}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Xor\+Handler\+::contains (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} $\ast$}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1XorHandler_a1a74fab4667cc591a1e3094c91bc942d}
+
+
+Simply checks whether the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is contained in one of the arg lists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ The \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file Xor\+Handler.\+h.
+
+
+
+References \+\_\+or\+List.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+long\+Usage(), T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+short\+Usage(), and T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::usage().
+
+
+\begin{DoxyCode}
+142 \{
+143   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < _orList.size(); i++ )
+144     \textcolor{keywordflow}{for} ( ArgVectorIterator it = _orList[i].begin(); 
+145         it != _orList[i].end(); 
+146         it++ )  
+147       \textcolor{keywordflow}{if} ( a == (*it) )
+148         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+149 
+150   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+151 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!get\+Xor\+List@{get\+Xor\+List}}
+\index{get\+Xor\+List@{get\+Xor\+List}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{get\+Xor\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ {\bf Arg} $\ast$ $>$ $>$ \& T\+C\+L\+A\+P\+::\+Xor\+Handler\+::get\+Xor\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1XorHandler_a0e0d95c697d227cc51f82424b8530182}
+
+
+Definition at line 153 of file Xor\+Handler.\+h.
+
+
+
+References \+\_\+or\+List.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+long\+Usage(), T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+short\+Usage(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), and T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::usage().
+
+
+\begin{DoxyCode}
+154 \{
+155   \textcolor{keywordflow}{return} _orList;
+156 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!print\+Long\+Usage@{print\+Long\+Usage}}
+\index{print\+Long\+Usage@{print\+Long\+Usage}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{print\+Long\+Usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Xor\+Handler\+::print\+Long\+Usage (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1XorHandler_a257a855934eb343a0fad3c4e5fe5ff57}
+
+
+Prints the X\+O\+R specific long usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & -\/ Stream to print to. \\
+\hline
+\end{DoxyParams}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!short\+Usage@{short\+Usage}}
+\index{short\+Usage@{short\+Usage}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{short\+Usage}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Xor\+Handler\+::short\+Usage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1XorHandler_aca185a80e9df6e4250a230fa5aec7891}
+
+
+Returns the X\+O\+R specific short usage. 
+
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}!\+\_\+or\+List@{\+\_\+or\+List}}
+\index{\+\_\+or\+List@{\+\_\+or\+List}!T\+C\+L\+A\+P\+::\+Xor\+Handler@{T\+C\+L\+A\+P\+::\+Xor\+Handler}}
+\subsubsection[{\+\_\+or\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<${\bf Arg}$\ast$$>$ $>$ T\+C\+L\+A\+P\+::\+Xor\+Handler\+::\+\_\+or\+List\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1XorHandler_a4ebd5b96e23a0ab03bdd431fe622d4e1}
+
+
+The list of of lists of \doxyref{Arg}{p.}{classTCLAP_1_1Arg}'s to be or'd together. 
+
+
+
+Definition at line 45 of file Xor\+Handler.\+h.
+
+
+
+Referenced by add(), check(), contains(), and get\+Xor\+List().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Xor\+Handler.\+h}\end{DoxyCompactItemize}

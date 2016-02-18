@@ -1,0 +1,155 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Singleton$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1DQMSingleton}\index{dqm4hep\+::\+D\+Q\+M\+Singleton$<$ T $>$@{dqm4hep\+::\+D\+Q\+M\+Singleton$<$ T $>$}}
+
+
+\doxyref{D\+Q\+M\+Singleton}{p.}{classdqm4hep_1_1DQMSingleton} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Singleton.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Singleton} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Singleton} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T $\ast$ {\bf instance} ()
+\begin{DoxyCompactList}\small\item\em Return a unique instance of the class. \end{DoxyCompactList}\item 
+static void {\bf kill} ()
+\begin{DoxyCompactList}\small\item\em Kill the unique instance of the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static T $\ast$ {\bf m\+\_\+p\+Instance} = N\+U\+L\+L
+\begin{DoxyCompactList}\small\item\em The unique instance of the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+D\+Q\+M\+Singleton$<$ T $>$}
+
+\doxyref{D\+Q\+M\+Singleton}{p.}{classdqm4hep_1_1DQMSingleton} class. 
+
+Definition at line 41 of file D\+Q\+M\+Singleton.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}!D\+Q\+M\+Singleton@{D\+Q\+M\+Singleton}}
+\index{D\+Q\+M\+Singleton@{D\+Q\+M\+Singleton}!dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}}
+\subsubsection[{D\+Q\+M\+Singleton}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Singleton}$<$ T $>$\+::{\bf D\+Q\+M\+Singleton} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMSingleton_aeccb3f3299b359a55cb534d60c09d288}
+
+
+Constructor. 
+
+
+
+Definition at line 73 of file D\+Q\+M\+Singleton.\+h.
+
+
+\begin{DoxyCode}
+74 \{
+75   \textcolor{comment}{/* nop */}
+76 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}!````~D\+Q\+M\+Singleton@{$\sim$\+D\+Q\+M\+Singleton}}
+\index{````~D\+Q\+M\+Singleton@{$\sim$\+D\+Q\+M\+Singleton}!dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Singleton}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Singleton}$<$ T $>$\+::$\sim${\bf D\+Q\+M\+Singleton} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMSingleton_a411a8ef16d3c646d40b6603b30608111}
+
+
+Destructor. 
+
+
+
+Definition at line 81 of file D\+Q\+M\+Singleton.\+h.
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{comment}{/* nop */}
+84 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}!instance@{instance}}
+\index{instance@{instance}!dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf dqm4hep\+::\+D\+Q\+M\+Singleton}$<$ T $>$\+::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMSingleton_a79e25b3607a5c4effdb74afa5d4b43a6}
+
+
+Return a unique instance of the class. 
+
+
+
+Definition at line 89 of file D\+Q\+M\+Singleton.\+h.
+
+
+\begin{DoxyCode}
+90 \{
+91   \textcolor{keywordflow}{if}(NULL == m_pInstance)
+92     m_pInstance = \textcolor{keyword}{new} T();
+93 
+94   \textcolor{keywordflow}{return} m_pInstance;
+95 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}!kill@{kill}}
+\index{kill@{kill}!dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}}
+\subsubsection[{kill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+D\+Q\+M\+Singleton}$<$ T $>$\+::kill (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMSingleton_a7a920c8cb32170fee19dd97d68763fbf}
+
+
+Kill the unique instance of the class. 
+
+
+
+Definition at line 100 of file D\+Q\+M\+Singleton.\+h.
+
+
+\begin{DoxyCode}
+101 \{
+102   \textcolor{keywordflow}{if}(NULL == m_pInstance)
+103     \textcolor{keywordflow}{return};
+104 
+105   \textcolor{keyword}{delete} m_pInstance;
+106   m_pInstance = NULL;
+107 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}!m\+\_\+p\+Instance@{m\+\_\+p\+Instance}}
+\index{m\+\_\+p\+Instance@{m\+\_\+p\+Instance}!dqm4hep\+::\+D\+Q\+M\+Singleton@{dqm4hep\+::\+D\+Q\+M\+Singleton}}
+\subsubsection[{m\+\_\+p\+Instance}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T $\ast$ {\bf dqm4hep\+::\+D\+Q\+M\+Singleton}$<$ T $>$\+::m\+\_\+p\+Instance = N\+U\+L\+L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1DQMSingleton_a5d9c8994bd08dbe746cddf519626f4ca}
+
+
+The unique instance of the class. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Singleton.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Singleton.\+h}\end{DoxyCompactItemize}

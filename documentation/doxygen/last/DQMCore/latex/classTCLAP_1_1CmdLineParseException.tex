@@ -1,0 +1,72 @@
+\section{T\+C\+L\+A\+P\+:\+:Cmd\+Line\+Parse\+Exception Class Reference}
+\label{classTCLAP_1_1CmdLineParseException}\index{T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception@{T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception}}
+
+
+Thrown from \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when the arguments on the command line are not properly specified, e.\+g.  
+
+
+
+
+{\ttfamily \#include $<$Arg\+Exception.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Cmd\+Line\+Parse\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1CmdLineParseException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cmd\+Line\+Parse\+Exception} (const std\+::string \&text=\char`\"{}undefined exception\char`\"{}, const std\+::string \&id=\char`\"{}undefined\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Thrown from \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when the arguments on the command line are not properly specified, e.\+g. 
+
+too many arguments, required argument missing, etc. 
+
+Definition at line 143 of file Arg\+Exception.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception@{T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception}!Cmd\+Line\+Parse\+Exception@{Cmd\+Line\+Parse\+Exception}}
+\index{Cmd\+Line\+Parse\+Exception@{Cmd\+Line\+Parse\+Exception}!T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception@{T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception}}
+\subsubsection[{Cmd\+Line\+Parse\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Cmd\+Line\+Parse\+Exception\+::\+Cmd\+Line\+Parse\+Exception (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{text = {\ttfamily \char`\"{}undefined~exception\char`\"{}}, }
+\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}undefined\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1CmdLineParseException_a3b612ba299dd699845ea108b5eaa3249}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ The text of the exception. \\
+\hline
+{\em id} & -\/ The text identifying the argument source of the exception. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 152 of file Arg\+Exception.\+h.
+
+
+\begin{DoxyCode}
+154       : ArgException( text, 
+155                       \textcolor{keywordtype}{id},
+156               std::string( \textcolor{stringliteral}{"Exception found when the values "}) +
+157               std::string( \textcolor{stringliteral}{"on the command line do not meet "}) +
+158               std::string( \textcolor{stringliteral}{"the requirements of the defined "}) +
+159               std::string( \textcolor{stringliteral}{"Args."} ))
+160     \{ \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arg\+Exception.\+h}\end{DoxyCompactItemize}

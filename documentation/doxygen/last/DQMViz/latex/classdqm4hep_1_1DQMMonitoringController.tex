@@ -1,0 +1,2077 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitoring\+Controller Class Reference}
+\label{classdqm4hep_1_1DQMMonitoringController}\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+
+
+\doxyref{D\+Q\+M\+Monitoring\+Controller}{p.}{classdqm4hep_1_1DQMMonitoringController} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitoring\+Controller.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitoring\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitoringController}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf query\+Subscribed\+Monitor\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Send a query to the all collectors to send back the subscribed monitor elements. \end{DoxyCompactList}\item 
+void {\bf open\+File} ()
+\begin{DoxyCompactList}\small\item\em Open a file from a file dialog. \end{DoxyCompactList}\item 
+void {\bf open\+File} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Workhorse of the openfile() method. \end{DoxyCompactList}\item 
+void {\bf save\+As} ()
+\begin{DoxyCompactList}\small\item\em Open a file dialog and save the current view and model to the target file. \end{DoxyCompactList}\item 
+void {\bf save\+As} (const std\+::string \&file\+Name) const 
+\begin{DoxyCompactList}\small\item\em Workhorse of the \doxyref{save\+As()}{p.}{classdqm4hep_1_1DQMMonitoringController_a6cb3ef5c0b246a04d57d61283df15d70} method. \end{DoxyCompactList}\item 
+void {\bf open\+Browser} ()
+\begin{DoxyCompactList}\small\item\em Open a browser widget in a separate window. \end{DoxyCompactList}\item 
+void {\bf about\+D\+Q\+M4\+H\+E\+P} ()
+\begin{DoxyCompactList}\small\item\em Open about D\+Q\+M4\+H\+E\+P pop up dialog. \end{DoxyCompactList}\item 
+void {\bf open\+Doxygen\+Doc} ()
+\begin{DoxyCompactList}\small\item\em Open the doxygen documentation (if exists) in the default web browser. \end{DoxyCompactList}\item 
+void {\bf open\+User\+Guide} ()
+\begin{DoxyCompactList}\small\item\em Open user guide (pdf) in the default pdf reader. \end{DoxyCompactList}\item 
+void {\bf open\+Github\+Page} ()
+\begin{DoxyCompactList}\small\item\em Open the D\+Q\+M4\+H\+E\+P github page in the default web browser. \end{DoxyCompactList}\item 
+void {\bf open\+Issues\+Page} ()
+\begin{DoxyCompactList}\small\item\em Open the D\+Q\+M4\+H\+E\+P issues github page in the default web browser. \end{DoxyCompactList}\item 
+void {\bf open\+Monitor\+Element\+Info} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Open a monitor element info widget in a dialog. \end{DoxyCompactList}\item 
+void {\bf open\+Quality\+Test\+Results} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Open a monitor element info widget in a dialog. \end{DoxyCompactList}\item 
+void {\bf open\+In\+R\+O\+O\+T\+Window} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Fork a process and open the monitor element in root canvas. \end{DoxyCompactList}\item 
+void {\bf save\+As} ({\bf D\+Q\+M\+Canvas\+Area} $\ast$p\+Canvas\+Area)
+\begin{DoxyCompactList}\small\item\em Save all the canvases of the canvas area in a file Different file format available. \end{DoxyCompactList}\item 
+void {\bf save\+As} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas)
+\begin{DoxyCompactList}\small\item\em Save the canvas in a file Different file format available. \end{DoxyCompactList}\item 
+void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the controller. \end{DoxyCompactList}\item 
+void {\bf clear\+View\+And\+Model} ()
+\begin{DoxyCompactList}\small\item\em Clear the model and view of the monitoring system. \end{DoxyCompactList}\item 
+void {\bf clear\+Monitoring} ()
+\begin{DoxyCompactList}\small\item\em Clear the model, view and controller. \end{DoxyCompactList}\item 
+void {\bf quit} ()
+\begin{DoxyCompactList}\small\item\em Exit the monitoring application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring\+Controller} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Monitoring\+Controller} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+void {\bf log} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message in the application. \end{DoxyCompactList}\item 
+void {\bf log} (Log\+Level level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log in the logger with a log level. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ {\bf create\+Client} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Create a monitor element client from the collector name. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ {\bf get\+Client} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Get a registered client. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ {\bf find\+Client} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Find a client. \end{DoxyCompactList}\item 
+void {\bf remove\+Client} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Remove a client from the application. \end{DoxyCompactList}\item 
+void {\bf create\+Empty\+Monitor\+Elements} (const std\+::string \&collector\+Name, const D\+Q\+M\+Monitor\+Element\+Info\+List \&name\+List)
+\begin{DoxyCompactList}\small\item\em Fill the model and the view view empty monitor elements. \end{DoxyCompactList}\item 
+void {\bf subscribe} (const std\+::string \&collector\+Name, const D\+Q\+M\+Monitor\+Element\+Request \&request)
+\begin{DoxyCompactList}\small\item\em Subscribe to monitor elements of the target collector. \end{DoxyCompactList}\item 
+void {\bf unsubscribe} (const std\+::string \&collector\+Name, const D\+Q\+M\+Monitor\+Element\+Request \&request)
+\begin{DoxyCompactList}\small\item\em Un-\/subscribe to monitor elements of the target collector. \end{DoxyCompactList}\item 
+void {\bf query\+Subscribed\+Monitor\+Elements} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Send a query to the target collector to send back the subscribed monitor elements. \end{DoxyCompactList}\item 
+void {\bf query\+Subscribed\+Monitor\+Elements} (const std\+::string \&collector\+Name, const D\+Q\+M\+Monitor\+Element\+Request \&request)
+\begin{DoxyCompactList}\small\item\em Send a query to the target collector to subscribe to the element list (if not done yet) and send back the monitor elements in the request. \end{DoxyCompactList}\item 
+void {\bf unsubscribe} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Un-\/subscribe to all monitor elements of the target collector. \end{DoxyCompactList}\item 
+void {\bf set\+Update\+Mode} (bool update\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the update mode of the target collector. \end{DoxyCompactList}\item 
+bool {\bf get\+Update\+Mode} () const 
+\begin{DoxyCompactList}\small\item\em Get the update mode. \end{DoxyCompactList}\item 
+void {\bf query\+Update} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Send a query to the collector to first subscribed to the element if not done yet, then to send back the element if collected on the server. \end{DoxyCompactList}\item 
+void {\bf query\+Update} (const {\bf D\+Q\+M\+Gui\+Monitor\+Element\+List} \&monitor\+Element\+List)
+\begin{DoxyCompactList}\small\item\em Send a query to the collector to first subscribed to the elements if not done yet, then to send back the elements if collected on the server. \end{DoxyCompactList}\item 
+Q\+Color {\bf get\+Color} (D\+Q\+M\+Quality quality) const 
+\begin{DoxyCompactList}\small\item\em Get the color associated to the data quality. \end{DoxyCompactList}\item 
+Q\+Icon {\bf get\+Icon} (D\+Q\+M\+Quality quality) const 
+\begin{DoxyCompactList}\small\item\em Get the icon associated to the data quality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ std\+::string, \\*
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ $>$ {\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf receive\+Monitor\+Element\+Publication} (const D\+Q\+M\+Monitor\+Element\+Publication \&publication)
+\begin{DoxyCompactList}\small\item\em Call back method called by monitor element clients when a publication is received. \end{DoxyCompactList}\item 
+void {\bf handle\+Server\+Startup} ()
+\begin{DoxyCompactList}\small\item\em Send the list of subscribed elements to the collector. \end{DoxyCompactList}\item 
+void {\bf handle\+Server\+Shutdown} ()
+\begin{DoxyCompactList}\small\item\em Send the list of subscribed elements to the collector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+bool {\bf m\+\_\+update\+Mode}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map} {\bf m\+\_\+client\+Map}
+\item 
+Q\+Map$<$ Log\+Level, Q\+String $>$ {\bf m\+\_\+log\+Level\+To\+Text\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitoring\+Controller}{p.}{classdqm4hep_1_1DQMMonitoringController} class. 
+
+Definition at line 54 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map@{D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map}}
+\index{D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map@{D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$std\+::string, {\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client}$\ast$$>$ {\bf dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitoringController_a53d326cd446cbddf37f816136704a1c0}
+
+
+Definition at line 58 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!D\+Q\+M\+Monitoring\+Controller@{D\+Q\+M\+Monitoring\+Controller}}
+\index{D\+Q\+M\+Monitoring\+Controller@{D\+Q\+M\+Monitoring\+Controller}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{D\+Q\+M\+Monitoring\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::\+D\+Q\+M\+Monitoring\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a86ccd2de053e059a20c4ac6599356d3d}
+
+
+Constructor. 
+
+
+
+Definition at line 66 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+log\+Level\+To\+Text\+Map, m\+\_\+p\+Monitoring, and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::set\+Controller().
+
+
+\begin{DoxyCode}
+66                                                                            :
+67   m_pMonitoring(pMonitoring),
+68   m_updateMode(\textcolor{keyword}{false})
+69 \{
+70   m_pMonitoring->setController(\textcolor{keyword}{this});
+71 
+72   m_logLevelToTextMap.insert(DEBUG, \textcolor{stringliteral}{"[DEBUG] "});
+73   m_logLevelToTextMap.insert(MESSAGE, \textcolor{stringliteral}{"[MESSAGE] "});
+74   m_logLevelToTextMap.insert(WARNING, \textcolor{stringliteral}{"[WARNING] "});
+75   m_logLevelToTextMap.insert(ERROR, \textcolor{stringliteral}{"[ERROR] "});
+76 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!````~D\+Q\+M\+Monitoring\+Controller@{$\sim$\+D\+Q\+M\+Monitoring\+Controller}}
+\index{````~D\+Q\+M\+Monitoring\+Controller@{$\sim$\+D\+Q\+M\+Monitoring\+Controller}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitoring\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::$\sim$\+D\+Q\+M\+Monitoring\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a5d57afd156cb65397d6a5db380c4ffba}
+
+
+Destructor. 
+
+
+
+Definition at line 80 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References clear().
+
+
+\begin{DoxyCode}
+81 \{
+82   clear();
+83 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!about\+D\+Q\+M4\+H\+E\+P@{about\+D\+Q\+M4\+H\+E\+P}}
+\index{about\+D\+Q\+M4\+H\+E\+P@{about\+D\+Q\+M4\+H\+E\+P}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{about\+D\+Q\+M4\+H\+E\+P}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::about\+D\+Q\+M4\+H\+E\+P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a4d07fc57553a1b4d6bb6567de01af6be}
+
+
+Open about D\+Q\+M4\+H\+E\+P pop up dialog. 
+
+
+
+Definition at line 642 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References D\+Q\+M\+Viz\+\_\+\+D\+I\+R, D\+Q\+M\+Viz\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+S\+T\+R, and get\+Monitoring().
+
+
+\begin{DoxyCode}
+643 \{
+644   QString iconDir = QString(DQMViz_DIR) + \textcolor{stringliteral}{"/icons"};
+645 
+646 
+647   QStringList authorList;
+648 
+649   authorList << \textcolor{stringliteral}{"R. Ete , IPNL"}
+650       << \textcolor{stringliteral}{"A. Pingault, GHENT"}
+651       << \textcolor{stringliteral}{"L. Mirabito, IPNL"};
+652 
+653   QString text;
+654 
+655   text += \textcolor{stringliteral}{"DQMHEP : Data Quality Monitoring for High Energy Physics\(\backslash\)n\(\backslash\)n"};
+656   text += \textcolor{stringliteral}{"Version : "}+ QString(DQMViz_VERSION_STR) + \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};
+657 
+658   text += \textcolor{stringliteral}{"DQM4HEP is free software: you can redistribute it and/or modify "};
+659   text += \textcolor{stringliteral}{"it under the terms of the GNU General Public License as published by"};
+660   text += \textcolor{stringliteral}{"the Free Software Foundation, either version 3 of the License, or"};
+661   text += \textcolor{stringliteral}{"(at your option) any later version.\(\backslash\)n\(\backslash\)n"};
+662 
+663   text += \textcolor{stringliteral}{"DQM4HEP is distributed in the hope that it will be useful,"};
+664   text += \textcolor{stringliteral}{"but WITHOUT ANY WARRANTY; without even the implied warranty of"};
+665   text += \textcolor{stringliteral}{"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the"};
+666   text += \textcolor{stringliteral}{"GNU General Public License for more details.\(\backslash\)n\(\backslash\)n"};
+667 
+668   text += \textcolor{stringliteral}{"You should have received a copy of the GNU General Public License"};
+669   text += \textcolor{stringliteral}{"along with DQM4HEP. If not, see <http://www.gnu.org/licenses/>.\(\backslash\)n\(\backslash\)n"};
+670 
+671   text += \textcolor{stringliteral}{"Authors :\(\backslash\)n"};
+672   text += \textcolor{stringliteral}{"  * R. Ete , IPNL\(\backslash\)n"};
+673   text += \textcolor{stringliteral}{"  * A. Pingault, Ghent University\(\backslash\)n"};
+674   text += \textcolor{stringliteral}{"  * L. Mirabito, IPNL\(\backslash\)n\(\backslash\)n"};
+675 
+676   text += \textcolor{stringliteral}{"Please, send comments or report bug via the github interface "};
+677   text += \textcolor{stringliteral}{"<https://github.com/DQM4HEP/DQMViz/issues>"};
+678 
+679   QMessageBox *pMessageBox = \textcolor{keyword}{new} QMessageBox(this->getMonitoring()->getView()->getMainWindow());
+680   pMessageBox->setWindowTitle(\textcolor{stringliteral}{"About DQM4HEP"});
+681   pMessageBox->setIconPixmap(QPixmap(iconDir + \textcolor{stringliteral}{"/MON\_WIN.png"}).scaled(QSize(100, 100), 
+      Qt::KeepAspectRatioByExpanding));
+682   pMessageBox->setText(text);
+683 
+684   pMessageBox->exec();
+685   pMessageBox->deleteLater();
+686 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_ab5894f200d9ff8d6b2d20edefa1b94e6}
+
+
+Clear the controller. 
+
+This will remove all client connections. The view and model are not clear. Use \doxyref{clear\+View\+And\+Model()}{p.}{classdqm4hep_1_1DQMMonitoringController_af812e83aeeb73a711d059a8c04826621} to clear only the model and view or use \doxyref{clear\+Monitoring()}{p.}{classdqm4hep_1_1DQMMonitoringController_adcf13668d18a337794d38cb61cfd29d9} to clear the model, view and controller. 
+
+Definition at line 1000 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+client\+Map, and m\+\_\+update\+Mode.
+
+
+
+Referenced by clear\+Monitoring(), open\+File(), and $\sim$\+D\+Q\+M\+Monitoring\+Controller().
+
+
+\begin{DoxyCode}
+1001 \{
+1002   \textcolor{keywordflow}{for}(DQMGuiMonitorElementClientMap::iterator iter = m_clientMap.begin(), endIter = 
+      m_clientMap.end() ;
+1003       endIter != iter ; ++iter)
+1004   \{
+1005     iter->second->deleteLater();
+1006   \}
+1007 
+1008   m_clientMap.clear();
+1009   m_updateMode = \textcolor{keyword}{false};
+1010 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!clear\+Monitoring@{clear\+Monitoring}}
+\index{clear\+Monitoring@{clear\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{clear\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_adcf13668d18a337794d38cb61cfd29d9}
+
+
+Clear the model, view and controller. 
+
+
+
+Definition at line 1022 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear(), clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View().
+
+
+
+Referenced by quit().
+
+
+\begin{DoxyCode}
+1023 \{
+1024   \textcolor{comment}{// first clear the client connections to avoid updates}
+1025   this->clear();
+1026 
+1027   \textcolor{comment}{// clear contents}
+1028   this->getMonitoring()->getView()->clear();
+1029   this->getMonitoring()->getModel()->clear();
+1030 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!clear\+View\+And\+Model@{clear\+View\+And\+Model}}
+\index{clear\+View\+And\+Model@{clear\+View\+And\+Model}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{clear\+View\+And\+Model}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+View\+And\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_af812e83aeeb73a711d059a8c04826621}
+
+
+Clear the model and view of the monitoring system. 
+
+The clients update mode is set to false, disabling automatic updates. The client connections are not removed. Use \doxyref{clear\+Monitoring()}{p.}{classdqm4hep_1_1DQMMonitoringController_adcf13668d18a337794d38cb61cfd29d9} to also clear the client connections. Use \doxyref{clear()}{p.}{classdqm4hep_1_1DQMMonitoringController_ab5894f200d9ff8d6b2d20edefa1b94e6} to clear only the client connections and keep the view and model 
+
+Definition at line 1014 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Replace\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+1015 \{
+1016   this->getMonitoring()->getView()->clear();
+1017   this->getMonitoring()->getModel()->clear();
+1018 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!create\+Client@{create\+Client}}
+\index{create\+Client@{create\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{create\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a288586b8038837bf5c3bc6fddb1206ca}
+
+
+Create a monitor element client from the collector name. 
+
+Act as a factory method. The client is not registered. To get a registered client, use get\+Client(n) instead 
+
+Definition at line 109 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Collector\+Selection().
+
+
+\begin{DoxyCode}
+110 \{
+111   std::cout << \textcolor{stringliteral}{"Creating collector client for "} << collectorName << std::endl;
+112   \textcolor{keywordflow}{return} \textcolor{keyword}{new} DQMGuiMonitorElementClient(collectorName);
+113 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!create\+Empty\+Monitor\+Elements@{create\+Empty\+Monitor\+Elements}}
+\index{create\+Empty\+Monitor\+Elements@{create\+Empty\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{create\+Empty\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Empty\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name, }
+\item[{const D\+Q\+M\+Monitor\+Element\+Info\+List \&}]{name\+List}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a8450935f1f1f8d7cf42eb989f202a04c}
+
+
+Fill the model and the view view empty monitor elements. 
+
+Empty monitor elements are created. If draw action is requested, a 'no viz' canvas will be drawn 
+
+Definition at line 170 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::load\+Monitor\+Element\+Info\+List().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Replace\+Button\+Clicked(), and dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+171 \{
+172   this->getMonitoring()->getModel()->loadMonitorElementInfoList(collectorName, nameList);
+173 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!find\+Client@{find\+Client}}
+\index{find\+Client@{find\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{find\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::find\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_ab17ea76ffed94ac5060a190c60040285}
+
+
+Find a client. 
+
+Returns N\+U\+L\+L is not registered 
+
+Definition at line 144 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+client\+Map.
+
+
+\begin{DoxyCode}
+145 \{
+146   DQMGuiMonitorElementClientMap::iterator findIter = m_clientMap.find(collectorName);
+147 
+148   \textcolor{keywordflow}{if}(m_clientMap.end() != findIter)
+149     \textcolor{keywordflow}{return} findIter->second;
+150 
+151   \textcolor{keywordflow}{return} NULL;
+152 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!get\+Client@{get\+Client}}
+\index{get\+Client@{get\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{get\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_abf10fb9290358802f6001f93cf8b7fe3}
+
+
+Get a registered client. 
+
+If the client is not registered, it is created and added on the fly to the list of registered clients 
+
+Definition at line 117 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References handle\+Server\+Shutdown(), handle\+Server\+Startup(), m\+\_\+client\+Map, m\+\_\+update\+Mode, and receive\+Monitor\+Element\+Publication().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Replace\+Button\+Clicked(), dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Update\+Button\+Clicked(), open\+File(), query\+Subscribed\+Monitor\+Elements(), subscribe(), and unsubscribe().
+
+
+\begin{DoxyCode}
+118 \{
+119   DQMGuiMonitorElementClientMap::iterator findIter = m_clientMap.find(collectorName);
+120 
+121   \textcolor{keywordflow}{if}(m_clientMap.end() != findIter)
+122     \textcolor{keywordflow}{return} findIter->second;
+123 
+124   DQMGuiMonitorElementClient *pNewClient = this->createClient(collectorName);
+125 
+126   \textcolor{comment}{// to receive monitor elements}
+127   connect(pNewClient, SIGNAL(monitorElementPublicationReceived(\textcolor{keyword}{const} DQMMonitorElementPublication &)),
+128       \textcolor{keyword}{this}, SLOT(receiveMonitorElementPublication(\textcolor{keyword}{const} DQMMonitorElementPublication &)));
+129 
+130   \textcolor{comment}{// to handle server startup}
+131   connect(pNewClient, SIGNAL(onServerStartup()), \textcolor{keyword}{this}, SLOT(handleServerStartup()));
+132 
+133   \textcolor{comment}{// to handle server shutdown}
+134   connect(pNewClient, SIGNAL(onServerShutdown()), \textcolor{keyword}{this}, SLOT(
+      handleServerShutdown()));
+135 
+136   m_clientMap.insert(DQMGuiMonitorElementClientMap::value\_type(collectorName, pNewClient));
+137 
+138   pNewClient->getMonitorElementClient()->setUpdateMode(m_updateMode);
+139   \textcolor{keywordflow}{return} pNewClient;
+140 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Color (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Quality}]{quality}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringController_a957df1b44abd383c7910a4066d180f1b}
+
+
+Get the color associated to the data quality. 
+
+
+
+Definition at line 429 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+\begin{DoxyCode}
+430 \{
+431   QMap<DQMQuality, QColor> colorPalette;
+432 
+433   colorPalette.insert(NO\_QUALITY, QColor(Qt::gray));
+434   colorPalette.insert(VERY\_BAD\_QUALITY, QColor(Qt::darkRed));
+435   colorPalette.insert(BAD\_QUALITY, QColor(Qt::darkYellow));
+436   colorPalette.insert(NORMAL\_QUALITY, QColor(Qt::black));
+437   colorPalette.insert(GOOD\_QUALITY, QColor(Qt::darkBlue));
+438   colorPalette.insert(VERY\_GOOD\_QUALITY, QColor(Qt::darkGreen));
+439 
+440   QMap<DQMQuality, QColor>::const\_iterator findIter = colorPalette.find(quality);
+441 
+442   \textcolor{keywordflow}{if}(colorPalette.end() == findIter)
+443     \textcolor{keywordflow}{return} colorPalette[NO\_QUALITY];
+444 
+445   \textcolor{keywordflow}{return} findIter.value();
+446 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!get\+Icon@{get\+Icon}}
+\index{get\+Icon@{get\+Icon}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{get\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Icon dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Icon (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Quality}]{quality}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringController_a9be19614fbcf6812f41115635bf306f7}
+
+
+Get the icon associated to the data quality. 
+
+
+
+Definition at line 450 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References D\+Q\+M\+Viz\+\_\+\+D\+I\+R.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::update\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+451 \{
+452   QMap<DQMQuality, QIcon> iconMap;
+453   QString iconDir = QString(DQMViz_DIR) + \textcolor{stringliteral}{"/icons/"};
+454 
+455   iconMap.insert(NO\_QUALITY,        QIcon(iconDir + \textcolor{stringliteral}{"ME\_N.xpm"}));
+456   iconMap.insert(VERY\_BAD\_QUALITY,  QIcon(iconDir + \textcolor{stringliteral}{"ME\_VB.xpm"}));
+457   iconMap.insert(BAD\_QUALITY,       QIcon(iconDir + \textcolor{stringliteral}{"ME\_B.xpm"}));
+458   iconMap.insert(NORMAL\_QUALITY,    QIcon(iconDir + \textcolor{stringliteral}{"ME\_N.xpm"}));
+459   iconMap.insert(GOOD\_QUALITY,      QIcon(iconDir + \textcolor{stringliteral}{"ME\_G.xpm"}));
+460   iconMap.insert(VERY\_GOOD\_QUALITY, QIcon(iconDir + \textcolor{stringliteral}{"ME\_VG.xpm"}));
+461 
+462   QMap<DQMQuality, QIcon>::const\_iterator findIter = iconMap.find(quality);
+463 
+464   \textcolor{keywordflow}{if}(iconMap.end() == findIter)
+465     \textcolor{keywordflow}{return} iconMap[NO\_QUALITY];
+466 
+467   \textcolor{keywordflow}{return} findIter.value();
+468 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringController_ace520af1d9bf175b5484f3b0bc8554d7}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 87 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by about\+D\+Q\+M4\+H\+E\+P(), clear\+Monitoring(), clear\+View\+And\+Model(), create\+Empty\+Monitor\+Elements(), handle\+Server\+Shutdown(), handle\+Server\+Startup(), log(), open\+Browser(), open\+Doxygen\+Doc(), open\+File(), receive\+Monitor\+Element\+Publication(), and save\+As().
+
+
+\begin{DoxyCode}
+88 \{
+89   \textcolor{keywordflow}{return} m_pMonitoring;
+90 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!get\+Update\+Mode@{get\+Update\+Mode}}
+\index{get\+Update\+Mode@{get\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{get\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Update\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringController_af66d0e6bb61b275d0db26346f5c411de}
+
+
+Get the update mode. 
+
+
+
+Definition at line 304 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+update\+Mode.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::handle\+Auto\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+305 \{
+306   \textcolor{keywordflow}{return} m_updateMode;
+307 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!handle\+Server\+Shutdown@{handle\+Server\+Shutdown}}
+\index{handle\+Server\+Shutdown@{handle\+Server\+Shutdown}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{handle\+Server\+Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a65c1fa22524b74945afef4b6cab11a1c}
+
+
+Send the list of subscribed elements to the collector. 
+
+This is usually called when the server is restarted after a shutdown, a manual restart or a crash. Send also the update mode 
+
+Definition at line 403 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::enable\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Monitor\+Element\+View(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::uncheck\+All\+Monitor\+Elements().
+
+
+
+Referenced by get\+Client().
+
+
+\begin{DoxyCode}
+404 \{
+405   DQMGuiMonitorElementClient *pGuiClient = qobject\_cast<DQMGuiMonitorElementClient *>(sender());
+406 
+407   \textcolor{keywordflow}{if}(!pGuiClient)
+408     \textcolor{keywordflow}{return};
+409 
+410   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+411   std::string collectorName = pClient->getCollectorName();
+412 
+413   QMessageBox::warning(this->getMonitoring()->getView()->getMainWindow(),
+414       \textcolor{stringliteral}{"Collector shutdown"},
+415       QString(\textcolor{stringliteral}{"The following monitor element collector was shut down :\(\backslash\)n\(\backslash\)n"}
+416       \textcolor{stringliteral}{"* %1\(\backslash\)n\(\backslash\)n"}
+417       \textcolor{stringliteral}{"If you need to restart it, type in a terminal :\(\backslash\)n"}
+418       \textcolor{stringliteral}{"  dqm4hep\_start\_monitor\_element\_collector -c %1 \(\backslash\)n"}
+419       \textcolor{stringliteral}{"or restart it from the job control."}).arg(collectorName.c\_str()));
+420 
+421   DQMMonitorElementView *pMeView = this->getMonitoring()->getView()->
+      getMonitorElementView();
+422   pMeView->uncheckAllMonitorElements(collectorName);
+423   std::cout << \textcolor{stringliteral}{"pMeView->enableSubscription(collectorName, false); "} << std::endl;
+424   pMeView->enableSubscription(collectorName, \textcolor{keyword}{false});
+425 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!handle\+Server\+Startup@{handle\+Server\+Startup}}
+\index{handle\+Server\+Startup@{handle\+Server\+Startup}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{handle\+Server\+Startup}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a4121892c51fc8e75409bf985c4c450a8}
+
+
+Send the list of subscribed elements to the collector. 
+
+This is usually called when the server is restarted after a shutdown, a manual restart or a crash. Send also the update mode 
+
+Definition at line 364 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::enable\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::get\+Checked\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Module\+Name(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Monitor\+Element\+View(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View().
+
+
+
+Referenced by get\+Client().
+
+
+\begin{DoxyCode}
+365 \{
+366   DQMGuiMonitorElementClient *pGuiClient = qobject\_cast<DQMGuiMonitorElementClient *>(sender());
+367 
+368   \textcolor{keywordflow}{if}(!pGuiClient)
+369     \textcolor{keywordflow}{return};
+370 
+371   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+372   std::string collectorName = pClient->getCollectorName();
+373 
+374   std::cout << collectorName << \textcolor{stringliteral}{" server startup !"} << std::endl;
+375 
+376   \textcolor{comment}{// get all subscribed elements}
+377   DQMMonitorElementView *pMeView = this->getMonitoring()->getView()->
+      getMonitorElementView();
+378   pMeView->enableSubscription(collectorName, \textcolor{keyword}{true});
+379   QList<QTreeWidgetItem *> items = pMeView->getCheckedMonitorElements(collectorName);
+380 
+381   DQMMonitorElementRequest request;
+382 
+383   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<items.size() ; j++)
+384   \{
+385     DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator *>(items.at(j)->
+      treeWidget());
+386 
+387     std::string moduleName = pNavigator->getModuleName(items.at(j)).toStdString();
+388     std::string path = pNavigator->getFullPathName(items.at(j)).toStdString();
+389     std::string name = items.at(j)->text(0).toStdString();
+390     std::string fullName = (DQMPath(path) + name).getPath();
+391 
+392     request.push\_back(DQMMonitorElementRequest::value\_type(moduleName, fullName));
+393   \}
+394 
+395   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+396     pClient->connectToService();
+397 
+398   pClient->replaceSubscription(request);
+399 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_afd574e618fc5815429a8a5d38aec7427}
+
+
+Log a message in the application. 
+
+Log level is 'M\+E\+S\+S\+A\+G\+E' 
+
+Definition at line 94 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::drop\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Data(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::start\+Drag(), subscribe(), and unsubscribe().
+
+
+\begin{DoxyCode}
+95 \{
+96   this->log(MESSAGE, message);
+97 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log (
+\begin{DoxyParamCaption}
+\item[{Log\+Level}]{level, }
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a350ec7814526549cb3dce79f2e7ac95e}
+
+
+Log in the logger with a log level. 
+
+
+
+Definition at line 101 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Main\+Window(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), and m\+\_\+log\+Level\+To\+Text\+Map.
+
+
+\begin{DoxyCode}
+102 \{
+103   QString completeMessage = m_logLevelToTextMap.find(level).value() + message.c\_str();
+104   this->getMonitoring()->getView()->getMainWindow()->statusBar()->showMessage(completeMessage, 2000);
+105 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Browser@{open\+Browser}}
+\index{open\+Browser@{open\+Browser}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Browser}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Browser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_af7eb89714708649b09d51e90663c006d}
+
+
+Open a browser widget in a separate window. 
+
+The browser is deleted on close action 
+
+Definition at line 626 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References D\+Q\+M\+Viz\+\_\+\+D\+I\+R, and get\+Monitoring().
+
+
+\begin{DoxyCode}
+627 \{
+628   DQMBrowserWidget *pBrowser = \textcolor{keyword}{new} DQMBrowserWidget(this->getMonitoring());
+629 
+630   pBrowser->setWindowTitle(\textcolor{stringliteral}{"DQM Browser"});
+631 
+632   QString iconDir = QString(DQMViz_DIR) + \textcolor{stringliteral}{"/icons"};
+633   pBrowser->setWindowIcon(QIcon(iconDir + \textcolor{stringliteral}{"/MON\_BROWSER.png"}));
+634   pBrowser->setAttribute(Qt::WA\_DeleteOnClose, \textcolor{keyword}{true});
+635   pBrowser->show();
+636 
+637   QObject::connect(this->getMonitoring()->getView()->getMainWindow(), SIGNAL(destroyed()), pBrowser, SLOT(
+      close()));
+638 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Doxygen\+Doc@{open\+Doxygen\+Doc}}
+\index{open\+Doxygen\+Doc@{open\+Doxygen\+Doc}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Doxygen\+Doc}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Doxygen\+Doc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_ad6bbfb178a8f50bcfd6f925ff8918b38}
+
+
+Open the doxygen documentation (if exists) in the default web browser. 
+
+
+
+Definition at line 690 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Monitoring().
+
+
+\begin{DoxyCode}
+691 \{
+692   QString indexHtml;
+693   indexHtml += DQMCore\_DIR;
+694   indexHtml += \textcolor{stringliteral}{"/doc/html/index.html"};
+695 
+696   QDir dir;
+697   \textcolor{keywordflow}{if}(!dir.exists(indexHtml))
+698   \{
+699     QMessageBox::information(this->getMonitoring()->getView()->getMainWindow(),
+700         \textcolor{stringliteral}{"Not found"},
+701         \textcolor{stringliteral}{"DQM4HEP was not built with Doxygen documentation. Sorry !"});
+702     \textcolor{keywordflow}{return};
+703   \}
+704 
+705   QDesktopServices::openUrl(QUrl::fromLocalFile(indexHtml));
+706 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+File@{open\+File}}
+\index{open\+File@{open\+File}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a8fb8f23685bd8e77c21de0c8f9e80b7c}
+
+
+Open a file from a file dialog. 
+
+This will clear the current view and model and reload a new one. 
+
+Definition at line 472 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Monitoring().
+
+
+\begin{DoxyCode}
+473 \{
+474     QString fileName = QFileDialog::getOpenFileName(this->getMonitoring()->getView()->getMainWindow(), tr(\textcolor{stringliteral}{"
+      Import file"}),
+475                     QString(\textcolor{stringliteral}{""}),
+476                     \textcolor{stringliteral}{"XML files (*.xml)"});
+477 
+478     \textcolor{keywordflow}{if}(fileName.isEmpty())
+479             \textcolor{keywordflow}{return};
+480 
+481   this->openFile(fileName.toStdString());
+482 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+File@{open\+File}}
+\index{open\+File@{open\+File}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a19270231c6b48494f23d7cacd40f0afa}
+
+
+Workhorse of the openfile() method. 
+
+
+
+Definition at line 486 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear(), clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::from\+Xml(), get\+Client(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View().
+
+
+\begin{DoxyCode}
+487 \{
+488   TiXmlDocument document(fileName);
+489 
+490   \textcolor{keywordflow}{if}(!document.LoadFile())
+491   \{
+492     QMessageBox::warning(this->getMonitoring()->getView()->getMainWindow(),
+493         \textcolor{stringliteral}{"XML Import"},
+494         \textcolor{stringliteral}{"Couldn't import selection from xml file :\(\backslash\)n\(\backslash\)n"}
+495         \textcolor{stringliteral}{"* Invalid XML file content"});
+496 
+497     \textcolor{keywordflow}{return};
+498   \}
+499 
+500   TiXmlHandle documentHandle(&document);
+501   TiXmlElement *pRootElement = documentHandle.FirstChildElement().Element();
+502 
+503   \textcolor{keywordflow}{if}(!pRootElement)
+504   \{
+505     QMessageBox::warning(this->getMonitoring()->getView()->getMainWindow(),
+506         \textcolor{stringliteral}{"XML Import"},
+507         \textcolor{stringliteral}{"Couldn't import selection from xml file :\(\backslash\)n\(\backslash\)n"}
+508         \textcolor{stringliteral}{"* No root element found"});
+509 
+510     \textcolor{keywordflow}{return};
+511   \}
+512 
+513   TiXmlHandle rootHandle(pRootElement);
+514 
+515   TiXmlElement *pMonitoringElement = rootHandle.FirstChild(\textcolor{stringliteral}{"monitoring"}).Element();
+516 
+517   \textcolor{keywordflow}{if}(!pMonitoringElement)
+518   \{
+519     QMessageBox::warning(this->getMonitoring()->getView()->getMainWindow(),
+520         \textcolor{stringliteral}{"XML Import"},
+521         \textcolor{stringliteral}{"Couldn't import selection from xml file :\(\backslash\)n\(\backslash\)n"}
+522         \textcolor{stringliteral}{"* No <monitoring> element found"});
+523 
+524     \textcolor{keywordflow}{return};
+525   \}
+526 
+527   TiXmlHandle monitoringHandle(pMonitoringElement);
+528 
+529   this->clear();
+530   this->getMonitoring()->getModel()->clear();
+531   this->getMonitoring()->getView()->clear();
+532 
+533   TiXmlElement *pDimDnsNodeElement = monitoringHandle.FirstChild(\textcolor{stringliteral}{"dimDnsNode"}).Element();
+534 
+535   \textcolor{keywordflow}{if}(pDimDnsNodeElement)
+536   \{
+537     std::string dimDnsNode;
+538 
+539     \textcolor{keywordflow}{if}(!pDimDnsNodeElement->QueryStringAttribute(\textcolor{stringliteral}{"value"}, &dimDnsNode))
+540       DimClient::setDnsNode(dimDnsNode.c\_str());
+541   \}
+542 
+543   TiXmlElement *pViewElement = monitoringHandle.FirstChild(\textcolor{stringliteral}{"view"}).Element();
+544 
+545   \textcolor{keywordflow}{if}(pViewElement)
+546     this->getMonitoring()->getView()->fromXml(pViewElement);
+547 
+548   TiXmlElement *pControllerElement = monitoringHandle.FirstChild(\textcolor{stringliteral}{"controller"}).Element();
+549 
+550   \textcolor{keywordflow}{if}(pControllerElement)
+551   \{
+552     TiXmlHandle controllerHandle(pControllerElement);
+553 
+554         \textcolor{keywordflow}{for} (TiXmlElement *pCollectorElement = controllerHandle.FirstChild(\textcolor{stringliteral}{"collector"}).Element(); NULL != 
+      pCollectorElement;
+555             pCollectorElement = pCollectorElement->NextSiblingElement(\textcolor{stringliteral}{"collector"}))
+556         \{
+557           std::string collectorName;
+558             \textcolor{keywordflow}{if}(pCollectorElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &collectorName))
+559                 \textcolor{keywordflow}{continue};
+560 
+561             this->getClient(collectorName);
+562         \}
+563   \}
+564 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Github\+Page@{open\+Github\+Page}}
+\index{open\+Github\+Page@{open\+Github\+Page}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Github\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Github\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a7b819e60cbb84026f1467e5d8a651e06}
+
+
+Open the D\+Q\+M4\+H\+E\+P github page in the default web browser. 
+
+
+
+Definition at line 717 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+\begin{DoxyCode}
+718 \{
+719   QDesktopServices::openUrl(QUrl(\textcolor{stringliteral}{"https://github.com/DQM4HEP"}));
+720 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+In\+R\+O\+O\+T\+Window@{open\+In\+R\+O\+O\+T\+Window}}
+\index{open\+In\+R\+O\+O\+T\+Window@{open\+In\+R\+O\+O\+T\+Window}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+In\+R\+O\+O\+T\+Window}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+In\+R\+O\+O\+T\+Window (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_aaa42ef61dbb5312bfd3fd3f0b134f430}
+
+
+Fork a process and open the monitor element in root canvas. 
+
+By doing this, the gui client becomes the R\+O\+O\+T one and the monitor element in the R\+O\+O\+T process won't be updated. 
+
+Definition at line 769 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::open\+R\+O\+O\+T\+Panel().
+
+
+\begin{DoxyCode}
+770 \{
+771   TObject *pObject = pMonitorElement->getMonitorElement()->getObject();
+772 
+773   \textcolor{keywordflow}{if}(!pObject)
+774     \textcolor{keywordflow}{return};
+775 
+776   pid\_t pid = fork();
+777 
+778   \textcolor{comment}{// parent process}
+779   \textcolor{keywordflow}{if}(pid != 0)
+780     \textcolor{keywordflow}{return};
+781 
+782   \textcolor{comment}{// child process}
+783   \textcolor{keywordtype}{char} templateFile[] = \textcolor{stringliteral}{"/tmp/canvasTmpXXXXXX.root"};
+784   \textcolor{keywordtype}{int} ret = mkstemps(templateFile, 5);
+785 
+786   \textcolor{keywordflow}{if}(ret < 0)
+787     exit(-1);
+788 
+789   std::string tmpRootFileName = templateFile;
+790   TFile *pTmpRootFile = TFile::Open(tmpRootFileName.c\_str(), \textcolor{stringliteral}{"RECREATE"});
+791 
+792   \textcolor{keywordflow}{if}(!pTmpRootFile)
+793     exit(1);
+794 
+795   \textcolor{comment}{// re-add the pave stats}
+796   TH1 *pHistogram = (TH1*)pObject;
+797 
+798   \textcolor{keywordflow}{if}(pHistogram)
+799     pHistogram->SetStats(1);
+800 
+801   pTmpRootFile->cd();
+802   pObject->Write(\textcolor{stringliteral}{"dqm4hep\_open\_root\_canvas"});
+803   \textcolor{keyword}{delete} pTmpRootFile;
+804 
+805   \textcolor{comment}{// full program name}
+806   std::string fullPathProg = std::string(DQMCore\_DIR) + \textcolor{stringliteral}{"/bin/dqm4hep\_open\_root\_canvas"};
+807   \textcolor{keywordtype}{char} executivePath[1000];
+808   memset(executivePath, 0, 1000);
+809 
+810   memcpy(executivePath, fullPathProg.c\_str(), fullPathProg.size());
+811 
+812   \textcolor{comment}{// fill arguments}
+813   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxNArgs = 100;
+814   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxMArgs = 1000;
+815 
+816   \textcolor{keywordtype}{char} argv[maxNArgs][maxMArgs];
+817   \textcolor{keywordtype}{char} *pArgv[maxNArgs];
+818 
+819   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<maxNArgs ; i++)
+820     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<maxMArgs ; j++)
+821       argv[i][j] = \textcolor{keywordtype}{char}(NULL);
+822 
+823   pArgv[0] = executivePath;
+824   sprintf(argv[1], \textcolor{stringliteral}{"%s"}, \textcolor{stringliteral}{"-f"});
+825   pArgv[1] = & argv[1][0];
+826   sprintf(argv[2], \textcolor{stringliteral}{"%s"}, tmpRootFileName.c\_str());
+827   pArgv[2] = & argv[2][0];
+828   pArgv[3] = NULL;
+829 
+830   \textcolor{comment}{// fill environment}
+831   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxNEnv = 10;
+832   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxMEnv = 1000;
+833 
+834   \textcolor{keywordtype}{char} env[maxNEnv][maxMEnv];
+835   \textcolor{keywordtype}{char} *pEnv[maxNEnv];
+836 
+837   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<maxNEnv ; i++)
+838     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<maxMEnv ; j++)
+839       env[i][j] = \textcolor{keywordtype}{char}(NULL);
+840 
+841   sprintf(env[0], \textcolor{stringliteral}{"%s"}, \textcolor{stringliteral}{"DISPLAY=:0"});
+842   pEnv[0] = & env[0][0];
+843   pEnv[1] = NULL;
+844 
+845   \textcolor{comment}{// start root panel from dqm4hep specific executable}
+846   \textcolor{keywordtype}{int} execveRet = execve(executivePath, pArgv, pEnv);
+847 
+848   streamlog\_out(ERROR) << \textcolor{stringliteral}{"ERROR ! execve returned "} << execveRet << \textcolor{stringliteral}{" with errno set to "} << errno << 
+      std::endl;
+849   streamlog\_out(ERROR) << \textcolor{stringliteral}{"Aborting"} << std::endl;
+850 
+851   exit(1);
+852 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Issues\+Page@{open\+Issues\+Page}}
+\index{open\+Issues\+Page@{open\+Issues\+Page}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Issues\+Page}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Issues\+Page (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_ad05c26ffb208852dac9e8b0016fa0f70}
+
+
+Open the D\+Q\+M4\+H\+E\+P issues github page in the default web browser. 
+
+
+
+Definition at line 724 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+\begin{DoxyCode}
+725 \{
+726   QDesktopServices::openUrl(QUrl(\textcolor{stringliteral}{"https://github.com/DQM4HEP/DQMViz/issues"}));
+727 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Monitor\+Element\+Info@{open\+Monitor\+Element\+Info}}
+\index{open\+Monitor\+Element\+Info@{open\+Monitor\+Element\+Info}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Monitor\+Element\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Monitor\+Element\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a435a66aa2bb956bd51d9cde6ee62c6c3}
+
+
+Open a monitor element info widget in a dialog. 
+
+The tab is set \char`\"{}me info\char`\"{} 
+
+Definition at line 731 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+I\+N\+F\+O, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::show\+Tab().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Monitor\+Element\+Info().
+
+
+\begin{DoxyCode}
+732 \{
+733   QDialog *pDialog = \textcolor{keyword}{new} QDialog();
+734   pDialog->setWindowTitle(\textcolor{stringliteral}{"Monitor element info ("} + QString(pGuiMonitorElement->getMonitorElement()->
+      getName().c\_str()) + \textcolor{stringliteral}{")"});
+735 
+736   QHBoxLayout *pLayout = \textcolor{keyword}{new} QHBoxLayout();
+737   pDialog->setLayout(pLayout);
+738 
+739   DQMMonitorElementInfoWidget *pMEInfoWidget = \textcolor{keyword}{new} DQMMonitorElementInfoWidget(pGuiMonitorElement);
+740   pMEInfoWidget->showTab(DQMMonitorElementInfoWidget::MONITOR_ELEMENT_INFO);
+741 
+742   pLayout->addWidget(pMEInfoWidget);
+743 
+744   pDialog->exec();
+745   pDialog->deleteLater();
+746 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+Quality\+Test\+Results@{open\+Quality\+Test\+Results}}
+\index{open\+Quality\+Test\+Results@{open\+Quality\+Test\+Results}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+Quality\+Test\+Results}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Quality\+Test\+Results (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a5f624e3b67ceb362e6d32a887bf1268e}
+
+
+Open a monitor element info widget in a dialog. 
+
+The tab is set \char`\"{}qtest results\char`\"{} 
+
+Definition at line 750 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+E\+S\+T\+\_\+\+R\+E\+S\+U\+L\+T\+S, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::show\+Tab().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Q\+Test\+Results().
+
+
+\begin{DoxyCode}
+751 \{
+752   QDialog *pDialog = \textcolor{keyword}{new} QDialog();
+753   pDialog->setWindowTitle(\textcolor{stringliteral}{"Monitor element info ("} + QString(pGuiMonitorElement->getMonitorElement()->
+      getName().c\_str()) + \textcolor{stringliteral}{")"});
+754 
+755   QHBoxLayout *pLayout = \textcolor{keyword}{new} QHBoxLayout();
+756   pDialog->setLayout(pLayout);
+757 
+758   DQMMonitorElementInfoWidget *pMEInfoWidget = \textcolor{keyword}{new} DQMMonitorElementInfoWidget(pGuiMonitorElement);
+759   pMEInfoWidget->showTab(DQMMonitorElementInfoWidget::QUALITY_TEST_RESULTS);
+760 
+761   pLayout->addWidget(pMEInfoWidget);
+762 
+763   pDialog->exec();
+764   pDialog->deleteLater();
+765 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!open\+User\+Guide@{open\+User\+Guide}}
+\index{open\+User\+Guide@{open\+User\+Guide}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{open\+User\+Guide}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+User\+Guide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a203095bc8339118886a8153bdc1747b3}
+
+
+Open user guide (pdf) in the default pdf reader. 
+
+
+
+Definition at line 710 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+\begin{DoxyCode}
+711 \{
+712   \textcolor{comment}{/* nop */}
+713 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}}
+\index{query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{query\+Subscribed\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Subscribed\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a801f77a878445e50251306097f9d6479}
+
+
+Send a query to the all collectors to send back the subscribed monitor elements. 
+
+
+
+Definition at line 215 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References log(), and m\+\_\+client\+Map.
+
+
+
+Referenced by query\+Update().
+
+
+\begin{DoxyCode}
+216 \{
+217   \textcolor{keywordtype}{int} nCollectorErrors = 0;
+218 
+219   \textcolor{keywordflow}{for}(DQMGuiMonitorElementClientMap::iterator iter = m_clientMap.begin(), endIter = 
+      m_clientMap.end() ;
+220       endIter != iter ; ++iter)
+221   \{
+222     StatusCode statusCode = iter->second->getMonitorElementClient()->querySubscribedMonitorElements();
+223 
+224     \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+225       nCollectorErrors++;
+226   \}
+227 
+228   \textcolor{keywordflow}{if}(nCollectorErrors != 0)
+229     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send update request to collectors ("} + DQM4HEP::typeToString(
+      nCollectorErrors) + \textcolor{stringliteral}{" errors)"});
+230 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}}
+\index{query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{query\+Subscribed\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Subscribed\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_aaa0183d1618c68166c5ce291e8face49}
+
+
+Send a query to the target collector to send back the subscribed monitor elements. 
+
+
+
+Definition at line 234 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Client(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), and log().
+
+
+\begin{DoxyCode}
+235 \{
+236   \textcolor{keywordflow}{if}(collectorName.empty())
+237     \textcolor{keywordflow}{return};
+238 
+239   DQMGuiMonitorElementClient *pGuiClient = this->getClient(collectorName);
+240   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+241 
+242   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+243     pClient->connectToService();
+244 
+245   StatusCode statusCode = pClient->querySubscribedMonitorElements();
+246 
+247   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+248     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send un-subscription request to collector "} + collectorName + \textcolor{stringliteral}{" : "} + 
+      statusCodeToString(statusCode));
+249 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}}
+\index{query\+Subscribed\+Monitor\+Elements@{query\+Subscribed\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{query\+Subscribed\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Subscribed\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name, }
+\item[{const D\+Q\+M\+Monitor\+Element\+Request \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_aad5a818f83026b58ef7a853fd23f4c0b}
+
+
+Send a query to the target collector to subscribe to the element list (if not done yet) and send back the monitor elements in the request. 
+
+
+
+Definition at line 253 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Client(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), and log().
+
+
+\begin{DoxyCode}
+254 \{
+255   \textcolor{keywordflow}{if}(collectorName.empty())
+256     \textcolor{keywordflow}{return};
+257 
+258   DQMGuiMonitorElementClient *pGuiClient = this->getClient(collectorName);
+259   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+260 
+261   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+262     pClient->connectToService();
+263 
+264   StatusCode statusCode = pClient->querySubscribedMonitorElements(request);
+265 
+266   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+267     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send un-subscription request to collector "} + collectorName + \textcolor{stringliteral}{" : "} + 
+      statusCodeToString(statusCode));
+268 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!query\+Update@{query\+Update}}
+\index{query\+Update@{query\+Update}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{query\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Update (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a57f5b51df397d4321d1940ef80047e30}
+
+
+Send a query to the collector to first subscribed to the element if not done yet, then to send back the element if collected on the server. 
+
+
+
+Definition at line 311 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), and query\+Subscribed\+Monitor\+Elements().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::query\+Update(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::query\+Update().
+
+
+\begin{DoxyCode}
+312 \{
+313   std::string fullName = (pMonitorElement->getMonitorElement()->getPath() + pMonitorElement->
+      getMonitorElement()->getName()).getPath();
+314   std::string moduleName = pMonitorElement->getMonitorElement()->getModuleName();
+315   std::string collectorName = pMonitorElement->getMonitorElement()->getCollectorName();
+316 
+317   DQMMonitorElementRequest request;
+318   request.push\_back(DQMMonitorElementRequest::value\_type(moduleName, fullName));
+319 
+320   this->querySubscribedMonitorElements(collectorName, request);
+321 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!query\+Update@{query\+Update}}
+\index{query\+Update@{query\+Update}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{query\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Update (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Gui\+Monitor\+Element\+List} \&}]{monitor\+Element\+List}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a4bc8e1223ae64c7c81cc2232bafc50e7}
+
+
+Send a query to the collector to first subscribed to the elements if not done yet, then to send back the elements if collected on the server. 
+
+
+
+Definition at line 325 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References query\+Subscribed\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+326 \{
+327   DQMMonitorElementRequest request;
+328   std::map<std::string, DQMMonitorElementRequest> requestMap;
+329 
+330   \textcolor{keywordflow}{for}(DQMGuiMonitorElementList::const\_iterator iter = monitorElementList.begin(), endIter = 
+      monitorElementList.end() ;
+331       endIter != iter ; ++iter)
+332   \{
+333     std::string fullName = ((*iter)->getMonitorElement()->getPath() + (*iter)->getMonitorElement()->getName
+      ()).getPath();
+334     std::string moduleName = (*iter)->getMonitorElement()->getModuleName();
+335     std::string collectorName = (*iter)->getMonitorElement()->getCollectorName();
+336 
+337     requestMap[collectorName].push\_back(DQMMonitorElementRequest::value\_type(moduleName, fullName));
+338   \}
+339 
+340   \textcolor{keywordflow}{for}(std::map<std::string, DQMMonitorElementRequest>::iterator iter = requestMap.begin(), endIter = 
+      requestMap.end() ;
+341       endIter != iter ; ++iter)
+342   \{
+343     this->querySubscribedMonitorElements(iter->first, iter->second);
+344   \}
+345 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!quit@{quit}}
+\index{quit@{quit}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{quit}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_acff4618d9d20e8b0afdb9f43bab7e41a}
+
+
+Exit the monitoring application. 
+
+Clear the monitoring and exit the Qt application 
+
+Definition at line 1034 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References clear\+Monitoring().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Main\+Window\+::close\+Event().
+
+
+\begin{DoxyCode}
+1035 \{
+1036   this->clearMonitoring();
+1037   qApp->closeAllWindows();
+1038   qApp->quit();
+1039 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!receive\+Monitor\+Element\+Publication@{receive\+Monitor\+Element\+Publication}}
+\index{receive\+Monitor\+Element\+Publication@{receive\+Monitor\+Element\+Publication}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{receive\+Monitor\+Element\+Publication}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::receive\+Monitor\+Element\+Publication (
+\begin{DoxyParamCaption}
+\item[{const D\+Q\+M\+Monitor\+Element\+Publication \&}]{publication}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_adbbacc4cd646d59fa62b388fe20aad32}
+
+
+Call back method called by monitor element clients when a publication is received. 
+
+
+
+Definition at line 349 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+
+Referenced by get\+Client().
+
+
+\begin{DoxyCode}
+350 \{
+351   std::cout << \textcolor{stringliteral}{"Received publication of "} << publication.size() << \textcolor{stringliteral}{" modules"} << std::endl;
+352   \textcolor{keywordflow}{for}(DQMMonitorElementPublication::const\_iterator iter = publication.begin(), endIter = publication.end() 
+      ;
+353       endIter != iter ; ++iter)
+354   \{
+355     std::string moduleName = iter->first;
+356 
+357     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<iter->second.size() ; i++)
+358       this->getMonitoring()->getModel()->updateMonitorElement(iter->second.at(i));
+359   \}
+360 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!remove\+Client@{remove\+Client}}
+\index{remove\+Client@{remove\+Client}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{remove\+Client}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::remove\+Client (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a8fe1bdbb41bc4efb29b8c3b0a3b0ad02}
+
+
+Remove a client from the application. 
+
+Does nothing if the client is not found 
+
+Definition at line 156 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+client\+Map.
+
+
+\begin{DoxyCode}
+157 \{
+158   DQMGuiMonitorElementClientMap::iterator findIter = m_clientMap.find(collectorName);
+159 
+160   \textcolor{keywordflow}{if}(m_clientMap.end() != findIter)
+161   \{
+162     DQMGuiMonitorElementClient *pClient = findIter->second;
+163     \textcolor{keyword}{delete} pClient; \textcolor{comment}{// delete also calls disconnectFromService()}
+164     m_clientMap.erase(findIter);
+165   \}
+166 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a6cb3ef5c0b246a04d57d61283df15d70}
+
+
+Open a file dialog and save the current view and model to the target file. 
+
+
+
+Definition at line 568 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Monitoring().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Save\+As\+Action\+Triggered(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::save\+As().
+
+
+\begin{DoxyCode}
+569 \{
+570     QString fileName = QFileDialog::getSaveFileName(this->getMonitoring()->getView()->getMainWindow(), tr(\textcolor{stringliteral}{"
+      Export file"}),
+571                     QString(\textcolor{stringliteral}{""}),
+572                     \textcolor{stringliteral}{"XML files (*.xml)"});
+573 
+574     \textcolor{keywordflow}{if}(fileName.isEmpty())
+575             \textcolor{keywordflow}{return};
+576 
+577   this->saveAs(fileName.toStdString());
+578 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a98040a7ff88151f072f8da6f1fd448bf}
+
+
+Workhorse of the \doxyref{save\+As()}{p.}{classdqm4hep_1_1DQMMonitoringController_a6cb3ef5c0b246a04d57d61283df15d70} method. 
+
+
+
+Definition at line 582 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), m\+\_\+client\+Map, and dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+583 \{
+584   \textcolor{keywordflow}{if}(fileName.empty())
+585     \textcolor{keywordflow}{return};
+586 
+587   TiXmlDocument document;
+588 
+589   TiXmlDeclaration *pDeclaration = \textcolor{keyword}{new} TiXmlDeclaration( \textcolor{stringliteral}{"1.0"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{""} );
+590   document.LinkEndChild(pDeclaration);
+591 
+592   TiXmlElement *pRootElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"dqm4hep"});
+593   document.LinkEndChild(pRootElement);
+594 
+595   TiXmlElement *pMonitoringElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"monitoring"});
+596   pRootElement->LinkEndChild(pMonitoringElement);
+597 
+598   TiXmlElement *pDimDnsNodeElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"dimDnsNode"});
+599   pMonitoringElement->LinkEndChild(pDimDnsNodeElement);
+600   pDimDnsNodeElement->SetAttribute(\textcolor{stringliteral}{"value"}, DimClient::getDnsNode());
+601 
+602   TiXmlElement *pViewElement = this->getMonitoring()->getView()->toXml();
+603 
+604   \textcolor{keywordflow}{if}(pViewElement)
+605     pMonitoringElement->LinkEndChild(pViewElement);
+606 
+607   TiXmlElement *pControllerElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"controller"});
+608 
+609   \textcolor{keywordflow}{for}(DQMGuiMonitorElementClientMap::const\_iterator iter = m_clientMap.begin(), endIter = 
+      m_clientMap.end() ;
+610       endIter != iter ; ++iter)
+611   \{
+612     \textcolor{keyword}{const} std::string &collectorName = iter->first;
+613 
+614     TiXmlElement *pCollectorElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"collector"});
+615     pControllerElement->LinkEndChild(pCollectorElement);
+616     pCollectorElement->SetAttribute(\textcolor{stringliteral}{"value"}, collectorName);
+617   \}
+618 
+619   pMonitoringElement->LinkEndChild(pControllerElement);
+620 
+621   document.SaveFile(fileName);
+622 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas\+Area} $\ast$}]{p\+Canvas\+Area}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a3550bfc90d2a3f0f7ef16a4f1751b959}
+
+
+Save all the canvases of the canvas area in a file Different file format available. 
+
+See implementation. 
+
+Definition at line 856 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Current\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Root\+Widget().
+
+
+\begin{DoxyCode}
+857 \{
+858   QList<QMdiSubWindow*> subWindows = pCanvasArea->subWindowList();
+859 
+860   \textcolor{keywordflow}{if}(subWindows.isEmpty())
+861     \textcolor{keywordflow}{return};
+862 
+863     QStringList formatList;
+864     QStringList extensionList;
+865     QString selectedFormat;
+866 
+867     formatList
+868 \textcolor{comment}{//            << "Postscript (*.ps)"}
+869 \textcolor{comment}{//            << "Encapsulated Postscript (*.eps)"}
+870 \textcolor{comment}{//            << "PDF (*.pdf)"}
+871 \textcolor{comment}{//            << "GIF (*.gif)"}
+872 \textcolor{comment}{//            << "JPG (*.jpg)"}
+873 \textcolor{comment}{//            << "PNG (*.png)"}
+874 \textcolor{comment}{//            << "ROOT Macro (*.C)"}
+875             << \textcolor{stringliteral}{"ROOT Files (*.root)"};
+876 
+877     extensionList
+878 \textcolor{comment}{//            << ".ps"}
+879 \textcolor{comment}{//            << ".eps"}
+880 \textcolor{comment}{//            << ".pdf"}
+881 \textcolor{comment}{//            << ".gif"}
+882 \textcolor{comment}{//            << ".jpg"}
+883 \textcolor{comment}{//            << ".png"}
+884 \textcolor{comment}{//            << ".C"}
+885             << \textcolor{stringliteral}{".root"};
+886 
+887     QString fileName = QFileDialog::getSaveFileName(this->getMonitoring()->getView()->getMainWindow(),
+888         \textcolor{stringliteral}{"Save as"},
+889             \textcolor{stringliteral}{""},
+890             formatList.join(\textcolor{stringliteral}{";;"}),
+891             &selectedFormat);
+892 
+893     \textcolor{keywordflow}{if}(fileName.isEmpty())
+894       \textcolor{keywordflow}{return};
+895 
+896     \textcolor{keywordtype}{int} lastIndexOf = fileName.lastIndexOf(extensionList.at(formatList.indexOf(selectedFormat)));
+897     QString baseFileName;
+898     QString extensionFileName;
+899 
+900     \textcolor{keywordflow}{if}(lastIndexOf < 0)
+901     \{
+902         lastIndexOf = fileName.size() -1;
+903         baseFileName = fileName;
+904         \textcolor{keywordtype}{int} index = formatList.indexOf(selectedFormat);
+905         extensionFileName = extensionList.at(index);
+906     \}
+907     \textcolor{keywordflow}{else}
+908     \{
+909         baseFileName = fileName.left(lastIndexOf);
+910         extensionFileName = fileName.right(fileName.size() - lastIndexOf);
+911     \}
+912 
+913     std::string realFileName = (baseFileName + extensionFileName).toStdString();
+914 
+915     TFile *pFile = TFile::Open(realFileName.c\_str(), \textcolor{stringliteral}{"RECREATE"});
+916 
+917     \textcolor{keywordflow}{if}(NULL == pFile)
+918       \textcolor{keywordflow}{return};
+919 
+920     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<subWindows.count() ; i++)
+921     \{
+922       DQMCanvas *pCanvas = qobject\_cast<DQMCanvas*>(subWindows.at(i));
+923 
+924       \textcolor{keywordflow}{if}(!pCanvas)
+925         \textcolor{keywordflow}{continue};
+926 
+927       TCanvas *pSaveCanvas = pCanvas->getRootWidget()->GetCanvas();
+928       std::string objectName = pCanvas->getCurrentMonitorElement()->getMonitorElement()->getName();
+929       pFile->WriteTObject(pSaveCanvas, objectName.c\_str());
+930     \}
+931 
+932     pFile->Close();
+933     \textcolor{keyword}{delete} pFile;
+934 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringController_a8c090d1613565a027b60275850885adb}
+
+
+Save the canvas in a file Different file format available. 
+
+See implementation. 
+
+Definition at line 938 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Root\+Widget().
+
+
+\begin{DoxyCode}
+939 \{
+940     QStringList formatList;
+941     QStringList extensionList;
+942     QString selectedFormat;
+943 
+944     formatList
+945             << \textcolor{stringliteral}{"Postscript (*.ps)"}
+946             << \textcolor{stringliteral}{"Encapsulated Postscript (*.eps)"}
+947             << \textcolor{stringliteral}{"PDF (*.pdf)"}
+948             << \textcolor{stringliteral}{"GIF (*.gif)"}
+949             << \textcolor{stringliteral}{"JPG (*.jpg)"}
+950             << \textcolor{stringliteral}{"PNG (*.png)"}
+951             << \textcolor{stringliteral}{"ROOT Macro (*.C)"}
+952             << \textcolor{stringliteral}{"ROOT Files (*.root)"};
+953 
+954     extensionList
+955             << \textcolor{stringliteral}{".ps"}
+956             << \textcolor{stringliteral}{".eps"}
+957             << \textcolor{stringliteral}{".pdf"}
+958             << \textcolor{stringliteral}{".gif"}
+959             << \textcolor{stringliteral}{".jpg"}
+960             << \textcolor{stringliteral}{".png"}
+961             << \textcolor{stringliteral}{".C"}
+962             << \textcolor{stringliteral}{".root"};
+963 
+964     QString fileName = QFileDialog::getSaveFileName(this->getMonitoring()->getView()->getMainWindow(),
+965         \textcolor{stringliteral}{"Save as"},
+966             \textcolor{stringliteral}{""},
+967             formatList.join(\textcolor{stringliteral}{";;"}),
+968             &selectedFormat);
+969 
+970     std::cout << \textcolor{stringliteral}{"selectedFormat : "} << selectedFormat.toStdString() << std::endl;
+971 
+972     \textcolor{keywordflow}{if}(fileName.isEmpty())
+973       \textcolor{keywordflow}{return};
+974 
+975     \textcolor{keywordtype}{int} lastIndexOf = fileName.lastIndexOf(extensionList.at(formatList.indexOf(selectedFormat)));
+976     QString baseFileName;
+977     QString extensionFileName;
+978 
+979     \textcolor{keywordflow}{if}(lastIndexOf < 0)
+980     \{
+981         lastIndexOf = fileName.size() -1;
+982         baseFileName = fileName;
+983         \textcolor{keywordtype}{int} index = formatList.indexOf(selectedFormat);
+984         extensionFileName = extensionList.at(index);
+985     \}
+986     \textcolor{keywordflow}{else}
+987     \{
+988         baseFileName = fileName.left(lastIndexOf);
+989         extensionFileName = fileName.right(fileName.size() - lastIndexOf);
+990     \}
+991 
+992     std::string realFileName = (baseFileName + extensionFileName).toStdString();
+993 
+994     \textcolor{comment}{// save the canvas}
+995     pCanvas->getRootWidget()->GetCanvas()->SaveAs(realFileName.c\_str());
+996 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{update\+Mode}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_aaf957cec0c4c7fc13fdcdddd471c171f}
+
+
+Set the update mode of the target collector. 
+
+
+
+Definition at line 293 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References m\+\_\+client\+Map, and m\+\_\+update\+Mode.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::handle\+Auto\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+294 \{
+295   \textcolor{keywordflow}{for}(DQMGuiMonitorElementClientMap::iterator iter = m_clientMap.begin(), endIter = 
+      m_clientMap.end() ;
+296       endIter != iter ; ++iter)
+297     iter->second->getMonitorElementClient()->setUpdateMode(updateMode);
+298 
+299   m_updateMode = updateMode;
+300 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!subscribe@{subscribe}}
+\index{subscribe@{subscribe}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{subscribe}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::subscribe (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name, }
+\item[{const D\+Q\+M\+Monitor\+Element\+Request \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_ab94182bae51aced6e22e7bf6d6d8f3c3}
+
+
+Subscribe to monitor elements of the target collector. 
+
+
+
+Definition at line 177 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Client(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), and log().
+
+
+
+Referenced by dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Data().
+
+
+\begin{DoxyCode}
+178 \{
+179   \textcolor{keywordflow}{if}(collectorName.empty() || request.empty())
+180     \textcolor{keywordflow}{return};
+181 
+182   DQMGuiMonitorElementClient *pGuiClient = this->getClient(collectorName);
+183   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+184 
+185   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+186     pClient->connectToService();
+187 
+188   StatusCode statusCode = pClient->subscribe(request);
+189 
+190   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+191     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send subscription to collector "} + collectorName + \textcolor{stringliteral}{" : "} + 
+      statusCodeToString(statusCode));
+192 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name, }
+\item[{const D\+Q\+M\+Monitor\+Element\+Request \&}]{request}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_ae6c8abaad7472263b1e57113a4d90089}
+
+
+Un-\/subscribe to monitor elements of the target collector. 
+
+
+
+Definition at line 196 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Client(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), and log().
+
+
+
+Referenced by dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Data().
+
+
+\begin{DoxyCode}
+197 \{
+198   \textcolor{keywordflow}{if}(collectorName.empty() || request.empty())
+199     \textcolor{keywordflow}{return};
+200 
+201   DQMGuiMonitorElementClient *pGuiClient = this->getClient(collectorName);
+202   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+203 
+204   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+205     pClient->connectToService();
+206 
+207   StatusCode statusCode = pClient->unsubscribe(request);
+208 
+209   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+210     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send un-subscription to collector "} + collectorName + \textcolor{stringliteral}{" : "} + 
+      statusCodeToString(statusCode));
+211 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!unsubscribe@{unsubscribe}}
+\index{unsubscribe@{unsubscribe}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{unsubscribe}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::unsubscribe (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringController_a9a4eac9fb869a0ea87f1012b2c25a464}
+
+
+Un-\/subscribe to all monitor elements of the target collector. 
+
+
+
+Definition at line 272 of file D\+Q\+M\+Monitoring\+Controller.\+cc.
+
+
+
+References get\+Client(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+Client\+::get\+Monitor\+Element\+Client(), and log().
+
+
+\begin{DoxyCode}
+273 \{
+274   \textcolor{keywordflow}{if}(collectorName.empty())
+275     \textcolor{keywordflow}{return};
+276 
+277   DQMGuiMonitorElementClient *pGuiClient = this->getClient(collectorName);
+278   DQMMonitorElementClient *pClient = pGuiClient->getMonitorElementClient();
+279 
+280   \textcolor{keywordflow}{if}(!pClient->isConnectedToService())
+281     pClient->connectToService();
+282 
+283   \textcolor{comment}{// empty subscription request to clear subscriptions}
+284   DQMMonitorElementRequest request;
+285   StatusCode statusCode = pClient->replaceSubscription(request);
+286 
+287   \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != statusCode)
+288     this->log(ERROR, \textcolor{stringliteral}{"Couldn't send un-subscription request to collector "} + collectorName + \textcolor{stringliteral}{" : "} + 
+      statusCodeToString(statusCode));
+289 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!m\+\_\+client\+Map@{m\+\_\+client\+Map}}
+\index{m\+\_\+client\+Map@{m\+\_\+client\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{m\+\_\+client\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element\+Client\+Map} dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::m\+\_\+client\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitoringController_a57ae9484c90438a560f445f8ccfb7dfe}
+
+
+Definition at line 299 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+Referenced by clear(), find\+Client(), get\+Client(), query\+Subscribed\+Monitor\+Elements(), remove\+Client(), save\+As(), and set\+Update\+Mode().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!m\+\_\+log\+Level\+To\+Text\+Map@{m\+\_\+log\+Level\+To\+Text\+Map}}
+\index{m\+\_\+log\+Level\+To\+Text\+Map@{m\+\_\+log\+Level\+To\+Text\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{m\+\_\+log\+Level\+To\+Text\+Map}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Map$<$Log\+Level, Q\+String$>$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::m\+\_\+log\+Level\+To\+Text\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitoringController_af652314e60f6330e46bd9a40e6eb1b7e}
+
+
+Definition at line 300 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+Referenced by D\+Q\+M\+Monitoring\+Controller(), and log().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitoringController_a5bbc410443aeaebbf647b6ecbdf44639}
+
+
+Definition at line 297 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+Referenced by D\+Q\+M\+Monitoring\+Controller(), and get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}!m\+\_\+update\+Mode@{m\+\_\+update\+Mode}}
+\index{m\+\_\+update\+Mode@{m\+\_\+update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller}}
+\subsubsection[{m\+\_\+update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::m\+\_\+update\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitoringController_a43303809e9fb8554e174342e4e68feae}
+
+
+Definition at line 298 of file D\+Q\+M\+Monitoring\+Controller.\+h.
+
+
+
+Referenced by clear(), get\+Client(), get\+Update\+Mode(), and set\+Update\+Mode().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring\+Controller.\+h}\item 
+{\bf D\+Q\+M\+Monitoring\+Controller.\+cc}\end{DoxyCompactItemize}

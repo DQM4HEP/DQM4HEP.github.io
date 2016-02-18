@@ -1,0 +1,745 @@
+\section{D\+Q\+M4\+H\+E\+P.\+h File Reference}
+\label{DQM4HEP_8h}\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$utility$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$queue$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$exception$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$pthread.\+h$>$}\\*
+{\ttfamily \#include $<$bits/pthreadtypes.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}D\+Q\+M\+Core\+Config.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}dqm4hep/\+D\+Q\+M\+Logging.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf dqm4hep\+::\+D\+Q\+M\+Streamer$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em \doxyref{D\+Q\+M\+Streamer}{p.}{singletondqm4hep_1_1DQMStreamer} interface. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Status\+Code\+Exception}
+\begin{DoxyCompactList}\small\item\em \doxyref{Status\+Code\+Exception}{p.}{classdqm4hep_1_1StatusCodeException} class. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+D\+Q\+M4\+H\+E\+P}
+\begin{DoxyCompactList}\small\item\em \doxyref{D\+Q\+M4\+H\+E\+P}{p.}{classdqm4hep_1_1DQM4HEP} class. \end{DoxyCompactList}\item 
+struct {\bf dqm4hep\+::\+D\+Q\+M\+Stats}
+\begin{DoxyCompactList}\small\item\em Stats struct. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Positive\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::\+Negative\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::\+Non\+Null\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::\+Interval\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::\+Bigger\+Than\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$}
+\item 
+class {\bf dqm4hep\+::scoped\+\_\+lock}
+\begin{DoxyCompactList}\small\item\em scoped\+\_\+mutex class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ {\bf dqm4hep}
+\begin{DoxyCompactList}\small\item\em -- std headers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+B\+I\+T}(n)~(1\+U\+L\+L $<$$<$ (n))
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T}(n, i)~((n) $\vert$= {\bf D\+Q\+M\+\_\+\+B\+I\+T}(i))
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T}(n, i)~((n) \&= $\sim${\bf D\+Q\+M\+\_\+\+B\+I\+T}(i))
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T}(n, i)~((bool)(((n) \& {\bf D\+Q\+M\+\_\+\+B\+I\+T}(i)) != 0))
+\item 
+\#define {\bf I\+S\+\_\+\+N\+A\+N}~std\+::isnan
+\item 
+\#define {\bf I\+S\+\_\+\+I\+N\+F}~std\+::isinf
+\item 
+\#define {\bf R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}(Status\+Code1, Operator, Command)
+\item 
+\#define {\bf R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}(Status\+Code1, Status\+Code2, Operator, Command)
+\item 
+\#define {\bf T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}(Status\+Code1, Operator, Command)
+\item 
+\#define {\bf T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}(Status\+Code1, Status\+Code2, Operator, Command)
+\item 
+\#define {\bf P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}(Status\+Code1, Operator, Command, Code)
+\item 
+\#define {\bf P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}(Status\+Code1, Status\+Code2, Operator, Command, Code)
+\item 
+\#define {\bf N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D}~streamlog\+\_\+out(D\+E\+B\+U\+G) $<$$<$ \char`\"{}Method called \+: \char`\"{} $<$$<$ \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+ $<$$<$ std\+::endl;
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L}(Class\+Name, Class\+Str)
+\item 
+\#define {\bf G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y}(a, b)~a,
+\item 
+\#define {\bf G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H}(a, b)~case a \+: return b;
+\item 
+\#define {\bf G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E}(a, b)~if(str == b) return a;
+\item 
+\#define {\bf G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2}(a, b, c)~a,
+\item 
+\#define {\bf G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}(a, b, c)~case a \+: return b;
+\item 
+\#define {\bf G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}(a, b, c)~case a \+: return c;
+\item 
+\#define {\bf G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1}(a, b, c)~if(str == b) return a;
+\item 
+\#define {\bf G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2}(a, b, c)~if(str == c) return a;
+\item 
+\#define {\bf S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E}(d)
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E}(d)
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E}(d)
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}(d)
+\item 
+\#define {\bf D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E}(d)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char {\bf dqm4hep\+::dqm\+\_\+char}
+\item 
+typedef uint8\+\_\+t {\bf dqm4hep\+::dqm\+\_\+uchar}
+\item 
+typedef int16\+\_\+t {\bf dqm4hep\+::dqm\+\_\+short}
+\item 
+typedef uint16\+\_\+t {\bf dqm4hep\+::dqm\+\_\+ushort}
+\item 
+typedef int16\+\_\+t {\bf dqm4hep\+::dqm\+\_\+short\+\_\+int}
+\item 
+typedef uint16\+\_\+t {\bf dqm4hep\+::dqm\+\_\+ushort\+\_\+int}
+\item 
+typedef int64\+\_\+t {\bf dqm4hep\+::dqm\+\_\+lint}
+\item 
+typedef uint64\+\_\+t {\bf dqm4hep\+::dqm\+\_\+ulint}
+\item 
+typedef float {\bf dqm4hep\+::dqm\+\_\+real}
+\item 
+typedef float {\bf dqm4hep\+::dqm\+\_\+float}
+\item 
+typedef double {\bf dqm4hep\+::dqm\+\_\+double}
+\item 
+typedef bool {\bf dqm4hep\+::dqm\+\_\+bool}
+\item 
+typedef int64\+\_\+t {\bf dqm4hep\+::dqm\+\_\+int}
+\item 
+typedef uint64\+\_\+t {\bf dqm4hep\+::dqm\+\_\+uint}
+\item 
+typedef std\+::vector$<$ int $>$ {\bf dqm4hep\+::\+Int\+Vector}
+\item 
+typedef std\+::vector$<$ unsigned int $>$ {\bf dqm4hep\+::\+U\+Int\+Vector}
+\item 
+typedef std\+::vector$<$ float $>$ {\bf dqm4hep\+::\+Float\+Vector}
+\item 
+typedef std\+::vector$<$ std\+::string $>$ {\bf dqm4hep\+::\+String\+Vector}
+\item 
+typedef std\+::set$<$ std\+::string $>$ {\bf dqm4hep\+::\+String\+Set}
+\item 
+typedef std\+::map$<$ std\+::string, \\*
+std\+::vector$<$ std\+::string $>$ $>$ {\bf dqm4hep\+::\+Subscription\+Map}
+\item 
+typedef std\+::vector\\*
+$<$ D\+Q\+M\+Monitor\+Element $\ast$ $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List}
+\item 
+typedef std\+::map$<$ const \\*
+std\+::string, D\+Q\+M\+Monitor\+Element $\ast$ $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Map}
+\item 
+typedef std\+::queue$<$ D\+Q\+M\+Event $\ast$ $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Queue}
+\item 
+typedef std\+::map$<$ std\+::string, \\*
+D\+Q\+M\+Quality\+Test\+Result $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+Map}
+\item 
+typedef std\+::map$<$ std\+::string, \\*
+D\+Q\+M\+Quality\+Test $\ast$ $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Map}
+\item 
+typedef std\+::vector$<$ D\+Q\+M\+Stats $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Stats\+List}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf dqm4hep\+::\+Status\+Code} \{ {\bf dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+S}
+ \}
+\begin{DoxyCompactList}\small\item\em Status\+Code enumerator. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+D\+Q\+M\+Quality} \{ {\bf dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+I\+E\+S}
+ \}
+\begin{DoxyCompactList}\small\item\em D\+Q\+M\+Quality enum. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+D\+Q\+M\+State} \{ {\bf dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+S}
+ \}
+\begin{DoxyCompactList}\small\item\em D\+Q\+M\+State enum. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Type} \{ {\bf dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+S}
+ \}
+\begin{DoxyCompactList}\small\item\em D\+Q\+M\+Monitor\+Element\+Type enum. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+D\+Q\+M\+Reset\+Policy} \{ {\bf dqm4hep\+::\+N\+U\+M\+B\+E\+R\+\_\+\+O\+F\+\_\+\+D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+I\+E\+S}
+ \}
+\begin{DoxyCompactList}\small\item\em D\+Q\+M\+Reset\+Policy enum. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+Log\+Level} \{ {\bf dqm4hep\+::\+D\+E\+B\+U\+G} = 0, 
+{\bf dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E}, 
+{\bf dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G}, 
+{\bf dqm4hep\+::\+E\+R\+R\+O\+R}
+ \}
+\begin{DoxyCompactList}\small\item\em Log\+Level enumerator. \end{DoxyCompactList}\item 
+enum {\bf dqm4hep\+::\+Update\+Mode} \{ {\bf dqm4hep\+::\+N\+O\+\_\+\+U\+P\+D\+A\+T\+E} = 0, 
+{\bf dqm4hep\+::\+R\+E\+P\+L\+A\+C\+E} = 1, 
+{\bf dqm4hep\+::\+A\+P\+P\+E\+N\+D} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Update\+Mode enumerator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf dqm4hep\+::status\+Code\+To\+String} (const Status\+Code status\+Code)
+\item 
+std\+::string {\bf dqm4hep\+::quality\+To\+String} (const D\+Q\+M\+Quality quality)
+\item 
+std\+::string {\bf dqm4hep\+::state\+To\+String} (const D\+Q\+M\+State state)
+\item 
+std\+::string {\bf dqm4hep\+::monitor\+Element\+Type\+To\+String} (const D\+Q\+M\+Monitor\+Element\+Type type)
+\item 
+D\+Q\+M\+Monitor\+Element\+Type {\bf dqm4hep\+::string\+To\+Monitor\+Element\+Type} (const std\+::string \&str)
+\item 
+D\+Q\+M\+Monitor\+Element\+Type {\bf dqm4hep\+::string\+To\+Monitor\+Element\+Root\+Type} (const std\+::string \&str)
+\item 
+std\+::string {\bf dqm4hep\+::reset\+Policy\+To\+String} (const D\+Q\+M\+Reset\+Policy policy)
+\item 
+D\+Q\+M\+Reset\+Policy {\bf dqm4hep\+::string\+To\+Reset\+Policy} (const std\+::string \&str)
+\item 
+void {\bf dqm4hep\+::print\+Raw\+Buffer} (char $\ast$p\+Buffer, int buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Print the raw buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+B\+I\+T@{D\+Q\+M\+\_\+\+B\+I\+T}}
+\index{D\+Q\+M\+\_\+\+B\+I\+T@{D\+Q\+M\+\_\+\+B\+I\+T}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(1\+U\+L\+L $<$$<$ (n))}\label{DQM4HEP_8h_acf84209f34a9c4b9a19fccc72a764fe0}
+
+
+Definition at line 75 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T@{D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T}}
+\index{D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T@{D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+C\+L\+R\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~((n) \&= $\sim${\bf D\+Q\+M\+\_\+\+B\+I\+T}(i))}\label{DQM4HEP_8h_ae6902251ff51f203a188f3169802232b}
+
+
+Definition at line 77 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}}
+\index{D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+M\+O\+N\+I\+T\+O\+R\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+A\+B\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a9a40d7b465ae83057adab60bc04ed101}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d(NO\_ELEMENT\_TYPE,                 \textcolor{stringliteral}{"NO\_ELEMENT\_TYPE"},                 \textcolor{stringliteral}{""})                 \(\backslash\)
+    d(INT\_ELEMENT\_TYPE,                \textcolor{stringliteral}{"INT\_ELEMENT\_TYPE"},                \textcolor{stringliteral}{"int"})                \(\backslash\)
+    d(REAL\_ELEMENT\_TYPE,               \textcolor{stringliteral}{"REAL\_ELEMENT\_TYPE"},               \textcolor{stringliteral}{"float"})\(\backslash\)
+    d(SHORT\_ELEMENT\_TYPE,              \textcolor{stringliteral}{"SHORT\_ELEMENT\_TYPE"},              \textcolor{stringliteral}{"short"})\(\backslash\)
+    d(STRING\_ELEMENT\_TYPE,             \textcolor{stringliteral}{"STRING\_ELEMENT\_TYPE"},             \textcolor{stringliteral}{"string"})\(\backslash\)
+    d(INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE,   \textcolor{stringliteral}{"INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE"},   \textcolor{stringliteral}{"TH1I"})\(\backslash\)
+    d(REAL\_HISTOGRAM\_1D\_ELEMENT\_TYPE,  \textcolor{stringliteral}{"REAL\_HISTOGRAM\_1D\_ELEMENT\_TYPE"},  \textcolor{stringliteral}{"TH1F"})\(\backslash\)
+    d(SHORT\_HISTOGRAM\_1D\_ELEMENT\_TYPE, \textcolor{stringliteral}{"SHORT\_HISTOGRAM\_1D\_ELEMENT\_TYPE"}, \textcolor{stringliteral}{"TH1S"})\(\backslash\)
+    d(CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE,  \textcolor{stringliteral}{"CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE"},  \textcolor{stringliteral}{"TH1C"})\(\backslash\)
+    d(INT\_HISTOGRAM\_2D\_ELEMENT\_TYPE,   \textcolor{stringliteral}{"INT\_HISTOGRAM\_2D\_ELEMENT\_TYPE"},   \textcolor{stringliteral}{"TH2I"})\(\backslash\)
+    d(REAL\_HISTOGRAM\_2D\_ELEMENT\_TYPE,  \textcolor{stringliteral}{"REAL\_HISTOGRAM\_2D\_ELEMENT\_TYPE"},  \textcolor{stringliteral}{"TH2F"})\(\backslash\)
+    d(CHAR\_HISTOGRAM\_2D\_ELEMENT\_TYPE,  \textcolor{stringliteral}{"CHAR\_HISTOGRAM\_2D\_ELEMENT\_TYPE"},  \textcolor{stringliteral}{"TH2C"})\(\backslash\)
+    d(SHORT\_HISTOGRAM\_2D\_ELEMENT\_TYPE, \textcolor{stringliteral}{"SHORT\_HISTOGRAM\_2D\_ELEMENT\_TYPE"}, \textcolor{stringliteral}{"TH2S"})\(\backslash\)
+    d(PROFILE\_1D\_ELEMENT\_TYPE,         \textcolor{stringliteral}{"PROFILE\_1D\_ELEMENT\_TYPE"},         \textcolor{stringliteral}{"TProfile"})\(\backslash\)
+    d(PROFILE\_2D\_ELEMENT\_TYPE,         \textcolor{stringliteral}{"PROFILE\_2D\_ELEMENT\_TYPE"},         \textcolor{stringliteral}{"TProfile2D"})\(\backslash\)
+    d(USER\_DEFINED\_ELEMENT\_TYPE,       \textcolor{stringliteral}{"USER\_DEFINED\_ELEMENT\_TYPE"},       \textcolor{stringliteral}{"user"})
+\end{DoxyCode}
+
+
+Definition at line 463 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::monitor\+Element\+Type\+To\+String(), dqm4hep\+::string\+To\+Monitor\+Element\+Root\+Type(), and dqm4hep\+::string\+To\+Monitor\+Element\+Type().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L@{D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L}}
+\index{D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L@{D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+E\+C\+L(
+\begin{DoxyParamCaption}
+\item[{}]{Class\+Name, }
+\item[{}]{Class\+Str}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_ac7349aedc083dbc57adc9bde476946ef}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keyword}{class }DQMPlugin\_##ClassName : \textcolor{keyword}{public} dqm4hep::DQMPlugin, \textcolor{keyword}{public} ClassName \(\backslash\)
+    \{ \(\backslash\)
+    public: \(\backslash\)
+      DQMPlugin\_##ClassName (\textcolor{keywordtype}{bool} shouldRegister = \textcolor{keyword}{true}) : dqm4hep::DQMPlugin(ClassStr, shouldRegister), 
+      ClassName() \{\} \(\backslash\)
+      DQMPlugin *create()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} DQMPlugin\_##ClassName (\textcolor{keyword}{false}) ; \} \(\backslash\)
+    \}; \(\backslash\)
+    DQMPlugin\_##ClassName instance\_DQMPlugin\_##ClassName;
+\end{DoxyCode}
+
+
+Definition at line 237 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E}}
+\index{D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+Q\+U\+A\+L\+I\+T\+Y\+\_\+\+T\+A\+B\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a627ffbc5c742c382f4a820bde1979b9c}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d(NO\_QUALITY,          \textcolor{stringliteral}{"NO\_QUALITY"})        \(\backslash\)
+    d(VERY\_BAD\_QUALITY,    \textcolor{stringliteral}{"VERY\_BAD\_QUALITY"})  \(\backslash\)
+    d(BAD\_QUALITY,         \textcolor{stringliteral}{"BAD\_QUALITY"})       \(\backslash\)
+    d(NORMAL\_QUALITY,      \textcolor{stringliteral}{"NORMAL\_QUALITY"})    \(\backslash\)
+    d(GOOD\_QUALITY,        \textcolor{stringliteral}{"GOOD\_QUALITY"})      \(\backslash\)
+    d(VERY\_GOOD\_QUALITY,   \textcolor{stringliteral}{"VERY\_GOOD\_QUALITY"})
+\end{DoxyCode}
+
+
+Definition at line 326 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::quality\+To\+String().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E}}
+\index{D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+R\+E\+S\+E\+T\+\_\+\+P\+O\+L\+I\+C\+Y\+\_\+\+T\+A\+B\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a34189bbd335415500f8e9cccc438cc37}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d(NO\_RESET\_POLICY,           \textcolor{stringliteral}{"NoReset"})             \(\backslash\)
+    d(END\_OF\_CYCLE\_RESET\_POLICY, \textcolor{stringliteral}{"EndOfCycle"})   \(\backslash\)
+    d(END\_OF\_RUN\_RESET\_POLICY,   \textcolor{stringliteral}{"EndOfRun"})
+\end{DoxyCode}
+
+
+Definition at line 513 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::reset\+Policy\+To\+String(), and dqm4hep\+::string\+To\+Reset\+Policy().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T@{D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T}}
+\index{D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T@{D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+S\+E\+T\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~((n) $\vert$= {\bf D\+Q\+M\+\_\+\+B\+I\+T}(i))}\label{DQM4HEP_8h_a2541f14cea14314a7e71fa06ede89984}
+
+
+Definition at line 76 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E}}
+\index{D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E@{D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+S\+T\+A\+T\+E\+\_\+\+T\+A\+B\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_aa8762510ebc54caa3754f8fba0982cb0}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d(STOPPED\_STATE,    \textcolor{stringliteral}{"STOPPED\_STATE"})  \(\backslash\)
+    d(RUNNING\_STATE,    \textcolor{stringliteral}{"RUNNING\_STATE"})  \(\backslash\)
+    d(PAUSED\_STATE,     \textcolor{stringliteral}{"PAUSED\_STATE"})
+\end{DoxyCode}
+
+
+Definition at line 438 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::state\+To\+String().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T@{D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T}}
+\index{D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T@{D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+Q\+M\+\_\+\+T\+E\+S\+T\+B\+I\+T(
+\begin{DoxyParamCaption}
+\item[{}]{n, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~((bool)(((n) \& {\bf D\+Q\+M\+\_\+\+B\+I\+T}(i)) != 0))}\label{DQM4HEP_8h_affa5f15949f4ac1b9e9314025e867268}
+
+
+Definition at line 78 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y@{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y}}
+\index{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y@{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~a,}\label{DQM4HEP_8h_a74168e3325be2140d92fd4c9bd816f01}
+
+
+Definition at line 249 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2@{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2}}
+\index{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2@{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+E\+N\+U\+M\+\_\+\+E\+N\+T\+R\+Y\+\_\+2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~a,}\label{DQM4HEP_8h_ad930b3fe05de45fd0eaafd863a222868}
+
+
+Definition at line 253 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H@{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H}}
+\index{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H@{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~case a \+: return b;}\label{DQM4HEP_8h_ac466b6a3e84e7e21f515f71472c9a23f}
+
+
+Definition at line 250 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::quality\+To\+String(), dqm4hep\+::reset\+Policy\+To\+String(), dqm4hep\+::state\+To\+String(), and dqm4hep\+::status\+Code\+To\+String().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2@{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}}
+\index{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2@{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+N\+A\+M\+E\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~case a \+: return b;}\label{DQM4HEP_8h_abe8604e867d19b5ba25c74c2b87c925f}
+
+
+Definition at line 254 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::monitor\+Element\+Type\+To\+String().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2@{G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}}
+\index{G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2@{G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+P\+R\+E\+F\+I\+X\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~case a \+: return c;}\label{DQM4HEP_8h_a5fec85ba4155b32e2b41c197e674e4a3}
+
+
+Definition at line 255 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E}}
+\index{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~if(str == b) return a;}\label{DQM4HEP_8h_ab578c6f7d2558cc09dafc228ec9bb1b4}
+
+
+Definition at line 251 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::string\+To\+Reset\+Policy().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1}}
+\index{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+1(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~if(str == b) return a;}\label{DQM4HEP_8h_a1450a90230fab8588008c2534f137c78}
+
+
+Definition at line 256 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::string\+To\+Monitor\+Element\+Type().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2}}
+\index{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2@{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+E\+T\+\_\+\+S\+T\+R\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~if(str == c) return a;}\label{DQM4HEP_8h_adeda070f3f0c24f44e91d409da23acc1}
+
+
+Definition at line 257 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::string\+To\+Monitor\+Element\+Root\+Type().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!I\+S\+\_\+\+I\+N\+F@{I\+S\+\_\+\+I\+N\+F}}
+\index{I\+S\+\_\+\+I\+N\+F@{I\+S\+\_\+\+I\+N\+F}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{I\+S\+\_\+\+I\+N\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+I\+N\+F~std\+::isinf}\label{DQM4HEP_8h_ac635fa9acefd4ac37590f1768d3400f3}
+
+
+Definition at line 92 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!I\+S\+\_\+\+N\+A\+N@{I\+S\+\_\+\+N\+A\+N}}
+\index{I\+S\+\_\+\+N\+A\+N@{I\+S\+\_\+\+N\+A\+N}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{I\+S\+\_\+\+N\+A\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+S\+\_\+\+N\+A\+N~std\+::isnan}\label{DQM4HEP_8h_a2f940624d3bba0ea27a8631cc83c64bd}
+
+
+Definition at line 91 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D@{N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D}}
+\index{N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D@{N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\+O\+T\+I\+F\+Y\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+C\+A\+L\+L\+E\+D~streamlog\+\_\+out(D\+E\+B\+U\+G) $<$$<$ \char`\"{}Method called \+: \char`\"{} $<$$<$ \+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+ $<$$<$ std\+::endl;}\label{DQM4HEP_8h_aa244af374df4ff4f935dc787e40abf6d}
+
+
+Definition at line 232 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N@{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N@{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Status\+Code2, }
+\item[{}]{Operator, }
+\item[{}]{Command, }
+\item[{}]{Code}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a80fbdf155243225263b778b41f9c6b4a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if ((statusCode Operator StatusCode1) && (statusCode Operator StatusCode2)) \(\backslash\)
+      \{                 \(\backslash\)
+      Code                \(\backslash\)
+    return statusCode;            \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 220 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N@{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}}
+\index{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N@{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Operator, }
+\item[{}]{Command, }
+\item[{}]{Code}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a61f2a2f3852c23bfe2d0059b075accb2}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if (statusCode Operator StatusCode1)        \(\backslash\)
+      \{                 \(\backslash\)
+      Code                \(\backslash\)
+    return statusCode;            \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 208 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize(), and dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::deserialize().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F@{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}}
+\index{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F@{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Operator, }
+\item[{}]{Command}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a25aeabada9910a1ce63f8eb0de4d8dda}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if (statusCode Operator StatusCode1)        \(\backslash\)
+      \{                 \(\backslash\)
+      streamlog\_out(WARNING) << #Command << \textcolor{stringliteral}{" return "} << 
+      dqm4hep::statusCodeToString(statusCode) << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in function: "} << \_\_FUNCTION\_\_ << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in file:     "} << \_\_FILE\_\_ << \textcolor{stringliteral}{" line#: "} << \_\_LINE\_\_ << std::endl; \(\backslash\)
+      return statusCode;            \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 152 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+E\+Log\+::add\+Entries(), dqm4hep\+::\+D\+Q\+M\+Storage\+::add\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::add\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::archive(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Float(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Object(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+String(), dqm4hep\+::\+D\+Q\+M\+Storage\+::cd(), dqm4hep\+::\+D\+Q\+M\+Directory\+::clear(), dqm4hep\+::\+D\+Q\+M\+Storage\+::clear(), dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::connect(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::create\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::create\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Version\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Run\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List\+Name\+Request\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::disconnect\+From\+Service(), dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::exit(), dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::exit(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute(), dqm4hep\+::\+D\+Q\+M\+Storage\+::get\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element\+List\+To\+Publish(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Quality\+Test\+Results(), dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::insert\+Config\+File(), dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::load\+Libraries(), dqm4hep\+::\+E\+Log\+::log(), dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir(), dqm4hep\+::\+D\+Q\+M\+Storage\+::monitor\+Element\+Exists(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::open(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Available\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Config\+File\+Content(), dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Config\+File\+Description(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read\+Address(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Parameter\+Value(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Parameter\+Values(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Storage\+::recursive\+Content\+List(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill(), dqm4hep\+::\+D\+Q\+M\+Directory\+::remove\+Dir(), dqm4hep\+::\+D\+Q\+M\+Storage\+::remove\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::reset\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::restart(), dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application\+::run(), dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::run(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Tests(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Version\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+List\+Name\+Request\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Calorimeter\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Raw\+Calorimeter\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Float\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Int\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::serialize(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::start\+Services(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::stop\+Collector(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::stop\+Services(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe(), template\+Class\+Imp(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe(), and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F@{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}}
+\index{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F@{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Status\+Code2, }
+\item[{}]{Operator, }
+\item[{}]{Command}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_af5dcf22951f6740547cbedae3f4373aa}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if ((statusCode Operator StatusCode1) && (statusCode Operator StatusCode2)) \(\backslash\)
+      \{                 \(\backslash\)
+      streamlog\_out(WARNING) << #Command << \textcolor{stringliteral}{" return "} << 
+      dqm4hep::statusCodeToString(statusCode) << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in function: "} << \_\_FUNCTION\_\_ << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in file:     "} << \_\_FILE\_\_ << \textcolor{stringliteral}{" line#: "} << \_\_LINE\_\_ << std::endl; \(\backslash\)
+      return statusCode;            \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 166 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E@{S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E@{S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+T\+A\+T\+U\+S\+\_\+\+C\+O\+D\+E\+\_\+\+T\+A\+B\+L\+E(
+\begin{DoxyParamCaption}
+\item[{}]{d}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_ab543236d3cfa362172c28841a0b86fa5}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+d(STATUS\_CODE\_SUCCESS,                  \textcolor{stringliteral}{"STATUS\_CODE\_SUCCESS"}                   )                   \(\backslash\)
+    d(STATUS\_CODE\_FAILURE,                  \textcolor{stringliteral}{"STATUS\_CODE\_FAILURE"}                   )                   \(\backslash\)
+    d(STATUS\_CODE\_NOT\_FOUND,                \textcolor{stringliteral}{"STATUS\_CODE\_NOT\_FOUND"}                 )                   \(\backslash\)
+    d(STATUS\_CODE\_NOT\_INITIALIZED,          \textcolor{stringliteral}{"STATUS\_CODE\_NOT\_INITIALIZED"}           )                   \(\backslash\)
+    d(STATUS\_CODE\_ALREADY\_INITIALIZED,      \textcolor{stringliteral}{"STATUS\_CODE\_ALREADY\_INITIALIZED"}       )                   \(\backslash\)
+    d(STATUS\_CODE\_ALREADY\_PRESENT,          \textcolor{stringliteral}{"STATUS\_CODE\_ALREADY\_PRESENT"}           )                   \(\backslash\)
+    d(STATUS\_CODE\_OUT\_OF\_RANGE,             \textcolor{stringliteral}{"STATUS\_CODE\_OUT\_OF\_RANGE"}              )                   \(\backslash\)
+    d(STATUS\_CODE\_NOT\_ALLOWED,              \textcolor{stringliteral}{"STATUS\_CODE\_NOT\_ALLOWED"}               )                   \(\backslash\)
+    d(STATUS\_CODE\_INVALID\_PARAMETER,        \textcolor{stringliteral}{"STATUS\_CODE\_INVALID\_PARAMETER"}         )                   \(\backslash\)
+    d(STATUS\_CODE\_UNCHANGED,                \textcolor{stringliteral}{"STATUS\_CODE\_UNCHANGED"}                 )                   \(\backslash\)
+    d(STATUS\_CODE\_INVALID\_PTR,              \textcolor{stringliteral}{"STATUS\_CODE\_INVALID\_PTR"}               )
+\end{DoxyCode}
+
+
+Definition at line 261 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::status\+Code\+To\+String().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F@{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}}
+\index{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F@{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Operator, }
+\item[{}]{Command}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_ab49c8013f48bd677d0e5e39cb506b8f9}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if (statusCode Operator StatusCode1)        \(\backslash\)
+      \{                 \(\backslash\)
+      streamlog\_out(WARNING) << #Command << \textcolor{stringliteral}{" throw "} << 
+      dqm4hep::statusCodeToString(statusCode) << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in function: "} << \_\_FUNCTION\_\_ << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in file:     "} << \_\_FILE\_\_ << \textcolor{stringliteral}{" line#: "} << \_\_LINE\_\_ << std::endl; \(\backslash\)
+      throw dqm4hep::StatusCodeException(statusCode);     \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 180 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Float(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Object(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+String(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Archiver(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Module(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network(), dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::connect(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::create\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Raw\+Calorimeter\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+T\+P\+C\+Hit\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Cluster\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Float\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Int\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::\+D\+Q\+M\+Archiver(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+D\+Q\+M\+Dim\+Event\+Collector(), dqm4hep\+::\+D\+Q\+M\+Plugin\+::\+D\+Q\+M\+Plugin(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Available\+List\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Request\+List(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Client\+Unsubscription(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+Collector\+Info\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Collect\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+List\+Name\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Query(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::on\+Cycle\+Started(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::on\+Cycle\+Started(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::on\+Cycle\+Stopped(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::on\+Cycle\+Stopped(), dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::process\+Event(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List().
+
+\index{D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}!T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F@{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}}
+\index{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F@{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}!D\+Q\+M4\+H\+E\+P.\+h@{D\+Q\+M4\+H\+E\+P.\+h}}
+\subsubsection[{T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F(
+\begin{DoxyParamCaption}
+\item[{}]{Status\+Code1, }
+\item[{}]{Status\+Code2, }
+\item[{}]{Operator, }
+\item[{}]{Command}
+\end{DoxyParamCaption}
+)}\label{DQM4HEP_8h_a4f6163df09803e8317e87512323c013a}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                 \(\backslash\)
+    const dqm4hep::StatusCode statusCode(Command);      \(\backslash\)
+    if ((statusCode Operator StatusCode1) && (statusCode Operator StatusCode2)) \(\backslash\)
+      \{                 \(\backslash\)
+      streamlog\_out(WARNING) << #Command << \textcolor{stringliteral}{" throw "} << 
+      dqm4hep::statusCodeToString(statusCode) << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in function: "} << \_\_FUNCTION\_\_ << std::endl; \(\backslash\)
+      streamlog\_out(WARNING) << \textcolor{stringliteral}{"    in file:     "} << \_\_FILE\_\_ << \textcolor{stringliteral}{" line#: "} << \_\_LINE\_\_ << std::endl; \(\backslash\)
+      throw dqm4hep::StatusCodeException(statusCode);     \(\backslash\)
+      \}                 \(\backslash\)
+  \}
+\end{DoxyCode}
+
+
+Definition at line 194 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+

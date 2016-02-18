@@ -1,0 +1,377 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Lcio\+Reader\+Listener Class Reference}
+\label{classdqm4hep_1_1DQMLcioReaderListener}\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+
+
+\doxyref{D\+Q\+M\+Lcio\+Reader\+Listener}{p.}{classdqm4hep_1_1DQMLcioReaderListener} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Lcio\+Reader\+Listener.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Lcio\+Reader\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLcioReaderListener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Lcio\+Reader\+Listener} (I\+O\+::\+L\+C\+Reader $\ast$p\+L\+C\+Reader)
+\begin{DoxyCompactList}\small\item\em Constructor with a data service. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf set\+Sleep\+Time} (unsigned int usleep\+Time)
+\begin{DoxyCompactList}\small\item\em Set the time for a usleep call between each event (in u secs) \end{DoxyCompactList}\item 
+void {\bf set\+Event\+Client} ({\bf D\+Q\+M\+Event\+Client} $\ast$p\+Event\+Client)
+\begin{DoxyCompactList}\small\item\em Set the event collector client that will publish the event over the network. \end{DoxyCompactList}\item 
+void {\bf set\+Simulate\+Spill} (bool simulate)
+\begin{DoxyCompactList}\small\item\em Whether the listener has to simulate a spill time structure. \end{DoxyCompactList}\item 
+void {\bf process\+Event} (E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$p\+L\+C\+Event)
+\item 
+void {\bf modify\+Event} (E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$p\+L\+C\+Event)
+\item 
+void {\bf process\+Run\+Header} (E\+V\+E\+N\+T\+::\+L\+C\+Run\+Header $\ast$p\+L\+C\+Run\+Header)
+\item 
+void {\bf modify\+Run\+Header} (E\+V\+E\+N\+T\+::\+L\+C\+Run\+Header $\ast$p\+L\+C\+Run\+Header)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Client} $\ast$ {\bf m\+\_\+p\+Event\+Client}
+\item 
+I\+O\+::\+L\+C\+Reader $\ast$ {\bf m\+\_\+p\+L\+C\+Reader}
+\item 
+unsigned int {\bf m\+\_\+sleep\+Time}
+\item 
+bool {\bf m\+\_\+simulate\+Spill}
+\item 
+E\+V\+E\+N\+T\+::long64 {\bf m\+\_\+previous\+Time\+Stamp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Lcio\+Reader\+Listener}{p.}{classdqm4hep_1_1DQMLcioReaderListener} class. 
+
+Definition at line 47 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!D\+Q\+M\+Lcio\+Reader\+Listener@{D\+Q\+M\+Lcio\+Reader\+Listener}}
+\index{D\+Q\+M\+Lcio\+Reader\+Listener@{D\+Q\+M\+Lcio\+Reader\+Listener}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{D\+Q\+M\+Lcio\+Reader\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::\+D\+Q\+M\+Lcio\+Reader\+Listener (
+\begin{DoxyParamCaption}
+\item[{I\+O\+::\+L\+C\+Reader $\ast$}]{p\+L\+C\+Reader}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_a2707676bd1b563300add1727023c14fc}
+
+
+Constructor with a data service. 
+
+
+
+Definition at line 43 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References m\+\_\+p\+L\+C\+Reader.
+
+
+\begin{DoxyCode}
+43                                                                   :
+44     m_pLCReader(pLCReader),
+45     m_pEventClient(NULL),
+46     m_sleepTime(0),
+47     m_simulateSpill(\textcolor{keyword}{false}),
+48     m_previousTimeStamp(0)
+49 \{
+50   \textcolor{keywordflow}{if}(NULL == m_pLCReader)
+51     \textcolor{keywordflow}{throw} dqm4hep::StatusCodeException(dqm4hep::STATUS\_CODE\_INVALID\_PTR);
+52 
+53   m_pLCReader->registerLCEventListener(\textcolor{keyword}{this});
+54   m_pLCReader->registerLCRunListener(\textcolor{keyword}{this});
+55 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!````~D\+Q\+M\+Lcio\+Reader\+Listener@{$\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\index{````~D\+Q\+M\+Lcio\+Reader\+Listener@{$\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::$\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLcioReaderListener_ac5fdc3b960f78f01f7472135aa31600d}
+
+
+Destructor. 
+
+
+
+Definition at line 59 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References m\+\_\+p\+L\+C\+Reader.
+
+
+\begin{DoxyCode}
+60 \{
+61   \textcolor{keywordflow}{if}(m_pLCReader)
+62   \{
+63     m_pLCReader->removeLCEventListener(\textcolor{keyword}{this});
+64     m_pLCReader->removeLCRunListener(\textcolor{keyword}{this});
+65  \}
+66 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!modify\+Event@{modify\+Event}}
+\index{modify\+Event@{modify\+Event}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{modify\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::modify\+Event (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$}]{p\+L\+C\+Event}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_a16fa4ee99f7cc19f79aab0ebd9741100}
+
+
+Definition at line 115 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+\begin{DoxyCode}
+116 \{
+117  \textcolor{comment}{/* nop */}
+118 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!modify\+Run\+Header@{modify\+Run\+Header}}
+\index{modify\+Run\+Header@{modify\+Run\+Header}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{modify\+Run\+Header}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::modify\+Run\+Header (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Run\+Header $\ast$}]{p\+L\+C\+Run\+Header}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_a869a17d9e69d510dd19c42850d4d357f}
+
+
+Definition at line 129 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+\begin{DoxyCode}
+130 \{
+131  \textcolor{comment}{/* nop */}
+132 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!process\+Event@{process\+Event}}
+\index{process\+Event@{process\+Event}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{process\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::process\+Event (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$}]{p\+L\+C\+Event}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_ae85237eac47f231949676bb359541ec5}
+
+
+Definition at line 70 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References dqm4hep\+::\+D\+E\+B\+U\+G, m\+\_\+p\+Event\+Client, m\+\_\+previous\+Time\+Stamp, m\+\_\+simulate\+Spill, m\+\_\+sleep\+Time, dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::send\+Event(), dqm4hep\+::\+D\+Q\+M\+Event\+::set\+Event(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+71 \{
+72   \textcolor{keywordflow}{if}(NULL == m_pEventClient)
+73     \textcolor{keywordflow}{throw} dqm4hep::StatusCodeException(dqm4hep::STATUS\_CODE\_NOT\_INITIALIZED);
+74 
+75   DQMEvent *pDqmEvent = \textcolor{keyword}{new} DQMLCEvent();
+76   pDqmEvent->setEvent<EVENT::LCEvent>(pLCEvent, \textcolor{keyword}{false});
+77 
+78   \textcolor{keywordflow}{if}(m_simulateSpill)
+79   \{
+80     EVENT::long64 timeStamp = pLCEvent->getTimeStamp();
+81     EVENT::long64 timeStampDifference = (timeStamp - m_previousTimeStamp);
+82 
+83     \textcolor{keywordflow}{if}(timeStampDifference > 0 && m_previousTimeStamp != 0)
+84     \{
+85       streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Sleeping "} << timeStampDifference << \textcolor{stringliteral}{" sec ..."} << std::endl;
+86       sleep(timeStampDifference);
+87     \}
+88 
+89     m_previousTimeStamp = timeStamp;
+90 
+91     streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Sending event no "} << pLCEvent->getEventNumber() << std::endl;
+92     THROW_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, m_pEventClient->sendEvent(pDqmEvent));
+93     streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Event no "} << pLCEvent->getEventNumber() << \textcolor{stringliteral}{" sent"} << std::endl;
+94   \}
+95   \textcolor{keywordflow}{else}
+96   \{
+97     streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Sending event no "} << pLCEvent->getEventNumber() << std::endl;
+98     THROW_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, m_pEventClient->sendEvent(pDqmEvent));
+99     streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Event no "} << pLCEvent->getEventNumber() << \textcolor{stringliteral}{" sent"} << std::endl;
+100 
+101     \textcolor{keywordflow}{if}(m_sleepTime != 0)
+102     \{
+103       timespec timesleep;
+104         timesleep.tv\_sec = 0;
+105         timesleep.tv\_nsec = 1000*m_sleepTime;
+106       nanosleep(&timesleep, NULL);
+107     \}
+108   \}
+109 
+110   \textcolor{keyword}{delete} pDqmEvent;
+111 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!process\+Run\+Header@{process\+Run\+Header}}
+\index{process\+Run\+Header@{process\+Run\+Header}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{process\+Run\+Header}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::process\+Run\+Header (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Run\+Header $\ast$}]{p\+L\+C\+Run\+Header}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_a43b466dd3455eacf7fc073f98df91d3f}
+
+
+Definition at line 122 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+\begin{DoxyCode}
+123 \{
+124   \textcolor{comment}{/* nop */}
+125 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!set\+Event\+Client@{set\+Event\+Client}}
+\index{set\+Event\+Client@{set\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{set\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::set\+Event\+Client (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Client} $\ast$}]{p\+Event\+Client}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_aa7b1e47458578b8d6daf15963ee5a6da}
+
+
+Set the event collector client that will publish the event over the network. 
+
+
+
+Definition at line 150 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References m\+\_\+p\+Event\+Client.
+
+
+\begin{DoxyCode}
+151 \{
+152   m_pEventClient = pEventClient;
+153 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!set\+Simulate\+Spill@{set\+Simulate\+Spill}}
+\index{set\+Simulate\+Spill@{set\+Simulate\+Spill}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{set\+Simulate\+Spill}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::set\+Simulate\+Spill (
+\begin{DoxyParamCaption}
+\item[{bool}]{simulate}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_ab912936b13fb088891b52eff61637e8e}
+
+
+Whether the listener has to simulate a spill time structure. 
+
+The time stamp is looked-\/up in L\+C\+Events and a sleep(n) is called between each event sending where n is the difference of time stamp 
+
+Definition at line 143 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References m\+\_\+simulate\+Spill.
+
+
+\begin{DoxyCode}
+144 \{
+145   m_simulateSpill = simulate;
+146 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!set\+Sleep\+Time@{set\+Sleep\+Time}}
+\index{set\+Sleep\+Time@{set\+Sleep\+Time}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{set\+Sleep\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::set\+Sleep\+Time (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{usleep\+Time}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLcioReaderListener_a7f8e0ca5154d5c4d274773b5fed9d1cb}
+
+
+Set the time for a usleep call between each event (in u secs) 
+
+
+
+Definition at line 136 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+cc.
+
+
+
+References m\+\_\+sleep\+Time.
+
+
+\begin{DoxyCode}
+137 \{
+138   m_sleepTime = usleepTime;
+139 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}}
+\index{m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{m\+\_\+p\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::m\+\_\+p\+Event\+Client\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMLcioReaderListener_a7d2d0a5959c15568050f382b4943283c}
+
+
+Definition at line 79 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+Referenced by process\+Event(), and set\+Event\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!m\+\_\+p\+L\+C\+Reader@{m\+\_\+p\+L\+C\+Reader}}
+\index{m\+\_\+p\+L\+C\+Reader@{m\+\_\+p\+L\+C\+Reader}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{m\+\_\+p\+L\+C\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}I\+O\+::\+L\+C\+Reader$\ast$ dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::m\+\_\+p\+L\+C\+Reader\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMLcioReaderListener_a0e6e1e813ec99978a1029f0636cca107}
+
+
+Definition at line 80 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+Referenced by D\+Q\+M\+Lcio\+Reader\+Listener(), and $\sim$\+D\+Q\+M\+Lcio\+Reader\+Listener().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!m\+\_\+previous\+Time\+Stamp@{m\+\_\+previous\+Time\+Stamp}}
+\index{m\+\_\+previous\+Time\+Stamp@{m\+\_\+previous\+Time\+Stamp}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{m\+\_\+previous\+Time\+Stamp}]{\setlength{\rightskip}{0pt plus 5cm}E\+V\+E\+N\+T\+::long64 dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::m\+\_\+previous\+Time\+Stamp\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMLcioReaderListener_ad1926a3a5986ca6bf0eb980cceba3c31}
+
+
+Definition at line 83 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+Referenced by process\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!m\+\_\+simulate\+Spill@{m\+\_\+simulate\+Spill}}
+\index{m\+\_\+simulate\+Spill@{m\+\_\+simulate\+Spill}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{m\+\_\+simulate\+Spill}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::m\+\_\+simulate\+Spill\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMLcioReaderListener_ad7aebaf825976993f862fce9d23c5e08}
+
+
+Definition at line 82 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+Referenced by process\+Event(), and set\+Simulate\+Spill().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}!m\+\_\+sleep\+Time@{m\+\_\+sleep\+Time}}
+\index{m\+\_\+sleep\+Time@{m\+\_\+sleep\+Time}!dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener@{dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener}}
+\subsubsection[{m\+\_\+sleep\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::m\+\_\+sleep\+Time\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMLcioReaderListener_ab2e19ce1dd6149cd7bf530c7d0a75b3a}
+
+
+Definition at line 81 of file D\+Q\+M\+Lcio\+Reader\+Listener.\+h.
+
+
+
+Referenced by process\+Event(), and set\+Sleep\+Time().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Lcio\+Reader\+Listener.\+h}\item 
+{\bf D\+Q\+M\+Lcio\+Reader\+Listener.\+cc}\end{DoxyCompactItemize}

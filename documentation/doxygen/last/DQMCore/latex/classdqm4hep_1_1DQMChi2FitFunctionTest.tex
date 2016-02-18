@@ -1,0 +1,380 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Chi2\+Fit\+Function\+Test Class Reference}
+\label{classdqm4hep_1_1DQMChi2FitFunctionTest}\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+
+
+\doxyref{D\+Q\+M\+Chi2\+Fit\+Function\+Test}{p.}{classdqm4hep_1_1DQMChi2FitFunctionTest} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Quality\+Test.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Chi2\+Fit\+Function\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMChi2FitFunctionTest}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classdqm4hep_1_1DQMChi2FitFunctionTest_1_1Factory} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Chi2\+Fit\+Function\+Test} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructor with name. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Chi2\+Fit\+Function\+Test} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf read\+Settings} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read the settings from the xml handle. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the quality test. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf run} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Runs a quality test on the given monitor element. \end{DoxyCompactList}\item 
+virtual bool {\bf can\+Run} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the quality test can be run on the monitor element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+formula}
+\item 
+std\+::vector$<$ double $>$ {\bf m\+\_\+input\+Parameter\+List}
+\item 
+unsigned int {\bf m\+\_\+function\+N\+Parameters}
+\item 
+double {\bf m\+\_\+function\+X\+Min}
+\item 
+double {\bf m\+\_\+function\+X\+Max}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Chi2\+Fit\+Function\+Test}{p.}{classdqm4hep_1_1DQMChi2FitFunctionTest} class. 
+
+Definition at line 244 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!D\+Q\+M\+Chi2\+Fit\+Function\+Test@{D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\index{D\+Q\+M\+Chi2\+Fit\+Function\+Test@{D\+Q\+M\+Chi2\+Fit\+Function\+Test}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{D\+Q\+M\+Chi2\+Fit\+Function\+Test}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_ab71a2d8c634ccaa88643ac624b6633d9}
+
+
+Constructor with name. 
+
+
+
+Definition at line 320 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+320                                                                     :
+321   DQMQualityTest(name),
+322   m_functionXMin(0.f),
+323   m_functionXMax(1.f),
+324   m_functionNParameters(0)
+325 \{
+326   \textcolor{comment}{/* nop */}
+327 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!````~D\+Q\+M\+Chi2\+Fit\+Function\+Test@{$\sim$\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\index{````~D\+Q\+M\+Chi2\+Fit\+Function\+Test@{$\sim$\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::$\sim$\+D\+Q\+M\+Chi2\+Fit\+Function\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a0f6db19b1f80c17808bc3f73448d0403}
+
+
+Destructor. 
+
+
+
+Definition at line 331 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+332 \{
+333   \textcolor{comment}{/* nop */}
+334 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!can\+Run@{can\+Run}}
+\index{can\+Run@{can\+Run}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{can\+Run}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::can\+Run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a57451e6dbc2db6e107112223241c0f02}
+
+
+Whether the quality test can be run on the monitor element. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a94070d01ec18eac873e21f3b653ca391}.
+
+
+
+Definition at line 432 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Type().
+
+
+\begin{DoxyCode}
+433 \{
+434   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+435     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+436 
+437   DQMMonitorElementType type = pMonitorElement->getType();
+438   TH1 *pHistogram = pMonitorElement->get<TH1>();
+439 
+440   \textcolor{comment}{// asking for a histo 1D}
+441   \textcolor{keywordflow}{if}(type < INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE || type > CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE)
+442     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+443 
+444   \textcolor{keywordflow}{if}(NULL == pHistogram)
+445     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+446 
+447   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+448 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!init@{init}}
+\index{init@{init}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a464fef4b048d4c0477ce240ce6779010}
+
+
+Initialize the quality test. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a1500cae4000edbc8cae148e5ec612239}.
+
+
+
+Definition at line 363 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+364 \{
+365   \textcolor{comment}{/* nop */}
+366   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+367 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_ac50aa5b47a66e680d6623b6c1ac93b88}
+
+
+Read the settings from the xml handle. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a34c620c4f331f22d2676eb0401997b7b}.
+
+
+
+Definition at line 338 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References m\+\_\+formula, m\+\_\+function\+N\+Parameters, m\+\_\+function\+X\+Max, m\+\_\+function\+X\+Min, m\+\_\+input\+Parameter\+List, dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Value(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Vector\+Of\+Values(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+339 \{
+340   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+341       \textcolor{stringliteral}{"Formula"}, m_formula));
+342 
+343   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readVectorOfValues(xmlHandle,
+344       \textcolor{stringliteral}{"InputParameterList"}, m_inputParameterList));
+345 
+346   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+347       \textcolor{stringliteral}{"FunctionNParameters"}, m_functionNParameters));
+348 
+349   \textcolor{keywordflow}{if}(!m_inputParameterList.empty() && m_inputParameterList.size() != 
+      m_functionNParameters)
+350     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+351 
+352   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+353       \textcolor{stringliteral}{"FunctionXMin"}, m_functionXMin));
+354 
+355   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+356       \textcolor{stringliteral}{"FunctionXMax"}, m_functionXMax));
+357 
+358   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+359 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!run@{run}}
+\index{run@{run}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_af0e5ff51eab60ca99ff6e83f9e56052b}
+
+
+Runs a quality test on the given monitor element. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a228419cd9e4cfa60ee51ad0acc77ad0b}.
+
+
+
+Definition at line 371 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::get\+Name(), m\+\_\+formula, m\+\_\+function\+N\+Parameters, m\+\_\+function\+X\+Max, m\+\_\+function\+X\+Min, m\+\_\+input\+Parameter\+List, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+is\+Successful, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+message, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+quality, dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::scale\+To\+Quality(), and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::type\+To\+String().
+
+
+\begin{DoxyCode}
+372 \{
+373   m_isSuccessful = \textcolor{keyword}{false};
+374   m_quality = NO\_QUALITY;
+375   m_message = \textcolor{stringliteral}{""};
+376 
+377   TH1 *pHistogram = pMonitorElement->get<TH1>();
+378 
+379   std::string functionName = \textcolor{stringliteral}{"DQMChi2FitFunctionTest\_"}+ getName() +\textcolor{stringliteral}{"\_fitFunction"};
+380 
+381   \textcolor{comment}{// we need to remove the function from the TH1}
+382   \textcolor{comment}{// since when TH1::Fit is called, the function}
+383   \textcolor{comment}{// is stored in the TH1. The function is removed and deleted}
+384   \textcolor{comment}{// since we don't know if the formula is the same as the user provides}
+385   TF1 *pFitFunction = pHistogram->GetFunction(functionName.c\_str());
+386 
+387   \textcolor{keywordflow}{if}(pFitFunction)
+388   \{
+389     pHistogram->RecursiveRemove(pFitFunction);
+390     \textcolor{keyword}{delete} pFitFunction;
+391     pFitFunction = NULL;
+392   \}
+393 
+394   \textcolor{comment}{// declare the fit function and fill the parameter list}
+395   pFitFunction = \textcolor{keyword}{new} TF1(functionName.c\_str(), m_formula.c\_str(), m_functionXMin, 
+      m_functionXMax);\textcolor{comment}{//, m\_functionNParameters);}
+396 
+397   \textcolor{comment}{// set the parameters depending on if an}
+398   \textcolor{comment}{// input has been provided or not by the user}
+399   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p=0 ; p<m_functionNParameters ; p++)
+400     pFitFunction->SetParameter(p, m_inputParameterList.empty() ? 0 : 
+      m_inputParameterList.at(p));
+401 
+402   \textcolor{comment}{// Q for quiet}
+403   \textcolor{comment}{// N for no draw}
+404   \textcolor{keywordtype}{int} status = pHistogram->Fit(pFitFunction, \textcolor{stringliteral}{"QN"}, \textcolor{stringliteral}{""}, m_functionXMin, 
+      m_functionXMax);
+405 
+406   \textcolor{keywordflow}{if}(status != 0)
+407   \{
+408     m_message = \textcolor{stringliteral}{"Try to fit function '"}+ m_formula + \textcolor{stringliteral}{"' with histogram '"} + pMonitorElement->getName() + \textcolor{stringliteral}{"
+      '. "} +
+409         \textcolor{stringliteral}{"Fit failed and returned status "} + DQM4HEP::typeToString(status);
+410 
+411     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+412   \}
+413 
+414   \textcolor{keywordtype}{double} chi2 = pFitFunction->GetChisquare();
+415   \textcolor{keywordtype}{double} proba = TMath::Prob(chi2, m_inputParameterList.size());
+416 
+417   m_isSuccessful = \textcolor{keyword}{true};
+418   m_quality = DQM4HEP::scaleToQuality(proba);
+419   m_message = \textcolor{stringliteral}{"Function '"}+ m_formula +\textcolor{stringliteral}{"' fitted on histogram '"} + pMonitorElement->getName() + \textcolor{stringliteral}{"' ends
+       with the following output :\(\backslash\)n"} +
+420       \textcolor{stringliteral}{"Chi2 = "} + DQM4HEP::typeToString(chi2) + \textcolor{stringliteral}{"\(\backslash\)n"} +
+421       \textcolor{stringliteral}{"Excess probability = "} + DQM4HEP::typeToString(proba) + \textcolor{stringliteral}{"\(\backslash\)n"} +
+422       \textcolor{stringliteral}{"Output parameters : \(\backslash\)n"};
+423 
+424   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} p=0 ; p<m_functionNParameters ; p++)
+425     m_message += (\textcolor{stringliteral}{" p"} + DQM4HEP::typeToString(p) + \textcolor{stringliteral}{" = "} + 
+      DQM4HEP::typeToString(pFitFunction->GetParameter(p)) + \textcolor{stringliteral}{"\(\backslash\)n"});
+426 
+427   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+428 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!m\+\_\+formula@{m\+\_\+formula}}
+\index{m\+\_\+formula@{m\+\_\+formula}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{m\+\_\+formula}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::m\+\_\+formula\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a31fbc61e6beb7d6b6fae87fbeeaa4b88}
+
+
+Definition at line 283 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!m\+\_\+function\+N\+Parameters@{m\+\_\+function\+N\+Parameters}}
+\index{m\+\_\+function\+N\+Parameters@{m\+\_\+function\+N\+Parameters}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{m\+\_\+function\+N\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::m\+\_\+function\+N\+Parameters\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a0277386a5c7a240924568e90500211ab}
+
+
+Definition at line 285 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!m\+\_\+function\+X\+Max@{m\+\_\+function\+X\+Max}}
+\index{m\+\_\+function\+X\+Max@{m\+\_\+function\+X\+Max}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{m\+\_\+function\+X\+Max}]{\setlength{\rightskip}{0pt plus 5cm}double dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::m\+\_\+function\+X\+Max\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a8f63a016f0c2e6e17138b71a8b94ff99}
+
+
+Definition at line 287 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!m\+\_\+function\+X\+Min@{m\+\_\+function\+X\+Min}}
+\index{m\+\_\+function\+X\+Min@{m\+\_\+function\+X\+Min}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{m\+\_\+function\+X\+Min}]{\setlength{\rightskip}{0pt plus 5cm}double dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::m\+\_\+function\+X\+Min\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a66cca74cce7fc83f555d78ae7c83ff23}
+
+
+Definition at line 286 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}!m\+\_\+input\+Parameter\+List@{m\+\_\+input\+Parameter\+List}}
+\index{m\+\_\+input\+Parameter\+List@{m\+\_\+input\+Parameter\+List}!dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test@{dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test}}
+\subsubsection[{m\+\_\+input\+Parameter\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::m\+\_\+input\+Parameter\+List\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMChi2FitFunctionTest_a6af9a88c2505f5aa9854b6c35ba94030}
+
+
+Definition at line 284 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Quality\+Test.\+h}\item 
+{\bf D\+Q\+M\+Quality\+Test.\+cc}\end{DoxyCompactItemize}

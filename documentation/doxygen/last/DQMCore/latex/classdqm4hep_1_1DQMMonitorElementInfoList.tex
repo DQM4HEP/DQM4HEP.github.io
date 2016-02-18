@@ -1,0 +1,114 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info\+List Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementInfoList}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Messaging.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Info\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementInfoList}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize a monitor element publication and store it in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em De-\/serialize a monitor element publication from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 81 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementInfoList_a9b58ce66876b75871bbee2576d31ce82}
+
+
+De-\/serialize a monitor element publication from the data stream. 
+
+
+
+Definition at line 139 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Available\+List\+Update().
+
+
+\begin{DoxyCode}
+140 \{
+141   clear();
+142 
+143   dqm_uint nMonitorElement = 0;
+144   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nMonitorElement));
+145 
+146   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<nMonitorElement ; i++)
+147   \{
+148     DQMMonitorElementInfo info;
+149     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, info.deserialize(pDataStream));
+150 
+151     this->push\_back(info);
+152   \}
+153 
+154   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+155 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+List\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementInfoList_a5461ce7cd359ace84d5743e8d31cbc29}
+
+
+Serialize a monitor element publication and store it in the data stream. 
+
+
+
+Definition at line 124 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Available\+Monitor\+Element\+List().
+
+
+\begin{DoxyCode}
+125 \{
+126   dqm_uint nMonitorElementInfo = size();
+127   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nMonitorElementInfo));
+128 
+129   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<nMonitorElementInfo ; i++)
+130   \{
+131     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, this->at(i).serialize(pDataStream));
+132   \}
+133 
+134   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+135 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Messaging.\+h}\item 
+{\bf D\+Q\+M\+Messaging.\+cc}\end{DoxyCompactItemize}

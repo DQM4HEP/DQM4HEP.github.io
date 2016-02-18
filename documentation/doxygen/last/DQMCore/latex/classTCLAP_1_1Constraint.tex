@@ -1,0 +1,117 @@
+\section{T\+C\+L\+A\+P\+:\+:Constraint$<$ T $>$ Class Template Reference}
+\label{classTCLAP_1_1Constraint}\index{T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$@{T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$}}
+
+
+The interface that defines the interaction between the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}.  
+
+
+
+
+{\ttfamily \#include $<$Constraint.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Constraint$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1Constraint}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string {\bf description} () const =0
+\begin{DoxyCompactList}\small\item\em Returns a description of the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the short I\+D for the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. \end{DoxyCompactList}\item 
+virtual bool {\bf check} (const T \&value) const =0
+\begin{DoxyCompactList}\small\item\em The method used to verify that the value parsed from the command line meets the constraint. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Constraint} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class T\+C\+L\+A\+P\+::\+Constraint$<$ T $>$}
+
+The interface that defines the interaction between the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. 
+
+Definition at line 38 of file Constraint.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}!````~Constraint@{$\sim$\+Constraint}}
+\index{````~Constraint@{$\sim$\+Constraint}!T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}}
+\subsubsection[{$\sim$\+Constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf T\+C\+L\+A\+P\+::\+Constraint}$<$ T $>$\+::$\sim${\bf Constraint} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Constraint_ae96bbe5301e9517b68b1597b36098224}
+
+
+Destructor. 
+
+Silences warnings about \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} being a base class with virtual functions but without a virtual destructor. 
+
+Definition at line 64 of file Constraint.\+h.
+
+
+\begin{DoxyCode}
+64 \{ ; \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}!check@{check}}
+\index{check@{check}!T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual bool {\bf T\+C\+L\+A\+P\+::\+Constraint}$<$ T $>$\+::check (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTCLAP_1_1Constraint_a773c3e16d0150523c1c92b7b24868c34}
+
+
+The method used to verify that the value parsed from the command line meets the constraint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & -\/ The value that will be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValuesConstraint_ae132b185413cf5dea5cc040f60e7ede6}.
+
+\index{T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}!description@{description}}
+\index{description@{description}!T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual std\+::string {\bf T\+C\+L\+A\+P\+::\+Constraint}$<$ T $>$\+::description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTCLAP_1_1Constraint_ae16dd80aa217fb56c0862af5478afe01}
+
+
+Returns a description of the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. 
+
+
+
+Implemented in {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValuesConstraint_a07b08c05a7bfcbe5815895353ffef1d5}.
+
+\index{T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Constraint@{T\+C\+L\+A\+P\+::\+Constraint}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual std\+::string {\bf T\+C\+L\+A\+P\+::\+Constraint}$<$ T $>$\+::short\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTCLAP_1_1Constraint_a39f707895311da682439810a0bec4a5f}
+
+
+Returns the short I\+D for the \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint}. 
+
+
+
+Implemented in {\bf T\+C\+L\+A\+P\+::\+Values\+Constraint$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValuesConstraint_a1bbe12afcb1f185ee7ac808d69e2d345}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Constraint.\+h}\end{DoxyCompactItemize}

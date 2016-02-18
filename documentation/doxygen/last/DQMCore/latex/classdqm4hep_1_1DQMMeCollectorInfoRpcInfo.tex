@@ -1,0 +1,100 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info Class Reference}
+\label{classdqm4hep_1_1DQMMeCollectorInfoRpcInfo}\index{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMeCollectorInfoRpcInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info} (char $\ast$rpc\+Info\+Name, {\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$p\+Client)
+\item 
+void {\bf rpc\+Info\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$ {\bf m\+\_\+p\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}!D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+\index{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+\subsubsection[{D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Info\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{p\+Client}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMeCollectorInfoRpcInfo_a19a633ebe9c765bf92b13cdfc041b45a}
+
+
+Definition at line 39 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+\begin{DoxyCode}
+39                                                                                                         :
+40     DimRpcInfo(rpcInfoName, (\textcolor{keywordtype}{void}*) DQMMonitorElementClient::m_emptyBufferStr.c\_str(), 
+      DQMMonitorElementClient::m_emptyBufferStr.size()),
+41     m_pClient(pClient)
+42 \{
+43   \textcolor{comment}{/* nop */}
+44 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}!rpc\+Info\+Handler@{rpc\+Info\+Handler}}
+\index{rpc\+Info\+Handler@{rpc\+Info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+\subsubsection[{rpc\+Info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info\+::rpc\+Info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMeCollectorInfoRpcInfo_a7efeb76180897a0ea2f6c54685229213}
+
+
+Definition at line 48 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+Collector\+Info\+Rpc\+Info(), and m\+\_\+p\+Client.
+
+
+\begin{DoxyCode}
+49 \{
+50   m_pClient->handleMeCollectorInfoRpcInfo(\textcolor{keyword}{this});
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}!m\+\_\+p\+Client@{m\+\_\+p\+Client}}
+\index{m\+\_\+p\+Client@{m\+\_\+p\+Client}!dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info}}
+\subsubsection[{m\+\_\+p\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Me\+Collector\+Info\+Rpc\+Info\+::m\+\_\+p\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMeCollectorInfoRpcInfo_a38dfa3df9389017c4cf14d1ff8b9ad0e}
+
+
+Definition at line 54 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by rpc\+Info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+cc}\end{DoxyCompactItemize}

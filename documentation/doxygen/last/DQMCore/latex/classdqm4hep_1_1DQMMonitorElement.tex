@@ -1,0 +1,853 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElement}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element} ({\bf D\+Q\+M\+Monitor\+Element\+Type} type=N\+O\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+T\+Y\+P\+E, const std\+::string \&name=\char`\"{}\char`\"{}, const std\+::string \&title=\char`\"{}\char`\"{}, const std\+::string \&module\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element} (T\+Object $\ast$p\+Object, {\bf D\+Q\+M\+Monitor\+Element\+Type} type, const std\+::string \&name, const std\+::string \&title, const std\+::string \&module\+Name)
+\begin{DoxyCompactList}\small\item\em \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} with type, name and title. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Monitor\+Element} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Type} {\bf get\+Type} () const 
+\begin{DoxyCompactList}\small\item\em Returns the element type. \end{DoxyCompactList}\item 
+virtual const std\+::string \& {\bf get\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Returns the name of the element. \end{DoxyCompactList}\item 
+const {\bf D\+Q\+M\+Path} \& {\bf get\+Path} () const 
+\begin{DoxyCompactList}\small\item\em Get the path (directory) of this element. \end{DoxyCompactList}\item 
+void {\bf set\+Path} (const {\bf D\+Q\+M\+Path} \&path)
+\begin{DoxyCompactList}\small\item\em Set the path (directory) for this element. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name where this element is collected (or will be) Set by the framework after collect. \end{DoxyCompactList}\item 
+void {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the collector name where this element is collected (or will be) Used by the framework after collect. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Module\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the module name that has booked this element. \end{DoxyCompactList}\item 
+bool {\bf is\+Histogram} () const 
+\begin{DoxyCompactList}\small\item\em Whether the monitor element is a histogram. \end{DoxyCompactList}\item 
+bool {\bf is\+Scalar} () const 
+\begin{DoxyCompactList}\small\item\em Whether the monitor element is a scalar value. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Quality} {\bf get\+Quality} () const 
+\begin{DoxyCompactList}\small\item\em Returns the element quality. \end{DoxyCompactList}\item 
+void {\bf set\+Quality} ({\bf D\+Q\+M\+Quality} quality)
+\begin{DoxyCompactList}\small\item\em Set the element quality. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Reset\+Policy} {\bf get\+Reset\+Policy} () const 
+\begin{DoxyCompactList}\small\item\em Returns the reset policy of the element. \end{DoxyCompactList}\item 
+void {\bf set\+Reset\+Policy} ({\bf D\+Q\+M\+Reset\+Policy} policy)
+\begin{DoxyCompactList}\small\item\em Sets the reset policy of the element. \end{DoxyCompactList}\item 
+virtual const std\+::string \& {\bf get\+Title} () const 
+\begin{DoxyCompactList}\small\item\em Returns the title of the object. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Title} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Sets the element title. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Description} () const 
+\begin{DoxyCompactList}\small\item\em Returns the element description. \end{DoxyCompactList}\item 
+void {\bf set\+Description} (const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Sets the element description. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Draw\+Option} () const 
+\begin{DoxyCompactList}\small\item\em Return the draw option. \end{DoxyCompactList}\item 
+void {\bf set\+Draw\+Option} (const std\+::string \&draw\+Option)
+\begin{DoxyCompactList}\small\item\em Set the draw option. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Returns the current run for this monitor element. \end{DoxyCompactList}\item 
+void {\bf set\+Run\+Number} (unsigned int run\+Number)
+\begin{DoxyCompactList}\small\item\em Sets the current run number. \end{DoxyCompactList}\item 
+void {\bf set\+To\+Publish} (bool publish)
+\begin{DoxyCompactList}\small\item\em Sets whether the element has to be published at the next end of cycle. \end{DoxyCompactList}\item 
+bool {\bf is\+To\+Publish} () const 
+\begin{DoxyCompactList}\small\item\em Whether the element has to be published at the next end of cycle. \end{DoxyCompactList}\item 
+T\+Object $\ast$ {\bf get\+Object} () const 
+\begin{DoxyCompactList}\small\item\em Return the associated T\+Object that is monitored. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bf get} () const 
+\begin{DoxyCompactList}\small\item\em Return the monitor object after a dynamic cast of the asked type. \end{DoxyCompactList}\item 
+const {\bf D\+Q\+M\+Quality\+Test\+Result\+Map} \& {\bf get\+Quality\+Test\+Results} () const 
+\begin{DoxyCompactList}\small\item\em Return the quality test results map. \end{DoxyCompactList}\item 
+void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Reset the element. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf run\+Quality\+Test} (const std\+::string \&quality\+Test\+Name)
+\begin{DoxyCompactList}\small\item\em Run the given quality test. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf run\+Quality\+Tests} ()
+\begin{DoxyCompactList}\small\item\em Run all the quality tests. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf add\+Quality\+Test} ({\bf D\+Q\+M\+Quality\+Test} $\ast$p\+Quality\+Test)
+\begin{DoxyCompactList}\small\item\em Add a quality test. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf remove\+Quality\+Test} ({\bf D\+Q\+M\+Quality\+Test} $\ast$p\+Quality\+Test)
+\begin{DoxyCompactList}\small\item\em Remove a quality test. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf remove\+Quality\+Test} (const std\+::string \&quality\+Test\+Name)
+\begin{DoxyCompactList}\small\item\em Remove a quality test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Object $\ast$ {\bf m\+\_\+p\+Object}
+\begin{DoxyCompactList}\small\item\em The monitored T\+Object. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+name}
+\begin{DoxyCompactList}\small\item\em The element name. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+title}
+\begin{DoxyCompactList}\small\item\em The element title. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+description}
+\begin{DoxyCompactList}\small\item\em The element description. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+draw\+Option}
+\begin{DoxyCompactList}\small\item\em The draw option to apply while drawing. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+module\+Name}
+\begin{DoxyCompactList}\small\item\em The module name that have booked this element. \end{DoxyCompactList}\item 
+std\+::string {\bf m\+\_\+collector\+Name}
+\begin{DoxyCompactList}\small\item\em The collector name that have collected this element. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} {\bf m\+\_\+path}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Type} {\bf m\+\_\+type}
+\begin{DoxyCompactList}\small\item\em The element type. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Quality} {\bf m\+\_\+quality}
+\begin{DoxyCompactList}\small\item\em The element quality has defined by the user. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Reset\+Policy} {\bf m\+\_\+reset\+Policy}
+\begin{DoxyCompactList}\small\item\em The reset policy. See enumerator definition. \end{DoxyCompactList}\item 
+unsigned int {\bf m\+\_\+run\+Number}
+\begin{DoxyCompactList}\small\item\em The run number when the element is published. \end{DoxyCompactList}\item 
+bool {\bf m\+\_\+to\+Publish}
+\begin{DoxyCompactList}\small\item\em Whether the element has to be published at end of cycle. \end{DoxyCompactList}\item 
+std\+::map$<$ std\+::string, \\*
+{\bf D\+Q\+M\+Quality\+Test} $\ast$ $>$ {\bf m\+\_\+quality\+Test\+Map}
+\item 
+std\+::map$<$ std\+::string, \\*
+{\bf D\+Q\+M\+Quality\+Test\+Result} $>$ {\bf m\+\_\+quality\+Test\+Result\+Map}
+\begin{DoxyCompactList}\small\item\em The quality test map to perform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Module\+Api}
+\item 
+class {\bf D\+Q\+M\+Storage}
+\item 
+class {\bf D\+Q\+M\+Directory}
+\item 
+class {\bf D\+Q\+M\+Monitor\+Element\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} class. 
+
+Base class for plots and scalars that can be monitored via a user module. Monitor elements can be booked via the \doxyref{D\+Q\+M\+Module\+Api}{p.}{classdqm4hep_1_1DQMModuleApi} in order to be published.
+
+\begin{DoxyAuthor}{Author}
+R.\+Ete 
+\end{DoxyAuthor}
+
+
+Definition at line 58 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Monitor\+Element@{D\+Q\+M\+Monitor\+Element}}
+\index{D\+Q\+M\+Monitor\+Element@{D\+Q\+M\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::\+D\+Q\+M\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Type}}]{type = {\ttfamily NO\+\_\+ELEMENT\+\_\+TYPE}, }
+\item[{const std\+::string \&}]{name = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{title = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{module\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_aab7978131f1aecf343303b9afc6d661f}
+
+
+Default constructor. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Monitor\+Element@{D\+Q\+M\+Monitor\+Element}}
+\index{D\+Q\+M\+Monitor\+Element@{D\+Q\+M\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::\+D\+Q\+M\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{T\+Object $\ast$}]{p\+Object, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Type}}]{type, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const std\+::string \&}]{module\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a39dc4fb87f8164ba1f99f68b695ecd93}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} with type, name and title. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!````~D\+Q\+M\+Monitor\+Element@{$\sim$\+D\+Q\+M\+Monitor\+Element}}
+\index{````~D\+Q\+M\+Monitor\+Element@{$\sim$\+D\+Q\+M\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::$\sim$\+D\+Q\+M\+Monitor\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElement_ac9b2ebd0394609523040189f70c64569}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!add\+Quality\+Test@{add\+Quality\+Test}}
+\index{add\+Quality\+Test@{add\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{add\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::add\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Quality\+Test} $\ast$}]{p\+Quality\+Test}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a75baca8846d736018b58286eae578ff7}
+
+
+Add a quality test. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::add\+Quality\+Test().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a19c7de73a98b0f2b4140b0f0d91efa57}
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::deserialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get@{get}}
+\index{get@{get}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a102a7cc916a9767001e3a4bafd732540}
+
+
+Return the monitor object after a dynamic cast of the asked type. 
+
+
+
+Definition at line 245 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+References m\+\_\+p\+Object.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::can\+Run(), dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::can\+Run(), dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::run(), and dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::run().
+
+
+\begin{DoxyCode}
+246 \{
+247   \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(m_pObject);
+248 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_ac36c1b627145fed4f4677ed86b85922e}
+
+
+Get the collector name where this element is collected (or will be) Set by the framework after collect. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Description}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_afa54d2f6d74db063c433c75d0c257b57}
+
+
+Returns the element description. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Draw\+Option@{get\+Draw\+Option}}
+\index{get\+Draw\+Option@{get\+Draw\+Option}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Draw\+Option}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Draw\+Option (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_addd8e8042990f3ab5f3edab95ce720c5}
+
+
+Return the draw option. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Module\+Name@{get\+Module\+Name}}
+\index{get\+Module\+Name@{get\+Module\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Module\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_aad825ff38c0efb52ad7b48445aedc7a2}
+
+
+Get the module name that has booked this element. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElement_a34251d9823b4ba7ff3b7645f671fa6ba}
+
+
+Returns the name of the element. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Directory\+::contains\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Directory\+::find\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Directory\+::ls(), dqm4hep\+::\+D\+Q\+M\+Directory\+::remove\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::run(), dqm4hep\+::\+Module\+Me\+Info\+::update\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Archiver\+::write\+Monitor\+Elements().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Object}]{\setlength{\rightskip}{0pt plus 5cm}T\+Object$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a105a1db7906f58d2cfccee2ad25b5d56}
+
+
+Return the associated T\+Object that is monitored. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Archiver\+::write\+Monitor\+Elements().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Path}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\+Q\+M\+Path}\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a373b0ea7068e467e3a6478b406b7242f}
+
+
+Get the path (directory) of this element. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::delete\+Monitor\+Element(), and dqm4hep\+::\+Module\+Me\+Info\+::update\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Quality@{get\+Quality}}
+\index{get\+Quality@{get\+Quality}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Quality} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Quality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_aeae8c1a672252f0f2fa556fd65e88104}
+
+
+Returns the element quality. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Quality\+Test\+Results@{get\+Quality\+Test\+Results}}
+\index{get\+Quality\+Test\+Results@{get\+Quality\+Test\+Results}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Quality\+Test\+Results}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf D\+Q\+M\+Quality\+Test\+Result\+Map}\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Quality\+Test\+Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a0754e4a2b3f1007173ca0e96567bf112}
+
+
+Return the quality test results map. 
+
+Key \+: quality test name, value \+: quality test result 
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Quality\+Test\+Results().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Reset\+Policy@{get\+Reset\+Policy}}
+\index{get\+Reset\+Policy@{get\+Reset\+Policy}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Reset\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Reset\+Policy} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Reset\+Policy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a684c51784ea9555d68c092bfa3a82a06}
+
+
+Returns the reset policy of the element. 
+
+See enumerator definition 
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::reset\+Monitor\+Elements().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Run\+Number@{get\+Run\+Number}}
+\index{get\+Run\+Number@{get\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a999ebd3a59101320f6f7d062b109b9ee}
+
+
+Returns the current run for this monitor element. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Title@{get\+Title}}
+\index{get\+Title@{get\+Title}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Title}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElement_a8dec20c0c78f757e439736e81ae68e22}
+
+
+Returns the title of the object. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Type} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_a7c0a82ac4eb044f0bfe1791dcd446c64}
+
+
+Returns the element type. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::can\+Run(), and dqm4hep\+::\+D\+Q\+M\+Chi2\+Fit\+Function\+Test\+::can\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!is\+Histogram@{is\+Histogram}}
+\index{is\+Histogram@{is\+Histogram}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{is\+Histogram}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::is\+Histogram (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_ac10cc5402e80dd3cc5c64abf0f8698ae}
+
+
+Whether the monitor element is a histogram. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!is\+Scalar@{is\+Scalar}}
+\index{is\+Scalar@{is\+Scalar}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{is\+Scalar}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::is\+Scalar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_abc3e3b7282f186f21b42feaea8a346be}
+
+
+Whether the monitor element is a scalar value. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!is\+To\+Publish@{is\+To\+Publish}}
+\index{is\+To\+Publish@{is\+To\+Publish}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{is\+To\+Publish}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::is\+To\+Publish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_abead4fca976651bd689f9c94bc23cbfa}
+
+
+Whether the element has to be published at the next end of cycle. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element\+List\+To\+Publish().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!remove\+Quality\+Test@{remove\+Quality\+Test}}
+\index{remove\+Quality\+Test@{remove\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{remove\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::remove\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Quality\+Test} $\ast$}]{p\+Quality\+Test}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a7d49eb42478dc4afcc4991bfc4c0692e}
+
+
+Remove a quality test. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!remove\+Quality\+Test@{remove\+Quality\+Test}}
+\index{remove\+Quality\+Test@{remove\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{remove\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::remove\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{quality\+Test\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a0bbdcce490c606205ae2f6984ad2f4fc}
+
+
+Remove a quality test. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!reset@{reset}}
+\index{reset@{reset}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_abf9b8eaa0486a73784b19e3bdef5a8f0}
+
+
+Reset the element. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::reset\+Monitor\+Elements().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!run\+Quality\+Test@{run\+Quality\+Test}}
+\index{run\+Quality\+Test@{run\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{run\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::run\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{quality\+Test\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_aa4eebdc52954566dcb24df6e69731a6c}
+
+
+Run the given quality test. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Test().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!run\+Quality\+Tests@{run\+Quality\+Tests}}
+\index{run\+Quality\+Tests@{run\+Quality\+Tests}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{run\+Quality\+Tests}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::run\+Quality\+Tests (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a31cfe29bccb3cf8e70a0e762edafe944}
+
+
+Run all the quality tests. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Tests().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElement_ac5a4077b0663400510abe660b3f62de3}
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Publication\+::serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a86489f7611c1bfa3028833809485517c}
+
+
+Set the collector name where this element is collected (or will be) Used by the framework after collect. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Description@{set\+Description}}
+\index{set\+Description@{set\+Description}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Description}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Description (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{description}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_afd1ffb1451258e958acdb9c2730c586e}
+
+
+Sets the element description. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Draw\+Option@{set\+Draw\+Option}}
+\index{set\+Draw\+Option@{set\+Draw\+Option}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Draw\+Option}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Draw\+Option (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{draw\+Option}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a596940de5d136d1510b42d11501f07e0}
+
+
+Set the draw option. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Path@{set\+Path}}
+\index{set\+Path@{set\+Path}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Path (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Path} \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a4a7715c959c02f1b5b89f9415782843c}
+
+
+Set the path (directory) for this element. 
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::add\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::remove\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Quality@{set\+Quality}}
+\index{set\+Quality@{set\+Quality}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Quality}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Quality (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Quality}}]{quality}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a6015b1e4c5c59936808962087d90d752}
+
+
+Set the element quality. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Reset\+Policy@{set\+Reset\+Policy}}
+\index{set\+Reset\+Policy@{set\+Reset\+Policy}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Reset\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Reset\+Policy (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Reset\+Policy}}]{policy}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_adcca27f8e5b58363cb80c2b40817fafc}
+
+
+Sets the reset policy of the element. 
+
+See enumerator definition 
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Run\+Number@{set\+Run\+Number}}
+\index{set\+Run\+Number@{set\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Run\+Number (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{run\+Number}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a03b6073f366dad74488447f929305593}
+
+
+Sets the current run number. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+Title@{set\+Title}}
+\index{set\+Title@{set\+Title}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+Title}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+Title (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{title}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElement_a918e916246d47c5f2c7b8570e190e920}
+
+
+Sets the element title. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!set\+To\+Publish@{set\+To\+Publish}}
+\index{set\+To\+Publish@{set\+To\+Publish}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{set\+To\+Publish}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::set\+To\+Publish (
+\begin{DoxyParamCaption}
+\item[{bool}]{publish}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElement_a4c9db255658b6bd50e79ecd68296aa2a}
+
+
+Sets whether the element has to be published at the next end of cycle. 
+
+This flag is not reset by the framework. The user is responsible for publishing or not the element. 
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Directory@{D\+Q\+M\+Directory}}
+\index{D\+Q\+M\+Directory@{D\+Q\+M\+Directory}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Directory}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElement_ac0297913bd15881c919bc437b75c9361}
+
+
+Definition at line 62 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Module\+Api@{D\+Q\+M\+Module\+Api}}
+\index{D\+Q\+M\+Module\+Api@{D\+Q\+M\+Module\+Api}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Module\+Api}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Module\+Api}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElement_a34f448c0d2a0a6cbec1a2d2414bc2231}
+
+
+Definition at line 60 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Monitor\+Element\+Manager@{D\+Q\+M\+Monitor\+Element\+Manager}}
+\index{D\+Q\+M\+Monitor\+Element\+Manager@{D\+Q\+M\+Monitor\+Element\+Manager}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Monitor\+Element\+Manager}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElement_abf4f43d77cde6c1a22eeca13e12acac0}
+
+
+Definition at line 63 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!D\+Q\+M\+Storage@{D\+Q\+M\+Storage}}
+\index{D\+Q\+M\+Storage@{D\+Q\+M\+Storage}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Storage}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Storage}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMMonitorElement_a8c9d833242db2ea84cf2f1b0f142b6b6}
+
+
+Definition at line 61 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+collector\+Name@{m\+\_\+collector\+Name}}
+\index{m\+\_\+collector\+Name@{m\+\_\+collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+collector\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a47821149e90e72eb28e3669a24646b49}
+
+
+The collector name that have collected this element. 
+
+
+
+Definition at line 227 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+description@{m\+\_\+description}}
+\index{m\+\_\+description@{m\+\_\+description}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+description\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a5995fe454ef11ca223096d580663b1d2}
+
+
+The element description. 
+
+
+
+Definition at line 224 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+draw\+Option@{m\+\_\+draw\+Option}}
+\index{m\+\_\+draw\+Option@{m\+\_\+draw\+Option}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+draw\+Option}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+draw\+Option\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a23ffc08a782e2787d3a008a41e1f9374}
+
+
+The draw option to apply while drawing. 
+
+
+
+Definition at line 225 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+module\+Name@{m\+\_\+module\+Name}}
+\index{m\+\_\+module\+Name@{m\+\_\+module\+Name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+module\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_ad2c9e543845bf7454582ea7d757d073a}
+
+
+The module name that have booked this element. 
+
+
+
+Definition at line 226 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a0380732091721398ccf28b50569dddcf}
+
+
+The element name. 
+
+
+
+Definition at line 222 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+path@{m\+\_\+path}}
+\index{m\+\_\+path@{m\+\_\+path}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a945ef3d3599d850a7afe6e14546908ba}
+
+
+Definition at line 229 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+p\+Object@{m\+\_\+p\+Object}}
+\index{m\+\_\+p\+Object@{m\+\_\+p\+Object}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+p\+Object}]{\setlength{\rightskip}{0pt plus 5cm}T\+Object$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+p\+Object\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a3b987dae4c7a3933bef79c56868e8935}
+
+
+The monitored T\+Object. 
+
+
+
+Definition at line 220 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+Referenced by get().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+quality@{m\+\_\+quality}}
+\index{m\+\_\+quality@{m\+\_\+quality}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Quality} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+quality\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a72702157942e0f66c7abec938ae136fd}
+
+
+The element quality has defined by the user. 
+
+
+
+Definition at line 231 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+quality\+Test\+Map@{m\+\_\+quality\+Test\+Map}}
+\index{m\+\_\+quality\+Test\+Map@{m\+\_\+quality\+Test\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+quality\+Test\+Map}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, {\bf D\+Q\+M\+Quality\+Test}$\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+quality\+Test\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_af30f5fb69afb177b6358006b27414de3}
+
+
+Definition at line 237 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+quality\+Test\+Result\+Map@{m\+\_\+quality\+Test\+Result\+Map}}
+\index{m\+\_\+quality\+Test\+Result\+Map@{m\+\_\+quality\+Test\+Result\+Map}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+quality\+Test\+Result\+Map}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, {\bf D\+Q\+M\+Quality\+Test\+Result}$>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+quality\+Test\+Result\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a68acb8e3091ea0bc073228676fc7fbc2}
+
+
+The quality test map to perform. 
+
+
+
+Definition at line 238 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+reset\+Policy@{m\+\_\+reset\+Policy}}
+\index{m\+\_\+reset\+Policy@{m\+\_\+reset\+Policy}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+reset\+Policy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Reset\+Policy} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+reset\+Policy\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a40bf6185f14916b9e1fa0665f9f56dbb}
+
+
+The reset policy. See enumerator definition. 
+
+
+
+Definition at line 232 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+run\+Number@{m\+\_\+run\+Number}}
+\index{m\+\_\+run\+Number@{m\+\_\+run\+Number}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+run\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a08e223890a47654d9d19a2c710cc4549}
+
+
+The run number when the element is published. 
+
+
+
+Definition at line 234 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+title@{m\+\_\+title}}
+\index{m\+\_\+title@{m\+\_\+title}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+title}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+title\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_ad4e876215e0254bb1b9ac76633a97578}
+
+
+The element title. 
+
+
+
+Definition at line 223 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+to\+Publish@{m\+\_\+to\+Publish}}
+\index{m\+\_\+to\+Publish@{m\+\_\+to\+Publish}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+to\+Publish}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+to\+Publish\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_ae0f2de921a7223e27ea0ad4ac5373d55}
+
+
+Whether the element has to be published at end of cycle. 
+
+
+
+Definition at line 235 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Type} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElement_a48d969dc0b9a690ac2f65ccbf0e1a779}
+
+
+The element type. 
+
+
+
+Definition at line 230 of file D\+Q\+M\+Monitor\+Element.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element.\+h}\end{DoxyCompactItemize}

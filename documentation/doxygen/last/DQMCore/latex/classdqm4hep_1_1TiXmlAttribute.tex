@@ -1,0 +1,1002 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Attribute Class Reference}
+\label{classdqm4hep_1_1TiXmlAttribute}\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+
+
+An attribute is a name-\/value pair.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Attribute\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TiXmlAttribute}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Attribute} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty attribute. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Attribute} (const std\+::string \&\+\_\+name, const std\+::string \&\+\_\+value)
+\begin{DoxyCompactList}\small\item\em std\+::string constructor. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Attribute} (const char $\ast$\+\_\+name, const char $\ast$\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Construct an attribute with a name and value. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf Name} () const 
+\begin{DoxyCompactList}\small\item\em Return the name of this attribute. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf Value} () const 
+\begin{DoxyCompactList}\small\item\em Return the value of this attribute. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf Value\+Str} () const 
+\begin{DoxyCompactList}\small\item\em Return the value of this attribute. \end{DoxyCompactList}\item 
+int {\bf Int\+Value} () const 
+\begin{DoxyCompactList}\small\item\em Return the value of this attribute, converted to an integer. \end{DoxyCompactList}\item 
+double {\bf Double\+Value} () const 
+\begin{DoxyCompactList}\small\item\em Return the value of this attribute, converted to a double. \end{DoxyCompactList}\item 
+const {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} \& {\bf Name\+T\+Str} () const 
+\item 
+int {\bf Query\+Int\+Value} (int $\ast$\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Query\+Int\+Value examines the value string. \end{DoxyCompactList}\item 
+int {\bf Query\+Double\+Value} (double $\ast$\+\_\+value) const 
+\begin{DoxyCompactList}\small\item\em Query\+Double\+Value examines the value string. See \doxyref{Query\+Int\+Value()}{p.}{classdqm4hep_1_1TiXmlAttribute_aa0047c46ea985418fd1b3a0d476340e5}. \end{DoxyCompactList}\item 
+void {\bf Set\+Name} (const char $\ast$\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Set the name of this attribute. \end{DoxyCompactList}\item 
+void {\bf Set\+Value} (const char $\ast$\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value. \end{DoxyCompactList}\item 
+void {\bf Set\+Int\+Value} (int \+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value from an integer. \end{DoxyCompactList}\item 
+void {\bf Set\+Double\+Value} (double \+\_\+value)
+\begin{DoxyCompactList}\small\item\em Set the value from a double. \end{DoxyCompactList}\item 
+void {\bf Set\+Name} (const std\+::string \&\+\_\+name)
+\begin{DoxyCompactList}\small\item\em S\+T\+L std\+::string form. \end{DoxyCompactList}\item 
+void {\bf Set\+Value} (const std\+::string \&\+\_\+value)
+\begin{DoxyCompactList}\small\item\em S\+T\+L std\+::string form. \end{DoxyCompactList}\item 
+const {\bf Ti\+Xml\+Attribute} $\ast$ {\bf Next} () const 
+\begin{DoxyCompactList}\small\item\em Get the next sibling attribute in the D\+O\+M. Returns null at end. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Next} ()
+\item 
+const {\bf Ti\+Xml\+Attribute} $\ast$ {\bf Previous} () const 
+\begin{DoxyCompactList}\small\item\em Get the previous sibling attribute in the D\+O\+M. Returns null at beginning. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Previous} ()
+\item 
+bool {\bf operator==} (const {\bf Ti\+Xml\+Attribute} \&rhs) const 
+\item 
+bool {\bf operator$<$} (const {\bf Ti\+Xml\+Attribute} \&rhs) const 
+\item 
+bool {\bf operator$>$} (const {\bf Ti\+Xml\+Attribute} \&rhs) const 
+\item 
+virtual const char $\ast$ {\bf Parse} (const char $\ast$p, {\bf Ti\+Xml\+Parsing\+Data} $\ast$data, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+virtual void {\bf Print} (F\+I\+L\+E $\ast$cfile, int depth) const 
+\begin{DoxyCompactList}\small\item\em All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. \end{DoxyCompactList}\item 
+void {\bf Print} (F\+I\+L\+E $\ast$cfile, int depth, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$str) const 
+\item 
+void {\bf Set\+Document} ({\bf Ti\+Xml\+Document} $\ast$doc)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Attribute} (const {\bf Ti\+Xml\+Attribute} \&)
+\item 
+void {\bf operator=} (const {\bf Ti\+Xml\+Attribute} \&base)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Document} $\ast$ {\bf document}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf name}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf value}
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf prev}
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf next}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ti\+Xml\+Attribute\+Set}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An attribute is a name-\/value pair. 
+
+Elements have an arbitrary number of attributes, each with a unique name.
+
+\begin{DoxyNote}{Note}
+The attributes are not Ti\+Xml\+Nodes, since they are not part of the tiny\+X\+M\+L document object model. There are other suggested ways to look at this problem. 
+\end{DoxyNote}
+
+
+Definition at line 785 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}}
+\index{Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Ti\+Xml\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Ti\+Xml\+Attribute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ac639f8682809306ae676a5adeabbb6d3}
+
+
+Construct an empty attribute. 
+
+
+
+Definition at line 791 of file tinyxml.\+h.
+
+
+
+References document, next, and prev.
+
+
+\begin{DoxyCode}
+791                    : TiXmlBase()
+792   \{
+793     document = 0;
+794     prev = next = 0;
+795   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}}
+\index{Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Ti\+Xml\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Ti\+Xml\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+name, }
+\item[{const std\+::string \&}]{\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a5c5ded1bb8e5702ac618f661c961606f}
+
+
+std\+::string constructor. 
+
+
+
+Definition at line 799 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+800   \{
+801     name = \_name;
+802     value = \_value;
+803     document = 0;
+804     prev = next = 0;
+805   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}}
+\index{Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Ti\+Xml\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Ti\+Xml\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name, }
+\item[{const char $\ast$}]{\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a36df31d6f685a364c07706f1a3f1c457}
+
+
+Construct an attribute with a name and value. 
+
+
+
+Definition at line 809 of file tinyxml.\+h.
+
+
+
+References document, name, next, prev, and value.
+
+
+\begin{DoxyCode}
+810   \{
+811     name = \_name;
+812     value = \_value;
+813     document = 0;
+814     prev = next = 0;
+815   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}}
+\index{Ti\+Xml\+Attribute@{Ti\+Xml\+Attribute}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Ti\+Xml\+Attribute}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Ti\+Xml\+Attribute (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a9e1e8aeaf16fb495995126f21237b95d}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Double\+Value@{Double\+Value}}
+\index{Double\+Value@{Double\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Double\+Value}]{\setlength{\rightskip}{0pt plus 5cm}double dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Double\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_a38086662edc20d8a8d25022586054bbe}
+
+
+Return the value of this attribute, converted to a double. 
+
+
+
+Definition at line 1235 of file tinyxml.\+cc.
+
+
+
+References value.
+
+
+\begin{DoxyCode}
+1236 \{
+1237   \textcolor{keywordflow}{return} atof (value.c\_str ());
+1238 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Int\+Value@{Int\+Value}}
+\index{Int\+Value@{Int\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Int\+Value}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Int\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_af335464fecab6ceef21e23a5a14579d9}
+
+
+Return the value of this attribute, converted to an integer. 
+
+
+
+Definition at line 1230 of file tinyxml.\+cc.
+
+
+
+References value.
+
+
+\begin{DoxyCode}
+1231 \{
+1232   \textcolor{keywordflow}{return} atoi (value.c\_str ());
+1233 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Name@{Name}}
+\index{Name@{Name}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a7ef7b8f9de4004bb413a7a0487fefef8}
+
+
+Return the name of this attribute. 
+
+
+
+Definition at line 817 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Add(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Copy\+To(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Name\+T\+Str@{Name\+T\+Str}}
+\index{Name\+T\+Str@{Name\+T\+Str}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Name\+T\+Str}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G}\& dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Name\+T\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a56535caa451061ce0caf88d6ebc429bc}
+
+
+Definition at line 826 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse().
+
+
+\begin{DoxyCode}
+826 \{ \textcolor{keywordflow}{return} name; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Next@{Next}}
+\index{Next@{Next}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Next}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Attribute} $\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_a9752df9a5b20dc784083a752026aeb6d}
+
+
+Get the next sibling attribute in the D\+O\+M. Returns null at end. 
+
+
+
+Definition at line 1128 of file tinyxml.\+cc.
+
+
+
+References name, next, and value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Copy\+To(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Print(), and dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Enter().
+
+
+\begin{DoxyCode}
+1129 \{
+1130   \textcolor{comment}{// We are using knowledge of the sentinel. The sentinel}
+1131   \textcolor{comment}{// have a value or name.}
+1132   \textcolor{keywordflow}{if} ( next->value.empty() && next->name.empty() )
+1133     \textcolor{keywordflow}{return} 0;
+1134   \textcolor{keywordflow}{return} next;
+1135 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Next@{Next}}
+\index{Next@{Next}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ad04181d2f58ea8370c1b6e6daa2ddab5}
+
+
+Definition at line 856 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+856                          \{
+857     \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<} TiXmlAttribute* \textcolor{keyword}{>}( (\textcolor{keyword}{const\_cast<} \textcolor{keyword}{const }TiXmlAttribute* \textcolor{keyword}{>}(\textcolor{keyword}{this}))->Next() ); 
+858   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Attribute\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a107b28a2c2960df7e9809225db6fe05c}
+
+
+Definition at line 867 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+\begin{DoxyCode}
+867 \{ \textcolor{keywordflow}{return} name < rhs.name; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute} \&}]{base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a5a60980a4113102d7713cede23d4f3eb}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!operator==@{operator==}}
+\index{operator==@{operator==}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Attribute\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ae430aff65ae5e4d7567d55fbc57a049a}
+
+
+Definition at line 866 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+\begin{DoxyCode}
+866 \{ \textcolor{keywordflow}{return} rhs.name == name; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Attribute\+::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute} \&}]{rhs}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a4f3ab5022924f0bed40d5d30f2f9a377}
+
+
+Definition at line 868 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+\begin{DoxyCode}
+868 \{ \textcolor{keywordflow}{return} name > rhs.name; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Parse@{Parse}}
+\index{Parse@{Parse}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf Ti\+Xml\+Parsing\+Data} $\ast$}]{data, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlAttribute_a279bd101fdd1f9fd2ff3c817b1cda542}
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_a41f23afd7594cbf3c16706a42b5c4c4b}.
+
+
+
+Definition at line 1393 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Cursor(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+White\+Space(), dqm4hep\+::\+Ti\+Xml\+Base\+::location, name, dqm4hep\+::\+Ti\+Xml\+Base\+::\+Read\+Name(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Read\+Text(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Skip\+White\+Space(), dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Stamp(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S, and value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse().
+
+
+\begin{DoxyCode}
+1394 \{
+1395   p = SkipWhiteSpace( p, encoding );
+1396   \textcolor{keywordflow}{if} ( !p || !*p ) \textcolor{keywordflow}{return} 0;
+1397 
+1398   \textcolor{keywordflow}{if} ( data )
+1399   \{
+1400     data->Stamp( p, encoding );
+1401     location = data->Cursor();
+1402   \}
+1403   \textcolor{comment}{// Read the name, the '=' and the value.}
+1404   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* pErr = p;
+1405   p = ReadName( p, &name, encoding );
+1406   \textcolor{keywordflow}{if} ( !p || !*p )
+1407   \{
+1408     \textcolor{keywordflow}{if} ( document ) document->SetError( TIXML_ERROR_READING_ATTRIBUTES, pErr, data, encoding );
+1409     \textcolor{keywordflow}{return} 0;
+1410   \}
+1411   p = SkipWhiteSpace( p, encoding );
+1412   \textcolor{keywordflow}{if} ( !p || !*p || *p != \textcolor{charliteral}{'='} )
+1413   \{
+1414     \textcolor{keywordflow}{if} ( document ) document->SetError( TIXML_ERROR_READING_ATTRIBUTES, p, data, encoding );
+1415     \textcolor{keywordflow}{return} 0;
+1416   \}
+1417 
+1418   ++p;  \textcolor{comment}{// skip '='}
+1419   p = SkipWhiteSpace( p, encoding );
+1420   \textcolor{keywordflow}{if} ( !p || !*p )
+1421   \{
+1422     \textcolor{keywordflow}{if} ( document ) document->SetError( TIXML_ERROR_READING_ATTRIBUTES, p, data, encoding );
+1423     \textcolor{keywordflow}{return} 0;
+1424   \}
+1425   
+1426   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* end;
+1427   \textcolor{keyword}{const} \textcolor{keywordtype}{char} SINGLE\_QUOTE = \textcolor{charliteral}{'\(\backslash\)''};
+1428   \textcolor{keyword}{const} \textcolor{keywordtype}{char} DOUBLE\_QUOTE = \textcolor{charliteral}{'\(\backslash\)"'};
+1429 
+1430   \textcolor{keywordflow}{if} ( *p == SINGLE\_QUOTE )
+1431   \{
+1432     ++p;
+1433     end = \textcolor{stringliteral}{"\(\backslash\)'"};   \textcolor{comment}{// single quote in string}
+1434     p = ReadText( p, &value, \textcolor{keyword}{false}, end, \textcolor{keyword}{false}, encoding );
+1435   \}
+1436   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *p == DOUBLE\_QUOTE )
+1437   \{
+1438     ++p;
+1439     end = \textcolor{stringliteral}{"\(\backslash\)""};   \textcolor{comment}{// double quote in string}
+1440     p = ReadText( p, &value, \textcolor{keyword}{false}, end, \textcolor{keyword}{false}, encoding );
+1441   \}
+1442   \textcolor{keywordflow}{else}
+1443   \{
+1444     \textcolor{comment}{// All attribute values should be in single or double quotes.}
+1445     \textcolor{comment}{// But this is such a common error that the parser will try}
+1446     \textcolor{comment}{// its best, even without them.}
+1447     value = \textcolor{stringliteral}{""};
+1448     \textcolor{keywordflow}{while} (    p && *p                      \textcolor{comment}{// existence}
+1449         && !IsWhiteSpace( *p )                \textcolor{comment}{// whitespace}
+1450         && *p != \textcolor{charliteral}{'/'} && *p != \textcolor{charliteral}{'>'} )             \textcolor{comment}{// tag end}
+1451     \{
+1452       \textcolor{keywordflow}{if} ( *p == SINGLE\_QUOTE || *p == DOUBLE\_QUOTE ) \{
+1453         \textcolor{comment}{// [ 1451649 ] Attribute values with trailing quotes not handled correctly}
+1454         \textcolor{comment}{// We did not have an opening quote but seem to have a }
+1455         \textcolor{comment}{// closing one. Give up and throw an error.}
+1456         \textcolor{keywordflow}{if} ( document ) document->SetError( TIXML_ERROR_READING_ATTRIBUTES, p, data, encoding );
+1457         \textcolor{keywordflow}{return} 0;
+1458       \}
+1459       value += *p;
+1460       ++p;
+1461     \}
+1462   \}
+1463   \textcolor{keywordflow}{return} p;
+1464 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Previous@{Previous}}
+\index{Previous@{Previous}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Previous}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Attribute} $\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Previous (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_aaa664bda396423b4ce0b516e52974f63}
+
+
+Get the previous sibling attribute in the D\+O\+M. Returns null at beginning. 
+
+
+
+Definition at line 1148 of file tinyxml.\+cc.
+
+
+
+References name, prev, and value.
+
+
+\begin{DoxyCode}
+1149 \{
+1150   \textcolor{comment}{// We are using knowledge of the sentinel. The sentinel}
+1151   \textcolor{comment}{// have a value or name.}
+1152   \textcolor{keywordflow}{if} ( prev->value.empty() && prev->name.empty() )
+1153     \textcolor{keywordflow}{return} 0;
+1154   \textcolor{keywordflow}{return} prev;
+1155 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Previous@{Previous}}
+\index{Previous@{Previous}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Previous}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Previous (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a9cad7192c25148c137cd7cf8b0e5b57b}
+
+
+Definition at line 862 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+862                              \{
+863     \textcolor{keywordflow}{return} \textcolor{keyword}{const\_cast<} TiXmlAttribute* \textcolor{keyword}{>}( (\textcolor{keyword}{const\_cast<} \textcolor{keyword}{const }TiXmlAttribute* \textcolor{keyword}{>}(\textcolor{keyword}{this}))->Previous() ); 
+864   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{cfile, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlAttribute_ae6353b2d3d7dd5b6096ffc8bc473dd25}
+
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. 
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_ad5adc7976f1def10cb903144cfb11127}.
+
+
+
+Definition at line 876 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+876                                                      \{
+877     Print( cfile, depth, 0 );
+878   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{cfile, }
+\item[{int}]{depth, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{str}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_a52607909fa80b9370f12cb84d2a34863}
+
+
+Definition at line 1168 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Base\+::\+Encode\+String(), T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G, and value.
+
+
+\begin{DoxyCode}
+1169 \{
+1170   TIXML_STRING n, v;
+1171 
+1172   EncodeString( name, &n );
+1173   EncodeString( value, &v );
+1174 
+1175   \textcolor{keywordflow}{if} (value.find (\textcolor{charliteral}{'\(\backslash\)"'}) == TIXML\_STRING::npos) \{
+1176     \textcolor{keywordflow}{if} ( cfile ) \{
+1177     fprintf (cfile, \textcolor{stringliteral}{"%s=\(\backslash\)"%s\(\backslash\)""}, n.c\_str(), v.c\_str() );
+1178     \}
+1179     \textcolor{keywordflow}{if} ( str ) \{
+1180       (*str) += n; (*str) += \textcolor{stringliteral}{"=\(\backslash\)""}; (*str) += v; (*str) += \textcolor{stringliteral}{"\(\backslash\)""};
+1181     \}
+1182   \}
+1183   \textcolor{keywordflow}{else} \{
+1184     \textcolor{keywordflow}{if} ( cfile ) \{
+1185     fprintf (cfile, \textcolor{stringliteral}{"%s='%s'"}, n.c\_str(), v.c\_str() );
+1186     \}
+1187     \textcolor{keywordflow}{if} ( str ) \{
+1188       (*str) += n; (*str) += \textcolor{stringliteral}{"='"}; (*str) += v; (*str) += \textcolor{stringliteral}{"'"};
+1189     \}
+1190   \}
+1191 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Query\+Double\+Value@{Query\+Double\+Value}}
+\index{Query\+Double\+Value@{Query\+Double\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Query\+Double\+Value}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Query\+Double\+Value (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{\+\_\+value}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_a5f18e21f43ebe11963c3f7ffe91360d9}
+
+
+Query\+Double\+Value examines the value string. See \doxyref{Query\+Int\+Value()}{p.}{classdqm4hep_1_1TiXmlAttribute_aa0047c46ea985418fd1b3a0d476340e5}. 
+
+
+
+Definition at line 1201 of file tinyxml.\+cc.
+
+
+
+References T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+S\+U\+C\+C\+E\+S\+S, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E, and value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Double\+Attribute().
+
+
+\begin{DoxyCode}
+1202 \{
+1203   \textcolor{keywordflow}{if} ( TIXML_SSCANF( value.c\_str(), \textcolor{stringliteral}{"%lf"}, dval ) == 1 )
+1204     \textcolor{keywordflow}{return} TIXML_SUCCESS;
+1205   \textcolor{keywordflow}{return} TIXML_WRONG_TYPE;
+1206 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Query\+Int\+Value@{Query\+Int\+Value}}
+\index{Query\+Int\+Value@{Query\+Int\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Query\+Int\+Value}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Query\+Int\+Value (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{\+\_\+value}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttribute_aa0047c46ea985418fd1b3a0d476340e5}
+
+
+Query\+Int\+Value examines the value string. 
+
+It is an alternative to the \doxyref{Int\+Value()}{p.}{classdqm4hep_1_1TiXmlAttribute_af335464fecab6ceef21e23a5a14579d9} method with richer error checking. If the value is an integer, it is stored in 'value' and the call returns T\+I\+X\+M\+L\+\_\+\+S\+U\+C\+C\+E\+S\+S. If it is not an integer, it returns T\+I\+X\+M\+L\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E.
+
+A specialized but useful call. Note that for success it returns 0, which is the opposite of almost all other Tiny\+Xml calls. 
+
+Definition at line 1194 of file tinyxml.\+cc.
+
+
+
+References T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+S\+U\+C\+C\+E\+S\+S, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E, and value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Int\+Attribute().
+
+
+\begin{DoxyCode}
+1195 \{
+1196   \textcolor{keywordflow}{if} ( TIXML_SSCANF( value.c\_str(), \textcolor{stringliteral}{"%d"}, ival ) == 1 )
+1197     \textcolor{keywordflow}{return} TIXML_SUCCESS;
+1198   \textcolor{keywordflow}{return} TIXML_WRONG_TYPE;
+1199 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Document@{Set\+Document}}
+\index{Set\+Document@{Set\+Document}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Document}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Document (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Document} $\ast$}]{doc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_aba0de62cdb18617d88f639e1ad82dd91}
+
+
+Definition at line 883 of file tinyxml.\+h.
+
+
+
+References document.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse().
+
+
+\begin{DoxyCode}
+883 \{ document = doc; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Double\+Value@{Set\+Double\+Value}}
+\index{Set\+Double\+Value@{Set\+Double\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Double\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Double\+Value (
+\begin{DoxyParamCaption}
+\item[{double}]{\+\_\+value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttribute_ad7a3ad731737bb3eeb5b751938f17583}
+
+
+Set the value from a double. 
+
+
+
+Definition at line 1219 of file tinyxml.\+cc.
+
+
+
+References Set\+Value(), and T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Set\+Double\+Attribute().
+
+
+\begin{DoxyCode}
+1220 \{
+1221   \textcolor{keywordtype}{char} buf [256];
+1222 \textcolor{preprocessor}{  #if defined(TIXML\_SNPRINTF)   }
+1223     TIXML_SNPRINTF( buf, \textcolor{keyword}{sizeof}(buf), \textcolor{stringliteral}{"%g"}, \_value);
+1224 \textcolor{preprocessor}{  #else}
+1225     sprintf (buf, \textcolor{stringliteral}{"%g"}, \_value);
+1226 \textcolor{preprocessor}{  #endif}
+1227   SetValue (buf);
+1228 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Int\+Value@{Set\+Int\+Value}}
+\index{Set\+Int\+Value@{Set\+Int\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Int\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Int\+Value (
+\begin{DoxyParamCaption}
+\item[{int}]{\+\_\+value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttribute_a05ddd560ab9a534a5448182543cfed0b}
+
+
+Set the value from an integer. 
+
+
+
+Definition at line 1208 of file tinyxml.\+cc.
+
+
+
+References Set\+Value(), and T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Set\+Attribute().
+
+
+\begin{DoxyCode}
+1209 \{
+1210   \textcolor{keywordtype}{char} buf [64];
+1211 \textcolor{preprocessor}{  #if defined(TIXML\_SNPRINTF)   }
+1212     TIXML_SNPRINTF(buf, \textcolor{keyword}{sizeof}(buf), \textcolor{stringliteral}{"%d"}, \_value);
+1213 \textcolor{preprocessor}{  #else}
+1214     sprintf (buf, \textcolor{stringliteral}{"%d"}, \_value);
+1215 \textcolor{preprocessor}{  #endif}
+1216   SetValue (buf);
+1217 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Name@{Set\+Name}}
+\index{Set\+Name@{Set\+Name}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ab02abb1fa0b8495b45411e5baa4e0cc8}
+
+
+Set the name of this attribute. 
+
+
+
+Definition at line 841 of file tinyxml.\+h.
+
+
+
+References name.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find\+Or\+Create().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Name@{Set\+Name}}
+\index{Set\+Name@{Set\+Name}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ab7baa53a5dccc3369ef033aaf11bb67f}
+
+
+S\+T\+L std\+::string form. 
+
+
+
+Definition at line 849 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+849 \{ name = \_name; \} 
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Value@{Set\+Value}}
+\index{Set\+Value@{Set\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Value (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ab7d07272d15c71b4ed5836749b586c92}
+
+
+Set the value. 
+
+
+
+Definition at line 842 of file tinyxml.\+h.
+
+
+
+References value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Set\+Attribute(), Set\+Double\+Value(), and Set\+Int\+Value().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Set\+Value@{Set\+Value}}
+\index{Set\+Value@{Set\+Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Set\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Value (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_ab6823a36b9984d2fb2e064c3ed5f2746}
+
+
+S\+T\+L std\+::string form. 
+
+
+
+Definition at line 851 of file tinyxml.\+h.
+
+
+
+References value.
+
+
+\begin{DoxyCode}
+851 \{ value = \_value; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Value@{Value}}
+\index{Value@{Value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_adb6244f30a2d3736c827e2efcf54190e}
+
+
+Return the value of this attribute. 
+
+
+
+Definition at line 818 of file tinyxml.\+h.
+
+
+
+References value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Copy\+To(), and dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Value\+Str@{Value\+Str}}
+\index{Value\+Str@{Value\+Str}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Value\+Str}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Value\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttribute_a0c432d5d2c58c0125ea397bf94d60fe4}
+
+
+Return the value of this attribute. 
+
+
+
+Definition at line 820 of file tinyxml.\+h.
+
+
+
+References value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Value\+Attribute().
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}}
+\index{Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{Ti\+Xml\+Attribute\+Set}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Attribute\+Set}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlAttribute_a35a7b7f89f708527677d5078d41ce0bf}
+
+
+Definition at line 787 of file tinyxml.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!document@{document}}
+\index{document@{document}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{document}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Document}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::document\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a7236bece6b7a4b9ad5a3cc7f53e6d8db}
+
+
+Definition at line 889 of file tinyxml.\+h.
+
+
+
+Referenced by Set\+Document(), and Ti\+Xml\+Attribute().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!name@{name}}
+\index{name@{name}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Attribute\+::name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a2468dd014d52519b8cd6f8e8a2332cc4}
+
+
+Definition at line 890 of file tinyxml.\+h.
+
+
+
+Referenced by Name(), Name\+T\+Str(), Next(), operator$<$(), operator==(), operator$>$(), Parse(), Previous(), Set\+Name(), and Ti\+Xml\+Attribute().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!next@{next}}
+\index{next@{next}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{next}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::next\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a3499baafd98eebf69db1da795cd708b7}
+
+
+Definition at line 893 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Add(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+First(), Next(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Remove(), Ti\+Xml\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Ti\+Xml\+Attribute\+Set(), and dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::$\sim$\+Ti\+Xml\+Attribute\+Set().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!prev@{prev}}
+\index{prev@{prev}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{prev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a11c5f297a3cb01d217026bd4b8f7c8be}
+
+
+Definition at line 892 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Add(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Last(), Previous(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Remove(), Ti\+Xml\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Ti\+Xml\+Attribute\+Set(), and dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::$\sim$\+Ti\+Xml\+Attribute\+Set().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}!value@{value}}
+\index{value@{value}!dqm4hep\+::\+Ti\+Xml\+Attribute@{dqm4hep\+::\+Ti\+Xml\+Attribute}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Attribute\+::value\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttribute_a73f6036c535fbed02731cc78371a4f51}
+
+
+Definition at line 891 of file tinyxml.\+h.
+
+
+
+Referenced by Double\+Value(), Int\+Value(), Next(), Parse(), Previous(), Print(), Query\+Double\+Value(), Query\+Int\+Value(), Set\+Value(), Ti\+Xml\+Attribute(), Value(), and Value\+Str().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\item 
+{\bf tinyxmlparser.\+cc}\end{DoxyCompactItemize}

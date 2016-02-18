@@ -1,0 +1,71 @@
+\section{T\+C\+L\+A\+P\+:\+:Specification\+Exception Class Reference}
+\label{classTCLAP_1_1SpecificationException}\index{T\+C\+L\+A\+P\+::\+Specification\+Exception@{T\+C\+L\+A\+P\+::\+Specification\+Exception}}
+
+
+Thrown from \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is improperly specified, e.\+g.  
+
+
+
+
+{\ttfamily \#include $<$Arg\+Exception.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Specification\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1SpecificationException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Specification\+Exception} (const std\+::string \&text=\char`\"{}undefined exception\char`\"{}, const std\+::string \&id=\char`\"{}undefined\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Thrown from \doxyref{Arg}{p.}{classTCLAP_1_1Arg} and \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} when an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} is improperly specified, e.\+g. 
+
+same flag as another \doxyref{Arg}{p.}{classTCLAP_1_1Arg}, same name, etc. 
+
+Definition at line 167 of file Arg\+Exception.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Specification\+Exception@{T\+C\+L\+A\+P\+::\+Specification\+Exception}!Specification\+Exception@{Specification\+Exception}}
+\index{Specification\+Exception@{Specification\+Exception}!T\+C\+L\+A\+P\+::\+Specification\+Exception@{T\+C\+L\+A\+P\+::\+Specification\+Exception}}
+\subsubsection[{Specification\+Exception}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Specification\+Exception\+::\+Specification\+Exception (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{text = {\ttfamily \char`\"{}undefined~exception\char`\"{}}, }
+\item[{const std\+::string \&}]{id = {\ttfamily \char`\"{}undefined\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1SpecificationException_ad817016f03ebf4fc371e168636132abd}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & -\/ The text of the exception. \\
+\hline
+{\em id} & -\/ The text identifying the argument source of the exception. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file Arg\+Exception.\+h.
+
+
+\begin{DoxyCode}
+178       : ArgException( text, 
+179                       \textcolor{keywordtype}{id},
+180               std::string(\textcolor{stringliteral}{"Exception found when an Arg object "})+
+181               std::string(\textcolor{stringliteral}{"is improperly defined by the "}) +
+182               std::string(\textcolor{stringliteral}{"developer."} )) 
+183     \{ \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arg\+Exception.\+h}\end{DoxyCompactItemize}

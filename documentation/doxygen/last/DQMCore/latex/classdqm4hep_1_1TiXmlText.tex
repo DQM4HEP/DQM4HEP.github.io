@@ -1,0 +1,565 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Text Class Reference}
+\label{classdqm4hep_1_1TiXmlText}\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+
+
+X\+M\+L text.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1TiXmlText}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Text} (const char $\ast$init\+Value)
+\begin{DoxyCompactList}\small\item\em Constructor for text element. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+Ti\+Xml\+Text} ()
+\item 
+{\bf Ti\+Xml\+Text} (const std\+::string \&init\+Value)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Ti\+Xml\+Text} (const {\bf Ti\+Xml\+Text} \&copy)
+\item 
+void {\bf operator=} (const {\bf Ti\+Xml\+Text} \&base)
+\item 
+virtual void {\bf Print} (F\+I\+L\+E $\ast$cfile, int depth) const 
+\begin{DoxyCompactList}\small\item\em All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. \end{DoxyCompactList}\item 
+bool {\bf C\+D\+A\+T\+A} () const 
+\begin{DoxyCompactList}\small\item\em Queries whether this represents text using a C\+D\+A\+T\+A section. \end{DoxyCompactList}\item 
+void {\bf Set\+C\+D\+A\+T\+A} (bool \+\_\+cdata)
+\begin{DoxyCompactList}\small\item\em Turns on or off a C\+D\+A\+T\+A representation of text. \end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf Parse} (const char $\ast$p, {\bf Ti\+Xml\+Parsing\+Data} $\ast$data, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+virtual const {\bf Ti\+Xml\+Text} $\ast$ {\bf To\+Text} () const 
+\begin{DoxyCompactList}\small\item\em Cast to a more defined type. Will return null not of the requested type. \end{DoxyCompactList}\item 
+virtual {\bf Ti\+Xml\+Text} $\ast$ {\bf To\+Text} ()
+\begin{DoxyCompactList}\small\item\em Cast to a more defined type. Will return null not of the requested type. \end{DoxyCompactList}\item 
+virtual bool {\bf Accept} ({\bf Ti\+Xml\+Visitor} $\ast$content) const 
+\begin{DoxyCompactList}\small\item\em Walk the X\+M\+L tree visiting this node and all of its children. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Ti\+Xml\+Node} $\ast$ {\bf Clone} () const 
+\begin{DoxyCompactList}\small\item\em [internal use] Creates a new Element and returns it. \end{DoxyCompactList}\item 
+void {\bf Copy\+To} ({\bf Ti\+Xml\+Text} $\ast$target) const 
+\item 
+bool {\bf Blank} () const 
+\item 
+virtual void {\bf Stream\+In} (std\+::istream $\ast$in, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$tag)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf cdata}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ti\+Xml\+Element}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+X\+M\+L text. 
+
+A text node can have 2 ways to output the next. \char`\"{}normal\char`\"{} output and C\+D\+A\+T\+A. It will default to the mode it was parsed from the X\+M\+L file and you generally want to leave it alone, but you can change the output mode with \doxyref{Set\+C\+D\+A\+T\+A()}{p.}{classdqm4hep_1_1TiXmlText_abfe99ddfe08239d8067f6588b1cf1c5a} and query it with \doxyref{C\+D\+A\+T\+A()}{p.}{classdqm4hep_1_1TiXmlText_a2ae951e3377ad2ad05e17be0179b9c90}. 
+
+Definition at line 1211 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Ti\+Xml\+Text@{Ti\+Xml\+Text}}
+\index{Ti\+Xml\+Text@{Ti\+Xml\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Ti\+Xml\+Text}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{init\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_a47897424e9e6516fa3456a5a909fa9e5}
+
+
+Constructor for text element. 
+
+By default, it is treated as normal, encoded text. If you want it be output as a C\+D\+A\+T\+A text element, set the parameter \+\_\+cdata to 'true' 
+
+Definition at line 1219 of file tinyxml.\+h.
+
+
+
+References cdata, and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Set\+Value().
+
+
+
+Referenced by Clone().
+
+
+\begin{DoxyCode}
+1219                                       : TiXmlNode (TiXmlNode::TINYXML_TEXT)
+1220   \{
+1221     SetValue( initValue );
+1222     cdata = \textcolor{keyword}{false};
+1223   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!````~Ti\+Xml\+Text@{$\sim$\+Ti\+Xml\+Text}}
+\index{````~Ti\+Xml\+Text@{$\sim$\+Ti\+Xml\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{$\sim$\+Ti\+Xml\+Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+Ti\+Xml\+Text\+::$\sim$\+Ti\+Xml\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a94a551bc70b5ae9ed8271cfea041f84e}
+
+
+Definition at line 1224 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+1224 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Ti\+Xml\+Text@{Ti\+Xml\+Text}}
+\index{Ti\+Xml\+Text@{Ti\+Xml\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Ti\+Xml\+Text}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{init\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_a828950aec79566d3ee3719cdcbf7d4f9}
+
+
+Constructor. 
+
+
+
+Definition at line 1228 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+1228                                           : TiXmlNode (TiXmlNode::TINYXML_TEXT)
+1229   \{
+1230     SetValue( initValue );
+1231     cdata = \textcolor{keyword}{false};
+1232   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Ti\+Xml\+Text@{Ti\+Xml\+Text}}
+\index{Ti\+Xml\+Text@{Ti\+Xml\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Ti\+Xml\+Text}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Text} \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_a820cf05ec3875a218353c61cf4177c6b}
+
+
+Definition at line 1235 of file tinyxml.\+h.
+
+
+
+References Copy\+To().
+
+
+\begin{DoxyCode}
+1235 : TiXmlNode( TiXmlNode::TINYXML_TEXT )  \{ copy.CopyTo( \textcolor{keyword}{this} ); \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Accept@{Accept}}
+\index{Accept@{Accept}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Accept}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Text\+::\+Accept (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Visitor} $\ast$}]{content}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a819c8901cdba5c1b5a97ef0c75bbc39b}
+
+
+Walk the X\+M\+L tree visiting this node and all of its children. 
+
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_afcc32ba29e1a4af7b4303d8cb53f7ea6}.
+
+
+
+Definition at line 1317 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit().
+
+
+\begin{DoxyCode}
+1318 \{
+1319   \textcolor{keywordflow}{return} visitor->Visit( *\textcolor{keyword}{this} );
+1320 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Blank@{Blank}}
+\index{Blank@{Blank}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Blank}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Text\+::\+Blank (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlText_a5f674aeb593d6e4354f50aa5cf921c1e}
+
+
+Definition at line 1631 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+White\+Space(), and dqm4hep\+::\+Ti\+Xml\+Node\+::value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+
+\begin{DoxyCode}
+1632 \{
+1633   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{unsigned} i=0; i<value.length(); i++ )
+1634     \textcolor{keywordflow}{if} ( !IsWhiteSpace( value[i] ) )
+1635       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1636   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1637 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!C\+D\+A\+T\+A@{C\+D\+A\+T\+A}}
+\index{C\+D\+A\+T\+A@{C\+D\+A\+T\+A}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{C\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Text\+::\+C\+D\+A\+T\+A (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_a2ae951e3377ad2ad05e17be0179b9c90}
+
+
+Queries whether this represents text using a C\+D\+A\+T\+A section. 
+
+
+
+Definition at line 1242 of file tinyxml.\+h.
+
+
+
+References cdata.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit(), and dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Enter().
+
+
+\begin{DoxyCode}
+1242 \{ \textcolor{keywordflow}{return} cdata; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Clone@{Clone}}
+\index{Clone@{Clone}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Node} $\ast$ dqm4hep\+::\+Ti\+Xml\+Text\+::\+Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_aa3ead4a1e7ba33834dc629a93aa3427f}
+
+
+[internal use] Creates a new Element and returns it. 
+
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_a008af87c4f1478c5720580104e80da2f}.
+
+
+
+Definition at line 1323 of file tinyxml.\+cc.
+
+
+
+References Copy\+To(), and Ti\+Xml\+Text().
+
+
+\begin{DoxyCode}
+1324 \{ 
+1325   TiXmlText* clone = 0;
+1326   clone = \textcolor{keyword}{new} TiXmlText( \textcolor{stringliteral}{""} );
+1327 
+1328   \textcolor{keywordflow}{if} ( !clone )
+1329     \textcolor{keywordflow}{return} 0;
+1330 
+1331   CopyTo( clone );
+1332   \textcolor{keywordflow}{return} clone;
+1333 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Copy\+To@{Copy\+To}}
+\index{Copy\+To@{Copy\+To}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Copy\+To}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Text\+::\+Copy\+To (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Text} $\ast$}]{target}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlText_af8bf442e2dcf6ab319ee9f2a6742c7f5}
+
+
+Definition at line 1310 of file tinyxml.\+cc.
+
+
+
+References cdata, and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Copy\+To().
+
+
+
+Referenced by Clone(), operator=(), and Ti\+Xml\+Text().
+
+
+\begin{DoxyCode}
+1311 \{
+1312   TiXmlNode::CopyTo( target );
+1313   target->cdata = cdata;
+1314 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Text\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Text} \&}]{base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_adc2eea06b98ef32cd29a1280eaa1f129}
+
+
+Definition at line 1236 of file tinyxml.\+h.
+
+
+
+References Copy\+To().
+
+
+\begin{DoxyCode}
+1236 \{ base.CopyTo( \textcolor{keyword}{this} ); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Parse@{Parse}}
+\index{Parse@{Parse}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf Ti\+Xml\+Parsing\+Data} $\ast$}]{data, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a39a666e88642a13d559e7f0327728dc6}
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_a41f23afd7594cbf3c16706a42b5c4c4b}.
+
+
+
+Definition at line 1498 of file tinyxmlparser.\+cc.
+
+
+
+References cdata, dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Cursor(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Get\+Document(), dqm4hep\+::\+Ti\+Xml\+Base\+::location, dqm4hep\+::\+Ti\+Xml\+Base\+::\+Read\+Text(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error(), dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Stamp(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+String\+Equal(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G, and dqm4hep\+::\+Ti\+Xml\+Node\+::value.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+
+\begin{DoxyCode}
+1499 \{
+1500   value = \textcolor{stringliteral}{""};
+1501   TiXmlDocument* document = GetDocument();
+1502 
+1503   \textcolor{keywordflow}{if} ( data )
+1504   \{
+1505     data->Stamp( p, encoding );
+1506     location = data->Cursor();
+1507   \}
+1508 
+1509   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} startTag = \textcolor{stringliteral}{"<![CDATA["};
+1510   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keyword}{const} endTag   = \textcolor{stringliteral}{"]]>"};
+1511 
+1512   \textcolor{keywordflow}{if} ( cdata || StringEqual( p, startTag, \textcolor{keyword}{false}, encoding ) )
+1513   \{
+1514     cdata = \textcolor{keyword}{true};
+1515 
+1516     \textcolor{keywordflow}{if} ( !StringEqual( p, startTag, \textcolor{keyword}{false}, encoding ) )
+1517     \{
+1518       document->SetError( TIXML_ERROR_PARSING_CDATA, p, data, encoding );
+1519       \textcolor{keywordflow}{return} 0;
+1520     \}
+1521     p += strlen( startTag );
+1522 
+1523     \textcolor{comment}{// Keep all the white space, ignore the encoding, etc.}
+1524     \textcolor{keywordflow}{while} (    p && *p
+1525         && !StringEqual( p, endTag, \textcolor{keyword}{false}, encoding )
+1526         )
+1527     \{
+1528       value += *p;
+1529       ++p;
+1530     \}
+1531 
+1532     TIXML_STRING dummy; 
+1533     p = ReadText( p, &dummy, \textcolor{keyword}{false}, endTag, \textcolor{keyword}{false}, encoding );
+1534     \textcolor{keywordflow}{return} p;
+1535   \}
+1536   \textcolor{keywordflow}{else}
+1537   \{
+1538     \textcolor{keywordtype}{bool} ignoreWhite = \textcolor{keyword}{true};
+1539 
+1540     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* end = \textcolor{stringliteral}{"<"};
+1541     p = ReadText( p, &value, ignoreWhite, end, \textcolor{keyword}{false}, encoding );
+1542     \textcolor{keywordflow}{if} ( p )
+1543       \textcolor{keywordflow}{return} p-1; \textcolor{comment}{// don't truncate the '<'}
+1544     \textcolor{keywordflow}{return} 0;
+1545   \}
+1546 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Text\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{cfile, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a7a20c25833a3f13f6cb22b5f57744244}
+
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. 
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Base} \doxyref{}{p.}{classdqm4hep_1_1TiXmlBase_ad5adc7976f1def10cb903144cfb11127}.
+
+
+
+Definition at line 1289 of file tinyxml.\+cc.
+
+
+
+References cdata, dqm4hep\+::\+Ti\+Xml\+Base\+::\+Encode\+String(), T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G, and dqm4hep\+::\+Ti\+Xml\+Node\+::value.
+
+
+\begin{DoxyCode}
+1290 \{
+1291   assert( cfile );
+1292   \textcolor{keywordflow}{if} ( cdata )
+1293   \{
+1294     \textcolor{keywordtype}{int} i;
+1295     fprintf( cfile, \textcolor{stringliteral}{"\(\backslash\)n"} );
+1296     \textcolor{keywordflow}{for} ( i=0; i<depth; i++ ) \{
+1297       fprintf( cfile, \textcolor{stringliteral}{"    "} );
+1298     \}
+1299     fprintf( cfile, \textcolor{stringliteral}{"<![CDATA[%s]]>\(\backslash\)n"}, value.c\_str() );  \textcolor{comment}{// unformatted output}
+1300   \}
+1301   \textcolor{keywordflow}{else}
+1302   \{
+1303     TIXML_STRING buffer;
+1304     EncodeString( value, &buffer );
+1305     fprintf( cfile, \textcolor{stringliteral}{"%s"}, buffer.c\_str() );
+1306   \}
+1307 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Set\+C\+D\+A\+T\+A@{Set\+C\+D\+A\+T\+A}}
+\index{Set\+C\+D\+A\+T\+A@{Set\+C\+D\+A\+T\+A}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Set\+C\+D\+A\+T\+A}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Text\+::\+Set\+C\+D\+A\+T\+A (
+\begin{DoxyParamCaption}
+\item[{bool}]{\+\_\+cdata}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlText_abfe99ddfe08239d8067f6588b1cf1c5a}
+
+
+Turns on or off a C\+D\+A\+T\+A representation of text. 
+
+
+
+Definition at line 1244 of file tinyxml.\+h.
+
+
+
+References cdata.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Identify().
+
+
+\begin{DoxyCode}
+1244 \{ cdata = \_cdata; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Stream\+In@{Stream\+In}}
+\index{Stream\+In@{Stream\+In}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Stream\+In}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+Ti\+Xml\+Text\+::\+Stream\+In (
+\begin{DoxyParamCaption}
+\item[{std\+::istream $\ast$}]{in, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_aeadf40fb2086752ef5d022f9eeac5fc3}
+
+
+Implements {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_adea69fa1c7b9fc1831c26b3a76496859}.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!To\+Text@{To\+Text}}
+\index{To\+Text@{To\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{To\+Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf Ti\+Xml\+Text}$\ast$ dqm4hep\+::\+Ti\+Xml\+Text\+::\+To\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a0ea5f4567a80fc939d74b1bee8f9e699}
+
+
+Cast to a more defined type. Will return null not of the requested type. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_a75575535f8f7f5b69ce3c2af169a79e3}.
+
+
+
+Definition at line 1248 of file tinyxml.\+h.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!To\+Text@{To\+Text}}
+\index{To\+Text@{To\+Text}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{To\+Text}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Ti\+Xml\+Text}$\ast$ dqm4hep\+::\+Ti\+Xml\+Text\+::\+To\+Text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlText_a4cf15f2d558e08a8d5553a0a17a160c5}
+
+
+Cast to a more defined type. Will return null not of the requested type. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Node} \doxyref{}{p.}{classdqm4hep_1_1TiXmlNode_a16fa76b8b8b6a2bfaac3b236064ec42e}.
+
+
+
+Definition at line 1249 of file tinyxml.\+h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!Ti\+Xml\+Element@{Ti\+Xml\+Element}}
+\index{Ti\+Xml\+Element@{Ti\+Xml\+Element}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{Ti\+Xml\+Element}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Element}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlText_ab6592e32cb9132be517cc12a70564c4b}
+
+
+Definition at line 1213 of file tinyxml.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}!cdata@{cdata}}
+\index{cdata@{cdata}!dqm4hep\+::\+Ti\+Xml\+Text@{dqm4hep\+::\+Ti\+Xml\+Text}}
+\subsubsection[{cdata}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Text\+::cdata\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlText_aad1c767aa0b4ada00d67f879831afaff}
+
+
+Definition at line 1267 of file tinyxml.\+h.
+
+
+
+Referenced by C\+D\+A\+T\+A(), Copy\+To(), Parse(), Print(), Set\+C\+D\+A\+T\+A(), and Ti\+Xml\+Text().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\item 
+{\bf tinyxmlparser.\+cc}\end{DoxyCompactItemize}

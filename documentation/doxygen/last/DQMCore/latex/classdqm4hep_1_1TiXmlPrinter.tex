@@ -1,0 +1,730 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Printer Class Reference}
+\label{classdqm4hep_1_1TiXmlPrinter}\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+
+
+Print to memory functionality.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Printer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TiXmlPrinter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Printer} ()
+\item 
+virtual bool {\bf Visit\+Enter} (const {\bf Ti\+Xml\+Document} \&doc)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Exit} (const {\bf Ti\+Xml\+Document} \&doc)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Enter} (const {\bf Ti\+Xml\+Element} \&element, const {\bf Ti\+Xml\+Attribute} $\ast$first\+Attribute)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Exit} (const {\bf Ti\+Xml\+Element} \&element)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Declaration} \&declaration)
+\begin{DoxyCompactList}\small\item\em Visit a declaration. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Text} \&text)
+\begin{DoxyCompactList}\small\item\em Visit a text node. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Comment} \&comment)
+\begin{DoxyCompactList}\small\item\em Visit a comment node. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Unknown} \&unknown)
+\begin{DoxyCompactList}\small\item\em Visit an unknow node. \end{DoxyCompactList}\item 
+void {\bf Set\+Indent} (const char $\ast$\+\_\+indent)
+\begin{DoxyCompactList}\small\item\em Set the indent characters for printing. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf Indent} ()
+\begin{DoxyCompactList}\small\item\em Query the indention string. \end{DoxyCompactList}\item 
+void {\bf Set\+Line\+Break} (const char $\ast$\+\_\+line\+Break)
+\begin{DoxyCompactList}\small\item\em Set the line breaking string. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf Line\+Break} ()
+\begin{DoxyCompactList}\small\item\em Query the current line breaking string. \end{DoxyCompactList}\item 
+void {\bf Set\+Stream\+Printing} ()
+\begin{DoxyCompactList}\small\item\em Switch over to \char`\"{}stream printing\char`\"{} which is the most dense formatting without linebreaks. \end{DoxyCompactList}\item 
+const char $\ast$ {\bf C\+Str} ()
+\begin{DoxyCompactList}\small\item\em Return the result. \end{DoxyCompactList}\item 
+size\+\_\+t {\bf Size} ()
+\begin{DoxyCompactList}\small\item\em Return the length of the result string. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf Str} ()
+\begin{DoxyCompactList}\small\item\em Return the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Do\+Indent} ()
+\item 
+void {\bf Do\+Line\+Break} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf depth}
+\item 
+bool {\bf simple\+Text\+Print}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf buffer}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf indent}
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} {\bf line\+Break}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Print to memory functionality. 
+
+The \doxyref{Ti\+Xml\+Printer}{p.}{classdqm4hep_1_1TiXmlPrinter} is useful when you need to\+:
+
+
+\begin{DoxyEnumerate}
+\item Print to memory (especially in non-\/\+S\+T\+L mode)
+\item Control formatting (line endings, etc.)
+\end{DoxyEnumerate}
+
+When constructed, the \doxyref{Ti\+Xml\+Printer}{p.}{classdqm4hep_1_1TiXmlPrinter} is in its default \char`\"{}pretty printing\char`\"{} mode. Before calling Accept() you can call methods to control the printing of the X\+M\+L document. After \doxyref{Ti\+Xml\+Node\+::\+Accept()}{p.}{classdqm4hep_1_1TiXmlNode_afcc32ba29e1a4af7b4303d8cb53f7ea6} is called, the printed document can be accessed via the \doxyref{C\+Str()}{p.}{classdqm4hep_1_1TiXmlPrinter_a09cbb88e9805c782215eea86450b666a}, \doxyref{Str()}{p.}{classdqm4hep_1_1TiXmlPrinter_aae2d5faa74d755859d962006ec8cdd1c}, and \doxyref{Size()}{p.}{classdqm4hep_1_1TiXmlPrinter_a49c6daa46158b3adfbcd76f175b762f4} methods.
+
+\doxyref{Ti\+Xml\+Printer}{p.}{classdqm4hep_1_1TiXmlPrinter} uses the Visitor A\+P\+I. \begin{DoxyVerb}TiXmlPrinter printer;
+printer.SetIndent( "\t" );
+
+doc.Accept( &printer );
+fprintf( stdout, "%s", printer.CStr() );
+\end{DoxyVerb}
+ 
+
+Definition at line 1736 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Ti\+Xml\+Printer@{Ti\+Xml\+Printer}}
+\index{Ti\+Xml\+Printer@{Ti\+Xml\+Printer}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Ti\+Xml\+Printer}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Ti\+Xml\+Printer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a3edd7b91e1185f144d16d2073818773e}
+
+
+Definition at line 1739 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+1739                  : depth( 0 ), simpleTextPrint( \textcolor{keyword}{false} ),
+1740            buffer(), indent( \textcolor{stringliteral}{"    "} ), lineBreak( \textcolor{stringliteral}{"\(\backslash\)n"} ) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!C\+Str@{C\+Str}}
+\index{C\+Str@{C\+Str}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{C\+Str}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Printer\+::\+C\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a09cbb88e9805c782215eea86450b666a}
+
+
+Return the result. 
+
+
+
+Definition at line 1774 of file tinyxml.\+h.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+1774 \{ \textcolor{keywordflow}{return} buffer.c\_str(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Do\+Indent@{Do\+Indent}}
+\index{Do\+Indent@{Do\+Indent}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Do\+Indent}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Do\+Indent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_a61a838929b286e68db102c16f28b95ae}
+
+
+Definition at line 1784 of file tinyxml.\+h.
+
+
+
+References buffer, depth, and indent.
+
+
+
+Referenced by Visit(), Visit\+Enter(), and Visit\+Exit().
+
+
+\begin{DoxyCode}
+1784                   \{
+1785     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0; i<depth; ++i )
+1786       buffer += indent;
+1787   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Do\+Line\+Break@{Do\+Line\+Break}}
+\index{Do\+Line\+Break@{Do\+Line\+Break}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Do\+Line\+Break}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Do\+Line\+Break (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_a769dd2f8ebf4a6324ed332d4e3384a65}
+
+
+Definition at line 1788 of file tinyxml.\+h.
+
+
+
+References buffer, and line\+Break.
+
+
+
+Referenced by Visit(), Visit\+Enter(), and Visit\+Exit().
+
+
+\begin{DoxyCode}
+1788                      \{
+1789     buffer += lineBreak;
+1790   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Indent@{Indent}}
+\index{Indent@{Indent}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Indent}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Indent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_abb8caf55a83795f57252ba1a3adcb2b7}
+
+
+Query the indention string. 
+
+
+
+Definition at line 1758 of file tinyxml.\+h.
+
+
+
+References indent.
+
+
+\begin{DoxyCode}
+1758 \{ \textcolor{keywordflow}{return} indent.c\_str(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Line\+Break@{Line\+Break}}
+\index{Line\+Break@{Line\+Break}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Line\+Break}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Line\+Break (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a65bc0590a7c847e35c8e4e64db68d98b}
+
+
+Query the current line breaking string. 
+
+
+
+Definition at line 1765 of file tinyxml.\+h.
+
+
+
+References line\+Break.
+
+
+\begin{DoxyCode}
+1765 \{ \textcolor{keywordflow}{return} lineBreak.c\_str(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Set\+Indent@{Set\+Indent}}
+\index{Set\+Indent@{Set\+Indent}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Set\+Indent}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Set\+Indent (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+indent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a6202f509693f5bec92b9b1aa3d0f3ba0}
+
+
+Set the indent characters for printing. 
+
+By default 4 spaces but tab () is also useful, or null/empty string for no indentation. 
+
+Definition at line 1756 of file tinyxml.\+h.
+
+
+
+References indent.
+
+
+\begin{DoxyCode}
+1756 \{ indent = \_indent ? \_indent : \textcolor{stringliteral}{""} ; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Set\+Line\+Break@{Set\+Line\+Break}}
+\index{Set\+Line\+Break@{Set\+Line\+Break}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Set\+Line\+Break}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Set\+Line\+Break (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+line\+Break}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a2e5aa3bf59126780ea785464c6e42a2b}
+
+
+Set the line breaking string. 
+
+By default set to newline (~\newline
+). Some operating systems prefer other characters, or can be set to the null/empty string for no indenation. 
+
+Definition at line 1763 of file tinyxml.\+h.
+
+
+
+References line\+Break.
+
+
+\begin{DoxyCode}
+1763 \{ lineBreak = \_lineBreak ? \_lineBreak : \textcolor{stringliteral}{""}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Set\+Stream\+Printing@{Set\+Stream\+Printing}}
+\index{Set\+Stream\+Printing@{Set\+Stream\+Printing}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Set\+Stream\+Printing}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Set\+Stream\+Printing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_ad51632acc968b6a0d998ff315af6e2b0}
+
+
+Switch over to \char`\"{}stream printing\char`\"{} which is the most dense formatting without linebreaks. 
+
+Common when the X\+M\+L is needed for network transmission. 
+
+Definition at line 1770 of file tinyxml.\+h.
+
+
+
+References indent, and line\+Break.
+
+
+\begin{DoxyCode}
+1770                                       \{ indent = \textcolor{stringliteral}{""};
+1771                             lineBreak = \textcolor{stringliteral}{""};
+1772                           \} 
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Size@{Size}}
+\index{Size@{Size}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_a49c6daa46158b3adfbcd76f175b762f4}
+
+
+Return the length of the result string. 
+
+
+
+Definition at line 1776 of file tinyxml.\+h.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+1776 \{ \textcolor{keywordflow}{return} buffer.size(); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Str@{Str}}
+\index{Str@{Str}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Str}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string\& dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlPrinter_aae2d5faa74d755859d962006ec8cdd1c}
+
+
+Return the result. 
+
+
+
+Definition at line 1780 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+1780 \{ \textcolor{keywordflow}{return} buffer; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Declaration} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a63478cd99635da7764c2bad0a8131f55}
+
+
+Visit a declaration. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_ac3d1498b5c8dfb62d8d027853e51f1c5}.
+
+
+
+Definition at line 1813 of file tinyxml.\+cc.
+
+
+
+References buffer, Do\+Indent(), Do\+Line\+Break(), and dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Print().
+
+
+\begin{DoxyCode}
+1814 \{
+1815   DoIndent();
+1816   declaration.Print( 0, 0, &buffer );
+1817   DoLineBreak();
+1818   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1819 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Text} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a0e57e357cafc579fd49cfbd6ccee329c}
+
+
+Visit a text node. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_af8bdc52c568532a9403709f496ad81ba}.
+
+
+
+Definition at line 1785 of file tinyxml.\+cc.
+
+
+
+References buffer, dqm4hep\+::\+Ti\+Xml\+Text\+::\+C\+D\+A\+T\+A(), Do\+Indent(), Do\+Line\+Break(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Encode\+String(), simple\+Text\+Print, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G, dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value\+T\+Str().
+
+
+\begin{DoxyCode}
+1786 \{
+1787   \textcolor{keywordflow}{if} ( text.CDATA() )
+1788   \{
+1789     DoIndent();
+1790     buffer += \textcolor{stringliteral}{"<![CDATA["};
+1791     buffer += text.Value();
+1792     buffer += \textcolor{stringliteral}{"]]>"};
+1793     DoLineBreak();
+1794   \}
+1795   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( simpleTextPrint )
+1796   \{
+1797     TIXML_STRING str;
+1798     TiXmlBase::EncodeString( text.ValueTStr(), &str );
+1799     buffer += str;
+1800   \}
+1801   \textcolor{keywordflow}{else}
+1802   \{
+1803     DoIndent();
+1804     TIXML_STRING str;
+1805     TiXmlBase::EncodeString( text.ValueTStr(), &str );
+1806     buffer += str;
+1807     DoLineBreak();
+1808   \}
+1809   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1810 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Comment} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a9dd1552c069ee1b9143a5033e3edb582}
+
+
+Visit a comment node. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a157991761f1797f65c89c58f7972b87c}.
+
+
+
+Definition at line 1822 of file tinyxml.\+cc.
+
+
+
+References buffer, Do\+Indent(), Do\+Line\+Break(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+\begin{DoxyCode}
+1823 \{
+1824   DoIndent();
+1825   buffer += \textcolor{stringliteral}{"<!--"};
+1826   buffer += comment.Value();
+1827   buffer += \textcolor{stringliteral}{"-->"};
+1828   DoLineBreak();
+1829   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1830 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Unknown} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a9e431ed215bbbc3bfe83d318beb4b75d}
+
+
+Visit an unknow node. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a6b1ea07caa0b44ee09fc8280977847dd}.
+
+
+
+Definition at line 1833 of file tinyxml.\+cc.
+
+
+
+References buffer, Do\+Indent(), Do\+Line\+Break(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+\begin{DoxyCode}
+1834 \{
+1835   DoIndent();
+1836   buffer += \textcolor{stringliteral}{"<"};
+1837   buffer += unknown.Value();
+1838   buffer += \textcolor{stringliteral}{">"};
+1839   DoLineBreak();
+1840   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1841 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit\+Enter@{Visit\+Enter}}
+\index{Visit\+Enter@{Visit\+Enter}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit\+Enter}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Enter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a8711a0f59f6bc26a68ea886b2044b8f8}
+
+
+Visit a document. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a9010af07454b57940457947119bea129}.
+
+
+
+Definition at line 1712 of file tinyxml.\+cc.
+
+
+\begin{DoxyCode}
+1713 \{
+1714   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1715 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit\+Enter@{Visit\+Enter}}
+\index{Visit\+Enter@{Visit\+Enter}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit\+Enter}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Enter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} \&}]{, }
+\item[{const {\bf Ti\+Xml\+Attribute} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_ac68897b2522ab50bff55be033585604b}
+
+
+Visit an element. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a3a57f9159c1e888ef138762f02c6e5eb}.
+
+
+
+Definition at line 1722 of file tinyxml.\+cc.
+
+
+
+References buffer, dqm4hep\+::\+Ti\+Xml\+Text\+::\+C\+D\+A\+T\+A(), depth, Do\+Indent(), Do\+Line\+Break(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Last\+Child(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Next(), simple\+Text\+Print, dqm4hep\+::\+Ti\+Xml\+Node\+::\+To\+Text(), and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+\begin{DoxyCode}
+1723 \{
+1724   DoIndent();
+1725   buffer += \textcolor{stringliteral}{"<"};
+1726   buffer += element.Value();
+1727 
+1728   \textcolor{keywordflow}{for}( \textcolor{keyword}{const} TiXmlAttribute* attrib = firstAttribute; attrib; attrib = attrib->Next() )
+1729   \{
+1730     buffer += \textcolor{stringliteral}{" "};
+1731     attrib->Print( 0, 0, &buffer );
+1732   \}
+1733 
+1734   \textcolor{keywordflow}{if} ( !element.FirstChild() ) 
+1735   \{
+1736     buffer += \textcolor{stringliteral}{" />"};
+1737     DoLineBreak();
+1738   \}
+1739   \textcolor{keywordflow}{else} 
+1740   \{
+1741     buffer += \textcolor{stringliteral}{">"};
+1742     \textcolor{keywordflow}{if} (    element.FirstChild()->ToText()
+1743         && element.LastChild() == element.FirstChild()
+1744         && element.FirstChild()->ToText()->CDATA() == false )
+1745     \{
+1746       simpleTextPrint = \textcolor{keyword}{true};
+1747       \textcolor{comment}{// no DoLineBreak()!}
+1748     \}
+1749     \textcolor{keywordflow}{else}
+1750     \{
+1751       DoLineBreak();
+1752     \}
+1753   \}
+1754   ++depth;  
+1755   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1756 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit\+Exit@{Visit\+Exit}}
+\index{Visit\+Exit@{Visit\+Exit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Exit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_acab02d812efb9825e06962c94d1ce732}
+
+
+Visit a document. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a98541283c7a65736726d9eebd9105acc}.
+
+
+
+Definition at line 1717 of file tinyxml.\+cc.
+
+
+\begin{DoxyCode}
+1718 \{
+1719   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1720 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!Visit\+Exit@{Visit\+Exit}}
+\index{Visit\+Exit@{Visit\+Exit}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{Visit\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit\+Exit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlPrinter_a6500be93ca42500ea76ee47649b18dd8}
+
+
+Visit an element. 
+
+
+
+Reimplemented from {\bf dqm4hep\+::\+Ti\+Xml\+Visitor} \doxyref{}{p.}{classdqm4hep_1_1TiXmlVisitor_a76796cea6999fef8dd86da66aac16cc7}.
+
+
+
+Definition at line 1759 of file tinyxml.\+cc.
+
+
+
+References buffer, depth, Do\+Indent(), Do\+Line\+Break(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+First\+Child(), simple\+Text\+Print, and dqm4hep\+::\+Ti\+Xml\+Node\+::\+Value().
+
+
+\begin{DoxyCode}
+1760 \{
+1761   --depth;
+1762   \textcolor{keywordflow}{if} ( !element.FirstChild() ) 
+1763   \{
+1764     \textcolor{comment}{// nothing.}
+1765   \}
+1766   \textcolor{keywordflow}{else} 
+1767   \{
+1768     \textcolor{keywordflow}{if} ( simpleTextPrint )
+1769     \{
+1770       simpleTextPrint = \textcolor{keyword}{false};
+1771     \}
+1772     \textcolor{keywordflow}{else}
+1773     \{
+1774       DoIndent();
+1775     \}
+1776     buffer += \textcolor{stringliteral}{"</"};
+1777     buffer += element.Value();
+1778     buffer += \textcolor{stringliteral}{">"};
+1779     DoLineBreak();
+1780   \}
+1781   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1782 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!buffer@{buffer}}
+\index{buffer@{buffer}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Printer\+::buffer\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_ae8da9e5164754935312e6e1de758492a}
+
+
+Definition at line 1794 of file tinyxml.\+h.
+
+
+
+Referenced by C\+Str(), Do\+Indent(), Do\+Line\+Break(), Size(), Visit(), Visit\+Enter(), and Visit\+Exit().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!depth@{depth}}
+\index{depth@{depth}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{depth}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Printer\+::depth\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_a23b847d109eadac2c7c4286858d6a7e0}
+
+
+Definition at line 1792 of file tinyxml.\+h.
+
+
+
+Referenced by Do\+Indent(), Visit\+Enter(), and Visit\+Exit().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!indent@{indent}}
+\index{indent@{indent}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{indent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Printer\+::indent\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_accf9d4290993e4a81f2415226eec5448}
+
+
+Definition at line 1795 of file tinyxml.\+h.
+
+
+
+Referenced by Do\+Indent(), Indent(), Set\+Indent(), and Set\+Stream\+Printing().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!line\+Break@{line\+Break}}
+\index{line\+Break@{line\+Break}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{line\+Break}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} dqm4hep\+::\+Ti\+Xml\+Printer\+::line\+Break\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_a61715e0be13cd182616b6dc052d29bf1}
+
+
+Definition at line 1796 of file tinyxml.\+h.
+
+
+
+Referenced by Do\+Line\+Break(), Line\+Break(), Set\+Line\+Break(), and Set\+Stream\+Printing().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}!simple\+Text\+Print@{simple\+Text\+Print}}
+\index{simple\+Text\+Print@{simple\+Text\+Print}!dqm4hep\+::\+Ti\+Xml\+Printer@{dqm4hep\+::\+Ti\+Xml\+Printer}}
+\subsubsection[{simple\+Text\+Print}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Printer\+::simple\+Text\+Print\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlPrinter_aed778ed3a5be60a4da5b9fbbd343bfa0}
+
+
+Definition at line 1793 of file tinyxml.\+h.
+
+
+
+Referenced by Visit(), Visit\+Enter(), and Visit\+Exit().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\end{DoxyCompactItemize}

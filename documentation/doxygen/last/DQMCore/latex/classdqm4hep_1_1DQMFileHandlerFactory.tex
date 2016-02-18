@@ -1,0 +1,88 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+File\+Handler\+Factory Class Reference}
+\label{classdqm4hep_1_1DQMFileHandlerFactory}\index{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory@{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory}}
+
+
+\doxyref{D\+Q\+M\+File\+Handler\+Factory}{p.}{classdqm4hep_1_1DQMFileHandlerFactory} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+File\+Handler\+Factory.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+File\+Handler\+Factory} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+File\+Handler} $\ast$ {\bf create\+File\+Handler} (const std\+::string \&file\+Handler\+Type) const 
+\begin{DoxyCompactList}\small\item\em Create a file handler with target type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+File\+Handler\+Factory}{p.}{classdqm4hep_1_1DQMFileHandlerFactory} class. 
+
+Definition at line 42 of file D\+Q\+M\+File\+Handler\+Factory.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory@{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory}!D\+Q\+M\+File\+Handler\+Factory@{D\+Q\+M\+File\+Handler\+Factory}}
+\index{D\+Q\+M\+File\+Handler\+Factory@{D\+Q\+M\+File\+Handler\+Factory}!dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory@{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory}}
+\subsubsection[{D\+Q\+M\+File\+Handler\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory\+::\+D\+Q\+M\+File\+Handler\+Factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMFileHandlerFactory_a434b6c2744dbd5f0da918591839843e2}
+
+
+Constructor. 
+
+
+
+Definition at line 37 of file D\+Q\+M\+File\+Handler\+Factory.\+cc.
+
+
+\begin{DoxyCode}
+38 \{
+39   \textcolor{comment}{/* nop */}
+40 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory@{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory}!create\+File\+Handler@{create\+File\+Handler}}
+\index{create\+File\+Handler@{create\+File\+Handler}!dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory@{dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory}}
+\subsubsection[{create\+File\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+File\+Handler} $\ast$ dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory\+::create\+File\+Handler (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Handler\+Type}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMFileHandlerFactory_ae9869c36006001f0421b4d0c554ae22e}
+
+
+Create a file handler with target type. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+File\+Handler\+Factory.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+45 \{
+46   \textcolor{keywordflow}{if}(fileHandlerType == \textcolor{stringliteral}{"local"})
+47     \textcolor{keywordflow}{return} \textcolor{keyword}{new} DQMLocalFileHandler();
+48   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(fileHandlerType == \textcolor{stringliteral}{"db"})
+49     \textcolor{keywordflow}{return} \textcolor{keyword}{new} DQMDBFileHandler();
+50   \textcolor{keywordflow}{else}
+51     \textcolor{keywordflow}{return} \textcolor{keyword}{new} DQMLocalFileHandler();
+52 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+File\+Handler\+Factory.\+h}\item 
+{\bf D\+Q\+M\+File\+Handler\+Factory.\+cc}\end{DoxyCompactItemize}

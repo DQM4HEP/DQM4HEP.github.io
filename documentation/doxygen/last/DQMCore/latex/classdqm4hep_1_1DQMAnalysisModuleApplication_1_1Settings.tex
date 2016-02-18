@@ -1,0 +1,253 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Analysis\+Module\+Application\+:\+:Settings Class Reference}
+\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings}\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+
+
+\doxyref{Settings}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Analysis\+Module\+Application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Settings} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf print} ()
+\begin{DoxyCompactList}\small\item\em Print the parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+settings\+File\+Name}
+\item 
+std\+::string {\bf m\+\_\+archive\+Directory}
+\item 
+bool {\bf m\+\_\+should\+Open\+Archive}
+\item 
+std\+::string {\bf m\+\_\+run\+Control\+Type}
+\item 
+std\+::string {\bf m\+\_\+run\+Control\+Name}
+\item 
+std\+::string {\bf m\+\_\+event\+Client\+Type}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Collector}
+\item 
+std\+::string {\bf m\+\_\+cycle\+Type}
+\item 
+float {\bf m\+\_\+cycle\+Value}
+\item 
+unsigned int {\bf m\+\_\+cycle\+Timeout}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Settings}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings} class. 
+
+Definition at line 54 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{Settings}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_af70183e2535173f6d99aa0083f097fb3}
+
+
+Constructor. 
+
+
+
+Definition at line 621 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+\begin{DoxyCode}
+621                                                :
+622   m_shouldOpenArchive(\textcolor{keyword}{false}),
+623   m_runControlType(\textcolor{stringliteral}{"DimRunControlClient"}),
+624   m_runControlName(\textcolor{stringliteral}{"DEFAULT"}),
+625   m_eventClientType(\textcolor{stringliteral}{"DimEventClient"}),
+626   m_monitorElementCollector(\textcolor{stringliteral}{"DEFAULT"}),
+627   m_cycleType(\textcolor{stringliteral}{"TimeCycle"}),
+628   m_cycleValue(30.f),
+629   m_cycleTimeout(5),
+630   m_archiveDirectory(\textcolor{stringliteral}{"/tmp"})
+631 \{
+632   \textcolor{comment}{/* nop */}
+633 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!print@{print}}
+\index{print@{print}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a5545cc9aaa75585d22e4603a1a78b46a}
+
+
+Print the parameters. 
+
+
+
+Definition at line 637 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+638 \{
+639   std::string openArchive = m_shouldOpenArchive ? \textcolor{stringliteral}{"yes"} : \textcolor{stringliteral}{"no"};
+640   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************"} << std::endl;
+641   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"******* Application parameters *******"} << std::endl;
+642   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Should open archive :            "} << openArchive << std::endl;
+643   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Run control type :               "} << 
+      m_runControlType << std::endl;
+644   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Run control name :               "} << 
+      m_runControlName << std::endl;
+645   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Event client type :              "} << 
+      m_eventClientType << std::endl;
+646   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Cycle type :                     "} << 
+      m_cycleType << std::endl;
+647   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Cycle value :                    "} << 
+      m_cycleValue << std::endl;
+648   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Cycle timeout :                  "} << 
+      m_cycleTimeout << std::endl;
+649   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Archive directory :              "} << 
+      m_archiveDirectory << std::endl;
+650   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Monitor element collector name : "} << 
+      m_monitorElementCollector << std::endl;
+651   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************"} << std::endl;
+652 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+archive\+Directory@{m\+\_\+archive\+Directory}}
+\index{m\+\_\+archive\+Directory@{m\+\_\+archive\+Directory}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+archive\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+archive\+Directory}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_ac5afa86535ca07552d4bdb5ec48c7de3}
+
+
+Definition at line 67 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Archiver(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+cycle\+Timeout@{m\+\_\+cycle\+Timeout}}
+\index{m\+\_\+cycle\+Timeout@{m\+\_\+cycle\+Timeout}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+cycle\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Timeout}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a48cf2d80a10e684200395db4296f8e4e}
+
+
+Definition at line 75 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+cycle\+Type@{m\+\_\+cycle\+Type}}
+\index{m\+\_\+cycle\+Type@{m\+\_\+cycle\+Type}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+cycle\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Type}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_aac37a5d7347471b9f4a7a3104b2dad49}
+
+
+Definition at line 73 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+cycle\+Value@{m\+\_\+cycle\+Value}}
+\index{m\+\_\+cycle\+Value@{m\+\_\+cycle\+Value}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+cycle\+Value}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Value}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a7bd6b02cf613adce36718d2a4b803d33}
+
+
+Definition at line 74 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+event\+Client\+Type@{m\+\_\+event\+Client\+Type}}
+\index{m\+\_\+event\+Client\+Type@{m\+\_\+event\+Client\+Type}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+event\+Client\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+event\+Client\+Type}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a2401a7d820d4ee7d6e8f4ac00ba5f1fb}
+
+
+Definition at line 71 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+monitor\+Element\+Collector@{m\+\_\+monitor\+Element\+Collector}}
+\index{m\+\_\+monitor\+Element\+Collector@{m\+\_\+monitor\+Element\+Collector}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+monitor\+Element\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+monitor\+Element\+Collector}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a9f2320e85396d1388cff04a08b6d47c2}
+
+
+Definition at line 72 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}}
+\index{m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+run\+Control\+Name}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_ad48e8ce0cd093bb2b4b65b9b02f52c55}
+
+
+Definition at line 70 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+run\+Control\+Type@{m\+\_\+run\+Control\+Type}}
+\index{m\+\_\+run\+Control\+Type@{m\+\_\+run\+Control\+Type}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+run\+Control\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+run\+Control\+Type}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a77e499a07e56aacc9a8584bb781a5cdd}
+
+
+Definition at line 69 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+settings\+File\+Name@{m\+\_\+settings\+File\+Name}}
+\index{m\+\_\+settings\+File\+Name@{m\+\_\+settings\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+settings\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+settings\+File\+Name}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a5907d50d95bdc023edff83807a0e1919}
+
+
+Definition at line 66 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}!m\+\_\+should\+Open\+Archive@{m\+\_\+should\+Open\+Archive}}
+\index{m\+\_\+should\+Open\+Archive@{m\+\_\+should\+Open\+Archive}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+should\+Open\+Archive}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+should\+Open\+Archive}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings_a0e7c6a23157c7bdc9d17d0ac25139dec}
+
+
+Definition at line 68 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Archiver(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Analysis\+Module\+Application.\+h}\item 
+{\bf D\+Q\+M\+Analysis\+Module\+Application.\+cc}\end{DoxyCompactItemize}

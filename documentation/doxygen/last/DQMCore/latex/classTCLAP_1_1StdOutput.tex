@@ -1,0 +1,425 @@
+\section{T\+C\+L\+A\+P\+:\+:Std\+Output Class Reference}
+\label{classTCLAP_1_1StdOutput}\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+
+
+A class that isolates any output from the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object so that it may be easily modified.  
+
+
+
+
+{\ttfamily \#include $<$Std\+Output.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Std\+Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1StdOutput}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf usage} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the usage to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf version} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the version to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf failure} ({\bf Cmd\+Line\+Interface} \&c, {\bf Arg\+Exception} \&e)
+\begin{DoxyCompactList}\small\item\em Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \+\_\+short\+Usage} ({\bf Cmd\+Line\+Interface} \&c, std\+::ostream \&os) const 
+\begin{DoxyCompactList}\small\item\em Writes a brief usage message with short args. \end{DoxyCompactList}\item 
+void {\bf \+\_\+long\+Usage} ({\bf Cmd\+Line\+Interface} \&c, std\+::ostream \&os) const 
+\begin{DoxyCompactList}\small\item\em Writes a longer usage message with long and short args, provides descriptions and prints message. \end{DoxyCompactList}\item 
+void {\bf space\+Print} (std\+::ostream \&os, const std\+::string \&s, int max\+Width, int indent\+Spaces, int second\+Line\+Offset) const 
+\begin{DoxyCompactList}\small\item\em This function inserts line breaks and indents long strings according the params input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that isolates any output from the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object so that it may be easily modified. 
+
+Definition at line 43 of file Std\+Output.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!\+\_\+long\+Usage@{\+\_\+long\+Usage}}
+\index{\+\_\+long\+Usage@{\+\_\+long\+Usage}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{\+\_\+long\+Usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+long\+Usage (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c, }
+\item[{std\+::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1StdOutput_ace725aebd685c16f464d697e85e0327d}
+
+
+Writes a longer usage message with long and short args, provides descriptions and prints message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+{\em os} & -\/ The stream to write the message to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 191 of file Std\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Xor\+Handler\+::contains(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Arg\+List(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Message(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Xor\+Handler(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::get\+Xor\+List(), and space\+Print().
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+193 \{
+194   std::list<Arg*> argList = \_cmd.getArgList();
+195   std::string message = \_cmd.getMessage();
+196   XorHandler xorHandler = \_cmd.getXorHandler();
+197   std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+198 
+199   \textcolor{comment}{// first the xor }
+200   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < xorList.size(); i++ )
+201     \{
+202       \textcolor{keywordflow}{for} ( ArgVectorIterator it = xorList[i].begin(); 
+203           it != xorList[i].end(); 
+204           it++ )
+205         \{
+206           spacePrint( os, (*it)->longID(), 75, 3, 3 );
+207           spacePrint( os, (*it)->getDescription(), 75, 5, 0 );
+208 
+209           \textcolor{keywordflow}{if} ( it+1 != xorList[i].end() )
+210             spacePrint(os, \textcolor{stringliteral}{"-- OR --"}, 75, 9, 0);
+211         \}
+212       os << std::endl << std::endl;
+213     \}
+214 
+215   \textcolor{comment}{// then the rest}
+216   \textcolor{keywordflow}{for} (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+217     \textcolor{keywordflow}{if} ( !xorHandler.contains( (*it) ) )
+218       \{
+219         spacePrint( os, (*it)->longID(), 75, 3, 3 ); 
+220         spacePrint( os, (*it)->getDescription(), 75, 5, 0 ); 
+221         os << std::endl;
+222       \}
+223 
+224   os << std::endl;
+225 
+226   spacePrint( os, message, 75, 3, 0 );
+227 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!\+\_\+short\+Usage@{\+\_\+short\+Usage}}
+\index{\+\_\+short\+Usage@{\+\_\+short\+Usage}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{\+\_\+short\+Usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::\+\_\+short\+Usage (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c, }
+\item[{std\+::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1StdOutput_a60fa57587838d506d907f08800f2631c}
+
+
+Writes a brief usage message with short args. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+{\em os} & -\/ The stream to write the message to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file Std\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Xor\+Handler\+::contains(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Arg\+List(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Program\+Name(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Xor\+Handler(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::get\+Xor\+List(), and space\+Print().
+
+
+
+Referenced by failure(), and usage().
+
+
+\begin{DoxyCode}
+158 \{
+159   std::list<Arg*> argList = \_cmd.getArgList();
+160   std::string progName = \_cmd.getProgramName();
+161   XorHandler xorHandler = \_cmd.getXorHandler();
+162   std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+163 
+164   std::string s = progName + \textcolor{stringliteral}{" "};
+165 
+166   \textcolor{comment}{// first the xor}
+167   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < xorList.size(); i++ )
+168     \{
+169       s += \textcolor{stringliteral}{" \{"};
+170       \textcolor{keywordflow}{for} ( ArgVectorIterator it = xorList[i].begin(); 
+171           it != xorList[i].end(); it++ )
+172         s += (*it)->shortID() + \textcolor{stringliteral}{"|"};
+173 
+174       s[s.length()-1] = \textcolor{charliteral}{'\}'};
+175     \}
+176 
+177   \textcolor{comment}{// then the rest}
+178   \textcolor{keywordflow}{for} (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+179     \textcolor{keywordflow}{if} ( !xorHandler.contains( (*it) ) )
+180       s += \textcolor{stringliteral}{" "} + (*it)->shortID();
+181 
+182   \textcolor{comment}{// if the program name is too long, then adjust the second line offset }
+183   \textcolor{keywordtype}{int} secondLineOffset = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(progName.length()) + 2;
+184   \textcolor{keywordflow}{if} ( secondLineOffset > 75/2 )
+185     secondLineOffset = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(75/2);
+186 
+187   spacePrint( os, s, 75, 3, secondLineOffset );
+188 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!failure@{failure}}
+\index{failure@{failure}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{failure}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::failure (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c, }
+\item[{{\bf Arg\+Exception} \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1StdOutput_a9afc267e012c3ac42c8b1afe01f98556}
+
+
+Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+{\em e} & -\/ The \doxyref{Arg\+Exception}{p.}{classTCLAP_1_1ArgException} that caused the failure. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ad23a57ac3d8d957a4328fc78aec94e16}.
+
+
+
+Definition at line 131 of file Std\+Output.\+h.
+
+
+
+References \+\_\+short\+Usage(), T\+C\+L\+A\+P\+::\+Arg\+Exception\+::arg\+Id(), T\+C\+L\+A\+P\+::\+Arg\+Exception\+::error(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Program\+Name(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::has\+Help\+And\+Version(), and usage().
+
+
+\begin{DoxyCode}
+133 \{
+134   std::string progName = \_cmd.getProgramName();
+135 
+136   std::cerr << \textcolor{stringliteral}{"PARSE ERROR: "} << e.argId() << std::endl
+137           << \textcolor{stringliteral}{"             "} << e.error() << std::endl << std::endl;
+138 
+139   \textcolor{keywordflow}{if} ( \_cmd.hasHelpAndVersion() )
+140     \{
+141       std::cerr << \textcolor{stringliteral}{"Brief USAGE: "} << std::endl;
+142 
+143       _shortUsage( \_cmd, std::cerr ); 
+144 
+145       std::cerr << std::endl << \textcolor{stringliteral}{"For complete USAGE and HELP type: "} 
+146             << std::endl << \textcolor{stringliteral}{"   "} << progName << \textcolor{stringliteral}{" --help"} 
+147             << std::endl << std::endl;
+148     \}
+149   \textcolor{keywordflow}{else}
+150     usage(\_cmd);
+151 
+152   \textcolor{keywordflow}{throw} ExitException(1);
+153 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!space\+Print@{space\+Print}}
+\index{space\+Print@{space\+Print}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{space\+Print}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::space\+Print (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const std\+::string \&}]{s, }
+\item[{int}]{max\+Width, }
+\item[{int}]{indent\+Spaces, }
+\item[{int}]{second\+Line\+Offset}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1StdOutput_a38661be8895e07c442c2c3138b7444a2}
+
+
+This function inserts line breaks and indents long strings according the params input. 
+
+It will only break lines at spaces, commas and pipes. 
+\begin{DoxyParams}{Parameters}
+{\em os} & -\/ The stream to be printed to. \\
+\hline
+{\em s} & -\/ The string to be printed. \\
+\hline
+{\em max\+Width} & -\/ The max\+Width allowed for the output line. \\
+\hline
+{\em indent\+Spaces} & -\/ The number of spaces to indent the first line. \\
+\hline
+{\em second\+Line\+Offset} & -\/ The number of spaces to indent the second and all subsequent lines in addition to indent\+Spaces. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 229 of file Std\+Output.\+h.
+
+
+
+Referenced by \+\_\+long\+Usage(), and \+\_\+short\+Usage().
+
+
+\begin{DoxyCode}
+234 \{
+235   \textcolor{keywordtype}{int} len = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(s.length());
+236 
+237   \textcolor{keywordflow}{if} ( (len + indentSpaces > maxWidth) && maxWidth > 0 )
+238     \{
+239       \textcolor{keywordtype}{int} allowedLen = maxWidth - indentSpaces;
+240       \textcolor{keywordtype}{int} start = 0;
+241       \textcolor{keywordflow}{while} ( start < len )
+242         \{
+243           \textcolor{comment}{// find the substring length}
+244           \textcolor{comment}{// int stringLen = std::min<int>( len - start, allowedLen );}
+245           \textcolor{comment}{// doing it this way to support a VisualC++ 2005 bug }
+246           \textcolor{keyword}{using namespace }std; 
+247           \textcolor{keywordtype}{int} stringLen = min<int>( len - start, allowedLen );
+248 
+249           \textcolor{comment}{// trim the length so it doesn't end in middle of a word}
+250           \textcolor{keywordflow}{if} ( stringLen == allowedLen )
+251             \textcolor{keywordflow}{while} ( stringLen >= 0 &&
+252                 s[stringLen+start] != \textcolor{charliteral}{' '} && 
+253                 s[stringLen+start] != \textcolor{charliteral}{','} &&
+254                 s[stringLen+start] != \textcolor{charliteral}{'|'} ) 
+255               stringLen--;
+256   
+257           \textcolor{comment}{// ok, the word is longer than the line, so just split }
+258           \textcolor{comment}{// wherever the line ends}
+259           \textcolor{keywordflow}{if} ( stringLen <= 0 )
+260             stringLen = allowedLen;
+261 
+262           \textcolor{comment}{// check for newlines}
+263           \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < stringLen; i++ )
+264             \textcolor{keywordflow}{if} ( s[start+i] == \textcolor{charliteral}{'\(\backslash\)n'} )
+265               stringLen = i+1;
+266 
+267           \textcolor{comment}{// print the indent }
+268           \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < indentSpaces; i++ )
+269             os << \textcolor{stringliteral}{" "};
+270 
+271           \textcolor{keywordflow}{if} ( start == 0 )
+272             \{
+273               \textcolor{comment}{// handle second line offsets}
+274               indentSpaces += secondLineOffset;
+275 
+276               \textcolor{comment}{// adjust allowed len}
+277               allowedLen -= secondLineOffset;
+278             \}
+279 
+280           os << s.substr(start,stringLen) << std::endl;
+281 
+282           \textcolor{comment}{// so we don't start a line with a space}
+283           \textcolor{keywordflow}{while} ( s[stringLen+start] == \textcolor{charliteral}{' '} && start < len )
+284             start++;
+285       
+286           start += stringLen;
+287         \}
+288     \}
+289   \textcolor{keywordflow}{else}
+290     \{
+291       \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; i < indentSpaces; i++ )
+292         os << \textcolor{stringliteral}{" "};
+293       os << s << std::endl;
+294     \}
+295 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!usage@{usage}}
+\index{usage@{usage}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::usage (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1StdOutput_aeb10eb400e0ee45f2cde689bef606b49}
+
+
+Prints the usage to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_a685b13db5bf6bbe5159e49169cd96bbe}.
+
+
+
+Definition at line 117 of file Std\+Output.\+h.
+
+
+
+References \+\_\+long\+Usage(), and \+\_\+short\+Usage().
+
+
+
+Referenced by failure().
+
+
+\begin{DoxyCode}
+118 \{
+119   std::cout << std::endl << \textcolor{stringliteral}{"USAGE: "} << std::endl << std::endl; 
+120 
+121   _shortUsage( \_cmd, std::cout );
+122 
+123   std::cout << std::endl << std::endl << \textcolor{stringliteral}{"Where: "} << std::endl << std::endl;
+124 
+125   _longUsage( \_cmd, std::cout );
+126 
+127   std::cout << std::endl; 
+128 
+129 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}!version@{version}}
+\index{version@{version}!T\+C\+L\+A\+P\+::\+Std\+Output@{T\+C\+L\+A\+P\+::\+Std\+Output}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Std\+Output\+::version (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1StdOutput_a768111a59af4753ac6e5ace3ec99482e}
+
+
+Prints the version to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ae052fea473132482296de55edb3dd480}.
+
+
+
+Definition at line 108 of file Std\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Program\+Name(), and T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Version().
+
+
+\begin{DoxyCode}
+109 \{
+110   std::string progName = \_cmd.getProgramName();
+111   std::string xversion = \_cmd.getVersion();
+112 
+113   std::cout << std::endl << progName << \textcolor{stringliteral}{"  version: "} 
+114         << xversion << std::endl << std::endl;
+115 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Std\+Output.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,618 @@
+\section{T\+C\+L\+A\+P\+:\+:Value\+Arg$<$ T $>$ Class Template Reference}
+\label{classTCLAP_1_1ValueArg}\index{T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$@{T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$}}
+
+
+The basic labeled argument that parses a value.  
+
+
+
+
+{\ttfamily \#include $<$Value\+Arg.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Value\+Arg$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1ValueArg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Value\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, T value, const std\+::string \&type\+Desc, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. \end{DoxyCompactList}\item 
+{\bf Value\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, T value, const std\+::string \&type\+Desc, {\bf Cmd\+Line\+Interface} \&parser, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. \end{DoxyCompactList}\item 
+{\bf Value\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, T value, {\bf Constraint}$<$ T $>$ $\ast$constraint, {\bf Cmd\+Line\+Interface} \&parser, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. \end{DoxyCompactList}\item 
+{\bf Value\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, T value, {\bf Constraint}$<$ T $>$ $\ast$constraint, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. \end{DoxyCompactList}\item 
+virtual bool {\bf process\+Arg} (int $\ast$i, std\+::vector$<$ std\+::string $>$ \&args)
+\begin{DoxyCompactList}\small\item\em Handles the processing of the argument. \end{DoxyCompactList}\item 
+T \& {\bf get\+Value} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of the argument. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Specialization of short\+I\+D. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf long\+I\+D} (const std\+::string \&val=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Specialization of long\+I\+D. \end{DoxyCompactList}\item 
+virtual void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \+\_\+extract\+Value} (const std\+::string \&val)
+\begin{DoxyCompactList}\small\item\em Extracts the value from the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T {\bf \+\_\+value}
+\begin{DoxyCompactList}\small\item\em The value parsed from the command line. \end{DoxyCompactList}\item 
+T {\bf \+\_\+default}
+\begin{DoxyCompactList}\small\item\em Used to support the \doxyref{reset()}{p.}{classTCLAP_1_1ValueArg_a1bc480b71c4d8ac3646e796af8fb6e14} method so that \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} can be reset to their constructed value. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+type\+Desc}
+\begin{DoxyCompactList}\small\item\em A human readable description of the type to be parsed. \end{DoxyCompactList}\item 
+{\bf Constraint}$<$ T $>$ $\ast$ {\bf \+\_\+constraint}
+\begin{DoxyCompactList}\small\item\em A \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} must conform to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Value\+Arg} (const {\bf Value\+Arg}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Prevent accidental copying. \end{DoxyCompactList}\item 
+{\bf Value\+Arg}$<$ T $>$ \& {\bf operator=} (const {\bf Value\+Arg}$<$ T $>$ \&rhs)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$}
+
+The basic labeled argument that parses a value. 
+
+This is a template class, which means the type T defines the type that a given object will attempt to parse when the flag/name is matched on the command line. While there is nothing stopping you from creating an unflagged \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg}, it is unwise and would cause significant problems. Instead use an \doxyref{Unlabeled\+Value\+Arg}{p.}{classTCLAP_1_1UnlabeledValueArg}. 
+
+Definition at line 43 of file Value\+Arg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!Value\+Arg@{Value\+Arg}}
+\index{Value\+Arg@{Value\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{Value\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::{\bf Value\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{T}]{value, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValueArg_ab2818435a1749bee3233b1f364dabf09}
+
+
+Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. 
+
+Constructor implementation.
+
+You could conceivably call this constructor with a blank flag, but that would make you a bad person. It would also cause an exception to be thrown. If you want an unlabeled argument, use the other constructor. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em value} & -\/ The default value assigned to this argument if it is not present on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 252 of file Value\+Arg.\+h.
+
+
+\begin{DoxyCode}
+259 : Arg(flag, name, desc, req, \textcolor{keyword}{true}, v),
+260   _value( val ),
+261   _default( val ),
+262   _typeDesc( typeDesc ),
+263   _constraint( NULL )
+264 \{ \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!Value\+Arg@{Value\+Arg}}
+\index{Value\+Arg@{Value\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{Value\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::{\bf Value\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{T}]{value, }
+\item[{const std\+::string \&}]{type\+Desc, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValueArg_a3b34856ee6613ccabe60d2c5a6cc714f}
+
+
+Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. 
+
+You could conceivably call this constructor with a blank flag, but that would make you a bad person. It would also cause an exception to be thrown. If you want an unlabeled argument, use the other constructor. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em value} & -\/ The default value assigned to this argument if it is not present on the command line. \\
+\hline
+{\em type\+Desc} & -\/ A short, human readable description of the type that this object expects. This is used in the generation of the U\+S\+A\+G\+E statement. The goal is to be helpful to the end user of the program. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 267 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add().
+
+
+\begin{DoxyCode}
+275 : Arg(flag, name, desc, req, \textcolor{keyword}{true}, v),
+276   _value( val ),
+277   _default( val ),
+278   _typeDesc( typeDesc ),
+279   _constraint( NULL )
+280 \{ 
+281     parser.add( \textcolor{keyword}{this} );
+282 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!Value\+Arg@{Value\+Arg}}
+\index{Value\+Arg@{Value\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{Value\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::{\bf Value\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{T}]{value, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValueArg_aa054e7649b5d9db4861eed344a8f5840}
+
+
+Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. 
+
+You could conceivably call this constructor with a blank flag, but that would make you a bad person. It would also cause an exception to be thrown. If you want an unlabeled argument, use the other constructor. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em value} & -\/ The default value assigned to this argument if it is not present on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 300 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add().
+
+
+\begin{DoxyCode}
+308 : Arg(flag, name, desc, req, \textcolor{keyword}{true}, v),
+309   _value( val ),
+310   _default( val ),
+311   _typeDesc( constraint->shortID() ),
+312   _constraint( constraint )
+313 \{ 
+314     parser.add( \textcolor{keyword}{this} );
+315 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!Value\+Arg@{Value\+Arg}}
+\index{Value\+Arg@{Value\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{Value\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::{\bf Value\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{T}]{value, }
+\item[{{\bf Constraint}$<$ T $>$ $\ast$}]{constraint, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValueArg_a152c816b8bdb19efada14e8aec9bd05c}
+
+
+Labeled \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} constructor. 
+
+You could conceivably call this constructor with a blank flag, but that would make you a bad person. It would also cause an exception to be thrown. If you want an unlabeled argument, use the other constructor. 
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em req} & -\/ Whether the argument is required on the command line. \\
+\hline
+{\em value} & -\/ The default value assigned to this argument if it is not present on the command line. \\
+\hline
+{\em constraint} & -\/ A pointer to a \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} object used to constrain this \doxyref{Arg}{p.}{classTCLAP_1_1Arg}. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file Value\+Arg.\+h.
+
+
+\begin{DoxyCode}
+292 : Arg(flag, name, desc, req, \textcolor{keyword}{true}, v),
+293   _value( val ),
+294   _default( val ),
+295   _typeDesc( constraint->shortID() ),
+296   _constraint( constraint )
+297 \{ \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!Value\+Arg@{Value\+Arg}}
+\index{Value\+Arg@{Value\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{Value\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::{\bf Value\+Arg} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value\+Arg}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1ValueArg_a22a2eb14d853d3480a7b40469e9bc38e}
+
+
+Prevent accidental copying. 
+
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!\+\_\+extract\+Value@{\+\_\+extract\+Value}}
+\index{\+\_\+extract\+Value@{\+\_\+extract\+Value}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{\+\_\+extract\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::\+\_\+extract\+Value (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValueArg_af0ecdb6537febfcaa322e7131d2b3bf8}
+
+
+Extracts the value from the string. 
+
+Attempts to parse string as type T, if this fails an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be parsed. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 400 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+Exception\+::error(), and T\+C\+L\+A\+P\+::\+Extract\+Value().
+
+
+\begin{DoxyCode}
+401 \{
+402     \textcolor{keywordflow}{try} \{
+403   ExtractValue(_value, val, \textcolor{keyword}{typename} ArgTraits<T>::ValueCategory());
+404     \} \textcolor{keywordflow}{catch}( ArgParseException &e) \{
+405   \textcolor{keywordflow}{throw} ArgParseException(e.error(), toString());
+406     \}
+407     
+408     \textcolor{keywordflow}{if} ( _constraint != NULL )
+409   \textcolor{keywordflow}{if} ( ! _constraint->check( _value ) )
+410       \textcolor{keywordflow}{throw}( CmdLineParseException( \textcolor{stringliteral}{"Value '"} + val + 
+411             + \textcolor{stringliteral}{"' does not meet constraint: "} 
+412             + _constraint->description(),
+413             toString() ) );
+414 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T \& {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ValueArg_a46900b79f4549a37003120be284adfee}
+
+
+Returns the value of the argument. 
+
+Implementation of \doxyref{get\+Value()}{p.}{classTCLAP_1_1ValueArg_a46900b79f4549a37003120be284adfee}. 
+
+Definition at line 322 of file Value\+Arg.\+h.
+
+
+\begin{DoxyCode}
+322 \{ \textcolor{keywordflow}{return} _value; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!long\+I\+D@{long\+I\+D}}
+\index{long\+I\+D@{long\+I\+D}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{long\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::long\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValueArg_a586d25c04c39ddf0e589605d79f72f8a}
+
+
+Specialization of long\+I\+D. 
+
+Implementation of long\+I\+D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_aad93aff46e1fc67e3853765f565bfa96}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_ade738f42a7867324ce780b0c240b0460}.
+
+
+
+Definition at line 393 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::long\+I\+D().
+
+
+\begin{DoxyCode}
+394 \{
+395   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+396   \textcolor{keywordflow}{return} Arg::longID( _typeDesc ); 
+397 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Value\+Arg}$<$T$>$\& {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Value\+Arg}$<$ T $>$ \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1ValueArg_a0cab7159c04499b813647ef7dfd1eca5}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!process\+Arg@{process\+Arg}}
+\index{process\+Arg@{process\+Arg}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{process\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ bool {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::process\+Arg (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{i, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValueArg_a71e6ee7c7324724b6fc067c5ffe31160}
+
+
+Handles the processing of the argument. 
+
+Implementation of \doxyref{process\+Arg()}{p.}{classTCLAP_1_1ValueArg_a71e6ee7c7324724b6fc067c5ffe31160}.
+
+This re-\/implements the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} version of this method to set the \+\_\+value of the argument appropriately. It knows the difference between labeled and unlabeled. 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ Pointer the the current argument in the list. \\
+\hline
+{\em args} & -\/ Mutable list of strings. Passed in from main(). \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a61ffe2f660a76111d256f7b22a686146}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_ad853d7950a659b0d4ee2cda3f61261fd}.
+
+
+
+Definition at line 328 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::delimiter(), and T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest().
+
+
+\begin{DoxyCode}
+329 \{
+330     \textcolor{keywordflow}{if} ( _ignoreable && Arg::ignoreRest() )
+331     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+332 
+333     \textcolor{keywordflow}{if} ( _hasBlanks( args[*i] ) )
+334     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+335 
+336     std::string flag = args[*i];
+337 
+338     std::string value = \textcolor{stringliteral}{""};
+339     trimFlag( flag, value );
+340 
+341     \textcolor{keywordflow}{if} ( argMatches( flag ) )
+342     \{
+343         \textcolor{keywordflow}{if} ( _alreadySet )
+344     \{
+345       \textcolor{keywordflow}{if} ( _xorSet )
+346         \textcolor{keywordflow}{throw}( CmdLineParseException(
+347                \textcolor{stringliteral}{"Mutually exclusive argument already set!"}, 
+348                                      toString()) );
+349       \textcolor{keywordflow}{else}
+350         \textcolor{keywordflow}{throw}( CmdLineParseException(\textcolor{stringliteral}{"Argument already set!"}, 
+351                                      toString()) );
+352     \}
+353 
+354         \textcolor{keywordflow}{if} ( Arg::delimiter() != \textcolor{charliteral}{' '} && value == \textcolor{stringliteral}{""} )
+355       \textcolor{keywordflow}{throw}( ArgParseException( 
+356               \textcolor{stringliteral}{"Couldn't find delimiter for this argument!"},
+357                              toString() ) );
+358 
+359         \textcolor{keywordflow}{if} ( value == \textcolor{stringliteral}{""} )
+360         \{
+361             (*i)++;
+362             \textcolor{keywordflow}{if} ( static\_cast<unsigned int>(*i) < args.size() ) 
+363         _extractValue( args[*i] );
+364             \textcolor{keywordflow}{else}
+365         \textcolor{keywordflow}{throw}( ArgParseException(\textcolor{stringliteral}{"Missing a value for this argument!"},
+366                                                     toString() ) );
+367         \}
+368         \textcolor{keywordflow}{else}
+369       _extractValue( value );
+370         
+371         _alreadySet = \textcolor{keyword}{true};
+372         _checkWithVisitor();
+373         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+374     \} 
+375     \textcolor{keywordflow}{else}
+376     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+377 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!reset@{reset}}
+\index{reset@{reset}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValueArg_a1bc480b71c4d8ac3646e796af8fb6e14}
+
+
+Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_ab5b5dc9a9b0381561f0684523f943a2c}.
+
+
+
+Definition at line 417 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::reset().
+
+
+\begin{DoxyCode}
+418 \{
+419   Arg::reset();
+420   _value = _default;
+421 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::short\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{val = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classTCLAP_1_1ValueArg_abb1eb22814d0a0da49c5f8bb57362d09}
+
+
+Specialization of short\+I\+D. 
+
+Implementation of short\+I\+D.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & -\/ value to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_aef8efaf3811162b2b2b2a84c6db280fa}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_abda4d1d695003ba165b6797e03007a99}.
+
+
+
+Definition at line 383 of file Value\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::short\+I\+D().
+
+
+\begin{DoxyCode}
+384 \{
+385   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(val); \textcolor{comment}{// Ignore input, don't warn}
+386   \textcolor{keywordflow}{return} Arg::shortID( _typeDesc ); 
+387 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!\+\_\+constraint@{\+\_\+constraint}}
+\index{\+\_\+constraint@{\+\_\+constraint}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{\+\_\+constraint}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Constraint}$<$T$>$$\ast$ {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::\+\_\+constraint\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValueArg_aa383908cff37688cf7493d46c840d03b}
+
+
+A \doxyref{Constraint}{p.}{classTCLAP_1_1Constraint} this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} must conform to. 
+
+
+
+Definition at line 72 of file Value\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!\+\_\+default@{\+\_\+default}}
+\index{\+\_\+default@{\+\_\+default}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::\+\_\+default\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValueArg_a118e3a7932700a8e3626d8f9ee2e0c95}
+
+
+Used to support the \doxyref{reset()}{p.}{classTCLAP_1_1ValueArg_a1bc480b71c4d8ac3646e796af8fb6e14} method so that \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} can be reset to their constructed value. 
+
+
+
+Definition at line 58 of file Value\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!\+\_\+type\+Desc@{\+\_\+type\+Desc}}
+\index{\+\_\+type\+Desc@{\+\_\+type\+Desc}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{\+\_\+type\+Desc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ std\+::string {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::\+\_\+type\+Desc\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValueArg_a78c5e5b67ce4bcebb57c886d9aa49259}
+
+
+A human readable description of the type to be parsed. 
+
+This is a hack, plain and simple. Ideally we would use R\+T\+T\+I to return the name of type T, but until there is some sort of consistent support for human readable names, we are left to our own devices. 
+
+Definition at line 67 of file Value\+Arg.\+h.
+
+\index{T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}!\+\_\+value@{\+\_\+value}}
+\index{\+\_\+value@{\+\_\+value}!T\+C\+L\+A\+P\+::\+Value\+Arg@{T\+C\+L\+A\+P\+::\+Value\+Arg}}
+\subsubsection[{\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf T\+C\+L\+A\+P\+::\+Value\+Arg}$<$ T $>$\+::\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ValueArg_a45d5fdfce5865c02e6663f7438d485c7}
+
+
+The value parsed from the command line. 
+
+Can be of any type, as long as the $>$$>$ operator for the type is defined. 
+
+Definition at line 52 of file Value\+Arg.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Value\+Arg.\+h}\end{DoxyCompactItemize}

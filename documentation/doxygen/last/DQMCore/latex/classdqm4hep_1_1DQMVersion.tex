@@ -1,0 +1,452 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Version Class Reference}
+\label{classdqm4hep_1_1DQMVersion}\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+
+
+\doxyref{D\+Q\+M\+Version}{p.}{classdqm4hep_1_1DQMVersion} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Version.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Version\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMVersion}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Version} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Version} (unsigned int major, unsigned int minor, unsigned int patch)
+\begin{DoxyCompactList}\small\item\em Constructor with version numbers. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Version} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+Major} () const 
+\begin{DoxyCompactList}\small\item\em Get the major version number. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+Minor} () const 
+\begin{DoxyCompactList}\small\item\em Get the minor version number. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+Patch} () const 
+\begin{DoxyCompactList}\small\item\em Get the patch version number. \end{DoxyCompactList}\item 
+void {\bf set} (unsigned int major, unsigned int minor, unsigned int patch)
+\begin{DoxyCompactList}\small\item\em Set the complete version numbers. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf to\+String} () const 
+\begin{DoxyCompactList}\small\item\em Get the version to string. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Version} \& {\bf operator=} (const {\bf D\+Q\+M\+Version} \&version)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize the object and store the result in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the object from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+major}
+\item 
+unsigned int {\bf m\+\_\+minor}
+\item 
+unsigned int {\bf m\+\_\+patch}
+\item 
+std\+::string {\bf m\+\_\+version\+String}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Version}{p.}{classdqm4hep_1_1DQMVersion} class. 
+
+Definition at line 41 of file D\+Q\+M\+Version.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!D\+Q\+M\+Version@{D\+Q\+M\+Version}}
+\index{D\+Q\+M\+Version@{D\+Q\+M\+Version}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{D\+Q\+M\+Version}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Version\+::\+D\+Q\+M\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMVersion_ac50786e92b0caa2e956a0b1b5af8e1a1}
+
+
+Constructor. 
+
+
+
+Definition at line 35 of file D\+Q\+M\+Version.\+cc.
+
+
+\begin{DoxyCode}
+35                        :
+36     m_major( 0 ),
+37     m_minor( 0 ),
+38     m_patch( 0 )
+39 \{
+40   \textcolor{comment}{/* nop */}
+41 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!D\+Q\+M\+Version@{D\+Q\+M\+Version}}
+\index{D\+Q\+M\+Version@{D\+Q\+M\+Version}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{D\+Q\+M\+Version}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Version\+::\+D\+Q\+M\+Version (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{major, }
+\item[{unsigned int}]{minor, }
+\item[{unsigned int}]{patch}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMVersion_a0081666cb65788e0765d780aef4fdc37}
+
+
+Constructor with version numbers. 
+
+
+
+Definition at line 45 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+major, m\+\_\+minor, m\+\_\+patch, and set().
+
+
+\begin{DoxyCode}
+46 \{
+47   set( m_major, m_minor, m_patch );
+48 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!````~D\+Q\+M\+Version@{$\sim$\+D\+Q\+M\+Version}}
+\index{````~D\+Q\+M\+Version@{$\sim$\+D\+Q\+M\+Version}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Version}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Version\+::$\sim$\+D\+Q\+M\+Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMVersion_ad977e031de8de6e22bfb5b8c8502fe11}
+
+
+Destructor. 
+
+
+
+Definition at line 52 of file D\+Q\+M\+Version.\+cc.
+
+
+\begin{DoxyCode}
+53 \{
+54   \textcolor{comment}{/* nop */}
+55 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Version\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMVersion_a1b05aa63b59326d07898ba629c5ea3f2}
+
+
+Deserialize the object from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 188 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and set().
+
+
+\begin{DoxyCode}
+189 \{
+190   dqm_uint major = 0;
+191   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->read( major ) );
+192 
+193   dqm_uint minor = 0;
+194   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->read( major ) );
+195 
+196   dqm_uint patch = 0;
+197   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->read( major ) );
+198 
+199   set( major, minor, patch );
+200 
+201   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+202 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!get\+Major@{get\+Major}}
+\index{get\+Major@{get\+Major}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{get\+Major}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::get\+Major (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMVersion_a0810fe4dae5e8898afda9f5f39731023}
+
+
+Get the major version number. 
+
+
+
+Definition at line 59 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+major.
+
+
+
+Referenced by dqm4hep\+::operator$<$(), dqm4hep\+::operator$<$=(), dqm4hep\+::operator==(), and serialize().
+
+
+\begin{DoxyCode}
+60 \{
+61   \textcolor{keywordflow}{return} m_major;
+62 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!get\+Minor@{get\+Minor}}
+\index{get\+Minor@{get\+Minor}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{get\+Minor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::get\+Minor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMVersion_ad4738d37e3ed0e2b7ccb72fdf635c4e8}
+
+
+Get the minor version number. 
+
+
+
+Definition at line 66 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+minor.
+
+
+
+Referenced by dqm4hep\+::operator$<$(), dqm4hep\+::operator$<$=(), dqm4hep\+::operator==(), and serialize().
+
+
+\begin{DoxyCode}
+67 \{
+68   \textcolor{keywordflow}{return} m_minor;
+69 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!get\+Patch@{get\+Patch}}
+\index{get\+Patch@{get\+Patch}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{get\+Patch}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::get\+Patch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMVersion_a933c3a74253c071b7713fdbec1815b1a}
+
+
+Get the patch version number. 
+
+
+
+Definition at line 73 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+patch.
+
+
+
+Referenced by dqm4hep\+::operator$<$(), dqm4hep\+::operator$<$=(), dqm4hep\+::operator==(), and serialize().
+
+
+\begin{DoxyCode}
+74 \{
+75   \textcolor{keywordflow}{return} m_patch;
+76 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Version} \& dqm4hep\+::\+D\+Q\+M\+Version\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Version} \&}]{version}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMVersion_a798dde9b05158afe92da40c5c84b9e51}
+
+
+Assignment operator. 
+
+
+
+Definition at line 99 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+major, m\+\_\+minor, m\+\_\+patch, m\+\_\+version\+String, and to\+String().
+
+
+\begin{DoxyCode}
+100 \{
+101   m_major = version.m\_major;
+102   m_minor = version.m\_minor;
+103   m_patch = version.m\_patch;
+104   m_versionString = version.toString();
+105 
+106   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+107 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Version\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMVersion_a9e4f28922ab0468bcca5d13ef1ce0dfb}
+
+
+Serialize the object and store the result in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 172 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References get\+Major(), get\+Minor(), get\+Patch(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+173 \{
+174   dqm_uint major = getMajor();
+175   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->write( major ) );
+176 
+177   dqm_uint minor = getMinor();
+178   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->write( minor ) );
+179 
+180   dqm_uint patch = getPatch();
+181   RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, pDataStream->write( patch ) );
+182 
+183   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+184 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!set@{set}}
+\index{set@{set}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Version\+::set (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{major, }
+\item[{unsigned int}]{minor, }
+\item[{unsigned int}]{patch}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMVersion_aaba00d7d4ff89fd9248f188181fca38f}
+
+
+Set the complete version numbers. 
+
+
+
+Definition at line 80 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+major, m\+\_\+minor, m\+\_\+patch, and m\+\_\+version\+String.
+
+
+
+Referenced by deserialize(), D\+Q\+M\+Version(), and dqm4hep\+::\+D\+Q\+M\+Module\+::set\+Version().
+
+
+\begin{DoxyCode}
+81 \{
+82   m_major = major;
+83   m_minor = minor;
+84   m_patch = patch;
+85   std::stringstream ss;
+86   ss << m_major << \textcolor{stringliteral}{"."} << m_minor << \textcolor{stringliteral}{"."} << m_patch;
+87   m_versionString = ss.str();
+88 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{to\+String}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Version\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMVersion_a451c379d9c4e499bdea96fc050e52517}
+
+
+Get the version to string. 
+
+
+
+Definition at line 92 of file D\+Q\+M\+Version.\+cc.
+
+
+
+References m\+\_\+version\+String.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Archiver\+::archive(), and operator=().
+
+
+\begin{DoxyCode}
+93 \{
+94   \textcolor{keywordflow}{return} m_versionString;
+95 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!m\+\_\+major@{m\+\_\+major}}
+\index{m\+\_\+major@{m\+\_\+major}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{m\+\_\+major}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::m\+\_\+major\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMVersion_a9b67589968a786aeefcce1cdb484fd57}
+
+
+Definition at line 85 of file D\+Q\+M\+Version.\+h.
+
+
+
+Referenced by D\+Q\+M\+Version(), get\+Major(), operator=(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!m\+\_\+minor@{m\+\_\+minor}}
+\index{m\+\_\+minor@{m\+\_\+minor}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{m\+\_\+minor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::m\+\_\+minor\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMVersion_abb7001d8bcec5d922edd0e40995b73c5}
+
+
+Definition at line 86 of file D\+Q\+M\+Version.\+h.
+
+
+
+Referenced by D\+Q\+M\+Version(), get\+Minor(), operator=(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!m\+\_\+patch@{m\+\_\+patch}}
+\index{m\+\_\+patch@{m\+\_\+patch}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{m\+\_\+patch}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Version\+::m\+\_\+patch\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMVersion_a0198bcc08eef84167fa01f85025e1728}
+
+
+Definition at line 87 of file D\+Q\+M\+Version.\+h.
+
+
+
+Referenced by D\+Q\+M\+Version(), get\+Patch(), operator=(), and set().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}!m\+\_\+version\+String@{m\+\_\+version\+String}}
+\index{m\+\_\+version\+String@{m\+\_\+version\+String}!dqm4hep\+::\+D\+Q\+M\+Version@{dqm4hep\+::\+D\+Q\+M\+Version}}
+\subsubsection[{m\+\_\+version\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Version\+::m\+\_\+version\+String\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMVersion_a2c4278e05ceb919f47140721d09dd2f8}
+
+
+Definition at line 88 of file D\+Q\+M\+Version.\+h.
+
+
+
+Referenced by operator=(), set(), and to\+String().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Version.\+h}\item 
+{\bf D\+Q\+M\+Version.\+cc}\end{DoxyCompactItemize}

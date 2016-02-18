@@ -1,0 +1,155 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Collector.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc} (char $\ast$rpc\+Name, {\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$p\+Collector)
+\item 
+void {\bf rpc\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$ {\bf m\+\_\+p\+Collector}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 203 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}!D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+\index{D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$}]{p\+Collector}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc_a258db60dca1027145f29cdc88be884e6}
+
+
+Definition at line 1344 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+1344                                                                                                            
+                     :
+1345     DimRpc(rpcName, \textcolor{stringliteral}{"C"}, \textcolor{stringliteral}{"C"}),
+1346     m_pCollector(pCollector),
+1347     m_dataStream(128*1024)
+1348 \{
+1349   \textcolor{comment}{/* nop */}
+1350 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}!rpc\+Handler@{rpc\+Handler}}
+\index{rpc\+Handler@{rpc\+Handler}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+\subsubsection[{rpc\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc_ab44c9ae871fde1b5fdd398f346b8ddd5}
+
+
+Definition at line 1354 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), m\+\_\+data\+Stream, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+host\+Name, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+machine, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+module\+List\+Name, dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::m\+\_\+module\+Me\+Info\+Map, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+node\+Name, m\+\_\+p\+Collector, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+release, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+system\+Name, dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+version, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::serialize(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+1355 \{
+1356   \textcolor{keywordflow}{try}
+1357   \{
+1358     DQMCollectorInfo collectorInfo;
+1359 
+1360     \textcolor{comment}{// uname}
+1361     \textcolor{keyword}{struct }utsname unameStruct;
+1362     uname(&unameStruct);
+1363     collectorInfo.m\_systemName = unameStruct.sysname;
+1364     collectorInfo.m\_nodeName = unameStruct.nodename;
+1365     collectorInfo.m\_release = unameStruct.release;
+1366     collectorInfo.m\_version = unameStruct.version;
+1367     collectorInfo.m\_machine = unameStruct.machine;
+1368 
+1369     \textcolor{comment}{// hostname}
+1370     \textcolor{keywordtype}{char} host[256];
+1371     gethostname(host, 256);
+1372     collectorInfo.m\_hostName = host;
+1373 
+1374     \textcolor{comment}{// module name list}
+1375     \textcolor{keywordflow}{for}(DQMMonitorElementCollector::ModuleMeInfoMap::iterator iter = 
+      m_pCollector->m_moduleMeInfoMap.begin(),
+1376         endIter = m_pCollector->m_moduleMeInfoMap.end() ; endIter != iter ; ++iter)
+1377       collectorInfo.m\_moduleListName.push\_back(iter->first);
+1378 
+1379     \textcolor{comment}{// serialize the packet}
+1380     m_dataStream.reset();
+1381     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, collectorInfo.serialize(&
+      m_dataStream));
+1382 
+1383     \textcolor{comment}{// get the buffer}
+1384     dqm_char *pBuffer = m_dataStream.getBuffer();
+1385     dqm_uint bufferSize = m_dataStream.getBufferSize();
+1386 
+1387     \textcolor{comment}{// and set it as data to send back}
+1388     setData((\textcolor{keywordtype}{void}*) pBuffer, bufferSize);
+1389   \}
+1390   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+1391   \{
+1392   \}
+1393   \textcolor{keywordflow}{catch}(...)
+1394   \{
+1395   \}
+1396 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc_af93ca1652c73152491aa2c101ae399d5}
+
+
+Definition at line 211 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}!m\+\_\+p\+Collector@{m\+\_\+p\+Collector}}
+\index{m\+\_\+p\+Collector@{m\+\_\+p\+Collector}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc}}
+\subsubsection[{m\+\_\+p\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Collector}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::m\+\_\+p\+Collector\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementCollectorInfoRpc_af95eb70b6cdcebb992c8056604c99d5e}
+
+
+Definition at line 210 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,283 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Visitor Class Reference}
+\label{classdqm4hep_1_1TiXmlVisitor}\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+
+
+Implements the interface to the \char`\"{}\+Visitor pattern\char`\"{} (see the Accept() method.) If you call the Accept() method, it requires being passed a \doxyref{Ti\+Xml\+Visitor}{p.}{classdqm4hep_1_1TiXmlVisitor} class to handle callbacks.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TiXmlVisitor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Ti\+Xml\+Visitor} ()
+\item 
+virtual bool {\bf Visit\+Enter} (const {\bf Ti\+Xml\+Document} \&)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Exit} (const {\bf Ti\+Xml\+Document} \&)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Enter} (const {\bf Ti\+Xml\+Element} \&, const {\bf Ti\+Xml\+Attribute} $\ast$)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit\+Exit} (const {\bf Ti\+Xml\+Element} \&)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Declaration} \&)
+\begin{DoxyCompactList}\small\item\em Visit a declaration. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Text} \&)
+\begin{DoxyCompactList}\small\item\em Visit a text node. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Comment} \&)
+\begin{DoxyCompactList}\small\item\em Visit a comment node. \end{DoxyCompactList}\item 
+virtual bool {\bf Visit} (const {\bf Ti\+Xml\+Unknown} \&)
+\begin{DoxyCompactList}\small\item\em Visit an unknow node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the interface to the \char`\"{}\+Visitor pattern\char`\"{} (see the Accept() method.) If you call the Accept() method, it requires being passed a \doxyref{Ti\+Xml\+Visitor}{p.}{classdqm4hep_1_1TiXmlVisitor} class to handle callbacks. 
+
+For nodes that contain other nodes (Document, Element) you will get called with a Visit\+Enter/\+Visit\+Exit pair. Nodes that are always leaves are simply called with \doxyref{Visit()}{p.}{classdqm4hep_1_1TiXmlVisitor_ac3d1498b5c8dfb62d8d027853e51f1c5}.
+
+If you return 'true' from a Visit method, recursive parsing will continue. If you return false, {\bfseries no children of this node or its sibilings} will be Visited.
+
+All flavors of Visit methods have a default implementation that returns 'true' (continue visiting). You need to only override methods that are interesting to you.
+
+Generally Accept() is called on the \doxyref{Ti\+Xml\+Document}{p.}{classdqm4hep_1_1TiXmlDocument}, although all nodes suppert Visiting.
+
+You should never change the document from a callback.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Ti\+Xml\+Node\+::\+Accept()}{p.}{classdqm4hep_1_1TiXmlNode_afcc32ba29e1a4af7b4303d8cb53f7ea6} 
+\end{DoxySeeAlso}
+
+
+Definition at line 134 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!````~Ti\+Xml\+Visitor@{$\sim$\+Ti\+Xml\+Visitor}}
+\index{````~Ti\+Xml\+Visitor@{$\sim$\+Ti\+Xml\+Visitor}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{$\sim$\+Ti\+Xml\+Visitor}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+Ti\+Xml\+Visitor\+::$\sim$\+Ti\+Xml\+Visitor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_aa541282243168587f17c1397e0374a43}
+
+
+Definition at line 137 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+137 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Declaration} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_ac3d1498b5c8dfb62d8d027853e51f1c5}
+
+
+Visit a declaration. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a63478cd99635da7764c2bad0a8131f55}.
+
+
+
+Definition at line 150 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Accept(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Accept(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Accept(), and dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Accept().
+
+
+\begin{DoxyCode}
+150 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Text} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_af8bdc52c568532a9403709f496ad81ba}
+
+
+Visit a text node. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a0e57e357cafc579fd49cfbd6ccee329c}.
+
+
+
+Definition at line 152 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+152 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Comment} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a157991761f1797f65c89c58f7972b87c}
+
+
+Visit a comment node. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a9dd1552c069ee1b9143a5033e3edb582}.
+
+
+
+Definition at line 154 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+154 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit@{Visit}}
+\index{Visit@{Visit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Unknown} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a6b1ea07caa0b44ee09fc8280977847dd}
+
+
+Visit an unknow node. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a9e431ed215bbbc3bfe83d318beb4b75d}.
+
+
+
+Definition at line 156 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+156 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit\+Enter@{Visit\+Enter}}
+\index{Visit\+Enter@{Visit\+Enter}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit\+Enter}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Enter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a9010af07454b57940457947119bea129}
+
+
+Visit a document. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a8711a0f59f6bc26a68ea886b2044b8f8}.
+
+
+
+Definition at line 140 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Accept(), and dqm4hep\+::\+Ti\+Xml\+Document\+::\+Accept().
+
+
+\begin{DoxyCode}
+140 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit\+Enter@{Visit\+Enter}}
+\index{Visit\+Enter@{Visit\+Enter}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit\+Enter}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Enter (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} \&}]{, }
+\item[{const {\bf Ti\+Xml\+Attribute} $\ast$}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a3a57f9159c1e888ef138762f02c6e5eb}
+
+
+Visit an element. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_ac68897b2522ab50bff55be033585604b}.
+
+
+
+Definition at line 145 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+145 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit\+Exit@{Visit\+Exit}}
+\index{Visit\+Exit@{Visit\+Exit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Exit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Document} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a98541283c7a65736726d9eebd9105acc}
+
+
+Visit a document. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_acab02d812efb9825e06962c94d1ce732}.
+
+
+
+Definition at line 142 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Accept(), and dqm4hep\+::\+Ti\+Xml\+Document\+::\+Accept().
+
+
+\begin{DoxyCode}
+142 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}!Visit\+Exit@{Visit\+Exit}}
+\index{Visit\+Exit@{Visit\+Exit}!dqm4hep\+::\+Ti\+Xml\+Visitor@{dqm4hep\+::\+Ti\+Xml\+Visitor}}
+\subsubsection[{Visit\+Exit}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+Ti\+Xml\+Visitor\+::\+Visit\+Exit (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Element} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlVisitor_a76796cea6999fef8dd86da66aac16cc7}
+
+
+Visit an element. 
+
+
+
+Reimplemented in {\bf dqm4hep\+::\+Ti\+Xml\+Printer} \doxyref{}{p.}{classdqm4hep_1_1TiXmlPrinter_a6500be93ca42500ea76ee47649b18dd8}.
+
+
+
+Definition at line 147 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+147 \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\end{DoxyCompactItemize}

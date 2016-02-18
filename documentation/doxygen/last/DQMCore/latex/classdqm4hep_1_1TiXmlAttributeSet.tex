@@ -1,0 +1,369 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Attribute\+Set Class Reference}
+\label{classdqm4hep_1_1TiXmlAttributeSet}\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Attribute\+Set} ()
+\item 
+{\bf $\sim$\+Ti\+Xml\+Attribute\+Set} ()
+\item 
+void {\bf Add} ({\bf Ti\+Xml\+Attribute} $\ast$attribute)
+\item 
+void {\bf Remove} ({\bf Ti\+Xml\+Attribute} $\ast$attribute)
+\item 
+const {\bf Ti\+Xml\+Attribute} $\ast$ {\bf First} () const 
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf First} ()
+\item 
+const {\bf Ti\+Xml\+Attribute} $\ast$ {\bf Last} () const 
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Last} ()
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Find} (const char $\ast$\+\_\+name) const 
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Find\+Or\+Create} (const char $\ast$\+\_\+name)
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Find} (const std\+::string \&\+\_\+name) const 
+\item 
+{\bf Ti\+Xml\+Attribute} $\ast$ {\bf Find\+Or\+Create} (const std\+::string \&\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Attribute\+Set} (const {\bf Ti\+Xml\+Attribute\+Set} \&)
+\item 
+void {\bf operator=} (const {\bf Ti\+Xml\+Attribute\+Set} \&)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Attribute} {\bf sentinel}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 909 of file tinyxml.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}}
+\index{Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Ti\+Xml\+Attribute\+Set}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Ti\+Xml\+Attribute\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_afbdea27c50cf5b42e2685f90f05e8a15}
+
+
+Definition at line 1456 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, and sentinel.
+
+
+\begin{DoxyCode}
+1457 \{
+1458   sentinel.next = &sentinel;
+1459   sentinel.prev = &sentinel;
+1460 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!````~Ti\+Xml\+Attribute\+Set@{$\sim$\+Ti\+Xml\+Attribute\+Set}}
+\index{````~Ti\+Xml\+Attribute\+Set@{$\sim$\+Ti\+Xml\+Attribute\+Set}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{$\sim$\+Ti\+Xml\+Attribute\+Set}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::$\sim$\+Ti\+Xml\+Attribute\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_ae981b5aafaff6f367296f4bb065e36cd}
+
+
+Definition at line 1463 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, and sentinel.
+
+
+\begin{DoxyCode}
+1464 \{
+1465   assert( sentinel.next == &sentinel );
+1466   assert( sentinel.prev == &sentinel );
+1467 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}}
+\index{Ti\+Xml\+Attribute\+Set@{Ti\+Xml\+Attribute\+Set}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Ti\+Xml\+Attribute\+Set}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Ti\+Xml\+Attribute\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute\+Set} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttributeSet_a801d015416f1aad67177d5cb2f2d7fe6}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Add@{Add}}
+\index{Add@{Add}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Add (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Attribute} $\ast$}]{attribute}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_a7d3b0cb93a29fca18efb0250ccb365fd}
+
+
+Definition at line 1470 of file tinyxml.\+cc.
+
+
+
+References Find(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Name(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, sentinel, and T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G.
+
+
+
+Referenced by Find\+Or\+Create(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse().
+
+
+\begin{DoxyCode}
+1471 \{
+1472 \textcolor{preprocessor}{    #ifdef TIXML\_USE\_STL}
+1473   assert( !Find( TIXML_STRING( addMe->Name() ) ) ); \textcolor{comment}{// Shouldn't be multiply adding to the set.}
+1474 \textcolor{preprocessor}{  #else}
+1475   assert( !Find( addMe->Name() ) ); \textcolor{comment}{// Shouldn't be multiply adding to the set.}
+1476 \textcolor{preprocessor}{  #endif}
+1477 
+1478   addMe->next = &sentinel;
+1479   addMe->prev = sentinel.prev;
+1480 
+1481   sentinel.prev->next = addMe;
+1482   sentinel.prev      = addMe;
+1483 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Find@{Find}}
+\index{Find@{Find}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute} $\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttributeSet_a80ca211c2a9cd38d02706db7433ee6e7}
+
+
+Definition at line 1528 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, and sentinel.
+
+
+
+Referenced by Add(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Attribute(), Find\+Or\+Create(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Double\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Int\+Attribute(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Query\+Value\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Remove\+Attribute().
+
+
+\begin{DoxyCode}
+1529 \{
+1530   \textcolor{keywordflow}{for}( TiXmlAttribute* node = sentinel.next; node != &sentinel; node = node->
+      next )
+1531   \{
+1532     \textcolor{keywordflow}{if} ( strcmp( node->name.c\_str(), name ) == 0 )
+1533       \textcolor{keywordflow}{return} node;
+1534   \}
+1535   \textcolor{keywordflow}{return} 0;
+1536 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Find@{Find}}
+\index{Find@{Find}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1TiXmlAttributeSet_a9f82b0e62317dfe93a3b758ddf6d2a1a}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Find\+Or\+Create@{Find\+Or\+Create}}
+\index{Find\+Or\+Create@{Find\+Or\+Create}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Find\+Or\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute} $\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find\+Or\+Create (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_a4dd065c4985cb73c119bac0bb2880f75}
+
+
+Definition at line 1539 of file tinyxml.\+cc.
+
+
+
+References Add(), Find(), and dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Name().
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Set\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Set\+Double\+Attribute().
+
+
+\begin{DoxyCode}
+1540 \{
+1541   TiXmlAttribute* attrib = Find( \_name );
+1542   \textcolor{keywordflow}{if} ( !attrib ) \{
+1543     attrib = \textcolor{keyword}{new} TiXmlAttribute();
+1544     Add( attrib );
+1545     attrib->SetName( \_name );
+1546   \}
+1547   \textcolor{keywordflow}{return} attrib;
+1548 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Find\+Or\+Create@{Find\+Or\+Create}}
+\index{Find\+Or\+Create@{Find\+Or\+Create}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Find\+Or\+Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Find\+Or\+Create (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{\+\_\+name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_aafc2ec48c11cca5874343fad27c60303}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!First@{First}}
+\index{First@{First}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{First}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttributeSet_a9f0cf851c32254323edf28ee7e40c470}
+
+
+Definition at line 918 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, and sentinel.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Accept(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Clear\+This(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Copy\+To(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+First\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Print().
+
+
+\begin{DoxyCode}
+918 \{ \textcolor{keywordflow}{return} ( sentinel.next == &sentinel ) ? 0 : sentinel.next; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!First@{First}}
+\index{First@{First}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{First}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttributeSet_adc78a9cfcb142232ba4960887f803e11}
+
+
+Definition at line 919 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, and sentinel.
+
+
+\begin{DoxyCode}
+919 \{ \textcolor{keywordflow}{return} ( sentinel.next == &sentinel ) ? 0 : sentinel.next; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Last@{Last}}
+\index{Last@{Last}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttributeSet_a51cfaec528da174ee5472a7521db3f8f}
+
+
+Definition at line 920 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, and sentinel.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Last\+Attribute().
+
+
+\begin{DoxyCode}
+920 \{ \textcolor{keywordflow}{return} ( sentinel.prev == &sentinel ) ? 0 : sentinel.prev; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Last@{Last}}
+\index{Last@{Last}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Last}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute}$\ast$ dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Last (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlAttributeSet_ae45e69a9ba2396a354922fa48f4f9188}
+
+
+Definition at line 921 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, and sentinel.
+
+
+\begin{DoxyCode}
+921 \{ \textcolor{keywordflow}{return} ( sentinel.prev == &sentinel ) ? 0 : sentinel.prev; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Attribute\+Set} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttributeSet_ac96bd2e0b9738ef9dc5451ef2de77960}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!Remove@{Remove}}
+\index{Remove@{Remove}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+Attribute} $\ast$}]{attribute}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlAttributeSet_acc48790b16d0258cf5d9fbd13ff53467}
+
+
+Definition at line 1485 of file tinyxml.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Attribute\+::next, dqm4hep\+::\+Ti\+Xml\+Attribute\+::prev, and sentinel.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Clear\+This(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Remove\+Attribute().
+
+
+\begin{DoxyCode}
+1486 \{
+1487   TiXmlAttribute* node;
+1488 
+1489   \textcolor{keywordflow}{for}( node = sentinel.next; node != &sentinel; node = node->next )
+1490   \{
+1491     \textcolor{keywordflow}{if} ( node == removeMe )
+1492     \{
+1493       node->prev->next = node->next;
+1494       node->next->prev = node->prev;
+1495       node->next = 0;
+1496       node->prev = 0;
+1497       \textcolor{keywordflow}{return};
+1498     \}
+1499   \}
+1500   assert( 0 );    \textcolor{comment}{// we tried to remove a non-linked attribute.}
+1501 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}!sentinel@{sentinel}}
+\index{sentinel@{sentinel}!dqm4hep\+::\+Ti\+Xml\+Attribute\+Set@{dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}}
+\subsubsection[{sentinel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Attribute} dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::sentinel\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlAttributeSet_a409fd22576e0d295abf10434c5ce6622}
+
+
+Definition at line 938 of file tinyxml.\+h.
+
+
+
+Referenced by Add(), Find(), First(), Last(), Remove(), Ti\+Xml\+Attribute\+Set(), and $\sim$\+Ti\+Xml\+Attribute\+Set().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\end{DoxyCompactItemize}

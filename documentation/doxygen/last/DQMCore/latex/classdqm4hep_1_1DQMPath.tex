@@ -1,0 +1,482 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Path Class Reference}
+\label{classdqm4hep_1_1DQMPath}\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+
+
+\doxyref{D\+Q\+M\+Path}{p.}{classdqm4hep_1_1DQMPath} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Path.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Path} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Constructor with path. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ {\bf get\+Split\+Path} () const 
+\begin{DoxyCompactList}\small\item\em Get the path, split by '/' in a vector. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Path} () const 
+\begin{DoxyCompactList}\small\item\em Get the path as string. \end{DoxyCompactList}\item 
+bool {\bf is\+Valid} () const 
+\begin{DoxyCompactList}\small\item\em Whether the path is valid. \end{DoxyCompactList}\item 
+bool {\bf is\+Relative} () const 
+\begin{DoxyCompactList}\small\item\em Whether the path is relative (does not start with '/') \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} \& {\bf operator+=} (const {\bf D\+Q\+M\+Path} \&path)
+\begin{DoxyCompactList}\small\item\em += operator \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} \& {\bf operator=} (const {\bf D\+Q\+M\+Path} \&path)
+\begin{DoxyCompactList}\small\item\em Assignment operator with path. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Path} \& {\bf operator=} (const std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Assignment operator with string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \& {\bf normalize} (std\+::string \&path)
+\begin{DoxyCompactList}\small\item\em Normalize the path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+path}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Path} {\bf operator+} (const {\bf D\+Q\+M\+Path} \&lhs, const {\bf D\+Q\+M\+Path} \&rhs)
+\item 
+std\+::ostream \& {\bf operator$<$$<$} (std\+::ostream \&out, const {\bf D\+Q\+M\+Path} \&path)
+\begin{DoxyCompactList}\small\item\em $<$$<$ operator \end{DoxyCompactList}\item 
+bool {\bf operator==} (const {\bf D\+Q\+M\+Path} \&lhs, const {\bf D\+Q\+M\+Path} \&rhs)
+\begin{DoxyCompactList}\small\item\em == operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Path}{p.}{classdqm4hep_1_1DQMPath} class. 
+
+Definition at line 40 of file D\+Q\+M\+Path.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!D\+Q\+M\+Path@{D\+Q\+M\+Path}}
+\index{D\+Q\+M\+Path@{D\+Q\+M\+Path}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{D\+Q\+M\+Path}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Path\+::\+D\+Q\+M\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPath_ad8fb6e640b34a3b29e84e473d15a3fe4}
+
+
+Constructor. 
+
+
+
+Definition at line 37 of file D\+Q\+M\+Path.\+cc.
+
+
+\begin{DoxyCode}
+38 \{
+39 
+40 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!D\+Q\+M\+Path@{D\+Q\+M\+Path}}
+\index{D\+Q\+M\+Path@{D\+Q\+M\+Path}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{D\+Q\+M\+Path}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Path\+::\+D\+Q\+M\+Path (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPath_abdbc9e379de51bdb138efaac20607003}
+
+
+Constructor with path. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References m\+\_\+path, and normalize().
+
+
+\begin{DoxyCode}
+44                                       :
+45     m_path(path)
+46 \{
+47   DQMPath::normalize(m_path);
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{get\+Path}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Path\+::get\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPath_a1a4fb7b7629e48d7a17c81eecfc0decd}
+
+
+Get the path as string. 
+
+
+
+Definition at line 65 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References m\+\_\+path.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::delete\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::rmdir().
+
+
+\begin{DoxyCode}
+66 \{
+67   \textcolor{keywordflow}{return} m_path;
+68 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!get\+Split\+Path@{get\+Split\+Path}}
+\index{get\+Split\+Path@{get\+Split\+Path}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{get\+Split\+Path}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::string $>$ dqm4hep\+::\+D\+Q\+M\+Path\+::get\+Split\+Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPath_ab1e6fc7636e681ef9c6dd0441907ceac}
+
+
+Get the path, split by '/' in a vector. 
+
+
+
+Definition at line 52 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References is\+Valid(), m\+\_\+path, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::tokenize().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::cd(), dqm4hep\+::\+D\+Q\+M\+Storage\+::find\+Dir(), dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir(), and dqm4hep\+::operator==().
+
+
+\begin{DoxyCode}
+53 \{
+54   \textcolor{keywordflow}{if}(!this->isValid())
+55     \textcolor{keywordflow}{return} std::vector<std::string>();
+56 
+57   std::vector<std::string> splitPath;
+58   DQM4HEP::tokenize(m_path, splitPath, \textcolor{stringliteral}{"/"});
+59 
+60   \textcolor{keywordflow}{return} splitPath;
+61 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!is\+Relative@{is\+Relative}}
+\index{is\+Relative@{is\+Relative}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{is\+Relative}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Path\+::is\+Relative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPath_a800e467a44ed2ee6dda4425b457ec562}
+
+
+Whether the path is relative (does not start with '/') 
+
+
+
+Definition at line 85 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References is\+Valid(), and m\+\_\+path.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::cd(), dqm4hep\+::\+D\+Q\+M\+Storage\+::find\+Dir(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir().
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{if}(!this->isValid())
+88     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+89 
+90   \textcolor{keywordflow}{if}(m_path.empty())
+91     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+92 
+93   \textcolor{keywordflow}{if}(m_path.at(0) == \textcolor{charliteral}{'/'})
+94     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+95 
+96   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+97 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{is\+Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Path\+::is\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPath_a6604eabc2218cfc33e33fb1eac66dde1}
+
+
+Whether the path is valid. 
+
+
+
+Definition at line 72 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Core\+Tool\+::contains\+Special\+Characters(), and m\+\_\+path.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Storage\+::cd(), dqm4hep\+::\+D\+Q\+M\+Storage\+::find\+Dir(), get\+Split\+Path(), is\+Relative(), and dqm4hep\+::\+D\+Q\+M\+Storage\+::mkdir().
+
+
+\begin{DoxyCode}
+73 \{
+74   \textcolor{keywordflow}{if}(DQMCoreTool::containsSpecialCharacters(m_path))
+75     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+76 
+77   \textcolor{keywordflow}{if}(std::string::npos != m_path.find(\textcolor{stringliteral}{"//"}))
+78     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+79 
+80   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+81 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!normalize@{normalize}}
+\index{normalize@{normalize}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string \& dqm4hep\+::\+D\+Q\+M\+Path\+::normalize (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMPath_ab805eb9a6c908a093d44958cd53cf16a}
+
+
+Normalize the path. 
+
+Replace all \char`\"{}//\char`\"{} and \char`\"{}/./\char`\"{} by \char`\"{}/\char`\"{} only characters 
+
+Definition at line 101 of file D\+Q\+M\+Path.\+cc.
+
+
+
+Referenced by D\+Q\+M\+Path(), operator+=(), and operator=().
+
+
+\begin{DoxyCode}
+102 \{
+103   \textcolor{keywordtype}{size\_t} pos = path.find(\textcolor{stringliteral}{"//"});
+104 
+105   \textcolor{keywordflow}{while}(std::string::npos != pos)
+106   \{
+107     path.replace(pos, 2, \textcolor{stringliteral}{"/"});
+108     pos = path.find(\textcolor{stringliteral}{"//"});
+109   \}
+110 
+111   pos = path.find(\textcolor{stringliteral}{"/./"});
+112 
+113   \textcolor{keywordflow}{while}(std::string::npos != pos)
+114   \{
+115     path.replace(pos, 3, \textcolor{stringliteral}{"/"});
+116     pos = path.find(\textcolor{stringliteral}{"/./"});
+117   \}
+118 
+119   \textcolor{keywordflow}{return} path;
+120 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} \& dqm4hep\+::\+D\+Q\+M\+Path\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Path} \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPath_a02eb47d46c00e3db547e786620653718}
+
+
++= operator 
+
+
+
+Definition at line 124 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References m\+\_\+path, and normalize().
+
+
+\begin{DoxyCode}
+125 \{
+126   \textcolor{keywordflow}{if}(path.m\_path.empty())
+127     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+128 
+129   \textcolor{keywordflow}{if}(m_path.empty())
+130   \{
+131     m_path = path.m\_path;
+132     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+133   \}
+134 
+135   \textcolor{keywordtype}{size\_t} pos = std::string::npos;
+136 
+137   pos = m_path.find\_last\_not\_of(\textcolor{stringliteral}{"/"});
+138   std::string path1 = (pos == std::string::npos) ? m_path : m_path.substr(0, pos+1);
+139 
+140   pos = path.m\_path.find\_first\_not\_of(\textcolor{stringliteral}{"/"});
+141   std::string path2 = (pos == std::string::npos) ? path.m\_path : path.m\_path.substr(pos);
+142 
+143   m_path = path1 + \textcolor{stringliteral}{"/"} + path2;
+144   DQMPath::normalize(m_path);
+145 
+146   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+147 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} \& dqm4hep\+::\+D\+Q\+M\+Path\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Path} \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPath_a8af4dd263e9153ba5b2c559a689088c2}
+
+
+Assignment operator with path. 
+
+
+
+Definition at line 151 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References m\+\_\+path.
+
+
+\begin{DoxyCode}
+152 \{
+153   m_path = path.m\_path;
+154   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+155 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} \& dqm4hep\+::\+D\+Q\+M\+Path\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPath_af594fd7c3248d94b7e626b5f5dcf8964}
+
+
+Assignment operator with string. 
+
+
+
+Definition at line 159 of file D\+Q\+M\+Path.\+cc.
+
+
+
+References m\+\_\+path, and normalize().
+
+
+\begin{DoxyCode}
+160 \{
+161   m_path = path;
+162   DQMPath::normalize(m_path);
+163 
+164   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+165 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator+@{operator+}}
+\index{operator+@{operator+}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Path} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Path} \&}]{lhs, }
+\item[{const {\bf D\+Q\+M\+Path} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMPath_ad9caff077c46d8f9cea193aa9898f586}
+
+\begin{DoxyItemize}
+\item operator 
+\end{DoxyItemize}
+
+Definition at line 102 of file D\+Q\+M\+Path.\+h.
+
+
+\begin{DoxyCode}
+103 \{
+104   DQMPath path(lhs.m\_path);
+105   path += rhs;
+106 
+107   \textcolor{keywordflow}{return} path;
+108 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{out, }
+\item[{const {\bf D\+Q\+M\+Path} \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMPath_aebe2ce8cf54135152fddfa9bbcfe8e9f}
+
+
+$<$$<$ operator 
+
+
+
+Definition at line 112 of file D\+Q\+M\+Path.\+h.
+
+
+\begin{DoxyCode}
+113 \{
+114   out << path.m\_path;
+115 
+116   \textcolor{keywordflow}{return} out;
+117 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!operator==@{operator==}}
+\index{operator==@{operator==}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Path} \&}]{lhs, }
+\item[{const {\bf D\+Q\+M\+Path} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMPath_adbf0fdac556ab940bf56b70b9e15dd4c}
+
+
+== operator 
+
+
+
+Definition at line 121 of file D\+Q\+M\+Path.\+h.
+
+
+\begin{DoxyCode}
+122 \{
+123   \textcolor{keywordflow}{return} (lhs.getSplitPath() == rhs.getSplitPath());
+124 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}!m\+\_\+path@{m\+\_\+path}}
+\index{m\+\_\+path@{m\+\_\+path}!dqm4hep\+::\+D\+Q\+M\+Path@{dqm4hep\+::\+D\+Q\+M\+Path}}
+\subsubsection[{m\+\_\+path}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Path\+::m\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPath_a1fae696d08e45b671606d439dd25076f}
+
+
+Definition at line 96 of file D\+Q\+M\+Path.\+h.
+
+
+
+Referenced by D\+Q\+M\+Path(), get\+Path(), get\+Split\+Path(), is\+Relative(), is\+Valid(), dqm4hep\+::operator+(), operator+=(), dqm4hep\+::operator$<$$<$(), and operator=().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Path.\+h}\item 
+{\bf D\+Q\+M\+Path.\+cc}\end{DoxyCompactItemize}

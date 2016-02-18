@@ -1,0 +1,271 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Quality\+Test\+Result Class Reference}
+\label{classdqm4hep_1_1DQMQualityTestResult}\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+
+
+\doxyref{D\+Q\+M\+Quality\+Test\+Result}{p.}{classdqm4hep_1_1DQMQualityTestResult} class Hanlde the result of a quality test.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Quality\+Test.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Quality\+Test\+Result\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMQualityTestResult}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Quality\+Test\+Result} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Quality\+Test\+Result} (const {\bf D\+Q\+M\+Quality\+Test\+Result} \&quality\+Test\+Result)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Quality\+Test\+Result} \& {\bf operator=} (const {\bf D\+Q\+M\+Quality\+Test\+Result} \&quality\+Test\+Result)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize the object and store the result in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the object from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+quality\+Test\+Name}
+\item 
+std\+::string {\bf m\+\_\+quality\+Test\+Type}
+\item 
+std\+::string {\bf m\+\_\+message}
+\item 
+{\bf D\+Q\+M\+Quality} {\bf m\+\_\+quality}
+\item 
+bool {\bf m\+\_\+is\+Successful}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Quality\+Test\+Result}{p.}{classdqm4hep_1_1DQMQualityTestResult} class Hanlde the result of a quality test. 
+
+Definition at line 47 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!D\+Q\+M\+Quality\+Test\+Result@{D\+Q\+M\+Quality\+Test\+Result}}
+\index{D\+Q\+M\+Quality\+Test\+Result@{D\+Q\+M\+Quality\+Test\+Result}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{D\+Q\+M\+Quality\+Test\+Result}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::\+D\+Q\+M\+Quality\+Test\+Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMQualityTestResult_a5ecbfa6dbfb2c614ccdc41b97453fe07}
+
+
+Constructor. 
+
+
+
+Definition at line 44 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+44                                            :
+45     m_quality(NO\_QUALITY),
+46     m_isSuccessful(\textcolor{keyword}{true})
+47 \{
+48   \textcolor{comment}{/* nop */}
+49 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!D\+Q\+M\+Quality\+Test\+Result@{D\+Q\+M\+Quality\+Test\+Result}}
+\index{D\+Q\+M\+Quality\+Test\+Result@{D\+Q\+M\+Quality\+Test\+Result}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{D\+Q\+M\+Quality\+Test\+Result}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::\+D\+Q\+M\+Quality\+Test\+Result (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Quality\+Test\+Result} \&}]{quality\+Test\+Result}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMQualityTestResult_a2c8bdd1a849a341daad26ad9bc0798d3}
+
+
+Copy constructor. 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+54 \{
+55   *\textcolor{keyword}{this} = qualityTestResult;
+56 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMQualityTestResult_ae79641f7e2c27a0e556562c2bd98067d}
+
+
+Deserialize the object from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 86 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References m\+\_\+is\+Successful, m\+\_\+message, m\+\_\+quality, m\+\_\+quality\+Test\+Name, m\+\_\+quality\+Test\+Type, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+87 \{
+88   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_qualityTestType));
+89   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_qualityTestName));
+90   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_message));
+91 
+92   dqm_int quality = \textcolor{keyword}{static\_cast<}dqm_int\textcolor{keyword}{>}(m_quality);
+93   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(quality));
+94   m_quality = \textcolor{keyword}{static\_cast<}DQMQuality\textcolor{keyword}{>}(quality);
+95 
+96   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_isSuccessful));
+97 
+98   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Quality\+Test\+Result} \& dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Quality\+Test\+Result} \&}]{quality\+Test\+Result}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMQualityTestResult_ac88715c79f5181061f4287eba54905bc}
+
+
+Assignment operator. 
+
+
+
+Definition at line 60 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References m\+\_\+is\+Successful, m\+\_\+message, m\+\_\+quality, m\+\_\+quality\+Test\+Name, and m\+\_\+quality\+Test\+Type.
+
+
+\begin{DoxyCode}
+61 \{
+62   m_qualityTestType = qualityTestResult.m\_qualityTestType;
+63   m_qualityTestName = qualityTestResult.m\_qualityTestName;
+64   m_message = qualityTestResult.m\_message;
+65   m_quality = qualityTestResult.m\_quality;
+66   m_isSuccessful = qualityTestResult.m\_isSuccessful;
+67 
+68   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+69 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMQualityTestResult_adff015de9728a4a86fd407272ededf72}
+
+
+Serialize the object and store the result in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 73 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References m\+\_\+is\+Successful, m\+\_\+message, m\+\_\+quality, m\+\_\+quality\+Test\+Name, m\+\_\+quality\+Test\+Type, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+74 \{
+75   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_qualityTestType));
+76   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_qualityTestName));
+77   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_message));
+78   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(static\_cast<dqm\_int>(
+      m_quality)));
+79   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_isSuccessful));
+80 
+81   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+82 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!m\+\_\+is\+Successful@{m\+\_\+is\+Successful}}
+\index{m\+\_\+is\+Successful@{m\+\_\+is\+Successful}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{m\+\_\+is\+Successful}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::m\+\_\+is\+Successful}\label{classdqm4hep_1_1DQMQualityTestResult_a65e2dda7db30ed15b118405c9badb50f}
+
+
+Definition at line 70 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!m\+\_\+message@{m\+\_\+message}}
+\index{m\+\_\+message@{m\+\_\+message}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{m\+\_\+message}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::m\+\_\+message}\label{classdqm4hep_1_1DQMQualityTestResult_a54027b5936a0cb1a13a9ed447578230d}
+
+
+Definition at line 68 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!m\+\_\+quality@{m\+\_\+quality}}
+\index{m\+\_\+quality@{m\+\_\+quality}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{m\+\_\+quality}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Quality} dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::m\+\_\+quality}\label{classdqm4hep_1_1DQMQualityTestResult_a0fe52aa03b9ff12c7a6fc976db8d5248}
+
+
+Definition at line 69 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!m\+\_\+quality\+Test\+Name@{m\+\_\+quality\+Test\+Name}}
+\index{m\+\_\+quality\+Test\+Name@{m\+\_\+quality\+Test\+Name}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{m\+\_\+quality\+Test\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::m\+\_\+quality\+Test\+Name}\label{classdqm4hep_1_1DQMQualityTestResult_aa308f46c8dcc9fc336ac06cef4247535}
+
+
+Definition at line 66 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}!m\+\_\+quality\+Test\+Type@{m\+\_\+quality\+Test\+Type}}
+\index{m\+\_\+quality\+Test\+Type@{m\+\_\+quality\+Test\+Type}!dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result@{dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result}}
+\subsubsection[{m\+\_\+quality\+Test\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+Result\+::m\+\_\+quality\+Test\+Type}\label{classdqm4hep_1_1DQMQualityTestResult_a9b74f21e1be9e505af5cd32baa36c477}
+
+
+Definition at line 67 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::run(), and serialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Quality\+Test.\+h}\item 
+{\bf D\+Q\+M\+Quality\+Test.\+cc}\end{DoxyCompactItemize}

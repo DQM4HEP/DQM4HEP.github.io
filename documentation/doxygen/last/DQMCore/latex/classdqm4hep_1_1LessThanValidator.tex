@@ -1,0 +1,86 @@
+\section{dqm4hep\+:\+:Less\+Than\+Validator$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1LessThanValidator}\index{dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$@{dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$D\+Q\+M4\+H\+E\+P.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Less\+Than\+Validator} (const T \&compare)
+\item 
+bool {\bf operator()} (const T \&t) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T {\bf m\+\_\+compare}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$}
+
+
+
+Definition at line 637 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}!Less\+Than\+Validator@{Less\+Than\+Validator}}
+\index{Less\+Than\+Validator@{Less\+Than\+Validator}!dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}}
+\subsubsection[{Less\+Than\+Validator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+Less\+Than\+Validator}$<$ T $>$\+::{\bf Less\+Than\+Validator} (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{compare}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1LessThanValidator_af011011d587b750f521ee2df2564ea71}
+
+
+Definition at line 640 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+\begin{DoxyCode}
+640 : m_compare(compare) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}!operator()@{operator()}}
+\index{operator()@{operator()}!dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool {\bf dqm4hep\+::\+Less\+Than\+Validator}$<$ T $>$\+::operator() (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1LessThanValidator_a0d50ce53b59f8184574b7c872353cfb2}
+
+
+Definition at line 642 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+References dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$\+::m\+\_\+compare.
+
+
+\begin{DoxyCode}
+642 \{ \textcolor{keywordflow}{return} t<m_compare; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}!m\+\_\+compare@{m\+\_\+compare}}
+\index{m\+\_\+compare@{m\+\_\+compare}!dqm4hep\+::\+Less\+Than\+Validator@{dqm4hep\+::\+Less\+Than\+Validator}}
+\subsubsection[{m\+\_\+compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf dqm4hep\+::\+Less\+Than\+Validator}$<$ T $>$\+::m\+\_\+compare\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1LessThanValidator_a0d4316e25a704167ddfe3716e63d8879}
+
+
+Definition at line 644 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Less\+Than\+Validator$<$ T $>$\+::operator()().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M4\+H\+E\+P.\+h}\end{DoxyCompactItemize}

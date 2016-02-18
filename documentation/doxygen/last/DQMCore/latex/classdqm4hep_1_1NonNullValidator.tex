@@ -1,0 +1,43 @@
+\section{dqm4hep\+:\+:Non\+Null\+Validator$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1NonNullValidator}\index{dqm4hep\+::\+Non\+Null\+Validator$<$ T $>$@{dqm4hep\+::\+Non\+Null\+Validator$<$ T $>$}}
+
+
+{\ttfamily \#include $<$D\+Q\+M4\+H\+E\+P.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf validate} (const T \&t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+Non\+Null\+Validator$<$ T $>$}
+
+
+
+Definition at line 601 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Non\+Null\+Validator@{dqm4hep\+::\+Non\+Null\+Validator}!validate@{validate}}
+\index{validate@{validate}!dqm4hep\+::\+Non\+Null\+Validator@{dqm4hep\+::\+Non\+Null\+Validator}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static bool {\bf dqm4hep\+::\+Non\+Null\+Validator}$<$ T $>$\+::validate (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1NonNullValidator_a05e69e3cb6f004630c048d40ca69cc71}
+
+
+Definition at line 604 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+\begin{DoxyCode}
+604 \{ \textcolor{keywordflow}{return} fabs(static\_cast<float>(t) - 0.f) < std::numeric\_limits<T>::epsilon(); \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M4\+H\+E\+P.\+h}\end{DoxyCompactItemize}

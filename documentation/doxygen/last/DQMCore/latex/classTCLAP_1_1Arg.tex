@@ -1,0 +1,1477 @@
+\section{T\+C\+L\+A\+P\+:\+:Arg Class Reference}
+\label{classTCLAP_1_1Arg}\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+
+
+A virtual base class that defines the essential data for all arguments.  
+
+
+
+
+{\ttfamily \#include $<$Arg.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Arg\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.705314cm]{classTCLAP_1_1Arg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+Arg} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf add\+To\+List} (std\+::list$<$ {\bf Arg} $\ast$ $>$ \&arg\+List) const 
+\begin{DoxyCompactList}\small\item\em Adds this to the specified list of Args. \end{DoxyCompactList}\item 
+virtual bool {\bf process\+Arg} (int $\ast$i, std\+::vector$<$ std\+::string $>$ \&args)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual method meant to handle the parsing and value assignment of the string on the command line. \end{DoxyCompactList}\item 
+virtual bool {\bf operator==} (const {\bf Arg} \&a) const 
+\begin{DoxyCompactList}\small\item\em Operator ==. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Flag} () const 
+\begin{DoxyCompactList}\small\item\em Returns the argument flag. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Returns the argument name. \end{DoxyCompactList}\item 
+std\+::string {\bf get\+Description} () const 
+\begin{DoxyCompactList}\small\item\em Returns the argument description. \end{DoxyCompactList}\item 
+virtual bool {\bf is\+Required} () const 
+\begin{DoxyCompactList}\small\item\em Indicates whether the argument is required. \end{DoxyCompactList}\item 
+void {\bf force\+Required} ()
+\begin{DoxyCompactList}\small\item\em Sets \+\_\+required to true. \end{DoxyCompactList}\item 
+void {\bf xor\+Set} ()
+\begin{DoxyCompactList}\small\item\em Sets the \+\_\+already\+Set value to true. \end{DoxyCompactList}\item 
+bool {\bf is\+Value\+Required} () const 
+\begin{DoxyCompactList}\small\item\em Indicates whether a value must be specified for argument. \end{DoxyCompactList}\item 
+bool {\bf is\+Set} () const 
+\begin{DoxyCompactList}\small\item\em Indicates whether the argument has already been set. \end{DoxyCompactList}\item 
+bool {\bf is\+Ignoreable} () const 
+\begin{DoxyCompactList}\small\item\em Indicates whether the argument can be ignored, if desired. \end{DoxyCompactList}\item 
+virtual bool {\bf arg\+Matches} (const std\+::string \&s) const 
+\begin{DoxyCompactList}\small\item\em A method that tests whether a string matches this argument. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf to\+String} () const 
+\begin{DoxyCompactList}\small\item\em Returns a simple string representation of the argument. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf short\+I\+D} (const std\+::string \&value\+Id=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns a short I\+D for the usage. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf long\+I\+D} (const std\+::string \&value\+Id=\char`\"{}val\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Returns a long I\+D for the usage. \end{DoxyCompactList}\item 
+virtual void {\bf trim\+Flag} (std\+::string \&flag, std\+::string \&value) const 
+\begin{DoxyCompactList}\small\item\em Trims a value off of the flag. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+has\+Blanks} (const std\+::string \&s) const 
+\begin{DoxyCompactList}\small\item\em Checks whether a given string has blank chars, indicating that it is a combined \doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg}. \end{DoxyCompactList}\item 
+void {\bf set\+Require\+Label} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Sets the require\+Label. \end{DoxyCompactList}\item 
+virtual bool {\bf allow\+More} ()
+\begin{DoxyCompactList}\small\item\em Used for Multi\+Args and \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to determine whether args can still be set. \end{DoxyCompactList}\item 
+virtual bool {\bf accepts\+Multiple\+Values} ()
+\begin{DoxyCompactList}\small\item\em Use by output classes to determine whether an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} accepts multiple values. \end{DoxyCompactList}\item 
+virtual void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf begin\+Ignoring} ()
+\begin{DoxyCompactList}\small\item\em Begin ignoring arguments since the \char`\"{}-\/-\/\char`\"{} argument was specified. \end{DoxyCompactList}\item 
+static bool {\bf ignore\+Rest} ()
+\begin{DoxyCompactList}\small\item\em Whether to ignore the rest. \end{DoxyCompactList}\item 
+static char {\bf delimiter} ()
+\begin{DoxyCompactList}\small\item\em The delimiter that separates an argument flag/name from the value. \end{DoxyCompactList}\item 
+static char {\bf blank\+Char} ()
+\begin{DoxyCompactList}\small\item\em The char used as a place holder when Switch\+Args are combined. \end{DoxyCompactList}\item 
+static char {\bf flag\+Start\+Char} ()
+\item 
+static const std\+::string {\bf flag\+Start\+String} ()
+\item 
+static const std\+::string {\bf name\+Start\+String} ()
+\item 
+static const std\+::string {\bf ignore\+Name\+String} ()
+\begin{DoxyCompactList}\small\item\em The name used to identify the ignore rest argument. \end{DoxyCompactList}\item 
+static void {\bf set\+Delimiter} (char c)
+\begin{DoxyCompactList}\small\item\em Sets the delimiter for all arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf \+\_\+check\+With\+Visitor} () const 
+\begin{DoxyCompactList}\small\item\em Performs the special handling described by the Vistitor. \end{DoxyCompactList}\item 
+{\bf Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool req, bool valreq, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Primary constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf \+\_\+flag}
+\begin{DoxyCompactList}\small\item\em The single char flag used to identify the argument. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+name}
+\begin{DoxyCompactList}\small\item\em A single work namd indentifying the argument. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+description}
+\begin{DoxyCompactList}\small\item\em Description of the argument. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+required}
+\begin{DoxyCompactList}\small\item\em Indicating whether the argument is required. \end{DoxyCompactList}\item 
+std\+::string {\bf \+\_\+require\+Label}
+\begin{DoxyCompactList}\small\item\em Label to be used in usage description. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+value\+Required}
+\begin{DoxyCompactList}\small\item\em Indicates whether a value is required for the argument. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+already\+Set}
+\begin{DoxyCompactList}\small\item\em Indicates whether the argument has been set. \end{DoxyCompactList}\item 
+{\bf Visitor} $\ast$ {\bf \+\_\+visitor}
+\begin{DoxyCompactList}\small\item\em A pointer to a vistitor object. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+ignoreable}
+\begin{DoxyCompactList}\small\item\em Whether this argument can be ignored, if desired. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+xor\+Set}
+\begin{DoxyCompactList}\small\item\em Indicates that the arg was set as part of an X\+O\+R and not on the command line. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+accepts\+Multiple\+Values}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Arg} (const {\bf Arg} \&rhs)
+\begin{DoxyCompactList}\small\item\em Prevent accidental copying. \end{DoxyCompactList}\item 
+{\bf Arg} \& {\bf operator=} (const {\bf Arg} \&rhs)
+\begin{DoxyCompactList}\small\item\em Prevent accidental copying. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \& {\bf ignore\+Rest\+Ref} ()
+\begin{DoxyCompactList}\small\item\em Indicates whether the rest of the arguments should be ignored. \end{DoxyCompactList}\item 
+static char \& {\bf delimiter\+Ref} ()
+\begin{DoxyCompactList}\small\item\em The delimiter that separates an argument flag/name from the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A virtual base class that defines the essential data for all arguments. 
+
+This class, or one of its existing children, must be subclassed to do anything. 
+
+Definition at line 64 of file Arg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!Arg@{Arg}}
+\index{Arg@{Arg}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{Arg}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Arg\+::\+Arg (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1Arg_aca23d0f3bd09d71f22dbe8f4504c04dc}
+
+
+Prevent accidental copying. 
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!Arg@{Arg}}
+\index{Arg@{Arg}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{Arg}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Arg\+::\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{req, }
+\item[{bool}]{valreq, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1Arg_ab25a06db5edf82a5b965b641b3c63372}
+
+
+Primary constructor. 
+
+Y\+O\+U (yes you) should N\+E\+V\+E\+R construct an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} directly, this is a base class that is extended by various children that are meant to be used. Use \doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg}, \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg}, \doxyref{Multi\+Arg}{p.}{classTCLAP_1_1MultiArg}, \doxyref{Unlabeled\+Value\+Arg}{p.}{classTCLAP_1_1UnlabeledValueArg}, or \doxyref{Unlabeled\+Multi\+Arg}{p.}{classTCLAP_1_1UnlabeledMultiArg} instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The flag identifying the argument. \\
+\hline
+{\em name} & -\/ The name identifying the argument. \\
+\hline
+{\em desc} & -\/ The description of the argument, used in the usage. \\
+\hline
+{\em req} & -\/ Whether the argument is required. \\
+\hline
+{\em valreq} & -\/ Whether the a value is required for the argument. \\
+\hline
+{\em v} & -\/ The visitor checked by the argument. Defaults to N\+U\+L\+L. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 462 of file Arg.\+h.
+
+
+
+References \+\_\+flag, \+\_\+name, flag\+Start\+String(), ignore\+Name\+String(), name\+Start\+String(), and to\+String().
+
+
+\begin{DoxyCode}
+467                      :
+468   _flag(flag),
+469   _name(name),
+470   _description(desc),
+471   _required(req),
+472   _requireLabel(\textcolor{stringliteral}{"required"}),
+473   _valueRequired(valreq),
+474   _alreadySet(\textcolor{keyword}{false}),
+475   _visitor( v ),
+476   _ignoreable(\textcolor{keyword}{true}),
+477   _xorSet(\textcolor{keyword}{false}),
+478   _acceptsMultipleValues(\textcolor{keyword}{false})
+479 \{
+480   \textcolor{keywordflow}{if} ( _flag.length() > 1 )
+481     \textcolor{keywordflow}{throw}(SpecificationException(
+482         \textcolor{stringliteral}{"Argument flag can only be one character long"}, toString() ) );
+483 
+484   \textcolor{keywordflow}{if} ( _name != ignoreNameString() &&
+485      ( _flag == Arg::flagStartString() ||
+486        _flag == Arg::nameStartString() ||
+487        _flag == \textcolor{stringliteral}{" "} ) )
+488     \textcolor{keywordflow}{throw}(SpecificationException(\textcolor{stringliteral}{"Argument flag cannot be either '"} +
+489               Arg::flagStartString() + \textcolor{stringliteral}{"' or '"} +
+490               Arg::nameStartString() + \textcolor{stringliteral}{"' or a space."},
+491               toString() ) );
+492 
+493   \textcolor{keywordflow}{if} ( ( _name.substr( 0, Arg::flagStartString().length() ) == 
+      Arg::flagStartString() ) ||
+494      ( _name.substr( 0, Arg::nameStartString().length() ) == 
+      Arg::nameStartString() ) ||
+495      ( _name.find( \textcolor{stringliteral}{" "}, 0 ) != std::string::npos ) )
+496     \textcolor{keywordflow}{throw}(SpecificationException(\textcolor{stringliteral}{"Argument name begin with either '"} +
+497               Arg::flagStartString() + \textcolor{stringliteral}{"' or '"} +
+498               Arg::nameStartString() + \textcolor{stringliteral}{"' or space."},
+499               toString() ) );
+500 
+501 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!````~Arg@{$\sim$\+Arg}}
+\index{````~Arg@{$\sim$\+Arg}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{$\sim$\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Arg\+::$\sim$\+Arg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a15734a7cf52c8c4ab6df70f0997bbee3}
+
+
+Destructor. 
+
+
+
+Definition at line 503 of file Arg.\+h.
+
+
+\begin{DoxyCode}
+503 \{ \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+check\+With\+Visitor@{\+\_\+check\+With\+Visitor}}
+\index{\+\_\+check\+With\+Visitor@{\+\_\+check\+With\+Visitor}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+check\+With\+Visitor}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+check\+With\+Visitor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1Arg_aa963d0d4c8cb297e1f4cf74143bf6d1b}
+
+
+Performs the special handling described by the Vistitor. 
+
+
+
+Definition at line 611 of file Arg.\+h.
+
+
+
+References \+\_\+visitor, and T\+C\+L\+A\+P\+::\+Visitor\+::visit().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::common\+Processing(), and T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg().
+
+
+\begin{DoxyCode}
+612 \{
+613   \textcolor{keywordflow}{if} ( _visitor != NULL )
+614     _visitor->visit();
+615 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+has\+Blanks@{\+\_\+has\+Blanks}}
+\index{\+\_\+has\+Blanks@{\+\_\+has\+Blanks}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+has\+Blanks}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+has\+Blanks (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a2eb0ffefe163218bdc8b4b7a33a974a7}
+
+
+Checks whether a given string has blank chars, indicating that it is a combined \doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg}. 
+
+Implementation of \+\_\+has\+Blanks.
+
+If so, return true, otherwise return false. 
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ string to be checked. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 641 of file Arg.\+h.
+
+
+
+References blank\+Char().
+
+
+\begin{DoxyCode}
+642 \{
+643   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 1; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < s.length(); i++ )
+644     \textcolor{keywordflow}{if} ( s[i] == Arg::blankChar() )
+645       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+646 
+647   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+648 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!accepts\+Multiple\+Values@{accepts\+Multiple\+Values}}
+\index{accepts\+Multiple\+Values@{accepts\+Multiple\+Values}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{accepts\+Multiple\+Values}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::accepts\+Multiple\+Values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_ad356870538a255d639e26b30330202ae}
+
+
+Use by output classes to determine whether an \doxyref{Arg}{p.}{classTCLAP_1_1Arg} accepts multiple values. 
+
+
+
+Definition at line 674 of file Arg.\+h.
+
+
+
+References \+\_\+accepts\+Multiple\+Values.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Arg(), and T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::print\+Short\+Arg().
+
+
+\begin{DoxyCode}
+675 \{
+676   \textcolor{keywordflow}{return} _acceptsMultipleValues;
+677 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!add\+To\+List@{add\+To\+List}}
+\index{add\+To\+List@{add\+To\+List}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{add\+To\+List}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::add\+To\+List (
+\begin{DoxyParamCaption}
+\item[{std\+::list$<$ {\bf Arg} $\ast$ $>$ \&}]{arg\+List}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a9ff1564beeea2ef855f7fa483c37d0e2}
+
+
+Adds this to the specified list of Args. 
+
+Overridden by Args that need to added to the end of the list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg\+List} & -\/ The list to add this to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_a8670fc7797254e602d302318063f3515}, and {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a290b15792de11abb5a4cf1c312d6a0d7}.
+
+
+
+Definition at line 664 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::add().
+
+
+\begin{DoxyCode}
+665 \{
+666   argList.push\_front( const\_cast<Arg*>(\textcolor{keyword}{this}) );
+667 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!allow\+More@{allow\+More}}
+\index{allow\+More@{allow\+More}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{allow\+More}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::allow\+More (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a9aef735d37ef95ca1b7dc7a07850b984}
+
+
+Used for Multi\+Args and \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler} to determine whether args can still be set. 
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_ab05097627c81cd65975fa1b99fae9bd0}.
+
+
+
+Definition at line 669 of file Arg.\+h.
+
+
+\begin{DoxyCode}
+670 \{
+671   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+672 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!arg\+Matches@{arg\+Matches}}
+\index{arg\+Matches@{arg\+Matches}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{arg\+Matches}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::arg\+Matches (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_aac37b1b734b477e5d16f2037dba9c125}
+
+
+A method that tests whether a string matches this argument. 
+
+This is generally called by the \doxyref{process\+Arg()}{p.}{classTCLAP_1_1Arg_a61ffe2f660a76111d256f7b22a686146} method. This method could be re-\/implemented by a child to change how arguments are specified on the command line. 
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ The string to be compared to the flag/name to determine whether the arg matches. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 590 of file Arg.\+h.
+
+
+
+References \+\_\+flag, \+\_\+name, flag\+Start\+String(), and name\+Start\+String().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::process\+Arg(), and T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg().
+
+
+\begin{DoxyCode}
+591 \{
+592   \textcolor{keywordflow}{if} ( ( argFlag == Arg::flagStartString() + _flag && _flag != \textcolor{stringliteral}{""} ) ||
+593          argFlag == Arg::nameStartString() + _name )
+594     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+595   \textcolor{keywordflow}{else}
+596     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+597 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!begin\+Ignoring@{begin\+Ignoring}}
+\index{begin\+Ignoring@{begin\+Ignoring}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{begin\+Ignoring}]{\setlength{\rightskip}{0pt plus 5cm}static void T\+C\+L\+A\+P\+::\+Arg\+::begin\+Ignoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a24165d31c1ec70777fb201356b6cdf6a}
+
+
+Begin ignoring arguments since the \char`\"{}-\/-\/\char`\"{} argument was specified. 
+
+
+
+Definition at line 200 of file Arg.\+h.
+
+
+
+References ignore\+Rest\+Ref().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor\+::visit().
+
+
+\begin{DoxyCode}
+200 \{ ignoreRestRef() = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!blank\+Char@{blank\+Char}}
+\index{blank\+Char@{blank\+Char}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{blank\+Char}]{\setlength{\rightskip}{0pt plus 5cm}static char T\+C\+L\+A\+P\+::\+Arg\+::blank\+Char (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a0abd38f46dbf7d267078134a4817fbb2}
+
+
+The char used as a place holder when Switch\+Args are combined. 
+
+Currently set to the bell char (A\+S\+C\+I\+I 7). 
+
+Definition at line 217 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+empty\+Combined(), \+\_\+has\+Blanks(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match(), and T\+C\+L\+A\+P\+::\+Switch\+Arg\+::last\+Combined().
+
+
+\begin{DoxyCode}
+217 \{ \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char})7; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!delimiter@{delimiter}}
+\index{delimiter@{delimiter}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{delimiter}]{\setlength{\rightskip}{0pt plus 5cm}static char T\+C\+L\+A\+P\+::\+Arg\+::delimiter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_aadef6ca7e40f5b3d3fd03186976aea7e}
+
+
+The delimiter that separates an argument flag/name from the value. 
+
+
+
+Definition at line 211 of file Arg.\+h.
+
+
+
+References delimiter\+Ref().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match(), long\+I\+D(), T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::process\+Arg(), short\+I\+D(), and trim\+Flag().
+
+
+\begin{DoxyCode}
+211 \{ \textcolor{keywordflow}{return} delimiterRef(); \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!delimiter\+Ref@{delimiter\+Ref}}
+\index{delimiter\+Ref@{delimiter\+Ref}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{delimiter\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}static char\& T\+C\+L\+A\+P\+::\+Arg\+::delimiter\+Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classTCLAP_1_1Arg_a863591150a407ff29276ac13d0058144}
+
+
+The delimiter that separates an argument flag/name from the value. 
+
+
+
+Definition at line 86 of file Arg.\+h.
+
+
+
+Referenced by delimiter(), and set\+Delimiter().
+
+
+\begin{DoxyCode}
+86 \{ \textcolor{keyword}{static} \textcolor{keywordtype}{char} delim = \textcolor{charliteral}{' '}; \textcolor{keywordflow}{return} delim; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!flag\+Start\+Char@{flag\+Start\+Char}}
+\index{flag\+Start\+Char@{flag\+Start\+Char}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{flag\+Start\+Char}]{\setlength{\rightskip}{0pt plus 5cm}static char T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+Char (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a7f9f6af439993e9151bd5a6cd2a63dad}
+
+
+Definition at line 226 of file Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+\_\+\+F\+L\+A\+G\+S\+T\+A\+R\+T\+C\+H\+A\+R.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+empty\+Combined(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), and T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option().
+
+
+\begin{DoxyCode}
+226 \{ \textcolor{keywordflow}{return} TCLAP_FLAGSTARTCHAR; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!flag\+Start\+String@{flag\+Start\+String}}
+\index{flag\+Start\+String@{flag\+Start\+String}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{flag\+Start\+String}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_af8e739295b0f75028e7bff6d670d97a1}
+
+
+Definition at line 236 of file Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+\_\+\+F\+L\+A\+G\+S\+T\+A\+R\+T\+S\+T\+R\+I\+N\+G.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+constructor(), Arg(), arg\+Matches(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match(), long\+I\+D(), short\+I\+D(), and to\+String().
+
+
+\begin{DoxyCode}
+236 \{ \textcolor{keywordflow}{return} TCLAP_FLAGSTARTSTRING; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!force\+Required@{force\+Required}}
+\index{force\+Required@{force\+Required}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{force\+Required}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::force\+Required (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a58e3de560f364d0bb6bdf36ab533a6fd}
+
+
+Sets \+\_\+required to true. 
+
+This is used by the \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler}. You really have no reason to ever use it. 
+
+Definition at line 650 of file Arg.\+h.
+
+
+
+References \+\_\+required.
+
+
+\begin{DoxyCode}
+651 \{
+652   _required = \textcolor{keyword}{true};
+653 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{get\+Description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a1943999fadcb4f28cecd6ba55ed0b085}
+
+
+Returns the argument description. 
+
+
+
+Definition at line 554 of file Arg.\+h.
+
+
+
+References \+\_\+description, \+\_\+required, and \+\_\+require\+Label.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$\+::operator==(), T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$\+::operator==(), and T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option().
+
+
+\begin{DoxyCode}
+555 \{
+556   std::string desc = \textcolor{stringliteral}{""};
+557   \textcolor{keywordflow}{if} ( _required )
+558     desc = \textcolor{stringliteral}{"("} + _requireLabel + \textcolor{stringliteral}{")  "};
+559 
+560 \textcolor{comment}{//  if ( \_valueRequired )}
+561 \textcolor{comment}{//    desc += "(value required)  ";}
+562 
+563   desc += _description;
+564   \textcolor{keywordflow}{return} desc;
+565 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!get\+Flag@{get\+Flag}}
+\index{get\+Flag@{get\+Flag}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{get\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& T\+C\+L\+A\+P\+::\+Arg\+::get\+Flag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a22f616e81a423e794f13a9ae1549ac77}
+
+
+Returns the argument flag. 
+
+
+
+Definition at line 567 of file Arg.\+h.
+
+
+
+References \+\_\+flag.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), and T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option().
+
+
+\begin{DoxyCode}
+567 \{ \textcolor{keywordflow}{return} _flag; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& T\+C\+L\+A\+P\+::\+Arg\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a641ced141a56c74fee11d3e3a808f731}
+
+
+Returns the argument name. 
+
+
+
+Definition at line 569 of file Arg.\+h.
+
+
+
+References \+\_\+name.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$\+::operator==(), T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$\+::operator==(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Arg(), and T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option().
+
+
+\begin{DoxyCode}
+569 \{ \textcolor{keywordflow}{return} _name; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!ignore\+Name\+String@{ignore\+Name\+String}}
+\index{ignore\+Name\+String@{ignore\+Name\+String}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{ignore\+Name\+String}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Name\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a6ce0cbe4effd44679ca11f25e3c318e7}
+
+
+The name used to identify the ignore rest argument. 
+
+
+
+Definition at line 250 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+constructor(), and Arg().
+
+
+\begin{DoxyCode}
+250 \{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"ignore\_rest"}; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!ignore\+Rest@{ignore\+Rest}}
+\index{ignore\+Rest@{ignore\+Rest}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{ignore\+Rest}]{\setlength{\rightskip}{0pt plus 5cm}static bool T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a4d412155b8f9b4956e64e91c48e55a3b}
+
+
+Whether to ignore the rest. 
+
+
+
+Definition at line 205 of file Arg.\+h.
+
+
+
+References ignore\+Rest\+Ref().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::parse(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::process\+Arg(), and T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::process\+Arg().
+
+
+\begin{DoxyCode}
+205 \{ \textcolor{keywordflow}{return} ignoreRestRef(); \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!ignore\+Rest\+Ref@{ignore\+Rest\+Ref}}
+\index{ignore\+Rest\+Ref@{ignore\+Rest\+Ref}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{ignore\+Rest\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}static bool\& T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest\+Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classTCLAP_1_1Arg_afa32140f7c01f99f6a9e85deb79281e1}
+
+
+Indicates whether the rest of the arguments should be ignored. 
+
+
+
+Definition at line 80 of file Arg.\+h.
+
+
+
+Referenced by begin\+Ignoring(), and ignore\+Rest().
+
+
+\begin{DoxyCode}
+80 \{ \textcolor{keyword}{static} \textcolor{keywordtype}{bool} ign = \textcolor{keyword}{false}; \textcolor{keywordflow}{return} ign; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!is\+Ignoreable@{is\+Ignoreable}}
+\index{is\+Ignoreable@{is\+Ignoreable}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{is\+Ignoreable}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::is\+Ignoreable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a33816b5ccc58a15f3a998480e5d988e2}
+
+
+Indicates whether the argument can be ignored, if desired. 
+
+
+
+Definition at line 583 of file Arg.\+h.
+
+
+
+References \+\_\+ignoreable.
+
+
+\begin{DoxyCode}
+583 \{ \textcolor{keywordflow}{return} _ignoreable; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!is\+Required@{is\+Required}}
+\index{is\+Required@{is\+Required}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{is\+Required}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::is\+Required (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a00a3cfdb2b6e9a111ad39cbd4978b96c}
+
+
+Indicates whether the argument is required. 
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_a3cb7fec92f3d70e0e455c6bc33fbebab}.
+
+
+
+Definition at line 571 of file Arg.\+h.
+
+
+
+References \+\_\+required.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::add(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::check(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Arg(), and T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::print\+Short\+Arg().
+
+
+\begin{DoxyCode}
+571 \{ \textcolor{keywordflow}{return} _required; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!is\+Set@{is\+Set}}
+\index{is\+Set@{is\+Set}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{is\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::is\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a6af7a1e92b5d92fc2d90c1a95aab4384}
+
+
+Indicates whether the argument has already been set. 
+
+Only true if the arg has been matched on the command line. 
+
+Definition at line 575 of file Arg.\+h.
+
+
+
+References \+\_\+already\+Set, and \+\_\+xor\+Set.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Xor\+Handler\+::check().
+
+
+\begin{DoxyCode}
+576 \{
+577   \textcolor{keywordflow}{if} ( _alreadySet && !_xorSet )
+578     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+579   \textcolor{keywordflow}{else}
+580     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+581 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!is\+Value\+Required@{is\+Value\+Required}}
+\index{is\+Value\+Required@{is\+Value\+Required}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{is\+Value\+Required}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::is\+Value\+Required (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_a1373d50d4b93c16db43c7600cf6d0355}
+
+
+Indicates whether a value must be specified for argument. 
+
+
+
+Definition at line 573 of file Arg.\+h.
+
+
+
+References \+\_\+value\+Required.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option().
+
+
+\begin{DoxyCode}
+573 \{ \textcolor{keywordflow}{return} _valueRequired; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!long\+I\+D@{long\+I\+D}}
+\index{long\+I\+D@{long\+I\+D}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{long\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::long\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{value\+Id = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_aad93aff46e1fc67e3853765f565bfa96}
+
+
+Returns a long I\+D for the usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Id} & -\/ The value used in the id. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValueArg_a586d25c04c39ddf0e589605d79f72f8a}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_a16c00fbce6876bceabb3dab4723f7e79}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_ade738f42a7867324ce780b0c240b0460}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a1e7262967b850fb30e1003890a45f1ca}, and {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_a0b0aacc09c93462bab4347f86db0fccd}.
+
+
+
+Definition at line 523 of file Arg.\+h.
+
+
+
+References \+\_\+flag, \+\_\+name, \+\_\+value\+Required, delimiter(), flag\+Start\+String(), and name\+Start\+String().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::add(), T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::long\+I\+D(), T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::long\+I\+D(), and T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::long\+I\+D().
+
+
+\begin{DoxyCode}
+524 \{
+525   std::string \textcolor{keywordtype}{id} = \textcolor{stringliteral}{""};
+526 
+527   \textcolor{keywordflow}{if} ( _flag != \textcolor{stringliteral}{""} )
+528   \{
+529     \textcolor{keywordtype}{id} += Arg::flagStartString() + _flag;
+530 
+531     \textcolor{keywordflow}{if} ( _valueRequired )
+532       \textcolor{keywordtype}{id} += std::string( 1, Arg::delimiter() ) + \textcolor{stringliteral}{"<"} + valueId + \textcolor{stringliteral}{">"};
+533 
+534     \textcolor{keywordtype}{id} += \textcolor{stringliteral}{",  "};
+535   \}
+536 
+537   \textcolor{keywordtype}{id} += Arg::nameStartString() + _name;
+538 
+539   \textcolor{keywordflow}{if} ( _valueRequired )
+540     \textcolor{keywordtype}{id} += std::string( 1, Arg::delimiter() ) + \textcolor{stringliteral}{"<"} + valueId + \textcolor{stringliteral}{">"};
+541 
+542   \textcolor{keywordflow}{return} id;
+543 
+544 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!name\+Start\+String@{name\+Start\+String}}
+\index{name\+Start\+String@{name\+Start\+String}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{name\+Start\+String}]{\setlength{\rightskip}{0pt plus 5cm}static const std\+::string T\+C\+L\+A\+P\+::\+Arg\+::name\+Start\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_a1df2134870528b80f9f35347fef6fd14}
+
+
+Definition at line 245 of file Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+\_\+\+N\+A\+M\+E\+S\+T\+A\+R\+T\+S\+T\+R\+I\+N\+G.
+
+
+
+Referenced by Arg(), arg\+Matches(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List(), long\+I\+D(), T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option(), short\+I\+D(), and to\+String().
+
+
+\begin{DoxyCode}
+245 \{ \textcolor{keywordflow}{return} TCLAP_NAMESTARTSTRING; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!operator=@{operator=}}
+\index{operator=@{operator=}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Arg}\& T\+C\+L\+A\+P\+::\+Arg\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} \&}]{rhs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classTCLAP_1_1Arg_a580ebe03ce3af1f85db2b2e5d19fb6bc}
+
+
+Prevent accidental copying. 
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!operator==@{operator==}}
+\index{operator==@{operator==}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Arg} \&}]{a}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a657a8d2842b7de9ced5a5a55db01d367}
+
+
+Operator ==. 
+
+Equality operator. Must be virtual to handle unlabeled args. 
+\begin{DoxyParams}{Parameters}
+{\em a} & -\/ The \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to be compared to this. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_a74632cd4d169481518cb1a871f97b412}, and {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a059fa00203a9f643a10334fedbd43e39}.
+
+
+
+Definition at line 546 of file Arg.\+h.
+
+
+
+References \+\_\+flag, and \+\_\+name.
+
+
+\begin{DoxyCode}
+547 \{
+548   \textcolor{keywordflow}{if} ( ( _flag != \textcolor{stringliteral}{""} && _flag == a.\_flag ) || _name == a.\_name)
+549     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+550   \textcolor{keywordflow}{else}
+551     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+552 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!process\+Arg@{process\+Arg}}
+\index{process\+Arg@{process\+Arg}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{process\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool T\+C\+L\+A\+P\+::\+Arg\+::process\+Arg (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{i, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classTCLAP_1_1Arg_a61ffe2f660a76111d256f7b22a686146}
+
+
+Pure virtual method meant to handle the parsing and value assignment of the string on the command line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ Pointer the the current argument in the list. \\
+\hline
+{\em args} & -\/ Mutable list of strings. What is passed in from main. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in {\bf T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValueArg_a71e6ee7c7324724b6fc067c5ffe31160}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_ad853d7950a659b0d4ee2cda3f61261fd}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_a344d3cf2128c510f92825e421ea667c7}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_aa5a35665519518dcb60e53d3a4858802}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_a91c3d349570f21d8af6dc90767d747a2}, and {\bf T\+C\+L\+A\+P\+::\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1SwitchArg_a624f98df6c4907efec95ffc353e9d08c}.
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!reset@{reset}}
+\index{reset@{reset}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_ab5b5dc9a9b0381561f0684523f943a2c}
+
+
+Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. 
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValueArg_a1bc480b71c4d8ac3646e796af8fb6e14}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_ab21f01f22978a1c0eea716399e9ff89b}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_ac320530811dbca7fdcb2a41ab252fce4}, and {\bf T\+C\+L\+A\+P\+::\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1SwitchArg_af8561d903ec3c11f5f2175e6db179d9c}.
+
+
+
+Definition at line 679 of file Arg.\+h.
+
+
+
+References \+\_\+already\+Set, and \+\_\+xor\+Set.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::reset(), T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::reset(), and T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::reset().
+
+
+\begin{DoxyCode}
+680 \{
+681   _xorSet = \textcolor{keyword}{false};
+682   _alreadySet = \textcolor{keyword}{false};
+683 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!set\+Delimiter@{set\+Delimiter}}
+\index{set\+Delimiter@{set\+Delimiter}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{set\+Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}static void T\+C\+L\+A\+P\+::\+Arg\+::set\+Delimiter (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1Arg_ad059b63424001b9aedb4c019e2854c3c}
+
+
+Sets the delimiter for all arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The character that delimits flags/names from values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file Arg.\+h.
+
+
+
+References delimiter\+Ref().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Cmd\+Line\+::\+\_\+constructor().
+
+
+\begin{DoxyCode}
+256 \{ delimiterRef() = c; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!set\+Require\+Label@{set\+Require\+Label}}
+\index{set\+Require\+Label@{set\+Require\+Label}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{set\+Require\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::set\+Require\+Label (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_aae5c959f31af1a484a8af06f84a6e8b0}
+
+
+Sets the require\+Label. 
+
+Used by \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler}. You shouldn't ever use this. 
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ Set the require\+Label to this value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 585 of file Arg.\+h.
+
+
+
+References \+\_\+require\+Label.
+
+
+\begin{DoxyCode}
+586 \{
+587   _requireLabel = s;
+588 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!short\+I\+D@{short\+I\+D}}
+\index{short\+I\+D@{short\+I\+D}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{short\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::short\+I\+D (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{value\+Id = {\ttfamily \char`\"{}val\char`\"{}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_aef8efaf3811162b2b2b2a84c6db280fa}
+
+
+Returns a short I\+D for the usage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Id} & -\/ The value used in the id. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1ValueArg_abb1eb22814d0a0da49c5f8bb57362d09}, {\bf T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1MultiArg_ac2c962112704b899f4c8b8565f2c4bb3}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledValueArg_abda4d1d695003ba165b6797e03007a99}, {\bf T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$} \doxyref{}{p.}{classTCLAP_1_1UnlabeledMultiArg_a5971af8f29fa4d798ffde3293504c15b}, and {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_a083c07003f948691e94ce94d0b6376ed}.
+
+
+
+Definition at line 505 of file Arg.\+h.
+
+
+
+References \+\_\+flag, \+\_\+name, \+\_\+required, \+\_\+value\+Required, delimiter(), flag\+Start\+String(), and name\+Start\+String().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option(), T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::print\+Short\+Arg(), T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::short\+I\+D(), T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::short\+I\+D(), and T\+C\+L\+A\+P\+::\+Value\+Arg$<$ T $>$\+::short\+I\+D().
+
+
+\begin{DoxyCode}
+506 \{
+507   std::string \textcolor{keywordtype}{id} = \textcolor{stringliteral}{""};
+508 
+509   \textcolor{keywordflow}{if} ( _flag != \textcolor{stringliteral}{""} )
+510     \textcolor{keywordtype}{id} = Arg::flagStartString() + _flag;
+511   \textcolor{keywordflow}{else}
+512     \textcolor{keywordtype}{id} = Arg::nameStartString() + _name;
+513 
+514   \textcolor{keywordflow}{if} ( _valueRequired )
+515     \textcolor{keywordtype}{id} += std::string( 1, Arg::delimiter() ) + \textcolor{stringliteral}{"<"} + valueId  + \textcolor{stringliteral}{">"};
+516 
+517   \textcolor{keywordflow}{if} ( !_required )
+518     \textcolor{keywordtype}{id} = \textcolor{stringliteral}{"["} + \textcolor{keywordtype}{id} + \textcolor{stringliteral}{"]"};
+519 
+520   \textcolor{keywordflow}{return} id;
+521 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{to\+String}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::to\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_ac98a357568c21f0eb6ca2220b8a3d4a2}
+
+
+Returns a simple string representation of the argument. 
+
+Primarily for debugging. 
+
+Definition at line 599 of file Arg.\+h.
+
+
+
+References \+\_\+flag, \+\_\+name, flag\+Start\+String(), and name\+Start\+String().
+
+
+
+Referenced by Arg(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::common\+Processing(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$\+::\+Unlabeled\+Multi\+Arg(), and T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$\+::\+Unlabeled\+Value\+Arg().
+
+
+\begin{DoxyCode}
+600 \{
+601   std::string s = \textcolor{stringliteral}{""};
+602 
+603   \textcolor{keywordflow}{if} ( _flag != \textcolor{stringliteral}{""} )
+604     s += Arg::flagStartString() + _flag + \textcolor{stringliteral}{" "};
+605 
+606   s += \textcolor{stringliteral}{"("} + Arg::nameStartString() + _name + \textcolor{stringliteral}{")"};
+607 
+608   \textcolor{keywordflow}{return} s;
+609 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!trim\+Flag@{trim\+Flag}}
+\index{trim\+Flag@{trim\+Flag}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{trim\+Flag}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::trim\+Flag (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{flag, }
+\item[{std\+::string \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1Arg_a54595328e81f5fb77859563690faab25}
+
+
+Trims a value off of the flag. 
+
+Implementation of trim\+Flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The string from which the flag and value will be trimmed. Contains the flag once the value has been trimmed. \\
+\hline
+{\em value} & -\/ Where the value trimmed from the string will be stored. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 620 of file Arg.\+h.
+
+
+
+References delimiter().
+
+
+\begin{DoxyCode}
+621 \{
+622   \textcolor{keywordtype}{int} stop = 0;
+623   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < flag.length(); i++ )
+624     \textcolor{keywordflow}{if} ( flag[i] == Arg::delimiter() )
+625     \{
+626       stop = i;
+627       \textcolor{keywordflow}{break};
+628     \}
+629 
+630   \textcolor{keywordflow}{if} ( stop > 1 )
+631   \{
+632     value = flag.substr(stop+1);
+633     flag = flag.substr(0,stop);
+634   \}
+635 
+636 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!xor\+Set@{xor\+Set}}
+\index{xor\+Set@{xor\+Set}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{xor\+Set}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Arg\+::xor\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1Arg_aec525c8092e56f7f5aa455e71bc72374}
+
+
+Sets the \+\_\+already\+Set value to true. 
+
+This is used by the \doxyref{Xor\+Handler}{p.}{classTCLAP_1_1XorHandler}. You really have no reason to ever use it. 
+
+Definition at line 655 of file Arg.\+h.
+
+
+
+References \+\_\+already\+Set, and \+\_\+xor\+Set.
+
+
+\begin{DoxyCode}
+656 \{
+657   _alreadySet = \textcolor{keyword}{true};
+658   _xorSet = \textcolor{keyword}{true};
+659 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+accepts\+Multiple\+Values@{\+\_\+accepts\+Multiple\+Values}}
+\index{\+\_\+accepts\+Multiple\+Values@{\+\_\+accepts\+Multiple\+Values}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+accepts\+Multiple\+Values}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+accepts\+Multiple\+Values\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a13130a9a5d22c57a6d42a8883c9b1e0f}
+
+
+Definition at line 158 of file Arg.\+h.
+
+
+
+Referenced by accepts\+Multiple\+Values(), and T\+C\+L\+A\+P\+::\+Multi\+Arg$<$ T $>$\+::\+Multi\+Arg().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+already\+Set@{\+\_\+already\+Set}}
+\index{\+\_\+already\+Set@{\+\_\+already\+Set}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+already\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+already\+Set\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a829e32129857d2683e5791a5df1208ec}
+
+
+Indicates whether the argument has been set. 
+
+Indicates that a value on the command line has matched the name/flag of this argument and the values have been set accordingly. 
+
+Definition at line 137 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::common\+Processing(), is\+Set(), T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg(), reset(), and xor\+Set().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+description@{\+\_\+description}}
+\index{\+\_\+description@{\+\_\+description}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+description\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a9882fe256eaab01ac53db54ac657d272}
+
+
+Description of the argument. 
+
+
+
+Definition at line 112 of file Arg.\+h.
+
+
+
+Referenced by get\+Description().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+flag@{\+\_\+flag}}
+\index{\+\_\+flag@{\+\_\+flag}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+flag\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_ae68407a0a8223023ad0ae3b9dc7986f5}
+
+
+The single char flag used to identify the argument. 
+
+This value (preceded by a dash \{-\/\}), can be used to identify an argument on the command line. The \+\_\+flag can be blank, in fact this is how unlabeled args work. Unlabeled args must override appropriate functions to get correct handling. Note that the \+\_\+flag does N\+O\+T include the dash as part of the flag. 
+
+Definition at line 98 of file Arg.\+h.
+
+
+
+Referenced by Arg(), arg\+Matches(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match(), get\+Flag(), long\+I\+D(), operator==(), short\+I\+D(), and to\+String().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+ignoreable@{\+\_\+ignoreable}}
+\index{\+\_\+ignoreable@{\+\_\+ignoreable}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+ignoreable}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a9832bb7564f4ab472bd51b7b1bbc683f}
+
+
+Whether this argument can be ignored, if desired. 
+
+
+
+Definition at line 150 of file Arg.\+h.
+
+
+
+Referenced by is\+Ignoreable(), T\+C\+L\+A\+P\+::\+Switch\+Arg\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg(), T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$\+::\+Unlabeled\+Multi\+Arg(), and T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$\+::\+Unlabeled\+Value\+Arg().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+name@{\+\_\+name}}
+\index{\+\_\+name@{\+\_\+name}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_ac0f138057a99fb5d94ff4acb41a083aa}
+
+
+A single work namd indentifying the argument. 
+
+This value (preceded by two dashed \{--\}) can also be used to identify an argument on the command line. Note that the \+\_\+name does N\+O\+T include the two dashes as part of the \+\_\+name. The \+\_\+name cannot be blank. 
+
+Definition at line 107 of file Arg.\+h.
+
+
+
+Referenced by Arg(), arg\+Matches(), get\+Name(), long\+I\+D(), operator==(), short\+I\+D(), and to\+String().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+required@{\+\_\+required}}
+\index{\+\_\+required@{\+\_\+required}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+required}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+required\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_ad16408bd1ca4d8b1d14d6c5129545a84}
+
+
+Indicating whether the argument is required. 
+
+
+
+Definition at line 117 of file Arg.\+h.
+
+
+
+Referenced by force\+Required(), get\+Description(), is\+Required(), and short\+I\+D().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+require\+Label@{\+\_\+require\+Label}}
+\index{\+\_\+require\+Label@{\+\_\+require\+Label}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+require\+Label}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+require\+Label\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a2ed097a868e34a0c4f6062ead744ac54}
+
+
+Label to be used in usage description. 
+
+Normally set to \char`\"{}required\char`\"{}, but can be changed when necessary. 
+
+Definition at line 123 of file Arg.\+h.
+
+
+
+Referenced by get\+Description(), and set\+Require\+Label().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+value\+Required@{\+\_\+value\+Required}}
+\index{\+\_\+value\+Required@{\+\_\+value\+Required}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+value\+Required}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+value\+Required\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_a776682b7e19f4dc231bbad3d10034dfa}
+
+
+Indicates whether a value is required for the argument. 
+
+Note that the value may be required but the argument/value combination may not be, as specified by \+\_\+required. 
+
+Definition at line 130 of file Arg.\+h.
+
+
+
+Referenced by is\+Value\+Required(), long\+I\+D(), and short\+I\+D().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+visitor@{\+\_\+visitor}}
+\index{\+\_\+visitor@{\+\_\+visitor}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+visitor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Visitor}$\ast$ T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+visitor\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_aa9ff037e92c9fa5bd85e532f61899300}
+
+
+A pointer to a vistitor object. 
+
+The visitor allows special handling to occur as soon as the argument is matched. This defaults to N\+U\+L\+L and should not be used unless absolutely necessary. 
+
+Definition at line 145 of file Arg.\+h.
+
+
+
+Referenced by \+\_\+check\+With\+Visitor().
+
+\index{T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}!\+\_\+xor\+Set@{\+\_\+xor\+Set}}
+\index{\+\_\+xor\+Set@{\+\_\+xor\+Set}!T\+C\+L\+A\+P\+::\+Arg@{T\+C\+L\+A\+P\+::\+Arg}}
+\subsubsection[{\+\_\+xor\+Set}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+xor\+Set\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1Arg_ab413bd1d8a7ecf3c89672ee23ef791ba}
+
+
+Indicates that the arg was set as part of an X\+O\+R and not on the command line. 
+
+
+
+Definition at line 156 of file Arg.\+h.
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Switch\+Arg\+::common\+Processing(), is\+Set(), reset(), and xor\+Set().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Arg.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,281 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Parsing\+Data Class Reference}
+\label{classdqm4hep_1_1TiXmlParsingData}\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf Stamp} (const char $\ast$now, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+const {\bf Ti\+Xml\+Cursor} \& {\bf Cursor} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Parsing\+Data} (const char $\ast$start, int \+\_\+tabsize, int row, int col)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Cursor} {\bf cursor}
+\item 
+const char $\ast$ {\bf stamp}
+\item 
+int {\bf tabsize}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ti\+Xml\+Document}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 174 of file tinyxmlparser.\+cc.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!Ti\+Xml\+Parsing\+Data@{Ti\+Xml\+Parsing\+Data}}
+\index{Ti\+Xml\+Parsing\+Data@{Ti\+Xml\+Parsing\+Data}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{Ti\+Xml\+Parsing\+Data}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Ti\+Xml\+Parsing\+Data (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{start, }
+\item[{int}]{\+\_\+tabsize, }
+\item[{int}]{row, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlParsingData_a2735247977c41a7a41a9cd5899c257c0}
+
+
+Definition at line 184 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, cursor, dqm4hep\+::\+Ti\+Xml\+Cursor\+::row, stamp, and tabsize.
+
+
+\begin{DoxyCode}
+185   \{
+186     assert( start );
+187     stamp = start;
+188     tabsize = \_tabsize;
+189     cursor.row = row;
+190     cursor.col = col;
+191   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!Cursor@{Cursor}}
+\index{Cursor@{Cursor}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{Cursor}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+Cursor}\& dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Cursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlParsingData_a3a40700c83ec9cdb9292e369d967a1de}
+
+
+Definition at line 180 of file tinyxmlparser.\+cc.
+
+
+
+References cursor.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error().
+
+
+\begin{DoxyCode}
+180 \{ \textcolor{keywordflow}{return} cursor; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!Stamp@{Stamp}}
+\index{Stamp@{Stamp}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{Stamp}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::\+Stamp (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{now, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlParsingData_a31a9d9d998f9a1715d9be57d0746a188}
+
+
+Definition at line 199 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, cursor, dqm4hep\+::\+Ti\+Xml\+Cursor\+::row, stamp, tabsize, and dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error().
+
+
+\begin{DoxyCode}
+200 \{
+201   assert( now );
+202 
+203   \textcolor{comment}{// Do nothing if the tabsize is 0.}
+204   \textcolor{keywordflow}{if} ( tabsize < 1 )
+205   \{
+206     \textcolor{keywordflow}{return};
+207   \}
+208 
+209   \textcolor{comment}{// Get the current row, column.}
+210   \textcolor{keywordtype}{int} row = cursor.row;
+211   \textcolor{keywordtype}{int} col = cursor.col;
+212   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* p = stamp;
+213   assert( p );
+214 
+215   \textcolor{keywordflow}{while} ( p < now )
+216   \{
+217     \textcolor{comment}{// Treat p as unsigned, so we have a happy compiler.}
+218     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* pU = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)p;
+219 
+220     \textcolor{comment}{// Code contributed by Fletcher Dunn: (modified by lee)}
+221     \textcolor{keywordflow}{switch} (*pU) \{
+222       \textcolor{keywordflow}{case} 0:
+223         \textcolor{comment}{// We *should* never get here, but in case we do, don't}
+224         \textcolor{comment}{// advance past the terminating null character, ever}
+225         \textcolor{keywordflow}{return};
+226 
+227       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'}:
+228         \textcolor{comment}{// bump down to the next line}
+229         ++row;
+230         col = 0;        
+231         \textcolor{comment}{// Eat the character}
+232         ++p;
+233 
+234         \textcolor{comment}{// Check for \(\backslash\)r\(\backslash\)n sequence, and treat this as a single character}
+235         \textcolor{keywordflow}{if} (*p == \textcolor{charliteral}{'\(\backslash\)n'}) \{
+236           ++p;
+237         \}
+238         \textcolor{keywordflow}{break};
+239 
+240       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:
+241         \textcolor{comment}{// bump down to the next line}
+242         ++row;
+243         col = 0;
+244 
+245         \textcolor{comment}{// Eat the character}
+246         ++p;
+247 
+248         \textcolor{comment}{// Check for \(\backslash\)n\(\backslash\)r sequence, and treat this as a single}
+249         \textcolor{comment}{// character.  (Yes, this bizarre thing does occur still}
+250         \textcolor{comment}{// on some arcane platforms...)}
+251         \textcolor{keywordflow}{if} (*p == \textcolor{charliteral}{'\(\backslash\)r'}) \{
+252           ++p;
+253         \}
+254         \textcolor{keywordflow}{break};
+255 
+256       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'}:
+257         \textcolor{comment}{// Eat the character}
+258         ++p;
+259 
+260         \textcolor{comment}{// Skip to next tab stop}
+261         col = (col / tabsize + 1) * tabsize;
+262         \textcolor{keywordflow}{break};
+263 
+264       \textcolor{keywordflow}{case} TIXML_UTF_LEAD_0:
+265         \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+266         \{
+267           \textcolor{keywordflow}{if} ( *(p+1) && *(p+2) )
+268           \{
+269             \textcolor{comment}{// In these cases, don't advance the column. These are}
+270             \textcolor{comment}{// 0-width spaces.}
+271             \textcolor{keywordflow}{if} ( *(pU+1)==TIXML_UTF_LEAD_1 && *(pU+2)==TIXML_UTF_LEAD_2 )
+272               p += 3; 
+273             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *(pU+1)==0xbfU && *(pU+2)==0xbeU )
+274               p += 3; 
+275             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *(pU+1)==0xbfU && *(pU+2)==0xbfU )
+276               p += 3; 
+277             \textcolor{keywordflow}{else}
+278               \{ p +=3; ++col; \} \textcolor{comment}{// A normal character.}
+279           \}
+280         \}
+281         \textcolor{keywordflow}{else}
+282         \{
+283           ++p;
+284           ++col;
+285         \}
+286         \textcolor{keywordflow}{break};
+287 
+288       \textcolor{keywordflow}{default}:
+289         \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+290         \{
+291           \textcolor{comment}{// Eat the 1 to 4 byte utf8 character.}
+292           \textcolor{keywordtype}{int} step = TiXmlBase::utf8ByteTable[*((\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)p)];
+293           \textcolor{keywordflow}{if} ( step == 0 )
+294             step = 1;   \textcolor{comment}{// Error case from bad encoding, but handle gracefully.}
+295           p += step;
+296 
+297           \textcolor{comment}{// Just advance one column, of course.}
+298           ++col;
+299         \}
+300         \textcolor{keywordflow}{else}
+301         \{
+302           ++p;
+303           ++col;
+304         \}
+305         \textcolor{keywordflow}{break};
+306     \}
+307   \}
+308   cursor.row = row;
+309   cursor.col = col;
+310   assert( cursor.row >= -1 );
+311   assert( cursor.col >= -1 );
+312   stamp = p;
+313   assert( stamp );
+314 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Document}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlParsingData_a173617f6dfe902cf484ce5552b950475}
+
+
+Definition at line 176 of file tinyxmlparser.\+cc.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!cursor@{cursor}}
+\index{cursor@{cursor}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{cursor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Cursor} dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::cursor\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlParsingData_ad5dc16da7b0c53f1102bcf70114b592f}
+
+
+Definition at line 193 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by Cursor(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), Stamp(), and Ti\+Xml\+Parsing\+Data().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!stamp@{stamp}}
+\index{stamp@{stamp}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{stamp}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::stamp\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlParsingData_a8065fe9cac00082358f6988a1135d53a}
+
+
+Definition at line 194 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by Stamp(), and Ti\+Xml\+Parsing\+Data().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}!tabsize@{tabsize}}
+\index{tabsize@{tabsize}!dqm4hep\+::\+Ti\+Xml\+Parsing\+Data@{dqm4hep\+::\+Ti\+Xml\+Parsing\+Data}}
+\subsubsection[{tabsize}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Parsing\+Data\+::tabsize\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlParsingData_a080549231900fcb0371895c7180c44a7}
+
+
+Definition at line 195 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by Stamp(), and Ti\+Xml\+Parsing\+Data().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxmlparser.\+cc}\end{DoxyCompactItemize}

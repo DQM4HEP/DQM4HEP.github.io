@@ -1,0 +1,384 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Collector Class Reference}
+\label{classdqm4hep_1_1DQMEventCollector}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+
+
+\doxyref{D\+Q\+M\+Event\+Collector}{p.}{classdqm4hep_1_1DQMEventCollector} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event\+Collector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Event\+Collector} ({\bf D\+Q\+M\+Event\+Collector\+Imp} $\ast$p\+Collector\+Imp)
+\begin{DoxyCompactList}\small\item\em Constructor with collector implementation. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Event\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the collctor name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name. \end{DoxyCompactList}\item 
+bool {\bf is\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Whether the collector server is running. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Start the collector server. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf stop\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Stop the collector server. \end{DoxyCompactList}\item 
+void {\bf set\+Event\+Collector\+Imp} ({\bf D\+Q\+M\+Event\+Collector\+Imp} $\ast$p\+Collector\+Imp)
+\begin{DoxyCompactList}\small\item\em Set the event collector implementation. \end{DoxyCompactList}\item 
+void {\bf set\+Event\+Streamer} ({\bf D\+Q\+M\+Event\+Streamer} $\ast$p\+Event\+Streamer)
+\begin{DoxyCompactList}\small\item\em Set the event streamer to serialize/deserialize the in/out-\/coming events. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Event\+Streamer} $\ast$ {\bf get\+Event\+Streamer} () const 
+\begin{DoxyCompactList}\small\item\em Get the event streamer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Collector\+Imp} $\ast$ {\bf m\+\_\+p\+Collector\+Imp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event\+Collector}{p.}{classdqm4hep_1_1DQMEventCollector} class. 
+
+Definition at line 41 of file D\+Q\+M\+Event\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!D\+Q\+M\+Event\+Collector@{D\+Q\+M\+Event\+Collector}}
+\index{D\+Q\+M\+Event\+Collector@{D\+Q\+M\+Event\+Collector}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{D\+Q\+M\+Event\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::\+D\+Q\+M\+Event\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a7452c155fc78fc457fbcf536787c0fbe}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp.
+
+
+\begin{DoxyCode}
+35 \{
+36   \textcolor{comment}{// default implementation is the DIM one}
+37   m_pCollectorImp = \textcolor{keyword}{new} DQMDimEventCollector();
+38 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!D\+Q\+M\+Event\+Collector@{D\+Q\+M\+Event\+Collector}}
+\index{D\+Q\+M\+Event\+Collector@{D\+Q\+M\+Event\+Collector}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{D\+Q\+M\+Event\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::\+D\+Q\+M\+Event\+Collector (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Collector\+Imp} $\ast$}]{p\+Collector\+Imp}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a7592b0f9005af3ebe1c2cf3fb512842a}
+
+
+Constructor with collector implementation. 
+
+
+
+Definition at line 42 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+42                                                                         :
+43     m_pCollectorImp(pCollectorImp)
+44 \{
+45   \textcolor{comment}{/* nop */}
+46 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!````~D\+Q\+M\+Event\+Collector@{$\sim$\+D\+Q\+M\+Event\+Collector}}
+\index{````~D\+Q\+M\+Event\+Collector@{$\sim$\+D\+Q\+M\+Event\+Collector}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::$\sim$\+D\+Q\+M\+Event\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a54ff812a8c1e92b2d6757f00c3e7d908}
+
+
+Destructor. 
+
+
+
+Definition at line 50 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp.
+
+
+\begin{DoxyCode}
+51 \{
+52   \textcolor{keyword}{delete} m_pCollectorImp;
+53 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventCollector_a91f6e02a51c1421cdc92e96b11b7726f}
+
+
+Get the collector name. 
+
+
+
+Definition at line 64 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::get\+Collector\+Name(), and m\+\_\+p\+Collector\+Imp.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::get\+Name().
+
+
+\begin{DoxyCode}
+65 \{
+66   \textcolor{keywordflow}{return} m_pCollectorImp->getCollectorName();
+67 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!get\+Event\+Streamer@{get\+Event\+Streamer}}
+\index{get\+Event\+Streamer@{get\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{get\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Streamer} $\ast$ dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::get\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventCollector_aa2b393b94c1c2322885bf4565d89426f}
+
+
+Get the event streamer. 
+
+
+
+Definition at line 110 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::get\+Event\+Streamer(), and m\+\_\+p\+Collector\+Imp.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::get\+Event\+Streamer().
+
+
+\begin{DoxyCode}
+111 \{
+112   \textcolor{keywordflow}{return} m_pCollectorImp->getEventStreamer();
+113 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMEventCollector_a55a9c91c3cc59ba89fa6ef2d14d97079}
+
+
+Whether the collector server is running. 
+
+
+
+Definition at line 71 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::is\+Running(), and m\+\_\+p\+Collector\+Imp.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::$\sim$\+D\+Q\+M\+Event\+Collector\+Application().
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{keywordflow}{return} m_pCollectorImp->isRunning();
+74 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a83715e5415c28f092d24344116befad4}
+
+
+Set the collctor name. 
+
+
+
+Definition at line 57 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp, and dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::set\+Collector\+Name().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::set\+Collector\+Name().
+
+
+\begin{DoxyCode}
+58 \{
+59   \textcolor{keywordflow}{return} m_pCollectorImp->setCollectorName(collectorName);
+60 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!set\+Event\+Collector\+Imp@{set\+Event\+Collector\+Imp}}
+\index{set\+Event\+Collector\+Imp@{set\+Event\+Collector\+Imp}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{set\+Event\+Collector\+Imp}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::set\+Event\+Collector\+Imp (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Collector\+Imp} $\ast$}]{p\+Collector\+Imp}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a17036054668819edaf5f939f1eb1ece4}
+
+
+Set the event collector implementation. 
+
+
+
+Definition at line 92 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::set\+Event\+Collector\+Imp().
+
+
+\begin{DoxyCode}
+93 \{
+94   \textcolor{keywordflow}{if}(NULL == pCollectorImp)
+95     \textcolor{keywordflow}{return};
+96 
+97   \textcolor{keyword}{delete} m_pCollectorImp;
+98   m_pCollectorImp = pCollectorImp;
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!set\+Event\+Streamer@{set\+Event\+Streamer}}
+\index{set\+Event\+Streamer@{set\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{set\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::set\+Event\+Streamer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Streamer} $\ast$}]{p\+Event\+Streamer}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_abb8098260921fe1402c07857b63de6a7}
+
+
+Set the event streamer to serialize/deserialize the in/out-\/coming events. 
+
+
+
+Definition at line 103 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp, and dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::set\+Event\+Streamer().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::set\+Event\+Streamer().
+
+
+\begin{DoxyCode}
+104 \{
+105   m_pCollectorImp->setEventStreamer(pEventStreamer);
+106 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!start\+Collector@{start\+Collector}}
+\index{start\+Collector@{start\+Collector}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{start\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::start\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_a889d899f8c416b5f229141c9e4332fb5}
+
+
+Start the collector server. 
+
+
+
+Definition at line 78 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp, and dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::start\+Collector().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::run().
+
+
+\begin{DoxyCode}
+79 \{
+80   \textcolor{keywordflow}{return} m_pCollectorImp->startCollector();
+81 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!stop\+Collector@{stop\+Collector}}
+\index{stop\+Collector@{stop\+Collector}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{stop\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::stop\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCollector_aa75757da45c99215d653e1be21358047}
+
+
+Stop the collector server. 
+
+
+
+Definition at line 85 of file D\+Q\+M\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Collector\+Imp, and dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp\+::stop\+Collector().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::exit(), and dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application\+::$\sim$\+D\+Q\+M\+Event\+Collector\+Application().
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{return} m_pCollectorImp->stopCollector();
+88 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}!m\+\_\+p\+Collector\+Imp@{m\+\_\+p\+Collector\+Imp}}
+\index{m\+\_\+p\+Collector\+Imp@{m\+\_\+p\+Collector\+Imp}!dqm4hep\+::\+D\+Q\+M\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Collector\+Imp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Collector\+Imp}$\ast$ dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+::m\+\_\+p\+Collector\+Imp\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMEventCollector_aa26487236256e3bdaac099bdbd1b94ef}
+
+
+Definition at line 90 of file D\+Q\+M\+Event\+Collector.\+h.
+
+
+
+Referenced by D\+Q\+M\+Event\+Collector(), get\+Collector\+Name(), get\+Event\+Streamer(), is\+Running(), set\+Collector\+Name(), set\+Event\+Collector\+Imp(), set\+Event\+Streamer(), start\+Collector(), stop\+Collector(), and $\sim$\+D\+Q\+M\+Event\+Collector().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Event\+Collector.\+cc}\end{DoxyCompactItemize}

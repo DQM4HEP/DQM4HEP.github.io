@@ -1,0 +1,105 @@
+\section{dqm4hep\+:\+:scoped\+\_\+lock Class Reference}
+\label{classdqm4hep_1_1scoped__lock}\index{dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}}
+
+
+scoped\+\_\+mutex class  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M4\+H\+E\+P.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf scoped\+\_\+lock} (pthread\+\_\+mutex\+\_\+t $\ast$p\+Mutex)
+\begin{DoxyCompactList}\small\item\em Constructor that locks the mutex. \end{DoxyCompactList}\item 
+{\bf $\sim$scoped\+\_\+lock} ()
+\begin{DoxyCompactList}\small\item\em Destructor that unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+mutex\+\_\+t $\ast$ {\bf m\+\_\+p\+Mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+scoped\+\_\+mutex class 
+
+Definition at line 652 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}!scoped\+\_\+lock@{scoped\+\_\+lock}}
+\index{scoped\+\_\+lock@{scoped\+\_\+lock}!dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}}
+\subsubsection[{scoped\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::scoped\+\_\+lock\+::scoped\+\_\+lock (
+\begin{DoxyParamCaption}
+\item[{pthread\+\_\+mutex\+\_\+t $\ast$}]{p\+Mutex}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1scoped__lock_ac1f5e0e82e6c6e6d02687cd7aa0f3259}
+
+
+Constructor that locks the mutex. 
+
+
+
+Definition at line 145 of file D\+Q\+M4\+H\+E\+P.\+cc.
+
+
+
+References m\+\_\+p\+Mutex.
+
+
+\begin{DoxyCode}
+145                                                 :
+146   m_pMutex(pMutex)
+147 \{
+148   pthread\_mutex\_lock(m_pMutex);
+149 \}
+\end{DoxyCode}
+\index{dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}!````~scoped\+\_\+lock@{$\sim$scoped\+\_\+lock}}
+\index{````~scoped\+\_\+lock@{$\sim$scoped\+\_\+lock}!dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}}
+\subsubsection[{$\sim$scoped\+\_\+lock}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::scoped\+\_\+lock\+::$\sim$scoped\+\_\+lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1scoped__lock_a5614f288af94b335bf77fdf7ea332267}
+
+
+Destructor that unlocks the mutex. 
+
+
+
+Definition at line 153 of file D\+Q\+M4\+H\+E\+P.\+cc.
+
+
+
+References m\+\_\+p\+Mutex.
+
+
+\begin{DoxyCode}
+154 \{
+155   pthread\_mutex\_unlock(m_pMutex);
+156 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}!m\+\_\+p\+Mutex@{m\+\_\+p\+Mutex}}
+\index{m\+\_\+p\+Mutex@{m\+\_\+p\+Mutex}!dqm4hep\+::scoped\+\_\+lock@{dqm4hep\+::scoped\+\_\+lock}}
+\subsubsection[{m\+\_\+p\+Mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+mutex\+\_\+t$\ast$ dqm4hep\+::scoped\+\_\+lock\+::m\+\_\+p\+Mutex\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1scoped__lock_a5a6f9da10d1ecb308503c920d77fd4e1}
+
+
+Definition at line 663 of file D\+Q\+M4\+H\+E\+P.\+h.
+
+
+
+Referenced by scoped\+\_\+lock(), and $\sim$scoped\+\_\+lock().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M4\+H\+E\+P.\+h}\item 
+{\bf D\+Q\+M4\+H\+E\+P.\+cc}\end{DoxyCompactItemize}

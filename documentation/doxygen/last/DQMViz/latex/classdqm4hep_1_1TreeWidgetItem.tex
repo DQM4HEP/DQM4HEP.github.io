@@ -1,0 +1,249 @@
+\section{dqm4hep\+:\+:Tree\+Widget\+Item Class Reference}
+\label{classdqm4hep_1_1TreeWidgetItem}\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+Inheritance diagram for dqm4hep\+:\+:Tree\+Widget\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TreeWidgetItem}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Tree\+Widget\+Item} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf Tree\+Widget\+Item} (Q\+Tree\+Widget\+Item $\ast$p\+Parent)
+\begin{DoxyCompactList}\small\item\em Constructor with parent item. \end{DoxyCompactList}\item 
+{\bf Tree\+Widget\+Item} (Q\+Tree\+Widget $\ast$p\+Tree\+Widget)
+\begin{DoxyCompactList}\small\item\em Constructor with tree widget. \end{DoxyCompactList}\item 
+void {\bf set\+Data} (int column, int role, const Q\+Variant \&value)
+\begin{DoxyCompactList}\small\item\em Set data for a target column with a given role. \end{DoxyCompactList}\item 
+void {\bf set\+Checkable} (bool checkable)
+\begin{DoxyCompactList}\small\item\em Set whether the element can be checked (subscribed) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+checkable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 50 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!Tree\+Widget\+Item@{Tree\+Widget\+Item}}
+\index{Tree\+Widget\+Item@{Tree\+Widget\+Item}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{Tree\+Widget\+Item}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Tree\+Widget\+Item\+::\+Tree\+Widget\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TreeWidgetItem_a294a20b55885a1222c729557507ab07c}
+
+
+Constructor. 
+
+
+
+Definition at line 79 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+\begin{DoxyCode}
+79                                :
+80     QTreeWidgetItem(),
+81     m_checkable(\textcolor{keyword}{true})
+82 \{
+83   \textcolor{comment}{/* nop */}
+84 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!Tree\+Widget\+Item@{Tree\+Widget\+Item}}
+\index{Tree\+Widget\+Item@{Tree\+Widget\+Item}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{Tree\+Widget\+Item}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Tree\+Widget\+Item\+::\+Tree\+Widget\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+Widget\+Item $\ast$}]{p\+Parent}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TreeWidgetItem_a2912269b35cfc9d8a0fa14345d7ba5b0}
+
+
+Constructor with parent item. 
+
+
+
+Definition at line 88 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+\begin{DoxyCode}
+88                                                        :
+89     QTreeWidgetItem(pParent),
+90     m_checkable(\textcolor{keyword}{true})
+91 \{
+92   \textcolor{comment}{/* nop */}
+93 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!Tree\+Widget\+Item@{Tree\+Widget\+Item}}
+\index{Tree\+Widget\+Item@{Tree\+Widget\+Item}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{Tree\+Widget\+Item}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Tree\+Widget\+Item\+::\+Tree\+Widget\+Item (
+\begin{DoxyParamCaption}
+\item[{Q\+Tree\+Widget $\ast$}]{p\+Tree\+Widget}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TreeWidgetItem_a62257ba5240170c1c1b5f4e7e70b3c23}
+
+
+Constructor with tree widget. 
+
+
+
+Definition at line 97 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+\begin{DoxyCode}
+97                                                        :
+98     QTreeWidgetItem(pTreeWidget),
+99     m_checkable(\textcolor{keyword}{true})
+100 \{
+101   \textcolor{comment}{/* nop */}
+102 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!set\+Checkable@{set\+Checkable}}
+\index{set\+Checkable@{set\+Checkable}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{set\+Checkable}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Checkable (
+\begin{DoxyParamCaption}
+\item[{bool}]{checkable}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TreeWidgetItem_a733f5f8ad2cd3f3d71bec612ce2f3250}
+
+
+Set whether the element can be checked (subscribed) 
+
+
+
+Definition at line 168 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References m\+\_\+checkable.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::add\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::enable\+Subscription().
+
+
+\begin{DoxyCode}
+169 \{
+170   std::cout << \textcolor{stringliteral}{"Item "} << this->text(0).toStdString() << \textcolor{stringliteral}{" set checkable to "} << checkable << std::endl;
+171   m_checkable = checkable;
+172 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{column, }
+\item[{int}]{role, }
+\item[{const Q\+Variant \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TreeWidgetItem_aa56dc3de3892457afe1e4ba05a63f6e5}
+
+
+Set data for a target column with a given role. 
+
+
+
+Definition at line 106 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Module\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::is\+Monitor\+Element\+Item(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log(), m\+\_\+checkable, dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::subscribe(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::unsubscribe().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::add\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+107 \{
+108   \textcolor{keywordflow}{if}(0 == column && role == Qt::CheckStateRole)
+109   \{
+110     Qt::CheckState oldState = \textcolor{keyword}{static\_cast<}Qt::CheckState\textcolor{keyword}{>}(this->data(column, role).toInt());
+111     Qt::CheckState newState = \textcolor{keyword}{static\_cast<}Qt::CheckState\textcolor{keyword}{>}(value.toInt());
+112 
+113     \textcolor{keywordflow}{if}(oldState == newState)
+114     \{
+115       QTreeWidgetItem::setData(column, role, value);
+116       \textcolor{keywordflow}{return};
+117     \}
+118 
+119     DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator *>(this->treeWidget())
+      ;
+120 
+121     \textcolor{keywordflow}{if}(!pNavigator)
+122     \{
+123       QTreeWidgetItem::setData(column, role, value);
+124       \textcolor{keywordflow}{return};
+125     \}
+126 
+127     \textcolor{keywordflow}{if}(!pNavigator->isMonitorElementItem(\textcolor{keyword}{this}))
+128     \{
+129       QTreeWidgetItem::setData(column, role, value);
+130       \textcolor{keywordflow}{return};
+131     \}
+132 
+133     QString collectorName(pNavigator->getCollectorName());
+134     QString moduleName(pNavigator->getModuleName(\textcolor{keyword}{this}));
+135     QString fullPathName(pNavigator->getFullPathName(\textcolor{keyword}{this}));
+136     QString monitorElementName(this->text(0));
+137     std::string fullName = (DQMPath(fullPathName.toStdString()) + monitorElementName.toStdString()).getPath
+      ();
+138 
+139 
+140     DQMMonitorElementRequest request;
+141     request.push\_back(DQMMonitorElementRequest::value\_type(moduleName.toStdString(), fullName));
+142 
+143     \textcolor{keywordflow}{if}(Qt::Checked == newState)
+144     \{
+145       \textcolor{keywordflow}{if}(m_checkable)
+146       \{
+147         std::cout << \textcolor{stringliteral}{"Subscribing to "} << fullName << std::endl;
+148         pNavigator->getMonitoring()->getController()->subscribe(collectorName.toStdString(), request);
+149       \}
+150       \textcolor{keywordflow}{else}
+151       \{
+152         pNavigator->getMonitoring()->getController()->log(ERROR, \textcolor{stringliteral}{"Can't subscribe to monitor element to "} +
+       fullName + \textcolor{stringliteral}{" (disabled)"});
+153         \textcolor{keywordflow}{return};
+154       \}
+155     \}
+156     \textcolor{keywordflow}{else}
+157     \{
+158       std::cout << \textcolor{stringliteral}{"Un-subscribing to "} << fullName << std::endl;
+159       pNavigator->getMonitoring()->getController()->unsubscribe(collectorName.toStdString(), request);
+160     \}
+161   \}
+162 
+163   QTreeWidgetItem::setData(column, role, value);
+164 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}!m\+\_\+checkable@{m\+\_\+checkable}}
+\index{m\+\_\+checkable@{m\+\_\+checkable}!dqm4hep\+::\+Tree\+Widget\+Item@{dqm4hep\+::\+Tree\+Widget\+Item}}
+\subsubsection[{m\+\_\+checkable}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Tree\+Widget\+Item\+::m\+\_\+checkable\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TreeWidgetItem_ab9bfc2a05189c9ef303da9d213d5dc1f}
+
+
+Definition at line 74 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+Referenced by set\+Checkable(), and set\+Data().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View.\+cc}\end{DoxyCompactItemize}

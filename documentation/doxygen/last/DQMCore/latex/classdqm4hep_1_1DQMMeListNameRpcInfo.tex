@@ -1,0 +1,100 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Me\+List\+Name\+Rpc\+Info Class Reference}
+\label{classdqm4hep_1_1DQMMeListNameRpcInfo}\index{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Me\+List\+Name\+Rpc\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMeListNameRpcInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Me\+List\+Name\+Rpc\+Info} (char $\ast$rpc\+Info\+Name, {\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$p\+Client)
+\item 
+void {\bf rpc\+Info\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$ {\bf m\+\_\+p\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 60 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}!D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+\index{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+\subsubsection[{D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Info\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Client} $\ast$}]{p\+Client}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMeListNameRpcInfo_a6b991570b3fc5ddfb14d3a195a003ed7}
+
+
+Definition at line 56 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+\begin{DoxyCode}
+56                                                                                               :
+57     DimRpcInfo(rpcInfoName, (\textcolor{keywordtype}{void}*) DQMMonitorElementClient::m_emptyBufferStr.c\_str(), 
+      DQMMonitorElementClient::m_emptyBufferStr.size()),
+58     m_pClient(pClient)
+59 \{
+60   \textcolor{comment}{/* nop */}
+61 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}!rpc\+Info\+Handler@{rpc\+Info\+Handler}}
+\index{rpc\+Info\+Handler@{rpc\+Info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+\subsubsection[{rpc\+Info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info\+::rpc\+Info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMeListNameRpcInfo_aebe3adf43a158c6090106240968c69d0}
+
+
+Definition at line 65 of file D\+Q\+M\+Monitor\+Element\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::handle\+Me\+List\+Name\+Rpc\+Info(), and m\+\_\+p\+Client.
+
+
+\begin{DoxyCode}
+66 \{
+67   m_pClient->handleMeListNameRpcInfo(\textcolor{keyword}{this});
+68 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}!m\+\_\+p\+Client@{m\+\_\+p\+Client}}
+\index{m\+\_\+p\+Client@{m\+\_\+p\+Client}!dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info}}
+\subsubsection[{m\+\_\+p\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Me\+List\+Name\+Rpc\+Info\+::m\+\_\+p\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMeListNameRpcInfo_a03d611ceb0f11bc2adf3911990cb464d}
+
+
+Definition at line 67 of file D\+Q\+M\+Monitor\+Element\+Client.\+h.
+
+
+
+Referenced by rpc\+Info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Client.\+cc}\end{DoxyCompactItemize}

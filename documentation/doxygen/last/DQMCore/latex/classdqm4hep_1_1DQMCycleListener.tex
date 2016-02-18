@@ -1,0 +1,111 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Cycle\+Listener Class Reference}
+\label{classdqm4hep_1_1DQMCycleListener}\index{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}}
+
+
+\doxyref{D\+Q\+M\+Cycle\+Listener}{p.}{classdqm4hep_1_1DQMCycleListener} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Cycle.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Cycle\+Listener\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCycleListener}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Cycle\+Listener} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Event\+Processed} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle, const {\bf D\+Q\+M\+Event} $\ast$const p\+Event)=0
+\begin{DoxyCompactList}\small\item\em Call back function when an event is processed by the framework. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Cycle\+Started} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle)=0
+\begin{DoxyCompactList}\small\item\em Call back function when the cycle is started by the framework. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Cycle\+Stopped} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle)=0
+\begin{DoxyCompactList}\small\item\em Call back function when the cycle is stopped by the framework. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Cycle\+Listener}{p.}{classdqm4hep_1_1DQMCycleListener} class. 
+
+Definition at line 44 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}!````~D\+Q\+M\+Cycle\+Listener@{$\sim$\+D\+Q\+M\+Cycle\+Listener}}
+\index{````~D\+Q\+M\+Cycle\+Listener@{$\sim$\+D\+Q\+M\+Cycle\+Listener}!dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Cycle\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener\+::$\sim$\+D\+Q\+M\+Cycle\+Listener (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCycleListener_ac236d094d8e89098f29843da8e7a3a6d}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+49 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}!on\+Cycle\+Started@{on\+Cycle\+Started}}
+\index{on\+Cycle\+Started@{on\+Cycle\+Started}!dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}}
+\subsubsection[{on\+Cycle\+Started}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener\+::on\+Cycle\+Started (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycleListener_ab9d238178efd278dd88237fcfeb634bc}
+
+
+Call back function when the cycle is started by the framework. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_a74934c636524b8c2aa2488d083000610}, and {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_aea3bdd3fea801e56d78be70883c81c9b}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}!on\+Cycle\+Stopped@{on\+Cycle\+Stopped}}
+\index{on\+Cycle\+Stopped@{on\+Cycle\+Stopped}!dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}}
+\subsubsection[{on\+Cycle\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener\+::on\+Cycle\+Stopped (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycleListener_a24aa4e203342ab35794b41df9a6c37ec}
+
+
+Call back function when the cycle is stopped by the framework. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_a9faa5faf7ce5f4d825d45a9be6e7b5e3}, and {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_a71d5a2943bc4f0d9fa5d3629ff4b8caa}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}!on\+Event\+Processed@{on\+Event\+Processed}}
+\index{on\+Event\+Processed@{on\+Event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener@{dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener}}
+\subsubsection[{on\+Event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener\+::on\+Event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle, }
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycleListener_a2845abc69dbb59cfaf4fb6fc491bec8b}
+
+
+Call back function when an event is processed by the framework. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_adaa1b8a34ba4e04e66b37c982f716e32}, and {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_a46f168f9a1a2aa14c85380e81c8a3f80}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Cycle.\+h}\end{DoxyCompactItemize}

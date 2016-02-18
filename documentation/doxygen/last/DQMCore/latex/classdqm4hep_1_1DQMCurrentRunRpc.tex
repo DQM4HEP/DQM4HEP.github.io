@@ -1,0 +1,115 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Current\+Run\+Rpc Class Reference}
+\label{classdqm4hep_1_1DQMCurrentRunRpc}\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}}
+
+
+\doxyref{D\+Q\+M\+Current\+Run\+Rpc}{p.}{classdqm4hep_1_1DQMCurrentRunRpc} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Run\+Control\+Service.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Current\+Run\+Rpc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCurrentRunRpc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Current\+Run\+Rpc} (char $\ast$rpc\+Name, {\bf D\+Q\+M\+Run\+Control\+Service} $\ast$p\+Service)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf rpc\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim rpc handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Service} $\ast$ {\bf m\+\_\+p\+Service}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Current\+Run\+Rpc}{p.}{classdqm4hep_1_1DQMCurrentRunRpc} class. 
+
+Definition at line 51 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}!D\+Q\+M\+Current\+Run\+Rpc@{D\+Q\+M\+Current\+Run\+Rpc}}
+\index{D\+Q\+M\+Current\+Run\+Rpc@{D\+Q\+M\+Current\+Run\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}}
+\subsubsection[{D\+Q\+M\+Current\+Run\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+::\+D\+Q\+M\+Current\+Run\+Rpc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Name, }
+\item[{{\bf D\+Q\+M\+Run\+Control\+Service} $\ast$}]{p\+Service}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCurrentRunRpc_afcd0b2419c556ee62fcbdf26c748f8a2}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+\begin{DoxyCode}
+36                                                                                 :
+37     DimRpc(rpcName, \textcolor{stringliteral}{"I"}, \textcolor{stringliteral}{"C"}),
+38     m_pService(pService)
+39 \{
+40   \textcolor{comment}{/* nop */}
+41 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}!rpc\+Handler@{rpc\+Handler}}
+\index{rpc\+Handler@{rpc\+Handler}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}}
+\subsubsection[{rpc\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+::rpc\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCurrentRunRpc_a667563beb2e8ad55cb27b55c7f6bd180}
+
+
+Dim rpc handler. 
+
+
+
+Definition at line 45 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), and m\+\_\+p\+Service.
+
+
+\begin{DoxyCode}
+46 \{
+47   m_pService->handleCurrentRunRpc(\textcolor{keyword}{this});
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}!m\+\_\+p\+Service@{m\+\_\+p\+Service}}
+\index{m\+\_\+p\+Service@{m\+\_\+p\+Service}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc}}
+\subsubsection[{m\+\_\+p\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run\+Control\+Service}$\ast$ dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+::m\+\_\+p\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCurrentRunRpc_aa5efdfc51d4872001ec551abde83172a}
+
+
+Definition at line 64 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Service.\+h}\item 
+{\bf D\+Q\+M\+Run\+Control\+Service.\+cc}\end{DoxyCompactItemize}

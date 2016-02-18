@@ -1,0 +1,132 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+L\+C\+Str\+Vec\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMLCStrVecStreamer}\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}{p.}{classdqm4hep_1_1DQMLCStrVecStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLCStrVecStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize a L\+C\+Str\+Vec. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a L\+C\+Str\+Vec. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}{p.}{classdqm4hep_1_1DQMLCStrVecStreamer} class. 
+
+Definition at line 277 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCStrVecStreamer_a3945b4482895a7bb72b42daa38fa2c03}
+
+
+Deserialize a L\+C\+Str\+Vec. 
+
+The object is allocated in this function 
+
+Definition at line 1333 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+1334 \{
+1335   pLCObject = 0;
+1336   EVENT::LCStrVec *pStrVec = \textcolor{keyword}{new} EVENT::LCStrVec();
+1337 
+1338   \textcolor{keywordflow}{try}
+1339   \{
+1340     dqm_uint nVals = 0;
+1341     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nVals));
+1342 
+1343     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nVals ; i++)
+1344     \{
+1345       std::string value;
+1346       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+1347       pStrVec->push\_back(value);
+1348     \}
+1349   \}
+1350   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+1351   \{
+1352     \textcolor{keyword}{delete} pStrVec;
+1353     pStrVec = 0;
+1354     pLCObject = 0;
+1355 
+1356     \textcolor{keywordflow}{return} exception.getStatusCode();
+1357   \}
+1358 
+1359   pLCObject = pStrVec;
+1360 
+1361   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+1362 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Str\+Vec\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCStrVecStreamer_a39884bb8160d4f2d7bf7a472b5eaa650}
+
+
+Serialize a L\+C\+Str\+Vec. 
+
+
+
+Definition at line 1312 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+1313 \{
+1314   \textcolor{keyword}{const} EVENT::LCStrVec *\textcolor{keyword}{const} pStrVec = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::LCStrVec *const\textcolor{keyword}{>}(pLCObject);
+1315 
+1316   \textcolor{keywordflow}{if}(NULL == pStrVec)
+1317     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+1318 
+1319   dqm_uint nVals = pStrVec->size();
+1320   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nVals));
+1321 
+1322   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nVals ; i++)
+1323   \{
+1324     std::string value = pStrVec->at(i);
+1325     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+1326   \}
+1327 
+1328   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+1329 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

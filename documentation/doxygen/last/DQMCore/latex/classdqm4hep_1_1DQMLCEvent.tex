@@ -1,0 +1,210 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+L\+C\+Event Class Reference}
+\label{classdqm4hep_1_1DQMLCEvent}\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+
+
+\doxyref{D\+Q\+M\+L\+C\+Event}{p.}{classdqm4hep_1_1DQMLCEvent} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+L\+C\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMLCEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+L\+C\+Event} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$ {\bf get\+Event} () const 
+\begin{DoxyCompactList}\small\item\em Returns the stored lc event. \end{DoxyCompactList}\item 
+void {\bf set\+Event} (E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$p\+L\+C\+Event)
+\begin{DoxyCompactList}\small\item\em Set the handled lc event. \end{DoxyCompactList}\item 
+void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the handler by deleting the handled lc event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$ {\bf m\+\_\+p\+L\+C\+Event}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+L\+C\+Event}{p.}{classdqm4hep_1_1DQMLCEvent} class. 
+
+Wrapper for L\+C\+Event class to be used in D\+Q\+M system. Used in D\+Q\+M\+Analysis\+Module\+::process\+Event(\+D\+Q\+M\+Event) to monitor event. See \doxyref{D\+Q\+M\+Analysis\+Module}{p.}{classdqm4hep_1_1DQMAnalysisModule} on how to process it in the D\+Q\+M system framework 
+
+Definition at line 48 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!D\+Q\+M\+L\+C\+Event@{D\+Q\+M\+L\+C\+Event}}
+\index{D\+Q\+M\+L\+C\+Event@{D\+Q\+M\+L\+C\+Event}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{D\+Q\+M\+L\+C\+Event}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::\+D\+Q\+M\+L\+C\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMLCEvent_abccb39776f75708a476769b77a6ddac0}
+
+
+Constructor. 
+
+
+
+Definition at line 78 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+\begin{DoxyCode}
+78                               :
+79     m_pLCEvent(0)
+80 \{
+81 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!````~D\+Q\+M\+L\+C\+Event@{$\sim$\+D\+Q\+M\+L\+C\+Event}}
+\index{````~D\+Q\+M\+L\+C\+Event@{$\sim$\+D\+Q\+M\+L\+C\+Event}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{$\sim$\+D\+Q\+M\+L\+C\+Event}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::$\sim$\+D\+Q\+M\+L\+C\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMLCEvent_a6412cd6fc08a95ba35e4732a732b9f75}
+
+
+Destructor. 
+
+
+
+Definition at line 85 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+References clear().
+
+
+\begin{DoxyCode}
+86 \{
+87   clear();
+88 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEvent_a47b8653da5ab6d64277b756f553758bd}
+
+
+Clear the handler by deleting the handled lc event. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ E\+V\+E\+N\+T\+::\+L\+C\+Event $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMEventBase_afe7236fd5fe7e2fa719a1464e2195636}.
+
+
+
+Definition at line 107 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+::is\+Owner(), and m\+\_\+p\+L\+C\+Event.
+
+
+
+Referenced by set\+Event(), and $\sim$\+D\+Q\+M\+L\+C\+Event().
+
+
+\begin{DoxyCode}
+108 \{
+109   \textcolor{keywordflow}{if}(0 != m_pLCEvent && this->isOwner())
+110     \textcolor{keyword}{delete} m_pLCEvent;
+111 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{get\+Event}]{\setlength{\rightskip}{0pt plus 5cm}E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$ dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::get\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEvent_a3e2a3489740b65b9359decc4766fcee7}
+
+
+Returns the stored lc event. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ E\+V\+E\+N\+T\+::\+L\+C\+Event $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMEventBase_a2363bc09cadffa4806098fc9f031543f}.
+
+
+
+Definition at line 92 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+References m\+\_\+p\+L\+C\+Event.
+
+
+\begin{DoxyCode}
+93 \{
+94   \textcolor{keywordflow}{return} m_pLCEvent;
+95 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!set\+Event@{set\+Event}}
+\index{set\+Event@{set\+Event}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{set\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::set\+Event (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Event $\ast$}]{p\+L\+C\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEvent_a9085e7483f683553be7d0b8bde36c260}
+
+
+Set the handled lc event. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ E\+V\+E\+N\+T\+::\+L\+C\+Event $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMEventBase_afe393ecc545e9eb6dead7309c119f436}.
+
+
+
+Definition at line 99 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+References clear(), and m\+\_\+p\+L\+C\+Event.
+
+
+\begin{DoxyCode}
+100 \{
+101   clear();
+102   m_pLCEvent = pLCEvent;
+103 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}!m\+\_\+p\+L\+C\+Event@{m\+\_\+p\+L\+C\+Event}}
+\index{m\+\_\+p\+L\+C\+Event@{m\+\_\+p\+L\+C\+Event}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event}}
+\subsubsection[{m\+\_\+p\+L\+C\+Event}]{\setlength{\rightskip}{0pt plus 5cm}E\+V\+E\+N\+T\+::\+L\+C\+Event$\ast$ dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::m\+\_\+p\+L\+C\+Event\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLCEvent_aa4352d35f6b79ae67b97012c1e84d17d}
+
+
+Definition at line 72 of file D\+Q\+M\+L\+C\+Event.\+h.
+
+
+
+Referenced by clear(), get\+Event(), and set\+Event().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event.\+h}\end{DoxyCompactItemize}

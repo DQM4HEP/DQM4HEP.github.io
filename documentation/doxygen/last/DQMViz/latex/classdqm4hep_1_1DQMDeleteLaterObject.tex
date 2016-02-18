@@ -1,0 +1,132 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Delete\+Later\+Object$<$ T $>$ Class Template Reference}
+\label{classdqm4hep_1_1DQMDeleteLaterObject}\index{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object$<$ T $>$@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object$<$ T $>$}}
+
+
+\doxyref{D\+Q\+M\+Delete\+Later\+Object}{p.}{classdqm4hep_1_1DQMDeleteLaterObject} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Delete\+Later\+Object.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Delete\+Later\+Object$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMDeleteLaterObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Delete\+Later\+Object} (T $\ast$p\+Ptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Delete\+Later\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf delete\+Later\+Object} (T $\ast$p\+Ptr)
+\begin{DoxyCompactList}\small\item\em Delete the object in the qt event loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ {\bf m\+\_\+p\+Ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object$<$ T $>$}
+
+\doxyref{D\+Q\+M\+Delete\+Later\+Object}{p.}{classdqm4hep_1_1DQMDeleteLaterObject} class. 
+
+Allows to perform delete\+Later() on non-\/qt object. 
+
+Definition at line 42 of file D\+Q\+M\+Delete\+Later\+Object.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}!D\+Q\+M\+Delete\+Later\+Object@{D\+Q\+M\+Delete\+Later\+Object}}
+\index{D\+Q\+M\+Delete\+Later\+Object@{D\+Q\+M\+Delete\+Later\+Object}!dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}}
+\subsubsection[{D\+Q\+M\+Delete\+Later\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}$<$ T $>$\+::{\bf D\+Q\+M\+Delete\+Later\+Object} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\+Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDeleteLaterObject_a79bef4cd5fbbb6f4cebb467d21b38823}
+
+
+Constructor. 
+
+
+
+Definition at line 66 of file D\+Q\+M\+Delete\+Later\+Object.\+h.
+
+
+\begin{DoxyCode}
+66                                                             :
+67   m_pPtr(pPtr)
+68 \{
+69   \textcolor{comment}{/* nop */}
+70 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}!````~D\+Q\+M\+Delete\+Later\+Object@{$\sim$\+D\+Q\+M\+Delete\+Later\+Object}}
+\index{````~D\+Q\+M\+Delete\+Later\+Object@{$\sim$\+D\+Q\+M\+Delete\+Later\+Object}!dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Delete\+Later\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}$<$ T $>$\+::$\sim${\bf D\+Q\+M\+Delete\+Later\+Object} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMDeleteLaterObject_a282c9b87f50c8a21241ea6a79f4e11c9}
+
+
+Destructor. 
+
+
+
+Definition at line 75 of file D\+Q\+M\+Delete\+Later\+Object.\+h.
+
+
+\begin{DoxyCode}
+76 \{
+77   \textcolor{keyword}{delete} m_pPtr;
+78 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}!delete\+Later\+Object@{delete\+Later\+Object}}
+\index{delete\+Later\+Object@{delete\+Later\+Object}!dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}}
+\subsubsection[{delete\+Later\+Object}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}$<$ T $>$\+::delete\+Later\+Object (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\+Ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1DQMDeleteLaterObject_a056693f82d545fe2ee2e385248506469}
+
+
+Delete the object in the qt event loop. 
+
+
+
+Definition at line 83 of file D\+Q\+M\+Delete\+Later\+Object.\+h.
+
+
+\begin{DoxyCode}
+84 \{
+85   DQMDeleteLaterObject<T> *pDeleteObject = \textcolor{keyword}{new} DQMDeleteLaterObject<T>(pPtr);
+86   pDeleteObject->deleteLater();
+87 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}!m\+\_\+p\+Ptr@{m\+\_\+p\+Ptr}}
+\index{m\+\_\+p\+Ptr@{m\+\_\+p\+Ptr}!dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object@{dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}}
+\subsubsection[{m\+\_\+p\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf dqm4hep\+::\+D\+Q\+M\+Delete\+Later\+Object}$<$ T $>$\+::m\+\_\+p\+Ptr\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDeleteLaterObject_a0f8c55bb011426e2698240fce47270e5}
+
+
+Definition at line 59 of file D\+Q\+M\+Delete\+Later\+Object.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Delete\+Later\+Object.\+h}\end{DoxyCompactItemize}

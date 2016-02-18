@@ -1,0 +1,217 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Local\+File\+Handler Class Reference}
+\label{classdqm4hep_1_1DQMLocalFileHandler}\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+
+
+\doxyref{D\+Q\+M\+Local\+File\+Handler}{p.}{classdqm4hep_1_1DQMLocalFileHandler} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Local\+File\+Handler.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Local\+File\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLocalFileHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Local\+File\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Local\+File\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf type} () const 
+\begin{DoxyCompactList}\small\item\em Get the file handler type as string. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf download} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Download the file locally using the target pattern. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Local\+File\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the full file name after the download step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+type}
+\item 
+std\+::string {\bf m\+\_\+local\+File\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Local\+File\+Handler}{p.}{classdqm4hep_1_1DQMLocalFileHandler} class. 
+
+Definition at line 39 of file D\+Q\+M\+Local\+File\+Handler.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!D\+Q\+M\+Local\+File\+Handler@{D\+Q\+M\+Local\+File\+Handler}}
+\index{D\+Q\+M\+Local\+File\+Handler@{D\+Q\+M\+Local\+File\+Handler}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{D\+Q\+M\+Local\+File\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::\+D\+Q\+M\+Local\+File\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLocalFileHandler_a07ed63d57cb29d8c2dd8d765fa934944}
+
+
+Constructor. 
+
+
+
+Definition at line 34 of file D\+Q\+M\+Local\+File\+Handler.\+cc.
+
+
+\begin{DoxyCode}
+34                                          :
+35     m_type(\textcolor{stringliteral}{"local"})
+36 \{
+37   \textcolor{comment}{/* nop */}
+38 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!````~D\+Q\+M\+Local\+File\+Handler@{$\sim$\+D\+Q\+M\+Local\+File\+Handler}}
+\index{````~D\+Q\+M\+Local\+File\+Handler@{$\sim$\+D\+Q\+M\+Local\+File\+Handler}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Local\+File\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::$\sim$\+D\+Q\+M\+Local\+File\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLocalFileHandler_ae27f6577158792c7e42dd453780124a8}
+
+
+Destructor. 
+
+
+
+Definition at line 42 of file D\+Q\+M\+Local\+File\+Handler.\+cc.
+
+
+\begin{DoxyCode}
+43 \{
+44   \textcolor{comment}{/* nop */}
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!download@{download}}
+\index{download@{download}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{download}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::download (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLocalFileHandler_aecbd2ba5e8a920b641d0d47b104349d1}
+
+
+Download the file locally using the target pattern. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_afc41f890cb9390e88fb0c79a991cc270}.
+
+
+
+Definition at line 56 of file D\+Q\+M\+Local\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+local\+File\+Name.
+
+
+\begin{DoxyCode}
+57 \{
+58   \textcolor{keywordflow}{if}(fileName.empty())
+59     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+60 
+61   m_localFileName = fileName;
+62 
+63   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!get\+Local\+File\+Name@{get\+Local\+File\+Name}}
+\index{get\+Local\+File\+Name@{get\+Local\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{get\+Local\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::get\+Local\+File\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLocalFileHandler_ab8926e367e5992de8fb2ccb935b432c1}
+
+
+Get the full file name after the download step. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_a5a6dfa3bfb3965f897a1b7ee60f24ed8}.
+
+
+
+Definition at line 68 of file D\+Q\+M\+Local\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+local\+File\+Name.
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{return} m_localFileName;
+71 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!type@{type}}
+\index{type@{type}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLocalFileHandler_ae6b4b96b530e94ca376cbc91422bd8f6}
+
+
+Get the file handler type as string. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_adb64ac2dba492916a7e6105eacfc6837}.
+
+
+
+Definition at line 49 of file D\+Q\+M\+Local\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+type.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{keywordflow}{return} m_type;
+52 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!m\+\_\+local\+File\+Name@{m\+\_\+local\+File\+Name}}
+\index{m\+\_\+local\+File\+Name@{m\+\_\+local\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{m\+\_\+local\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::m\+\_\+local\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLocalFileHandler_abb343c5f3e8dedb42d936ae3dccc0ba4}
+
+
+Definition at line 64 of file D\+Q\+M\+Local\+File\+Handler.\+h.
+
+
+
+Referenced by download(), and get\+Local\+File\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Local\+File\+Handler\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLocalFileHandler_a402f7a667cf8fe5b2384fd45b92d4b1b}
+
+
+Definition at line 63 of file D\+Q\+M\+Local\+File\+Handler.\+h.
+
+
+
+Referenced by type().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Local\+File\+Handler.\+h}\item 
+{\bf D\+Q\+M\+Local\+File\+Handler.\+cc}\end{DoxyCompactItemize}

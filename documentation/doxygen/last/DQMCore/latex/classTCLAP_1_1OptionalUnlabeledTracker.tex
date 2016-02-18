@@ -1,0 +1,132 @@
+\section{T\+C\+L\+A\+P\+:\+:Optional\+Unlabeled\+Tracker Class Reference}
+\label{classTCLAP_1_1OptionalUnlabeledTracker}\index{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}}
+
+
+{\ttfamily \#include $<$Optional\+Unlabeled\+Tracker.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf check} (bool req, const std\+::string \&arg\+Name)
+\item 
+static void {\bf got\+Optional} ()
+\item 
+static bool \& {\bf already\+Optional} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \& {\bf already\+Optional\+Ref} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file Optional\+Unlabeled\+Tracker.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}!already\+Optional@{already\+Optional}}
+\index{already\+Optional@{already\+Optional}!T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}}
+\subsubsection[{already\+Optional}]{\setlength{\rightskip}{0pt plus 5cm}static bool\& T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::already\+Optional (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1OptionalUnlabeledTracker_a50fc04586196c0861491968fcdadf48b}
+
+
+Definition at line 40 of file Optional\+Unlabeled\+Tracker.\+h.
+
+
+
+References already\+Optional\+Ref().
+
+
+
+Referenced by check().
+
+
+\begin{DoxyCode}
+40 \{ \textcolor{keywordflow}{return} alreadyOptionalRef(); \} 
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}!already\+Optional\+Ref@{already\+Optional\+Ref}}
+\index{already\+Optional\+Ref@{already\+Optional\+Ref}!T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}}
+\subsubsection[{already\+Optional\+Ref}]{\setlength{\rightskip}{0pt plus 5cm}static bool\& T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::already\+Optional\+Ref (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}\label{classTCLAP_1_1OptionalUnlabeledTracker_a4e773e76c24d14316fc73826793f8dd5}
+
+
+Definition at line 44 of file Optional\+Unlabeled\+Tracker.\+h.
+
+
+
+Referenced by already\+Optional(), and got\+Optional().
+
+
+\begin{DoxyCode}
+44 \{ \textcolor{keyword}{static} \textcolor{keywordtype}{bool} ct = \textcolor{keyword}{false}; \textcolor{keywordflow}{return} ct; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}!check@{check}}
+\index{check@{check}!T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::check (
+\begin{DoxyParamCaption}
+\item[{bool}]{req, }
+\item[{const std\+::string \&}]{arg\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1OptionalUnlabeledTracker_a59bfa7d01b45d4796500470c9218e390}
+
+
+Definition at line 48 of file Optional\+Unlabeled\+Tracker.\+h.
+
+
+
+References already\+Optional(), and got\+Optional().
+
+
+
+Referenced by T\+C\+L\+A\+P\+::\+Unlabeled\+Multi\+Arg$<$ T $>$\+::\+Unlabeled\+Multi\+Arg(), and T\+C\+L\+A\+P\+::\+Unlabeled\+Value\+Arg$<$ T $>$\+::\+Unlabeled\+Value\+Arg().
+
+
+\begin{DoxyCode}
+49 \{
+50     \textcolor{keywordflow}{if} ( OptionalUnlabeledTracker::alreadyOptional() )
+51         \textcolor{keywordflow}{throw}( SpecificationException(
+52   \textcolor{stringliteral}{"You can't specify ANY Unlabeled Arg following an optional Unlabeled Arg"},
+53                   argName ) );
+54 
+55     \textcolor{keywordflow}{if} ( !req )
+56         OptionalUnlabeledTracker::gotOptional();
+57 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}!got\+Optional@{got\+Optional}}
+\index{got\+Optional@{got\+Optional}!T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker@{T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker}}
+\subsubsection[{got\+Optional}]{\setlength{\rightskip}{0pt plus 5cm}static void T\+C\+L\+A\+P\+::\+Optional\+Unlabeled\+Tracker\+::got\+Optional (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classTCLAP_1_1OptionalUnlabeledTracker_aca1fc2a02fbde351cce7ea05f0e6ef89}
+
+
+Definition at line 38 of file Optional\+Unlabeled\+Tracker.\+h.
+
+
+
+References already\+Optional\+Ref().
+
+
+
+Referenced by check().
+
+
+\begin{DoxyCode}
+38 \{ alreadyOptionalRef() = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Optional\+Unlabeled\+Tracker.\+h}\end{DoxyCompactItemize}

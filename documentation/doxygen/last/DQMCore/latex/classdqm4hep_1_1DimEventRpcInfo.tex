@@ -1,0 +1,127 @@
+\section{dqm4hep\+:\+:Dim\+Event\+Rpc\+Info Class Reference}
+\label{classdqm4hep_1_1DimEventRpcInfo}\index{dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}}
+
+
+\doxyref{Dim\+Event\+Rpc\+Info}{p.}{classdqm4hep_1_1DimEventRpcInfo} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Event\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Dim\+Event\+Rpc\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DimEventRpcInfo}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Dim\+Event\+Rpc\+Info} ({\bf D\+Q\+M\+Dim\+Event\+Client} $\ast$p\+Event\+Client)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf rpc\+Info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim handler of rpc info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client} $\ast$ {\bf m\+\_\+p\+Event\+Client}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Dim\+Event\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Dim\+Event\+Rpc\+Info}{p.}{classdqm4hep_1_1DimEventRpcInfo} class. 
+
+Definition at line 48 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}!Dim\+Event\+Rpc\+Info@{Dim\+Event\+Rpc\+Info}}
+\index{Dim\+Event\+Rpc\+Info@{Dim\+Event\+Rpc\+Info}!dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}}
+\subsubsection[{Dim\+Event\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Dim\+Event\+Rpc\+Info\+::\+Dim\+Event\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Dim\+Event\+Client} $\ast$}]{p\+Event\+Client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DimEventRpcInfo_a361ce42d2fba06b541ac79bc982bf0ad}
+
+
+Constructor. 
+
+
+
+Definition at line 39 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+\begin{DoxyCode}
+39                                                                 :
+40   DimRpcInfo((\textcolor{keywordtype}{char}*) (\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + pEventClient->getCollectorName() + \textcolor{stringliteral}{"
+      /EVENT\_RAW\_BUFFER\_UPDATE"}).c\_str(), (\textcolor{keywordtype}{void}*) NULL, 0),
+41   m_pEventClient(pEventClient)
+42 \{
+43   \textcolor{comment}{/* nop */}
+44 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}!rpc\+Info\+Handler@{rpc\+Info\+Handler}}
+\index{rpc\+Info\+Handler@{rpc\+Info\+Handler}!dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}}
+\subsubsection[{rpc\+Info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Dim\+Event\+Rpc\+Info\+::rpc\+Info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DimEventRpcInfo_adf89467b00f90def581ba830ccddb0b5}
+
+
+Dim handler of rpc info. 
+
+
+
+Definition at line 48 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception(), and m\+\_\+p\+Event\+Client.
+
+
+\begin{DoxyCode}
+49 \{
+50   m_pEventClient->eventReception( (dqm_char *) getData(), (dqm_uint) getSize() );
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}!D\+Q\+M\+Dim\+Event\+Client@{D\+Q\+M\+Dim\+Event\+Client}}
+\index{D\+Q\+M\+Dim\+Event\+Client@{D\+Q\+M\+Dim\+Event\+Client}!dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}}
+\subsubsection[{D\+Q\+M\+Dim\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Dim\+Event\+Client}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DimEventRpcInfo_a781e535ef2d0bc4f4e5475cec120f6a8}
+
+
+Definition at line 50 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}!m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}}
+\index{m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}!dqm4hep\+::\+Dim\+Event\+Rpc\+Info@{dqm4hep\+::\+Dim\+Event\+Rpc\+Info}}
+\subsubsection[{m\+\_\+p\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Dim\+Event\+Client}$\ast$ dqm4hep\+::\+Dim\+Event\+Rpc\+Info\+::m\+\_\+p\+Event\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DimEventRpcInfo_a9e6b92e3691116e7ea69d3f07577e80e}
+
+
+Definition at line 61 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by rpc\+Info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,261 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+L\+C\+Parameters\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMLCParametersStreamer}\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+L\+C\+Parameters\+Streamer}{p.}{classdqm4hep_1_1DQMLCParametersStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+L\+C\+Parameters\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLCParametersStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Parameters $\ast$const p\+L\+Carameters, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize the L\+C\+Parameters in data\+Stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Parameters $\ast$\&p\+L\+C\+Parameters, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the L\+C\+Parameters from data\+Stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+L\+C\+Parameters\+Streamer}{p.}{classdqm4hep_1_1DQMLCParametersStreamer} class. 
+
+Definition at line 56 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Parameters $\ast$\&}]{p\+L\+C\+Parameters, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCParametersStreamer_a31488fa0a108c8e6db29ae1242807cbd}
+
+
+Deserialize the L\+C\+Parameters from data\+Stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamer$<$ E\+V\+E\+N\+T\+::\+L\+C\+Parameters $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMStreamer_a45424f285015b093ccbd7bfd3a38249d}.
+
+
+
+Definition at line 403 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize(), and dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::deserialize().
+
+
+\begin{DoxyCode}
+405 \{
+406   dqm_int nInt = 0;
+407   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nInt));
+408 
+409   \textcolor{keywordflow}{if}(nInt != 0)
+410   \{
+411     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<nInt ; i++)
+412     \{
+413       std::string key;
+414       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(key));
+415 
+416       dqm_int vecSize = 0;
+417       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(vecSize));
+418 
+419       EVENT::IntVec intValues;
+420 
+421       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<vecSize ; j++)
+422       \{
+423         dqm_int value = 0;
+424         RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+425         intValues.push\_back(value);
+426       \}
+427 
+428       pLCParameters->setValues(key, intValues);
+429     \}
+430   \}
+431 
+432   dqm_int nFloat = 0;
+433   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nFloat));
+434 
+435   \textcolor{keywordflow}{if}(nFloat != 0)
+436   \{
+437     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<nFloat ; i++)
+438     \{
+439       std::string key;
+440       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(key));
+441 
+442       dqm_int vecSize = 0;
+443       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(vecSize));
+444 
+445       EVENT::FloatVec floatValues;
+446 
+447       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<vecSize ; j++)
+448       \{
+449         dqm_float value = 0.f;
+450         RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+451         floatValues.push\_back(value);
+452       \}
+453 
+454       pLCParameters->setValues(key, floatValues);
+455     \}
+456   \}
+457 
+458   dqm_int nString = 0;
+459   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nString));
+460 
+461   \textcolor{keywordflow}{if}(nString != 0)
+462   \{
+463     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<nString ; i++)
+464     \{
+465       std::string key;
+466       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(key));
+467 
+468       dqm_int vecSize = 0;
+469       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(vecSize));
+470 
+471       EVENT::StringVec stringValues;
+472 
+473       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<vecSize ; j++)
+474       \{
+475         std::string value;
+476         RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+477         stringValues.push\_back(value);
+478       \}
+479 
+480       pLCParameters->setValues(key, stringValues);
+481     \}
+482   \}
+483 
+484   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+485 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Parameters $\ast$const}]{p\+L\+Carameters, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCParametersStreamer_a0b60a1d164f9441ef525909528aebc8b}
+
+
+Serialize the L\+C\+Parameters in data\+Stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamer$<$ E\+V\+E\+N\+T\+::\+L\+C\+Parameters $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMStreamer_abc54751ecafff0a88046f41fa4110fcf}.
+
+
+
+Definition at line 320 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize(), and dqm4hep\+::\+D\+Q\+M\+L\+C\+Collection\+Streamer\+::serialize().
+
+
+\begin{DoxyCode}
+322 \{
+323   \textcolor{comment}{// write int keys/values}
+324   EVENT::StringVec keys;
+325   pLCParameters->getIntKeys(keys);
+326   dqm_int nKeys = keys.size();
+327 
+328   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeys));
+329 
+330   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<keys.size() ; i++)
+331   \{
+332     EVENT::IntVec intVec;
+333     pLCParameters->getIntVals(keys.at(i), intVec);
+334 
+335     std::string key = keys.at(i);
+336     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(key));
+337 
+338     dqm_int nKeyParams = intVec.size();
+339     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeyParams));
+340 
+341     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<intVec.size() ; j++)
+342     \{
+343       dqm_int val = intVec.at(j);
+344       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(val));
+345     \}
+346   \}
+347 
+348 
+349   \textcolor{comment}{// write float keys/values}
+350   keys.clear();
+351   pLCParameters->getFloatKeys(keys);
+352   nKeys = keys.size();
+353   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeys));
+354 
+355   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<keys.size() ; i++)
+356   \{
+357     EVENT::FloatVec floatVec;
+358     pLCParameters->getFloatVals(keys.at(i), floatVec);
+359 
+360     std::string key = keys.at(i);
+361     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(key));
+362 
+363     dqm_int nKeyParams = floatVec.size();
+364     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeyParams));
+365 
+366     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<floatVec.size() ; j++)
+367     \{
+368       dqm_float val = floatVec.at(j);
+369       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(val));
+370     \}
+371   \}
+372 
+373 
+374   \textcolor{comment}{// write string keys/values}
+375   keys.clear();
+376   pLCParameters->getStringKeys(keys);
+377   nKeys = keys.size();
+378   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeys));
+379 
+380   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<keys.size() ; i++)
+381   \{
+382     EVENT::StringVec stringVec;
+383     pLCParameters->getStringVals(keys.at(i), stringVec);
+384 
+385     std::string key = keys.at(i);
+386     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(key));
+387 
+388     dqm_int nKeyParams = stringVec.size();
+389     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nKeyParams));
+390 
+391     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0 ; j<stringVec.size() ; j++)
+392     \{
+393       std::string val = stringVec.at(j);
+394       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(val));
+395     \}
+396   \}
+397 
+398   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+399 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

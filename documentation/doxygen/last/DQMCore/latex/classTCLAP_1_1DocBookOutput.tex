@@ -1,0 +1,468 @@
+\section{T\+C\+L\+A\+P\+:\+:Doc\+Book\+Output Class Reference}
+\label{classTCLAP_1_1DocBookOutput}\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+
+
+A class that generates Doc\+Book output for \doxyref{usage()}{p.}{classTCLAP_1_1DocBookOutput_adc1ec93f3f7e5e912690be01c5e7d6e2} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args.  
+
+
+
+
+{\ttfamily \#include $<$Doc\+Book\+Output.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Doc\+Book\+Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1DocBookOutput}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf usage} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the usage to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf version} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the version to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf failure} ({\bf Cmd\+Line\+Interface} \&c, {\bf Arg\+Exception} \&e)
+\begin{DoxyCompactList}\small\item\em Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf substitute\+Special\+Chars} (std\+::string \&s, char r, std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em Substitutes the char r for string x in string s. \end{DoxyCompactList}\item 
+void {\bf remove\+Char} (std\+::string \&s, char r)
+\item 
+void {\bf basename} (std\+::string \&s)
+\item 
+void {\bf print\+Short\+Arg} ({\bf Arg} $\ast$it)
+\item 
+void {\bf print\+Long\+Arg} ({\bf Arg} $\ast$it)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char {\bf the\+Delimiter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that generates Doc\+Book output for \doxyref{usage()}{p.}{classTCLAP_1_1DocBookOutput_adc1ec93f3f7e5e912690be01c5e7d6e2} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args. 
+
+Definition at line 43 of file Doc\+Book\+Output.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!basename@{basename}}
+\index{basename@{basename}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{basename}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::basename (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_a82d49ab25845c7d191863be9c482409e}
+
+
+Definition at line 203 of file Doc\+Book\+Output.\+h.
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+204 \{
+205   \textcolor{keywordtype}{size\_t} p = s.find\_last\_of(\textcolor{charliteral}{'/'});
+206   \textcolor{keywordflow}{if} ( p != std::string::npos )
+207   \{
+208     s.erase(0, p + 1);
+209   \}
+210 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!failure@{failure}}
+\index{failure@{failure}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{failure}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::failure (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c, }
+\item[{{\bf Arg\+Exception} \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1DocBookOutput_a5e97f659fa1ab3b060a31e8bd7a0a40e}
+
+
+Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+{\em e} & -\/ The \doxyref{Arg\+Exception}{p.}{classTCLAP_1_1ArgException} that caused the failure. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ad23a57ac3d8d957a4328fc78aec94e16}.
+
+
+
+Definition at line 174 of file Doc\+Book\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+Exception\+::what().
+
+
+\begin{DoxyCode}
+176 \{ 
+177   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(\_cmd); \textcolor{comment}{// unused}
+178   std::cout << e.what() << std::endl;
+179   \textcolor{keywordflow}{throw} ExitException(1);
+180 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!print\+Long\+Arg@{print\+Long\+Arg}}
+\index{print\+Long\+Arg@{print\+Long\+Arg}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{print\+Long\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::print\+Long\+Arg (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{it}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_a891cf5ef71592b5261691575c2adad1d}
+
+
+Definition at line 252 of file Doc\+Book\+Output.\+h.
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+253 \{
+254   std::string lt = \textcolor{stringliteral}{"&lt;"}; 
+255   std::string gt = \textcolor{stringliteral}{"&gt;"}; 
+256 
+257   std::string desc = a->getDescription();
+258   substituteSpecialChars(desc,\textcolor{charliteral}{'<'},lt);
+259   substituteSpecialChars(desc,\textcolor{charliteral}{'>'},gt);
+260 
+261   std::cout << \textcolor{stringliteral}{"<varlistentry>"} << std::endl;
+262 
+263   \textcolor{keywordflow}{if} ( !a->getFlag().empty() )
+264   \{
+265     std::cout << \textcolor{stringliteral}{"<term>"} << std::endl;
+266     std::cout << \textcolor{stringliteral}{"<option>"};
+267     std::cout << a->flagStartChar() << a->getFlag();
+268     std::cout << \textcolor{stringliteral}{"</option>"} << std::endl;
+269     std::cout << \textcolor{stringliteral}{"</term>"} << std::endl;
+270   \}
+271 
+272   std::cout << \textcolor{stringliteral}{"<term>"} << std::endl;
+273   std::cout << \textcolor{stringliteral}{"<option>"};
+274   std::cout << a->nameStartString() << a->getName();
+275   \textcolor{keywordflow}{if} ( a->isValueRequired() )
+276   \{
+277     std::string arg = a->shortID();
+278     removeChar(arg,\textcolor{charliteral}{'['});
+279     removeChar(arg,\textcolor{charliteral}{']'});
+280     removeChar(arg,\textcolor{charliteral}{'<'});
+281     removeChar(arg,\textcolor{charliteral}{'>'});
+282     arg.erase(0, arg.find\_last\_of(theDelimiter) + 1);
+283     std::cout << theDelimiter;
+284     std::cout << \textcolor{stringliteral}{"<replaceable>"} << arg << \textcolor{stringliteral}{"</replaceable>"};
+285   \}
+286   std::cout << \textcolor{stringliteral}{"</option>"} << std::endl;
+287   std::cout << \textcolor{stringliteral}{"</term>"} << std::endl;
+288 
+289   std::cout << \textcolor{stringliteral}{"<listitem>"} << std::endl;
+290   std::cout << \textcolor{stringliteral}{"<para>"} << std::endl;
+291   std::cout << desc << std::endl;
+292   std::cout << \textcolor{stringliteral}{"</para>"} << std::endl;
+293   std::cout << \textcolor{stringliteral}{"</listitem>"} << std::endl;
+294 
+295   std::cout << \textcolor{stringliteral}{"</varlistentry>"} << std::endl;
+296 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!print\+Short\+Arg@{print\+Short\+Arg}}
+\index{print\+Short\+Arg@{print\+Short\+Arg}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{print\+Short\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::print\+Short\+Arg (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{it}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_a980ecacfcda0186a76bb6c37a9c33726}
+
+
+Definition at line 212 of file Doc\+Book\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::accepts\+Multiple\+Values(), T\+C\+L\+A\+P\+::\+Arg\+::is\+Required(), remove\+Char(), T\+C\+L\+A\+P\+::\+Arg\+::short\+I\+D(), and substitute\+Special\+Chars().
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+213 \{
+214   std::string lt = \textcolor{stringliteral}{"&lt;"}; 
+215   std::string gt = \textcolor{stringliteral}{"&gt;"}; 
+216 
+217   std::string \textcolor{keywordtype}{id} = a->shortID();
+218   substituteSpecialChars(\textcolor{keywordtype}{id},\textcolor{charliteral}{'<'},lt);
+219   substituteSpecialChars(\textcolor{keywordtype}{id},\textcolor{charliteral}{'>'},gt);
+220   removeChar(\textcolor{keywordtype}{id},\textcolor{charliteral}{'['});
+221   removeChar(\textcolor{keywordtype}{id},\textcolor{charliteral}{']'});
+222   
+223   std::string choice = \textcolor{stringliteral}{"opt"};
+224   \textcolor{keywordflow}{if} ( a->isRequired() )
+225     choice = \textcolor{stringliteral}{"plain"};
+226 
+227   std::cout << \textcolor{stringliteral}{"<arg choice='"} << choice << \textcolor{charliteral}{'\(\backslash\)''};
+228   \textcolor{keywordflow}{if} ( a->acceptsMultipleValues() )
+229     std::cout << \textcolor{stringliteral}{" rep='repeat'"};
+230 
+231 
+232   std::cout << '>\textcolor{stringliteral}{';}
+233 \textcolor{stringliteral}{  if ( !a->getFlag().empty() )}
+234 \textcolor{stringliteral}{    std::cout << a->flagStartChar() << a->getFlag();}
+235 \textcolor{stringliteral}{  else}
+236 \textcolor{stringliteral}{    std::cout << a->nameStartString() << a->getName();}
+237 \textcolor{stringliteral}{  if ( a->isValueRequired() )}
+238 \textcolor{stringliteral}{  \{}
+239 \textcolor{stringliteral}{    std::string arg = a->shortID();}
+240 \textcolor{stringliteral}{    removeChar(arg,'}[\textcolor{stringliteral}{');}
+241 \textcolor{stringliteral}{    removeChar(arg,'}]\textcolor{stringliteral}{');}
+242 \textcolor{stringliteral}{    removeChar(arg,'}<\textcolor{stringliteral}{');}
+243 \textcolor{stringliteral}{    removeChar(arg,'}>\textcolor{stringliteral}{');}
+244 \textcolor{stringliteral}{    arg.erase(0, arg.find\_last\_of(theDelimiter) + 1);}
+245 \textcolor{stringliteral}{    std::cout << theDelimiter;}
+246 \textcolor{stringliteral}{    std::cout << "<replaceable>" << arg << "</replaceable>";}
+247 \textcolor{stringliteral}{  \}}
+248 \textcolor{stringliteral}{  std::cout << "</arg>" << std::endl;}
+249 \textcolor{stringliteral}{}
+250 \textcolor{stringliteral}{\}}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!remove\+Char@{remove\+Char}}
+\index{remove\+Char@{remove\+Char}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{remove\+Char}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::remove\+Char (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{s, }
+\item[{char}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_abc059536cb97c49da4e6c5b4a22c6cef}
+
+
+Definition at line 194 of file Doc\+Book\+Output.\+h.
+
+
+
+Referenced by print\+Short\+Arg().
+
+
+\begin{DoxyCode}
+195 \{
+196   \textcolor{keywordtype}{size\_t} p;
+197   \textcolor{keywordflow}{while} ( (p = s.find\_first\_of(r)) != std::string::npos )
+198   \{
+199     s.erase(p,1);
+200   \}
+201 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!substitute\+Special\+Chars@{substitute\+Special\+Chars}}
+\index{substitute\+Special\+Chars@{substitute\+Special\+Chars}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{substitute\+Special\+Chars}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::substitute\+Special\+Chars (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{s, }
+\item[{char}]{r, }
+\item[{std\+::string \&}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_a7546eaf3a0effeea1030afb27b4c698f}
+
+
+Substitutes the char r for string x in string s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & -\/ The string to operate on. \\
+\hline
+{\em r} & -\/ The char to replace. \\
+\hline
+{\em x} & -\/ What to replace r with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 182 of file Doc\+Book\+Output.\+h.
+
+
+
+Referenced by print\+Short\+Arg().
+
+
+\begin{DoxyCode}
+185 \{
+186   \textcolor{keywordtype}{size\_t} p;
+187   \textcolor{keywordflow}{while} ( (p = s.find\_first\_of(r)) != std::string::npos )
+188   \{
+189     s.erase(p,1);
+190     s.insert(p,x);
+191   \}
+192 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!usage@{usage}}
+\index{usage@{usage}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::usage (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1DocBookOutput_adc1ec93f3f7e5e912690be01c5e7d6e2}
+
+
+Prints the usage to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_a685b13db5bf6bbe5159e49169cd96bbe}.
+
+
+
+Definition at line 95 of file Doc\+Book\+Output.\+h.
+
+
+
+References basename(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::contains(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Arg\+List(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Delimiter(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Message(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Program\+Name(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Version(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Xor\+Handler(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::get\+Xor\+List(), print\+Long\+Arg(), print\+Short\+Arg(), and the\+Delimiter.
+
+
+\begin{DoxyCode}
+96 \{
+97   std::list<Arg*> argList = \_cmd.getArgList();
+98   std::string progName = \_cmd.getProgramName();
+99   std::string xversion = \_cmd.getVersion();
+100   theDelimiter = \_cmd.getDelimiter();
+101   XorHandler xorHandler = \_cmd.getXorHandler();
+102   std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+103   basename(progName);
+104 
+105   std::cout << \textcolor{stringliteral}{"<?xml version='1.0'?>"} << std::endl;
+106   std::cout << \textcolor{stringliteral}{"<!DOCTYPE refentry PUBLIC \(\backslash\)"-//OASIS//DTD DocBook XML V4.2//EN\(\backslash\)""} << std::endl;
+107   std::cout << \textcolor{stringliteral}{"\(\backslash\)t\(\backslash\)"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd\(\backslash\)">"} << std::endl << std::endl;
+108 
+109   std::cout << \textcolor{stringliteral}{"<refentry>"} << std::endl;
+110 
+111   std::cout << \textcolor{stringliteral}{"<refmeta>"} << std::endl;
+112   std::cout << \textcolor{stringliteral}{"<refentrytitle>"} << progName << \textcolor{stringliteral}{"</refentrytitle>"} << std::endl;
+113   std::cout << \textcolor{stringliteral}{"<manvolnum>1</manvolnum>"} << std::endl;
+114   std::cout << \textcolor{stringliteral}{"</refmeta>"} << std::endl;
+115 
+116   std::cout << \textcolor{stringliteral}{"<refnamediv>"} << std::endl;
+117   std::cout << \textcolor{stringliteral}{"<refname>"} << progName << \textcolor{stringliteral}{"</refname>"} << std::endl;
+118   std::cout << \textcolor{stringliteral}{"<refpurpose>"} << \_cmd.getMessage() << \textcolor{stringliteral}{"</refpurpose>"} << std::endl;
+119   std::cout << \textcolor{stringliteral}{"</refnamediv>"} << std::endl;
+120 
+121   std::cout << \textcolor{stringliteral}{"<refsynopsisdiv>"} << std::endl;
+122   std::cout << \textcolor{stringliteral}{"<cmdsynopsis>"} << std::endl;
+123 
+124   std::cout << \textcolor{stringliteral}{"<command>"} << progName << \textcolor{stringliteral}{"</command>"} << std::endl;
+125 
+126   \textcolor{comment}{// xor}
+127   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; (\textcolor{keywordtype}{unsigned} int)i < xorList.size(); i++ )
+128   \{
+129     std::cout << \textcolor{stringliteral}{"<group choice='req'>"} << std::endl;
+130     \textcolor{keywordflow}{for} ( ArgVectorIterator it = xorList[i].begin(); 
+131             it != xorList[i].end(); it++ )
+132       printShortArg((*it));
+133 
+134     std::cout << \textcolor{stringliteral}{"</group>"} << std::endl;
+135   \}
+136   
+137   \textcolor{comment}{// rest of args}
+138   \textcolor{keywordflow}{for} (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+139     \textcolor{keywordflow}{if} ( !xorHandler.contains( (*it) ) )
+140       printShortArg((*it));
+141 
+142   std::cout << \textcolor{stringliteral}{"</cmdsynopsis>"} << std::endl;
+143   std::cout << \textcolor{stringliteral}{"</refsynopsisdiv>"} << std::endl;
+144 
+145   std::cout << \textcolor{stringliteral}{"<refsect1>"} << std::endl;
+146   std::cout << \textcolor{stringliteral}{"<title>Description</title>"} << std::endl;
+147   std::cout << \textcolor{stringliteral}{"<para>"} << std::endl;
+148   std::cout << \_cmd.getMessage() << std::endl; 
+149   std::cout << \textcolor{stringliteral}{"</para>"} << std::endl;
+150   std::cout << \textcolor{stringliteral}{"</refsect1>"} << std::endl;
+151 
+152   std::cout << \textcolor{stringliteral}{"<refsect1>"} << std::endl;
+153   std::cout << \textcolor{stringliteral}{"<title>Options</title>"} << std::endl;
+154 
+155   std::cout << \textcolor{stringliteral}{"<variablelist>"} << std::endl;
+156   
+157   \textcolor{keywordflow}{for} (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+158     printLongArg((*it));
+159 
+160   std::cout << \textcolor{stringliteral}{"</variablelist>"} << std::endl;
+161   std::cout << \textcolor{stringliteral}{"</refsect1>"} << std::endl;
+162 
+163   std::cout << \textcolor{stringliteral}{"<refsect1>"} << std::endl;
+164   std::cout << \textcolor{stringliteral}{"<title>Version</title>"} << std::endl;
+165   std::cout << \textcolor{stringliteral}{"<para>"} << std::endl;
+166   std::cout << xversion << std::endl; 
+167   std::cout << \textcolor{stringliteral}{"</para>"} << std::endl;
+168   std::cout << \textcolor{stringliteral}{"</refsect1>"} << std::endl;
+169   
+170   std::cout << \textcolor{stringliteral}{"</refentry>"} << std::endl;
+171 
+172 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!version@{version}}
+\index{version@{version}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::version (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1DocBookOutput_a3ccf7671dcae82aba5f0e91850ae25a4}
+
+
+Prints the version to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ae052fea473132482296de55edb3dd480}.
+
+
+
+Definition at line 90 of file Doc\+Book\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Version().
+
+
+\begin{DoxyCode}
+91 \{ 
+92   std::cout << \_cmd.getVersion() << std::endl;
+93 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}!the\+Delimiter@{the\+Delimiter}}
+\index{the\+Delimiter@{the\+Delimiter}!T\+C\+L\+A\+P\+::\+Doc\+Book\+Output@{T\+C\+L\+A\+P\+::\+Doc\+Book\+Output}}
+\subsubsection[{the\+Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}char T\+C\+L\+A\+P\+::\+Doc\+Book\+Output\+::the\+Delimiter\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1DocBookOutput_a081a02a93ce13f694d078c79fe42a7c8}
+
+
+Definition at line 86 of file Doc\+Book\+Output.\+h.
+
+
+
+Referenced by usage().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Doc\+Book\+Output.\+h}\end{DoxyCompactItemize}

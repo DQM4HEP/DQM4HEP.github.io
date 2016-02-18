@@ -1,0 +1,488 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Plugin\+Manager Class Reference}
+\label{classdqm4hep_1_1DQMPluginManager}\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+
+
+\doxyref{D\+Q\+M\+Plugin\+Manager}{p.}{classdqm4hep_1_1DQMPluginManager} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Plugin\+Manager.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Plugin\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMPluginManager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf load\+Libraries} ()
+\begin{DoxyCompactList}\small\item\em Load shared libraries from the environment variable D\+Q\+M4\+H\+E\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+L\+L. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf load\+Libraries} (const {\bf String\+Vector} \&library\+Name\+List)
+\begin{DoxyCompactList}\small\item\em Load the shared libraries. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf load\+Library} (const std\+::string \&library\+Name)
+\begin{DoxyCompactList}\small\item\em Load the shared library. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Plugin} $\ast$ {\bf get\+Plugin} (const std\+::string \&plugin\+Name) const 
+\begin{DoxyCompactList}\small\item\em Get the plug-\/in by name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bf create\+Plugin\+Class} (const std\+::string \&plugin\+Name) const 
+\begin{DoxyCompactList}\small\item\em Get the plug-\/in clone. \end{DoxyCompactList}\item 
+bool {\bf is\+Plugin\+Registered} (const std\+::string \&plugin\+Name) const 
+\begin{DoxyCompactList}\small\item\em Whether the plug-\/in is registered within the plug-\/in manager. \end{DoxyCompactList}\item 
+{\bf String\+Vector} {\bf get\+Plugin\+Name\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the plug-\/in name list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const \\*
+std\+::string, {\bf D\+Q\+M\+Plugin} $\ast$ $>$ {\bf D\+Q\+M\+Plugin\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Plugin\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Plugin\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf register\+Plugin} ({\bf D\+Q\+M\+Plugin} $\ast$p\+Plugin)
+\begin{DoxyCompactList}\small\item\em Register the plug-\/in. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Plugin\+Map} {\bf m\+\_\+plugin\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$}
+\item 
+class {\bf D\+Q\+M\+Plugin}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Plugin\+Manager}{p.}{classdqm4hep_1_1DQMPluginManager} class. 
+
+Responsible for loading shared libraries that contains \doxyref{D\+Q\+M\+Plugin}{p.}{classdqm4hep_1_1DQMPlugin} instances 
+
+Definition at line 45 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!D\+Q\+M\+Plugin\+Map@{D\+Q\+M\+Plugin\+Map}}
+\index{D\+Q\+M\+Plugin\+Map@{D\+Q\+M\+Plugin\+Map}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{D\+Q\+M\+Plugin\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$const std\+::string, {\bf D\+Q\+M\+Plugin}$\ast$$>$ {\bf dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::\+D\+Q\+M\+Plugin\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPluginManager_ab041e200e9dee0b7f47f52bef3955339}
+
+
+Definition at line 50 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!D\+Q\+M\+Plugin\+Manager@{D\+Q\+M\+Plugin\+Manager}}
+\index{D\+Q\+M\+Plugin\+Manager@{D\+Q\+M\+Plugin\+Manager}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{D\+Q\+M\+Plugin\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::\+D\+Q\+M\+Plugin\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPluginManager_af76fc4c6b92a513e01df287e50a6f7b2}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+\begin{DoxyCode}
+39 \{
+40   \textcolor{comment}{/* nop */}
+41 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!````~D\+Q\+M\+Plugin\+Manager@{$\sim$\+D\+Q\+M\+Plugin\+Manager}}
+\index{````~D\+Q\+M\+Plugin\+Manager@{$\sim$\+D\+Q\+M\+Plugin\+Manager}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Plugin\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::$\sim$\+D\+Q\+M\+Plugin\+Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPluginManager_afbf508bd92beac6a68b7645ea6a9a1e4}
+
+
+Destructor. 
+
+
+
+Definition at line 45 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References m\+\_\+plugin\+Map.
+
+
+\begin{DoxyCode}
+46 \{
+47   \textcolor{keywordflow}{for}( DQMPluginMap::const\_iterator iter = m_pluginMap.begin(), endIter = 
+      m_pluginMap.end() ;
+48       endIter != iter ; ++iter )
+49   \{
+50     \textcolor{keyword}{delete} iter->second;
+51   \}
+52 
+53   m_pluginMap.clear();
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!create\+Plugin\+Class@{create\+Plugin\+Class}}
+\index{create\+Plugin\+Class@{create\+Plugin\+Class}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{create\+Plugin\+Class}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::create\+Plugin\+Class (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{plugin\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMPluginManager_afa6ce479d56c1a95b45b31e95d24add8}
+
+
+Get the plug-\/in clone. 
+
+A new plug-\/in instance is allocated and returned to the user. Ownership of the plug-\/in transfered to the caller. 
+
+Definition at line 104 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Plugin\+::create(), and get\+Plugin().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Module(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings().
+
+
+\begin{DoxyCode}
+105 \{
+106   DQMPlugin *pPlugin = this->getPlugin( pluginName );
+107 
+108   \textcolor{keywordflow}{if}(!pPlugin)
+109     \textcolor{keywordflow}{return} 0;
+110 
+111   DQMPlugin *pClass = pPlugin->create();
+112 
+113   \textcolor{keywordflow}{if}(NULL == pClass)
+114     \textcolor{keywordflow}{return} 0;
+115 
+116   \textcolor{keywordflow}{return} \textcolor{keyword}{dynamic\_cast<}T *\textcolor{keyword}{>}(pClass);
+117 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!get\+Plugin@{get\+Plugin}}
+\index{get\+Plugin@{get\+Plugin}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{get\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Plugin} $\ast$ dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::get\+Plugin (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{plugin\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPluginManager_a42a04e78048f0fc740d2c613033c09b5}
+
+
+Get the plug-\/in by name. 
+
+
+
+Definition at line 133 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References is\+Plugin\+Registered(), and m\+\_\+plugin\+Map.
+
+
+
+Referenced by create\+Plugin\+Class().
+
+
+\begin{DoxyCode}
+134 \{
+135   \textcolor{keywordflow}{if}( ! isPluginRegistered( pluginName ) )
+136     \textcolor{keywordflow}{return} 0;
+137 
+138   \textcolor{keywordflow}{return} m_pluginMap.find( pluginName )->second;
+139 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!get\+Plugin\+Name\+List@{get\+Plugin\+Name\+List}}
+\index{get\+Plugin\+Name\+List@{get\+Plugin\+Name\+List}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{get\+Plugin\+Name\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String\+Vector} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::get\+Plugin\+Name\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPluginManager_a90eeddfd359cb39862f6116743e50966}
+
+
+Get the plug-\/in name list. 
+
+
+
+Definition at line 150 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References m\+\_\+plugin\+Map.
+
+
+\begin{DoxyCode}
+151 \{
+152   StringVector pluginNameList;
+153 
+154   \textcolor{keywordflow}{for}( DQMPluginMap::const\_iterator iter = m_pluginMap.begin(), endIter = 
+      m_pluginMap.end() ;
+155       endIter != iter ; ++iter )
+156   \{
+157     pluginNameList.push\_back( iter->first );
+158   \}
+159 
+160   \textcolor{keywordflow}{return} pluginNameList;
+161 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!is\+Plugin\+Registered@{is\+Plugin\+Registered}}
+\index{is\+Plugin\+Registered@{is\+Plugin\+Registered}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{is\+Plugin\+Registered}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::is\+Plugin\+Registered (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{plugin\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMPluginManager_a32bc677aa487a46646e3dd9d579346ff}
+
+
+Whether the plug-\/in is registered within the plug-\/in manager. 
+
+
+
+Definition at line 143 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References m\+\_\+plugin\+Map.
+
+
+
+Referenced by get\+Plugin(), and register\+Plugin().
+
+
+\begin{DoxyCode}
+144 \{
+145   \textcolor{keywordflow}{return} ( m_pluginMap.find( pluginName ) != m_pluginMap.end() );
+146 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!load\+Libraries@{load\+Libraries}}
+\index{load\+Libraries@{load\+Libraries}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{load\+Libraries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::load\+Libraries (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPluginManager_ad93edc3603e3a00c29bdaa147993fcf1}
+
+
+Load shared libraries from the environment variable D\+Q\+M4\+H\+E\+P\+\_\+\+P\+L\+U\+G\+I\+N\+\_\+\+D\+L\+L. 
+
+
+
+Definition at line 58 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::tokenize().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{comment}{// get the environment plug-in dll variable}
+61   \textcolor{keywordtype}{char} *pPluginDllEnv = getenv( \textcolor{stringliteral}{"DQM4HEP\_PLUGIN\_DLL"} );
+62 
+63   \textcolor{keywordflow}{if}( pPluginDllEnv == 0 )
+64   \{
+65     streamlog\_out( ERROR ) << \textcolor{stringliteral}{"Environment variable DQM4HEP\_PLUGIN\_DLL not found ! \(\backslash\)n"}
+66         \textcolor{stringliteral}{"Set it before loading shared libraries. \(\backslash\)n"}
+67         \textcolor{stringliteral}{"Example : export DQM4HEP\_PLUGIN\_DLL=libPlugin1.so:libPlugin2.so"} << std::endl;
+68 
+69     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+70   \}
+71 
+72   \textcolor{comment}{// split the string into a list}
+73   std::string libraryConcatenateList( pPluginDllEnv );
+74   StringVector libraryList;
+75 
+76   DQM4HEP::tokenize( libraryConcatenateList, libraryList, \textcolor{stringliteral}{":"} );
+77 
+78   \textcolor{comment}{// load the shared libraries}
+79   \textcolor{keywordflow}{return} this->loadLibraries( libraryList );
+80 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!load\+Libraries@{load\+Libraries}}
+\index{load\+Libraries@{load\+Libraries}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{load\+Libraries}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::load\+Libraries (
+\begin{DoxyParamCaption}
+\item[{const {\bf String\+Vector} \&}]{library\+Name\+List}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPluginManager_ae6ed8e489aa9161df10eaf25921d5190}
+
+
+Load the shared libraries. 
+
+
+
+Definition at line 84 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References load\+Library(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+85 \{
+86   \textcolor{keywordflow}{for}( StringVector::const\_iterator iter = libraryNameList.begin(), endIter = libraryNameList.end() ;
+87       endIter != iter ; ++iter )
+88   \{
+89     RETURN_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, this->loadLibrary( *iter ) );
+90   \}
+91 
+92   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+93 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!load\+Library@{load\+Library}}
+\index{load\+Library@{load\+Library}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{load\+Library}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::load\+Library (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{library\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMPluginManager_ab95b15a626515eeac4a34db9f61620d1}
+
+
+Load the shared library. 
+
+
+
+Definition at line 97 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+Referenced by load\+Libraries().
+
+
+\begin{DoxyCode}
+98 \{
+99   \textcolor{keywordtype}{size\_t} idx = libraryName.find\_last\_of( \textcolor{stringliteral}{"/"} );
+100 
+101   \textcolor{comment}{// the library basename, i.e. /path/to/libBlah.so --> libBlah.so}
+102   std::string libBaseName( libraryName.substr( idx + 1 ) );
+103 
+104   \textcolor{keywordtype}{char} *real\_path = realpath( libraryName.c\_str(), NULL );
+105 
+106   \textcolor{keywordflow}{if}( NULL != real\_path )
+107   \{
+108     std::cout << \textcolor{stringliteral}{"<!-- Loading shared library : "} << real\_path << \textcolor{stringliteral}{" ("}<< libBaseName << \textcolor{stringliteral}{")-->"} << std::endl
+       ;
+109 
+110     \textcolor{comment}{// use real\_path}
+111     free( real\_path );
+112   \}
+113   \textcolor{keywordflow}{else}
+114   \{
+115     std::cout << \textcolor{stringliteral}{"<!-- Loading shared library : "} << libraryName << \textcolor{stringliteral}{" ("}<< libBaseName << \textcolor{stringliteral}{")-->"} << 
+      std::endl ;
+116   \}
+117 
+118   \textcolor{keywordtype}{void} *pLibPointer = dlopen( libraryName.c\_str(), RTLD\_LAZY | RTLD\_GLOBAL );
+119 
+120   \textcolor{keywordflow}{if}( pLibPointer == 0 )
+121   \{
+122     std::cout << std::endl << \textcolor{stringliteral}{"<!-- ERROR loading shared library : "} << libraryName << std::endl
+123                         << \textcolor{stringliteral}{"    ->    "}   << dlerror() << \textcolor{stringliteral}{" -->"} << std::endl << std::endl;
+124 
+125     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+126   \}
+127   \textcolor{keywordflow}{else}
+128     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+129 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!register\+Plugin@{register\+Plugin}}
+\index{register\+Plugin@{register\+Plugin}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{register\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::register\+Plugin (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Plugin} $\ast$}]{p\+Plugin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPluginManager_a5ab2c607e6d9758450ab04228b54ab04}
+
+
+Register the plug-\/in. 
+
+Only available by plug-\/ins themselves 
+
+Definition at line 165 of file D\+Q\+M\+Plugin\+Manager.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Plugin\+::get\+Plugin\+Name(), is\+Plugin\+Registered(), and m\+\_\+plugin\+Map.
+
+
+\begin{DoxyCode}
+166 \{
+167   \textcolor{comment}{// null ptr case}
+168   \textcolor{keywordflow}{if}( NULL == pPlugin )
+169     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+170 
+171   \textcolor{comment}{// check if the plug is already registered}
+172   \textcolor{keywordflow}{if}( isPluginRegistered( pPlugin->getPluginName() ) )
+173   \{
+174     \textcolor{keyword}{delete} pPlugin;
+175     pPlugin = NULL;
+176     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_PRESENT;
+177   \}
+178 
+179   \textcolor{comment}{// try to register it}
+180   \textcolor{keywordflow}{if}( ! m_pluginMap.insert( DQMPluginMap::value\_type( pPlugin->getPluginName(), pPlugin ) ).second )
+181   \{
+182     \textcolor{keyword}{delete} pPlugin;
+183     pPlugin = NULL;
+184 
+185     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+186   \}
+187 
+188   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+189 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!D\+Q\+M\+Plugin@{D\+Q\+M\+Plugin}}
+\index{D\+Q\+M\+Plugin@{D\+Q\+M\+Plugin}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{D\+Q\+M\+Plugin}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Plugin}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMPluginManager_adc5aab8b0ba6690e1916f3e63bb0476e}
+
+
+Definition at line 48 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$@{D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$}}
+\index{D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$@{D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Singleton}$<$ {\bf D\+Q\+M\+Plugin\+Manager} $>$\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMPluginManager_a02f3058917f0df5a3711f3aa1b9b4e5f}
+
+
+Definition at line 47 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}!m\+\_\+plugin\+Map@{m\+\_\+plugin\+Map}}
+\index{m\+\_\+plugin\+Map@{m\+\_\+plugin\+Map}!dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager@{dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager}}
+\subsubsection[{m\+\_\+plugin\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Plugin\+Map} dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::m\+\_\+plugin\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMPluginManager_afcfa53c8c17d4c6bccceeb849466fb0c}
+
+
+Definition at line 97 of file D\+Q\+M\+Plugin\+Manager.\+h.
+
+
+
+Referenced by get\+Plugin(), get\+Plugin\+Name\+List(), is\+Plugin\+Registered(), register\+Plugin(), and $\sim$\+D\+Q\+M\+Plugin\+Manager().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Plugin\+Manager.\+h}\item 
+{\bf D\+Q\+M\+Plugin\+Manager.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,315 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Statistics\+Service Class Reference}
+\label{classdqm4hep_1_1DQMStatisticsService}\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+
+
+\doxyref{D\+Q\+M\+Statistics\+Service}{p.}{classdqm4hep_1_1DQMStatisticsService} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Statistics\+Service.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Statistics\+Service} (const std\+::string \&base\+Service\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Statistics\+Service} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf update} (unsigned int statistics)
+\begin{DoxyCompactList}\small\item\em Update the service with the new statistics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bf accumulate\+Stats} (unsigned int sum, const {\bf D\+Q\+M\+Stats} \&stats)
+\begin{DoxyCompactList}\small\item\em Static function to pass to std\+::accumulate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Stats\+List} {\bf m\+\_\+stats\+List}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Last\+Update\+Time\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Rate\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Mean\+Stats\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Last\+Update\+Statistics\+Service}
+\item 
+long long int {\bf m\+\_\+last\+Stats\+Timestamp}
+\item 
+float {\bf m\+\_\+rate}
+\item 
+float {\bf m\+\_\+mean\+Stats}
+\item 
+int {\bf m\+\_\+last\+Statistics}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Statistics\+Service}{p.}{classdqm4hep_1_1DQMStatisticsService} class. 
+
+Definition at line 42 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!D\+Q\+M\+Statistics\+Service@{D\+Q\+M\+Statistics\+Service}}
+\index{D\+Q\+M\+Statistics\+Service@{D\+Q\+M\+Statistics\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{D\+Q\+M\+Statistics\+Service}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::\+D\+Q\+M\+Statistics\+Service (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{base\+Service\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStatisticsService_a4f66bd2f69e835eb20b3b0dbfa7fc70d}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Statistics\+Service.\+cc.
+
+
+
+References m\+\_\+last\+Statistics, m\+\_\+last\+Stats\+Timestamp, m\+\_\+mean\+Stats, m\+\_\+p\+Last\+Update\+Statistics\+Service, m\+\_\+p\+Last\+Update\+Time\+Service, m\+\_\+p\+Mean\+Stats\+Service, m\+\_\+p\+Rate\+Service, and m\+\_\+rate.
+
+
+\begin{DoxyCode}
+37 \{
+38   m_lastStatsTimestamp = 0;
+39   m_rate = 0;
+40   m_meanStats = 0;
+41   m_lastStatistics = 0;
+42 
+43   m_pLastUpdateTimeService = \textcolor{keyword}{new} DimService((baseServiceName + \textcolor{stringliteral}{"/LAST\_UPDATE\_TIME"}).c\_str(), 
+      m_lastStatsTimestamp);
+44   m_pRateService = \textcolor{keyword}{new} DimService((baseServiceName + \textcolor{stringliteral}{"/RATE"}).c\_str(), m_rate);
+45   m_pMeanStatsService = \textcolor{keyword}{new} DimService((baseServiceName + \textcolor{stringliteral}{"/MEAN\_STATS"}).c\_str(), 
+      m_meanStats);
+46   m_pLastUpdateStatisticsService = \textcolor{keyword}{new} DimService((baseServiceName + \textcolor{stringliteral}{"/LAST\_UPDATE\_STATS"}).c\_str(), 
+      m_lastStatistics);
+47 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!````~D\+Q\+M\+Statistics\+Service@{$\sim$\+D\+Q\+M\+Statistics\+Service}}
+\index{````~D\+Q\+M\+Statistics\+Service@{$\sim$\+D\+Q\+M\+Statistics\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Statistics\+Service}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::$\sim$\+D\+Q\+M\+Statistics\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStatisticsService_a64a3839e9cde89e407ea254ccd5c25e6}
+
+
+Destructor. 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Statistics\+Service.\+cc.
+
+
+
+References m\+\_\+p\+Last\+Update\+Statistics\+Service, m\+\_\+p\+Last\+Update\+Time\+Service, m\+\_\+p\+Mean\+Stats\+Service, and m\+\_\+p\+Rate\+Service.
+
+
+\begin{DoxyCode}
+52 \{
+53   \textcolor{keyword}{delete} m_pLastUpdateTimeService;
+54   \textcolor{keyword}{delete} m_pRateService;
+55   \textcolor{keyword}{delete} m_pMeanStatsService;
+56   \textcolor{keyword}{delete} m_pLastUpdateStatisticsService;
+57 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!accumulate\+Stats@{accumulate\+Stats}}
+\index{accumulate\+Stats@{accumulate\+Stats}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{accumulate\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::accumulate\+Stats (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sum, }
+\item[{const {\bf D\+Q\+M\+Stats} \&}]{stats}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_ada41375e259d742f7cca17e6171ad0cc}
+
+
+Static function to pass to std\+::accumulate. 
+
+
+
+Definition at line 90 of file D\+Q\+M\+Statistics\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Stats\+::m\+\_\+statistics.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+91 \{
+92   \textcolor{keywordflow}{return} sum + stats.m\_statistics;
+93 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!update@{update}}
+\index{update@{update}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::update (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{statistics}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStatisticsService_a72a72ca0d40535574a6d490db4d56450}
+
+
+Update the service with the new statistics. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Statistics\+Service.\+cc.
+
+
+
+References accumulate\+Stats(), m\+\_\+last\+Statistics, m\+\_\+last\+Stats\+Timestamp, m\+\_\+mean\+Stats, m\+\_\+p\+Last\+Update\+Statistics\+Service, m\+\_\+p\+Last\+Update\+Time\+Service, m\+\_\+p\+Mean\+Stats\+Service, m\+\_\+p\+Rate\+Service, m\+\_\+rate, dqm4hep\+::\+D\+Q\+M\+Stats\+::m\+\_\+statistics, m\+\_\+stats\+List, and dqm4hep\+::\+D\+Q\+M\+Stats\+::m\+\_\+time\+Stamp.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Reception(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::handle\+Me\+Collect\+Update().
+
+
+\begin{DoxyCode}
+62 \{
+63   \textcolor{keywordflow}{if}(m_statsList.size() == 1000)
+64     m_statsList.erase(m_statsList.begin());
+65 
+66   DQMStats stats;
+67   stats.m\_timeStamp = time(0);
+68   stats.m\_statistics = statistics;
+69   m_statsList.push\_back(stats);
+70 
+71   \textcolor{keywordtype}{float} timeDif = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(difftime((*(m_statsList.end()-1)).m\_timeStamp, (*
+      m_statsList.begin()).m\_timeStamp));
+72 
+73   \textcolor{comment}{// WARNING !! wrong calculation but avoid NaN}
+74   \textcolor{keywordflow}{if}(timeDif - 0.f < std::numeric\_limits<float>::epsilon())
+75     timeDif = 1.f;
+76 
+77   m_lastStatsTimestamp = stats.m\_timeStamp;
+78   m_rate = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m_statsList.size()) / static\_cast<float>(timeDif);
+79   m_meanStats = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(std::accumulate(m_statsList.begin(), 
+      m_statsList.end(), 0, DQMStatisticsService::accumulateStats)) / \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(
+      m_statsList.size());
+80   m_lastStatistics = statistics;
+81 
+82   m_pLastUpdateTimeService->updateService(m_lastStatsTimestamp);
+83   m_pRateService->updateService(m_rate);
+84   m_pMeanStatsService->updateService(m_meanStats);
+85   m_pLastUpdateStatisticsService->updateService(m_lastStatistics);
+86 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+last\+Statistics@{m\+\_\+last\+Statistics}}
+\index{m\+\_\+last\+Statistics@{m\+\_\+last\+Statistics}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+last\+Statistics}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+last\+Statistics\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_acfcec80b81758d43ff3650d088c7b915}
+
+
+Definition at line 73 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), and update().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+last\+Stats\+Timestamp@{m\+\_\+last\+Stats\+Timestamp}}
+\index{m\+\_\+last\+Stats\+Timestamp@{m\+\_\+last\+Stats\+Timestamp}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+last\+Stats\+Timestamp}]{\setlength{\rightskip}{0pt plus 5cm}long long int dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+last\+Stats\+Timestamp\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_aced9b777ff2d9a5645d78486a75ebda8}
+
+
+Definition at line 70 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), and update().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+mean\+Stats@{m\+\_\+mean\+Stats}}
+\index{m\+\_\+mean\+Stats@{m\+\_\+mean\+Stats}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+mean\+Stats}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+mean\+Stats\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_af4eac564ffd040f6698935ab489b6ea2}
+
+
+Definition at line 72 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), and update().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+p\+Last\+Update\+Statistics\+Service@{m\+\_\+p\+Last\+Update\+Statistics\+Service}}
+\index{m\+\_\+p\+Last\+Update\+Statistics\+Service@{m\+\_\+p\+Last\+Update\+Statistics\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+p\+Last\+Update\+Statistics\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+p\+Last\+Update\+Statistics\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_aafe28918a623558922bcc716e95c82a8}
+
+
+Definition at line 68 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), update(), and $\sim$\+D\+Q\+M\+Statistics\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+p\+Last\+Update\+Time\+Service@{m\+\_\+p\+Last\+Update\+Time\+Service}}
+\index{m\+\_\+p\+Last\+Update\+Time\+Service@{m\+\_\+p\+Last\+Update\+Time\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+p\+Last\+Update\+Time\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+p\+Last\+Update\+Time\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_a6a507a322090693e41a35778705f270e}
+
+
+Definition at line 65 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), update(), and $\sim$\+D\+Q\+M\+Statistics\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+p\+Mean\+Stats\+Service@{m\+\_\+p\+Mean\+Stats\+Service}}
+\index{m\+\_\+p\+Mean\+Stats\+Service@{m\+\_\+p\+Mean\+Stats\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+p\+Mean\+Stats\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+p\+Mean\+Stats\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_a9a82c990117d46dfe94b70f707df7730}
+
+
+Definition at line 67 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), update(), and $\sim$\+D\+Q\+M\+Statistics\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+p\+Rate\+Service@{m\+\_\+p\+Rate\+Service}}
+\index{m\+\_\+p\+Rate\+Service@{m\+\_\+p\+Rate\+Service}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+p\+Rate\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+p\+Rate\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_a119a73beaa28e7c74307f11784de9760}
+
+
+Definition at line 66 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), update(), and $\sim$\+D\+Q\+M\+Statistics\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+rate@{m\+\_\+rate}}
+\index{m\+\_\+rate@{m\+\_\+rate}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+rate}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+rate\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_ae217b7e02bc0fb156b7f40fc84b9ca75}
+
+
+Definition at line 71 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Statistics\+Service(), and update().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}!m\+\_\+stats\+List@{m\+\_\+stats\+List}}
+\index{m\+\_\+stats\+List@{m\+\_\+stats\+List}!dqm4hep\+::\+D\+Q\+M\+Statistics\+Service@{dqm4hep\+::\+D\+Q\+M\+Statistics\+Service}}
+\subsubsection[{m\+\_\+stats\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Stats\+List} dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::m\+\_\+stats\+List\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMStatisticsService_a834e94084e7afb83984c03d4327c3273}
+
+
+Definition at line 63 of file D\+Q\+M\+Statistics\+Service.\+h.
+
+
+
+Referenced by update().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Statistics\+Service.\+h}\item 
+{\bf D\+Q\+M\+Statistics\+Service.\+cc}\end{DoxyCompactItemize}

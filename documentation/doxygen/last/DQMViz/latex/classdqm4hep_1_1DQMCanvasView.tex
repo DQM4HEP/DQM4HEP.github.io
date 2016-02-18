@@ -1,0 +1,1362 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Canvas\+View Class Reference}
+\label{classdqm4hep_1_1DQMCanvasView}\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+
+
+\doxyref{D\+Q\+M\+Canvas\+View}{p.}{classdqm4hep_1_1DQMCanvasView} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Canvas\+View.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Canvas\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCanvasView}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf create\+Canvas\+Area} (const std\+::string \&area\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a canvas area. \end{DoxyCompactList}\item 
+virtual void {\bf create\+Canvas\+Area\+And\+Set\+Current} (const std\+::string \&area\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a canvas area and set it as current. \end{DoxyCompactList}\item 
+virtual void {\bf draw\+In\+Current\+Area} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Draw the monitor element in the current area. \end{DoxyCompactList}\item 
+virtual void {\bf draw\+In\+Area} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element, int index)
+\begin{DoxyCompactList}\small\item\em Draw the monitor element in area indexed by 'index'. \end{DoxyCompactList}\item 
+virtual void {\bf draw\+In\+New\+Area} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element, const std\+::string \&area\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Draw the monitor element in a new area. \end{DoxyCompactList}\item 
+virtual void {\bf remove\+Canvas\+Area} (int index)
+\begin{DoxyCompactList}\small\item\em Remove the canvas area by index. \end{DoxyCompactList}\item 
+virtual void {\bf rename\+Canvas\+Area} (int index, const std\+::string \&new\+Area\+Name)
+\begin{DoxyCompactList}\small\item\em Rename the canvas area indexed by 'index' with name 'new\+Area\+Name'. \end{DoxyCompactList}\item 
+virtual void {\bf clear\+Area} (int index)
+\begin{DoxyCompactList}\small\item\em Clear the area indexed by 'index'. \end{DoxyCompactList}\item 
+virtual void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear and remove all canvas areas. \end{DoxyCompactList}\item 
+virtual void {\bf show\+Context\+Menu} (const Q\+Point \&point)
+\begin{DoxyCompactList}\small\item\em Show the context menu of this widget. \end{DoxyCompactList}\item 
+virtual void {\bf set\+Current\+Canvas\+Area} (int index)
+\begin{DoxyCompactList}\small\item\em Set the current canvas area by index. \end{DoxyCompactList}\item 
+virtual void {\bf move\+Canvas} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas, int new\+Area\+Index)
+\begin{DoxyCompactList}\small\item\em Move the canvas from the current area to the area indexed by 'index'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas\+View} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring, Q\+Widget $\ast$p\+Parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Canvas\+View} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+Ti\+Xml\+Element $\ast$ {\bf to\+Xml} () const 
+\begin{DoxyCompactList}\small\item\em Export settings to xml element. \end{DoxyCompactList}\item 
+void {\bf from\+Xml} (Ti\+Xml\+Element $\ast$const p\+Xml\+Element)
+\begin{DoxyCompactList}\small\item\em Import settings from xml element. \end{DoxyCompactList}\item 
+virtual {\bf D\+Q\+M\+Canvas\+Area} $\ast$ {\bf get\+Current\+Canvas\+Area} () const 
+\begin{DoxyCompactList}\small\item\em Get the current canvas area. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf get\+Current\+Canvas\+Area\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the current canvas area name. \end{DoxyCompactList}\item 
+virtual {\bf D\+Q\+M\+Canvas\+Area} $\ast$ {\bf get\+Canvas\+Area} (int index) const 
+\begin{DoxyCompactList}\small\item\em Get the canvas area by index. \end{DoxyCompactList}\item 
+virtual int {\bf get\+Canvas\+Area\+Index} ({\bf D\+Q\+M\+Canvas\+Area} $\ast$p\+Canvas\+Area) const 
+\begin{DoxyCompactList}\small\item\em Get the canvas area index using an instance of canvas area. \end{DoxyCompactList}\item 
+virtual std\+::string {\bf get\+Canvas\+Area\+Name} (int index) const 
+\begin{DoxyCompactList}\small\item\em Get the canvas area name by index. \end{DoxyCompactList}\item 
+virtual int {\bf canvas\+Area\+Count} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of canvas areas. \end{DoxyCompactList}\item 
+virtual Q\+List$<$ {\bf D\+Q\+M\+Canvas\+Area} $\ast$ $>$ {\bf canvas\+Area\+List} () const 
+\begin{DoxyCompactList}\small\item\em Get the canvas area list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf event\+Filter} (Q\+Object $\ast$p\+Object, Q\+Event $\ast$p\+Event)
+\begin{DoxyCompactList}\small\item\em Event filter mainly used to process the context menu. \end{DoxyCompactList}\item 
+virtual Q\+Menu $\ast$ {\bf create\+Context\+Menu} () const 
+\begin{DoxyCompactList}\small\item\em Create the context menu. \end{DoxyCompactList}\item 
+void {\bf rename\+Canvas\+Area\+From\+Input\+Dialog} (int index)
+\begin{DoxyCompactList}\small\item\em Rename the canvas area given by 'index'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Rename\+Area\+Action\+Triggered} ()
+\begin{DoxyCompactList}\small\item\em Handle rename area action triggered by context menu. \end{DoxyCompactList}\item 
+void {\bf handle\+Remove\+Area\+Action\+Triggered} ()
+\begin{DoxyCompactList}\small\item\em Handle remove area action triggered by context menu. \end{DoxyCompactList}\item 
+void {\bf handle\+Clear\+Area\+Action\+Triggered} ()
+\begin{DoxyCompactList}\small\item\em Handle clear area action triggered by context menu. \end{DoxyCompactList}\item 
+void {\bf handle\+Save\+As\+Action\+Triggered} ()
+\begin{DoxyCompactList}\small\item\em Handle save as action triggered by context menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+{\bf D\+Q\+M\+Tab\+Widget} $\ast$ {\bf m\+\_\+p\+Tab\+Widget}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Canvas\+View}{p.}{classdqm4hep_1_1DQMCanvasView} class. 
+
+Definition at line 51 of file D\+Q\+M\+Canvas\+View.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!D\+Q\+M\+Canvas\+View@{D\+Q\+M\+Canvas\+View}}
+\index{D\+Q\+M\+Canvas\+View@{D\+Q\+M\+Canvas\+View}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{D\+Q\+M\+Canvas\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::\+D\+Q\+M\+Canvas\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring, }
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasView_a6b5a2e3be9a867b707ccf9c72f78cd8b}
+
+
+Constructor. 
+
+
+
+Definition at line 84 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Canvas\+Area(), m\+\_\+p\+Tab\+Widget, and remove\+Canvas\+Area().
+
+
+\begin{DoxyCode}
+84                                                                          :
+85     QWidget(pParent),
+86     m_pMonitoring(pMonitoring)
+87 \{
+88   setLayout(\textcolor{keyword}{new} QHBoxLayout());
+89   m_pTabWidget = \textcolor{keyword}{new} DQMTabWidget(\textcolor{keyword}{this});
+90   layout()->addWidget(m_pTabWidget);
+91   m_pTabWidget->installEventFilter(\textcolor{keyword}{this});
+92 
+93   m_pTabWidget->setMovable(\textcolor{keyword}{true});
+94   m_pTabWidget->setTabsClosable(\textcolor{keyword}{true});
+95 
+96     QToolButton *pButton = \textcolor{keyword}{new} QToolButton(m_pTabWidget);
+97     pButton->setText(\textcolor{stringliteral}{"+"});
+98     pButton->setAutoRaise(\textcolor{keyword}{true});
+99     m_pTabWidget->setCornerWidget(pButton);
+100 
+101   this->createCanvasArea(\textcolor{stringliteral}{"Canvas area"});
+102 
+103   connect(m_pTabWidget, SIGNAL(tabCloseRequested(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      removeCanvasArea(\textcolor{keywordtype}{int})));
+104   connect(pButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(createCanvasArea()));
+105 
+106   installEventFilter(\textcolor{keyword}{this});
+107 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!````~D\+Q\+M\+Canvas\+View@{$\sim$\+D\+Q\+M\+Canvas\+View}}
+\index{````~D\+Q\+M\+Canvas\+View@{$\sim$\+D\+Q\+M\+Canvas\+View}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Canvas\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::$\sim$\+D\+Q\+M\+Canvas\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a444206f3e7ae281f8ddff4a2c77f1954}
+
+
+Destructor. 
+
+
+
+Definition at line 111 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References get\+Canvas\+Area(), and m\+\_\+p\+Tab\+Widget.
+
+
+\begin{DoxyCode}
+112 \{
+113   \textcolor{keywordflow}{while}(m_pTabWidget->count() != 0)
+114   \{
+115     DQMCanvasArea *pCanvasArea = this->getCanvasArea(0);
+116     m_pTabWidget->removeTab(0);
+117     pCanvasArea->deleteLater();
+118   \}
+119 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!canvas\+Area\+Count@{canvas\+Area\+Count}}
+\index{canvas\+Area\+Count@{canvas\+Area\+Count}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{canvas\+Area\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::canvas\+Area\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_ad92ac996828263b3c72806295e432875}
+
+
+Get the number of canvas areas. 
+
+
+
+Definition at line 335 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu(), and to\+Xml().
+
+
+\begin{DoxyCode}
+336 \{
+337   \textcolor{keywordflow}{return} m_pTabWidget->count();
+338 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!canvas\+Area\+List@{canvas\+Area\+List}}
+\index{canvas\+Area\+List@{canvas\+Area\+List}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{canvas\+Area\+List}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf D\+Q\+M\+Canvas\+Area} $\ast$ $>$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::canvas\+Area\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_adfc267abfec3b1c49fb765f85bdea2a4}
+
+
+Get the canvas area list. 
+
+
+
+Definition at line 342 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References get\+Canvas\+Area(), and m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+343 \{
+344   QList<DQMCanvasArea*> list;
+345 
+346   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pTabWidget->count() ; i++)
+347   \{
+348     DQMCanvasArea *pCanvasArea = this->getCanvasArea(i);
+349 
+350     \textcolor{keywordflow}{if}(!pCanvasArea)
+351       \textcolor{keywordflow}{continue};
+352 
+353     list.append(pCanvasArea);
+354   \}
+355 
+356   \textcolor{keywordflow}{return} list;
+357 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ab28aeb52e05d99a3d8708b3d38503051}
+
+
+Clear and remove all canvas areas. 
+
+
+
+Definition at line 445 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Canvas\+Area(), get\+Canvas\+Area(), and m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear(), and create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+446 \{
+447   \textcolor{keywordflow}{while}(m_pTabWidget->count() != 0)
+448   \{
+449     DQMCanvasArea *pCanvasArea = this->getCanvasArea(0);
+450     m_pTabWidget->removeTab(0);
+451     pCanvasArea->deleteLater();
+452   \}
+453 
+454   this->createCanvasArea();
+455 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!clear\+Area@{clear\+Area}}
+\index{clear\+Area@{clear\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{clear\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::clear\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ab8f6f6fd381ef3f0a1cfed84ab182c75}
+
+
+Clear the area indexed by 'index'. 
+
+
+
+Definition at line 433 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::clear(), and get\+Canvas\+Area().
+
+
+
+Referenced by handle\+Clear\+Area\+Action\+Triggered().
+
+
+\begin{DoxyCode}
+434 \{
+435   DQMCanvasArea *pCanvasArea = this->getCanvasArea(index);
+436 
+437   \textcolor{keywordflow}{if}(!pCanvasArea)
+438     \textcolor{keywordflow}{return};
+439 
+440   pCanvasArea->clear();
+441 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!create\+Canvas\+Area@{create\+Canvas\+Area}}
+\index{create\+Canvas\+Area@{create\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{create\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::create\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{area\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ae9e71725cd0ab82f4f9e917138c76cbc}
+
+
+Create a canvas area. 
+
+
+
+Definition at line 361 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References get\+Monitoring(), and m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by clear(), create\+Canvas\+Area\+And\+Set\+Current(), create\+Context\+Menu(), D\+Q\+M\+Canvas\+View(), and remove\+Canvas\+Area().
+
+
+\begin{DoxyCode}
+362 \{
+363   QString name;
+364 
+365   \textcolor{keywordflow}{if}(areaName.empty())
+366     name = \textcolor{stringliteral}{"Canvas area"};
+367   \textcolor{keywordflow}{else}
+368     name = areaName.c\_str();
+369 
+370   DQMCanvasArea *pCanvasArea = \textcolor{keyword}{new} DQMCanvasArea(this->getMonitoring());
+371   m_pTabWidget->addTab(pCanvasArea, name);
+372 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!create\+Canvas\+Area\+And\+Set\+Current@{create\+Canvas\+Area\+And\+Set\+Current}}
+\index{create\+Canvas\+Area\+And\+Set\+Current@{create\+Canvas\+Area\+And\+Set\+Current}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{create\+Canvas\+Area\+And\+Set\+Current}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::create\+Canvas\+Area\+And\+Set\+Current (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{area\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ad182fd90a25d9511cd59a847f74547fb}
+
+
+Create a canvas area and set it as current. 
+
+
+
+Definition at line 376 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Canvas\+Area(), m\+\_\+p\+Tab\+Widget, and set\+Current\+Canvas\+Area().
+
+
+
+Referenced by draw\+In\+New\+Area(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), and from\+Xml().
+
+
+\begin{DoxyCode}
+377 \{
+378   this->createCanvasArea(areaName);
+379   this->setCurrentCanvasArea(m_pTabWidget->count()-1);
+380 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!create\+Context\+Menu@{create\+Context\+Menu}}
+\index{create\+Context\+Menu@{create\+Context\+Menu}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{create\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::create\+Context\+Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a285b73fb671d4293bc94c588c7853fa1}
+
+
+Create the context menu. 
+
+
+
+Definition at line 497 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References clear(), create\+Canvas\+Area(), handle\+Clear\+Area\+Action\+Triggered(), handle\+Remove\+Area\+Action\+Triggered(), handle\+Rename\+Area\+Action\+Triggered(), handle\+Save\+As\+Action\+Triggered(), m\+\_\+p\+Tab\+Widget, and dqm4hep\+::\+D\+Q\+M\+Tab\+Widget\+::tab\+Bar().
+
+
+
+Referenced by show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+498 \{
+499   QMenu *pContextMenu = \textcolor{keyword}{new} QMenu();
+500 
+501     QPoint point = m_pTabWidget->tabBar()->mapFromGlobal(QCursor::pos());
+502     \textcolor{keywordtype}{int} tabIndex = m_pTabWidget->tabBar()->tabAt(point);
+503 
+504   QAction *pRenameAreaAction = pContextMenu->addAction(\textcolor{stringliteral}{"Rename area"}, \textcolor{keyword}{this}, SLOT(
+      handleRenameAreaActionTriggered()));
+505   QAction *pRemoveAreaAction = pContextMenu->addAction(\textcolor{stringliteral}{"Remove area"}, \textcolor{keyword}{this}, SLOT(
+      handleRemoveAreaActionTriggered()));
+506   QAction *pRemoveAllAreasAction = pContextMenu->addAction(\textcolor{stringliteral}{"Remove all areas"}, \textcolor{keyword}{this}, SLOT(
+      clear()));
+507   QAction *pCreateNewAreaAction = pContextMenu->addAction(\textcolor{stringliteral}{"Create new area"}, \textcolor{keyword}{this}, SLOT(
+      createCanvasArea()));
+508   QAction *pClearAreaAction = pContextMenu->addAction(\textcolor{stringliteral}{"Clear area"}, \textcolor{keyword}{this}, SLOT(
+      handleClearAreaActionTriggered()));
+509   QAction *pSaveAsAction = pContextMenu->addAction(\textcolor{stringliteral}{"Save as"}, \textcolor{keyword}{this}, SLOT(
+      handleSaveAsActionTriggered()));
+510 
+511   \textcolor{keywordflow}{if}(tabIndex < 0)
+512   \{
+513     pRenameAreaAction->setEnabled(\textcolor{keyword}{false});
+514     pRemoveAreaAction->setEnabled(\textcolor{keyword}{false});
+515     pClearAreaAction->setEnabled(\textcolor{keyword}{false});
+516     pSaveAsAction->setEnabled(\textcolor{keyword}{false});
+517   \}
+518   \textcolor{keywordflow}{else}
+519   \{
+520     pRenameAreaAction->setData(tabIndex);
+521     pRemoveAreaAction->setData(tabIndex);
+522     pClearAreaAction->setData(tabIndex);
+523     pSaveAsAction->setData(tabIndex);
+524   \}
+525 
+526     \textcolor{keywordflow}{return} pContextMenu;
+527 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!draw\+In\+Area@{draw\+In\+Area}}
+\index{draw\+In\+Area@{draw\+In\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{draw\+In\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::draw\+In\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ad0ab1d9c68a57b161ccdccc41bfc3911}
+
+
+Draw the monitor element in area indexed by 'index'. 
+
+Update it if already drawn 
+
+Definition at line 392 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::draw(), and get\+Canvas\+Area().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+393 \{
+394   DQMCanvasArea *pCanvasArea = this->getCanvasArea(index);
+395 
+396   \textcolor{keywordflow}{if}(pCanvasArea)
+397     pCanvasArea->draw(pMonitorElement);
+398 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!draw\+In\+Current\+Area@{draw\+In\+Current\+Area}}
+\index{draw\+In\+Current\+Area@{draw\+In\+Current\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{draw\+In\+Current\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::draw\+In\+Current\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_a407c9b983a427a26d9f7e9af769db464}
+
+
+Draw the monitor element in the current area. 
+
+Update it if already drawn 
+
+Definition at line 384 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::draw(), and get\+Current\+Canvas\+Area().
+
+
+
+Referenced by draw\+In\+New\+Area(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::key\+Press\+Event().
+
+
+\begin{DoxyCode}
+385 \{
+386   DQMCanvasArea *pCanvasArea = this->getCurrentCanvasArea();
+387   pCanvasArea->draw(pMonitorElement);
+388 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!draw\+In\+New\+Area@{draw\+In\+New\+Area}}
+\index{draw\+In\+New\+Area@{draw\+In\+New\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{draw\+In\+New\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::draw\+In\+New\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{area\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_aeef5c8a6de69289757accb4ab4c6be1f}
+
+
+Draw the monitor element in a new area. 
+
+
+
+Definition at line 402 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Canvas\+Area\+And\+Set\+Current(), and draw\+In\+Current\+Area().
+
+
+\begin{DoxyCode}
+403 \{
+404   this->createCanvasAreaAndSetCurrent(areaName);
+405   this->drawInCurrentArea(pMonitorElement);
+406 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!event\+Filter@{event\+Filter}}
+\index{event\+Filter@{event\+Filter}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{event\+Filter}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::event\+Filter (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{p\+Object, }
+\item[{Q\+Event $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a85363b5e403d08b0184f88f10a82f306}
+
+
+Event filter mainly used to process the context menu. 
+
+
+
+Definition at line 531 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget, rename\+Canvas\+Area\+From\+Input\+Dialog(), show\+Context\+Menu(), and dqm4hep\+::\+D\+Q\+M\+Tab\+Widget\+::tab\+Bar().
+
+
+\begin{DoxyCode}
+532 \{
+533     \textcolor{keywordflow}{if}(pEvent->type() == QEvent::ContextMenu)
+534     \{
+535         this->showContextMenu(this->cursor().pos());
+536         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+537     \}
+538     \textcolor{comment}{// Rename a tab if DoubleClick on it}
+539     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pObject == m_pTabWidget->tabBar() && pEvent->type() == QEvent::MouseButtonDblClick)
+540     \{
+541         QTabBar *pTabBar = m_pTabWidget->tabBar();
+542         QPoint p = pTabBar->mapFromGlobal(QCursor::pos());
+543 
+544         \textcolor{keywordtype}{int} index = pTabBar->tabAt(p);
+545         this->renameCanvasAreaFromInputDialog(index);
+546     \}
+547 
+548     \textcolor{keywordflow}{return} QObject::eventFilter(pObject, pEvent);
+549 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!from\+Xml@{from\+Xml}}
+\index{from\+Xml@{from\+Xml}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{from\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::from\+Xml (
+\begin{DoxyParamCaption}
+\item[{Ti\+Xml\+Element $\ast$const}]{p\+Xml\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasView_a6fcda42f6ad9af4ba993d50936f85f08}
+
+
+Import settings from xml element. 
+
+
+
+Definition at line 189 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::create\+Canvas(), create\+Canvas\+Area\+And\+Set\+Current(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::create\+Gui\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::find\+Monitor\+Element(), get\+Canvas\+Area(), get\+Current\+Canvas\+Area(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), m\+\_\+p\+Tab\+Widget, and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::from\+Xml().
+
+
+\begin{DoxyCode}
+190 \{
+191   \textcolor{keywordflow}{if}(!pXmlElement)
+192     \textcolor{keywordflow}{return};
+193 
+194   \textcolor{comment}{// manual clear}
+195   \textcolor{keywordflow}{while}(m_pTabWidget->count() != 0)
+196   \{
+197     DQMCanvasArea *pCanvasArea = this->getCanvasArea(0);
+198     m_pTabWidget->removeTab(0);
+199     pCanvasArea->deleteLater();
+200   \}
+201 
+202   \textcolor{keywordtype}{int} nCreatedCanvaAreas = 0;
+203 
+204     TiXmlHandle elementHandle(pXmlElement);
+205 
+206     \textcolor{keywordflow}{for} (TiXmlElement *pCanvasAreaElement = elementHandle.FirstChild(\textcolor{stringliteral}{"canvasArea"}).Element(); NULL != 
+      pCanvasAreaElement;
+207         pCanvasAreaElement = pCanvasAreaElement->NextSiblingElement(\textcolor{stringliteral}{"canvasArea"}))
+208     \{
+209       std::string canvasAreaName;
+210         \textcolor{keywordflow}{if}(pCanvasAreaElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &canvasAreaName))
+211             \textcolor{keywordflow}{continue};
+212 
+213         this->createCanvasAreaAndSetCurrent(canvasAreaName);
+214         DQMCanvasArea *pCanvasArea = this->getCurrentCanvasArea();
+215 
+216         TiXmlHandle canvasAreaHandle(pCanvasAreaElement);
+217 
+218         \textcolor{keywordflow}{for} (TiXmlElement *pCanvasElement = canvasAreaHandle.FirstChild(\textcolor{stringliteral}{"canvas"}).Element(); NULL != 
+      pCanvasElement;
+219             pCanvasElement = pCanvasElement->NextSiblingElement(\textcolor{stringliteral}{"canvas"}))
+220         \{
+221             TiXmlHandle canvasHandle(pCanvasElement);
+222             TiXmlElement *pMeElement = canvasHandle.FirstChild(\textcolor{stringliteral}{"monitorElement"}).Element();
+223 
+224             \textcolor{keywordflow}{if}(!pMeElement)
+225               \textcolor{keywordflow}{continue};
+226 
+227           \textcolor{keywordtype}{int} x;
+228           \textcolor{keywordtype}{int} y;
+229           \textcolor{keywordtype}{int} width;
+230           \textcolor{keywordtype}{int} height;
+231           \textcolor{keywordtype}{bool} maximized = \textcolor{keyword}{false};
+232 
+233             \textcolor{keywordflow}{if}(pCanvasElement->QueryIntAttribute(\textcolor{stringliteral}{"x"}, &x))
+234                 \textcolor{keywordflow}{continue};
+235 
+236             \textcolor{keywordflow}{if}(pCanvasElement->QueryIntAttribute(\textcolor{stringliteral}{"y"}, &y))
+237                 \textcolor{keywordflow}{continue};
+238 
+239             \textcolor{keywordflow}{if}(pCanvasElement->QueryIntAttribute(\textcolor{stringliteral}{"w"}, &width))
+240                 \textcolor{keywordflow}{continue};
+241 
+242             \textcolor{keywordflow}{if}(pCanvasElement->QueryIntAttribute(\textcolor{stringliteral}{"h"}, &height))
+243                 \textcolor{keywordflow}{continue};
+244 
+245             \textcolor{keywordflow}{if}(pCanvasElement->QueryValueAttribute(\textcolor{stringliteral}{"maximized"}, &maximized))
+246               maximized = \textcolor{keyword}{false};
+247 
+248             std::string collectorName;
+249             std::string moduleName;
+250             std::string path;
+251             std::string name;
+252 
+253             \textcolor{keywordflow}{if}(pMeElement->QueryStringAttribute(\textcolor{stringliteral}{"collector"}, &collectorName))
+254               \textcolor{keywordflow}{continue};
+255 
+256             \textcolor{keywordflow}{if}(pMeElement->QueryStringAttribute(\textcolor{stringliteral}{"module"}, &moduleName))
+257               \textcolor{keywordflow}{continue};
+258 
+259             \textcolor{keywordflow}{if}(pMeElement->QueryStringAttribute(\textcolor{stringliteral}{"path"}, &path))
+260               \textcolor{keywordflow}{continue};
+261 
+262             \textcolor{keywordflow}{if}(pMeElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &name))
+263               \textcolor{keywordflow}{continue};
+264 
+265             DQMGuiMonitorElement *pMonitorElement =
+266                 this->getMonitoring()->getModel()->findMonitorElement(
+267                     collectorName,
+268                     moduleName,
+269                     path,
+270                     name);
+271 
+272             \textcolor{keywordflow}{if}(!pMonitorElement)
+273             \{
+274               \textcolor{comment}{// create a default one that will be updated afterward}
+275         pMonitorElement =
+276             this->getMonitoring()->getModel()->createGuiMonitorElement(
+277                 collectorName,
+278                 moduleName,
+279                 path,
+280                 name);
+281 
+282         this->getMonitoring()->getModel()->updateMonitorElement(pMonitorElement);
+283             \}
+284 
+285             DQMCanvas *pCanvas = pCanvasArea->createCanvas(pMonitorElement);
+286             pCanvas->move(x, y);
+287             pCanvas->resize(width, height);
+288 
+289             \textcolor{keywordflow}{if}(maximized)
+290               pCanvas->showMaximized();
+291         \}
+292     \}
+293 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Canvas\+Area@{get\+Canvas\+Area}}
+\index{get\+Canvas\+Area@{get\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas\+Area} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a83456d86cd4580d0b775030a0413faa0}
+
+
+Get the canvas area by index. 
+
+
+
+Definition at line 314 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by canvas\+Area\+List(), clear(), clear\+Area(), draw\+In\+Area(), from\+Xml(), handle\+Save\+As\+Action\+Triggered(), move\+Canvas(), remove\+Canvas\+Area(), to\+Xml(), and $\sim$\+D\+Q\+M\+Canvas\+View().
+
+
+\begin{DoxyCode}
+315 \{
+316   \textcolor{keywordflow}{return} (DQMCanvasArea *) m_pTabWidget->widget(index);
+317 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Canvas\+Area\+Index@{get\+Canvas\+Area\+Index}}
+\index{get\+Canvas\+Area\+Index@{get\+Canvas\+Area\+Index}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Canvas\+Area\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Canvas\+Area\+Index (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas\+Area} $\ast$}]{p\+Canvas\+Area}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_afa9b275007eb01fe301b163aaaa27afa}
+
+
+Get the canvas area index using an instance of canvas area. 
+
+
+
+Definition at line 321 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+322 \{
+323   \textcolor{keywordflow}{return} m_pTabWidget->indexOf(pCanvasArea);
+324 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Canvas\+Area\+Name@{get\+Canvas\+Area\+Name}}
+\index{get\+Canvas\+Area\+Name@{get\+Canvas\+Area\+Name}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Canvas\+Area\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Canvas\+Area\+Name (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_acbd388572eb1ab9df697721e68914f30}
+
+
+Get the canvas area name by index. 
+
+
+
+Definition at line 328 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu(), and to\+Xml().
+
+
+\begin{DoxyCode}
+329 \{
+330   \textcolor{keywordflow}{return} m_pTabWidget->tabText(index).toStdString();
+331 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Current\+Canvas\+Area@{get\+Current\+Canvas\+Area}}
+\index{get\+Current\+Canvas\+Area@{get\+Current\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Current\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas\+Area} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Current\+Canvas\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a8149f10926517bf4b0e120d611a05626}
+
+
+Get the current canvas area. 
+
+
+
+Definition at line 297 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu(), draw\+In\+Current\+Area(), from\+Xml(), move\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::remove\+Canvas(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+298 \{
+299   \textcolor{keywordflow}{return} (DQMCanvasArea *) m_pTabWidget->currentWidget();
+300 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Current\+Canvas\+Area\+Name@{get\+Current\+Canvas\+Area\+Name}}
+\index{get\+Current\+Canvas\+Area\+Name@{get\+Current\+Canvas\+Area\+Name}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Current\+Canvas\+Area\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Current\+Canvas\+Area\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasView_a31c6a07ac6c162833f5acffa7914f2a2}
+
+
+Get the current canvas area name. 
+
+
+
+Definition at line 304 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+\begin{DoxyCode}
+305 \{
+306   \textcolor{keywordtype}{int} currentIndex = m_pTabWidget->currentIndex();
+307   QString name = m_pTabWidget->tabText(currentIndex);
+308 
+309   \textcolor{keywordflow}{return} name.toStdString();
+310 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasView_a9f3d7905cdb16faa40b7740ca6c10ffa}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 123 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by create\+Canvas\+Area(), from\+Xml(), and handle\+Save\+As\+Action\+Triggered().
+
+
+\begin{DoxyCode}
+124 \{
+125   \textcolor{keywordflow}{return} m_pMonitoring;
+126 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!handle\+Clear\+Area\+Action\+Triggered@{handle\+Clear\+Area\+Action\+Triggered}}
+\index{handle\+Clear\+Area\+Action\+Triggered@{handle\+Clear\+Area\+Action\+Triggered}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{handle\+Clear\+Area\+Action\+Triggered}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Clear\+Area\+Action\+Triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_a84cb9b704667e2ac9b8c7d2d683a2028}
+
+
+Handle clear area action triggered by context menu. 
+
+
+
+Definition at line 595 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References clear\+Area().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+596 \{
+597   QAction *pAction = (QAction *) sender();
+598 
+599   \textcolor{keywordflow}{if}(!pAction)
+600     \textcolor{keywordflow}{return};
+601 
+602   \textcolor{keywordtype}{int} index = pAction->data().toInt();
+603   this->clearArea(index);
+604 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!handle\+Remove\+Area\+Action\+Triggered@{handle\+Remove\+Area\+Action\+Triggered}}
+\index{handle\+Remove\+Area\+Action\+Triggered@{handle\+Remove\+Area\+Action\+Triggered}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{handle\+Remove\+Area\+Action\+Triggered}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Remove\+Area\+Action\+Triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_aee504eefae50378d78ee1c39462ee799}
+
+
+Handle remove area action triggered by context menu. 
+
+
+
+Definition at line 582 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References remove\+Canvas\+Area().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+583 \{
+584   QAction *pAction = (QAction *) sender();
+585 
+586   \textcolor{keywordflow}{if}(!pAction)
+587     \textcolor{keywordflow}{return};
+588 
+589   \textcolor{keywordtype}{int} index = pAction->data().toInt();
+590   this->removeCanvasArea(index);
+591 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!handle\+Rename\+Area\+Action\+Triggered@{handle\+Rename\+Area\+Action\+Triggered}}
+\index{handle\+Rename\+Area\+Action\+Triggered@{handle\+Rename\+Area\+Action\+Triggered}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{handle\+Rename\+Area\+Action\+Triggered}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Rename\+Area\+Action\+Triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_af41e7c55c3df394b7b7d592f77785864}
+
+
+Handle rename area action triggered by context menu. 
+
+
+
+Definition at line 568 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References rename\+Canvas\+Area\+From\+Input\+Dialog().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+569 \{
+570   QAction *pAction = (QAction *) sender();
+571 
+572   \textcolor{keywordflow}{if}(!pAction)
+573     \textcolor{keywordflow}{return};
+574 
+575   \textcolor{keywordtype}{int} index = pAction->data().toInt();
+576 
+577   this->renameCanvasAreaFromInputDialog(index);
+578 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!handle\+Save\+As\+Action\+Triggered@{handle\+Save\+As\+Action\+Triggered}}
+\index{handle\+Save\+As\+Action\+Triggered@{handle\+Save\+As\+Action\+Triggered}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{handle\+Save\+As\+Action\+Triggered}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Save\+As\+Action\+Triggered (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ac2e17ffddd41712ac4c55a2a82a6c2cb}
+
+
+Handle save as action triggered by context menu. 
+
+
+
+Definition at line 608 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References get\+Canvas\+Area(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+609 \{
+610   QAction *pAction = (QAction *) sender();
+611 
+612   \textcolor{keywordflow}{if}(!pAction)
+613     \textcolor{keywordflow}{return};
+614 
+615   \textcolor{keywordtype}{int} index = pAction->data().toInt();
+616   DQMCanvasArea *pCanvasArea = this->getCanvasArea(index);
+617 
+618   \textcolor{keywordflow}{if}(!pCanvasArea)
+619     \textcolor{keywordflow}{return};
+620 
+621   this->getMonitoring()->getController()->saveAs(pCanvasArea);
+622 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!move\+Canvas@{move\+Canvas}}
+\index{move\+Canvas@{move\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{move\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::move\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas, }
+\item[{int}]{new\+Area\+Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_a6e0906f525e9cb0f2eadcd85cef0c31b}
+
+
+Move the canvas from the current area to the area indexed by 'index'. 
+
+
+
+Definition at line 480 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::add\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::contains(), get\+Canvas\+Area(), get\+Current\+Canvas\+Area(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::remove\+Canvas().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::move\+Canvas().
+
+
+\begin{DoxyCode}
+481 \{
+482   \textcolor{keywordflow}{if}(!pCanvas)
+483     \textcolor{keywordflow}{return};
+484 
+485   DQMCanvasArea *pCurrentCanvasArea = this->getCurrentCanvasArea();
+486   DQMCanvasArea *pMoveCanvasArea = this->getCanvasArea(newAreaIndex);
+487 
+488   \textcolor{keywordflow}{if}(!pMoveCanvasArea || !pCurrentCanvasArea->contains(pCanvas) || pCurrentCanvasArea == pMoveCanvasArea)
+489     \textcolor{keywordflow}{return};
+490 
+491   pCurrentCanvasArea->removeCanvas(pCanvas, \textcolor{keyword}{false});
+492   pMoveCanvasArea->addCanvas(pCanvas);
+493 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!remove\+Canvas\+Area@{remove\+Canvas\+Area}}
+\index{remove\+Canvas\+Area@{remove\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{remove\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::remove\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_a7a438c7d5fa6c4edbe5e3b398c689b26}
+
+
+Remove the canvas area by index. 
+
+
+
+Definition at line 410 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Canvas\+Area(), get\+Canvas\+Area(), and m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by D\+Q\+M\+Canvas\+View(), and handle\+Remove\+Area\+Action\+Triggered().
+
+
+\begin{DoxyCode}
+411 \{
+412   DQMCanvasArea *pCanvasArea = this->getCanvasArea(index);
+413 
+414   \textcolor{keywordflow}{if}(!pCanvasArea)
+415     \textcolor{keywordflow}{return};
+416 
+417   m_pTabWidget->removeTab(index);
+418   pCanvasArea->deleteLater();
+419 
+420   \textcolor{keywordflow}{if}(m_pTabWidget->count() == 0)
+421     this->createCanvasArea();
+422 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!rename\+Canvas\+Area@{rename\+Canvas\+Area}}
+\index{rename\+Canvas\+Area@{rename\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{rename\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::rename\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{const std\+::string \&}]{new\+Area\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_a3e53596250c6d656a799320240510f81}
+
+
+Rename the canvas area indexed by 'index' with name 'new\+Area\+Name'. 
+
+
+
+Definition at line 426 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by rename\+Canvas\+Area\+From\+Input\+Dialog().
+
+
+\begin{DoxyCode}
+427 \{
+428   m_pTabWidget->setTabText(index, newAreaName.c\_str());
+429 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!rename\+Canvas\+Area\+From\+Input\+Dialog@{rename\+Canvas\+Area\+From\+Input\+Dialog}}
+\index{rename\+Canvas\+Area\+From\+Input\+Dialog@{rename\+Canvas\+Area\+From\+Input\+Dialog}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{rename\+Canvas\+Area\+From\+Input\+Dialog}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::rename\+Canvas\+Area\+From\+Input\+Dialog (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMCanvasView_a5e636b6290b14b2e665179a89e617258}
+
+
+Rename the canvas area given by 'index'. 
+
+Get the area name from an input text dialog 
+
+Definition at line 553 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget, and rename\+Canvas\+Area().
+
+
+
+Referenced by event\+Filter(), and handle\+Rename\+Area\+Action\+Triggered().
+
+
+\begin{DoxyCode}
+554 \{
+555     \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+556     QString oldAreaName = m_pTabWidget->tabText(index);
+557 
+558     QString newAreaName = QInputDialog::getText(\textcolor{keyword}{this}, \textcolor{stringliteral}{"New canvas area name"},
+559                                                \textcolor{stringliteral}{""}, QLineEdit::Normal,
+560                                                oldAreaName, &ok);
+561 
+562     \textcolor{keywordflow}{if}(ok)
+563         this->renameCanvasArea(index, newAreaName.toStdString());
+564 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!set\+Current\+Canvas\+Area@{set\+Current\+Canvas\+Area}}
+\index{set\+Current\+Canvas\+Area@{set\+Current\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{set\+Current\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::set\+Current\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_ac7158e37aa23a14fed177b647a75c463}
+
+
+Set the current canvas area by index. 
+
+
+
+Definition at line 473 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tab\+Widget.
+
+
+
+Referenced by create\+Canvas\+Area\+And\+Set\+Current().
+
+
+\begin{DoxyCode}
+474 \{
+475   m_pTabWidget->setCurrentIndex(index);
+476 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!show\+Context\+Menu@{show\+Context\+Menu}}
+\index{show\+Context\+Menu@{show\+Context\+Menu}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{show\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::show\+Context\+Menu (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point \&}]{point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasView_afbed40bad65907485aa724632a50cecb}
+
+
+Show the context menu of this widget. 
+
+
+
+Definition at line 459 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References create\+Context\+Menu().
+
+
+
+Referenced by event\+Filter().
+
+
+\begin{DoxyCode}
+460 \{
+461     QWidget *pSelectedWidget = qApp->widgetAt(point);
+462 
+463     \textcolor{keywordflow}{if}(!pSelectedWidget)
+464         \textcolor{keywordflow}{return};
+465 
+466     QMenu *pContextMenu = this->createContextMenu();
+467     pContextMenu->exec(point);
+468     pContextMenu->deleteLater();
+469 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!to\+Xml@{to\+Xml}}
+\index{to\+Xml@{to\+Xml}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{to\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}Ti\+Xml\+Element $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasView_a7c0948e672e7d8aa814229dcce1cd756}
+
+
+Export settings to xml element. 
+
+
+
+Definition at line 130 of file D\+Q\+M\+Canvas\+View.\+cc.
+
+
+
+References canvas\+Area\+Count(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::canvas\+Count(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Canvas(), get\+Canvas\+Area(), get\+Canvas\+Area\+Name(), dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Current\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+131 \{
+132   TiXmlElement *pXmlElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"canvasView"});
+133 
+134   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} c=0 ; c<this->canvasAreaCount() ; c++)
+135   \{
+136     DQMCanvasArea *pCanvasArea = this->getCanvasArea(c);
+137     std::string canvasAreaName = this->getCanvasAreaName(c);
+138 
+139     TiXmlElement *pCanvasAreaElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"canvasArea"});
+140     pXmlElement->LinkEndChild(pCanvasAreaElement);
+141 
+142     pCanvasAreaElement->SetAttribute(\textcolor{stringliteral}{"name"}, canvasAreaName);
+143 
+144     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<pCanvasArea->canvasCount() ; i++)
+145     \{
+146       DQMCanvas *pCanvas = pCanvasArea->getCanvas(i);
+147 
+148       \textcolor{keywordtype}{int} x = pCanvas->x();
+149       \textcolor{keywordtype}{int} y = pCanvas->y();
+150       \textcolor{keywordtype}{int} width = pCanvas->width();
+151       \textcolor{keywordtype}{int} height = pCanvas->height();
+152 
+153       TiXmlElement *pCanvasElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"canvas"});
+154       pCanvasAreaElement->LinkEndChild(pCanvasElement);
+155 
+156       pCanvasElement->SetAttribute(\textcolor{stringliteral}{"x"}, x);
+157       pCanvasElement->SetAttribute(\textcolor{stringliteral}{"y"}, y);
+158       pCanvasElement->SetAttribute(\textcolor{stringliteral}{"w"}, width);
+159       pCanvasElement->SetAttribute(\textcolor{stringliteral}{"h"}, height);
+160 
+161       \textcolor{keywordflow}{if}(pCanvas->isMaximized())
+162         pCanvasElement->SetAttribute(\textcolor{stringliteral}{"maximized"}, \textcolor{keyword}{true});
+163 
+164       DQMGuiMonitorElement *pGuiMonitorElement = pCanvas->getCurrentMonitorElement();
+165 
+166       \textcolor{keywordflow}{if}(pGuiMonitorElement)
+167       \{
+168         std::string collectorName = pGuiMonitorElement->getMonitorElement()->getCollectorName();
+169         std::string moduleName = pGuiMonitorElement->getMonitorElement()->getModuleName();
+170         std::string path = pGuiMonitorElement->getMonitorElement()->getPath().getPath();
+171         std::string name = pGuiMonitorElement->getMonitorElement()->getName();
+172 
+173         TiXmlElement *pMeElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"monitorElement"});
+174         pCanvasElement->LinkEndChild(pMeElement);
+175 
+176         pMeElement->SetAttribute(\textcolor{stringliteral}{"collector"}, collectorName);
+177         pMeElement->SetAttribute(\textcolor{stringliteral}{"module"}, moduleName);
+178         pMeElement->SetAttribute(\textcolor{stringliteral}{"path"}, path);
+179         pMeElement->SetAttribute(\textcolor{stringliteral}{"name"}, name);
+180       \}
+181     \}
+182   \}
+183 
+184   \textcolor{keywordflow}{return} pXmlElement;
+185 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCanvasView_a7253f0e7ef4203e2de0976cea20c57ae}
+
+
+Definition at line 188 of file D\+Q\+M\+Canvas\+View.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}!m\+\_\+p\+Tab\+Widget@{m\+\_\+p\+Tab\+Widget}}
+\index{m\+\_\+p\+Tab\+Widget@{m\+\_\+p\+Tab\+Widget}!dqm4hep\+::\+D\+Q\+M\+Canvas\+View@{dqm4hep\+::\+D\+Q\+M\+Canvas\+View}}
+\subsubsection[{m\+\_\+p\+Tab\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Tab\+Widget}$\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::m\+\_\+p\+Tab\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCanvasView_ac533944e5237db7a1f1933b645c4d164}
+
+
+Definition at line 189 of file D\+Q\+M\+Canvas\+View.\+h.
+
+
+
+Referenced by canvas\+Area\+Count(), canvas\+Area\+List(), clear(), create\+Canvas\+Area(), create\+Canvas\+Area\+And\+Set\+Current(), create\+Context\+Menu(), D\+Q\+M\+Canvas\+View(), event\+Filter(), from\+Xml(), get\+Canvas\+Area(), get\+Canvas\+Area\+Index(), get\+Canvas\+Area\+Name(), get\+Current\+Canvas\+Area(), get\+Current\+Canvas\+Area\+Name(), remove\+Canvas\+Area(), rename\+Canvas\+Area(), rename\+Canvas\+Area\+From\+Input\+Dialog(), set\+Current\+Canvas\+Area(), and $\sim$\+D\+Q\+M\+Canvas\+View().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas\+View.\+h}\item 
+{\bf D\+Q\+M\+Canvas\+View.\+cc}\end{DoxyCompactItemize}

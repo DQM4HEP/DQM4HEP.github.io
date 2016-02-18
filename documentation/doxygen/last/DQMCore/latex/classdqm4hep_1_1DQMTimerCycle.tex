@@ -1,0 +1,202 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Timer\+Cycle Class Reference}
+\label{classdqm4hep_1_1DQMTimerCycle}\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+
+
+\doxyref{D\+Q\+M\+Timer\+Cycle}{p.}{classdqm4hep_1_1DQMTimerCycle} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Timer\+Cycle.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Timer\+Cycle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMTimerCycle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Timer\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Timer\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Started} ()
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Stopped} ()
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+void {\bf on\+Event\+Processed} (const {\bf D\+Q\+M\+Event} $\ast$const )
+\begin{DoxyCompactList}\small\item\em Specific call back function when an event is processed, depends on cycle type. \end{DoxyCompactList}\item 
+bool {\bf is\+End\+Of\+Cycle\+Reached} () const 
+\begin{DoxyCompactList}\small\item\em Specific function to tell the application to know whether the cycle has reached the end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Timer\+Cycle}{p.}{classdqm4hep_1_1DQMTimerCycle} class. 
+
+\doxyref{D\+Q\+M\+Cycle}{p.}{classdqm4hep_1_1DQMCycle} based on a time cycle in seconds. process\+Cycle() called during n seconds 
+
+Definition at line 42 of file D\+Q\+M\+Timer\+Cycle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!D\+Q\+M\+Timer\+Cycle@{D\+Q\+M\+Timer\+Cycle}}
+\index{D\+Q\+M\+Timer\+Cycle@{D\+Q\+M\+Timer\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{D\+Q\+M\+Timer\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::\+D\+Q\+M\+Timer\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMTimerCycle_a2cf7511b07a6dbdfae31c50154e60e42}
+
+
+Constructor. 
+
+
+
+Definition at line 43 of file D\+Q\+M\+Timer\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+43                              :
+44     DQMCycle()
+45 \{
+46   setCycleValue(30.f); \textcolor{comment}{// default set to 30 seconds}
+47 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!````~D\+Q\+M\+Timer\+Cycle@{$\sim$\+D\+Q\+M\+Timer\+Cycle}}
+\index{````~D\+Q\+M\+Timer\+Cycle@{$\sim$\+D\+Q\+M\+Timer\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Timer\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::$\sim$\+D\+Q\+M\+Timer\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMTimerCycle_a788e425b5f25c9202fe3072e75a92014}
+
+
+Destructor. 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Timer\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+52 \{
+53   \textcolor{comment}{/* nop */}
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}}
+\index{is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{is\+End\+Of\+Cycle\+Reached}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::is\+End\+Of\+Cycle\+Reached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMTimerCycle_aee022855f2262249aba47be919b404e6}
+
+
+Specific function to tell the application to know whether the cycle has reached the end. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a2b177a69fc0585fbef12dda7b54065d5}.
+
+
+
+Definition at line 58 of file D\+Q\+M\+Timer\+Cycle.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Cycle\+Value(), and dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Start\+Time().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{keywordflow}{if}( gSystem->Now() > this->getStartTime() + TTime(this->getCycleValue()*1000) )
+61     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+62 
+63   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!on\+Cycle\+Started@{on\+Cycle\+Started}}
+\index{on\+Cycle\+Started@{on\+Cycle\+Started}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{on\+Cycle\+Started}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::on\+Cycle\+Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMTimerCycle_a5f55ba5578ad39a8cd2899fe90b538df}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a9ee9c093280a5c87802529233f7ef97d}.
+
+
+
+Definition at line 53 of file D\+Q\+M\+Timer\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+53 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!on\+Cycle\+Stopped@{on\+Cycle\+Stopped}}
+\index{on\+Cycle\+Stopped@{on\+Cycle\+Stopped}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{on\+Cycle\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::on\+Cycle\+Stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMTimerCycle_af772fe5694a7463452828d257ff5310d}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a9563479df6411c34811e820d49dc242f}.
+
+
+
+Definition at line 54 of file D\+Q\+M\+Timer\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+54 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}!on\+Event\+Processed@{on\+Event\+Processed}}
+\index{on\+Event\+Processed@{on\+Event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle}}
+\subsubsection[{on\+Event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::on\+Event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMTimerCycle_a8aa69a62d2c1df9fb9ad7a64eb5c732f}
+
+
+Specific call back function when an event is processed, depends on cycle type. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a98871dce48f954a8299a8f130125ad59}.
+
+
+
+Definition at line 55 of file D\+Q\+M\+Timer\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+55 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Timer\+Cycle.\+h}\item 
+{\bf D\+Q\+M\+Timer\+Cycle.\+cc}\end{DoxyCompactItemize}

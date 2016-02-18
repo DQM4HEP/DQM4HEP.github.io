@@ -1,0 +1,283 @@
+\section{dqm4hep\+:\+:Client\+Info Class Reference}
+\label{classdqm4hep_1_1ClientInfo}\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+
+
+\doxyref{Client\+Info}{p.}{classdqm4hep_1_1ClientInfo} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Collector.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Client\+Info} (int client\+I\+D)
+\begin{DoxyCompactList}\small\item\em Constructor for monitor element clients. \end{DoxyCompactList}\item 
+{\bf Client\+Info} (int client\+Id, const std\+::string \&module\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor for module clients. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Module\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the module name. \end{DoxyCompactList}\item 
+bool {\bf is\+Module} () const 
+\begin{DoxyCompactList}\small\item\em Whether the client is a module. \end{DoxyCompactList}\item 
+int {\bf get\+Client\+I\+D} () const 
+\begin{DoxyCompactList}\small\item\em Get the client id. \end{DoxyCompactList}\item 
+void {\bf set\+Update\+Mode} (bool update)
+\begin{DoxyCompactList}\small\item\em Set update mode (default is false) \end{DoxyCompactList}\item 
+bool {\bf has\+Update\+Mode} () const 
+\begin{DoxyCompactList}\small\item\em Whether the client works in update mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\+\_\+client\+I\+D}
+\item 
+bool {\bf m\+\_\+update\+Mode}
+\item 
+bool {\bf m\+\_\+is\+Module}
+\item 
+std\+::string {\bf m\+\_\+module\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Client\+Info}{p.}{classdqm4hep_1_1ClientInfo} class. 
+
+Definition at line 144 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!Client\+Info@{Client\+Info}}
+\index{Client\+Info@{Client\+Info}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{Client\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Client\+Info\+::\+Client\+Info (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+I\+D}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ClientInfo_a8d46ab14701ac0378d709cbc6d47455b}
+
+
+Constructor for monitor element clients. 
+
+Constructor. 
+
+Definition at line 327 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+327                                    :
+328     m_clientID(clientID),
+329     m_updateMode(\textcolor{keyword}{false}),
+330     m_isModule(\textcolor{keyword}{false}),
+331     m_moduleName(\textcolor{stringliteral}{""})
+332 \{
+333   \textcolor{comment}{/* nop */}
+334 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!Client\+Info@{Client\+Info}}
+\index{Client\+Info@{Client\+Info}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{Client\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Client\+Info\+::\+Client\+Info (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Id, }
+\item[{const std\+::string \&}]{module\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ClientInfo_a802c05b963ba359b16c01a7cd411e00e}
+
+
+Constructor for module clients. 
+
+
+
+Definition at line 338 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+338                                                                 :
+339     m_clientID(clientId),
+340     m_updateMode(\textcolor{keyword}{false}),
+341     m_isModule(\textcolor{keyword}{true}),
+342     m_moduleName(moduleName)
+343 \{
+344   \textcolor{comment}{/* nop */}
+345 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!get\+Client\+I\+D@{get\+Client\+I\+D}}
+\index{get\+Client\+I\+D@{get\+Client\+I\+D}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{get\+Client\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Client\+Info\+::get\+Client\+I\+D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ClientInfo_affc0ae408bfb40ab0388ac4a599ec02b}
+
+
+Get the client id. 
+
+
+
+Definition at line 363 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+client\+I\+D.
+
+
+\begin{DoxyCode}
+364 \{
+365   \textcolor{keywordflow}{return} m_clientID;
+366 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!get\+Module\+Name@{get\+Module\+Name}}
+\index{get\+Module\+Name@{get\+Module\+Name}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{get\+Module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+Client\+Info\+::get\+Module\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ClientInfo_a8372636b42f0ac056a9b5cc43cb32705}
+
+
+Get the module name. 
+
+Valid only if the client is a module. 
+
+Definition at line 349 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+module\+Name.
+
+
+\begin{DoxyCode}
+350 \{
+351   \textcolor{keywordflow}{return} m_moduleName;
+352 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!has\+Update\+Mode@{has\+Update\+Mode}}
+\index{has\+Update\+Mode@{has\+Update\+Mode}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{has\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Client\+Info\+::has\+Update\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ClientInfo_a90e92025428d87964759e7d147379e7c}
+
+
+Whether the client works in update mode. 
+
+
+
+Definition at line 377 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+update\+Mode.
+
+
+\begin{DoxyCode}
+378 \{
+379   \textcolor{keywordflow}{return} m_updateMode;
+380 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!is\+Module@{is\+Module}}
+\index{is\+Module@{is\+Module}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{is\+Module}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Client\+Info\+::is\+Module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1ClientInfo_acc4a5c95870c9d0b6014ad8bba6465bb}
+
+
+Whether the client is a module. 
+
+Opposite is a monitor element client 
+
+Definition at line 356 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+is\+Module.
+
+
+\begin{DoxyCode}
+357 \{
+358   \textcolor{keywordflow}{return} m_isModule;
+359 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Client\+Info\+::set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{update}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1ClientInfo_ab9056fb1c9dceb78b4dad2cc6e5fb866}
+
+
+Set update mode (default is false) 
+
+
+
+Definition at line 370 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References m\+\_\+update\+Mode.
+
+
+\begin{DoxyCode}
+371 \{
+372   m_updateMode = update;
+373 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!m\+\_\+client\+I\+D@{m\+\_\+client\+I\+D}}
+\index{m\+\_\+client\+I\+D@{m\+\_\+client\+I\+D}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{m\+\_\+client\+I\+D}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Client\+Info\+::m\+\_\+client\+I\+D\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ClientInfo_add717915fc5c80a37c5300ef9e659926}
+
+
+Definition at line 178 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by get\+Client\+I\+D().
+
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!m\+\_\+is\+Module@{m\+\_\+is\+Module}}
+\index{m\+\_\+is\+Module@{m\+\_\+is\+Module}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{m\+\_\+is\+Module}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Client\+Info\+::m\+\_\+is\+Module\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ClientInfo_af42ffb0125ef3abd7887eaee320ed9bc}
+
+
+Definition at line 180 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by is\+Module().
+
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!m\+\_\+module\+Name@{m\+\_\+module\+Name}}
+\index{m\+\_\+module\+Name@{m\+\_\+module\+Name}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{m\+\_\+module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+Client\+Info\+::m\+\_\+module\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ClientInfo_ab583315a8d32722e65afc3535fcd970b}
+
+
+Definition at line 181 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by get\+Module\+Name().
+
+\index{dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}!m\+\_\+update\+Mode@{m\+\_\+update\+Mode}}
+\index{m\+\_\+update\+Mode@{m\+\_\+update\+Mode}!dqm4hep\+::\+Client\+Info@{dqm4hep\+::\+Client\+Info}}
+\subsubsection[{m\+\_\+update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Client\+Info\+::m\+\_\+update\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1ClientInfo_af5c0d50c54ff3c780fbaaf906fa0b0a0}
+
+
+Definition at line 179 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by has\+Update\+Mode(), and set\+Update\+Mode().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+cc}\end{DoxyCompactItemize}

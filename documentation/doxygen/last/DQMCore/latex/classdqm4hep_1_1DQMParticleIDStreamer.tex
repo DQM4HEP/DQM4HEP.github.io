@@ -1,0 +1,160 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Particle\+I\+D\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMParticleIDStreamer}\index{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+Particle\+I\+D\+Streamer}{p.}{classdqm4hep_1_1DQMParticleIDStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Particle\+I\+D\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMParticleIDStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize an Particle\+I\+D. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a Particle\+I\+D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Particle\+I\+D\+Streamer}{p.}{classdqm4hep_1_1DQMParticleIDStreamer} class. 
+
+Definition at line 226 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMParticleIDStreamer_aafd22c35a5c7c884baaaf53e853fcc4b}
+
+
+Deserialize a Particle\+I\+D. 
+
+The object is allocated in this function 
+
+Definition at line 1153 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+1154 \{
+1155   pLCObject = 0;
+1156   IMPL::ParticleIDImpl *pParticleID = \textcolor{keyword}{new} IMPL::ParticleIDImpl();
+1157 
+1158   \textcolor{keywordflow}{try}
+1159   \{
+1160     dqm_int type = 0;
+1161     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(type));
+1162     pParticleID->setType(type);
+1163 
+1164     dqm_int pdg = 0;
+1165     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(pdg));
+1166     pParticleID->setPDG(pdg);
+1167 
+1168     dqm_float likelihood = 0;
+1169     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(likelihood));
+1170     pParticleID->setLikelihood(likelihood);
+1171 
+1172     dqm_int algorithmType = 0;
+1173     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(algorithmType));
+1174     pParticleID->setAlgorithmType(algorithmType);
+1175 
+1176     dqm_uint nParameters = 0;
+1177     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nParameters));
+1178 
+1179     \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nParameters ; i++)
+1180     \{
+1181       dqm_float parameter = 0;
+1182       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(parameter));
+1183       pParticleID->parameters().push\_back(parameter);
+1184     \}
+1185   \}
+1186   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+1187   \{
+1188     \textcolor{keyword}{delete} pParticleID;
+1189     pParticleID = 0;
+1190     pLCObject = 0;
+1191 
+1192     \textcolor{keywordflow}{return} exception.getStatusCode();
+1193   \}
+1194 
+1195   pLCObject = pParticleID;
+1196 
+1197   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+1198 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Particle\+I\+D\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMParticleIDStreamer_af6356dfdb629b3977f365ccf1a802b33}
+
+
+Serialize an Particle\+I\+D. 
+
+
+
+Definition at line 1120 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+1121 \{
+1122   \textcolor{keyword}{const} EVENT::ParticleID *\textcolor{keyword}{const} pParticleID = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::ParticleID *const\textcolor{keyword}{>}(pLCObject);
+1123 
+1124   \textcolor{keywordflow}{if}(NULL == pParticleID)
+1125     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+1126 
+1127   dqm_int type = pParticleID->getType();
+1128   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(type));
+1129 
+1130   dqm_int pdg = pParticleID->getPDG();
+1131   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(pdg));
+1132 
+1133   dqm_float likelihood = pParticleID->getLikelihood();
+1134   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(likelihood));
+1135 
+1136   dqm_int algorithmType = pParticleID->getAlgorithmType();
+1137   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(algorithmType));
+1138 
+1139   dqm_uint nParameters = pParticleID->getParameters().size();
+1140   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nParameters));
+1141 
+1142   \textcolor{keywordflow}{for}(dqm_uint i=0 ; i<nParameters ; i++)
+1143   \{
+1144     dqm_float parameter = pParticleID->getParameters().at(i);
+1145     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(parameter));
+1146   \}
+1147 
+1148   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+1149 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

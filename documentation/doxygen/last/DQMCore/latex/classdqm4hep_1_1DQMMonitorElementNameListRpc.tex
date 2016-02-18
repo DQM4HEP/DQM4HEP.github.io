@@ -1,0 +1,194 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementNameListRpc}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+Collector.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementNameListRpc}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc} (char $\ast$rpc\+Name, {\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$p\+Collector)
+\item 
+void {\bf rpc\+Handler} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$ {\bf m\+\_\+p\+Collector}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 189 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}!D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+\index{D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element\+Collector} $\ast$}]{p\+Collector}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementNameListRpc_a5803695048ed61349eec0cbef29041b4}
+
+
+Definition at line 1253 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+\begin{DoxyCode}
+1253                                                                                                            
+           :
+1254     DimRpc(rpcName, \textcolor{stringliteral}{"C"}, \textcolor{stringliteral}{"C"}),
+1255     m_pCollector(pCollector),
+1256     m_dataStream(1024*1024)
+1257 \{
+1258   \textcolor{comment}{/* nop */}
+1259 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}!rpc\+Handler@{rpc\+Handler}}
+\index{rpc\+Handler@{rpc\+Handler}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+\subsubsection[{rpc\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::rpc\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementNameListRpc_a90186f07b130af5d1a2b04c0121a1c1d}
+
+
+Definition at line 1263 of file D\+Q\+M\+Monitor\+Element\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::is\+Running(), m\+\_\+data\+Stream, dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+::m\+\_\+module\+Me\+Info\+Map, m\+\_\+p\+Collector, dqm4hep\+::monitor\+Element\+Type\+To\+String(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+1264 \{
+1265   \textcolor{keywordflow}{try}
+1266   \{
+1267     \textcolor{keywordflow}{if}(!m_pCollector->isRunning())
+1268       \textcolor{keywordflow}{return};
+1269 
+1270     dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char *\textcolor{keyword}{>}(getData());
+1271     dqm_uint bufferSize = getSize();
+1272 
+1273     \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+1274       \textcolor{keywordflow}{return};
+1275 
+1276     m_dataStream.reset();
+1277     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.setBuffer(pBuffer, bufferSize));
+1278 
+1279     DQMMonitorElementListNameRequest request;
+1280     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, request.deserialize(&m_dataStream));
+1281 
+1282     \textcolor{comment}{// transform module name to lower for easier comparison}
+1283     std::transform(request.m\_moduleName.begin(), request.m\_moduleName.end(), request.m\_moduleName.begin(), 
+      ::tolower);
+1284     std::transform(request.m\_monitorElementName.begin(), request.m\_monitorElementName.end(), request.
+      m\_monitorElementName.begin(), ::tolower);
+1285 
+1286     DQMMonitorElementInfoList infoList;
+1287 
+1288     \textcolor{comment}{// loop over available contents and apply some filter to anwser the client query}
+1289     \textcolor{keywordflow}{for}(DQMMonitorElementCollector::ModuleMeInfoMap::const\_iterator iter = 
+      m_pCollector->m_moduleMeInfoMap.begin(),
+1290         endIter = m_pCollector->m_moduleMeInfoMap.end() ; endIter != iter ; ++iter)
+1291     \{
+1292       std::string moduleName = iter->first;
+1293       std::transform(moduleName.begin(), moduleName.end(), moduleName.begin(), ::tolower);
+1294 
+1295       \textcolor{comment}{// partial and lower case compare of module name}
+1296       \textcolor{keywordflow}{if}(moduleName.find(request.m\_moduleName) == std::string::npos && !request.m\_moduleName.empty())
+1297         \textcolor{keywordflow}{continue};
+1298 
+1299       \textcolor{keyword}{const} std::vector<DQMMonitorElementInfo> &availableMeList = iter->second->getAvailableMeList();
+1300 
+1301       \textcolor{keywordflow}{for}(std::vector<DQMMonitorElementInfo>::const\_iterator meIter = availableMeList.begin(), meEndIter = 
+      availableMeList.end() ;
+1302           meEndIter != meIter ; ++meIter)
+1303       \{
+1304         std::string meName = meIter->m\_monitorElementName;
+1305         std::transform(meName.begin(), meName.end(), meName.begin(), ::tolower);
+1306 
+1307         std::string path = meIter->m\_monitorElementFullPath;
+1308         std::transform(path.begin(), path.end(), path.begin(), ::tolower);
+1309 
+1310         \textcolor{comment}{// partial and lower case compare of me name}
+1311         \textcolor{keywordflow}{if}(meName.find(request.m\_monitorElementName) == std::string::npos && !request.m\_monitorElementName.
+      empty())
+1312           \textcolor{keywordflow}{continue};
+1313 
+1314         \textcolor{comment}{// partial and lower case compare of path using me name}
+1315         \textcolor{keywordflow}{if}(path.find(request.m\_monitorElementName) == std::string::npos && !request.m\_monitorElementName.
+      empty())
+1316           \textcolor{keywordflow}{continue};
+1317 
+1318         \textcolor{comment}{// compare me type}
+1319         \textcolor{keywordflow}{if}(meIter->m\_monitorElementType != monitorElementTypeToString(request.m\_monitorElementType) && 
+      NO\_ELEMENT\_TYPE != request.m\_monitorElementType)
+1320           \textcolor{keywordflow}{continue};
+1321 
+1322         infoList.push\_back(*meIter);
+1323       \}
+1324     \}
+1325 
+1326     \textcolor{comment}{// serialize the packet}
+1327     m_dataStream.reset();
+1328     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, infoList.serialize(&m_dataStream));
+1329 
+1330     \textcolor{comment}{// and set it as data to send back}
+1331     setData((\textcolor{keywordtype}{void}*) m_dataStream.getBuffer(), m_dataStream.getBufferSize());
+1332   \}
+1333   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+1334   \{
+1335   \}
+1336   \textcolor{keywordflow}{catch}(...)
+1337   \{
+1338   \}
+1339 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementNameListRpc_a99fcd147ccd5259589c14755554f319d}
+
+
+Definition at line 197 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}!m\+\_\+p\+Collector@{m\+\_\+p\+Collector}}
+\index{m\+\_\+p\+Collector@{m\+\_\+p\+Collector}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc}}
+\subsubsection[{m\+\_\+p\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+Collector}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Name\+List\+Rpc\+::m\+\_\+p\+Collector\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementNameListRpc_ae64f3e1466222ec0de79885bd850b14d}
+
+
+Definition at line 196 of file D\+Q\+M\+Monitor\+Element\+Collector.\+h.
+
+
+
+Referenced by rpc\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+Collector.\+cc}\end{DoxyCompactItemize}

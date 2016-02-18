@@ -1,0 +1,919 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Dim\+Event\+Client Class Reference}
+\label{classdqm4hep_1_1DQMDimEventClient}\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+
+
+\doxyref{D\+Q\+M\+Dim\+Event\+Client}{p.}{classdqm4hep_1_1DQMDimEventClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Event\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Dim\+Event\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMDimEventClient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Dim\+Event\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf perform\+Service\+Connection} ()
+\begin{DoxyCompactList}\small\item\em Workhorse of the service connection. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf perform\+Service\+Disconnection} ()
+\begin{DoxyCompactList}\small\item\em Workhorse of the service connection. \end{DoxyCompactList}\item 
+bool {\bf is\+Connected\+To\+Service} () const 
+\begin{DoxyCompactList}\small\item\em Whether the client is connected to the collector (server) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf send\+Event} (const {\bf D\+Q\+M\+Event} $\ast$p\+Event)
+\begin{DoxyCompactList}\small\item\em Send an event to the collector (server). \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Event} ({\bf D\+Q\+M\+Event} $\ast$\&p\+Event, int timeout)
+\begin{DoxyCompactList}\small\item\em Query an event to the collector (server) with a timeout and handle it without pushing it into the internal queue. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf query\+Event} ()
+\begin{DoxyCompactList}\small\item\em Query an event to the collector. \end{DoxyCompactList}\item 
+void {\bf set\+Update\+Mode} (bool update\+Mode)
+\begin{DoxyCompactList}\small\item\em Set the update mode. \end{DoxyCompactList}\item 
+bool {\bf get\+Update\+Mode} () const 
+\begin{DoxyCompactList}\small\item\em Whether the update mode is set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim info handler. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf event\+Reception} ({\bf dqm\+\_\+char} $\ast$p\+Buffer, {\bf dqm\+\_\+uint} buffer\+Size)
+\begin{DoxyCompactList}\small\item\em Handle the event reception as a buffer an its buffer size. \end{DoxyCompactList}\item 
+void {\bf set\+Sub\+Event\+Identifier} (const std\+::string \&identifier)
+\begin{DoxyCompactList}\small\item\em Set the sub event identifier. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf read\+Settings} (const {\bf Ti\+Xml\+Handle} \&xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read settings from the xml handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+is\+Connected}
+\item 
+{\bf Dim\+Event\+Rpc\+Info} $\ast$ {\bf m\+\_\+p\+Dim\+Event\+Rpc\+Info}
+\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Client\+Id\+Info}
+\begin{DoxyCompactList}\small\item\em to receive the client id stored on server \end{DoxyCompactList}\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Server\+State\+Info}
+\begin{DoxyCompactList}\small\item\em Server state. 0 for stopped \+: 1 for running. \end{DoxyCompactList}\item 
+Dim\+Updated\+Info $\ast$ {\bf m\+\_\+p\+Event\+Update\+Info}
+\begin{DoxyCompactList}\small\item\em For event reception. \end{DoxyCompactList}\item 
+int {\bf m\+\_\+server\+Client\+Id}
+\item 
+bool {\bf m\+\_\+update\+Mode}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\item 
+pthread\+\_\+mutex\+\_\+t {\bf m\+\_\+mutex}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Dim\+Event\+Rpc\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Dim\+Event\+Client}{p.}{classdqm4hep_1_1DQMDimEventClient} class. 
+
+Definition at line 69 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!D\+Q\+M\+Dim\+Event\+Client@{D\+Q\+M\+Dim\+Event\+Client}}
+\index{D\+Q\+M\+Dim\+Event\+Client@{D\+Q\+M\+Dim\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{D\+Q\+M\+Dim\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::\+D\+Q\+M\+Dim\+Event\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDimEventClient_a8f7426db3b775bb5036208ff93e4d840}
+
+
+Constructor. 
+
+
+
+Definition at line 59 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+\begin{DoxyCode}
+59                                      :
+60   m_isConnected(\textcolor{keyword}{false}),
+61   m_pDimEventRpcInfo(NULL),
+62   m_updateMode(\textcolor{keyword}{false}),
+63   m_serverClientId(0),
+64   m_dataStream(5*1024*1024) \textcolor{comment}{// 5 Mo should be enough to start ...}
+65 \{
+66   pthread\_mutex\_init(&m_mutex, NULL);
+67 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!````~D\+Q\+M\+Dim\+Event\+Client@{$\sim$\+D\+Q\+M\+Dim\+Event\+Client}}
+\index{````~D\+Q\+M\+Dim\+Event\+Client@{$\sim$\+D\+Q\+M\+Dim\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Dim\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::$\sim$\+D\+Q\+M\+Dim\+Event\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDimEventClient_a9ac84df31187c28d29b879f30327b198}
+
+
+Destructor. 
+
+
+
+Definition at line 71 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::disconnect\+From\+Service(), is\+Connected\+To\+Service(), and m\+\_\+mutex.
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{keywordflow}{if}( this->isConnectedToService() )
+74     this->disconnectFromService();
+75 
+76   pthread\_mutex\_destroy(&m_mutex);
+77 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!event\+Reception@{event\+Reception}}
+\index{event\+Reception@{event\+Reception}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{event\+Reception}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::event\+Reception (
+\begin{DoxyParamCaption}
+\item[{{\bf dqm\+\_\+char} $\ast$}]{p\+Buffer, }
+\item[{{\bf dqm\+\_\+uint}}]{buffer\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a8f33bdc6fbde1a1855f585fde3cbb4f6}
+
+
+Handle the event reception as a buffer an its buffer size. 
+
+
+
+Definition at line 338 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Event\+Streamer(), m\+\_\+data\+Stream, m\+\_\+mutex, dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::push\+Event(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer().
+
+
+
+Referenced by info\+Handler(), and dqm4hep\+::\+Dim\+Event\+Rpc\+Info\+::rpc\+Info\+Handler().
+
+
+\begin{DoxyCode}
+339 \{
+340   \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+341     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+342 
+343   \textcolor{comment}{// set buffer}
+344   scoped\_lock( & this->m_mutex);
+345   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.setBuffer(pBuffer, bufferSize));
+346 
+347   \textcolor{comment}{// read event}
+348   DQMEvent *pEvent = NULL;
+349   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getEventStreamer()->deserialize(pEvent, &
+      m_dataStream));
+350 
+351   \textcolor{comment}{// add it to event queue}
+352   this->pushEvent(pEvent);
+353 
+354   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+355 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!get\+Update\+Mode@{get\+Update\+Mode}}
+\index{get\+Update\+Mode@{get\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{get\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::get\+Update\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a81a3b8cea6ac80fd86b4d4ed95d31dcb}
+
+
+Whether the update mode is set. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_aafe333631227e6aa3a66cfd19a8b79c2}.
+
+
+
+Definition at line 255 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+update\+Mode.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+256 \{
+257   \textcolor{keywordflow}{return} m_updateMode;
+258 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!info\+Handler@{info\+Handler}}
+\index{info\+Handler@{info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a27fce705d47f1cebaf362a2f71fcf583}
+
+
+Dim info handler. 
+
+
+
+Definition at line 262 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References event\+Reception(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Sub\+Event\+Identifier(), m\+\_\+p\+Client\+Id\+Info, m\+\_\+p\+Event\+Update\+Info, m\+\_\+p\+Server\+State\+Info, m\+\_\+server\+Client\+Id, m\+\_\+update\+Mode, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+\begin{DoxyCode}
+263 \{
+264   DimInfo *pInfo = getInfo();
+265 
+266   \textcolor{keywordflow}{if}(!pInfo)
+267     \textcolor{keywordflow}{return};
+268 
+269   \textcolor{comment}{// client has just been registered}
+270   \textcolor{keywordflow}{if}(pInfo == m_pClientIdInfo)
+271   \{
+272     \textcolor{keywordtype}{int} clientId = pInfo->getInt();
+273 
+274     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Client id on server : "} << clientId << std::endl;
+275 
+276     \textcolor{keywordflow}{if}(clientId <= 0)
+277       \textcolor{keywordflow}{return};
+278 
+279     m_serverClientId = clientId;
+280     std::string subEventIdentifierCommandName = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/SUB\_EVENT\_IDENTIFIER"};
+281     std::string updateModeCommandName = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/UPDATE\_MODE"};
+282 
+283     \textcolor{comment}{// send to server the client parameters}
+284     DimClient::sendCommandNB((\textcolor{keywordtype}{char}*) updateModeCommandName.c\_str(), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(
+      m_updateMode));
+285     DimClient::sendCommandNB((\textcolor{keywordtype}{char}*) subEventIdentifierCommandName.c\_str(), (\textcolor{keywordtype}{char} *) this->
+      getSubEventIdentifier().c\_str());
+286 
+287     \textcolor{keywordflow}{return};
+288   \}
+289 
+290   \textcolor{keywordflow}{if}(pInfo == m_pServerStateInfo)
+291   \{
+292     \textcolor{keywordtype}{int} serverRunning = pInfo->getInt();
+293 
+294     \textcolor{comment}{// server is running}
+295     \textcolor{keywordflow}{if}(serverRunning > 0)
+296     \{
+297       \textcolor{comment}{// client is already registered, so nothing to do ...}
+298       \textcolor{keywordflow}{if}(m_serverClientId > 0)
+299         \textcolor{keywordflow}{return};
+300 
+301       \textcolor{comment}{// client is not registered yet, we need to do it !}
+302       \textcolor{keywordflow}{else}
+303       \{
+304         streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Registering client into event collector server application !"} << 
+      std::endl;
+305         DimClient::sendCommandNB((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTRATION"}).c\_str(), 1);
+306         \textcolor{keywordflow}{return};
+307       \}
+308     \}
+309     \textcolor{comment}{// server is shutting down.}
+310     \textcolor{comment}{// client is no longer connected and client id is no longer valid.}
+311     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m_serverClientId > 0)
+312     \{
+313       m_serverClientId = 0;
+314       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Unregistered from event collector server application !"} << std::endl;
+315       \textcolor{keywordflow}{return};
+316     \}
+317   \}
+318 
+319   \textcolor{keywordflow}{if}(pInfo == m_pEventUpdateInfo)
+320   \{
+321     \textcolor{keywordflow}{if}(m_serverClientId == 0)
+322       \textcolor{keywordflow}{return};
+323 
+324     \textcolor{keywordtype}{char} *pBuffer = (\textcolor{keywordtype}{char}*) pInfo->getData();
+325     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bufferSize = pInfo->getSize();
+326 
+327     \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+328       \textcolor{keywordflow}{return};
+329 
+330     this->eventReception(pBuffer, bufferSize);
+331 
+332     \textcolor{keywordflow}{return};
+333   \}
+334 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!is\+Connected\+To\+Service@{is\+Connected\+To\+Service}}
+\index{is\+Connected\+To\+Service@{is\+Connected\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{is\+Connected\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::is\+Connected\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_aa177def491c8eb9a10c2f2adfe0d9432}
+
+
+Whether the client is connected to the collector (server) 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a2fd723aa31328fa1b97632e1e2ac31dc}.
+
+
+
+Definition at line 138 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References m\+\_\+is\+Connected.
+
+
+
+Referenced by perform\+Service\+Connection(), perform\+Service\+Disconnection(), query\+Event(), read\+Settings(), set\+Sub\+Event\+Identifier(), set\+Update\+Mode(), and $\sim$\+D\+Q\+M\+Dim\+Event\+Client().
+
+
+\begin{DoxyCode}
+139 \{
+140   \textcolor{keywordflow}{return} m_isConnected;
+141 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!perform\+Service\+Connection@{perform\+Service\+Connection}}
+\index{perform\+Service\+Connection@{perform\+Service\+Connection}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{perform\+Service\+Connection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::perform\+Service\+Connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a50266fbdaed8b2728f9d6e373412fb07}
+
+
+Workhorse of the service connection. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a5d69c657028c105556a4b5897ce0ed0b}.
+
+
+
+Definition at line 81 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References Dim\+Event\+Rpc\+Info, dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), is\+Connected\+To\+Service(), m\+\_\+is\+Connected, m\+\_\+p\+Client\+Id\+Info, m\+\_\+p\+Dim\+Event\+Rpc\+Info, m\+\_\+p\+Event\+Update\+Info, m\+\_\+p\+Server\+State\+Info, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, and dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G.
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{keywordflow}{if}(isConnectedToService())
+84     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+85 
+86   DimClient::setExitHandler( (\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->getCollectorName() ).c\_str() );
+87 
+88   m_pDimEventRpcInfo = \textcolor{keyword}{new} DimEventRpcInfo(\textcolor{keyword}{this});
+89 
+90   m_pClientIdInfo    = \textcolor{keyword}{new} DimUpdatedInfo((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTERED"}).c\_str(), static\_cast<int>(0), \textcolor{keyword}{this});
+91   m_pServerStateInfo = \textcolor{keyword}{new} DimUpdatedInfo((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/SERVER\_STATE"}).c\_str(), static\_cast<int>(0), \textcolor{keyword}{this});
+92   m_pEventUpdateInfo = \textcolor{keyword}{new} DimUpdatedInfo((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/EVENT\_RAW\_UPDATE"}).c\_str(), (\textcolor{keywordtype}{void}*) NULL, 0, \textcolor{keyword}{this});
+93 
+94   m_isConnected = \textcolor{keyword}{true};
+95 
+96   DimCurrentInfo serverStateInfo((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/SERVER\_STATE"}).c\_str(), static\_cast<int>(0));
+97   \textcolor{keywordtype}{int} serverRunning = serverStateInfo.getInt();
+98 
+99   \textcolor{keywordflow}{if}(!serverRunning)
+100   \{
+101     streamlog\_out(WARNING) << \textcolor{stringliteral}{"Server collector application not running yet"} << std::endl;
+102     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+103   \}
+104 
+105   \textcolor{comment}{// send command to register the client on the server}
+106   \textcolor{comment}{// the server is expected to update m\_pClientIdInfo info with the client id}
+107   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Registering client into server collector application !"} << std::endl;
+108   DimClient::sendCommandNB((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTRATION"}).
+      c\_str(), 1);
+109 
+110   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+111 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!perform\+Service\+Disconnection@{perform\+Service\+Disconnection}}
+\index{perform\+Service\+Disconnection@{perform\+Service\+Disconnection}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{perform\+Service\+Disconnection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::perform\+Service\+Disconnection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a218c10d82a8d24f95b912d714018041b}
+
+
+Workhorse of the service connection. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_aefc43840571a501d5bb7296afed49926}.
+
+
+
+Definition at line 115 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), is\+Connected\+To\+Service(), m\+\_\+is\+Connected, m\+\_\+p\+Client\+Id\+Info, m\+\_\+p\+Dim\+Event\+Rpc\+Info, m\+\_\+p\+Event\+Update\+Info, m\+\_\+p\+Server\+State\+Info, and m\+\_\+server\+Client\+Id.
+
+
+\begin{DoxyCode}
+116 \{
+117   \textcolor{keywordflow}{if}(!isConnectedToService())
+118     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+119 
+120   \textcolor{keyword}{delete} m_pDimEventRpcInfo;
+121   \textcolor{keyword}{delete} m_pClientIdInfo;
+122   \textcolor{keyword}{delete} m_pServerStateInfo;
+123   \textcolor{keyword}{delete} m_pEventUpdateInfo;
+124 
+125   m_isConnected = \textcolor{keyword}{false};
+126 
+127   \textcolor{comment}{// un-register client on the server}
+128   \textcolor{keywordflow}{if}(m_serverClientId > 0)
+129   \{
+130     DimClient::sendCommandNB((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTRATION"}
+      ).c\_str(), 0);
+131   \}
+132 
+133   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+134 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!query\+Event@{query\+Event}}
+\index{query\+Event@{query\+Event}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{query\+Event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$\&}]{p\+Event, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a57cf87d97f33281fda6cf0c10271155d}
+
+
+Query an event to the collector (server) with a timeout and handle it without pushing it into the internal queue. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_ac885ac90ae365a2d6452f0836b23323c}.
+
+
+
+Definition at line 185 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Event\+Streamer(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Sub\+Event\+Identifier(), is\+Connected\+To\+Service(), m\+\_\+data\+Stream, m\+\_\+mutex, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer().
+
+
+\begin{DoxyCode}
+186 \{
+187   scoped\_lock( & this->m_mutex);
+188 
+189   \textcolor{keywordflow}{if}( ! this->isConnectedToService() )
+190     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+191 
+192   \textcolor{keywordflow}{if}( NULL == this->getEventStreamer() )
+193     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+194 
+195   \textcolor{comment}{// check for valid parameters}
+196   \textcolor{keywordflow}{if}(timeout <= 0)
+197     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+198 
+199   \textcolor{comment}{// rpc service name}
+200   std::string serviceName = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->getCollectorName() + \textcolor{stringliteral}{"/EVENT\_RAW\_REQUEST"};
+201   pEvent = NULL;
+202 
+203   \textcolor{comment}{// declare the rpc service info}
+204   DimRpcInfo eventDimRpcInfo((\textcolor{keywordtype}{char}*) serviceName.c\_str(), timeout, (\textcolor{keywordtype}{void}*) NULL, 0);
+205 
+206   \textcolor{comment}{// send the query}
+207   eventDimRpcInfo.setData((\textcolor{keywordtype}{char}*) this->getSubEventIdentifier().c\_str());
+208 
+209   \textcolor{comment}{// receive the query result}
+210   \textcolor{keywordtype}{char} *pEventRawBuffer = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(eventDimRpcInfo.getData());
+211   \textcolor{keywordtype}{int} bufferSize = eventDimRpcInfo.getSize();
+212 
+213   \textcolor{comment}{// check for message validity}
+214   \textcolor{keywordflow}{if}(NULL == pEventRawBuffer || 0 == bufferSize)
+215     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+216 
+217   \textcolor{comment}{// deserialize the event raw buffer}
+218   m_dataStream.setBuffer(pEventRawBuffer, bufferSize);
+219   \textcolor{keywordflow}{return} this->getEventStreamer()->deserialize(pEvent, &m_dataStream);
+220 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!query\+Event@{query\+Event}}
+\index{query\+Event@{query\+Event}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{query\+Event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a90a7d76cb0d30c12e4435415fd00347b}
+
+
+Query an event to the collector. 
+
+A command is send to the collector in order to send back an event. This method does not wait for the event reception.
+
+To query a single event that is directly handled by the caller, use query\+Event(evt, timeout).
+
+The received event is pushed in an internal event queue. 
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a3ddc2fcf08a76390dbbfb1ee63b8efe8}.
+
+
+
+Definition at line 224 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Event\+Streamer(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Sub\+Event\+Identifier(), is\+Connected\+To\+Service(), m\+\_\+mutex, and m\+\_\+p\+Dim\+Event\+Rpc\+Info.
+
+
+\begin{DoxyCode}
+225 \{
+226   scoped\_lock( & this->m_mutex);
+227 
+228   \textcolor{keywordflow}{if}( ! this->isConnectedToService() )
+229     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+230 
+231   \textcolor{keywordflow}{if}( NULL == this->getEventStreamer() )
+232     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+233 
+234   \textcolor{comment}{// send the query}
+235   m_pDimEventRpcInfo->setData((\textcolor{keywordtype}{char}*) this->getSubEventIdentifier().c\_str());
+236 
+237   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+238 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle} \&}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a1f272b17a6207fd5f575487775069035}
+
+
+Read settings from the xml handle. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a4b1465a91d073d1c2adc957f3df5d8cd}.
+
+
+
+Definition at line 359 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::create\+Plugin\+Class(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::disconnect\+From\+Service(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Maximum\+Queue\+Size(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Sub\+Event\+Identifier(), get\+Update\+Mode(), dqm4hep\+::\+D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$\+::instance(), is\+Connected\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Parameter\+Value(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Event\+Streamer(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Maximum\+Queue\+Size(), set\+Sub\+Event\+Identifier(), and set\+Update\+Mode().
+
+
+\begin{DoxyCode}
+360 \{
+361   \textcolor{keywordtype}{bool} reconnect = this->isConnectedToService();
+362 
+363   \textcolor{comment}{// first disconnect}
+364   \textcolor{keywordflow}{if}( reconnect )
+365     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->disconnectFromService());
+366 
+367   \textcolor{comment}{// read all xml values first}
+368   std::string collectorName = this->getCollectorName();
+369   RETURN_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::readParameterValue(xmlHandle,
+370       \textcolor{stringliteral}{"collectorName"}, collectorName));
+371 
+372   std::string subEventIdentifier = this->getSubEventIdentifier();
+373   RETURN_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::readParameterValue(xmlHandle,
+374       \textcolor{stringliteral}{"subEventIdentifier"}, subEventIdentifier));
+375 
+376   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} maxEventQueueSize = this->getMaximumQueueSize();
+377   RETURN_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::readParameterValue(xmlHandle,
+378       \textcolor{stringliteral}{"maxQueueSize"}, maxEventQueueSize));
+379 
+380   \textcolor{keywordtype}{bool} updateMode = this->getUpdateMode();
+381   RETURN_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::readParameterValue(xmlHandle,
+382       \textcolor{stringliteral}{"updateMode"}, updateMode));
+383 
+384   std::string eventStreamerName;
+385   RETURN_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::readParameterValue(xmlHandle,
+386       \textcolor{stringliteral}{"streamerName"}, eventStreamerName));
+387 
+388   \textcolor{comment}{// configure the client}
+389   \textcolor{comment}{// connection to service will come afterward}
+390   this->setCollectorName(collectorName);
+391   this->setSubEventIdentifier(subEventIdentifier);
+392   this->setMaximumQueueSize(maxEventQueueSize);
+393   this->setUpdateMode(updateMode);
+394 
+395   \textcolor{keywordflow}{if}( ! eventStreamerName.empty() )
+396   \{
+397     DQMEventStreamer *pEventStreamer = DQMPluginManager::instance()->
+      createPluginClass<DQMEventStreamer>(eventStreamerName);
+398 
+399     \textcolor{keywordflow}{if}( ! pEventStreamer )
+400       \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+401 
+402     this->setEventStreamer(pEventStreamer, \textcolor{keyword}{true});
+403   \}
+404 
+405   \textcolor{comment}{// reconnect only if connected before configuration}
+406   \textcolor{keywordflow}{if}( reconnect )
+407     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->connectToService());
+408 
+409   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+410 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!send\+Event@{send\+Event}}
+\index{send\+Event@{send\+Event}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{send\+Event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::send\+Event (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a79b251a13d340fac99bd32ef67fbfe46}
+
+
+Send an event to the collector (server). 
+
+Possible only if a connection has been created (\doxyref{connect\+To\+Service()}{p.}{classdqm4hep_1_1DQMEventClient_a535302ffc201aff823c210d9a834937c}) and an event streamer set. 
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a5c322b91355b4751235fad57ab650152}.
+
+
+
+Definition at line 145 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Event\+Streamer(), m\+\_\+data\+Stream, m\+\_\+mutex, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+146 \{
+147   scoped\_lock( & this->m_mutex);
+148 
+149   \textcolor{keywordflow}{if}( NULL == this->getEventStreamer() )
+150     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+151 
+152   \textcolor{keywordflow}{if}(NULL == pEvent)
+153     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+154 
+155   m_dataStream.reset();
+156   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getEventStreamer()->serialize(pEvent, &
+      m_dataStream));
+157 
+158   \textcolor{keywordtype}{char} *pBuffer = m_dataStream.getBuffer();
+159   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} bufferSize = m_dataStream.getBufferSize();
+160 
+161   \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+162     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+163 
+164   std::string commandName = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->getCollectorName() + \textcolor{stringliteral}{"/COLLECT\_RAW\_EVENT"};
+165   DimClient::sendCommandNB((\textcolor{keywordtype}{char}*) commandName.c\_str(), (\textcolor{keywordtype}{void} *) pBuffer, bufferSize);
+166 
+167   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+168 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!set\+Sub\+Event\+Identifier@{set\+Sub\+Event\+Identifier}}
+\index{set\+Sub\+Event\+Identifier@{set\+Sub\+Event\+Identifier}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{set\+Sub\+Event\+Identifier}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::set\+Sub\+Event\+Identifier (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{identifier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a13060fe0f26dcd57fab027fc2a3cb7e2}
+
+
+Set the sub event identifier. 
+
+This string is sent while querying events. The received event will be a sub event matching this identifier
+
+The event sub identifier is sent the the collector is the client is connected to the service 
+
+Reimplemented from {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a81d480f9afc5cf984bd2d7915f9961ad}.
+
+
+
+Definition at line 172 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), is\+Connected\+To\+Service(), and dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Sub\+Event\+Identifier().
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+173 \{
+174   DQMEventClient::setSubEventIdentifier(identifier);
+175 
+176   \textcolor{keywordflow}{if}( ! this->isConnectedToService() )
+177     \textcolor{keywordflow}{return};
+178 
+179   std::string subEventIdentifierCommandName = \textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + this->
+      getCollectorName() + \textcolor{stringliteral}{"/SUB\_EVENT\_IDENTIFIER"};
+180   DimClient::sendCommandNB((\textcolor{keywordtype}{char}*) subEventIdentifierCommandName.c\_str(), (\textcolor{keywordtype}{char} *) identifier.c\_str());
+181 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!set\+Update\+Mode@{set\+Update\+Mode}}
+\index{set\+Update\+Mode@{set\+Update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{set\+Update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::set\+Update\+Mode (
+\begin{DoxyParamCaption}
+\item[{bool}]{update\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventClient_a12c8e0e2fd6668a79042d1ab31036516}
+
+
+Set the update mode. 
+
+If the update mode is set to true, a command is sent to the server in order to update the client as soon as an event is received in the collector server. 
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMEventClient_a6fcfec76087d886b2a9923e4e1a027a9}.
+
+
+
+Definition at line 242 of file D\+Q\+M\+Dim\+Event\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::get\+Collector\+Name(), is\+Connected\+To\+Service(), and m\+\_\+update\+Mode.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+243 \{
+244   m_updateMode = updateMode;
+245 
+246   \textcolor{keywordflow}{if}( ! this->isConnectedToService() )
+247     \textcolor{keywordflow}{return};
+248 
+249   \textcolor{comment}{// send command to server}
+250   DimClient::sendCommandNB((\textcolor{keywordtype}{char}*) (std::string(\textcolor{stringliteral}{"DQM4HEP/EventCollector/"}) + this->
+      getCollectorName() + \textcolor{stringliteral}{"/UPDATE\_MODE"} ).c\_str(), static\_cast<int>(m_updateMode));
+251 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!Dim\+Event\+Rpc\+Info@{Dim\+Event\+Rpc\+Info}}
+\index{Dim\+Event\+Rpc\+Info@{Dim\+Event\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{Dim\+Event\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Dim\+Event\+Rpc\+Info}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMDimEventClient_a34a1404882e29c1e9ebb7019f4b11ba5}
+
+
+Definition at line 71 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by perform\+Service\+Connection().
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a768f85ed24eb9aceda2e676b8b8ffd90}
+
+
+Definition at line 160 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by event\+Reception(), query\+Event(), and send\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+is\+Connected@{m\+\_\+is\+Connected}}
+\index{m\+\_\+is\+Connected@{m\+\_\+is\+Connected}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+is\+Connected\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a7cb6a3f81140c18fb630d3fe4b36e11a}
+
+
+Definition at line 151 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by is\+Connected\+To\+Service(), perform\+Service\+Connection(), and perform\+Service\+Disconnection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+mutex@{m\+\_\+mutex}}
+\index{m\+\_\+mutex@{m\+\_\+mutex}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+mutex}]{\setlength{\rightskip}{0pt plus 5cm}pthread\+\_\+mutex\+\_\+t dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a15f4968fad8ded96820254a82e89f5a4}
+
+
+Definition at line 161 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by event\+Reception(), query\+Event(), send\+Event(), and $\sim$\+D\+Q\+M\+Dim\+Event\+Client().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+p\+Client\+Id\+Info@{m\+\_\+p\+Client\+Id\+Info}}
+\index{m\+\_\+p\+Client\+Id\+Info@{m\+\_\+p\+Client\+Id\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+p\+Client\+Id\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+p\+Client\+Id\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a6fad1f2787b73ce99d7479dd6efbd710}
+
+
+to receive the client id stored on server 
+
+
+
+Definition at line 153 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by info\+Handler(), perform\+Service\+Connection(), and perform\+Service\+Disconnection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+p\+Dim\+Event\+Rpc\+Info@{m\+\_\+p\+Dim\+Event\+Rpc\+Info}}
+\index{m\+\_\+p\+Dim\+Event\+Rpc\+Info@{m\+\_\+p\+Dim\+Event\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+p\+Dim\+Event\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dim\+Event\+Rpc\+Info}$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+p\+Dim\+Event\+Rpc\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a58339eb1c0633a428334f672fe516ff7}
+
+
+Definition at line 152 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by perform\+Service\+Connection(), perform\+Service\+Disconnection(), and query\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+p\+Event\+Update\+Info@{m\+\_\+p\+Event\+Update\+Info}}
+\index{m\+\_\+p\+Event\+Update\+Info@{m\+\_\+p\+Event\+Update\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+p\+Event\+Update\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+p\+Event\+Update\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a105b729c4e676cbe75f29ec8a5daaa3c}
+
+
+For event reception. 
+
+
+
+Definition at line 155 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by info\+Handler(), perform\+Service\+Connection(), and perform\+Service\+Disconnection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+p\+Server\+State\+Info@{m\+\_\+p\+Server\+State\+Info}}
+\index{m\+\_\+p\+Server\+State\+Info@{m\+\_\+p\+Server\+State\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+p\+Server\+State\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Updated\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+p\+Server\+State\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a6517475474af8efbf223680485463dfd}
+
+
+Server state. 0 for stopped \+: 1 for running. 
+
+
+
+Definition at line 154 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by info\+Handler(), perform\+Service\+Connection(), and perform\+Service\+Disconnection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+server\+Client\+Id@{m\+\_\+server\+Client\+Id}}
+\index{m\+\_\+server\+Client\+Id@{m\+\_\+server\+Client\+Id}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+server\+Client\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+server\+Client\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_afec6ea72d90f89c466870920c969dd88}
+
+
+Definition at line 157 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by info\+Handler(), and perform\+Service\+Disconnection().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}!m\+\_\+update\+Mode@{m\+\_\+update\+Mode}}
+\index{m\+\_\+update\+Mode@{m\+\_\+update\+Mode}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client}}
+\subsubsection[{m\+\_\+update\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::m\+\_\+update\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventClient_a357ffbb2b6bd9ca941d0444d6d4966e1}
+
+
+Definition at line 158 of file D\+Q\+M\+Dim\+Event\+Client.\+h.
+
+
+
+Referenced by get\+Update\+Mode(), info\+Handler(), and set\+Update\+Mode().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Event\+Client.\+cc}\end{DoxyCompactItemize}

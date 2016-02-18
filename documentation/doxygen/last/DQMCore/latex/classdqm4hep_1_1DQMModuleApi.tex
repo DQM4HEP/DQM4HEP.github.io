@@ -1,0 +1,1861 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Module\+Api Class Reference}
+\label{classdqm4hep_1_1DQMModuleApi}\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+
+
+\doxyref{D\+Q\+M\+Module\+Api}{p.}{classdqm4hep_1_1DQMModuleApi} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Module\+Api.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf cd} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module)
+\begin{DoxyCompactList}\small\item\em Go back to root directory. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf cd} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&dir\+Name)
+\begin{DoxyCompactList}\small\item\em Go to directory 'dir\+Name'. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf mkdir} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&dir\+Name)
+\begin{DoxyCompactList}\small\item\em Create the directory 'dir\+Name'. \end{DoxyCompactList}\item 
+static void {\bf ls} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, bool recursive=false)
+\begin{DoxyCompactList}\small\item\em List the current directory content. \end{DoxyCompactList}\item 
+static const std\+::string \& {\bf pwd} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module)
+\begin{DoxyCompactList}\small\item\em Get the current directory name. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf go\+Up} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module)
+\begin{DoxyCompactList}\small\item\em Navigate backward in the directory structure. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf rmdir} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&dir\+Name)
+\begin{DoxyCompactList}\small\item\em Remove the directory 'dir\+Name'. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Real\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D float histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D integer histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Char\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D char histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D short histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Real\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D float histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D integer histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Char\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D char histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D short histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Profile1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D profile. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Profile2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max, float z\+Min, float z\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D profile. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, const int \&value)
+\begin{DoxyCompactList}\small\item\em Book an integer scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Float} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, const float \&value)
+\begin{DoxyCompactList}\small\item\em Book a float scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, const short \&value)
+\begin{DoxyCompactList}\small\item\em Book a short scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+String} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Book a std\+::string scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Object} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&name, const std\+::string \&title, T\+Object $\ast$p\+R\+O\+O\+T\+Object)
+\begin{DoxyCompactList}\small\item\em Book a generic T\+Object. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Real\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D float histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D integer histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Char\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D char histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short\+Histogram1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+Bins, float minimum, float maximum)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D short histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Real\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D float histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D integer histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Char\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D char histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short\+Histogram2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D short histogram. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Profile1\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, float y\+Min, float y\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 1\+D profile. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Profile2\+D} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, int n\+X\+Bins, float x\+Min, float x\+Max, int n\+Y\+Bins, float y\+Min, float y\+Max, float z\+Min, float z\+Max)
+\begin{DoxyCompactList}\small\item\em Book a 2\+D profile. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Int} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, const int \&value)
+\begin{DoxyCompactList}\small\item\em Book an integer scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Float} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, const float \&value)
+\begin{DoxyCompactList}\small\item\em Book a float scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Short} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, const short \&value)
+\begin{DoxyCompactList}\small\item\em Book a short scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+String} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, const std\+::string \&value)
+\begin{DoxyCompactList}\small\item\em Book a std\+::string scalar element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf book\+Object} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element, const std\+::string \&directory, const std\+::string \&name, const std\+::string \&title, T\+Object $\ast$p\+R\+O\+O\+T\+Object)
+\begin{DoxyCompactList}\small\item\em Book a generic T\+Object. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf get\+All\+Monitor\+Elements} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, std\+::vector$<$ {\bf D\+Q\+M\+Monitor\+Element} $\ast$ $>$ \&monitor\+Element\+List)
+\begin{DoxyCompactList}\small\item\em Get all the monitor elements already booked by this module in all the directories. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf get\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&monitor\+Element\+Name, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Get the monitor element in the current directory (result by ptr reference) \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf get\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&dir\+Name, const std\+::string \&monitor\+Element\+Name, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Get the monitor element in the given directory (result by ptr reference) \end{DoxyCompactList}\item 
+static {\bf D\+Q\+M\+Monitor\+Element} $\ast$ {\bf get\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&monitor\+Element\+Name)
+\begin{DoxyCompactList}\small\item\em Get the monitor element in the current directory. \end{DoxyCompactList}\item 
+static {\bf D\+Q\+M\+Monitor\+Element} $\ast$ {\bf get\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&dir\+Name, const std\+::string \&monitor\+Element\+Name)
+\begin{DoxyCompactList}\small\item\em Get the monitor element in the given directory. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf delete\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Delete the monitor element (by element ptr) \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf register\+Quality\+Test\+Factory} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const std\+::string \&quality\+Test\+Factory\+Name, const {\bf D\+Q\+M\+Quality\+Test\+Factory} $\ast$const p\+Quality\+Test\+Factory)
+\begin{DoxyCompactList}\small\item\em Delete the monitor element (by element name) \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf create\+Quality\+Test} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf Ti\+Xml\+Element} $\ast$const p\+Xml\+Element)
+\begin{DoxyCompactList}\small\item\em Create a quality test from the xml element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf add\+Quality\+Test} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element, const std\+::string \&quality\+Test\+Name)
+\begin{DoxyCompactList}\small\item\em Add a quality test to a given monitor element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf run\+Quality\+Tests} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Run all the quality test attached to this monitor element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf run\+Quality\+Test} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element, const std\+::string \&quality\+Test\+Name)
+\begin{DoxyCompactList}\small\item\em Run a specific quality test attached to this monitor element. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf run\+Quality\+Tests} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module)
+\begin{DoxyCompactList}\small\item\em Run all the quality test of all the monitor elements of this module. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf reset\+Monitor\+Elements} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, {\bf D\+Q\+M\+Reset\+Policy} policy)
+\begin{DoxyCompactList}\small\item\em Reset all the monitor elements that have the given reset policy. \end{DoxyCompactList}\item 
+static {\bf Status\+Code} {\bf reset\+Monitor\+Elements} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module)
+\begin{DoxyCompactList}\small\item\em Reset all the monitor elements of this module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Status\+Code} {\bf book\+Monitor\+Element} (const {\bf D\+Q\+M\+Module} $\ast$const p\+Module, const {\bf Ti\+Xml\+Element} $\ast$const p\+Xml\+Element, {\bf D\+Q\+M\+Monitor\+Element} $\ast$\&p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Archive the current state of this module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Xml\+Helper}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Module\+Api}{p.}{classdqm4hep_1_1DQMModuleApi} class. 
+
+Responsible for direct operation on module application and modules such as monitor element booking and directory navigation. Monitor element booking should be done via a \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule}.
+
+Example \+:
+
+
+\begin{DoxyCode}
+DQMMonitorElement *pMyRealHistogram1DElement = NULL;
+DQMModuleApi::bookRealHistogram1D(\textcolor{keyword}{this}, pMyRealHistogram1DElement, \textcolor{stringliteral}{"MyHisto"}, \textcolor{stringliteral}{"My histo title"}, 10, 1, 10);
+\end{DoxyCode}
+ 
+
+Definition at line 73 of file D\+Q\+M\+Module\+Api.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!add\+Quality\+Test@{add\+Quality\+Test}}
+\index{add\+Quality\+Test@{add\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{add\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::add\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{quality\+Test\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aef12ffc68ac9bd9bffd6a222ab3ab3ec}
+
+
+Add a quality test to a given monitor element. 
+
+The quality test must have been registered in the framework before calling this method. 
+
+Definition at line 509 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::add\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+510 \{
+511   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->addQualityTest(pMonitorElement, 
+      qualityTestName);
+512 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Char\+Histogram1\+D@{book\+Char\+Histogram1\+D}}
+\index{book\+Char\+Histogram1\+D@{book\+Char\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Char\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a0412b41e41d73c921068afcaf97dfa06}
+
+
+Book a 1\+D char histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 113 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+114 \{
+115   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookCharHistogram1D(pMonitorElement, name, title, pModule->getName(), nBins, minimum, maximum));
+116   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+117 
+118   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+119 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Char\+Histogram1\+D@{book\+Char\+Histogram1\+D}}
+\index{book\+Char\+Histogram1\+D@{book\+Char\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Char\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aad3119caefccaee5cb0d0d0c8dd20164}
+
+
+Book a 1\+D char histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 278 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+279 \{
+280   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookCharHistogram1D(pMonitorElement, dirName, name, title, pModule->getName(), nBins, minimum, maximum));
+281   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+282 
+283   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+284 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Char\+Histogram2\+D@{book\+Char\+Histogram2\+D}}
+\index{book\+Char\+Histogram2\+D@{book\+Char\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Char\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ae7c6988e14c24b6436c465cc1f275f0f}
+
+
+Book a 2\+D char histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 157 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+160 \{
+161   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookCharHistogram2D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, yMax))
+      ;
+162   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+163 
+164   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+165 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Char\+Histogram2\+D@{book\+Char\+Histogram2\+D}}
+\index{book\+Char\+Histogram2\+D@{book\+Char\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Char\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Char\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a11d4ef9fde8f7c8879e8d727844a476c}
+
+
+Book a 2\+D char histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 322 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Char\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+325 \{
+326   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookCharHistogram2D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, 
+      yMin, yMax));
+327   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+328 
+329   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+330 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Float@{book\+Float}}
+\index{book\+Float@{book\+Float}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Float (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const float \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ae69aa5597b509c0f58d0a78273053202}
+
+
+Book a float scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 215 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Float(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+216 \{
+217   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookFloat(pMonitorElement, name, title, pModule->getName(), value));
+218   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+219 
+220   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+221 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Float@{book\+Float}}
+\index{book\+Float@{book\+Float}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Float}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Float (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const float \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a27152b5a771d214c93344b2d5c0ef479}
+
+
+Book a float scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 380 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Float(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+381 \{
+382   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookFloat(pMonitorElement, dirName, name, title, pModule->getName(), value));
+383   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+384 
+385   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+386 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int@{book\+Int}}
+\index{book\+Int@{book\+Int}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const int \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a8dff00bef007ba2e1bc8e8f696bb00a6}
+
+
+Book an integer scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 205 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+206 \{
+207   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookInt(pMonitorElement, name, title, pModule->getName(), value));
+208   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+209 
+210   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+211 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int@{book\+Int}}
+\index{book\+Int@{book\+Int}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const int \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ae5c3bc6f4a2385b09e7e2f670f653467}
+
+
+Book an integer scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 370 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+371 \{
+372   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookInt(pMonitorElement, dirName, name, title, pModule->getName(), value));
+373   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+374 
+375   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+376 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int\+Histogram1\+D@{book\+Int\+Histogram1\+D}}
+\index{book\+Int\+Histogram1\+D@{book\+Int\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a0cd0df15e42e6d83598656a172953990}
+
+
+Book a 1\+D integer histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 103 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+104 \{
+105   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookIntHistogram1D(pMonitorElement, name, title, pModule->getName(), nBins, minimum, maximum));
+106   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+107 
+108   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int\+Histogram1\+D@{book\+Int\+Histogram1\+D}}
+\index{book\+Int\+Histogram1\+D@{book\+Int\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a1a4818eb8334200b97ad191d1c12d86a}
+
+
+Book a 1\+D integer histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 268 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+269 \{
+270   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookIntHistogram1D(pMonitorElement, dirName, name, title, pModule->getName(), nBins, minimum, maximum));
+271   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+272 
+273   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+274 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int\+Histogram2\+D@{book\+Int\+Histogram2\+D}}
+\index{book\+Int\+Histogram2\+D@{book\+Int\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ae44b7d590ba953a8868f418db19ec498}
+
+
+Book a 2\+D integer histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 145 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+148 \{
+149   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookIntHistogram2D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, yMax));
+150   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+151 
+152   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+153 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Int\+Histogram2\+D@{book\+Int\+Histogram2\+D}}
+\index{book\+Int\+Histogram2\+D@{book\+Int\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Int\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Int\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a2962b673f9c91c9052413c3995ec8746}
+
+
+Book a 2\+D integer histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 310 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Int\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+313 \{
+314   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookIntHistogram2D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin
+      , yMax));
+315   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+316 
+317   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+318 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Monitor\+Element@{book\+Monitor\+Element}}
+\index{book\+Monitor\+Element@{book\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const {\bf Ti\+Xml\+Element} $\ast$const}]{p\+Xml\+Element, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classdqm4hep_1_1DQMModuleApi_a3c8bd9cb3de87e77ad744aa586225a91}
+
+
+Archive the current state of this module. 
+
+Simply write the directory structure with the monitor elements in a root file\+Book a monitor element from the xml element 
+
+Definition at line 537 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::book\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+538 \{
+539   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookMonitorElement(pXmlElement, pModule->getName(), pMonitorElement));
+540   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+541 
+542   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+543 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Object@{book\+Object}}
+\index{book\+Object@{book\+Object}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Object (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{T\+Object $\ast$}]{p\+R\+O\+O\+T\+Object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aa0ad6ce92e952b9da03df6b270db161a}
+
+
+Book a generic T\+Object. 
+
+The T\+Object must be valid and must be a built-\/in R\+O\+O\+T object or a user defined class inheriting from T\+Object and providing a dictionary. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 246 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Object(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+248 \{
+249   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookObject(pMonitorElement, name, title, pModule->getName(), pROOTObject));
+250   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+251 
+252   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+253 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Object@{book\+Object}}
+\index{book\+Object@{book\+Object}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Object (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{T\+Object $\ast$}]{p\+R\+O\+O\+T\+Object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a1ea7b6c4f248e10725ba26b5448ca46e}
+
+
+Book a generic T\+Object. 
+
+The T\+Object must be valid and must be a built-\/in R\+O\+O\+T object or a user defined class inheriting from T\+Object and providing a dictionary. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 410 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Object(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+412 \{
+413   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookObject(pMonitorElement, dirName, name, title, pModule->getName(), pROOTObject));
+414   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+415 
+416   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+417 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Profile1\+D@{book\+Profile1\+D}}
+\index{book\+Profile1\+D@{book\+Profile1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Profile1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a979f154e54c188e14f1a3032d4239f3d}
+
+
+Book a 1\+D profile. 
+
+The profile is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 181 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+183 \{
+184   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookProfile1D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, yMin, yMax));
+185   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+186 
+187   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+188 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Profile1\+D@{book\+Profile1\+D}}
+\index{book\+Profile1\+D@{book\+Profile1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Profile1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aeeb902d60dc531c1611ae1c69cea9cdf}
+
+
+Book a 1\+D profile. 
+
+The profile is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 346 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+348 \{
+349   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookProfile1D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, yMin, yMax));
+350   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+351 
+352   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+353 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Profile2\+D@{book\+Profile2\+D}}
+\index{book\+Profile2\+D@{book\+Profile2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Profile2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max, }
+\item[{float}]{z\+Min, }
+\item[{float}]{z\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a7654f5519644a2279de08097f3ef82c7}
+
+
+Book a 2\+D profile. 
+
+The profile is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 192 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+196 \{
+197   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookProfile2D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, yMax, zMin, 
+      zMax));
+198   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+199 
+200   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+201 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Profile2\+D@{book\+Profile2\+D}}
+\index{book\+Profile2\+D@{book\+Profile2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Profile2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Profile2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max, }
+\item[{float}]{z\+Min, }
+\item[{float}]{z\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ad5ef35d9ed4a16db900ad69521d6c44c}
+
+
+Book a 2\+D profile. 
+
+The profile is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 357 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Profile2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+361 \{
+362   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookProfile2D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, 
+      yMax, zMin, zMax));
+363   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+364 
+365   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+366 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Real\+Histogram1\+D@{book\+Real\+Histogram1\+D}}
+\index{book\+Real\+Histogram1\+D@{book\+Real\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Real\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a5dd79d6b323bda580128d4901c421ffb}
+
+
+Book a 1\+D float histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 93 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+94 \{
+95   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookRealHistogram1D(pMonitorElement, name, title, pModule->getName(), nBins, minimum, maximum));
+96   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+97 
+98   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Real\+Histogram1\+D@{book\+Real\+Histogram1\+D}}
+\index{book\+Real\+Histogram1\+D@{book\+Real\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Real\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a9261e276aa2103bdd8b81f034fac9fa9}
+
+
+Book a 1\+D float histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 258 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+259 \{
+260   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookRealHistogram1D(pMonitorElement, dirName, name, title, pModule->getName(), nBins, minimum, maximum));
+261   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+262 
+263   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+264 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Real\+Histogram2\+D@{book\+Real\+Histogram2\+D}}
+\index{book\+Real\+Histogram2\+D@{book\+Real\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Real\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_af6da681708f8d48a6e2fb9bb576cd32a}
+
+
+Book a 2\+D float histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 133 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+136 \{
+137   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookRealHistogram2D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, yMax))
+      ;
+138   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+139 
+140   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+141 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Real\+Histogram2\+D@{book\+Real\+Histogram2\+D}}
+\index{book\+Real\+Histogram2\+D@{book\+Real\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Real\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Real\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a964281245b59f3e34f16ab764fcc5337}
+
+
+Book a 2\+D float histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 298 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Real\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+301 \{
+302   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookRealHistogram2D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, 
+      yMin, yMax));
+303   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+304 
+305   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+306 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short@{book\+Short}}
+\index{book\+Short@{book\+Short}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const short \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a5fbd1f98978d7dfea590143a396e0d42}
+
+
+Book a short scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 225 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+226 \{
+227   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShort(pMonitorElement, name, title, pModule->getName(), value));
+228   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+229 
+230   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+231 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short@{book\+Short}}
+\index{book\+Short@{book\+Short}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const short \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a275e8087bc22c9ee3a17e91335eb5c66}
+
+
+Book a short scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 390 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+391 \{
+392   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShort(pMonitorElement, dirName, name, title, pModule->getName(), value));
+393   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+394 
+395   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+396 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short\+Histogram1\+D@{book\+Short\+Histogram1\+D}}
+\index{book\+Short\+Histogram1\+D@{book\+Short\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a79ffb06f36fdc9dcf25e6a5d353197b2}
+
+
+Book a 1\+D short histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 123 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+124 \{
+125   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShortHistogram1D(pMonitorElement, name, title, pModule->getName(), nBins, minimum, maximum));
+126   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+127 
+128   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+129 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short\+Histogram1\+D@{book\+Short\+Histogram1\+D}}
+\index{book\+Short\+Histogram1\+D@{book\+Short\+Histogram1\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short\+Histogram1\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram1\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+Bins, }
+\item[{float}]{minimum, }
+\item[{float}]{maximum}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a4c8159ba58686806005a1f8e2e3b219e}
+
+
+Book a 1\+D short histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 288 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram1\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+289 \{
+290   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShortHistogram1D(pMonitorElement, dirName, name, title, pModule->getName(), nBins, minimum, maximum));
+291   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+292 
+293   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+294 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short\+Histogram2\+D@{book\+Short\+Histogram2\+D}}
+\index{book\+Short\+Histogram2\+D@{book\+Short\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a515a865dc97f40558f9e99919f8a6087}
+
+
+Book a 2\+D short histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 169 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+172 \{
+173   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShortHistogram2D(pMonitorElement, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, yMin, yMax)
+      );
+174   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+175 
+176   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+177 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+Short\+Histogram2\+D@{book\+Short\+Histogram2\+D}}
+\index{book\+Short\+Histogram2\+D@{book\+Short\+Histogram2\+D}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+Short\+Histogram2\+D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+Short\+Histogram2\+D (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{int}]{n\+X\+Bins, }
+\item[{float}]{x\+Min, }
+\item[{float}]{x\+Max, }
+\item[{int}]{n\+Y\+Bins, }
+\item[{float}]{y\+Min, }
+\item[{float}]{y\+Max}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a6fd20db981e2a7685feeaf48f4670a80}
+
+
+Book a 2\+D short histogram. 
+
+The histogram is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 334 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+Short\+Histogram2\+D(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+337 \{
+338   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookShortHistogram2D(pMonitorElement, dirName, name, title, pModule->getName(), nXBins, xMin, xMax, nYBins, 
+      yMin, yMax));
+339   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+340 
+341   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+342 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+String@{book\+String}}
+\index{book\+String@{book\+String}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a2af7d6e01d7ba0f321fa3c6339e89e60}
+
+
+Book a std\+::string scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} and added to monitor element list of the module. Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation by passing 'this' as first argument 
+
+Definition at line 235 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+String(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+236 \{
+237   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookString(pMonitorElement, name, title, pModule->getName(), value));
+238   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+239 
+240   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+241 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!book\+String@{book\+String}}
+\index{book\+String@{book\+String}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{book\+String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::book\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{directory, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{title, }
+\item[{const std\+::string \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a2b15f380664999a248a9ebf8394c54fb}
+
+
+Book a std\+::string scalar element. 
+
+The scalar is encapsulated in the \doxyref{D\+Q\+M\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMMonitorElement} Such a function should be used in \doxyref{D\+Q\+M\+Module}{p.}{classdqm4hep_1_1DQMModule} implementation 
+
+Definition at line 400 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::add\+Available\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::book\+String(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+401 \{
+402   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      bookString(pMonitorElement, dirName, name, title, pModule->getName(), value));
+403   pModule->getModuleApplication()->getMonitorElementSender()->addAvailableMonitorElement(pMonitorElement);
+404 
+405   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+406 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!cd@{cd}}
+\index{cd@{cd}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{cd}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::cd (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a95538f6001c3c26dc9d495bee5de2b4a}
+
+
+Go back to root directory. 
+
+
+
+Definition at line 43 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::cd(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+44 \{
+45   pModule->getModuleApplication()->getMonitorElementManager()->cd();
+46 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!cd@{cd}}
+\index{cd@{cd}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{cd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::cd (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{dir\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a2f782ef2260e118c5e85237af4c55703}
+
+
+Go to directory 'dir\+Name'. 
+
+
+
+Definition at line 50 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::cd(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+51 \{
+52   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->cd(dirName);
+53 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!create\+Quality\+Test@{create\+Quality\+Test}}
+\index{create\+Quality\+Test@{create\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{create\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::create\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf Ti\+Xml\+Element} $\ast$const}]{p\+Xml\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ab4b352d83c7e1ee3b8d8d6a2e5f0aaf3}
+
+
+Create a quality test from the xml element. 
+
+The xml element must contain the attribute 'type' and 'name' 
+
+Definition at line 502 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::create\+Quality\+Test(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::create\+Quality\+Test().
+
+
+\begin{DoxyCode}
+503 \{
+504   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->createQualityTest(pXmlElement);
+505 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!delete\+Monitor\+Element@{delete\+Monitor\+Element}}
+\index{delete\+Monitor\+Element@{delete\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{delete\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::delete\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ac727f077d68c862f622f5276c1cd0972}
+
+
+Delete the monitor element (by element ptr) 
+
+
+
+Definition at line 457 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::delete\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Path(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::remove\+Available\+Monitor\+Element(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+458 \{
+459   std::string fullName = (pMonitorElement->getPath() + pMonitorElement->getName()).getPath();
+460   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pModule->getModuleApplication()->getMonitorElementManager()->
+      deleteMonitorElement(pMonitorElement));
+461   pModule->getModuleApplication()->getMonitorElementSender()->removeAvailableMonitorElement(fullName);
+462 
+463   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+464 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!get\+All\+Monitor\+Elements@{get\+All\+Monitor\+Elements}}
+\index{get\+All\+Monitor\+Elements@{get\+All\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{get\+All\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::get\+All\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{std\+::vector$<$ {\bf D\+Q\+M\+Monitor\+Element} $\ast$ $>$ \&}]{monitor\+Element\+List}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a8a88b701ae965b9a62290d2c26ae1ed9}
+
+
+Get all the monitor elements already booked by this module in all the directories. 
+
+
+
+Definition at line 421 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+All\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+422 \{
+423   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->getAllMonitorElements(
+      monitorElementList);
+424 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{monitor\+Element\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a206daae3e84f5eb36db0de407d797e9c}
+
+
+Get the monitor element in the current directory (result by ptr reference) 
+
+
+
+Definition at line 428 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::send\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+429 \{
+430   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->getMonitorElement(monitorElementName,
+       pMonitorElement);
+431 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{dir\+Name, }
+\item[{const std\+::string \&}]{monitor\+Element\+Name, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$\&}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_acfbb7970e423393c3ce2832b1a1fb184}
+
+
+Get the monitor element in the given directory (result by ptr reference) 
+
+
+
+Definition at line 435 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+436 \{
+437   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->getMonitorElement(dirName, 
+      monitorElementName, pMonitorElement);
+438 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element} $\ast$ dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{monitor\+Element\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a768244ca95ebe7e9f01a23de3eb846ef}
+
+
+Get the monitor element in the current directory. 
+
+The element is directly returned without any ptr check 
+
+Definition at line 442 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+443 \{
+444   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->getMonitorElement(monitorElementName)
+      ;
+445 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element} $\ast$ dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{dir\+Name, }
+\item[{const std\+::string \&}]{monitor\+Element\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a00a321dc581dce60d5c84f680aadfc46}
+
+
+Get the monitor element in the given directory. 
+
+The element is directly returned without any ptr check 
+
+Definition at line 449 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager().
+
+
+\begin{DoxyCode}
+450 \{
+451   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->getMonitorElement(dirName, 
+      monitorElementName);
+452 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!go\+Up@{go\+Up}}
+\index{go\+Up@{go\+Up}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{go\+Up}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::go\+Up (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aab6b48d5b917ba882bf18e656fe11c8f}
+
+
+Navigate backward in the directory structure. 
+
+
+
+Definition at line 78 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::go\+Up().
+
+
+\begin{DoxyCode}
+79 \{
+80   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->goUp();
+81 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!ls@{ls}}
+\index{ls@{ls}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::ls (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{bool}]{recursive = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ad92f963204c5ba05bbcde6912426f638}
+
+
+List the current directory content. 
+
+
+
+Definition at line 64 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::ls().
+
+
+\begin{DoxyCode}
+65 \{
+66   pModule->getModuleApplication()->getMonitorElementManager()->ls(recursive);
+67 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::mkdir (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{dir\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a6809df9fe6f92e79b72815939dc965de}
+
+
+Create the directory 'dir\+Name'. 
+
+
+
+Definition at line 57 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::mkdir().
+
+
+\begin{DoxyCode}
+58 \{
+59   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->mkdir(dirName);
+60 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!pwd@{pwd}}
+\index{pwd@{pwd}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{pwd}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::pwd (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_afdda26ec55026421f2708666104bd5eb}
+
+
+Get the current directory name. 
+
+
+
+Definition at line 71 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::pwd().
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->pwd();
+74 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!register\+Quality\+Test\+Factory@{register\+Quality\+Test\+Factory}}
+\index{register\+Quality\+Test\+Factory@{register\+Quality\+Test\+Factory}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{register\+Quality\+Test\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::register\+Quality\+Test\+Factory (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{quality\+Test\+Factory\+Name, }
+\item[{const {\bf D\+Q\+M\+Quality\+Test\+Factory} $\ast$const}]{p\+Quality\+Test\+Factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aadf35d318ce8049bdf80234573f16015}
+
+
+Delete the monitor element (by element name) 
+
+Register a new quality test factory.
+
+Must be called while reading module settings and before calling \doxyref{D\+Q\+M\+Module\+Api\+::create\+Quality\+Test()}{p.}{classdqm4hep_1_1DQMModuleApi_ab4b352d83c7e1ee3b8d8d6a2e5f0aaf3} 
+
+Definition at line 495 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::register\+Quality\+Test\+Factory().
+
+
+\begin{DoxyCode}
+496 \{
+497   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->registerQualityTestFactory(
+      qualityTestFactoryName, pQualityTestFactory);
+498 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!reset\+Monitor\+Elements@{reset\+Monitor\+Elements}}
+\index{reset\+Monitor\+Elements@{reset\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{reset\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::reset\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Reset\+Policy}}]{policy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a53c668d14303a066b0f3fa1472a04114}
+
+
+Reset all the monitor elements that have the given reset policy. 
+
+
+
+Definition at line 480 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::reset\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+481 \{
+482   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->resetMonitorElements(policy);
+483 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!reset\+Monitor\+Elements@{reset\+Monitor\+Elements}}
+\index{reset\+Monitor\+Elements@{reset\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{reset\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::reset\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a7eeed9956404fea46c35cf1df7e82df2}
+
+
+Reset all the monitor elements of this module. 
+
+
+
+Definition at line 487 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::reset\+Monitor\+Elements().
+
+
+\begin{DoxyCode}
+488 \{
+489   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->resetMonitorElements();
+490 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{rmdir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::rmdir (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{const std\+::string \&}]{dir\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_aa62dc5b99dfe7a4941015d8d897ce08b}
+
+
+Remove the directory 'dir\+Name'. 
+
+
+
+Definition at line 85 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::rmdir().
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->rmdir(dirName);
+88 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!run\+Quality\+Test@{run\+Quality\+Test}}
+\index{run\+Quality\+Test@{run\+Quality\+Test}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{run\+Quality\+Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::run\+Quality\+Test (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element, }
+\item[{const std\+::string \&}]{quality\+Test\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_ad72e5e0ba0a83a2349f0575d4369a384}
+
+
+Run a specific quality test attached to this monitor element. 
+
+
+
+Definition at line 523 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Test().
+
+
+\begin{DoxyCode}
+524 \{
+525   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->runQualityTest(pMonitorElement, 
+      qualityTestName);
+526 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!run\+Quality\+Tests@{run\+Quality\+Tests}}
+\index{run\+Quality\+Tests@{run\+Quality\+Tests}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{run\+Quality\+Tests}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::run\+Quality\+Tests (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module, }
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a49637c44886da12c34964e5b3f03f54f}
+
+
+Run all the quality test attached to this monitor element. 
+
+
+
+Definition at line 516 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Tests().
+
+
+\begin{DoxyCode}
+517 \{
+518   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->runQualityTests(pMonitorElement);
+519 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!run\+Quality\+Tests@{run\+Quality\+Tests}}
+\index{run\+Quality\+Tests@{run\+Quality\+Tests}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{run\+Quality\+Tests}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Module\+Api\+::run\+Quality\+Tests (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Module} $\ast$const}]{p\+Module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1DQMModuleApi_a00ae3a5689f03205873c4ce289944c6c}
+
+
+Run all the quality test of all the monitor elements of this module. 
+
+
+
+Definition at line 530 of file D\+Q\+M\+Module\+Api.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::run\+Quality\+Tests().
+
+
+\begin{DoxyCode}
+531 \{
+532   \textcolor{keywordflow}{return} pModule->getModuleApplication()->getMonitorElementManager()->runQualityTests();
+533 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}!D\+Q\+M\+Xml\+Helper@{D\+Q\+M\+Xml\+Helper}}
+\index{D\+Q\+M\+Xml\+Helper@{D\+Q\+M\+Xml\+Helper}!dqm4hep\+::\+D\+Q\+M\+Module\+Api@{dqm4hep\+::\+D\+Q\+M\+Module\+Api}}
+\subsubsection[{D\+Q\+M\+Xml\+Helper}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Xml\+Helper}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMModuleApi_a5ce0eed5ec7bd346beaadd3af40bc340}
+
+
+Definition at line 412 of file D\+Q\+M\+Module\+Api.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Module\+Api.\+h}\item 
+{\bf D\+Q\+M\+Module\+Api.\+cc}\end{DoxyCompactItemize}

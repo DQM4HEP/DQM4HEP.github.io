@@ -1,0 +1,727 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitoring\+View Class Reference}
+\label{classdqm4hep_1_1DQMMonitoringView}\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+
+
+\doxyref{D\+Q\+M\+Monitoring\+View}{p.}{classdqm4hep_1_1DQMMonitoringView} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitoring\+View.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitoring\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitoringView}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring\+View} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Monitoring\+View} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+Ti\+Xml\+Element $\ast$ {\bf to\+Xml} () const 
+\begin{DoxyCompactList}\small\item\em Export settings to xml element. \end{DoxyCompactList}\item 
+void {\bf from\+Xml} (Ti\+Xml\+Element $\ast$const p\+Xml\+Element)
+\begin{DoxyCompactList}\small\item\em Import settings from xml element. \end{DoxyCompactList}\item 
+void {\bf build\+View} ()
+\begin{DoxyCompactList}\small\item\em Build the view. \end{DoxyCompactList}\item 
+void {\bf show\+View} ()
+\item 
+void {\bf hide\+View} ()
+\item 
+{\bf D\+Q\+M\+Canvas\+View} $\ast$ {\bf get\+Canvas\+View} () const 
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View} $\ast$ {\bf get\+Monitor\+Element\+View} () const 
+\item 
+Q\+Main\+Window $\ast$ {\bf get\+Main\+Window} () const 
+\item 
+void {\bf clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf build\+Menus} ()
+\item 
+void {\bf build\+Central\+View} ()
+\item 
+void {\bf build\+Status\+Bar} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+view\+Built}
+\begin{DoxyCompactList}\small\item\em Whether the view has been built. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\begin{DoxyCompactList}\small\item\em The monitoring instance. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Canvas\+View} $\ast$ {\bf m\+\_\+p\+Canvas\+View}
+\begin{DoxyCompactList}\small\item\em The canvas view to display monitor elements. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View} $\ast$ {\bf m\+\_\+p\+Monitor\+Element\+View}
+\begin{DoxyCompactList}\small\item\em The monitor element view to display the element hierarchy. \end{DoxyCompactList}\item 
+Q\+Main\+Window $\ast$ {\bf m\+\_\+p\+Main\+Window}
+\begin{DoxyCompactList}\small\item\em The main window containing the whole view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Auto\+Update\+Button\+Clicked} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitoring\+View}{p.}{classdqm4hep_1_1DQMMonitoringView} class. 
+
+Definition at line 49 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!D\+Q\+M\+Monitoring\+View@{D\+Q\+M\+Monitoring\+View}}
+\index{D\+Q\+M\+Monitoring\+View@{D\+Q\+M\+Monitoring\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{D\+Q\+M\+Monitoring\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::\+D\+Q\+M\+Monitoring\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_a6dff53f4813116562e6ed00a15eb9e76}
+
+
+Constructor. 
+
+
+
+Definition at line 83 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring, and dqm4hep\+::\+D\+Q\+M\+Monitoring\+::set\+View().
+
+
+\begin{DoxyCode}
+83                                                                :
+84   m_pMonitoring(pMonitoring),
+85   m_pCanvasView(NULL),
+86   m_pMonitorElementView(NULL),
+87   m_pMainWindow(NULL),
+88   m_viewBuilt(\textcolor{keyword}{false})
+89 \{
+90   m_pMonitoring->setView(\textcolor{keyword}{this});
+91 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!````~D\+Q\+M\+Monitoring\+View@{$\sim$\+D\+Q\+M\+Monitoring\+View}}
+\index{````~D\+Q\+M\+Monitoring\+View@{$\sim$\+D\+Q\+M\+Monitoring\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitoring\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::$\sim$\+D\+Q\+M\+Monitoring\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_af7ab6a7a2117d806f222806ed4b87688}
+
+
+Destructor. 
+
+
+
+Definition at line 95 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Canvas\+View, m\+\_\+p\+Main\+Window, and m\+\_\+p\+Monitor\+Element\+View.
+
+
+\begin{DoxyCode}
+96 \{
+97   \textcolor{keywordflow}{if}(m_pCanvasView)
+98     \textcolor{keyword}{delete} m_pCanvasView;
+99 
+100   \textcolor{keywordflow}{if}(m_pMonitorElementView)
+101     \textcolor{keyword}{delete} m_pMonitorElementView;
+102 
+103   \textcolor{keywordflow}{if}(m_pMainWindow)
+104     \textcolor{keyword}{delete} m_pMainWindow;
+105 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!build\+Central\+View@{build\+Central\+View}}
+\index{build\+Central\+View@{build\+Central\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{build\+Central\+View}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::build\+Central\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_a6f2baff183f42ad95ba825297c7f9f82}
+
+
+Definition at line 224 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References get\+Monitoring(), handle\+Auto\+Update\+Button\+Clicked(), m\+\_\+p\+Canvas\+View, m\+\_\+p\+Main\+Window, m\+\_\+p\+Monitor\+Element\+View, and m\+\_\+p\+Monitoring.
+
+
+
+Referenced by build\+View().
+
+
+\begin{DoxyCode}
+225 \{
+226   \textcolor{comment}{// main area}
+227   QSplitter *pMainWidget = \textcolor{keyword}{new} QSplitter(Qt::Horizontal);
+228   m_pMainWindow->setCentralWidget(pMainWidget);
+229 
+230   QWidget *pLeftViewWidget = \textcolor{keyword}{new} QWidget();
+231   pLeftViewWidget->setLayout(\textcolor{keyword}{new} QVBoxLayout());
+232 
+233 
+234     \textcolor{comment}{// update buttons}
+235   QWidget *pUpdateButtonAreaWidget = \textcolor{keyword}{new} QWidget();
+236   pUpdateButtonAreaWidget->setLayout(\textcolor{keyword}{new} QHBoxLayout());
+237 
+238   QPushButton *pAutoUpdateButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Start update"});
+239   pUpdateButtonAreaWidget->layout()->addWidget(pAutoUpdateButton);
+240 
+241   QPushButton *pUpdateButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Update"});
+242   pUpdateButtonAreaWidget->layout()->addWidget(pUpdateButton);
+243 
+244   pUpdateButtonAreaWidget->setMaximumHeight(50);
+245   pLeftViewWidget->layout()->addWidget(pUpdateButtonAreaWidget);
+246 
+247 
+248   \textcolor{comment}{// monitor element contents view}
+249   QGroupBox *pContentGroupBox = \textcolor{keyword}{new} QGroupBox(\textcolor{stringliteral}{"Contents"});
+250   pContentGroupBox->setLayout(\textcolor{keyword}{new} QVBoxLayout());
+251   pLeftViewWidget->layout()->addWidget(pContentGroupBox);
+252 
+253   m_pMonitorElementView = \textcolor{keyword}{new} DQMMonitorElementView(m_pMonitoring);
+254   m_pMonitorElementView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+255   pContentGroupBox->layout()->addWidget(m_pMonitorElementView);
+256 
+257 
+258   \textcolor{comment}{// clear and browse buttons}
+259   QWidget *pClearBrowseButtonAreaWidget = \textcolor{keyword}{new} QWidget();
+260   pClearBrowseButtonAreaWidget->setLayout(\textcolor{keyword}{new} QHBoxLayout());
+261 
+262   QPushButton *pClearButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Clear"});
+263   pClearBrowseButtonAreaWidget->layout()->addWidget(pClearButton);
+264 
+265   QPushButton *pBrowseButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Browse"});
+266   pClearBrowseButtonAreaWidget->layout()->addWidget(pBrowseButton);
+267 
+268   pClearBrowseButtonAreaWidget->setMaximumHeight(50);
+269     pLeftViewWidget->layout()->addWidget(pClearBrowseButtonAreaWidget);
+270 
+271 
+272   pMainWidget->addWidget(pLeftViewWidget);
+273 
+274   m_pCanvasView = \textcolor{keyword}{new} DQMCanvasView(m_pMonitoring);
+275   pMainWidget->addWidget(m_pCanvasView);
+276 
+277   connect(pAutoUpdateButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      handleAutoUpdateButtonClicked()));
+278   connect(pUpdateButton, SIGNAL(clicked()), this->getMonitoring()->getController(), SLOT(
+      querySubscribedMonitorElements()));
+279   connect(pClearButton, SIGNAL(clicked()), this->getMonitoring()->getController(), SLOT(clearMonitoring()))
+      ;
+280   connect(pBrowseButton, SIGNAL(clicked()), this->getMonitoring()->getController(), SLOT(openBrowser()));
+281 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!build\+Menus@{build\+Menus}}
+\index{build\+Menus@{build\+Menus}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{build\+Menus}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::build\+Menus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_ad6646de01e5b083710b7fb79c88ed09b}
+
+
+Definition at line 199 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References get\+Monitoring(), and m\+\_\+p\+Main\+Window.
+
+
+
+Referenced by build\+View().
+
+
+\begin{DoxyCode}
+200 \{
+201   QMenu *pFileMenu = m_pMainWindow->menuBar()->addMenu(\textcolor{stringliteral}{"&File"});
+202 
+203   pFileMenu->addAction(\textcolor{stringliteral}{"&Import"}, this->getMonitoring()->getController(), SLOT(openFile()), QKeySequence(
+      QKeySequence::Open));
+204   pFileMenu->addAction(\textcolor{stringliteral}{"&Export"}, this->getMonitoring()->getController(), SLOT(saveAs()), QKeySequence(
+      QKeySequence::SaveAs));
+205   pFileMenu->addSeparator();
+206   pFileMenu->addAction(\textcolor{stringliteral}{"&Browse"}, this->getMonitoring()->getController(), SLOT(openBrowser()), QKeySequence
+      (QKeySequence::New));
+207   pFileMenu->addSeparator();
+208   pFileMenu->addAction(\textcolor{stringliteral}{"&Quit"}, this->getMonitoring()->getController(), SLOT(quit()), QKeySequence(
+      QKeySequence::Quit));
+209 
+210   QMenu *pHelpMenu = m_pMainWindow->menuBar()->addMenu(\textcolor{stringliteral}{"&Help"});
+211 
+212   pHelpMenu->addAction(\textcolor{stringliteral}{"Doxygen"}, this->getMonitoring()->getController(), SLOT(openDoxygenDoc()));
+213   pHelpMenu->addAction(\textcolor{stringliteral}{"User guide"}, this->getMonitoring()->getController(), SLOT(openUserGuide()));
+214   pHelpMenu->addSeparator();
+215   pHelpMenu->addAction(\textcolor{stringliteral}{"Contribute"}, this->getMonitoring()->getController(), SLOT(openGithubPage()));
+216   pHelpMenu->addAction(\textcolor{stringliteral}{"Report bugs"}, this->getMonitoring()->getController(), SLOT(openIssuesPage()));
+217   pHelpMenu->addSeparator();
+218   pHelpMenu->addAction(\textcolor{stringliteral}{"About Qt"}, qApp, SLOT(aboutQt()));
+219   pHelpMenu->addAction(\textcolor{stringliteral}{"About DQM4HEP"}, this->getMonitoring()->getController(), SLOT(aboutDQM4HEP()));
+220 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!build\+Status\+Bar@{build\+Status\+Bar}}
+\index{build\+Status\+Bar@{build\+Status\+Bar}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{build\+Status\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::build\+Status\+Bar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_acb713ae3c62a065532d6b2e5afb215a9}
+
+
+Definition at line 285 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References get\+Main\+Window().
+
+
+
+Referenced by build\+View().
+
+
+\begin{DoxyCode}
+286 \{
+287   this->getMainWindow()->statusBar()->showMessage(\textcolor{stringliteral}{"Welcome"}, 3000);
+288 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!build\+View@{build\+View}}
+\index{build\+View@{build\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{build\+View}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::build\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_a589aaf092037007198d76ca5272bb231}
+
+
+Build the view. 
+
+Should be called once 
+
+Definition at line 178 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References build\+Central\+View(), build\+Menus(), build\+Status\+Bar(), D\+Q\+M\+Viz\+\_\+\+D\+I\+R, get\+Monitoring(), m\+\_\+p\+Main\+Window, and m\+\_\+view\+Built.
+
+
+
+Referenced by hide\+View(), and show\+View().
+
+
+\begin{DoxyCode}
+179 \{
+180   \textcolor{keywordflow}{if}(m_viewBuilt)
+181     \textcolor{keywordflow}{return};
+182 
+183   m_pMainWindow = \textcolor{keyword}{new} DQMMonitoringMainWindow(this->getMonitoring());
+184   m_pMainWindow->setWindowTitle(\textcolor{stringliteral}{"DQM Monitoring"});
+185   m_pMainWindow->setAnimated(\textcolor{keyword}{true});
+186 
+187   QString iconDir = QString(DQMViz_DIR) + \textcolor{stringliteral}{"/icons"};
+188   m_pMainWindow->setWindowIcon(QIcon(iconDir + \textcolor{stringliteral}{"/MON\_WIN.png"}));
+189 
+190   buildMenus();
+191   buildCentralView();
+192   buildStatusBar();
+193 
+194   m_viewBuilt = \textcolor{keyword}{true};
+195 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_a69698bb027c68296194ee01ae4d4c623}
+
+
+Definition at line 308 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::clear(), m\+\_\+p\+Canvas\+View, and m\+\_\+p\+Monitor\+Element\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+View\+And\+Model(), from\+Xml(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File().
+
+
+\begin{DoxyCode}
+309 \{
+310   m_pMonitorElementView->clear();
+311   m_pCanvasView->clear();
+312 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!from\+Xml@{from\+Xml}}
+\index{from\+Xml@{from\+Xml}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{from\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::from\+Xml (
+\begin{DoxyParamCaption}
+\item[{Ti\+Xml\+Element $\ast$const}]{p\+Xml\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_ab0d663182499725c43e778cae5fd44ea}
+
+
+Import settings from xml element. 
+
+
+
+Definition at line 135 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References clear(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::from\+Xml(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::from\+Xml(), m\+\_\+p\+Canvas\+View, and m\+\_\+p\+Monitor\+Element\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File().
+
+
+\begin{DoxyCode}
+136 \{
+137   \textcolor{keywordflow}{if}(!pXmlElement)
+138     \textcolor{keywordflow}{return};
+139 
+140   this->clear();
+141 
+142     TiXmlHandle elementHandle(pXmlElement);
+143 
+144     TiXmlElement *pCanvasViewElement = elementHandle.FirstChild(\textcolor{stringliteral}{"canvasView"}).Element();
+145 
+146     \textcolor{keywordflow}{if}(pCanvasViewElement)
+147       m_pCanvasView->fromXml(pCanvasViewElement);
+148 
+149     TiXmlElement *pMeViewElement = elementHandle.FirstChild(\textcolor{stringliteral}{"meView"}).Element();
+150 
+151     \textcolor{keywordflow}{if}(pMeViewElement)
+152       m_pMonitorElementView->fromXml(pMeViewElement);
+153 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!get\+Canvas\+View@{get\+Canvas\+View}}
+\index{get\+Canvas\+View@{get\+Canvas\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{get\+Canvas\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas\+View} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Canvas\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringView_afd18c51df68d552b90e9d49050c69cc2}
+
+
+Definition at line 157 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Canvas\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::key\+Press\+Event(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::move\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::remove\+Canvas(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+158 \{
+159   \textcolor{keywordflow}{return} m_pCanvasView;
+160 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!get\+Main\+Window@{get\+Main\+Window}}
+\index{get\+Main\+Window@{get\+Main\+Window}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{get\+Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Main\+Window $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Main\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringView_a3552a6afba033465b3a282ff8acaf25d}
+
+
+Definition at line 171 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Main\+Window.
+
+
+
+Referenced by build\+Status\+Bar(), hide\+View(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log(), and show\+View().
+
+
+\begin{DoxyCode}
+172 \{
+173   \textcolor{keywordflow}{return} m_pMainWindow;
+174 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!get\+Monitor\+Element\+View@{get\+Monitor\+Element\+View}}
+\index{get\+Monitor\+Element\+View@{get\+Monitor\+Element\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{get\+Monitor\+Element\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+View} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Monitor\+Element\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringView_a47d2e6cc2aa12782cf0b0d102ffc7f70}
+
+
+Definition at line 164 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::get\+Or\+Create\+Gui\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::load\+Monitor\+Element\+Info\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::remove\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+165 \{
+166   \textcolor{keywordflow}{return} m_pMonitorElementView;
+167 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringView_ad205862fac4c4a070b61c8fb4b67b569}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 109 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by build\+Central\+View(), build\+Menus(), build\+View(), and handle\+Auto\+Update\+Button\+Clicked().
+
+
+\begin{DoxyCode}
+110 \{
+111   \textcolor{keywordflow}{return} m_pMonitoring;
+112 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!handle\+Auto\+Update\+Button\+Clicked@{handle\+Auto\+Update\+Button\+Clicked}}
+\index{handle\+Auto\+Update\+Button\+Clicked@{handle\+Auto\+Update\+Button\+Clicked}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{handle\+Auto\+Update\+Button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::handle\+Auto\+Update\+Button\+Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitoringView_a4f55aab1b801e16c324f067c5f09d42d}
+
+
+Definition at line 316 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Update\+Mode(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::set\+Update\+Mode().
+
+
+
+Referenced by build\+Central\+View().
+
+
+\begin{DoxyCode}
+317 \{
+318   QPushButton *pButton = qobject\_cast<QPushButton *>(sender());
+319 
+320   \textcolor{keywordflow}{if}(!pButton)
+321     \textcolor{keywordflow}{return};
+322 
+323   \textcolor{comment}{// update view}
+324   \textcolor{keywordflow}{if}(this->getMonitoring()->getController()->getUpdateMode())
+325   \{
+326     pButton->setText(\textcolor{stringliteral}{"Start update"});
+327     this->getMonitoring()->getController()->setUpdateMode(\textcolor{keyword}{false});
+328   \}
+329   \textcolor{keywordflow}{else}
+330   \{
+331     pButton->setText(\textcolor{stringliteral}{"Stop update"});
+332     this->getMonitoring()->getController()->setUpdateMode(\textcolor{keyword}{true});
+333   \}
+334 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!hide\+View@{hide\+View}}
+\index{hide\+View@{hide\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{hide\+View}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::hide\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_ade2429a518ceddc1c41e03b3342c3ef7}
+
+
+Definition at line 300 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References build\+View(), and get\+Main\+Window().
+
+
+\begin{DoxyCode}
+301 \{
+302   this->buildView();
+303   this->getMainWindow()->showMinimized();
+304 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!show\+View@{show\+View}}
+\index{show\+View@{show\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{show\+View}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::show\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoringView_a84df8b712232ada23337dbe131374445}
+
+
+Definition at line 292 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References build\+View(), and get\+Main\+Window().
+
+
+\begin{DoxyCode}
+293 \{
+294   this->buildView();
+295   this->getMainWindow()->show();
+296 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!to\+Xml@{to\+Xml}}
+\index{to\+Xml@{to\+Xml}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{to\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}Ti\+Xml\+Element $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::to\+Xml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoringView_ab2b686c6f76afc5008341b8c8524a107}
+
+
+Export settings to xml element. 
+
+
+
+Definition at line 116 of file D\+Q\+M\+Monitoring\+View.\+cc.
+
+
+
+References m\+\_\+p\+Canvas\+View, m\+\_\+p\+Monitor\+Element\+View, dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::to\+Xml().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As().
+
+
+\begin{DoxyCode}
+117 \{
+118   TiXmlElement *pXmlElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"view"});
+119 
+120   TiXmlElement *pMeViewElement = m_pMonitorElementView->toXml();
+121 
+122   \textcolor{keywordflow}{if}(pMeViewElement)
+123     pXmlElement->LinkEndChild(pMeViewElement);
+124 
+125   TiXmlElement *pCanvasViewElement = m_pCanvasView->toXml();
+126 
+127   \textcolor{keywordflow}{if}(pCanvasViewElement)
+128     pXmlElement->LinkEndChild(pCanvasViewElement);
+129 
+130   \textcolor{keywordflow}{return} pXmlElement;
+131 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!m\+\_\+p\+Canvas\+View@{m\+\_\+p\+Canvas\+View}}
+\index{m\+\_\+p\+Canvas\+View@{m\+\_\+p\+Canvas\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{m\+\_\+p\+Canvas\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas\+View}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::m\+\_\+p\+Canvas\+View\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_a9a591427f14d0714c54be9675d04b25a}
+
+
+The canvas view to display monitor elements. 
+
+
+
+Definition at line 126 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+Referenced by build\+Central\+View(), clear(), from\+Xml(), get\+Canvas\+View(), to\+Xml(), and $\sim$\+D\+Q\+M\+Monitoring\+View().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!m\+\_\+p\+Main\+Window@{m\+\_\+p\+Main\+Window}}
+\index{m\+\_\+p\+Main\+Window@{m\+\_\+p\+Main\+Window}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{m\+\_\+p\+Main\+Window}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Main\+Window$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::m\+\_\+p\+Main\+Window\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_aa5466076940afe71d74c889cab6403ca}
+
+
+The main window containing the whole view. 
+
+
+
+Definition at line 128 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+Referenced by build\+Central\+View(), build\+Menus(), build\+View(), get\+Main\+Window(), and $\sim$\+D\+Q\+M\+Monitoring\+View().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!m\+\_\+p\+Monitor\+Element\+View@{m\+\_\+p\+Monitor\+Element\+View}}
+\index{m\+\_\+p\+Monitor\+Element\+View@{m\+\_\+p\+Monitor\+Element\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitor\+Element\+View}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::m\+\_\+p\+Monitor\+Element\+View\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_a52c0ecfd71d022d4d84ce0cc646c8cc5}
+
+
+The monitor element view to display the element hierarchy. 
+
+
+
+Definition at line 127 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+Referenced by build\+Central\+View(), clear(), from\+Xml(), get\+Monitor\+Element\+View(), to\+Xml(), and $\sim$\+D\+Q\+M\+Monitoring\+View().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_a0fa7a834b09f7f28eff3fe72a241dc5a}
+
+
+The monitoring instance. 
+
+
+
+Definition at line 125 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+Referenced by build\+Central\+View(), D\+Q\+M\+Monitoring\+View(), and get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}!m\+\_\+view\+Built@{m\+\_\+view\+Built}}
+\index{m\+\_\+view\+Built@{m\+\_\+view\+Built}!dqm4hep\+::\+D\+Q\+M\+Monitoring\+View@{dqm4hep\+::\+D\+Q\+M\+Monitoring\+View}}
+\subsubsection[{m\+\_\+view\+Built}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::m\+\_\+view\+Built\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoringView_a7fd354df2cd5318e3e099b5076c8fedf}
+
+
+Whether the view has been built. 
+
+
+
+Definition at line 123 of file D\+Q\+M\+Monitoring\+View.\+h.
+
+
+
+Referenced by build\+View().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring\+View.\+h}\item 
+{\bf D\+Q\+M\+Monitoring\+View.\+cc}\end{DoxyCompactItemize}

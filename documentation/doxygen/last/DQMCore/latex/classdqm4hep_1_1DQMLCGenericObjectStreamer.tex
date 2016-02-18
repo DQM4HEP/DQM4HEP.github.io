@@ -1,0 +1,168 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+L\+C\+Generic\+Object\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMLCGenericObjectStreamer}\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}{p.}{classdqm4hep_1_1DQMLCGenericObjectStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLCGenericObjectStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} (const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize an L\+C\+Generic\+Object. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} (E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&p\+L\+C\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize a L\+C\+Generic\+Object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}{p.}{classdqm4hep_1_1DQMLCGenericObjectStreamer} class. 
+
+Definition at line 141 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$\&}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCGenericObjectStreamer_aad56bcc506a734dd7d8e4fba6aa257a6}
+
+
+Deserialize a L\+C\+Generic\+Object. 
+
+The object is allocated in this function 
+
+Definition at line 630 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+632 \{
+633   pLCObject = NULL;
+634 
+635   dqm_bool isFixedSize = \textcolor{keyword}{false};
+636   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(isFixedSize));
+637 
+638   dqm_int nInt = 0;
+639   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nInt));
+640 
+641   dqm_int nFloat = 0;
+642   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nFloat));
+643 
+644   dqm_int nDouble = 0;
+645   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nDouble));
+646 
+647   IMPL::LCGenericObjectImpl *pTmpGenericObject =
+648       isFixedSize ? \textcolor{keyword}{new} IMPL::LCGenericObjectImpl(nInt, nFloat, nDouble) : new IMPL::LCGenericObjectImpl();
+649 
+650   \textcolor{keywordflow}{for}(dqm_int i=0 ; i<nInt ; i++)
+651   \{
+652     dqm_int value = 0;
+653     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+654     pTmpGenericObject->setIntVal(i, value);
+655   \}
+656 
+657   \textcolor{keywordflow}{for}(dqm_int i=0 ; i<nFloat ; i++)
+658   \{
+659     dqm_float value = 0.f;
+660     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+661     pTmpGenericObject->setFloatVal(i, value);
+662   \}
+663 
+664   \textcolor{keywordflow}{for}(dqm_int i=0 ; i<nDouble ; i++)
+665   \{
+666     dqm_double value = 0;
+667     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+668     pTmpGenericObject->setDoubleVal(i, value);
+669   \}
+670 
+671   pLCObject = pTmpGenericObject;
+672 
+673   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+674 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Generic\+Object\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const E\+V\+E\+N\+T\+::\+L\+C\+Object $\ast$const}]{p\+L\+C\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCGenericObjectStreamer_a19c8e8ab7b9fcc9a69e85c9abc237b74}
+
+
+Serialize an L\+C\+Generic\+Object. 
+
+
+
+Definition at line 587 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+589 \{
+590   \textcolor{keyword}{const} EVENT::LCGenericObject *\textcolor{keyword}{const} pLCGenericObject = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }EVENT::LCGenericObject *const\textcolor{keyword}{>}(
+      pLCObject);
+591 
+592   \textcolor{keywordflow}{if}(NULL == pLCGenericObject)
+593     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+594 
+595   dqm_bool isFixedSize = pLCGenericObject->isFixedSize();
+596   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(isFixedSize));
+597 
+598   dqm_int nInt = pLCGenericObject->getNInt();
+599   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nInt));
+600 
+601   dqm_int nFloat = pLCGenericObject->getNFloat();
+602   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nFloat));
+603 
+604   dqm_int nDouble = pLCGenericObject->getNDouble();
+605   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nDouble));
+606 
+607   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<pLCGenericObject->getNInt() ; i++)
+608   \{
+609     dqm_int value = pLCGenericObject->getIntVal(i);
+610     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+611   \}
+612 
+613   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<pLCGenericObject->getNFloat() ; i++)
+614   \{
+615     dqm_float value = pLCGenericObject->getFloatVal(i);
+616     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+617   \}
+618 
+619   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<pLCGenericObject->getNDouble() ; i++)
+620   \{
+621     dqm_double value = pLCGenericObject->getDoubleVal(i);
+622     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(value));
+623   \}
+624 
+625   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+626 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

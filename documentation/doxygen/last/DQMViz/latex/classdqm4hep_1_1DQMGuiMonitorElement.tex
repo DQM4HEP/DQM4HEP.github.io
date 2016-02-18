@@ -1,0 +1,409 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Gui\+Monitor\+Element Class Reference}
+\label{classdqm4hep_1_1DQMGuiMonitorElement}\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+
+
+\doxyref{D\+Q\+M\+Gui\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMGuiMonitorElement} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Gui\+Monitor\+Element.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Gui\+Monitor\+Element\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMGuiMonitorElement}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf updated} ()
+\begin{DoxyCompactList}\small\item\em Signal emitted when the properties of the monitor element or the monitor element pointer have been updated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element} (D\+Q\+M\+Monitor\+Element $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Constructor with a monitoring instance. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Gui\+Monitor\+Element} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+D\+Q\+M\+Monitor\+Element $\ast$ {\bf get\+Monitor\+Element} () const 
+\begin{DoxyCompactList}\small\item\em Get the wrapped monitor element. \end{DoxyCompactList}\item 
+void {\bf update} (D\+Q\+M\+Monitor\+Element $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Update the gui monitor element with a new monitor element. \end{DoxyCompactList}\item 
+bool {\bf equals} (D\+Q\+M\+Monitor\+Element $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the two monitor elements area equal. \end{DoxyCompactList}\item 
+bool {\bf equals} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Gui\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the two monitor elements area equal. \end{DoxyCompactList}\item 
+void {\bf set\+Draw\+Option} (const std\+::string \&draw\+Option)
+\begin{DoxyCompactList}\small\item\em Set the monitor element draw option. \end{DoxyCompactList}\item 
+void {\bf set\+Description} (const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Set the monitor element description. \end{DoxyCompactList}\item 
+void {\bf set\+Quality} (D\+Q\+M\+Quality quality)
+\begin{DoxyCompactList}\small\item\em Set the monitor element quality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+D\+Q\+M\+Monitor\+Element $\ast$ {\bf m\+\_\+p\+Monitor\+Element}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Monitoring\+Model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Gui\+Monitor\+Element}{p.}{classdqm4hep_1_1DQMGuiMonitorElement} class. 
+
+Definition at line 44 of file D\+Q\+M\+Gui\+Monitor\+Element.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!D\+Q\+M\+Gui\+Monitor\+Element@{D\+Q\+M\+Gui\+Monitor\+Element}}
+\index{D\+Q\+M\+Gui\+Monitor\+Element@{D\+Q\+M\+Gui\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Gui\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::\+D\+Q\+M\+Gui\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElement_a59fa63814145382885da2d7e671d7fb6}
+
+
+Constructor with a monitoring instance. 
+
+
+
+Definition at line 37 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+\begin{DoxyCode}
+37                                                                              :
+38     m_pMonitorElement(pMonitorElement)
+39 \{
+40   \textcolor{comment}{/* nop */}
+41 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!````~D\+Q\+M\+Gui\+Monitor\+Element@{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\index{````~D\+Q\+M\+Gui\+Monitor\+Element@{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::$\sim$\+D\+Q\+M\+Gui\+Monitor\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMGuiMonitorElement_ad65fb15103738425b025c576eb15af25}
+
+
+Destructor. 
+
+
+
+Definition at line 45 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element.
+
+
+\begin{DoxyCode}
+46 \{
+47   \textcolor{keywordflow}{if}(NULL != m_pMonitorElement)
+48     \textcolor{keyword}{delete} m_pMonitorElement;
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!equals@{equals}}
+\index{equals@{equals}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::equals (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMGuiMonitorElement_a40b707b292b5b1d5da4d83a7d045b701}
+
+
+Whether the two monitor elements area equal. 
+
+
+
+Definition at line 77 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References get\+Monitor\+Element(), and m\+\_\+p\+Monitor\+Element.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Canvas().
+
+
+\begin{DoxyCode}
+78 \{
+79   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+80     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+81 
+82   \textcolor{keywordflow}{if}(NULL == m_pMonitorElement)
+83     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+84 
+85   \textcolor{keyword}{const} DQMPath &path = pMonitorElement->getPath();
+86   \textcolor{keyword}{const} std::string &moduleName = pMonitorElement->getModuleName();
+87   \textcolor{keyword}{const} std::string &name = pMonitorElement->getName();
+88   \textcolor{keyword}{const} std::string &collectorName = pMonitorElement->getCollectorName();
+89 
+90   \textcolor{keywordtype}{bool} samePath =          (path          == this->getMonitorElement()->getPath());
+91   \textcolor{keywordtype}{bool} sameModuleName =    (moduleName    == this->getMonitorElement()->getModuleName());
+92   \textcolor{keywordtype}{bool} sameName =          (name          == this->getMonitorElement()->getName());
+93   \textcolor{keywordtype}{bool} sameCollectorName = (collectorName == this->getMonitorElement()->getCollectorName());
+94 
+95   \textcolor{keywordflow}{return} (samePath && sameModuleName && sameName && sameCollectorName);
+96 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!equals@{equals}}
+\index{equals@{equals}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::equals (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Gui\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMGuiMonitorElement_a95931d980c4e5c646d1d73db88aad265}
+
+
+Whether the two monitor elements area equal. 
+
+
+
+Definition at line 100 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References get\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+101 \{
+102   \textcolor{keywordflow}{if}(NULL == pGuiMonitorElement)
+103     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+104 
+105   \textcolor{keyword}{const} DQMPath &path = pGuiMonitorElement->getMonitorElement()->getPath();
+106   \textcolor{keyword}{const} std::string &moduleName = pGuiMonitorElement->getMonitorElement()->getModuleName();
+107   \textcolor{keyword}{const} std::string &name = pGuiMonitorElement->getMonitorElement()->getName();
+108   \textcolor{keyword}{const} std::string &collectorName = pGuiMonitorElement->getMonitorElement()->getCollectorName();
+109 
+110   \textcolor{keywordtype}{bool} samePath =          (path          == this->getMonitorElement()->getPath());
+111   \textcolor{keywordtype}{bool} sameModuleName =    (moduleName    == this->getMonitorElement()->getModuleName());
+112   \textcolor{keywordtype}{bool} sameName =          (name          == this->getMonitorElement()->getName());
+113   \textcolor{keywordtype}{bool} sameCollectorName = (collectorName == this->getMonitorElement()->getCollectorName());
+114 
+115   \textcolor{keywordflow}{return} (samePath && sameModuleName && sameName && sameCollectorName);
+116 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!get\+Monitor\+Element@{get\+Monitor\+Element}}
+\index{get\+Monitor\+Element@{get\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{get\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Monitor\+Element $\ast$ dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMGuiMonitorElement_a0afc53853489742a5a6256c9945d8593}
+
+
+Get the wrapped monitor element. 
+
+
+
+Definition at line 120 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::draw(), equals(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Info\+Widget\+::fill\+Infos(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::find\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::get\+Or\+Create\+Gui\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::load\+Monitor\+Element\+Info\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+In\+R\+O\+O\+T\+Window(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Monitor\+Element\+Info(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Quality\+Test\+Results(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::remove\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::remove\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Draw\+Option\+From\+Dialog(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::unzoom(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::update\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::update\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+121 \{
+122   \textcolor{keywordflow}{return} m_pMonitorElement;
+123 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!set\+Description@{set\+Description}}
+\index{set\+Description@{set\+Description}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{set\+Description}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::set\+Description (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{description}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElement_ae3037e21108ed1b5b3429b11a911a2e1}
+
+
+Set the monitor element description. 
+
+
+
+Definition at line 138 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element, and updated().
+
+
+\begin{DoxyCode}
+139 \{
+140   \textcolor{keywordflow}{if}(m_pMonitorElement)
+141   \{
+142     m_pMonitorElement->setDescription(description);
+143     emit updated();
+144   \}
+145 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!set\+Draw\+Option@{set\+Draw\+Option}}
+\index{set\+Draw\+Option@{set\+Draw\+Option}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{set\+Draw\+Option}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::set\+Draw\+Option (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{draw\+Option}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElement_a3129237f0eb393d5ba39f421bf68382a}
+
+
+Set the monitor element draw option. 
+
+
+
+Definition at line 127 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element, and updated().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Draw\+Option(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Draw\+Option\+From\+Dialog().
+
+
+\begin{DoxyCode}
+128 \{
+129   \textcolor{keywordflow}{if}(m_pMonitorElement)
+130   \{
+131     m_pMonitorElement->setDrawOption(drawOption);
+132     emit updated();
+133   \}
+134 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!set\+Quality@{set\+Quality}}
+\index{set\+Quality@{set\+Quality}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{set\+Quality}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::set\+Quality (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Quality}]{quality}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElement_a67010c40d1c798d3e359115eb87cecf9}
+
+
+Set the monitor element quality. 
+
+
+
+Definition at line 149 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element, and updated().
+
+
+\begin{DoxyCode}
+150 \{
+151   \textcolor{keywordflow}{if}(m_pMonitorElement)
+152   \{
+153     m_pMonitorElement->setQuality(quality);
+154     emit updated();
+155   \}
+156 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!update@{update}}
+\index{update@{update}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::update (
+\begin{DoxyParamCaption}
+\item[{D\+Q\+M\+Monitor\+Element $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMGuiMonitorElement_a9223bec53b3f34ac12f032bc6b1cbf37}
+
+
+Update the gui monitor element with a new monitor element. 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Gui\+Monitor\+Element.\+cc.
+
+
+
+References m\+\_\+p\+Monitor\+Element, and updated().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+54 \{
+55   \textcolor{keywordflow}{if}(m_pMonitorElement == pMonitorElement)
+56     \textcolor{keywordflow}{return};
+57 
+58   \textcolor{keywordflow}{if}(m_pMonitorElement)
+59   \{
+60     \textcolor{keywordflow}{if}(pMonitorElement)
+61     \{
+62       \textcolor{comment}{// save previous state}
+63       \textcolor{keyword}{const} std::string &drawOption(m_pMonitorElement->getDrawOption());
+64       pMonitorElement->setDrawOption(drawOption);
+65     \}
+66 
+67     \textcolor{keyword}{delete} m_pMonitorElement;
+68   \}
+69 
+70   m_pMonitorElement = pMonitorElement;
+71 
+72   emit updated();
+73 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!updated@{updated}}
+\index{updated@{updated}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{updated}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::updated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{classdqm4hep_1_1DQMGuiMonitorElement_a1c6ff9ed1c7f6801bb801cc9391c382c}
+
+
+Signal emitted when the properties of the monitor element or the monitor element pointer have been updated. 
+
+
+
+Referenced by set\+Description(), set\+Draw\+Option(), set\+Quality(), and update().
+
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!D\+Q\+M\+Monitoring\+Model@{D\+Q\+M\+Monitoring\+Model}}
+\index{D\+Q\+M\+Monitoring\+Model@{D\+Q\+M\+Monitoring\+Model}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{D\+Q\+M\+Monitoring\+Model}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Monitoring\+Model}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMGuiMonitorElement_a92a78e9a4fe4db0a72840a4de5b98066}
+
+
+Definition at line 48 of file D\+Q\+M\+Gui\+Monitor\+Element.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}!m\+\_\+p\+Monitor\+Element@{m\+\_\+p\+Monitor\+Element}}
+\index{m\+\_\+p\+Monitor\+Element@{m\+\_\+p\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element@{dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element}}
+\subsubsection[{m\+\_\+p\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}D\+Q\+M\+Monitor\+Element$\ast$ dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::m\+\_\+p\+Monitor\+Element\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMGuiMonitorElement_aec7a7ced57453f623eebd7a21854d361}
+
+
+Definition at line 94 of file D\+Q\+M\+Gui\+Monitor\+Element.\+h.
+
+
+
+Referenced by equals(), get\+Monitor\+Element(), set\+Description(), set\+Draw\+Option(), set\+Quality(), update(), and $\sim$\+D\+Q\+M\+Gui\+Monitor\+Element().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element.\+h}\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element.\+cc}\end{DoxyCompactItemize}

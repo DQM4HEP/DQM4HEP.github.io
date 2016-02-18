@@ -1,0 +1,1871 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Job\+Interface\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMJobInterfaceWidget}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Job\+Interface\+Widget}{p.}{classdqm4hep_1_1DQMJobInterfaceWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Job\+Interface\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Job\+Interface\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMJobInterfaceWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Item\+Type} \{ \\*
+{\bf H\+O\+S\+T\+\_\+\+I\+T\+E\+M}, 
+{\bf J\+O\+B\+\_\+\+I\+T\+E\+M}, 
+{\bf J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M}, 
+{\bf J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M}, 
+\\*
+{\bf J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M}, 
+{\bf J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M}, 
+{\bf J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M}, 
+{\bf V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M}
+ \}
+\begin{DoxyCompactList}\small\item\em Item\+Type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf load\+Json\+File} (const std\+::string \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Load json file. \end{DoxyCompactList}\item 
+void {\bf start\+Host\+Jobs} ()
+\item 
+void {\bf start\+All\+Jobs} ()
+\item 
+void {\bf start\+Selected\+Job} ()
+\item 
+void {\bf clear\+Host\+Jobs} ()
+\item 
+void {\bf clear\+All\+Jobs} ()
+\item 
+void {\bf kill\+Selected\+Job} ()
+\item 
+void {\bf restart\+Selected\+Job} ()
+\item 
+void {\bf restart\+All\+Jobs} ()
+\item 
+void {\bf update\+Job\+Status} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Job\+Interface\+Widget} (Q\+Widget $\ast$p\+Parent=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Job\+Interface\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Current\+Json\+File} () const 
+\begin{DoxyCompactList}\small\item\em Get the current json file name. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Job\+Interface} $\ast$ {\bf get\+Job\+Interface} () const 
+\begin{DoxyCompactList}\small\item\em Get the job interface implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf Column\+Type} \{ {\bf N\+A\+M\+E}, 
+{\bf P\+R\+O\+G\+\_\+\+N\+A\+M\+E}, 
+{\bf P\+I\+D}, 
+{\bf S\+T\+A\+T\+U\+S}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf load\+Json\+File} ()
+\item 
+void {\bf reload\+Json\+File} ()
+\item 
+void {\bf handle\+Automatic\+Mode\+Button\+Clicked} ()
+\item 
+void {\bf handle\+Automatic\+Mode\+Value\+Changed} (int value)
+\item 
+void {\bf update\+Status} (const Q\+String \&host\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf load\+Json} (const Json\+::\+Value \&root)
+\item 
+void {\bf update\+Status} (const Json\+::\+Value \&value)
+\item 
+void {\bf create\+Actions} ()
+\item 
+void {\bf create\+Menus} ()
+\item 
+void {\bf context\+Menu\+Event} (Q\+Context\+Menu\+Event $\ast$event)
+\item 
+bool {\bf job\+Control\+Exists} (const std\+::string \&host\+Name) const 
+\item 
+Q\+String\+List {\bf get\+Non\+Running\+Job\+Controls} () const 
+\item 
+void {\bf popup\+Missing\+Job\+Control} (const Q\+String \&host\+Name)
+\item 
+void {\bf popup\+Missing\+Job\+Controls} (const Q\+String\+List \&host\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Job\+Interface} $\ast$ {\bf m\+\_\+p\+Job\+Iterface}
+\item 
+std\+::string {\bf m\+\_\+current\+Json\+File}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Automatic\+Mode\+Button}
+\item 
+Q\+Spin\+Box $\ast$ {\bf m\+\_\+p\+Update\+Period\+Spin\+Box}
+\item 
+Q\+Combo\+Box $\ast$ {\bf m\+\_\+p\+Kill\+Combo\+Box\+Widget}
+\item 
+Q\+Tree\+Widget $\ast$ {\bf m\+\_\+p\+Tree\+Widget}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Load\+File\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Reload\+File\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Start\+Host\+Jobs\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Clear\+Host\+Jobs\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Kill\+Job\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Restart\+Job\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Clear\+All\+Jobs\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Restart\+All\+Jobs\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Start\+All\+Jobs\+Button}
+\item 
+Q\+Push\+Button $\ast$ {\bf m\+\_\+p\+Update\+Button}
+\item 
+Q\+Menu\+Bar $\ast$ {\bf m\+\_\+p\+Menu\+Bar}
+\item 
+Q\+Menu $\ast$ {\bf m\+\_\+p\+Context\+Menu}
+\item 
+Q\+Menu $\ast$ {\bf m\+\_\+p\+File\+Menu}
+\item 
+Q\+Menu $\ast$ {\bf m\+\_\+p\+Help\+Menu}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Load\+File\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Reload\+File\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Start\+Host\+Jobs\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Clear\+Host\+Jobs\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Kill\+Job\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Start\+Job\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Restart\+Job\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Clear\+All\+Jobs\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Restart\+All\+Jobs\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Start\+All\+Jobs\+Action}
+\item 
+Q\+Action $\ast$ {\bf m\+\_\+p\+Update\+Action}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Job\+Interface\+Widget}{p.}{classdqm4hep_1_1DQMJobInterfaceWidget} class. 
+
+Definition at line 54 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!Column\+Type@{Column\+Type}}
+\index{Column\+Type@{Column\+Type}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{Column\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::\+Column\+Type}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a0fe0a2a2ca209e94b2256af2d5ff1}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+A\+M\+E@{N\+A\+M\+E}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!N\+A\+M\+E@{N\+A\+M\+E}}\item[{\em 
+N\+A\+M\+E\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a0fe0a2a2ca209e94b2256af2d5ff1a7f5294cd1288d41eeecd53152b636ab6}
+}]\index{P\+R\+O\+G\+\_\+\+N\+A\+M\+E@{P\+R\+O\+G\+\_\+\+N\+A\+M\+E}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!P\+R\+O\+G\+\_\+\+N\+A\+M\+E@{P\+R\+O\+G\+\_\+\+N\+A\+M\+E}}\item[{\em 
+P\+R\+O\+G\+\_\+\+N\+A\+M\+E\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a0fe0a2a2ca209e94b2256af2d5ff1a3e17d3481bcbd80c73cb3003142c6b4e}
+}]\index{P\+I\+D@{P\+I\+D}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!P\+I\+D@{P\+I\+D}}\item[{\em 
+P\+I\+D\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a0fe0a2a2ca209e94b2256af2d5ff1a1ece3718b091903763b8f6e100c2cfa8}
+}]\index{S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}}\item[{\em 
+S\+T\+A\+T\+U\+S\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a0fe0a2a2ca209e94b2256af2d5ff1a1d8713ed12aadb4b006fd5f9d172afd6}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 153 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+\begin{DoxyCode}
+154     \{
+155         NAME,
+156         PROG_NAME,
+157         PID,
+158         STATUS
+159     \};
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!Item\+Type@{Item\+Type}}
+\index{Item\+Type@{Item\+Type}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{Item\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::\+Item\+Type}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3}
+
+
+Item\+Type enum. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{H\+O\+S\+T\+\_\+\+I\+T\+E\+M@{H\+O\+S\+T\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!H\+O\+S\+T\+\_\+\+I\+T\+E\+M@{H\+O\+S\+T\+\_\+\+I\+T\+E\+M}}\item[{\em 
+H\+O\+S\+T\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a2650195c4cbf8bfdbcc5e49b2bef4654}
+}]\index{J\+O\+B\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a8ec8a7251715ed9b27eeed7ff583bd54}
+}]\index{J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3ac0c331c52cf71173cca29003488ccf01}
+}]\index{J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a0d4f3db9246c7c6c4bb6f65d1e01cb0a}
+}]\index{J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a57c6c93c9378ab99e3e2ebbb29a69449}
+}]\index{J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a4fd7b3628d20f42f372121d1a309d6ab}
+}]\index{J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M@{J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M}}\item[{\em 
+J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a39a43252e7fd38be5e6dfe520848d587}
+}]\index{V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M@{V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M@{V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M}}\item[{\em 
+V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M\label{classdqm4hep_1_1DQMJobInterfaceWidget_ace003d0a512942a0e3b5fe40171e06e3a1049c14bfa7c2c278e9221eab2df45ba}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 61 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+\begin{DoxyCode}
+62     \{
+63         HOST_ITEM,
+64         JOB_ITEM,
+65         JOB_STATUS_ITEM,
+66         JOB_PROGRAM_NAME_ITEM,
+67         JOB_PID_ITEM,
+68         JOB_ENV_ITEM,
+69         JOB_ARGS_ITEM,
+70         VARIABLE_ITEM
+71     \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!D\+Q\+M\+Job\+Interface\+Widget@{D\+Q\+M\+Job\+Interface\+Widget}}
+\index{D\+Q\+M\+Job\+Interface\+Widget@{D\+Q\+M\+Job\+Interface\+Widget}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{D\+Q\+M\+Job\+Interface\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::\+D\+Q\+M\+Job\+Interface\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a2e5cff5d390acd242368ea3825798653}
+
+
+Constructor. 
+
+
+
+Definition at line 55 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References create\+Actions(), create\+Menus(), handle\+Automatic\+Mode\+Button\+Clicked(), handle\+Automatic\+Mode\+Value\+Changed(), load\+Json\+File(), m\+\_\+p\+Automatic\+Mode\+Button, m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Kill\+Combo\+Box\+Widget, m\+\_\+p\+Load\+File\+Button, m\+\_\+p\+Reload\+File\+Button, m\+\_\+p\+Tree\+Widget, m\+\_\+p\+Update\+Button, m\+\_\+p\+Update\+Period\+Spin\+Box, reload\+Json\+File(), update\+Job\+Status(), and update\+Status().
+
+
+\begin{DoxyCode}
+55                                                             :
+56     QWidget(pParent),
+57     m_pAutomaticModeButton(0)
+58 \{
+59     m_pJobIterface = \textcolor{keyword}{new} DQMJobInterface();
+60 
+61     QLayout *pMainLayout = \textcolor{keyword}{new} QVBoxLayout();
+62     setLayout(pMainLayout);
+63 
+64     QHBoxLayout *pComboBoxLayout = \textcolor{keyword}{new} QHBoxLayout();
+65 
+66     QGroupBox *pComboBoxGroupBox = \textcolor{keyword}{new} QGroupBox();
+67     pMainLayout->addWidget(pComboBoxGroupBox);
+68 
+69     m_pAutomaticModeButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Start"});
+70   pComboBoxLayout->addWidget(m_pAutomaticModeButton);
+71 
+72   QLabel *pUpdatePeriodLabel = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Update period (secs) : "});
+73   pComboBoxLayout->addWidget(pUpdatePeriodLabel);
+74 
+75   m_pUpdatePeriodSpinBox = \textcolor{keyword}{new} QSpinBox();
+76   m_pUpdatePeriodSpinBox->setValue(5);
+77   pComboBoxLayout->addWidget(m_pUpdatePeriodSpinBox);
+78 
+79   connect(m_pAutomaticModeButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(
+      handleAutomaticModeButtonClicked()));
+80   connect(m_pUpdatePeriodSpinBox, SIGNAL(valueChanged(\textcolor{keywordtype}{int})), \textcolor{keyword}{this}, SLOT(
+      handleAutomaticModeValueChanged(\textcolor{keywordtype}{int})));
+81   connect(m_pJobIterface, SIGNAL(statusReceived(\textcolor{keyword}{const} QString &)), \textcolor{keyword}{this}, SLOT(
+      updateStatus(\textcolor{keyword}{const} QString &)));
+82 
+83     QSpacerItem *p\_HSpacer = \textcolor{keyword}{new} QSpacerItem(1, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+84     pComboBoxLayout->addSpacerItem(p\_HSpacer);
+85 
+86     QLabel *pKillComboBoxCaption = \textcolor{keyword}{new} QLabel(\textcolor{stringliteral}{"Set Kill Method"});
+87     pComboBoxLayout->addWidget(pKillComboBoxCaption);
+88 
+89     m_pKillComboBoxWidget = \textcolor{keyword}{new} QComboBox();
+90     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"HUP (Hang Up): 1"}, 1);
+91     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"INT (Interrupt): 2"}, 2);
+92     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"QUIT (Quit): 3"}, 3);
+93     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"ABRT (Abort): 6"}, 6);
+94     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"KILL (Non-ignorable kill): 9"}, 9);
+95     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"ALRM (Alarm Clock): 14"}, 14);
+96     m_pKillComboBoxWidget->addItem(\textcolor{stringliteral}{"TERM (Software Term Signal): 15"}, 15);
+97     m_pKillComboBoxWidget->setCurrentIndex(1); \textcolor{comment}{// Default: Interrupt = kill -2}
+98 
+99     pComboBoxLayout->addWidget(m_pKillComboBoxWidget);
+100     pComboBoxGroupBox->setLayout(pComboBoxLayout);
+101 
+102     m_pTreeWidget = \textcolor{keyword}{new} QTreeWidget();
+103     pMainLayout->addWidget(m_pTreeWidget);
+104 
+105     m_pTreeWidget->setColumnCount(4);
+106     m_pTreeWidget->setHeaderLabels(QStringList() << \textcolor{stringliteral}{"Job Control"} << \textcolor{stringliteral}{"Program Name"} << \textcolor{stringliteral}{"PID"} << \textcolor{stringliteral}{"Status"});
+107 
+108     \textcolor{comment}{// Create Buttons}
+109     QWidget *pButtonWidget = \textcolor{keyword}{new} QWidget();
+110     pMainLayout->addWidget(pButtonWidget);
+111 
+112     QHBoxLayout *pButtonHLayout = \textcolor{keyword}{new} QHBoxLayout();
+113     pButtonWidget->setLayout(pButtonHLayout);
+114 
+115     m_pLoadFileButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Load file"});
+116     pButtonHLayout->addWidget(m_pLoadFileButton);
+117     connect(m_pLoadFileButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(loadJsonFile()));
+118 
+119     m_pReloadFileButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Reload file"});
+120     pButtonHLayout->addWidget(m_pReloadFileButton);
+121     connect(m_pReloadFileButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(reloadJsonFile()));
+122 
+123     QSpacerItem *p\_HButtonSpacer = \textcolor{keyword}{new} QSpacerItem(1, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
+124     pButtonHLayout->addSpacerItem(p\_HButtonSpacer);
+125 
+126     m_pUpdateButton = \textcolor{keyword}{new} QPushButton(\textcolor{stringliteral}{"Update"});
+127     pButtonHLayout->addWidget(m_pUpdateButton);
+128     connect(m_pUpdateButton, SIGNAL(clicked()), \textcolor{keyword}{this}, SLOT(updateJobStatus()));
+129 
+130     \textcolor{comment}{// Create Menus / Menus Entries}
+131     createActions();
+132     createMenus();
+133 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!````~D\+Q\+M\+Job\+Interface\+Widget@{$\sim$\+D\+Q\+M\+Job\+Interface\+Widget}}
+\index{````~D\+Q\+M\+Job\+Interface\+Widget@{$\sim$\+D\+Q\+M\+Job\+Interface\+Widget}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Job\+Interface\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::$\sim$\+D\+Q\+M\+Job\+Interface\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMJobInterfaceWidget_afad2e49d4714b276206dadedfa7d4579}
+
+
+Destructor. 
+
+
+
+Definition at line 137 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Job\+Iterface.
+
+
+\begin{DoxyCode}
+138 \{
+139     \textcolor{keyword}{delete} m_pJobIterface;
+140 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!clear\+All\+Jobs@{clear\+All\+Jobs}}
+\index{clear\+All\+Jobs@{clear\+All\+Jobs}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{clear\+All\+Jobs}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::clear\+All\+Jobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a0fd8c5d0b4589a0ac88fd89e6b74ed0b}
+
+
+Definition at line 429 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References get\+Non\+Running\+Job\+Controls(), m\+\_\+p\+Job\+Iterface, and popup\+Missing\+Job\+Controls().
+
+
+
+Referenced by create\+Actions(), and load\+Json\+File().
+
+
+\begin{DoxyCode}
+430 \{
+431     QStringList nonRunningJobControls = getNonRunningJobControls();
+432 
+433     \textcolor{keywordflow}{if}(!nonRunningJobControls.isEmpty())
+434       popupMissingJobControls(nonRunningJobControls);
+435 
+436     m_pJobIterface->clearAllJobs();
+437 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!clear\+Host\+Jobs@{clear\+Host\+Jobs}}
+\index{clear\+Host\+Jobs@{clear\+Host\+Jobs}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{clear\+Host\+Jobs}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::clear\+Host\+Jobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac6c4551a458ba67d8747157d746519fb}
+
+
+Definition at line 406 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References H\+O\+S\+T\+\_\+\+I\+T\+E\+M, job\+Control\+Exists(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, and popup\+Missing\+Job\+Control().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+407 \{
+408     QTreeWidgetItem* pSelectedItem = m_pTreeWidget->currentItem();
+409 
+410     \textcolor{keywordflow}{if}(!pSelectedItem)
+411         \textcolor{keywordflow}{return};
+412 
+413     \textcolor{keywordflow}{if}(pSelectedItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() != HOST_ITEM)
+414         \textcolor{keywordflow}{return};
+415 
+416     QString hostName = pSelectedItem->text(NAME);
+417 
+418     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+419     \{
+420       popupMissingJobControl(hostName);
+421       \textcolor{keywordflow}{return};
+422     \}
+423 
+424     m_pJobIterface->clearHostJobs(hostName.toStdString());
+425 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!context\+Menu\+Event@{context\+Menu\+Event}}
+\index{context\+Menu\+Event@{context\+Menu\+Event}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{context\+Menu\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::context\+Menu\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Context\+Menu\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a0ff806c4f774b5f3832c6fb815e73210}
+
+
+Definition at line 206 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References H\+O\+S\+T\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+I\+T\+E\+M, m\+\_\+p\+Clear\+All\+Jobs\+Action, m\+\_\+p\+Clear\+Host\+Jobs\+Action, m\+\_\+p\+Context\+Menu, m\+\_\+p\+Kill\+Job\+Action, m\+\_\+p\+Restart\+All\+Jobs\+Action, m\+\_\+p\+Restart\+Job\+Action, m\+\_\+p\+Start\+All\+Jobs\+Action, m\+\_\+p\+Start\+Host\+Jobs\+Action, m\+\_\+p\+Start\+Job\+Action, m\+\_\+p\+Tree\+Widget, m\+\_\+p\+Update\+Action, P\+I\+D, and S\+T\+A\+T\+U\+S.
+
+
+\begin{DoxyCode}
+207 \{
+208     m_pContextMenu = \textcolor{keyword}{new} QMenu();
+209     m_pContextMenu->addAction(m_pStartHostJobsAction);
+210     m_pContextMenu->addAction(m_pClearHostJobsAction);
+211 
+212     m_pContextMenu->addSeparator();
+213     m_pContextMenu->addAction(m_pKillJobAction);
+214     m_pContextMenu->addAction(m_pRestartJobAction);
+215     m_pContextMenu->addAction(m_pStartJobAction);
+216 
+217     m_pContextMenu->addSeparator();
+218     m_pContextMenu->addAction(m_pClearAllJobsAction);
+219     m_pContextMenu->addAction(m_pRestartAllJobsAction);
+220     m_pContextMenu->addAction(m_pStartAllJobsAction);
+221 
+222     m_pContextMenu->addSeparator();
+223     m_pContextMenu->addAction(m_pUpdateAction);
+224 
+225     m_pStartHostJobsAction->setEnabled(\textcolor{keyword}{false});
+226     m_pClearHostJobsAction->setEnabled(\textcolor{keyword}{false});
+227     m_pKillJobAction->setEnabled(\textcolor{keyword}{false});
+228     m_pRestartJobAction->setEnabled(\textcolor{keyword}{false});
+229     m_pStartJobAction->setEnabled(\textcolor{keyword}{false});
+230 
+231     \textcolor{comment}{// Activate items as needed}
+232     QTreeWidgetItem* pCurrentItem = m_pTreeWidget->currentItem();
+233 
+234     \textcolor{keywordflow}{if} (NULL == pCurrentItem)
+235     \{
+236         m_pContextMenu->exec(event->globalPos());
+237         \textcolor{keywordflow}{return};
+238     \}
+239 
+240     \textcolor{keywordflow}{if}(pCurrentItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() == HOST_ITEM)
+241     \{
+242         m_pStartHostJobsAction->setEnabled(\textcolor{keyword}{true});
+243         m_pClearHostJobsAction->setEnabled(\textcolor{keyword}{true});
+244     \}
+245     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(pCurrentItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() == JOB_ITEM)
+246     \{
+247         QString status = pCurrentItem->text(STATUS).at(0);
+248 
+249         \textcolor{keywordflow}{if} (status.isEmpty())
+250             \textcolor{keywordflow}{return};
+251 
+252         \textcolor{keywordflow}{if} ( status == \textcolor{stringliteral}{"D"} || status == \textcolor{stringliteral}{"X"}) \textcolor{comment}{//Dead}
+253         \{
+254             \textcolor{keywordflow}{if} (pCurrentItem->text(PID).toInt())
+255                 m_pRestartJobAction->setEnabled(\textcolor{keyword}{true});
+256             \textcolor{keywordflow}{else}
+257                 m_pStartJobAction->setEnabled(\textcolor{keyword}{true});
+258         \}
+259 
+260         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( status != \textcolor{stringliteral}{"Z"} && \textcolor{comment}{// Zombie}
+261                   status != \textcolor{stringliteral}{"T"}     \textcolor{comment}{// Traced or Stopped}
+262                   )
+263         \{
+264             m_pKillJobAction->setEnabled(\textcolor{keyword}{true});
+265             m_pRestartJobAction->setEnabled(\textcolor{keyword}{true});
+266         \}
+267         \textcolor{keywordflow}{else}
+268         \{
+269             m_pStartJobAction->setEnabled(\textcolor{keyword}{true});
+270         \}
+271     \}
+272 
+273     m_pContextMenu->exec(event->globalPos());
+274 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!create\+Actions@{create\+Actions}}
+\index{create\+Actions@{create\+Actions}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{create\+Actions}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::create\+Actions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a4fb7afdbf89119d495ff8be57874306c}
+
+
+Definition at line 158 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References clear\+All\+Jobs(), clear\+Host\+Jobs(), kill\+Selected\+Job(), load\+Json\+File(), m\+\_\+p\+Clear\+All\+Jobs\+Action, m\+\_\+p\+Clear\+Host\+Jobs\+Action, m\+\_\+p\+Kill\+Job\+Action, m\+\_\+p\+Load\+File\+Action, m\+\_\+p\+Reload\+File\+Action, m\+\_\+p\+Restart\+All\+Jobs\+Action, m\+\_\+p\+Restart\+Job\+Action, m\+\_\+p\+Start\+All\+Jobs\+Action, m\+\_\+p\+Start\+Host\+Jobs\+Action, m\+\_\+p\+Start\+Job\+Action, m\+\_\+p\+Update\+Action, reload\+Json\+File(), restart\+All\+Jobs(), restart\+Selected\+Job(), start\+All\+Jobs(), start\+Host\+Jobs(), start\+Selected\+Job(), and update\+Job\+Status().
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+
+\begin{DoxyCode}
+159 \{
+160     m_pLoadFileAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Load File"}, \textcolor{keyword}{this});
+161     connect(m_pLoadFileAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(loadJsonFile()));
+162 
+163     m_pReloadFileAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Reload File"}, \textcolor{keyword}{this});
+164     connect(m_pReloadFileAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(reloadJsonFile()));
+165 
+166     m_pStartHostJobsAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Start host jobs"}, \textcolor{keyword}{this});
+167     connect(m_pStartHostJobsAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      startHostJobs()));
+168 
+169     m_pClearHostJobsAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Kill host jobs"}, \textcolor{keyword}{this});
+170     connect(m_pClearHostJobsAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      clearHostJobs()));
+171 
+172     m_pKillJobAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Kill selected job"}, \textcolor{keyword}{this});
+173     connect(m_pKillJobAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(killSelectedJob()));
+174 
+175     m_pRestartJobAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Restart selected job"}, \textcolor{keyword}{this});
+176     connect(m_pRestartJobAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      restartSelectedJob()));
+177 
+178     m_pStartJobAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Start selected job"}, \textcolor{keyword}{this});
+179     connect(m_pStartJobAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(startSelectedJob()));
+180 
+181     m_pClearAllJobsAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Kill all jobs"}, \textcolor{keyword}{this});
+182     connect(m_pClearAllJobsAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(clearAllJobs()));
+183 
+184     m_pRestartAllJobsAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Restart all jobs"}, \textcolor{keyword}{this});
+185     connect(m_pRestartAllJobsAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(
+      restartAllJobs()));
+186 
+187     m_pStartAllJobsAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Start all jobs"}, \textcolor{keyword}{this});
+188     connect(m_pStartAllJobsAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(startAllJobs()));
+189 
+190     m_pUpdateAction = \textcolor{keyword}{new} QAction(\textcolor{stringliteral}{"Update jobs"}, \textcolor{keyword}{this});
+191     connect(m_pUpdateAction, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(updateJobStatus()));
+192 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!create\+Menus@{create\+Menus}}
+\index{create\+Menus@{create\+Menus}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{create\+Menus}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::create\+Menus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ae14f3278c11b46a5d62b17d8eb143f9e}
+
+
+Definition at line 196 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+File\+Menu, m\+\_\+p\+Load\+File\+Action, m\+\_\+p\+Menu\+Bar, and m\+\_\+p\+Reload\+File\+Action.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+
+\begin{DoxyCode}
+197 \{
+198     m_pMenuBar = \textcolor{keyword}{new} QMenuBar();
+199     m_pFileMenu = m_pMenuBar->addMenu(\textcolor{stringliteral}{"&File"});
+200     m_pFileMenu->addAction(m_pLoadFileAction);
+201     m_pFileMenu->addAction(m_pReloadFileAction);
+202 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!get\+Current\+Json\+File@{get\+Current\+Json\+File}}
+\index{get\+Current\+Json\+File@{get\+Current\+Json\+File}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{get\+Current\+Json\+File}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::get\+Current\+Json\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a9836357b53226c8d2b0ca5aadcef1101}
+
+
+Get the current json file name. 
+
+
+
+Definition at line 144 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+current\+Json\+File.
+
+
+\begin{DoxyCode}
+145 \{
+146   \textcolor{keywordflow}{return} m_currentJsonFile;
+147 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!get\+Job\+Interface@{get\+Job\+Interface}}
+\index{get\+Job\+Interface@{get\+Job\+Interface}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{get\+Job\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Job\+Interface} $\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::get\+Job\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aec71eaa209ffd759c41ede7d393cbd3f}
+
+
+Get the job interface implementation. 
+
+
+
+Definition at line 151 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Job\+Iterface.
+
+
+\begin{DoxyCode}
+152 \{
+153   \textcolor{keywordflow}{return} m_pJobIterface;
+154 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!get\+Non\+Running\+Job\+Controls@{get\+Non\+Running\+Job\+Controls}}
+\index{get\+Non\+Running\+Job\+Controls@{get\+Non\+Running\+Job\+Controls}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{get\+Non\+Running\+Job\+Controls}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::get\+Non\+Running\+Job\+Controls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a9ce3057a37bdedb86778e300e8ee5146}
+
+
+Definition at line 810 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References job\+Control\+Exists(), and m\+\_\+p\+Tree\+Widget.
+
+
+
+Referenced by clear\+All\+Jobs(), restart\+All\+Jobs(), and start\+All\+Jobs().
+
+
+\begin{DoxyCode}
+811 \{
+812   QStringList missingJobControlList;
+813 
+814   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pTreeWidget->topLevelItemCount() ; i++)
+815   \{
+816     QString hostName = m_pTreeWidget->topLevelItem(i)->text(0);
+817 
+818     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+819       missingJobControlList << hostName;
+820   \}
+821 
+822   \textcolor{keywordflow}{return} missingJobControlList;
+823 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!handle\+Automatic\+Mode\+Button\+Clicked@{handle\+Automatic\+Mode\+Button\+Clicked}}
+\index{handle\+Automatic\+Mode\+Button\+Clicked@{handle\+Automatic\+Mode\+Button\+Clicked}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{handle\+Automatic\+Mode\+Button\+Clicked}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Button\+Clicked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a37e398ba4f0d300928352f544ac86fea}
+
+
+Definition at line 700 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Automatic\+Mode\+Button, m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Update\+Period\+Spin\+Box, dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::started(), dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::start\+Update(), and dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::stop\+Update().
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+
+\begin{DoxyCode}
+701 \{
+702   \textcolor{keywordflow}{if}(m_pJobIterface->started())
+703   \{
+704     m_pJobIterface->stopUpdate();
+705     m_pAutomaticModeButton->setText(\textcolor{stringliteral}{"Start"});
+706   \}
+707   \textcolor{keywordflow}{else}
+708   \{
+709     \textcolor{keywordtype}{int} nSeconds = m_pUpdatePeriodSpinBox->value();
+710     m_pJobIterface->startUpdate(nSeconds);
+711     m_pAutomaticModeButton->setText(\textcolor{stringliteral}{"Stop"});
+712   \}
+713 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!handle\+Automatic\+Mode\+Value\+Changed@{handle\+Automatic\+Mode\+Value\+Changed}}
+\index{handle\+Automatic\+Mode\+Value\+Changed@{handle\+Automatic\+Mode\+Value\+Changed}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{handle\+Automatic\+Mode\+Value\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::handle\+Automatic\+Mode\+Value\+Changed (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac65ba26ad63472c200a512615bb23e9b}
+
+
+Definition at line 717 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Job\+Iterface, dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::started(), dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::start\+Update(), and dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+::stop\+Update().
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+
+\begin{DoxyCode}
+718 \{
+719   \textcolor{keywordflow}{if}(m_pJobIterface->started())
+720   \{
+721     m_pJobIterface->stopUpdate();
+722     m_pJobIterface->startUpdate(value);
+723   \}
+724 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!job\+Control\+Exists@{job\+Control\+Exists}}
+\index{job\+Control\+Exists@{job\+Control\+Exists}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{job\+Control\+Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::job\+Control\+Exists (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{host\+Name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ab8ba26842a8ca61be8b61394ee5f6a99}
+
+
+Definition at line 797 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+Referenced by clear\+Host\+Jobs(), get\+Non\+Running\+Job\+Controls(), kill\+Selected\+Job(), restart\+Selected\+Job(), start\+Host\+Jobs(), and start\+Selected\+Job().
+
+
+\begin{DoxyCode}
+798 \{
+799   \textcolor{comment}{// Look for DB server}
+800   DimBrowser browser;
+801 
+802   std::string jobControlName = \textcolor{stringliteral}{"/DJC/"} + hostName + \textcolor{stringliteral}{"/JOBSTATUS"};
+803   \textcolor{keywordtype}{int} nServices = browser.getServices(jobControlName.c\_str());
+804 
+805   \textcolor{keywordflow}{return} (nServices != 0);
+806 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!kill\+Selected\+Job@{kill\+Selected\+Job}}
+\index{kill\+Selected\+Job@{kill\+Selected\+Job}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{kill\+Selected\+Job}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::kill\+Selected\+Job (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_acd019573ac6119288a9417ae63262eab}
+
+
+Definition at line 441 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References J\+O\+B\+\_\+\+I\+T\+E\+M, job\+Control\+Exists(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Kill\+Combo\+Box\+Widget, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, and popup\+Missing\+Job\+Control().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+442 \{
+443     QComboBox* pKillItem = m_pKillComboBoxWidget;
+444     QTreeWidgetItem* pSelectedItem = m_pTreeWidget->currentItem();
+445 
+446     \textcolor{keywordflow}{if}(!pSelectedItem)
+447         \textcolor{keywordflow}{return};
+448 
+449     \textcolor{keywordflow}{if}(pSelectedItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() != JOB_ITEM)
+450         \textcolor{keywordflow}{return};
+451 
+452     QString hostName = pSelectedItem->parent()->text(NAME);
+453     QString pidStr = pSelectedItem->text(PID);
+454     QVariant sigVar = pKillItem->itemData(pKillItem->currentIndex());
+455 
+456     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+457     \{
+458       popupMissingJobControl(hostName);
+459       \textcolor{keywordflow}{return};
+460     \}
+461 
+462     \textcolor{keywordflow}{if}(pidStr.isEmpty())
+463         \textcolor{keywordflow}{return};
+464 
+465     uint32\_t pid = pidStr.toUInt();
+466     uint32\_t sig = sigVar.toUInt();
+467 
+468     m_pJobIterface->killJob(hostName.toStdString(), pid, sig);
+469 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!load\+Json@{load\+Json}}
+\index{load\+Json@{load\+Json}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{load\+Json}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::load\+Json (
+\begin{DoxyParamCaption}
+\item[{const Json\+::\+Value \&}]{root}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a38eda883bddbd013ce19771b415a05f7}
+
+
+Definition at line 558 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References H\+O\+S\+T\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+A\+R\+G\+S\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+E\+N\+V\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+P\+I\+D\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+P\+R\+O\+G\+R\+A\+M\+\_\+\+N\+A\+M\+E\+\_\+\+I\+T\+E\+M, J\+O\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+I\+T\+E\+M, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, P\+R\+O\+G\+\_\+\+N\+A\+M\+E, S\+T\+A\+T\+U\+S, and V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+I\+T\+E\+M.
+
+
+
+Referenced by load\+Json\+File().
+
+
+\begin{DoxyCode}
+559 \{
+560     m_pTreeWidget->clear();
+561 
+562     StringVector hostList = root[\textcolor{stringliteral}{"HOSTS"}].getMemberNames();
+563 
+564     \textcolor{comment}{// loop over hosts}
+565     \textcolor{keywordflow}{for}(StringVector::iterator iter = hostList.begin(), endIter = hostList.end() ;
+566         endIter != iter ; ++iter)
+567     \{
+568         \textcolor{keyword}{const} Json::Value &host(root[\textcolor{stringliteral}{"HOSTS"}][*iter]);
+569 
+570         QStringList name((*iter).c\_str());
+571 
+572         QTreeWidgetItem *pHostItem = \textcolor{keyword}{new} QTreeWidgetItem(name);
+573 
+574         pHostItem->setData(0, Qt::UserRole, HOST_ITEM);
+575         m_pTreeWidget->addTopLevelItem(pHostItem);
+576 
+577         \textcolor{comment}{// loop over jobs host}
+578         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<host.size() ; j++)
+579         \{
+580             QStringList jobHeader;
+581             jobHeader << host[j][\textcolor{stringliteral}{"NAME"}].asString().c\_str() << host[j][\textcolor{stringliteral}{"PROGRAM"}].asString().c\_str() << 
+      host[j][\textcolor{stringliteral}{"PID"}].asString().c\_str() << host[j][\textcolor{stringliteral}{"STATUS"}].asString().c\_str() ;
+582 
+583             QTreeWidgetItem *pJobItem = \textcolor{keyword}{new} QTreeWidgetItem(jobHeader);
+584 
+585             pJobItem->setData(NAME, Qt::UserRole, JOB_ITEM);
+586             pJobItem->setData(PROG_NAME, Qt::UserRole, JOB_PROGRAM_NAME_ITEM);
+587             pJobItem->setData(PID, Qt::UserRole, JOB_PID_ITEM);
+588             pJobItem->setData(STATUS, Qt::UserRole, JOB_STATUS_ITEM);
+589 
+590             pHostItem->addChild(pJobItem);
+591 
+592             QTreeWidgetItem *pEnvironmentItem = \textcolor{keyword}{new} QTreeWidgetItem(QStringList(\textcolor{stringliteral}{"ENV"}));
+593             pEnvironmentItem->setData(0, Qt::UserRole, JOB_ENV_ITEM);
+594             pJobItem->addChild(pEnvironmentItem);
+595 
+596             \textcolor{keyword}{const} Json::Value &envJsonValue = host[j][\textcolor{stringliteral}{"ENV"}];
+597 
+598             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e=0 ; e<envJsonValue.size() ; e++)
+599             \{
+600                 QString env(envJsonValue[e].asString().c\_str());
+601 
+602                 QStringList envVarHeader;
+603                 envVarHeader << env;
+604 
+605                 QTreeWidgetItem *pEnvVarItem = \textcolor{keyword}{new} QTreeWidgetItem(envVarHeader);
+606                 pEnvVarItem->setData(0, Qt::UserRole, VARIABLE_ITEM);
+607                 pEnvironmentItem->addChild(pEnvVarItem);
+608             \}
+609 
+610             QTreeWidgetItem *pArgsItem = \textcolor{keyword}{new} QTreeWidgetItem(QStringList(\textcolor{stringliteral}{"ARGS"}));
+611             pArgsItem->setData(0, Qt::UserRole, JOB_ARGS_ITEM);
+612             pJobItem->addChild(pArgsItem);
+613 
+614             \textcolor{keyword}{const} Json::Value &argsJsonValue = host[j][\textcolor{stringliteral}{"ARGS"}];
+615 
+616             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} e=0 ; e<argsJsonValue.size() ; e++)
+617             \{
+618                 QString arg(argsJsonValue[e].asString().c\_str());
+619 
+620                 QStringList argVarHeader;
+621                 argVarHeader << arg;
+622 
+623                 QTreeWidgetItem *pArgVarItem = \textcolor{keyword}{new} QTreeWidgetItem(argVarHeader);
+624                 pArgVarItem->setData(0, Qt::UserRole, VARIABLE_ITEM);
+625                 pArgsItem->addChild(pArgVarItem);
+626             \}
+627         \}
+628 
+629         pHostItem->setExpanded(\textcolor{keyword}{true});
+630     \}
+631 
+632     m_pTreeWidget->header()->resizeSections(QHeaderView::Stretch);
+633 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!load\+Json\+File@{load\+Json\+File}}
+\index{load\+Json\+File@{load\+Json\+File}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{load\+Json\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::load\+Json\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{file\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a91d0a360866e31feeb44b0973d8f70ff}
+
+
+Load json file. 
+
+Clear the pocess table 
+
+Definition at line 290 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References clear\+All\+Jobs(), load\+Json(), m\+\_\+current\+Json\+File, m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Tree\+Widget, and update\+Job\+Status().
+
+
+\begin{DoxyCode}
+291 \{
+292     \textcolor{keywordflow}{if}(fileName.empty())
+293         \textcolor{keywordflow}{return};
+294 
+295   \textcolor{keywordflow}{if}(m_pTreeWidget->topLevelItemCount() != 0)
+296   \{
+297     QMessageBox::StandardButton button =
+298         QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Load json file"},
+299         \textcolor{stringliteral}{"WARNING !\(\backslash\)n"}
+300         \textcolor{stringliteral}{"The process table is not empty. Some of the processes are maybe running.\(\backslash\)n\(\backslash\)n"}
+301         \textcolor{stringliteral}{"Do you want to kill all running jobs ?"},
+302         QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel,
+303         QMessageBox::Cancel);
+304 
+305     \textcolor{keywordflow}{switch}(button)
+306     \{
+307     \textcolor{keywordflow}{case} QMessageBox::Yes:
+308       this->clearAllJobs();
+309       \textcolor{keywordflow}{break};
+310     \textcolor{keywordflow}{case} QMessageBox::No:
+311       \textcolor{keywordflow}{break};
+312     \textcolor{keywordflow}{case} QMessageBox::Cancel:
+313     \textcolor{keywordflow}{default}:
+314       \textcolor{keywordflow}{return};
+315     \}
+316   \}
+317 
+318     m_pJobIterface->loadJSON(fileName);
+319     \textcolor{keyword}{const} Json::Value &root(m_pJobIterface->getRoot());
+320     loadJson(root);
+321 
+322     m_currentJsonFile = fileName;
+323 
+324     updateJobStatus();
+325 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!load\+Json\+File@{load\+Json\+File}}
+\index{load\+Json\+File@{load\+Json\+File}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{load\+Json\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::load\+Json\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ad191f0da701b2e4fcd640157e835c07d}
+
+
+Definition at line 278 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+Referenced by create\+Actions(), D\+Q\+M\+Job\+Interface\+Widget(), and reload\+Json\+File().
+
+
+\begin{DoxyCode}
+279 \{
+280     QString fileName  = QFileDialog::getOpenFileName(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Load file"});
+281 
+282     \textcolor{keywordflow}{if}(fileName.isEmpty())
+283         \textcolor{keywordflow}{return};
+284 
+285     loadJsonFile(fileName.toStdString());
+286 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!popup\+Missing\+Job\+Control@{popup\+Missing\+Job\+Control}}
+\index{popup\+Missing\+Job\+Control@{popup\+Missing\+Job\+Control}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{popup\+Missing\+Job\+Control}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::popup\+Missing\+Job\+Control (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{host\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a86a8bcb155e0df99f6cd259f3b12e818}
+
+
+Definition at line 827 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+Referenced by clear\+Host\+Jobs(), kill\+Selected\+Job(), restart\+Selected\+Job(), start\+Host\+Jobs(), and start\+Selected\+Job().
+
+
+\begin{DoxyCode}
+828 \{
+829   QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Job control not running !"},
+830     \textcolor{stringliteral}{"ERROR !\(\backslash\)n\(\backslash\)n"}
+831     \textcolor{stringliteral}{"The job control on '"} + hostName + \textcolor{stringliteral}{"' is not running (or crashed).\(\backslash\)n"}
+832     \textcolor{stringliteral}{"Please, (re)start it !"});
+833 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!popup\+Missing\+Job\+Controls@{popup\+Missing\+Job\+Controls}}
+\index{popup\+Missing\+Job\+Controls@{popup\+Missing\+Job\+Controls}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{popup\+Missing\+Job\+Controls}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::popup\+Missing\+Job\+Controls (
+\begin{DoxyParamCaption}
+\item[{const Q\+String\+List \&}]{host\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a8be22621637d6fa5bdaeff06cc28587f}
+
+
+Definition at line 837 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+Referenced by clear\+All\+Jobs(), restart\+All\+Jobs(), and start\+All\+Jobs().
+
+
+\begin{DoxyCode}
+838 \{
+839   QString message = \textcolor{stringliteral}{"ERROR !\(\backslash\)n\(\backslash\)n"}
+840       \textcolor{stringliteral}{"The following job controls are not running (or crashed) : \(\backslash\)n"};
+841 
+842   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<hostNameList.size() ; i++)
+843     message += \textcolor{stringliteral}{"   * "} + hostNameList.at(i) + \textcolor{stringliteral}{"\(\backslash\)n"};
+844 
+845   message += \textcolor{stringliteral}{"Please, check the job controls status on the different servers "}
+846       \textcolor{stringliteral}{"and restart them if needed"};
+847 
+848   QMessageBox::warning(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Job controls not running !"}, message);
+849 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!reload\+Json\+File@{reload\+Json\+File}}
+\index{reload\+Json\+File@{reload\+Json\+File}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{reload\+Json\+File}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::reload\+Json\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a43580cc122f108b9954724065954067b}
+
+
+Definition at line 329 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References load\+Json\+File(), and m\+\_\+current\+Json\+File.
+
+
+
+Referenced by create\+Actions(), and D\+Q\+M\+Job\+Interface\+Widget().
+
+
+\begin{DoxyCode}
+330 \{
+331     \textcolor{keywordflow}{if}(m_currentJsonFile.empty())
+332         \textcolor{keywordflow}{return};
+333 
+334     loadJsonFile(m_currentJsonFile);
+335 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!restart\+All\+Jobs@{restart\+All\+Jobs}}
+\index{restart\+All\+Jobs@{restart\+All\+Jobs}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{restart\+All\+Jobs}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::restart\+All\+Jobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ae73bbc98f404d0a5771ee8c10d98ef80}
+
+
+Definition at line 506 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References get\+Non\+Running\+Job\+Controls(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Kill\+Combo\+Box\+Widget, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, and popup\+Missing\+Job\+Controls().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+507 \{
+508     QComboBox* pKillItem = m_pKillComboBoxWidget;
+509 
+510     QStringList nonRunningJobControls = getNonRunningJobControls();
+511 
+512     \textcolor{keywordflow}{if}(!nonRunningJobControls.isEmpty())
+513       popupMissingJobControls(nonRunningJobControls);
+514 
+515     \textcolor{comment}{// loop over hosts and jobs}
+516     \textcolor{comment}{// and restart them if the pid is defined}
+517     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} h=0 ; h<m_pTreeWidget->topLevelItemCount() ; h++)
+518     \{
+519         QTreeWidgetItem *pHostItem = m_pTreeWidget->topLevelItem(h);
+520 
+521         QString hostName = pHostItem->text(NAME);
+522 
+523         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<pHostItem->childCount() ; j++)
+524         \{
+525             QTreeWidgetItem *pJobItem = pHostItem->child(j);
+526 
+527             QString jobName = pJobItem->text(NAME);
+528             QString pidStr = pJobItem->text(PID);
+529             QVariant sigVar = pKillItem->itemData(pKillItem->currentIndex());
+530 
+531             \textcolor{keywordflow}{if}(pidStr.isEmpty())
+532                 \textcolor{keywordflow}{continue};
+533 
+534             uint32\_t pid = pidStr.toUInt();
+535             uint32\_t sig = sigVar.toUInt();
+536 
+537             m_pJobIterface->restartJob(hostName.toStdString(), jobName.toStdString(), pid, sig);
+538         \}
+539     \}
+540 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!restart\+Selected\+Job@{restart\+Selected\+Job}}
+\index{restart\+Selected\+Job@{restart\+Selected\+Job}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{restart\+Selected\+Job}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::restart\+Selected\+Job (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a10046b9ded9c8ebc361df1d5498ec03c}
+
+
+Definition at line 473 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References J\+O\+B\+\_\+\+I\+T\+E\+M, job\+Control\+Exists(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Kill\+Combo\+Box\+Widget, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, and popup\+Missing\+Job\+Control().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+474 \{
+475     QComboBox* pKillItem = m_pKillComboBoxWidget;
+476     QTreeWidgetItem* pSelectedItem = m_pTreeWidget->currentItem();
+477 
+478     \textcolor{keywordflow}{if}(!pSelectedItem)
+479         \textcolor{keywordflow}{return};
+480 
+481     \textcolor{keywordflow}{if}(pSelectedItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() != JOB_ITEM)
+482         \textcolor{keywordflow}{return};
+483 
+484     QString hostName = pSelectedItem->parent()->text(NAME);
+485     QString jobName = pSelectedItem->text(NAME);
+486     QString pidStr = pSelectedItem->text(PID);
+487     QVariant sigVar = pKillItem->itemData(pKillItem->currentIndex());
+488 
+489     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+490     \{
+491       popupMissingJobControl(hostName);
+492       \textcolor{keywordflow}{return};
+493     \}
+494 
+495     \textcolor{keywordflow}{if}(pidStr.isEmpty())
+496         \textcolor{keywordflow}{return};
+497 
+498     uint32\_t pid = pidStr.toUInt();
+499     uint32\_t sig = sigVar.toUInt();
+500 
+501     m_pJobIterface->restartJob(hostName.toStdString(), jobName.toStdString(), pid, sig);
+502 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!start\+All\+Jobs@{start\+All\+Jobs}}
+\index{start\+All\+Jobs@{start\+All\+Jobs}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{start\+All\+Jobs}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::start\+All\+Jobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a2a925823cf3c696dac0df78986603339}
+
+
+Definition at line 386 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References get\+Non\+Running\+Job\+Controls(), m\+\_\+p\+Job\+Iterface, and popup\+Missing\+Job\+Controls().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+387 \{
+388     \textcolor{keyword}{const} Json::Value &root(m_pJobIterface->getRoot());
+389     StringVector hostList = root[\textcolor{stringliteral}{"HOSTS"}].getMemberNames();
+390 
+391     QStringList nonRunningJobControls = getNonRunningJobControls();
+392 
+393     \textcolor{keywordflow}{if}(!nonRunningJobControls.isEmpty())
+394       popupMissingJobControls(nonRunningJobControls);
+395 
+396     \textcolor{comment}{// loop over hosts}
+397     \textcolor{keywordflow}{for}(StringVector::iterator iter = hostList.begin(), endIter = hostList.end() ;
+398         endIter != iter ; ++iter)
+399     \{
+400         m_pJobIterface->startJobs(*iter);
+401     \}
+402 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!start\+Host\+Jobs@{start\+Host\+Jobs}}
+\index{start\+Host\+Jobs@{start\+Host\+Jobs}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{start\+Host\+Jobs}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::start\+Host\+Jobs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aab23746934e325e72711414cb620de47}
+
+
+Definition at line 339 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References H\+O\+S\+T\+\_\+\+I\+T\+E\+M, job\+Control\+Exists(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, and popup\+Missing\+Job\+Control().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+340 \{
+341     QTreeWidgetItem* pSelectedItem = m_pTreeWidget->currentItem();
+342 
+343     \textcolor{keywordflow}{if}(!pSelectedItem)
+344         \textcolor{keywordflow}{return};
+345 
+346     \textcolor{keywordflow}{if}(pSelectedItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() != HOST_ITEM)
+347         \textcolor{keywordflow}{return};
+348 
+349     QString hostName = pSelectedItem->text(NAME);
+350 
+351     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+352     \{
+353       popupMissingJobControl(hostName);
+354       \textcolor{keywordflow}{return};
+355     \}
+356 
+357     m_pJobIterface->startJobs(hostName.toStdString());
+358 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!start\+Selected\+Job@{start\+Selected\+Job}}
+\index{start\+Selected\+Job@{start\+Selected\+Job}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{start\+Selected\+Job}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::start\+Selected\+Job (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a428d57582a2193f1a575376806cf22f0}
+
+
+Definition at line 362 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References J\+O\+B\+\_\+\+I\+T\+E\+M, job\+Control\+Exists(), m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, and popup\+Missing\+Job\+Control().
+
+
+
+Referenced by create\+Actions().
+
+
+\begin{DoxyCode}
+363 \{
+364     QTreeWidgetItem* pSelectedItem = m_pTreeWidget->currentItem();
+365 
+366     \textcolor{keywordflow}{if}(!pSelectedItem)
+367         \textcolor{keywordflow}{return};
+368 
+369     \textcolor{keywordflow}{if}(pSelectedItem->data(0, Qt::UserRole).value<\textcolor{keywordtype}{int}>() != JOB_ITEM)
+370         \textcolor{keywordflow}{return};
+371 
+372     QString hostName = pSelectedItem->parent()->text(NAME);
+373     QString jobName = pSelectedItem->text(NAME);
+374 
+375     \textcolor{keywordflow}{if}(!this->jobControlExists(hostName.toStdString()))
+376     \{
+377       popupMissingJobControl(hostName);
+378       \textcolor{keywordflow}{return};
+379     \}
+380 
+381     m_pJobIterface->startJob(hostName.toStdString(), jobName.toStdString());
+382 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!update\+Job\+Status@{update\+Job\+Status}}
+\index{update\+Job\+Status@{update\+Job\+Status}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{update\+Job\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::update\+Job\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a82f8ffe543ac22297b96ea1338d59293}
+
+
+Definition at line 544 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Job\+Iterface, and update\+Status().
+
+
+
+Referenced by create\+Actions(), D\+Q\+M\+Job\+Interface\+Widget(), and load\+Json\+File().
+
+
+\begin{DoxyCode}
+545 \{
+546     m_pJobIterface->status();
+547 
+548     \textcolor{keyword}{struct }timespec timesleep;
+549     timesleep.tv\_sec = 0;
+550     timesleep.tv\_nsec = 500000000L;
+551     nanosleep(&timesleep, NULL);
+552 
+553     this->updateStatus(m_pJobIterface->getProcessStatusValue());
+554 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!update\+Status@{update\+Status}}
+\index{update\+Status@{update\+Status}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{update\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::update\+Status (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{host\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a2f0dd3dba6d8776e64202c82e5b5d1f5}
+
+
+Definition at line 728 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Job\+Iterface, m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, and S\+T\+A\+T\+U\+S.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget(), and update\+Job\+Status().
+
+
+\begin{DoxyCode}
+729 \{
+730   \textcolor{keyword}{const} Json::Value value = m_pJobIterface->processStatus(hostName.toStdString())[\textcolor{stringliteral}{"JOBS"}];
+731     QTreeWidgetItem *pHostItem = 0;
+732 
+733     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pTreeWidget->topLevelItemCount() ; i++)
+734     \{
+735         QTreeWidgetItem *pItem = m_pTreeWidget->topLevelItem(i);
+736 
+737         \textcolor{keywordflow}{if}(hostName == pItem->text(NAME))
+738           pHostItem = pItem;
+739     \}
+740 
+741     \textcolor{keywordflow}{if}(!pHostItem)
+742       \textcolor{keywordflow}{return};
+743 
+744     QMap<QString, QColor> stateToColorMap;
+745     stateToColorMap[\textcolor{stringliteral}{"Z"}] = QColor(Qt::red); \textcolor{comment}{// zombie}
+746     stateToColorMap[\textcolor{stringliteral}{"T"}] = QColor(Qt::darkRed); \textcolor{comment}{// traced or stopped}
+747     stateToColorMap[\textcolor{stringliteral}{"R"}] = QColor(Qt::green); \textcolor{comment}{// running}
+748     stateToColorMap[\textcolor{stringliteral}{"D"}] = QColor(Qt::darkGreen); \textcolor{comment}{// un-interruptible sleep}
+749     stateToColorMap[\textcolor{stringliteral}{"S"}] = QColor(Qt::darkGreen); \textcolor{comment}{// interruptible sleep}
+750     stateToColorMap[\textcolor{stringliteral}{"X"}] = QColor(Qt::red); \textcolor{comment}{// interruptible sleep}
+751 
+752   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<pHostItem->childCount() ; j++)
+753   \{
+754     QTreeWidgetItem *pJobItem = pHostItem->child(j);
+755 
+756     std::string jobName = pJobItem->text(NAME).toStdString();
+757 
+758     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+759 
+760     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} v=0 ; v<value.size() ; v++)
+761     \{
+762       std::string vHost = value[v][\textcolor{stringliteral}{"HOST"}].asString();
+763       std::string vJobName = value[v][\textcolor{stringliteral}{"NAME"}].asString();
+764       uint32\_t vJobPid = value[v][\textcolor{stringliteral}{"PID"}].asUInt();
+765       std::string vJobStatus = value[v][\textcolor{stringliteral}{"STATUS"}].asString();
+766 
+767       \textcolor{keywordflow}{if}(vJobName == jobName)
+768       \{
+769         pJobItem->setText(STATUS, QString(vJobStatus.c\_str()).trimmed());
+770         pJobItem->setText(PID, QString::number(vJobPid));
+771 
+772         found = \textcolor{keyword}{true};
+773         \textcolor{keywordflow}{break};
+774       \}
+775     \}
+776 
+777     \textcolor{keywordflow}{if}(!found)
+778     \{
+779       pJobItem->setText(STATUS, \textcolor{stringliteral}{"X (dead)"});
+780       pJobItem->setText(PID, \textcolor{stringliteral}{""});
+781     \}
+782 
+783     \textcolor{comment}{// cases available in /proc/pid/status file}
+784     QMap<QString, QColor>::iterator findIter = stateToColorMap.find(pJobItem->text(
+      STATUS).at(0));
+785 
+786     \textcolor{keywordflow}{if}(findIter != stateToColorMap.end())
+787       pJobItem->setData(STATUS, Qt::ForegroundRole, QBrush(findIter.value()));
+788     \textcolor{keywordflow}{else}
+789       pJobItem->setData(STATUS, Qt::ForegroundRole, QBrush(Qt::black));
+790   \}
+791 
+792     m_pTreeWidget->header()->resizeSections(QHeaderView::Stretch);
+793 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!update\+Status@{update\+Status}}
+\index{update\+Status@{update\+Status}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{update\+Status}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::update\+Status (
+\begin{DoxyParamCaption}
+\item[{const Json\+::\+Value \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac0dd287bf68fb97971399176e0d50489}
+
+
+Definition at line 637 of file D\+Q\+M\+Job\+Interface\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Tree\+Widget, N\+A\+M\+E, P\+I\+D, and S\+T\+A\+T\+U\+S.
+
+
+\begin{DoxyCode}
+638 \{
+639     QMap<QString, QColor> stateToColorMap;
+640     stateToColorMap[\textcolor{stringliteral}{"Z"}] = QColor(Qt::red); \textcolor{comment}{// zombie}
+641     stateToColorMap[\textcolor{stringliteral}{"T"}] = QColor(Qt::darkRed); \textcolor{comment}{// traced or stopped}
+642     stateToColorMap[\textcolor{stringliteral}{"R"}] = QColor(Qt::green); \textcolor{comment}{// running}
+643     stateToColorMap[\textcolor{stringliteral}{"D"}] = QColor(Qt::darkGreen); \textcolor{comment}{// un-interruptible sleep}
+644     stateToColorMap[\textcolor{stringliteral}{"S"}] = QColor(Qt::darkGreen); \textcolor{comment}{// interruptible sleep}
+645     stateToColorMap[\textcolor{stringliteral}{"X"}] = QColor(Qt::red); \textcolor{comment}{// interruptible sleep}
+646 
+647     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_pTreeWidget->topLevelItemCount() ; i++)
+648     \{
+649         QTreeWidgetItem *pHostItem = m_pTreeWidget->topLevelItem(i);
+650 
+651         std::string hostName = pHostItem->text(NAME).toStdString();
+652 
+653         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} j=0 ; j<pHostItem->childCount() ; j++)
+654         \{
+655             QTreeWidgetItem *pJobItem = pHostItem->child(j);
+656 
+657             std::string jobName = pJobItem->text(NAME).toStdString();
+658 
+659             \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+660 
+661             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} v=0 ; v<value.size() ; v++)
+662             \{
+663                 std::string vHost = value[v][\textcolor{stringliteral}{"HOST"}].asString();
+664                 std::string vJobName = value[v][\textcolor{stringliteral}{"NAME"}].asString();
+665                 uint32\_t vJobPid = value[v][\textcolor{stringliteral}{"PID"}].asUInt();
+666                 std::string vJobStatus = value[v][\textcolor{stringliteral}{"STATUS"}].asString();
+667 
+668                 \textcolor{keywordflow}{if}(vHost == hostName && vJobName == jobName)
+669                 \{
+670                     pJobItem->setText(STATUS, QString(vJobStatus.c\_str()).trimmed());
+671                     pJobItem->setText(PID, QString::number(vJobPid));
+672 
+673                     found = \textcolor{keyword}{true};
+674                     \textcolor{keywordflow}{break};
+675                 \}
+676             \}
+677 
+678             \textcolor{keywordflow}{if}(!found)
+679             \{
+680                 pJobItem->setText(STATUS, \textcolor{stringliteral}{"X (dead)"});
+681                 pJobItem->setText(PID, \textcolor{stringliteral}{""});
+682             \}
+683 
+684             \textcolor{comment}{// cases available in /proc/pid/status file}
+685       QMap<QString, QColor>::iterator findIter = stateToColorMap.find(pJobItem->text(
+      STATUS).at(0));
+686 
+687       \textcolor{keywordflow}{if}(findIter != stateToColorMap.end())
+688         pJobItem->setData(STATUS, Qt::ForegroundRole, QBrush(findIter.value()));
+689       \textcolor{keywordflow}{else}
+690         pJobItem->setData(STATUS, Qt::ForegroundRole, QBrush(Qt::black));
+691         \}
+692 
+693     \}
+694 
+695     m_pTreeWidget->header()->resizeSections(QHeaderView::Stretch);
+696 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+current\+Json\+File@{m\+\_\+current\+Json\+File}}
+\index{m\+\_\+current\+Json\+File@{m\+\_\+current\+Json\+File}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+current\+Json\+File}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+current\+Json\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a18f60d790fd8188ea18697e0104523d0}
+
+
+Definition at line 200 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by get\+Current\+Json\+File(), load\+Json\+File(), and reload\+Json\+File().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Automatic\+Mode\+Button@{m\+\_\+p\+Automatic\+Mode\+Button}}
+\index{m\+\_\+p\+Automatic\+Mode\+Button@{m\+\_\+p\+Automatic\+Mode\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Automatic\+Mode\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Automatic\+Mode\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a15897104be95790919254ff6ea9271b5}
+
+
+Definition at line 202 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget(), and handle\+Automatic\+Mode\+Button\+Clicked().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Clear\+All\+Jobs\+Action@{m\+\_\+p\+Clear\+All\+Jobs\+Action}}
+\index{m\+\_\+p\+Clear\+All\+Jobs\+Action@{m\+\_\+p\+Clear\+All\+Jobs\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Clear\+All\+Jobs\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Clear\+All\+Jobs\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aece9754320322845a3b011186d1ebb58}
+
+
+Definition at line 238 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Clear\+All\+Jobs\+Button@{m\+\_\+p\+Clear\+All\+Jobs\+Button}}
+\index{m\+\_\+p\+Clear\+All\+Jobs\+Button@{m\+\_\+p\+Clear\+All\+Jobs\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Clear\+All\+Jobs\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Clear\+All\+Jobs\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a36eb76a12652c646278d4d9e720d3a5b}
+
+
+Definition at line 217 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Clear\+Host\+Jobs\+Action@{m\+\_\+p\+Clear\+Host\+Jobs\+Action}}
+\index{m\+\_\+p\+Clear\+Host\+Jobs\+Action@{m\+\_\+p\+Clear\+Host\+Jobs\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Clear\+Host\+Jobs\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Clear\+Host\+Jobs\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_acbefb822d92059de544a468acf87c988}
+
+
+Definition at line 232 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Clear\+Host\+Jobs\+Button@{m\+\_\+p\+Clear\+Host\+Jobs\+Button}}
+\index{m\+\_\+p\+Clear\+Host\+Jobs\+Button@{m\+\_\+p\+Clear\+Host\+Jobs\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Clear\+Host\+Jobs\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Clear\+Host\+Jobs\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a5aaccfa12b21150303577910421230fe}
+
+
+Definition at line 213 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Context\+Menu@{m\+\_\+p\+Context\+Menu}}
+\index{m\+\_\+p\+Context\+Menu@{m\+\_\+p\+Context\+Menu}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Context\+Menu\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a9eeb73caadf8cc402c6053fdb43de22d}
+
+
+Definition at line 224 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+File\+Menu@{m\+\_\+p\+File\+Menu}}
+\index{m\+\_\+p\+File\+Menu@{m\+\_\+p\+File\+Menu}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+File\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+File\+Menu\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a594f339b0564a264a489fefbcf6a7173}
+
+
+Definition at line 225 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by create\+Menus().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Help\+Menu@{m\+\_\+p\+Help\+Menu}}
+\index{m\+\_\+p\+Help\+Menu@{m\+\_\+p\+Help\+Menu}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Help\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Help\+Menu\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aa574baf0b393214ac23131755e4a7bbe}
+
+
+Definition at line 226 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Job\+Iterface@{m\+\_\+p\+Job\+Iterface}}
+\index{m\+\_\+p\+Job\+Iterface@{m\+\_\+p\+Job\+Iterface}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Job\+Iterface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Job\+Interface}$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Job\+Iterface\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a1b3b318fbbadd9389907dd50db1a0112}
+
+
+Definition at line 199 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by clear\+All\+Jobs(), clear\+Host\+Jobs(), D\+Q\+M\+Job\+Interface\+Widget(), get\+Job\+Interface(), handle\+Automatic\+Mode\+Button\+Clicked(), handle\+Automatic\+Mode\+Value\+Changed(), kill\+Selected\+Job(), load\+Json\+File(), restart\+All\+Jobs(), restart\+Selected\+Job(), start\+All\+Jobs(), start\+Host\+Jobs(), start\+Selected\+Job(), update\+Job\+Status(), update\+Status(), and $\sim$\+D\+Q\+M\+Job\+Interface\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Kill\+Combo\+Box\+Widget@{m\+\_\+p\+Kill\+Combo\+Box\+Widget}}
+\index{m\+\_\+p\+Kill\+Combo\+Box\+Widget@{m\+\_\+p\+Kill\+Combo\+Box\+Widget}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Kill\+Combo\+Box\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Combo\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Kill\+Combo\+Box\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac378d3dc127548b9186b0351f0b79ccb}
+
+
+Definition at line 205 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget(), kill\+Selected\+Job(), restart\+All\+Jobs(), and restart\+Selected\+Job().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Kill\+Job\+Action@{m\+\_\+p\+Kill\+Job\+Action}}
+\index{m\+\_\+p\+Kill\+Job\+Action@{m\+\_\+p\+Kill\+Job\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Kill\+Job\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Kill\+Job\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a0db9f0d40d3b84a13ad60cb65914cb62}
+
+
+Definition at line 234 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Kill\+Job\+Button@{m\+\_\+p\+Kill\+Job\+Button}}
+\index{m\+\_\+p\+Kill\+Job\+Button@{m\+\_\+p\+Kill\+Job\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Kill\+Job\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Kill\+Job\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a706d53fe4ba6ba8475e8d56f0804a2f9}
+
+
+Definition at line 214 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Load\+File\+Action@{m\+\_\+p\+Load\+File\+Action}}
+\index{m\+\_\+p\+Load\+File\+Action@{m\+\_\+p\+Load\+File\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Load\+File\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Load\+File\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a8193058a97e275bf0a8df5d51702813b}
+
+
+Definition at line 228 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by create\+Actions(), and create\+Menus().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Load\+File\+Button@{m\+\_\+p\+Load\+File\+Button}}
+\index{m\+\_\+p\+Load\+File\+Button@{m\+\_\+p\+Load\+File\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Load\+File\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Load\+File\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac1bd0342ee66457b6bb26156c691b1fe}
+
+
+Definition at line 209 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Menu\+Bar@{m\+\_\+p\+Menu\+Bar}}
+\index{m\+\_\+p\+Menu\+Bar@{m\+\_\+p\+Menu\+Bar}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Menu\+Bar}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu\+Bar$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Menu\+Bar\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a6eccab6cb638a7284c1d37fdf7bbdacd}
+
+
+Definition at line 223 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by create\+Menus().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Reload\+File\+Action@{m\+\_\+p\+Reload\+File\+Action}}
+\index{m\+\_\+p\+Reload\+File\+Action@{m\+\_\+p\+Reload\+File\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Reload\+File\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Reload\+File\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_acd8a21b5e155b797e2b1547544d7fc42}
+
+
+Definition at line 229 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by create\+Actions(), and create\+Menus().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Reload\+File\+Button@{m\+\_\+p\+Reload\+File\+Button}}
+\index{m\+\_\+p\+Reload\+File\+Button@{m\+\_\+p\+Reload\+File\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Reload\+File\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Reload\+File\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a5cb17a701be7f6da59a1b64531dce813}
+
+
+Definition at line 210 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Restart\+All\+Jobs\+Action@{m\+\_\+p\+Restart\+All\+Jobs\+Action}}
+\index{m\+\_\+p\+Restart\+All\+Jobs\+Action@{m\+\_\+p\+Restart\+All\+Jobs\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Restart\+All\+Jobs\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Restart\+All\+Jobs\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a12351b89126e0504285c1e55f5b1689d}
+
+
+Definition at line 239 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Restart\+All\+Jobs\+Button@{m\+\_\+p\+Restart\+All\+Jobs\+Button}}
+\index{m\+\_\+p\+Restart\+All\+Jobs\+Button@{m\+\_\+p\+Restart\+All\+Jobs\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Restart\+All\+Jobs\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Restart\+All\+Jobs\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a655e4ed2013c38f490552f5cfc2d54ea}
+
+
+Definition at line 218 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Restart\+Job\+Action@{m\+\_\+p\+Restart\+Job\+Action}}
+\index{m\+\_\+p\+Restart\+Job\+Action@{m\+\_\+p\+Restart\+Job\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Restart\+Job\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Restart\+Job\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a8e37f266b634bf6c3bab811e5d4a2cc0}
+
+
+Definition at line 236 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Restart\+Job\+Button@{m\+\_\+p\+Restart\+Job\+Button}}
+\index{m\+\_\+p\+Restart\+Job\+Button@{m\+\_\+p\+Restart\+Job\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Restart\+Job\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Restart\+Job\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_afe0c36f8618e02e3c4d6954efc08286c}
+
+
+Definition at line 215 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Start\+All\+Jobs\+Action@{m\+\_\+p\+Start\+All\+Jobs\+Action}}
+\index{m\+\_\+p\+Start\+All\+Jobs\+Action@{m\+\_\+p\+Start\+All\+Jobs\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+All\+Jobs\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Start\+All\+Jobs\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aad9c4390008c09598671818e74e80933}
+
+
+Definition at line 240 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Start\+All\+Jobs\+Button@{m\+\_\+p\+Start\+All\+Jobs\+Button}}
+\index{m\+\_\+p\+Start\+All\+Jobs\+Button@{m\+\_\+p\+Start\+All\+Jobs\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+All\+Jobs\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Start\+All\+Jobs\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a012ba0c6cf24123317a6be7a7c643e02}
+
+
+Definition at line 219 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Start\+Host\+Jobs\+Action@{m\+\_\+p\+Start\+Host\+Jobs\+Action}}
+\index{m\+\_\+p\+Start\+Host\+Jobs\+Action@{m\+\_\+p\+Start\+Host\+Jobs\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+Host\+Jobs\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Start\+Host\+Jobs\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a4d50ddecdaee322971f17d609a53d0cc}
+
+
+Definition at line 231 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Start\+Host\+Jobs\+Button@{m\+\_\+p\+Start\+Host\+Jobs\+Button}}
+\index{m\+\_\+p\+Start\+Host\+Jobs\+Button@{m\+\_\+p\+Start\+Host\+Jobs\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+Host\+Jobs\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Start\+Host\+Jobs\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a6cbf77c18598aa54c77783dbfa530976}
+
+
+Definition at line 212 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Start\+Job\+Action@{m\+\_\+p\+Start\+Job\+Action}}
+\index{m\+\_\+p\+Start\+Job\+Action@{m\+\_\+p\+Start\+Job\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Start\+Job\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Start\+Job\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a7b209b0a10d5d791cd7bd28efcd84ed2}
+
+
+Definition at line 235 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Tree\+Widget@{m\+\_\+p\+Tree\+Widget}}
+\index{m\+\_\+p\+Tree\+Widget@{m\+\_\+p\+Tree\+Widget}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Tree\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tree\+Widget$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Tree\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a058cbfc5858cf4a2ace1364a4335f3c0}
+
+
+Definition at line 207 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by clear\+Host\+Jobs(), context\+Menu\+Event(), D\+Q\+M\+Job\+Interface\+Widget(), get\+Non\+Running\+Job\+Controls(), kill\+Selected\+Job(), load\+Json(), load\+Json\+File(), restart\+All\+Jobs(), restart\+Selected\+Job(), start\+Host\+Jobs(), start\+Selected\+Job(), and update\+Status().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Update\+Action@{m\+\_\+p\+Update\+Action}}
+\index{m\+\_\+p\+Update\+Action@{m\+\_\+p\+Update\+Action}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Update\+Action}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Action$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Update\+Action\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_aca13dfb9cdca827e1c76058f74fdcc9d}
+
+
+Definition at line 242 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by context\+Menu\+Event(), and create\+Actions().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Update\+Button@{m\+\_\+p\+Update\+Button}}
+\index{m\+\_\+p\+Update\+Button@{m\+\_\+p\+Update\+Button}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Update\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Update\+Button\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_ac0f3e261a72f61cee4b7ce753ac77c55}
+
+
+Definition at line 221 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}!m\+\_\+p\+Update\+Period\+Spin\+Box@{m\+\_\+p\+Update\+Period\+Spin\+Box}}
+\index{m\+\_\+p\+Update\+Period\+Spin\+Box@{m\+\_\+p\+Update\+Period\+Spin\+Box}!dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget@{dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget}}
+\subsubsection[{m\+\_\+p\+Update\+Period\+Spin\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Spin\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Job\+Interface\+Widget\+::m\+\_\+p\+Update\+Period\+Spin\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMJobInterfaceWidget_a31efc8275d8b235181953c882e5a7e72}
+
+
+Definition at line 203 of file D\+Q\+M\+Job\+Interface\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Job\+Interface\+Widget(), and handle\+Automatic\+Mode\+Button\+Clicked().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Job\+Interface\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Job\+Interface\+Widget.\+cc}\end{DoxyCompactItemize}

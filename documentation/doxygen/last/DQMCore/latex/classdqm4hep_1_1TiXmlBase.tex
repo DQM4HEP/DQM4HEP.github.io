@@ -1,0 +1,1468 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+Base Class Reference}
+\label{classdqm4hep_1_1TiXmlBase}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+
+
+\doxyref{Ti\+Xml\+Base}{p.}{classdqm4hep_1_1TiXmlBase} is a base class for every class in Tiny\+Xml.  
+
+
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.627907cm]{classdqm4hep_1_1TiXmlBase}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Entity}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+{\bf T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R} = 0, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T}, 
+\\*
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y}, 
+\\*
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N}, 
+\\*
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A}, 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y}, 
+\\*
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Base} ()
+\item 
+virtual {\bf $\sim$\+Ti\+Xml\+Base} ()
+\item 
+virtual void {\bf Print} (F\+I\+L\+E $\ast$cfile, int depth) const =0
+\begin{DoxyCompactList}\small\item\em All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. \end{DoxyCompactList}\item 
+int {\bf Row} () const 
+\begin{DoxyCompactList}\small\item\em Return the position, in the original source file, of this node or attribute. \end{DoxyCompactList}\item 
+int {\bf Column} () const 
+\begin{DoxyCompactList}\small\item\em See \doxyref{Row()}{p.}{classdqm4hep_1_1TiXmlBase_a1a246aa6e2878e6e03e710513c273d92} \end{DoxyCompactList}\item 
+void {\bf Set\+User\+Data} (void $\ast$user)
+\begin{DoxyCompactList}\small\item\em Set a pointer to arbitrary user data. \end{DoxyCompactList}\item 
+void $\ast$ {\bf Get\+User\+Data} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to arbitrary user data. \end{DoxyCompactList}\item 
+const void $\ast$ {\bf Get\+User\+Data} () const 
+\begin{DoxyCompactList}\small\item\em Get a pointer to arbitrary user data. \end{DoxyCompactList}\item 
+virtual const char $\ast$ {\bf Parse} (const char $\ast$p, {\bf Ti\+Xml\+Parsing\+Data} $\ast$data, {\bf Ti\+Xml\+Encoding} encoding)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf Set\+Condense\+White\+Space} (bool condense)
+\begin{DoxyCompactList}\small\item\em The world does not agree on whether white space should be kept or not. \end{DoxyCompactList}\item 
+static bool {\bf Is\+White\+Space\+Condensed} ()
+\begin{DoxyCompactList}\small\item\em Return the current white space setting. \end{DoxyCompactList}\item 
+static void {\bf Encode\+String} (const {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} \&str, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$out)
+\begin{DoxyCompactList}\small\item\em Expands entities in a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bf utf8\+Byte\+Table} [256]
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf Skip\+White\+Space} (const char $\ast$, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static bool {\bf Is\+White\+Space} (char c)
+\item 
+static bool {\bf Is\+White\+Space} (int c)
+\item 
+static bool {\bf Stream\+White\+Space} (std\+::istream $\ast$in, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$tag)
+\item 
+static bool {\bf Stream\+To} (std\+::istream $\ast$in, int character, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$tag)
+\item 
+static const char $\ast$ {\bf Read\+Name} (const char $\ast$p, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$name, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static const char $\ast$ {\bf Read\+Text} (const char $\ast$in, {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$text, bool ignore\+White\+Space, const char $\ast$end\+Tag, bool ignore\+Case, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static const char $\ast$ {\bf Get\+Entity} (const char $\ast$in, char $\ast$value, int $\ast$length, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static const char $\ast$ {\bf Get\+Char} (const char $\ast$p, char $\ast$\+\_\+value, int $\ast$length, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static bool {\bf String\+Equal} (const char $\ast$p, const char $\ast$end\+Tag, bool ignore\+Case, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static int {\bf Is\+Alpha} (unsigned char any\+Byte, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static int {\bf Is\+Alpha\+Num} (unsigned char any\+Byte, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static int {\bf To\+Lower} (int v, {\bf Ti\+Xml\+Encoding} encoding)
+\item 
+static void {\bf Convert\+U\+T\+F32\+To\+U\+T\+F8} (unsigned long input, char $\ast$output, int $\ast$length)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Cursor} {\bf location}
+\item 
+void $\ast$ {\bf user\+Data}
+\begin{DoxyCompactList}\small\item\em Field containing a generic user pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf error\+String} [{\bf T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T}]
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bf N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y} = 5, 
+{\bf M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H} = 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+Base} (const {\bf Ti\+Xml\+Base} \&)
+\item 
+void {\bf operator=} (const {\bf Ti\+Xml\+Base} \&base)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Entity} {\bf entity} [{\bf N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y}]
+\item 
+static bool {\bf condense\+White\+Space} = true
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ti\+Xml\+Node}
+\item 
+class {\bf Ti\+Xml\+Element}
+\item 
+class {\bf Ti\+Xml\+Document}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Ti\+Xml\+Base}{p.}{classdqm4hep_1_1TiXmlBase} is a base class for every class in Tiny\+Xml. 
+
+It does little except to establish that Tiny\+Xml classes can be printed and provide some utility functions.
+
+In X\+M\+L, the document and elements can contain other elements and other types of nodes.
+
+\begin{DoxyVerb}A Document can contain: Element (container or leaf)
+            Comment (leaf)
+            Unknown (leaf)
+            Declaration( leaf )
+
+An Element can contain: Element (container or leaf)
+            Text  (leaf)
+            Attributes (not on tree)
+            Comment (leaf)
+            Unknown (leaf)
+
+A Decleration contains: Attributes (not on tree)
+\end{DoxyVerb}
+ 
+
+Definition at line 200 of file tinyxml.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2a}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R@{T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R@{T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+E\+R\+R\+O\+R\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aafc0ef3cbd4346dbe7b96fc6136b6863d}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aaadaff071b28881b104afe85aeac60c1d}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+I\+N\+G\+\_\+\+F\+I\+L\+E\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa874d610fb89e7ea9c3a2184429a17f74}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aab7c16b10d5bbd601b8db0974ca1c1bc7}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+F\+A\+I\+L\+E\+D\+\_\+\+T\+O\+\_\+\+R\+E\+A\+D\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+N\+A\+M\+E\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aaee09025ca20317544d2928e2fca802c9}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+L\+E\+M\+E\+N\+T\+\_\+\+V\+A\+L\+U\+E\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa07150989e0d28be360e86c0f7f3045c3}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E\+S\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aae6aa9cd6113a12d47d08d4f9af0bc8c7}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+E\+M\+P\+T\+Y\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa0c9b79a949069d4803d3803d75720366}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+A\+D\+I\+N\+G\+\_\+\+E\+N\+D\+\_\+\+T\+A\+G\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa3a4927c0b7d6e1dd15af81ec7a646edf}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aab9f2df219f995dd3692304e59af459ab}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+O\+M\+M\+E\+N\+T\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa1f2f29eae14949d781a7267ee1ed0cf6}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+D\+E\+C\+L\+A\+R\+A\+T\+I\+O\+N\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa2db32149b2fa7e7ba0855695e7c7277f}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+E\+M\+P\+T\+Y\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aaaa2e221c2203057c2d6ab8200ac28d1f}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+E\+M\+B\+E\+D\+D\+E\+D\+\_\+\+N\+U\+L\+L\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa39a02fb5a338646d12f2201065dec398}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+S\+I\+N\+G\+\_\+\+C\+D\+A\+T\+A\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa4cf675ab05b7e848bf0bf8f08caac4ba}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+D\+O\+C\+U\+M\+E\+N\+T\+\_\+\+T\+O\+P\+\_\+\+O\+N\+L\+Y\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa93c26b7484c181c477cb890f396f8a50}
+}]\index{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T@{T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T}}\item[{\em 
+T\+I\+X\+M\+L\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+R\+I\+N\+G\+\_\+\+C\+O\+U\+N\+T\label{classdqm4hep_1_1TiXmlBase_aaf615a2f4b8d4ffac6b2aaf5a0a7ca2aa9b26df94f4407da613446d36a5f5f33f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 270 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+271   \{
+272     TIXML_NO_ERROR = 0,
+273     TIXML_ERROR,
+274     TIXML_ERROR_OPENING_FILE,
+275     TIXML_ERROR_PARSING_ELEMENT,
+276     TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME,
+277     TIXML_ERROR_READING_ELEMENT_VALUE,
+278     TIXML_ERROR_READING_ATTRIBUTES,
+279     TIXML_ERROR_PARSING_EMPTY,
+280     TIXML_ERROR_READING_END_TAG,
+281     TIXML_ERROR_PARSING_UNKNOWN,
+282     TIXML_ERROR_PARSING_COMMENT,
+283     TIXML_ERROR_PARSING_DECLARATION,
+284     TIXML_ERROR_DOCUMENT_EMPTY,
+285     TIXML_ERROR_EMBEDDED_NULL,
+286     TIXML_ERROR_PARSING_CDATA,
+287     TIXML_ERROR_DOCUMENT_TOP_ONLY,
+288 
+289     TIXML_ERROR_STRING_COUNT
+290   \};
+\end{DoxyCode}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlBase_a6b11df20246da86a5e879cfe0c6998a3}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y@{N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y@{N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y}}\item[{\em 
+N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y\label{classdqm4hep_1_1TiXmlBase_a6b11df20246da86a5e879cfe0c6998a3a9703dede11cf4406cce206a86b93811a}
+}]\index{M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H@{M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H}}\item[{\em 
+M\+A\+X\+\_\+\+E\+N\+T\+I\+T\+Y\+\_\+\+L\+E\+N\+G\+T\+H\label{classdqm4hep_1_1TiXmlBase_a6b11df20246da86a5e879cfe0c6998a3a3f756bfe3e776980b956c6c1e9d7c7c9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 412 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+413   \{
+414     NUM_ENTITY = 5,
+415     MAX_ENTITY_LENGTH = 6
+416 
+417   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Ti\+Xml\+Base@{Ti\+Xml\+Base}}
+\index{Ti\+Xml\+Base@{Ti\+Xml\+Base}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Ti\+Xml\+Base}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Base\+::\+Ti\+Xml\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_ac1e4864029ed7b76f50ba9f82a63fd7e}
+
+
+Definition at line 207 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+207 : userData(0)   \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!````~Ti\+Xml\+Base@{$\sim$\+Ti\+Xml\+Base}}
+\index{````~Ti\+Xml\+Base@{$\sim$\+Ti\+Xml\+Base}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{$\sim$\+Ti\+Xml\+Base}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+Ti\+Xml\+Base\+::$\sim$\+Ti\+Xml\+Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1TiXmlBase_a2fa56de40fc24a5753fd59703efe71c6}
+
+
+Definition at line 208 of file tinyxml.\+h.
+
+
+\begin{DoxyCode}
+208 \{\}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Ti\+Xml\+Base@{Ti\+Xml\+Base}}
+\index{Ti\+Xml\+Base@{Ti\+Xml\+Base}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Ti\+Xml\+Base}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+Base\+::\+Ti\+Xml\+Base (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Base} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlBase_afd0b6f1cddc624f6cbc0b7d159fa72dc}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Column@{Column}}
+\index{Column@{Column}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Column}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Base\+::\+Column (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_a3c309b9c143202c959964353b7173ba2}
+
+
+See \doxyref{Row()}{p.}{classdqm4hep_1_1TiXmlBase_a1a246aa6e2878e6e03e710513c273d92} 
+
+
+
+Definition at line 251 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Cursor\+::col, and location.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Convert\+U\+T\+F32\+To\+U\+T\+F8@{Convert\+U\+T\+F32\+To\+U\+T\+F8}}
+\index{Convert\+U\+T\+F32\+To\+U\+T\+F8@{Convert\+U\+T\+F32\+To\+U\+T\+F8}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Convert\+U\+T\+F32\+To\+U\+T\+F8}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Base\+::\+Convert\+U\+T\+F32\+To\+U\+T\+F8 (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{input, }
+\item[{char $\ast$}]{output, }
+\item[{int $\ast$}]{length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a48f48d1b64e938e489d351346582b7af}
+
+
+Definition at line 91 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by Get\+Entity().
+
+
+\begin{DoxyCode}
+92 \{
+93   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} BYTE\_MASK = 0xBF;
+94   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} BYTE\_MARK = 0x80;
+95   \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} FIRST\_BYTE\_MARK[7] = \{ 0x00, 0x00, 0xC0, 0xE0, 0xF0, 0xF8, 0xFC \};
+96 
+97   \textcolor{keywordflow}{if} (input < 0x80) 
+98     *length = 1;
+99   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( input < 0x800 )
+100     *length = 2;
+101   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( input < 0x10000 )
+102     *length = 3;
+103   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( input < 0x200000 )
+104     *length = 4;
+105   \textcolor{keywordflow}{else}
+106     \{ *length = 0; \textcolor{keywordflow}{return}; \}  \textcolor{comment}{// This code won't covert this correctly anyway.}
+107 
+108   output += *length;
+109 
+110   \textcolor{comment}{// Scary scary fall throughs.}
+111   \textcolor{keywordflow}{switch} (*length) 
+112   \{
+113     \textcolor{keywordflow}{case} 4:
+114       --output; 
+115       *output = (char)((input | BYTE\_MARK) & BYTE\_MASK); 
+116       input >>= 6;
+117     \textcolor{keywordflow}{case} 3:
+118       --output; 
+119       *output = (char)((input | BYTE\_MARK) & BYTE\_MASK); 
+120       input >>= 6;
+121     \textcolor{keywordflow}{case} 2:
+122       --output; 
+123       *output = (char)((input | BYTE\_MARK) & BYTE\_MASK); 
+124       input >>= 6;
+125     \textcolor{keywordflow}{case} 1:
+126       --output; 
+127       *output = (char)(input | FIRST\_BYTE\_MARK[*length]);
+128   \}
+129 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Encode\+String@{Encode\+String}}
+\index{Encode\+String@{Encode\+String}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Encode\+String}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Base\+::\+Encode\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} \&}]{str, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1TiXmlBase_ada1d83fc1249bb3f3dff19680209e465}
+
+
+Expands entities in a string. 
+
+Note this should not contian the tag's '$<$', '$>$', etc, or they will be transformed into entities! 
+
+Definition at line 55 of file tinyxml.\+cc.
+
+
+
+References entity, and T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Print(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Print(), and dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit().
+
+
+\begin{DoxyCode}
+56 \{
+57   \textcolor{keywordtype}{int} i=0;
+58 
+59   \textcolor{keywordflow}{while}( i<(\textcolor{keywordtype}{int})str.length() )
+60   \{
+61     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c = (\textcolor{keywordtype}{unsigned} char) str[i];
+62 
+63     \textcolor{keywordflow}{if} (    c == \textcolor{charliteral}{'&'} 
+64          && i < ( (\textcolor{keywordtype}{int})str.length() - 2 )
+65        && str[i+1] == \textcolor{charliteral}{'#'}
+66        && str[i+2] == \textcolor{charliteral}{'x'} )
+67     \{
+68       \textcolor{comment}{// Hexadecimal character reference.}
+69       \textcolor{comment}{// Pass through unchanged.}
+70       \textcolor{comment}{// &#xA9; -- copyright symbol, for example.}
+71       \textcolor{comment}{//}
+72       \textcolor{comment}{// The -1 is a bug fix from Rob Laveaux. It keeps}
+73       \textcolor{comment}{// an overflow from happening if there is no ';'.}
+74       \textcolor{comment}{// There are actually 2 ways to exit this loop -}
+75       \textcolor{comment}{// while fails (error case) and break (semicolon found).}
+76       \textcolor{comment}{// However, there is no mechanism (currently) for}
+77       \textcolor{comment}{// this function to return an error.}
+78       \textcolor{keywordflow}{while} ( i<(\textcolor{keywordtype}{int})str.length()-1 )
+79       \{
+80         outString->append( str.c\_str() + i, 1 );
+81         ++i;
+82         \textcolor{keywordflow}{if} ( str[i] == \textcolor{charliteral}{';'} )
+83           \textcolor{keywordflow}{break};
+84       \}
+85     \}
+86     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c == \textcolor{charliteral}{'&'} )
+87     \{
+88       outString->append( entity[0].str, entity[0].strLength );
+89       ++i;
+90     \}
+91     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c == \textcolor{charliteral}{'<'} )
+92     \{
+93       outString->append( entity[1].str, entity[1].strLength );
+94       ++i;
+95     \}
+96     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c == \textcolor{charliteral}{'>'} )
+97     \{
+98       outString->append( entity[2].str, entity[2].strLength );
+99       ++i;
+100     \}
+101     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c == \textcolor{charliteral}{'\(\backslash\)"'} )
+102     \{
+103       outString->append( entity[3].str, entity[3].strLength );
+104       ++i;
+105     \}
+106     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c == \textcolor{charliteral}{'\(\backslash\)''} )
+107     \{
+108       outString->append( entity[4].str, entity[4].strLength );
+109       ++i;
+110     \}
+111     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( c < 32 )
+112     \{
+113       \textcolor{comment}{// Easy pass at non-alpha/numeric/symbol}
+114       \textcolor{comment}{// Below 32 is symbolic.}
+115       \textcolor{keywordtype}{char} buf[ 32 ];
+116       
+117 \textcolor{preprocessor}{      #if defined(TIXML\_SNPRINTF)   }
+118         TIXML_SNPRINTF( buf, \textcolor{keyword}{sizeof}(buf), \textcolor{stringliteral}{"&#x%02X;"}, (\textcolor{keywordtype}{unsigned}) ( c & 0xff ) );
+119 \textcolor{preprocessor}{      #else}
+120         sprintf( buf, \textcolor{stringliteral}{"&#x%02X;"}, (\textcolor{keywordtype}{unsigned}) ( c & 0xff ) );
+121 \textcolor{preprocessor}{      #endif    }
+122 
+123       \textcolor{comment}{//*ME:  warning C4267: convert 'size\_t' to 'int'}
+124       \textcolor{comment}{//*ME:  Int-Cast to make compiler happy ...}
+125       outString->append( buf, (\textcolor{keywordtype}{int})strlen( buf ) );
+126       ++i;
+127     \}
+128     \textcolor{keywordflow}{else}
+129     \{
+130       \textcolor{comment}{//char realc = (char) c;}
+131       \textcolor{comment}{//outString->append( &realc, 1 );}
+132       *outString += (char) c; \textcolor{comment}{// somewhat more efficient function call.}
+133       ++i;
+134     \}
+135   \}
+136 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Get\+Char@{Get\+Char}}
+\index{Get\+Char@{Get\+Char}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Get\+Char}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Get\+Char (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{char $\ast$}]{\+\_\+value, }
+\item[{int $\ast$}]{length, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a4484e96a1d741c89dc34b84051017039}
+
+
+Definition at line 333 of file tinyxml.\+h.
+
+
+
+References Get\+Entity(), and dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8.
+
+
+
+Referenced by Read\+Text().
+
+
+\begin{DoxyCode}
+334   \{
+335     assert( p );
+336     \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+337     \{
+338       *length = utf8ByteTable[ *((\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)p) ];
+339       assert( *length >= 0 && *length < 5 );
+340     \}
+341     \textcolor{keywordflow}{else}
+342     \{
+343       *length = 1;
+344     \}
+345 
+346     \textcolor{keywordflow}{if} ( *length == 1 )
+347     \{
+348       \textcolor{keywordflow}{if} ( *p == \textcolor{charliteral}{'&'} )
+349         \textcolor{keywordflow}{return} GetEntity( p, \_value, length, encoding );
+350       *\_value = *p;
+351       \textcolor{keywordflow}{return} p+1;
+352     \}
+353     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *length )
+354     \{
+355       \textcolor{comment}{//strncpy( \_value, p, *length );  // lots of compilers don't like this function (unsafe),}
+356                         \textcolor{comment}{// and the null terminator isn't needed}
+357       \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i=0; p[i] && i<*length; ++i ) \{
+358         \_value[i] = p[i];
+359       \}
+360       \textcolor{keywordflow}{return} p + (*length);
+361     \}
+362     \textcolor{keywordflow}{else}
+363     \{
+364       \textcolor{comment}{// Not valid text.}
+365       \textcolor{keywordflow}{return} 0;
+366     \}
+367   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Get\+Entity@{Get\+Entity}}
+\index{Get\+Entity@{Get\+Entity}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Get\+Entity}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Get\+Entity (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in, }
+\item[{char $\ast$}]{value, }
+\item[{int $\ast$}]{length, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a39de707ff4badf7d48231d641390802b}
+
+
+Definition at line 441 of file tinyxmlparser.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Base\+::\+Entity\+::chr, Convert\+U\+T\+F32\+To\+U\+T\+F8(), entity, N\+U\+M\+\_\+\+E\+N\+T\+I\+T\+Y, dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8, and T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G.
+
+
+
+Referenced by Get\+Char().
+
+
+\begin{DoxyCode}
+442 \{
+443   \textcolor{comment}{// Presume an entity, and pull it out.}
+444     TIXML_STRING ent;
+445   \textcolor{keywordtype}{int} i;
+446   *length = 0;
+447 
+448   \textcolor{keywordflow}{if} ( *(p+1) && *(p+1) == \textcolor{charliteral}{'#'} && *(p+2) )
+449   \{
+450     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ucs = 0;
+451     ptrdiff\_t delta = 0;
+452     \textcolor{keywordtype}{unsigned} mult = 1;
+453 
+454     \textcolor{keywordflow}{if} ( *(p+2) == \textcolor{charliteral}{'x'} )
+455     \{
+456       \textcolor{comment}{// Hexadecimal.}
+457       \textcolor{keywordflow}{if} ( !*(p+3) ) \textcolor{keywordflow}{return} 0;
+458 
+459       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* q = p+3;
+460       q = strchr( q, \textcolor{charliteral}{';'} );
+461 
+462       \textcolor{keywordflow}{if} ( !q || !*q ) \textcolor{keywordflow}{return} 0;
+463 
+464       delta = q-p;
+465       --q;
+466 
+467       \textcolor{keywordflow}{while} ( *q != \textcolor{charliteral}{'x'} )
+468       \{
+469         \textcolor{keywordflow}{if} ( *q >= \textcolor{charliteral}{'0'} && *q <= \textcolor{charliteral}{'9'} )
+470           ucs += mult * (*q - \textcolor{charliteral}{'0'});
+471         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *q >= \textcolor{charliteral}{'a'} && *q <= \textcolor{charliteral}{'f'} )
+472           ucs += mult * (*q - \textcolor{charliteral}{'a'} + 10);
+473         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( *q >= \textcolor{charliteral}{'A'} && *q <= \textcolor{charliteral}{'F'} )
+474           ucs += mult * (*q - \textcolor{charliteral}{'A'} + 10 );
+475         \textcolor{keywordflow}{else} 
+476           \textcolor{keywordflow}{return} 0;
+477         mult *= 16;
+478         --q;
+479       \}
+480     \}
+481     \textcolor{keywordflow}{else}
+482     \{
+483       \textcolor{comment}{// Decimal.}
+484       \textcolor{keywordflow}{if} ( !*(p+2) ) \textcolor{keywordflow}{return} 0;
+485 
+486       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* q = p+2;
+487       q = strchr( q, \textcolor{charliteral}{';'} );
+488 
+489       \textcolor{keywordflow}{if} ( !q || !*q ) \textcolor{keywordflow}{return} 0;
+490 
+491       delta = q-p;
+492       --q;
+493 
+494       \textcolor{keywordflow}{while} ( *q != \textcolor{charliteral}{'#'} )
+495       \{
+496         \textcolor{keywordflow}{if} ( *q >= \textcolor{charliteral}{'0'} && *q <= \textcolor{charliteral}{'9'} )
+497           ucs += mult * (*q - \textcolor{charliteral}{'0'});
+498         \textcolor{keywordflow}{else} 
+499           \textcolor{keywordflow}{return} 0;
+500         mult *= 10;
+501         --q;
+502       \}
+503     \}
+504     \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+505     \{
+506       \textcolor{comment}{// convert the UCS to UTF-8}
+507       ConvertUTF32ToUTF8( ucs, value, length );
+508     \}
+509     \textcolor{keywordflow}{else}
+510     \{
+511       *value = (char)ucs;
+512       *length = 1;
+513     \}
+514     \textcolor{keywordflow}{return} p + delta + 1;
+515   \}
+516 
+517   \textcolor{comment}{// Now try to match it.}
+518   \textcolor{keywordflow}{for}( i=0; i<NUM_ENTITY; ++i )
+519   \{
+520     \textcolor{keywordflow}{if} ( strncmp( entity[i].str, p, entity[i].strLength ) == 0 )
+521     \{
+522       assert( strlen( entity[i].str ) == entity[i].strLength );
+523       *value = entity[i].chr;
+524       *length = 1;
+525       \textcolor{keywordflow}{return} ( p + entity[i].strLength );
+526     \}
+527   \}
+528 
+529   \textcolor{comment}{// So it wasn't an entity, its unrecognized, or something like that.}
+530   *value = *p;  \textcolor{comment}{// Don't put back the last one, since we return it!}
+531   \textcolor{comment}{//*length = 1;  // Leave unrecognized entities - this doesn't really work.}
+532           \textcolor{comment}{// Just writes strange XML.}
+533   \textcolor{keywordflow}{return} p+1;
+534 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Get\+User\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Get\+User\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_a5fc746395434e224d53a9707c82518a1}
+
+
+Get a pointer to arbitrary user data. 
+
+
+
+Definition at line 254 of file tinyxml.\+h.
+
+
+
+References user\+Data.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Get\+User\+Data@{Get\+User\+Data}}
+\index{Get\+User\+Data@{Get\+User\+Data}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Get\+User\+Data}]{\setlength{\rightskip}{0pt plus 5cm}const void$\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Get\+User\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_adee419166ada8ebef441cef27d964218}
+
+
+Get a pointer to arbitrary user data. 
+
+
+
+Definition at line 255 of file tinyxml.\+h.
+
+
+
+References user\+Data.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Is\+Alpha@{Is\+Alpha}}
+\index{Is\+Alpha@{Is\+Alpha}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Is\+Alpha}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+Alpha (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{any\+Byte, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a03fa02a3cda23aecac3864f7133492e0}
+
+
+Definition at line 132 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Identify(), and Read\+Name().
+
+
+\begin{DoxyCode}
+133 \{
+134   \textcolor{comment}{// This will only work for low-ascii, everything else is assumed to be a valid}
+135   \textcolor{comment}{// letter. I'm not sure this is the best approach, but it is quite tricky trying}
+136   \textcolor{comment}{// to figure out alhabetical vs. not across encoding. So take a very }
+137   \textcolor{comment}{// conservative approach.}
+138 
+139 \textcolor{comment}{//  if ( encoding == TIXML\_ENCODING\_UTF8 )}
+140 \textcolor{comment}{//  \{}
+141     \textcolor{keywordflow}{if} ( anyByte < 127 )
+142       \textcolor{keywordflow}{return} isalpha( anyByte );
+143     \textcolor{keywordflow}{else}
+144       \textcolor{keywordflow}{return} 1; \textcolor{comment}{// What else to do? The unicode set is huge...get the english ones right.}
+145 \textcolor{comment}{//  \}}
+146 \textcolor{comment}{//  else}
+147 \textcolor{comment}{//  \{}
+148 \textcolor{comment}{//    return isalpha( anyByte );}
+149 \textcolor{comment}{//  \}}
+150 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Is\+Alpha\+Num@{Is\+Alpha\+Num}}
+\index{Is\+Alpha\+Num@{Is\+Alpha\+Num}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Is\+Alpha\+Num}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+Alpha\+Num (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{any\+Byte, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ad878973a349491317008906a7a5019a5}
+
+
+Definition at line 153 of file tinyxmlparser.\+cc.
+
+
+
+Referenced by Read\+Name().
+
+
+\begin{DoxyCode}
+154 \{
+155   \textcolor{comment}{// This will only work for low-ascii, everything else is assumed to be a valid}
+156   \textcolor{comment}{// letter. I'm not sure this is the best approach, but it is quite tricky trying}
+157   \textcolor{comment}{// to figure out alhabetical vs. not across encoding. So take a very }
+158   \textcolor{comment}{// conservative approach.}
+159 
+160 \textcolor{comment}{//  if ( encoding == TIXML\_ENCODING\_UTF8 )}
+161 \textcolor{comment}{//  \{}
+162     \textcolor{keywordflow}{if} ( anyByte < 127 )
+163       \textcolor{keywordflow}{return} isalnum( anyByte );
+164     \textcolor{keywordflow}{else}
+165       \textcolor{keywordflow}{return} 1; \textcolor{comment}{// What else to do? The unicode set is huge...get the english ones right.}
+166 \textcolor{comment}{//  \}}
+167 \textcolor{comment}{//  else}
+168 \textcolor{comment}{//  \{}
+169 \textcolor{comment}{//    return isalnum( anyByte );}
+170 \textcolor{comment}{//  \}}
+171 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Is\+White\+Space@{Is\+White\+Space}}
+\index{Is\+White\+Space@{Is\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Is\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}static bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+White\+Space (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a182d911d7f7f35ed48f9d0bc21b0340f}
+
+
+Definition at line 296 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Text\+::\+Blank(), Is\+White\+Space(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), Read\+Text(), and Skip\+White\+Space().
+
+
+\begin{DoxyCode}
+297   \{ 
+298     \textcolor{keywordflow}{return} ( isspace( (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) c ) || c == \textcolor{charliteral}{'\(\backslash\)n'} || c == \textcolor{charliteral}{'\(\backslash\)r'} ); 
+299   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Is\+White\+Space@{Is\+White\+Space}}
+\index{Is\+White\+Space@{Is\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Is\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}static bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+White\+Space (
+\begin{DoxyParamCaption}
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_aafdc7031c7f2c9a1a2e811bcabe296f8}
+
+
+Definition at line 300 of file tinyxml.\+h.
+
+
+
+References Is\+White\+Space().
+
+
+\begin{DoxyCode}
+301   \{
+302     \textcolor{keywordflow}{if} ( c < 256 )
+303       \textcolor{keywordflow}{return} IsWhiteSpace( (\textcolor{keywordtype}{char}) c );
+304     \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{// Again, only truly correct for English/Latin...but usually works.}
+305   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Is\+White\+Space\+Condensed@{Is\+White\+Space\+Condensed}}
+\index{Is\+White\+Space\+Condensed@{Is\+White\+Space\+Condensed}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Is\+White\+Space\+Condensed}]{\setlength{\rightskip}{0pt plus 5cm}static bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+Is\+White\+Space\+Condensed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1TiXmlBase_a118d74d8f293cfdf6a2f65f8a98f8c2a}
+
+
+Return the current white space setting. 
+
+
+
+Definition at line 230 of file tinyxml.\+h.
+
+
+
+References condense\+White\+Space.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+
+\begin{DoxyCode}
+230 \{ \textcolor{keywordflow}{return} condenseWhiteSpace; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Base\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Base} \&}]{base}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlBase_a28e6dffbe99ec900d37c1b16e880683a}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Parse@{Parse}}
+\index{Parse@{Parse}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}virtual const char$\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Parse (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf Ti\+Xml\+Parsing\+Data} $\ast$}]{data, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1TiXmlBase_a41f23afd7594cbf3c16706a42b5c4c4b}
+
+
+Implemented in {\bf dqm4hep\+::\+Ti\+Xml\+Document} \doxyref{}{p.}{classdqm4hep_1_1TiXmlDocument_a91113eb7f2ddd172896a9424d6dfbc34}, {\bf dqm4hep\+::\+Ti\+Xml\+Unknown} \doxyref{}{p.}{classdqm4hep_1_1TiXmlUnknown_a611e80ded5984d7d1fe84c1b1841b41e}, {\bf dqm4hep\+::\+Ti\+Xml\+Declaration} \doxyref{}{p.}{classdqm4hep_1_1TiXmlDeclaration_aad93ddb8ddc4a8cad224a0f686f7abd0}, {\bf dqm4hep\+::\+Ti\+Xml\+Text} \doxyref{}{p.}{classdqm4hep_1_1TiXmlText_a39a666e88642a13d559e7f0327728dc6}, {\bf dqm4hep\+::\+Ti\+Xml\+Comment} \doxyref{}{p.}{classdqm4hep_1_1TiXmlComment_adfbe7391f538e814024f4e6467d74622}, {\bf dqm4hep\+::\+Ti\+Xml\+Element} \doxyref{}{p.}{classdqm4hep_1_1TiXmlElement_a82070ee740eda1af81684dc84b1e8106}, and {\bf dqm4hep\+::\+Ti\+Xml\+Attribute} \doxyref{}{p.}{classdqm4hep_1_1TiXmlAttribute_a279bd101fdd1f9fd2ff3c817b1cda542}.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Print@{Print}}
+\index{Print@{Print}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Print}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+Ti\+Xml\+Base\+::\+Print (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{cfile, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1TiXmlBase_ad5adc7976f1def10cb903144cfb11127}
+
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\doxyref{Ti\+Xml\+String}{p.}{classdqm4hep_1_1TiXmlString} in non-\/\+S\+T\+L mode, std\+::string in S\+T\+L mode.) Either or both cfile and str can be null. 
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implemented in {\bf dqm4hep\+::\+Ti\+Xml\+Document} \doxyref{}{p.}{classdqm4hep_1_1TiXmlDocument_aacb44356c721cf7bc017d8dae407e146}, {\bf dqm4hep\+::\+Ti\+Xml\+Unknown} \doxyref{}{p.}{classdqm4hep_1_1TiXmlUnknown_a6eae78474f7fc287cdb4f3556346d049}, {\bf dqm4hep\+::\+Ti\+Xml\+Declaration} \doxyref{}{p.}{classdqm4hep_1_1TiXmlDeclaration_a4e6f35eb54b6694f4a5ba5ff33fcb271}, {\bf dqm4hep\+::\+Ti\+Xml\+Text} \doxyref{}{p.}{classdqm4hep_1_1TiXmlText_a7a20c25833a3f13f6cb22b5f57744244}, {\bf dqm4hep\+::\+Ti\+Xml\+Comment} \doxyref{}{p.}{classdqm4hep_1_1TiXmlComment_a31d81e455f892d07dd3f9a1b8a9558b3}, {\bf dqm4hep\+::\+Ti\+Xml\+Element} \doxyref{}{p.}{classdqm4hep_1_1TiXmlElement_aca59cbd1c62b42f0462e9e04a4c93118}, and {\bf dqm4hep\+::\+Ti\+Xml\+Attribute} \doxyref{}{p.}{classdqm4hep_1_1TiXmlAttribute_ae6353b2d3d7dd5b6096ffc8bc473dd25}.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Element\+::\+Print().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Read\+Name@{Read\+Name}}
+\index{Read\+Name@{Read\+Name}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Read\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Read\+Name (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{name, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ac64df87fc75ec7b1ad9e62c3463cd8bd}
+
+
+Definition at line 404 of file tinyxmlparser.\+cc.
+
+
+
+References Is\+Alpha(), and Is\+Alpha\+Num().
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse().
+
+
+\begin{DoxyCode}
+405 \{
+406   \textcolor{comment}{// Oddly, not supported on some comilers,}
+407   \textcolor{comment}{//name->clear();}
+408   \textcolor{comment}{// So use this:}
+409   *name = \textcolor{stringliteral}{""};
+410   assert( p );
+411 
+412   \textcolor{comment}{// Names start with letters or underscores.}
+413   \textcolor{comment}{// Of course, in unicode, tinyxml has no idea what a letter *is*. The}
+414   \textcolor{comment}{// algorithm is generous.}
+415   \textcolor{comment}{//}
+416   \textcolor{comment}{// After that, they can be letters, underscores, numbers,}
+417   \textcolor{comment}{// hyphens, or colons. (Colons are valid ony for namespaces,}
+418   \textcolor{comment}{// but tinyxml can't tell namespaces from names.)}
+419   \textcolor{keywordflow}{if} (    p && *p 
+420      && ( IsAlpha( (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) *p, encoding ) || *p == \textcolor{charliteral}{'\_'} ) )
+421   \{
+422     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* start = p;
+423     \textcolor{keywordflow}{while}(    p && *p
+424         &&  (   IsAlphaNum( (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ) *p, encoding ) 
+425              || *p == \textcolor{charliteral}{'\_'}
+426              || *p == \textcolor{charliteral}{'-'}
+427              || *p == \textcolor{charliteral}{'.'}
+428              || *p == \textcolor{charliteral}{':'} ) )
+429     \{
+430       \textcolor{comment}{//(*name) += *p; // expensive}
+431       ++p;
+432     \}
+433     \textcolor{keywordflow}{if} ( p-start > 0 ) \{
+434       name->assign( start, p-start );
+435     \}
+436     \textcolor{keywordflow}{return} p;
+437   \}
+438   \textcolor{keywordflow}{return} 0;
+439 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Read\+Text@{Read\+Text}}
+\index{Read\+Text@{Read\+Text}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Read\+Text}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Read\+Text (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{in, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{text, }
+\item[{bool}]{ignore\+White\+Space, }
+\item[{const char $\ast$}]{end\+Tag, }
+\item[{bool}]{ignore\+Case, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ac2ba48e264a2188fb91f1db66cefb342}
+
+
+Definition at line 577 of file tinyxmlparser.\+cc.
+
+
+
+References condense\+White\+Space, Get\+Char(), Is\+White\+Space(), Skip\+White\+Space(), and String\+Equal().
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), and dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse().
+
+
+\begin{DoxyCode}
+583 \{
+584     *text = \textcolor{stringliteral}{""};
+585   \textcolor{keywordflow}{if} (    !trimWhiteSpace     \textcolor{comment}{// certain tags always keep whitespace}
+586      || !condenseWhiteSpace ) \textcolor{comment}{// if true, whitespace is always kept}
+587   \{
+588     \textcolor{comment}{// Keep all the white space.}
+589     \textcolor{keywordflow}{while} (    p && *p
+590         && !StringEqual( p, endTag, caseInsensitive, encoding )
+591         )
+592     \{
+593       \textcolor{keywordtype}{int} len;
+594       \textcolor{keywordtype}{char} cArr[4] = \{ 0, 0, 0, 0 \};
+595       p = GetChar( p, cArr, &len, encoding );
+596       text->append( cArr, len );
+597     \}
+598   \}
+599   \textcolor{keywordflow}{else}
+600   \{
+601     \textcolor{keywordtype}{bool} whitespace = \textcolor{keyword}{false};
+602 
+603     \textcolor{comment}{// Remove leading white space:}
+604     p = SkipWhiteSpace( p, encoding );
+605     \textcolor{keywordflow}{while} (    p && *p
+606         && !StringEqual( p, endTag, caseInsensitive, encoding ) )
+607     \{
+608       \textcolor{keywordflow}{if} ( *p == \textcolor{charliteral}{'\(\backslash\)r'} || *p == \textcolor{charliteral}{'\(\backslash\)n'} )
+609       \{
+610         whitespace = \textcolor{keyword}{true};
+611         ++p;
+612       \}
+613       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( IsWhiteSpace( *p ) )
+614       \{
+615         whitespace = \textcolor{keyword}{true};
+616         ++p;
+617       \}
+618       \textcolor{keywordflow}{else}
+619       \{
+620         \textcolor{comment}{// If we've found whitespace, add it before the}
+621         \textcolor{comment}{// new character. Any whitespace just becomes a space.}
+622         \textcolor{keywordflow}{if} ( whitespace )
+623         \{
+624           (*text) += \textcolor{charliteral}{' '};
+625           whitespace = \textcolor{keyword}{false};
+626         \}
+627         \textcolor{keywordtype}{int} len;
+628         \textcolor{keywordtype}{char} cArr[4] = \{ 0, 0, 0, 0 \};
+629         p = GetChar( p, cArr, &len, encoding );
+630         \textcolor{keywordflow}{if} ( len == 1 )
+631           (*text) += cArr[0]; \textcolor{comment}{// more efficient}
+632         \textcolor{keywordflow}{else}
+633           text->append( cArr, len );
+634       \}
+635     \}
+636   \}
+637   \textcolor{keywordflow}{if} ( p && *p ) 
+638     p += strlen( endTag );
+639   \textcolor{keywordflow}{return} p;
+640 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Row@{Row}}
+\index{Row@{Row}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Row}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+Ti\+Xml\+Base\+::\+Row (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_a1a246aa6e2878e6e03e710513c273d92}
+
+
+Return the position, in the original source file, of this node or attribute. 
+
+The row and column are 1-\/based. (That is the first row and first column is 1,1). If the returns values are 0 or less, then the parser does not have a row and column value.
+
+Generally, the row and column value will be set when the Ti\+Xml\+Document\+::\+Load(), \doxyref{Ti\+Xml\+Document\+::\+Load\+File()}{p.}{classdqm4hep_1_1TiXmlDocument_a71d341459df81280ef38e0718d0f2b79}, or any \doxyref{Ti\+Xml\+Node\+::\+Parse()}{p.}{classdqm4hep_1_1TiXmlBase_a41f23afd7594cbf3c16706a42b5c4c4b} is called. It will N\+O\+T be set when the D\+O\+M was created from operator$>$$>$.
+
+The values reflect the initial load. Once the D\+O\+M is modified programmatically (by adding or changing nodes and attributes) the new values will N\+O\+T update to reflect changes in the document.
+
+There is a minor performance cost to computing the row and column. Computation can be disabled if \doxyref{Ti\+Xml\+Document\+::\+Set\+Tab\+Size()}{p.}{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d} is called with 0 as the value.
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{Ti\+Xml\+Document\+::\+Set\+Tab\+Size()}{p.}{classdqm4hep_1_1TiXmlDocument_ad0cdb2c5ecc76846ff6dec4d4860710d} 
+\end{DoxySeeAlso}
+
+
+Definition at line 250 of file tinyxml.\+h.
+
+
+
+References location, and dqm4hep\+::\+Ti\+Xml\+Cursor\+::row.
+
+
+\begin{DoxyCode}
+250 \{ \textcolor{keywordflow}{return} location.row + 1; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Set\+Condense\+White\+Space@{Set\+Condense\+White\+Space}}
+\index{Set\+Condense\+White\+Space@{Set\+Condense\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Set\+Condense\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}static void dqm4hep\+::\+Ti\+Xml\+Base\+::\+Set\+Condense\+White\+Space (
+\begin{DoxyParamCaption}
+\item[{bool}]{condense}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classdqm4hep_1_1TiXmlBase_aa704e239534053ee766c982be509f54d}
+
+
+The world does not agree on whether white space should be kept or not. 
+
+In order to make everyone happy, these global, static functions are provided to set whether or not Tiny\+Xml will condense all white space into a single space or not. The default is to condense. Note changing this value is not thread safe. 
+
+Definition at line 227 of file tinyxml.\+h.
+
+
+
+References condense\+White\+Space.
+
+
+\begin{DoxyCode}
+227 \{ condenseWhiteSpace = condense; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Set\+User\+Data@{Set\+User\+Data}}
+\index{Set\+User\+Data@{Set\+User\+Data}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Set\+User\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+Base\+::\+Set\+User\+Data (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{user}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlBase_aa169c05b1e7f45c80dd74411e378b9bf}
+
+
+Set a pointer to arbitrary user data. 
+
+
+
+Definition at line 253 of file tinyxml.\+h.
+
+
+
+References user\+Data.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Skip\+White\+Space@{Skip\+White\+Space}}
+\index{Skip\+White\+Space@{Skip\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Skip\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::\+Skip\+White\+Space (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ab6c49b8a256a4c9e64da976e040391a0}
+
+
+Definition at line 317 of file tinyxmlparser.\+cc.
+
+
+
+References Is\+White\+Space(), dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8, and dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+U\+T\+F\+\_\+\+L\+E\+A\+D\+\_\+2.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Identify(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), Read\+Text(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+
+\begin{DoxyCode}
+318 \{
+319   \textcolor{keywordflow}{if} ( !p || !*p )
+320   \{
+321     \textcolor{keywordflow}{return} 0;
+322   \}
+323   \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+324   \{
+325     \textcolor{keywordflow}{while} ( *p )
+326     \{
+327       \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* pU = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*)p;
+328       
+329       \textcolor{comment}{// Skip the stupid Microsoft UTF-8 Byte order marks}
+330       \textcolor{keywordflow}{if} (  *(pU+0)==TIXML_UTF_LEAD_0
+331          && *(pU+1)==TIXML_UTF_LEAD_1 
+332          && *(pU+2)==TIXML_UTF_LEAD_2 )
+333       \{
+334         p += 3;
+335         \textcolor{keywordflow}{continue};
+336       \}
+337       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*(pU+0)==TIXML_UTF_LEAD_0
+338          && *(pU+1)==0xbfU
+339          && *(pU+2)==0xbeU )
+340       \{
+341         p += 3;
+342         \textcolor{keywordflow}{continue};
+343       \}
+344       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*(pU+0)==TIXML_UTF_LEAD_0
+345          && *(pU+1)==0xbfU
+346          && *(pU+2)==0xbfU )
+347       \{
+348         p += 3;
+349         \textcolor{keywordflow}{continue};
+350       \}
+351 
+352       \textcolor{keywordflow}{if} ( IsWhiteSpace( *p ) )   \textcolor{comment}{// Still using old rules for white space.}
+353         ++p;
+354       \textcolor{keywordflow}{else}
+355         \textcolor{keywordflow}{break};
+356     \}
+357   \}
+358   \textcolor{keywordflow}{else}
+359   \{
+360     \textcolor{keywordflow}{while} ( *p && IsWhiteSpace( *p ) )
+361       ++p;
+362   \}
+363 
+364   \textcolor{keywordflow}{return} p;
+365 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Stream\+To@{Stream\+To}}
+\index{Stream\+To@{Stream\+To}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Stream\+To}]{\setlength{\rightskip}{0pt plus 5cm}static bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+Stream\+To (
+\begin{DoxyParamCaption}
+\item[{std\+::istream $\ast$}]{in, }
+\item[{int}]{character, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ac46502b980f19d322f2b4cbd96029c74}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Stream\+White\+Space@{Stream\+White\+Space}}
+\index{Stream\+White\+Space@{Stream\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Stream\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}static bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+Stream\+White\+Space (
+\begin{DoxyParamCaption}
+\item[{std\+::istream $\ast$}]{in, }
+\item[{{\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G} $\ast$}]{tag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a664382457bfcd079c4819469cd9d0121}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!String\+Equal@{String\+Equal}}
+\index{String\+Equal@{String\+Equal}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{String\+Equal}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Base\+::\+String\+Equal (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{p, }
+\item[{const char $\ast$}]{end\+Tag, }
+\item[{bool}]{ignore\+Case, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a4a6e90633430990787faa27a059551d3}
+
+
+Definition at line 537 of file tinyxmlparser.\+cc.
+
+
+
+References To\+Lower().
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Identify(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), Read\+Text(), and dqm4hep\+::\+Ti\+Xml\+Element\+::\+Read\+Value().
+
+
+\begin{DoxyCode}
+541 \{
+542   assert( p );
+543   assert( tag );
+544   \textcolor{keywordflow}{if} ( !p || !*p )
+545   \{
+546     assert( 0 );
+547     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+548   \}
+549 
+550   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* q = p;
+551 
+552   \textcolor{keywordflow}{if} ( ignoreCase )
+553   \{
+554     \textcolor{keywordflow}{while} ( *q && *tag && ToLower( *q, encoding ) == ToLower( *tag, encoding ) )
+555     \{
+556       ++q;
+557       ++tag;
+558     \}
+559 
+560     \textcolor{keywordflow}{if} ( *tag == 0 )
+561       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+562   \}
+563   \textcolor{keywordflow}{else}
+564   \{
+565     \textcolor{keywordflow}{while} ( *q && *tag && *q == *tag )
+566     \{
+567       ++q;
+568       ++tag;
+569     \}
+570 
+571     \textcolor{keywordflow}{if} ( *tag == 0 )    \textcolor{comment}{// Have we found the end of the tag, and everything equal?}
+572       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+573   \}
+574   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+575 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!To\+Lower@{To\+Lower}}
+\index{To\+Lower@{To\+Lower}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{To\+Lower}]{\setlength{\rightskip}{0pt plus 5cm}static int dqm4hep\+::\+Ti\+Xml\+Base\+::\+To\+Lower (
+\begin{DoxyParamCaption}
+\item[{int}]{v, }
+\item[{{\bf Ti\+Xml\+Encoding}}]{encoding}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_af3647345131e9fdd05b438b5add0fd90}
+
+
+Definition at line 388 of file tinyxml.\+h.
+
+
+
+References dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8.
+
+
+
+Referenced by String\+Equal().
+
+
+\begin{DoxyCode}
+389   \{
+390     \textcolor{keywordflow}{if} ( encoding == TIXML_ENCODING_UTF8 )
+391     \{
+392       \textcolor{keywordflow}{if} ( v < 128 ) \textcolor{keywordflow}{return} tolower( v );
+393       \textcolor{keywordflow}{return} v;
+394     \}
+395     \textcolor{keywordflow}{else}
+396     \{
+397       \textcolor{keywordflow}{return} tolower( v );
+398     \}
+399   \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Ti\+Xml\+Document@{Ti\+Xml\+Document}}
+\index{Ti\+Xml\+Document@{Ti\+Xml\+Document}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Ti\+Xml\+Document}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Document}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlBase_a173617f6dfe902cf484ce5552b950475}
+
+
+Definition at line 204 of file tinyxml.\+h.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Ti\+Xml\+Element@{Ti\+Xml\+Element}}
+\index{Ti\+Xml\+Element@{Ti\+Xml\+Element}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Ti\+Xml\+Element}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Element}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlBase_ab6592e32cb9132be517cc12a70564c4b}
+
+
+Definition at line 203 of file tinyxml.\+h.
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!Ti\+Xml\+Node@{Ti\+Xml\+Node}}
+\index{Ti\+Xml\+Node@{Ti\+Xml\+Node}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{Ti\+Xml\+Node}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Ti\+Xml\+Node}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1TiXmlBase_a218872a0d985ae30e78c55adc4bdb196}
+
+
+Definition at line 202 of file tinyxml.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!condense\+White\+Space@{condense\+White\+Space}}
+\index{condense\+White\+Space@{condense\+White\+Space}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{condense\+White\+Space}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+Base\+::condense\+White\+Space = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlBase_a61e1d548edc47f0e2a874fbcd4771658}
+
+
+Definition at line 419 of file tinyxml.\+h.
+
+
+
+Referenced by Is\+White\+Space\+Condensed(), Read\+Text(), and Set\+Condense\+White\+Space().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!entity@{entity}}
+\index{entity@{entity}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{entity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Base\+::\+Entity} dqm4hep\+::\+Ti\+Xml\+Base\+::entity\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlBase_aeb4d1ea39cdedfb09ecb687350f3b497}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+\{
+  \{ \textcolor{stringliteral}{"&amp;"},  5, \textcolor{charliteral}{'&'} \},
+  \{ \textcolor{stringliteral}{"&lt;"},   4, \textcolor{charliteral}{'<'} \},
+  \{ \textcolor{stringliteral}{"&gt;"},   4, \textcolor{charliteral}{'>'} \},
+  \{ \textcolor{stringliteral}{"&quot;"}, 6, \textcolor{charliteral}{'\(\backslash\)"'} \},
+  \{ \textcolor{stringliteral}{"&apos;"}, 6, \textcolor{charliteral}{'\(\backslash\)''} \}
+\}
+\end{DoxyCode}
+
+
+Definition at line 418 of file tinyxml.\+h.
+
+
+
+Referenced by Encode\+String(), and Get\+Entity().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!error\+String@{error\+String}}
+\index{error\+String@{error\+String}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{error\+String}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::error\+String\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_ab7a7070370da6d6b998122b28a882d9f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+=
+\{
+  \textcolor{stringliteral}{"No error"},
+  \textcolor{stringliteral}{"Error"},
+  \textcolor{stringliteral}{"Failed to open file"},
+  \textcolor{stringliteral}{"Error parsing Element."},
+  \textcolor{stringliteral}{"Failed to read Element name"},
+  \textcolor{stringliteral}{"Error reading Element value."},
+  \textcolor{stringliteral}{"Error reading Attributes."},
+  \textcolor{stringliteral}{"Error: empty tag."},
+  \textcolor{stringliteral}{"Error reading end tag."},
+  \textcolor{stringliteral}{"Error parsing Unknown."},
+  \textcolor{stringliteral}{"Error parsing Comment."},
+  \textcolor{stringliteral}{"Error parsing Declaration."},
+  \textcolor{stringliteral}{"Error document empty."},
+  \textcolor{stringliteral}{"Error null (0) or unexpected EOF found in input stream."},
+  \textcolor{stringliteral}{"Error parsing CDATA."},
+  \textcolor{stringliteral}{"Error when TiXmlDocument added to document, because TiXmlDocument can only be at the root."},
+\}
+\end{DoxyCode}
+
+
+Definition at line 377 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Document\+::\+Set\+Error().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!location@{location}}
+\index{location@{location}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{location}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+Cursor} dqm4hep\+::\+Ti\+Xml\+Base\+::location\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_a66ad42936012654821c941909964cd97}
+
+
+Definition at line 379 of file tinyxml.\+h.
+
+
+
+Referenced by Column(), dqm4hep\+::\+Ti\+Xml\+Node\+::\+Copy\+To(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Comment\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Declaration\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Unknown\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Parse(), and Row().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!user\+Data@{user\+Data}}
+\index{user\+Data@{user\+Data}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{user\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ dqm4hep\+::\+Ti\+Xml\+Base\+::user\+Data\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1TiXmlBase_afde42c95924413ae356bb51a9e3df3b8}
+
+
+Field containing a generic user pointer. 
+
+
+
+Definition at line 382 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Node\+::\+Copy\+To(), Get\+User\+Data(), and Set\+User\+Data().
+
+\index{dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}!utf8\+Byte\+Table@{utf8\+Byte\+Table}}
+\index{utf8\+Byte\+Table@{utf8\+Byte\+Table}!dqm4hep\+::\+Ti\+Xml\+Base@{dqm4hep\+::\+Ti\+Xml\+Base}}
+\subsubsection[{utf8\+Byte\+Table}]{\setlength{\rightskip}{0pt plus 5cm}const int dqm4hep\+::\+Ti\+Xml\+Base\+::utf8\+Byte\+Table\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1TiXmlBase_a6f237f0e87c51d906dd4f76ca9bfb928}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= 
+\{
+  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  
+    1,  1,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  
+    2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  2,  
+    3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  3,  
+    4,  4,  4,  4,  4,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1 
+\}
+\end{DoxyCode}
+
+
+Definition at line 259 of file tinyxml.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinyxml.\+h}\item 
+{\bf tinyxml.\+cc}\item 
+{\bf tinyxmlerror.\+cc}\item 
+{\bf tinyxmlparser.\+cc}\end{DoxyCompactItemize}

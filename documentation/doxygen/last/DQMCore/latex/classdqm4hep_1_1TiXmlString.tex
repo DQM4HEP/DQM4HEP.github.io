@@ -1,0 +1,919 @@
+\section{dqm4hep\+:\+:Ti\+Xml\+String Class Reference}
+\label{classdqm4hep_1_1TiXmlString}\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+
+
+{\ttfamily \#include $<$tinystr.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:Ti\+Xml\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1TiXmlString}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf Rep}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef size\+\_\+t {\bf size\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ti\+Xml\+String} ()
+\item 
+{\bf Ti\+Xml\+String} (const {\bf Ti\+Xml\+String} \&copy)
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T} {\bf Ti\+Xml\+String} (const char $\ast$copy)
+\item 
+{\bf T\+I\+X\+M\+L\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T} {\bf Ti\+Xml\+String} (const char $\ast$str, {\bf size\+\_\+type} len)
+\item 
+{\bf $\sim$\+Ti\+Xml\+String} ()
+\item 
+{\bf Ti\+Xml\+String} \& {\bf operator=} (const char $\ast$copy)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf operator=} (const {\bf Ti\+Xml\+String} \&copy)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf operator+=} (const char $\ast$suffix)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf operator+=} (char single)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf operator+=} (const {\bf Ti\+Xml\+String} \&suffix)
+\item 
+const char $\ast$ {\bf c\+\_\+str} () const 
+\item 
+const char $\ast$ {\bf data} () const 
+\item 
+{\bf size\+\_\+type} {\bf length} () const 
+\item 
+{\bf size\+\_\+type} {\bf size} () const 
+\item 
+bool {\bf empty} () const 
+\item 
+{\bf size\+\_\+type} {\bf capacity} () const 
+\item 
+const char \& {\bf at} ({\bf size\+\_\+type} index) const 
+\item 
+char \& {\bf operator[$\,$]} ({\bf size\+\_\+type} index) const 
+\item 
+{\bf size\+\_\+type} {\bf find} (char lookup) const 
+\item 
+{\bf size\+\_\+type} {\bf find} (char tofind, {\bf size\+\_\+type} offset) const 
+\item 
+void {\bf clear} ()
+\item 
+void {\bf reserve} ({\bf size\+\_\+type} cap)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf assign} (const char $\ast$str, {\bf size\+\_\+type} len)
+\item 
+{\bf Ti\+Xml\+String} \& {\bf append} (const char $\ast$str, {\bf size\+\_\+type} len)
+\item 
+void {\bf swap} ({\bf Ti\+Xml\+String} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const {\bf size\+\_\+type} {\bf npos} = static\+\_\+cast$<$ {\bf Ti\+Xml\+String\+::size\+\_\+type} $>$(-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf init} ({\bf size\+\_\+type} sz)
+\item 
+void {\bf set\+\_\+size} ({\bf size\+\_\+type} sz)
+\item 
+char $\ast$ {\bf start} () const 
+\item 
+char $\ast$ {\bf finish} () const 
+\item 
+void {\bf init} ({\bf size\+\_\+type} sz, {\bf size\+\_\+type} cap)
+\item 
+void {\bf quit} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Rep} $\ast$ {\bf rep\+\_\+}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Rep} {\bf nullrep\+\_\+} = \{ 0, 0, \{ '\textbackslash{}0' \} \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 69 of file tinystr.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!size\+\_\+type@{size\+\_\+type}}
+\index{size\+\_\+type@{size\+\_\+type}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{size\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}typedef size\+\_\+t {\bf dqm4hep\+::\+Ti\+Xml\+String\+::size\+\_\+type}}\label{classdqm4hep_1_1TiXmlString_a1ccd0392d42ab6a4bd9832baa173ff70}
+
+
+Definition at line 73 of file tinystr.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!Ti\+Xml\+String@{Ti\+Xml\+String}}
+\index{Ti\+Xml\+String@{Ti\+Xml\+String}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{Ti\+Xml\+String}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+String\+::\+Ti\+Xml\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_aca5efa3983436b72a38a667c57c91b34}
+
+
+Definition at line 80 of file tinystr.\+h.
+
+
+\begin{DoxyCode}
+80                  : rep_(&nullrep_)
+81   \{
+82   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!Ti\+Xml\+String@{Ti\+Xml\+String}}
+\index{Ti\+Xml\+String@{Ti\+Xml\+String}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{Ti\+Xml\+String}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+String\+::\+Ti\+Xml\+String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+String} \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_ab3b24be8904653c7f014f0f34fb6df8f}
+
+
+Definition at line 85 of file tinystr.\+h.
+
+
+
+References data(), init(), length(), and start().
+
+
+\begin{DoxyCode}
+85                                           : rep_(0)
+86   \{
+87     init(copy.length());
+88     memcpy(start(), copy.data(), length());
+89   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!Ti\+Xml\+String@{Ti\+Xml\+String}}
+\index{Ti\+Xml\+String@{Ti\+Xml\+String}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{Ti\+Xml\+String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T} dqm4hep\+::\+Ti\+Xml\+String\+::\+Ti\+Xml\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a7c3bfb2649614dd1f4dbb840c425bdfc}
+
+
+Definition at line 92 of file tinystr.\+h.
+
+
+
+References init(), length(), and start().
+
+
+\begin{DoxyCode}
+92                                                   : rep_(0)
+93   \{
+94     init( static\_cast<size\_type>( strlen(copy) ));
+95     memcpy(start(), copy, length());
+96   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!Ti\+Xml\+String@{Ti\+Xml\+String}}
+\index{Ti\+Xml\+String@{Ti\+Xml\+String}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{Ti\+Xml\+String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T\+I\+X\+M\+L\+\_\+\+E\+X\+P\+L\+I\+C\+I\+T} dqm4hep\+::\+Ti\+Xml\+String\+::\+Ti\+Xml\+String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf size\+\_\+type}}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a70f9bfa559c4a71690d53b0d8c0c879d}
+
+
+Definition at line 99 of file tinystr.\+h.
+
+
+
+References init(), and start().
+
+
+\begin{DoxyCode}
+99                                                                 : rep_(0)
+100   \{
+101     init(len);
+102     memcpy(start(), str, len);
+103   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!````~Ti\+Xml\+String@{$\sim$\+Ti\+Xml\+String}}
+\index{````~Ti\+Xml\+String@{$\sim$\+Ti\+Xml\+String}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{$\sim$\+Ti\+Xml\+String}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+Ti\+Xml\+String\+::$\sim$\+Ti\+Xml\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a5ca89570846b03db7d5fd573c39e4816}
+
+
+Definition at line 106 of file tinystr.\+h.
+
+
+
+References quit().
+
+
+\begin{DoxyCode}
+107   \{
+108     quit();
+109   \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!append@{append}}
+\index{append@{append}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String} \& dqm4hep\+::\+Ti\+Xml\+String\+::append (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf size\+\_\+type}}]{len}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlString_a389a701d71a283876c300694bba9c234}
+
+
+Definition at line 76 of file tinystr.\+cc.
+
+
+
+References capacity(), finish(), length(), reserve(), and set\+\_\+size().
+
+
+
+Referenced by dqm4hep\+::operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+77 \{
+78   size_type newsize = length() + len;
+79   \textcolor{keywordflow}{if} (newsize > capacity())
+80   \{
+81     reserve (newsize + capacity());
+82   \}
+83   memmove(finish(), str, len);
+84   set_size(newsize);
+85   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+86 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!assign@{assign}}
+\index{assign@{assign}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String} \& dqm4hep\+::\+Ti\+Xml\+String\+::assign (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str, }
+\item[{{\bf size\+\_\+type}}]{len}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlString_aeed97ccae2a80b48de1b509da09b0bd9}
+
+
+Definition at line 57 of file tinystr.\+cc.
+
+
+
+References capacity(), init(), set\+\_\+size(), start(), and swap().
+
+
+
+Referenced by operator=().
+
+
+\begin{DoxyCode}
+58 \{
+59   size_type cap = capacity();
+60   \textcolor{keywordflow}{if} (len > cap || cap > 3*(len + 8))
+61   \{
+62     TiXmlString tmp;
+63     tmp.init(len);
+64     memcpy(tmp.start(), str, len);
+65     swap(tmp);
+66   \}
+67   \textcolor{keywordflow}{else}
+68   \{
+69     memmove(start(), str, len);
+70     set_size(len);
+71   \}
+72   \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+73 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!at@{at}}
+\index{at@{at}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}const char\& dqm4hep\+::\+Ti\+Xml\+String\+::at (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_afd80c1ebcfa8ab00a6209288606400fb}
+
+
+Definition at line 163 of file tinystr.\+h.
+
+
+
+References length(), rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+\begin{DoxyCode}
+164   \{
+165     assert( index < length() );
+166     \textcolor{keywordflow}{return} rep_->str[ index ];
+167   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!c\+\_\+str@{c\+\_\+str}}
+\index{c\+\_\+str@{c\+\_\+str}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{c\+\_\+str}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+String\+::c\+\_\+str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a68cb82b5ed707eb47f0536d28fd62a7e}
+
+
+Definition at line 144 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+
+Referenced by find(), dqm4hep\+::operator$<$(), and dqm4hep\+::operator==().
+
+
+\begin{DoxyCode}
+144 \{ \textcolor{keywordflow}{return} rep_->str; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!capacity@{capacity}}
+\index{capacity@{capacity}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{capacity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::capacity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_ad27b7b7fc0570ada7a7728749b45d759}
+
+
+Definition at line 159 of file tinystr.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::capacity, and rep\+\_\+.
+
+
+
+Referenced by append(), assign(), and reserve().
+
+
+\begin{DoxyCode}
+159 \{ \textcolor{keywordflow}{return} rep_->capacity; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_ac2e74bdcf4190662a52b9a2e595e5b62}
+
+
+Definition at line 194 of file tinystr.\+h.
+
+
+
+References init(), and quit().
+
+
+\begin{DoxyCode}
+195   \{
+196     \textcolor{comment}{//Lee:}
+197     \textcolor{comment}{//The original was just too strange, though correct:}
+198     \textcolor{comment}{//  TiXmlString().swap(*this);}
+199     \textcolor{comment}{//Instead use the quit & re-init:}
+200     quit();
+201     init(0,0);
+202   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!data@{data}}
+\index{data@{data}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ dqm4hep\+::\+Ti\+Xml\+String\+::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a1c02da153c432360c6a8438b12ac17d4}
+
+
+Definition at line 147 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+
+Referenced by operator+=(), reserve(), and Ti\+Xml\+String().
+
+
+\begin{DoxyCode}
+147 \{ \textcolor{keywordflow}{return} rep_->str; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!empty@{empty}}
+\index{empty@{empty}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+Ti\+Xml\+String\+::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a1e410ea8c07742761dad36c27a09d07c}
+
+
+Definition at line 156 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size.
+
+
+\begin{DoxyCode}
+156 \{ \textcolor{keywordflow}{return} rep_->size == 0; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!find@{find}}
+\index{find@{find}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::find (
+\begin{DoxyParamCaption}
+\item[{char}]{lookup}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a0b460d7cfc2cc4aee444f4b756d6fef5}
+
+
+Definition at line 177 of file tinystr.\+h.
+
+
+\begin{DoxyCode}
+178   \{
+179     \textcolor{keywordflow}{return} find(lookup, 0);
+180   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!find@{find}}
+\index{find@{find}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::find (
+\begin{DoxyParamCaption}
+\item[{char}]{tofind, }
+\item[{{\bf size\+\_\+type}}]{offset}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_ac2509ece6010fd6d8eb7620dd7d3d596}
+
+
+Definition at line 183 of file tinystr.\+h.
+
+
+
+References c\+\_\+str(), length(), and npos.
+
+
+\begin{DoxyCode}
+184   \{
+185     \textcolor{keywordflow}{if} (offset >= length()) \textcolor{keywordflow}{return} npos;
+186 
+187     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keywordtype}{char}* p = c_str() + offset; *p != \textcolor{charliteral}{'\(\backslash\)0'}; ++p)
+188     \{
+189        \textcolor{keywordflow}{if} (*p == tofind) \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<} size_type \textcolor{keyword}{>}( p - c_str() );
+190     \}
+191     \textcolor{keywordflow}{return} npos;
+192   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!finish@{finish}}
+\index{finish@{finish}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{finish}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dqm4hep\+::\+Ti\+Xml\+String\+::finish (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a7f72c376477bcba9e907207c34d1f131}
+
+
+Definition at line 225 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+
+Referenced by append().
+
+
+\begin{DoxyCode}
+225 \{ \textcolor{keywordflow}{return} rep_->str + rep_->size; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!init@{init}}
+\index{init@{init}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::init (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a8a45194f9329e06f4014d464756c8b50}
+
+
+Definition at line 222 of file tinystr.\+h.
+
+
+
+References init().
+
+
+
+Referenced by assign(), clear(), init(), reserve(), and Ti\+Xml\+String().
+
+
+\begin{DoxyCode}
+222 \{ init(sz, sz); \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!init@{init}}
+\index{init@{init}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::init (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{sz, }
+\item[{{\bf size\+\_\+type}}]{cap}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_ae5db6f239a594cff631d3e113683a69d}
+
+
+Definition at line 233 of file tinystr.\+h.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::capacity, nullrep\+\_\+, rep\+\_\+, dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+\begin{DoxyCode}
+234   \{
+235     \textcolor{keywordflow}{if} (cap)
+236     \{
+237       \textcolor{comment}{// Lee: the original form:}
+238       \textcolor{comment}{//  rep\_ = static\_cast<Rep*>(operator new(sizeof(Rep) + cap));}
+239       \textcolor{comment}{// doesn't work in some cases of new being overloaded. Switching}
+240       \textcolor{comment}{// to the normal allocation, although use an 'int' for systems}
+241       \textcolor{comment}{// that are overly picky about structure alignment.}
+242       \textcolor{keyword}{const} size_type bytesNeeded = \textcolor{keyword}{sizeof}(Rep) + cap;
+243       \textcolor{keyword}{const} size_type intsNeeded = ( bytesNeeded + \textcolor{keyword}{sizeof}(int) - 1 ) / \textcolor{keyword}{sizeof}( int ); 
+244       rep_ = \textcolor{keyword}{reinterpret\_cast<}Rep*\textcolor{keyword}{>}( \textcolor{keyword}{new} \textcolor{keywordtype}{int}[ intsNeeded ] );
+245 
+246       rep_->str[ rep_->size = sz ] = \textcolor{charliteral}{'\(\backslash\)0'};
+247       rep_->capacity = cap;
+248     \}
+249     \textcolor{keywordflow}{else}
+250     \{
+251       rep_ = &nullrep_;
+252     \}
+253   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!length@{length}}
+\index{length@{length}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a56b146f7815807cc153327771adacef2}
+
+
+Definition at line 150 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size.
+
+
+
+Referenced by append(), at(), find(), dqm4hep\+::operator+(), operator+=(), operator=(), dqm4hep\+::operator==(), operator[$\,$](), reserve(), and Ti\+Xml\+String().
+
+
+\begin{DoxyCode}
+150 \{ \textcolor{keywordflow}{return} rep_->size; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String}\& dqm4hep\+::\+Ti\+Xml\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_aa0b343424aa46283c9f01ad2b709c2c6}
+
+
+Definition at line 125 of file tinystr.\+h.
+
+
+
+References append().
+
+
+\begin{DoxyCode}
+126   \{
+127     \textcolor{keywordflow}{return} append(suffix, static\_cast<size\_type>( strlen(suffix) ));
+128   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String}\& dqm4hep\+::\+Ti\+Xml\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{char}]{single}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a6ccf5ef91717136ef44853a3a7e2c7e7}
+
+
+Definition at line 131 of file tinystr.\+h.
+
+
+
+References append().
+
+
+\begin{DoxyCode}
+132   \{
+133     \textcolor{keywordflow}{return} append(&single, 1);
+134   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String}\& dqm4hep\+::\+Ti\+Xml\+String\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+String} \&}]{suffix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a36c341ebfb6355725ef4f732ec4341b1}
+
+
+Definition at line 137 of file tinystr.\+h.
+
+
+
+References append(), data(), and length().
+
+
+\begin{DoxyCode}
+138   \{
+139     \textcolor{keywordflow}{return} append(suffix.data(), suffix.length());
+140   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String}\& dqm4hep\+::\+Ti\+Xml\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_acf73434d9a579ac8b121ce1599260b53}
+
+
+Definition at line 112 of file tinystr.\+h.
+
+
+
+References assign().
+
+
+\begin{DoxyCode}
+113   \{
+114     \textcolor{keywordflow}{return} assign( copy, (size_type)strlen(copy));
+115   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String}\& dqm4hep\+::\+Ti\+Xml\+String\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+String} \&}]{copy}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a6eb9757009a40d9314d12790424dca0b}
+
+
+Definition at line 118 of file tinystr.\+h.
+
+
+
+References assign(), length(), and start().
+
+
+\begin{DoxyCode}
+119   \{
+120     \textcolor{keywordflow}{return} assign(copy.start(), copy.length());
+121   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}char\& dqm4hep\+::\+Ti\+Xml\+String\+::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_ae80a7b9a7207ff9977ebfd7572d48b7b}
+
+
+Definition at line 170 of file tinystr.\+h.
+
+
+
+References length(), rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+\begin{DoxyCode}
+171   \{
+172     assert( index < length() );
+173     \textcolor{keywordflow}{return} rep_->str[ index ];
+174   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!quit@{quit}}
+\index{quit@{quit}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{quit}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::quit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a59c1754b78d36f2b655b029d166719c5}
+
+
+Definition at line 255 of file tinystr.\+h.
+
+
+
+References nullrep\+\_\+, and rep\+\_\+.
+
+
+
+Referenced by clear(), and $\sim$\+Ti\+Xml\+String().
+
+
+\begin{DoxyCode}
+256   \{
+257     \textcolor{keywordflow}{if} (rep_ != &nullrep_)
+258     \{
+259       \textcolor{comment}{// The rep\_ is really an array of ints. (see the allocator, above).}
+260       \textcolor{comment}{// Cast it back before delete, so the compiler won't incorrectly call destructors.}
+261       \textcolor{keyword}{delete} [] ( \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{int}*\textcolor{keyword}{>}( rep_ ) );
+262     \}
+263   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!reserve@{reserve}}
+\index{reserve@{reserve}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::reserve (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{cap}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1TiXmlString_aa107cc98086831398edb9e711c5f4c91}
+
+
+Definition at line 45 of file tinystr.\+cc.
+
+
+
+References capacity(), data(), init(), length(), start(), and swap().
+
+
+
+Referenced by append(), and dqm4hep\+::operator+().
+
+
+\begin{DoxyCode}
+46 \{
+47   \textcolor{keywordflow}{if} (cap > capacity())
+48   \{
+49     TiXmlString tmp;
+50     tmp.init(length(), cap);
+51     memcpy(tmp.start(), data(), length());
+52     swap(tmp);
+53   \}
+54 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{set\+\_\+size}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::set\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{{\bf size\+\_\+type}}]{sz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a7eb8c2765cf4c751591deb853b5b5720}
+
+
+Definition at line 223 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+
+Referenced by append(), and assign().
+
+
+\begin{DoxyCode}
+223 \{ rep_->str[ rep_->size = sz ] = \textcolor{charliteral}{'\(\backslash\)0'}; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!size@{size}}
+\index{size@{size}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_abea5e64600a3ec611d1e3287ec387d61}
+
+
+Definition at line 153 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::size.
+
+
+\begin{DoxyCode}
+153 \{ \textcolor{keywordflow}{return} rep_->size; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!start@{start}}
+\index{start@{start}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ dqm4hep\+::\+Ti\+Xml\+String\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a371dcc32eaded15d240e683995c7cb44}
+
+
+Definition at line 224 of file tinystr.\+h.
+
+
+
+References rep\+\_\+, and dqm4hep\+::\+Ti\+Xml\+String\+::\+Rep\+::str.
+
+
+
+Referenced by assign(), operator=(), reserve(), and Ti\+Xml\+String().
+
+
+\begin{DoxyCode}
+224 \{ \textcolor{keywordflow}{return} rep_->str; \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!swap@{swap}}
+\index{swap@{swap}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+Ti\+Xml\+String\+::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf Ti\+Xml\+String} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1TiXmlString_a47704080c5831e234a6c113970f105f8}
+
+
+Definition at line 213 of file tinystr.\+h.
+
+
+
+References rep\+\_\+.
+
+
+
+Referenced by assign(), and reserve().
+
+
+\begin{DoxyCode}
+214   \{
+215     Rep* r = rep_;
+216     rep_ = other.rep\_;
+217     other.rep\_ = r;
+218   \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!npos@{npos}}
+\index{npos@{npos}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{npos}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ti\+Xml\+String\+::size\+\_\+type} dqm4hep\+::\+Ti\+Xml\+String\+::npos = static\+\_\+cast$<$ {\bf Ti\+Xml\+String\+::size\+\_\+type} $>$(-\/1)\hspace{0.3cm}{\ttfamily [static]}}\label{classdqm4hep_1_1TiXmlString_a04a1a9bb29f11e8f1502fcfa60803b00}
+
+
+Definition at line 76 of file tinystr.\+h.
+
+
+
+Referenced by find().
+
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!nullrep\+\_\+@{nullrep\+\_\+}}
+\index{nullrep\+\_\+@{nullrep\+\_\+}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{nullrep\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ti\+Xml\+String\+::\+Rep} dqm4hep\+::\+Ti\+Xml\+String\+::nullrep\+\_\+ = \{ 0, 0, \{ '\textbackslash{}0' \} \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a3dd24e238f188e64534c0183a66d9806}
+
+
+Definition at line 266 of file tinystr.\+h.
+
+
+
+Referenced by init(), and quit().
+
+\index{dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}!rep\+\_\+@{rep\+\_\+}}
+\index{rep\+\_\+@{rep\+\_\+}!dqm4hep\+::\+Ti\+Xml\+String@{dqm4hep\+::\+Ti\+Xml\+String}}
+\subsubsection[{rep\+\_\+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Rep}$\ast$ dqm4hep\+::\+Ti\+Xml\+String\+::rep\+\_\+\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1TiXmlString_a4663c922778d1bae36f24115a6137d1a}
+
+
+Definition at line 265 of file tinystr.\+h.
+
+
+
+Referenced by at(), c\+\_\+str(), capacity(), data(), empty(), finish(), init(), length(), operator[$\,$](), quit(), set\+\_\+size(), size(), start(), and swap().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf tinystr.\+h}\item 
+{\bf tinystr.\+cc}\end{DoxyCompactItemize}

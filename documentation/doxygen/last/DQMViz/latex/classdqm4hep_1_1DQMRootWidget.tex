@@ -1,0 +1,1094 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Root\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMRootWidget}\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Root\+Widget}{p.}{classdqm4hep_1_1DQMRootWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Root\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Root\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMRootWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Root\+Widget} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring, Q\+Widget $\ast$p\+Parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Root\+Widget} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+void {\bf set\+Canvas} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas)
+\begin{DoxyCompactList}\small\item\em Set canvas on which the the root widget is drawn. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf get\+Canvas} () const 
+\begin{DoxyCompactList}\small\item\em Get the canvas on which the the root widget is drawn. \end{DoxyCompactList}\item 
+virtual void {\bf mouse\+Double\+Click\+Event} (Q\+Mouse\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em Handle mouse double click event on the widget. \end{DoxyCompactList}\item 
+virtual void {\bf mouse\+Release\+Event} (Q\+Mouse\+Event $\ast$e)
+\begin{DoxyCompactList}\small\item\em Handle mouse release event on the widget. \end{DoxyCompactList}\item 
+virtual void {\bf post\+Draw} ()
+\begin{DoxyCompactList}\small\item\em Post draw function with a 'fake' update of the widget. \end{DoxyCompactList}\item 
+virtual void {\bf draw\+No\+Vis} ()
+\begin{DoxyCompactList}\small\item\em Draw an image saying \char`\"{}no vis available\char`\"{}. \end{DoxyCompactList}\item 
+virtual void {\bf draw} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Draw the monitor element on the canvas. \end{DoxyCompactList}\item 
+virtual T\+Image $\ast$ {\bf get\+No\+Vis\+Image} ()
+\begin{DoxyCompactList}\small\item\em Get the \char`\"{}no vis\char`\"{} image, create it if not (proxy method) \end{DoxyCompactList}\item 
+virtual {\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ {\bf get\+Current\+Monitor\+Element} () const 
+\begin{DoxyCompactList}\small\item\em Get the current monitor element draw on the root canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Menu $\ast$ {\bf create\+Context\+Menu} () const 
+\item 
+void {\bf add\+Draw\+Options} (Q\+Menu $\ast$p\+Menu) const 
+\item 
+void {\bf update\+Monitor\+Element} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+New\+Gui\+Monitor\+Element)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf m\+\_\+p\+Canvas}
+\item 
+T\+Image $\ast$ {\bf m\+\_\+p\+No\+Vis\+Image}
+\item 
+{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ {\bf m\+\_\+p\+Current\+Monitor\+Element}
+\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf show\+Context\+Menu} (const Q\+Point \&point)
+\item 
+void {\bf move\+Canvas} ()
+\item 
+void {\bf query\+Update} ()
+\item 
+void {\bf remove\+Canvas} ()
+\item 
+void {\bf set\+Draw\+Option} ()
+\item 
+void {\bf set\+Draw\+Option\+From\+Dialog} ()
+\item 
+void {\bf unzoom} ()
+\item 
+void {\bf save\+As} ()
+\item 
+void {\bf open\+R\+O\+O\+T\+Panel} ()
+\item 
+void {\bf show\+Monitor\+Element\+Info} ()
+\item 
+void {\bf show\+Q\+Test\+Results} ()
+\item 
+void {\bf redraw} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Root\+Widget}{p.}{classdqm4hep_1_1DQMRootWidget} class. 
+
+Definition at line 52 of file D\+Q\+M\+Root\+Widget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!D\+Q\+M\+Root\+Widget@{D\+Q\+M\+Root\+Widget}}
+\index{D\+Q\+M\+Root\+Widget@{D\+Q\+M\+Root\+Widget}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{D\+Q\+M\+Root\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::\+D\+Q\+M\+Root\+Widget (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring, }
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRootWidget_a29a632eb756dc382e93fec3de00fa5e4}
+
+
+Constructor. 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+51                                                                          :
+52   TQtWidget(pParent, 0, \textcolor{keyword}{true}),
+53   m_pMonitoring(pMonitoring),
+54   m_pCanvas(NULL),
+55   m_pCurrentMonitorElement(NULL),
+56   m_pNoVisImage(NULL)
+57 \{
+58   this->setContextMenuPolicy(Qt::CustomContextMenu);
+59 
+60     connect(\textcolor{keyword}{this}, SIGNAL(customContextMenuRequested(\textcolor{keyword}{const} QPoint &)),
+61         \textcolor{keyword}{this}, SLOT(showContextMenu(\textcolor{keyword}{const} QPoint &)));
+62 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!````~D\+Q\+M\+Root\+Widget@{$\sim$\+D\+Q\+M\+Root\+Widget}}
+\index{````~D\+Q\+M\+Root\+Widget@{$\sim$\+D\+Q\+M\+Root\+Widget}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Root\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::$\sim$\+D\+Q\+M\+Root\+Widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRootWidget_a968dfff10cde73e38d0cbbf0fc8078a7}
+
+
+Destructor. 
+
+
+
+Definition at line 66 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+No\+Vis\+Image.
+
+
+\begin{DoxyCode}
+67 \{
+68   \textcolor{keywordflow}{if}(m_pNoVisImage)
+69     \textcolor{keyword}{delete} m_pNoVisImage;
+70 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!add\+Draw\+Options@{add\+Draw\+Options}}
+\index{add\+Draw\+Options@{add\+Draw\+Options}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{add\+Draw\+Options}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::add\+Draw\+Options (
+\begin{DoxyParamCaption}
+\item[{Q\+Menu $\ast$}]{p\+Menu}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_ac9b240b851a694251828e82a8442c79f}
+
+
+Definition at line 260 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References set\+Draw\+Option(), and set\+Draw\+Option\+From\+Dialog().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+261 \{
+262   pMenu->addAction(\textcolor{stringliteral}{""}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+263   pMenu->addAction(\textcolor{stringliteral}{"E"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+264   pMenu->addAction(\textcolor{stringliteral}{"LEGO"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+265   pMenu->addSeparator();
+266   pMenu->addAction(\textcolor{stringliteral}{"COL"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+267   pMenu->addAction(\textcolor{stringliteral}{"COLZ"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+268   pMenu->addAction(\textcolor{stringliteral}{"SURF"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+269   pMenu->addAction(\textcolor{stringliteral}{"SURF1"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+270   pMenu->addSeparator();
+271     QMenu *pMoreDrawOptionMenu = pMenu->addMenu(\textcolor{stringliteral}{"More draw options"});
+272 
+273     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"FUNC"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+274     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"LEGO1"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+275     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"LEGO2"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+276     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E0"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+277     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E1"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+278     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E2"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+279     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E3"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+280     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E4"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+281     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E5"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+282     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"E6"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+283     pMoreDrawOptionMenu->addSeparator();
+284     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"ARR"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+285     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"BOX"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+286     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"SURF2"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+287     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"SURF3"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+288     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"SURF4"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+289     pMoreDrawOptionMenu->addAction(\textcolor{stringliteral}{"SURF5"}, \textcolor{keyword}{this}, SLOT(setDrawOption()));
+290     pMenu->addSeparator();
+291     pMenu->addAction(\textcolor{stringliteral}{"Custom draw option"}, \textcolor{keyword}{this}, SLOT(setDrawOptionFromDialog()));
+292 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!create\+Context\+Menu@{create\+Context\+Menu}}
+\index{create\+Context\+Menu@{create\+Context\+Menu}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{create\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Menu $\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_a6335143711d9c9cb300a2377300b097b}
+
+
+Definition at line 204 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References add\+Draw\+Options(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::canvas\+Area\+List(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Canvas\+Area\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Canvas\+View(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Current\+Canvas\+Area(), get\+Current\+Monitor\+Element(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), move\+Canvas(), open\+R\+O\+O\+T\+Panel(), query\+Update(), remove\+Canvas(), save\+As(), set\+Draw\+Option(), show\+Monitor\+Element\+Info(), show\+Q\+Test\+Results(), and unzoom().
+
+
+
+Referenced by show\+Context\+Menu().
+
+
+\begin{DoxyCode}
+205 \{
+206   QMenu *pContextMenu = \textcolor{keyword}{new} QMenu();
+207 
+208   QMenu *pMoveToCanvasAreaMenu = pContextMenu->addMenu(\textcolor{stringliteral}{"Move to canvas area"});
+209 
+210   DQMCanvasView *pCanvasView = this->getMonitoring()->getView()->getCanvasView();
+211   DQMCanvasArea *pCurrentCanvasArea = pCanvasView->getCurrentCanvasArea();
+212   QList<DQMCanvasArea*> canvasAreaList = pCanvasView->canvasAreaList();
+213 
+214   \textcolor{keywordflow}{if}(canvasAreaList.count() == 1)
+215     pMoveToCanvasAreaMenu->setEnabled(\textcolor{keyword}{false});
+216   \textcolor{keywordflow}{else}
+217   \{
+218     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<canvasAreaList.count() ; i++)
+219     \{
+220       DQMCanvasArea *pCanvasArea = canvasAreaList.at(i);
+221 
+222       \textcolor{keywordflow}{if}(pCanvasArea == pCurrentCanvasArea)
+223         \textcolor{keywordflow}{continue};
+224 
+225       QAction *pAction = pMoveToCanvasAreaMenu->addAction(pCanvasView->getCanvasAreaName(i).c\_str(), \textcolor{keyword}{this}, 
+      SLOT(moveCanvas()));
+226       pAction->setData(i);
+227     \}
+228   \}
+229 
+230   pContextMenu->addAction(\textcolor{stringliteral}{"Update"}, \textcolor{keyword}{this}, SLOT(queryUpdate()));
+231   pContextMenu->addAction(\textcolor{stringliteral}{"Remove"}, \textcolor{keyword}{this}, SLOT(removeCanvas()));
+232 
+233   pContextMenu->addSeparator();
+234 
+235   QMenu *pSetDrawOptionMenu = pContextMenu->addMenu(\textcolor{stringliteral}{"Set draw option"});
+236 
+237   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+238   \{
+239     pSetDrawOptionMenu->setEnabled(\textcolor{keyword}{false});
+240   \}
+241   \textcolor{keywordflow}{else}
+242   \{
+243     pSetDrawOptionMenu->addAction(this->getCurrentMonitorElement()->getMonitorElement()->getDrawOption().
+      c\_str(), \textcolor{keyword}{this}, SLOT(setDrawOption()));
+244     pSetDrawOptionMenu->addSeparator();
+245     this->addDrawOptions(pSetDrawOptionMenu);
+246   \}
+247 
+248     pContextMenu->addAction(\textcolor{stringliteral}{"UnZoom"}, \textcolor{keyword}{this}, SLOT(unzoom()));
+249     pContextMenu->addAction(\textcolor{stringliteral}{"Save as"}, \textcolor{keyword}{this}, SLOT(saveAs()));
+250     pContextMenu->addAction(\textcolor{stringliteral}{"ROOT Panel"}, \textcolor{keyword}{this}, SLOT(openROOTPanel()));
+251     pContextMenu->addSeparator();
+252     pContextMenu->addAction(\textcolor{stringliteral}{"Show info"}, \textcolor{keyword}{this}, SLOT(showMonitorElementInfo()));
+253     pContextMenu->addAction(\textcolor{stringliteral}{"QTest results"}, \textcolor{keyword}{this}, SLOT(showQTestResults()));
+254 
+255   \textcolor{keywordflow}{return} pContextMenu;
+256 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!draw@{draw}}
+\index{draw@{draw}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_a9374704d501832e210ab45f7853552cb}
+
+
+Draw the monitor element on the canvas. 
+
+
+
+Definition at line 141 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References draw\+No\+Vis(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), post\+Draw(), and update\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+::draw(), redraw(), set\+Draw\+Option(), and set\+Draw\+Option\+From\+Dialog().
+
+
+\begin{DoxyCode}
+142 \{
+143   \textcolor{keywordtype}{bool} drawNoVis = (pMonitorElement == NULL ||
+144       pMonitorElement->getMonitorElement() == NULL ||
+145       pMonitorElement->getMonitorElement()->getObject() == NULL);
+146 
+147   \textcolor{keywordflow}{if}(drawNoVis)
+148   \{
+149     this->drawNoVis();
+150     this->updateMonitorElement(pMonitorElement);
+151     \textcolor{keywordflow}{return};
+152   \}
+153 
+154   TObject *pObject = pMonitorElement->getMonitorElement()->getObject();
+155   \textcolor{keyword}{const} std::string &drawOption(pMonitorElement->getMonitorElement()->getDrawOption());
+156 
+157   \textcolor{keywordflow}{if}(pMonitorElement->getMonitorElement()->isHistogram())
+158   \{
+159     TH1 *pHistogram = \textcolor{keyword}{dynamic\_cast<}TH1*\textcolor{keyword}{>}(pObject);
+160     pHistogram->SetStats(0);
+161   \}
+162 
+163   this->cd();
+164   pObject->Draw(drawOption.c\_str());
+165   gPad->Update();
+166   this->postDraw();
+167 
+168   this->updateMonitorElement(pMonitorElement);
+169 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!draw\+No\+Vis@{draw\+No\+Vis}}
+\index{draw\+No\+Vis@{draw\+No\+Vis}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{draw\+No\+Vis}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::draw\+No\+Vis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_a176b8fc06b20663921d1261dfa23bdf8}
+
+
+Draw an image saying \char`\"{}no vis available\char`\"{}. 
+
+
+
+Definition at line 130 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+No\+Vis\+Image(), m\+\_\+p\+Current\+Monitor\+Element, and post\+Draw().
+
+
+
+Referenced by draw().
+
+
+\begin{DoxyCode}
+131 \{
+132   TImage *pNoVisImage = this->getNoVisImage();
+133   this->GetCanvas()->cd();
+134   pNoVisImage->Draw();
+135   this->postDraw();
+136   m_pCurrentMonitorElement = NULL;
+137 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!get\+Canvas@{get\+Canvas}}
+\index{get\+Canvas@{get\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{get\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas} $\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::get\+Canvas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRootWidget_a784d7e3bee79364c3b5301c7b1787138}
+
+
+Get the canvas on which the the root widget is drawn. 
+
+
+
+Definition at line 88 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Canvas.
+
+
+
+Referenced by move\+Canvas(), remove\+Canvas(), save\+As(), and update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+89 \{
+90   \textcolor{keywordflow}{return} m_pCanvas;
+91 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!get\+Current\+Monitor\+Element@{get\+Current\+Monitor\+Element}}
+\index{get\+Current\+Monitor\+Element@{get\+Current\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{get\+Current\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::get\+Current\+Monitor\+Element (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_a1ac2f773c6d057348e7c0f7b249c0e7a}
+
+
+Get the current monitor element draw on the root canvas. 
+
+
+
+Definition at line 173 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Current\+Monitor\+Element.
+
+
+
+Referenced by create\+Context\+Menu(), dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Current\+Monitor\+Element(), open\+R\+O\+O\+T\+Panel(), query\+Update(), redraw(), set\+Draw\+Option(), set\+Draw\+Option\+From\+Dialog(), show\+Monitor\+Element\+Info(), show\+Q\+Test\+Results(), unzoom(), and update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+174 \{
+175   \textcolor{keywordflow}{return} m_pCurrentMonitorElement;
+176 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRootWidget_a22b13e43cd6ce9cf635bf139ca811c14}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 74 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by create\+Context\+Menu(), move\+Canvas(), open\+R\+O\+O\+T\+Panel(), query\+Update(), remove\+Canvas(), save\+As(), show\+Monitor\+Element\+Info(), and show\+Q\+Test\+Results().
+
+
+\begin{DoxyCode}
+75 \{
+76   \textcolor{keywordflow}{return} m_pMonitoring;
+77 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!get\+No\+Vis\+Image@{get\+No\+Vis\+Image}}
+\index{get\+No\+Vis\+Image@{get\+No\+Vis\+Image}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{get\+No\+Vis\+Image}]{\setlength{\rightskip}{0pt plus 5cm}T\+Image $\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::get\+No\+Vis\+Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_ab7a52e47e87044351fafa61f70714864}
+
+
+Get the \char`\"{}no vis\char`\"{} image, create it if not (proxy method) 
+
+
+
+Definition at line 189 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References D\+Q\+M\+Viz\+\_\+\+D\+I\+R, and m\+\_\+p\+No\+Vis\+Image.
+
+
+
+Referenced by draw\+No\+Vis().
+
+
+\begin{DoxyCode}
+190 \{
+191   \textcolor{keywordflow}{if}(NULL == m_pNoVisImage)
+192   \{
+193     std::string noVisFileName = std::string(DQMViz_DIR) + \textcolor{stringliteral}{"/icons/NO\_VIS.xpm"};
+194     m_pNoVisImage = TImage::Open(noVisFileName.c\_str());
+195     m_pNoVisImage->SetEditable(kFALSE);
+196     m_pNoVisImage->SetConstRatio(0);
+197   \}
+198 
+199   \textcolor{keywordflow}{return} m_pNoVisImage;
+200 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}}
+\index{mouse\+Double\+Click\+Event@{mouse\+Double\+Click\+Event}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{mouse\+Double\+Click\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::mouse\+Double\+Click\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_adb22c9b8c444fc578e4ef64f3a7d7595}
+
+
+Handle mouse double click event on the widget. 
+
+
+
+Definition at line 95 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References post\+Draw().
+
+
+\begin{DoxyCode}
+96 \{
+97   TQtWidget::mouseDoubleClickEvent(e);
+98   this->postDraw();
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!mouse\+Release\+Event@{mouse\+Release\+Event}}
+\index{mouse\+Release\+Event@{mouse\+Release\+Event}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{mouse\+Release\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::mouse\+Release\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_ac62f011a6903e6176bcc4d575e200518}
+
+
+Handle mouse release event on the widget. 
+
+
+
+Definition at line 103 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References post\+Draw().
+
+
+\begin{DoxyCode}
+104 \{
+105   TQtWidget::mouseReleaseEvent(e);
+106   this->postDraw();
+107 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!move\+Canvas@{move\+Canvas}}
+\index{move\+Canvas@{move\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{move\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::move\+Canvas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a033be50521686be959307a09b0166563}
+
+
+Definition at line 296 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Canvas\+View(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::move\+Canvas().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+297 \{
+298   QAction *pAction = (QAction*) sender();
+299 
+300   \textcolor{keywordflow}{if}(!pAction || !this->getCanvas())
+301     \textcolor{keywordflow}{return};
+302 
+303   \textcolor{keywordtype}{int} index = pAction->data().toInt();
+304   DQMCanvasView *pCanvasView = this->getMonitoring()->getView()->getCanvasView();
+305   pCanvasView->moveCanvas(this->getCanvas(), index);
+306 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!open\+R\+O\+O\+T\+Panel@{open\+R\+O\+O\+T\+Panel}}
+\index{open\+R\+O\+O\+T\+Panel@{open\+R\+O\+O\+T\+Panel}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{open\+R\+O\+O\+T\+Panel}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::open\+R\+O\+O\+T\+Panel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a5bfc6f6cd221280fcfb1439bf3645ff2}
+
+
+Definition at line 391 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Current\+Monitor\+Element(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+In\+R\+O\+O\+T\+Window().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+392 \{
+393   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+394     \textcolor{keywordflow}{return};
+395 
+396   this->getMonitoring()->getController()->openInROOTWindow(this->
+      getCurrentMonitorElement());
+397 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!post\+Draw@{post\+Draw}}
+\index{post\+Draw@{post\+Draw}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{post\+Draw}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::post\+Draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRootWidget_a23b8f8ec819f0f0bde98d0cb28fdaa25}
+
+
+Post draw function with a 'fake' update of the widget. 
+
+
+
+Definition at line 111 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+Referenced by draw(), draw\+No\+Vis(), mouse\+Double\+Click\+Event(), mouse\+Release\+Event(), and unzoom().
+
+
+\begin{DoxyCode}
+112 \{
+113   \textcolor{comment}{// fake update triggered by object resize}
+114   QSize currentSize = size();
+115 
+116   currentSize.setHeight(currentSize.height()+1);
+117   currentSize.setWidth(currentSize.width()+1);
+118   resize(currentSize);
+119 
+120   currentSize.setHeight(currentSize.height()-1);
+121   currentSize.setWidth(currentSize.width()-1);
+122   resize(currentSize);
+123 
+124   GetCanvas()->Resize();
+125   Refresh();
+126 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!query\+Update@{query\+Update}}
+\index{query\+Update@{query\+Update}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{query\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::query\+Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_adbf7cb085319eb7d1e0ff50152414339}
+
+
+Definition at line 310 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Current\+Monitor\+Element(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::query\+Update().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+311 \{
+312   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+313     \textcolor{keywordflow}{return};
+314 
+315   this->getMonitoring()->getController()->queryUpdate(this->
+      getCurrentMonitorElement());
+316 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!redraw@{redraw}}
+\index{redraw@{redraw}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{redraw}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::redraw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a4c99dbc4ea7453a12c9a08d3880f7017}
+
+
+Definition at line 421 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References draw(), and get\+Current\+Monitor\+Element().
+
+
+
+Referenced by update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+422 \{
+423   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+424     \textcolor{keywordflow}{return};
+425 
+426   this->draw(this->getCurrentMonitorElement());
+427 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!remove\+Canvas@{remove\+Canvas}}
+\index{remove\+Canvas@{remove\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{remove\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::remove\+Canvas (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a2700ef5514e24bef8f30f04ddffb2658}
+
+
+Definition at line 320 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::get\+Canvas\+View(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::get\+Current\+Canvas\+Area(), get\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::remove\+Canvas().
+
+
+
+Referenced by create\+Context\+Menu(), and update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+321 \{
+322   \textcolor{keywordflow}{if}(!this->getCanvas())
+323     \textcolor{keywordflow}{return};
+324 
+325   this->getMonitoring()->getView()->getCanvasView()->getCurrentCanvasArea()->
+      removeCanvas(this->getCanvas(), \textcolor{keyword}{true});
+326 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!save\+As@{save\+As}}
+\index{save\+As@{save\+As}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{save\+As}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::save\+As (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_afa04f60787aa705535847ebf8fc31190}
+
+
+Definition at line 384 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+385 \{
+386   this->getMonitoring()->getController()->saveAs(this->getCanvas());
+387 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!set\+Canvas@{set\+Canvas}}
+\index{set\+Canvas@{set\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{set\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRootWidget_aee837f0b8a5688b45f68f58feede34a4}
+
+
+Set canvas on which the the root widget is drawn. 
+
+
+
+Definition at line 81 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Canvas.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+::\+D\+Q\+M\+Canvas().
+
+
+\begin{DoxyCode}
+82 \{
+83   m_pCanvas = pCanvas;
+84 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!set\+Draw\+Option@{set\+Draw\+Option}}
+\index{set\+Draw\+Option@{set\+Draw\+Option}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{set\+Draw\+Option}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Draw\+Option (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a79104b2baa07b77e7cde585713124cd1}
+
+
+Definition at line 330 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References draw(), get\+Current\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::set\+Draw\+Option().
+
+
+
+Referenced by add\+Draw\+Options(), and create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+331 \{
+332   QAction *pDrawOptionAction = qobject\_cast<QAction*>(sender());
+333 
+334   \textcolor{keywordflow}{if}(!pDrawOptionAction || !this->getCurrentMonitorElement())
+335     \textcolor{keywordflow}{return};
+336 
+337   this->getCurrentMonitorElement()->setDrawOption(pDrawOptionAction->text().toStdString());
+338   this->draw(this->getCurrentMonitorElement());
+339 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!set\+Draw\+Option\+From\+Dialog@{set\+Draw\+Option\+From\+Dialog}}
+\index{set\+Draw\+Option\+From\+Dialog@{set\+Draw\+Option\+From\+Dialog}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{set\+Draw\+Option\+From\+Dialog}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::set\+Draw\+Option\+From\+Dialog (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_abeb98d0434e2cb987d072ea57a5572d0}
+
+
+Definition at line 343 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References draw(), get\+Current\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::set\+Draw\+Option().
+
+
+
+Referenced by add\+Draw\+Options().
+
+
+\begin{DoxyCode}
+344 \{
+345   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+346     \textcolor{keywordflow}{return};
+347 
+348     \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{false};
+349     QString oldDrawOption = this->getCurrentMonitorElement()->getMonitorElement()->getDrawOption().c\_str();
+350 
+351     QString newDrawOption = QInputDialog::getText(\textcolor{keyword}{this}, \textcolor{stringliteral}{"Set draw option"},
+352                                                \textcolor{stringliteral}{""}, QLineEdit::Normal,
+353                                                oldDrawOption, &ok);
+354 
+355     \textcolor{keywordflow}{if}(ok)
+356     \{
+357       this->getCurrentMonitorElement()->setDrawOption(newDrawOption.toStdString());
+358       this->draw(this->getCurrentMonitorElement());
+359     \}
+360 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!show\+Context\+Menu@{show\+Context\+Menu}}
+\index{show\+Context\+Menu@{show\+Context\+Menu}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{show\+Context\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Context\+Menu (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point \&}]{point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a5759b1c521e82ffd036c2385be49785f}
+
+
+Definition at line 180 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References create\+Context\+Menu().
+
+
+
+Referenced by D\+Q\+M\+Root\+Widget().
+
+
+\begin{DoxyCode}
+181 \{
+182     QMenu *pContextMenu = this->createContextMenu();
+183     pContextMenu->exec(this->mapToGlobal(point));
+184     pContextMenu->deleteLater();
+185 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!show\+Monitor\+Element\+Info@{show\+Monitor\+Element\+Info}}
+\index{show\+Monitor\+Element\+Info@{show\+Monitor\+Element\+Info}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{show\+Monitor\+Element\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Monitor\+Element\+Info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a56dd3095050c7ace35ae72d788397b87}
+
+
+Definition at line 401 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Current\+Monitor\+Element(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Monitor\+Element\+Info().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+402 \{
+403   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+404     \textcolor{keywordflow}{return};
+405 
+406   this->getMonitoring()->getController()->openMonitorElementInfo(this->
+      getCurrentMonitorElement());
+407 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!show\+Q\+Test\+Results@{show\+Q\+Test\+Results}}
+\index{show\+Q\+Test\+Results@{show\+Q\+Test\+Results}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{show\+Q\+Test\+Results}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Q\+Test\+Results (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a5e8a75dcc1b39761f079099ede4632be}
+
+
+Definition at line 411 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Current\+Monitor\+Element(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+Quality\+Test\+Results().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+412 \{
+413   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+414     \textcolor{keywordflow}{return};
+415 
+416   this->getMonitoring()->getController()->openQualityTestResults(this->
+      getCurrentMonitorElement());
+417 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!unzoom@{unzoom}}
+\index{unzoom@{unzoom}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{unzoom}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::unzoom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMRootWidget_a96b0110ceec4cdc8a82b1df821a5c753}
+
+
+Definition at line 364 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+Current\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), and post\+Draw().
+
+
+
+Referenced by create\+Context\+Menu().
+
+
+\begin{DoxyCode}
+365 \{
+366   \textcolor{keywordflow}{if}(!this->getCurrentMonitorElement())
+367     \textcolor{keywordflow}{return};
+368 
+369   TH1 *pHistogram = this->getCurrentMonitorElement()->getMonitorElement()->get<TH1>();
+370 
+371   \textcolor{keywordflow}{if}(pHistogram)
+372   \{
+373     this->GetCanvas()->cd();
+374     pHistogram->GetXaxis()->UnZoom();
+375     pHistogram->GetYaxis()->UnZoom();
+376     this->GetCanvas()->Modified();
+377     this->GetCanvas()->Update();
+378     this->postDraw();
+379   \}
+380 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!update\+Monitor\+Element@{update\+Monitor\+Element}}
+\index{update\+Monitor\+Element@{update\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{update\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::update\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+New\+Gui\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_a096c537acb3f1606cfcbd950406cbf15}
+
+
+Definition at line 431 of file D\+Q\+M\+Root\+Widget.\+cc.
+
+
+
+References get\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), get\+Current\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::get\+Icon(), dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Monitoring(), m\+\_\+p\+Current\+Monitor\+Element, redraw(), and remove\+Canvas().
+
+
+
+Referenced by draw().
+
+
+\begin{DoxyCode}
+432 \{
+433   DQMGuiMonitorElement *pCurrentGuiMonitorElement = this->
+      getCurrentMonitorElement();
+434 
+435   \textcolor{keywordflow}{if}(pCurrentGuiMonitorElement == pNewGuiMonitorElement)
+436     \textcolor{keywordflow}{return};
+437 
+438   \textcolor{keywordflow}{if}(NULL != pCurrentGuiMonitorElement)
+439   \{
+440     QObject::disconnect(pCurrentGuiMonitorElement, SIGNAL(destroyed()), \textcolor{keyword}{this}, SLOT(
+      removeCanvas()));
+441     QObject::disconnect(pCurrentGuiMonitorElement, SIGNAL(updated()), \textcolor{keyword}{this}, SLOT(
+      redraw()));
+442   \}
+443 
+444   m_pCurrentMonitorElement = pNewGuiMonitorElement;
+445 
+446   \textcolor{keywordflow}{if}(pNewGuiMonitorElement)
+447   \{
+448     QObject::connect(pNewGuiMonitorElement, SIGNAL(destroyed()), \textcolor{keyword}{this}, SLOT(
+      removeCanvas()));
+449     QObject::connect(pNewGuiMonitorElement, SIGNAL(updated()), \textcolor{keyword}{this}, SLOT(redraw()));
+450 
+451     DQMCanvas *pCanvas = this->getCanvas();
+452 
+453     pCanvas->setWindowTitle(pNewGuiMonitorElement->getMonitorElement()->getTitle().c\_str());
+454     pCanvas->setWindowIcon(pCanvas->getMonitoring()->getController()->getIcon(pNewGuiMonitorElement->
+      getMonitorElement()->getQuality()));
+455   \}
+456 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!m\+\_\+p\+Canvas@{m\+\_\+p\+Canvas}}
+\index{m\+\_\+p\+Canvas@{m\+\_\+p\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{m\+\_\+p\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas}$\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::m\+\_\+p\+Canvas\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_a85a76df46064102c750c7ec439ced8fa}
+
+
+Definition at line 170 of file D\+Q\+M\+Root\+Widget.\+h.
+
+
+
+Referenced by get\+Canvas(), and set\+Canvas().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!m\+\_\+p\+Current\+Monitor\+Element@{m\+\_\+p\+Current\+Monitor\+Element}}
+\index{m\+\_\+p\+Current\+Monitor\+Element@{m\+\_\+p\+Current\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{m\+\_\+p\+Current\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Gui\+Monitor\+Element}$\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::m\+\_\+p\+Current\+Monitor\+Element\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_a8298bd93cea499c5d659c404ee34b0f8}
+
+
+Definition at line 172 of file D\+Q\+M\+Root\+Widget.\+h.
+
+
+
+Referenced by draw\+No\+Vis(), get\+Current\+Monitor\+Element(), and update\+Monitor\+Element().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_a17e8bbcd4ec8775d0c0b65485e12a6c4}
+
+
+Definition at line 169 of file D\+Q\+M\+Root\+Widget.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}!m\+\_\+p\+No\+Vis\+Image@{m\+\_\+p\+No\+Vis\+Image}}
+\index{m\+\_\+p\+No\+Vis\+Image@{m\+\_\+p\+No\+Vis\+Image}!dqm4hep\+::\+D\+Q\+M\+Root\+Widget@{dqm4hep\+::\+D\+Q\+M\+Root\+Widget}}
+\subsubsection[{m\+\_\+p\+No\+Vis\+Image}]{\setlength{\rightskip}{0pt plus 5cm}T\+Image$\ast$ dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::m\+\_\+p\+No\+Vis\+Image\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRootWidget_ae08c6d24269d3481120c656eb3dcf013}
+
+
+Definition at line 171 of file D\+Q\+M\+Root\+Widget.\+h.
+
+
+
+Referenced by get\+No\+Vis\+Image(), and $\sim$\+D\+Q\+M\+Root\+Widget().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Root\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Root\+Widget.\+cc}\end{DoxyCompactItemize}

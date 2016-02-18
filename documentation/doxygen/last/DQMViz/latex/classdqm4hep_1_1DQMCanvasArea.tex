@@ -1,0 +1,644 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Canvas\+Area Class Reference}
+\label{classdqm4hep_1_1DQMCanvasArea}\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+
+
+\doxyref{D\+Q\+M\+Canvas\+Area}{p.}{classdqm4hep_1_1DQMCanvasArea} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Canvas\+Area.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Canvas\+Area\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCanvasArea}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf draw} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Draw the monitor element. \end{DoxyCompactList}\item 
+void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the canvas area. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas\+Area} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Canvas\+Area} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+bool {\bf is\+Drawn} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the monitor elemnt is drawn. \end{DoxyCompactList}\item 
+bool {\bf remove\+Canvas} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas, bool delete\+Later=false)
+\begin{DoxyCompactList}\small\item\em Remove a canvas from the area. \end{DoxyCompactList}\item 
+void {\bf add\+Canvas} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas)
+\begin{DoxyCompactList}\small\item\em Add a canvas on the area. \end{DoxyCompactList}\item 
+int {\bf canvas\+Count} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of drawn canvases. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf create\+Canvas} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Create a canvas, add it to the area, draw the monitor element on the root canvas and return it back. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf get\+Canvas} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Get the canvas on which the monitor element is drawn. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Canvas} $\ast$ {\bf get\+Canvas} (int index) const 
+\begin{DoxyCompactList}\small\item\em Get canvas at given index. \end{DoxyCompactList}\item 
+bool {\bf contains} ({\bf D\+Q\+M\+Canvas} $\ast$p\+Canvas) const 
+\begin{DoxyCompactList}\small\item\em Whether the area contains the given canvas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf drag\+Enter\+Event} (Q\+Drag\+Enter\+Event $\ast$event)
+\item 
+void {\bf drop\+Event} (Q\+Drop\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Canvas\+Area}{p.}{classdqm4hep_1_1DQMCanvasArea} class. 
+
+Definition at line 43 of file D\+Q\+M\+Canvas\+Area.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!D\+Q\+M\+Canvas\+Area@{D\+Q\+M\+Canvas\+Area}}
+\index{D\+Q\+M\+Canvas\+Area@{D\+Q\+M\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{D\+Q\+M\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::\+D\+Q\+M\+Canvas\+Area (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasArea_afd8b6cd9d925b472bb8af680d0084014}
+
+
+Constructor. 
+
+
+
+Definition at line 39 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+\begin{DoxyCode}
+39                                                        :
+40     m_pMonitoring(pMonitoring)
+41 \{
+42   setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+43   setAcceptDrops(\textcolor{keyword}{true});
+44 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!````~D\+Q\+M\+Canvas\+Area@{$\sim$\+D\+Q\+M\+Canvas\+Area}}
+\index{````~D\+Q\+M\+Canvas\+Area@{$\sim$\+D\+Q\+M\+Canvas\+Area}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Canvas\+Area}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::$\sim$\+D\+Q\+M\+Canvas\+Area (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCanvasArea_ae3c81deabc6f9a0fced2ae5092ad5153}
+
+
+Destructor. 
+
+
+
+Definition at line 48 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+\begin{DoxyCode}
+49 \{
+50   \textcolor{comment}{/* nop */}
+51 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!add\+Canvas@{add\+Canvas}}
+\index{add\+Canvas@{add\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{add\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::add\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasArea_a956583ffb4d57336b74f1ffc064c6393}
+
+
+Add a canvas on the area. 
+
+No action performed if the canvas is already own by the area 
+
+Definition at line 94 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+Referenced by create\+Canvas(), draw(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::move\+Canvas().
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keywordflow}{if}(NULL == pCanvasToAdd)
+97     \textcolor{keywordflow}{return};
+98 
+99   QList<QMdiSubWindow*> subWindowList = this->subWindowList();
+100 
+101   \textcolor{keywordflow}{if}(!subWindowList.contains(pCanvasToAdd))
+102     this->addSubWindow(pCanvasToAdd);
+103 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!canvas\+Count@{canvas\+Count}}
+\index{canvas\+Count@{canvas\+Count}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{canvas\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::canvas\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_a0d197847e79eb45b3775a4bcc631c32e}
+
+
+Get the number of drawn canvases. 
+
+
+
+Definition at line 191 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+192 \{
+193   \textcolor{keywordflow}{return} subWindowList().count();
+194 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasArea_a65999605768c0bee9d1a226ba758a426}
+
+
+Clear the canvas area. 
+
+
+
+Definition at line 242 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::clear\+Area().
+
+
+\begin{DoxyCode}
+243 \{
+244   QList<QMdiSubWindow*>  subWindowList = this->subWindowList();
+245 
+246   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<subWindowList.count() ; i++)
+247   \{
+248     QMdiSubWindow *pSubWindow = subWindowList.at(i);
+249 
+250     this->removeSubWindow(pSubWindow);
+251     pSubWindow->deleteLater();
+252   \}
+253 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!contains@{contains}}
+\index{contains@{contains}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{contains}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::contains (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_a0c35fccffb1999b08967bcd72eed2a6e}
+
+
+Whether the area contains the given canvas. 
+
+
+
+Definition at line 168 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::move\+Canvas().
+
+
+\begin{DoxyCode}
+169 \{
+170   \textcolor{keywordflow}{if}(!pCanvas)
+171     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+172 
+173   QList<QMdiSubWindow*>  subWindowList = this->subWindowList();
+174 
+175   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; subWindowList.count() ; i++)
+176   \{
+177     DQMCanvas *pSubWindow = (DQMCanvas*) subWindowList.at(i);
+178 
+179     \textcolor{keywordflow}{if}(!pSubWindow)
+180       \textcolor{keywordflow}{continue};
+181 
+182     \textcolor{keywordflow}{if}(pSubWindow == pCanvas)
+183       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+184   \}
+185 
+186   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+187 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!create\+Canvas@{create\+Canvas}}
+\index{create\+Canvas@{create\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{create\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::create\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasArea_a742a558a2c1235f5ee8574d222f841e0}
+
+
+Create a canvas, add it to the area, draw the monitor element on the root canvas and return it back. 
+
+
+
+Definition at line 138 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References add\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Canvas\+::draw(), get\+Canvas(), and get\+Monitoring().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::from\+Xml().
+
+
+\begin{DoxyCode}
+139 \{
+140   \textcolor{comment}{// find if this monitor element is drawn an a canvas}
+141   DQMCanvas *pCanvas = this->getCanvas(pMonitorElement);
+142 
+143   \textcolor{keywordflow}{if}(!pCanvas)
+144   \{
+145     pCanvas = \textcolor{keyword}{new} DQMCanvas(this->getMonitoring());
+146     pCanvas->setAttribute(Qt::WA\_DeleteOnClose);
+147     this->addCanvas(pCanvas);
+148     pCanvas->show();
+149   \}
+150 
+151   pCanvas->show();
+152 
+153   \textcolor{comment}{// draw it}
+154   pCanvas->draw(pMonitorElement);
+155 
+156   \textcolor{keywordflow}{return} pCanvas;
+157 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!drag\+Enter\+Event@{drag\+Enter\+Event}}
+\index{drag\+Enter\+Event@{drag\+Enter\+Event}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{drag\+Enter\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::drag\+Enter\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drag\+Enter\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCanvasArea_ab7f7296d096244ace327de0f730f5392}
+
+
+Definition at line 257 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+\begin{DoxyCode}
+258 \{
+259   \textcolor{comment}{// check mime type}
+260     \textcolor{keywordflow}{if} (pEvent->mimeData()->hasFormat(\textcolor{stringliteral}{"dqm4hep/me-item-list"}))
+261       pEvent->acceptProposedAction();
+262 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!draw@{draw}}
+\index{draw@{draw}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMCanvasArea_ab0209e56bf3353506a78e198815f9e1b}
+
+
+Draw the monitor element. 
+
+Create a new canvas if not already drawn. Return the canvas on which the element is drawn 
+
+Definition at line 198 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References add\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Canvas\+::draw(), get\+Canvas(), and get\+Monitoring().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::draw\+In\+Area(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::draw\+In\+Current\+Area(), and drop\+Event().
+
+
+\begin{DoxyCode}
+199 \{
+200   \textcolor{comment}{// find if this monitor element is drawn an a canvas}
+201   DQMCanvas *pCanvas = this->getCanvas(pMonitorElement);
+202 
+203   DQMCanvas *pCurrentCanvas = qobject\_cast<DQMCanvas *>(this->currentSubWindow());
+204   \textcolor{keywordtype}{bool} showMaximized = \textcolor{keyword}{false};
+205   \textcolor{keywordtype}{bool} canvasCreated = \textcolor{keyword}{false};
+206 
+207   \textcolor{keywordflow}{if}(NULL != pCurrentCanvas && pCurrentCanvas->isMaximized())
+208     showMaximized = \textcolor{keyword}{true};
+209 
+210   \textcolor{comment}{// if not, create it}
+211   \textcolor{keywordflow}{if}(NULL == pCanvas)
+212   \{
+213     pCanvas = \textcolor{keyword}{new} DQMCanvas(this->getMonitoring());
+214     pCanvas->setAttribute(Qt::WA\_DeleteOnClose);
+215     this->addCanvas(pCanvas);
+216     canvasCreated = \textcolor{keyword}{true};
+217   \}
+218 
+219   \textcolor{keywordflow}{if}(canvasCreated)
+220   \{
+221     \textcolor{keywordflow}{if}(showMaximized)
+222       pCanvas->showMaximized();
+223     \textcolor{keywordflow}{else}
+224       pCanvas->show();
+225   \}
+226   \textcolor{keywordflow}{else}
+227   \{
+228     \textcolor{keywordflow}{if}(showMaximized)
+229       pCanvas->showMaximized();
+230     \textcolor{keywordflow}{else}
+231       this->setActiveSubWindow(pCanvas);
+232   \}
+233 
+234   \textcolor{comment}{// draw it}
+235   pCanvas->draw(pMonitorElement);
+236 
+237   \textcolor{keywordflow}{return} pCanvas;
+238 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!drop\+Event@{drop\+Event}}
+\index{drop\+Event@{drop\+Event}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{drop\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::drop\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Drop\+Event $\ast$}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCanvasArea_a19d213f4b4f4b248ecc7047f56186e7f}
+
+
+Definition at line 266 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References draw(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::find\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model(), get\+Monitoring(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log().
+
+
+\begin{DoxyCode}
+267 \{
+268   \textcolor{keywordflow}{if}(pEvent->proposedAction() != Qt::CopyAction)
+269     \textcolor{keywordflow}{return};
+270 
+271   \textcolor{keyword}{const} QByteArray &byteArray(pEvent->mimeData()->data(\textcolor{stringliteral}{"dqm4hep/me-item-list"}));
+272 
+273   QDataStream dataStream(byteArray);
+274 
+275   qint32 nElements = 0;
+276   dataStream >> nElements;
+277 
+278   \textcolor{keywordflow}{if}(nElements == 0)
+279     \textcolor{keywordflow}{return};
+280 
+281   \textcolor{comment}{// accept action only if correct type}
+282   \textcolor{comment}{// and byte array is not empty}
+283   pEvent->acceptProposedAction();
+284 
+285   \textcolor{keywordtype}{int} nDrawElements = 0;
+286 
+287   \textcolor{comment}{// deserialize the items, query the element}
+288   \textcolor{comment}{// to model and draw them on the fly}
+289   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i < nElements ; i++)
+290   \{
+291     QString collectorName;
+292     QString moduleName;
+293     QString fullPathName;
+294     QString monitorElementName;
+295 
+296     dataStream >> collectorName >> moduleName >> fullPathName >> monitorElementName;
+297 
+298     DQMGuiMonitorElement *pMonitorElement =
+299         this->getMonitoring()->getModel()->findMonitorElement(
+300             collectorName.toStdString(),
+301             moduleName.toStdString(),
+302             fullPathName.toStdString(),
+303             monitorElementName.toStdString());
+304 
+305     \textcolor{keywordflow}{if}(!pMonitorElement)
+306       \textcolor{keywordflow}{continue};
+307 
+308     this->draw(pMonitorElement);
+309     nDrawElements++;
+310   \}
+311 
+312   \textcolor{keywordflow}{if}(nDrawElements == nElements)
+313     this->getMonitoring()->getController()->log(MESSAGE, QString(\textcolor{stringliteral}{"Number of drawn monitor elements : %1"}).
+      arg(nDrawElements).toStdString());
+314   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(nDrawElements < nElements && nDrawElements != 0)
+315     this->getMonitoring()->getController()->log(WARNING, QString(\textcolor{stringliteral}{"Monitor elements drawn (%1 success, %2
+       failed)"}).arg(nDrawElements).arg(nElements-nDrawElements).toStdString());
+316   \textcolor{keywordflow}{else}
+317     this->getMonitoring()->getController()->log(ERROR, QString(\textcolor{stringliteral}{"No monitor elements drawn ! (%1 requested)"}
+      ).arg(nElements).toStdString());
+318 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!get\+Canvas@{get\+Canvas}}
+\index{get\+Canvas@{get\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{get\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_a705d7fe6c5addeb32cc206f69a2e1024}
+
+
+Get the canvas on which the monitor element is drawn. 
+
+
+
+Definition at line 107 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::equals(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+::get\+Current\+Monitor\+Element().
+
+
+
+Referenced by create\+Canvas(), draw(), is\+Drawn(), and dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+108 \{
+109   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+110     \textcolor{keywordflow}{return} NULL;
+111 
+112   QList<QMdiSubWindow*>  subWindowList = this->subWindowList();
+113 
+114   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<subWindowList.count() ; i++)
+115   \{
+116     DQMCanvas *pCanvas = (DQMCanvas *) subWindowList.at(i);
+117 
+118     \textcolor{keywordflow}{if}(!pCanvas)
+119       \textcolor{keywordflow}{continue};
+120 
+121     DQMGuiMonitorElement *pCurrentMonitorElement = pCanvas->getCurrentMonitorElement();
+122 
+123     \textcolor{keywordflow}{if}(NULL == pCurrentMonitorElement)
+124       \textcolor{keywordflow}{continue};
+125 
+126     \textcolor{keywordflow}{if}(pMonitorElement == pCurrentMonitorElement)
+127       \textcolor{keywordflow}{return} pCanvas;
+128 
+129     \textcolor{keywordflow}{if}(pMonitorElement->equals(pCurrentMonitorElement))
+130       \textcolor{keywordflow}{return} pCanvas;
+131   \}
+132 
+133   \textcolor{keywordflow}{return} NULL;
+134 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!get\+Canvas@{get\+Canvas}}
+\index{get\+Canvas@{get\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{get\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Canvas} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Canvas (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_a97e599c3bfaa2048c64a1014f7c3af45}
+
+
+Get canvas at given index. 
+
+
+
+Definition at line 161 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+\begin{DoxyCode}
+162 \{
+163   \textcolor{keywordflow}{return} (DQMCanvas *) this->subWindowList().at(index);
+164 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_abde8068d54f7708e40117e065705831b}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 55 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by create\+Canvas(), draw(), and drop\+Event().
+
+
+\begin{DoxyCode}
+56 \{
+57   \textcolor{keywordflow}{return} m_pMonitoring;
+58 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!is\+Drawn@{is\+Drawn}}
+\index{is\+Drawn@{is\+Drawn}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{is\+Drawn}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::is\+Drawn (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCanvasArea_aa6aa7ee23a9ef51be862568d4a980f46}
+
+
+Whether the monitor elemnt is drawn. 
+
+Comparison done by ptr or full name (path + name) 
+
+Definition at line 62 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+References get\+Canvas().
+
+
+\begin{DoxyCode}
+63 \{
+64   \textcolor{keywordflow}{return} (NULL == this->getCanvas(pMonitorElement));
+65 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!remove\+Canvas@{remove\+Canvas}}
+\index{remove\+Canvas@{remove\+Canvas}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{remove\+Canvas}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::remove\+Canvas (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Canvas} $\ast$}]{p\+Canvas, }
+\item[{bool}]{delete\+Later = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCanvasArea_aa67dded293e3ea24f685925edeaa4ef8}
+
+
+Remove a canvas from the area. 
+
+The canvas is not deleted. No action performed if the area does not own the canvas Return whether the canvas has been removed 
+
+Definition at line 69 of file D\+Q\+M\+Canvas\+Area.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::move\+Canvas(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::remove\+Canvas().
+
+
+\begin{DoxyCode}
+70 \{
+71   \textcolor{keywordflow}{if}(NULL == pCanvasToRemove)
+72     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+73 
+74   QList<QMdiSubWindow*> subWindowList = this->subWindowList();
+75 
+76   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; subWindowList.count() ; i++)
+77   \{
+78     \textcolor{keywordflow}{if}(pCanvasToRemove == subWindowList.at(i))
+79     \{
+80       this->removeSubWindow(pCanvasToRemove);
+81 
+82       \textcolor{keywordflow}{if}(deleteLater)
+83         pCanvasToRemove->deleteLater();
+84 
+85       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+86     \}
+87   \}
+88 
+89   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+90 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Canvas\+Area@{dqm4hep\+::\+D\+Q\+M\+Canvas\+Area}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMCanvasArea_a44221699421cb7a453b8d9aa4a249de2}
+
+
+Definition at line 118 of file D\+Q\+M\+Canvas\+Area.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Canvas\+Area.\+h}\item 
+{\bf D\+Q\+M\+Canvas\+Area.\+cc}\end{DoxyCompactItemize}

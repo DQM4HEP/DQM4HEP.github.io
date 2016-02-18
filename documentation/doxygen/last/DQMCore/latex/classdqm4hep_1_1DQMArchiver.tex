@@ -1,0 +1,651 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Archiver Class Reference}
+\label{classdqm4hep_1_1DQMArchiver}\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+
+
+\doxyref{D\+Q\+M\+Archiver}{p.}{classdqm4hep_1_1DQMArchiver} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Archiver.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Archiver} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Archiver} (const std\+::string \&archive\+File\+Name, const std\+::string \&opening\+Mode=\char`\"{}R\+E\+C\+R\+E\+A\+T\+E\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor with file name and opening mode. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Archiver} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf open} (const std\+::string \&archive\+File\+Name, const std\+::string \&opening\+Mode=\char`\"{}R\+E\+C\+R\+E\+A\+T\+E\char`\"{})
+\begin{DoxyCompactList}\small\item\em Open a new archive. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf close} ()
+\begin{DoxyCompactList}\small\item\em Close the current archive. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf archive} ({\bf D\+Q\+M\+Module} $\ast$p\+Module, bool archive\+All=true)
+\begin{DoxyCompactList}\small\item\em Archive the monitor element list of the given module Monitor elements that are set to \char`\"{}non-\/publish\char`\"{} can be written passing the flag to true (default) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf archive} ({\bf D\+Q\+M\+Storage} $\ast$p\+Storage, T\+Directory $\ast$p\+Directory)
+\begin{DoxyCompactList}\small\item\em Archive the current state of the storage in the root T\+Directory. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+File\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the file name. \end{DoxyCompactList}\item 
+bool {\bf is\+Opened} () const 
+\begin{DoxyCompactList}\small\item\em Whether the archive is opened. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Opening\+Mode} () const 
+\begin{DoxyCompactList}\small\item\em Get the opening mode of this archive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf recursive\+Fill} ({\bf D\+Q\+M\+Directory} $\ast$p\+Directory, T\+Directory $\ast$p\+R\+O\+O\+T\+Dir)
+\begin{DoxyCompactList}\small\item\em Fill recursively the T\+Directory with the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory}. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf create\+T\+Directories} ({\bf D\+Q\+M\+Directory} $\ast$p\+Directory, T\+Directory $\ast$p\+R\+O\+O\+T\+Dir)
+\begin{DoxyCompactList}\small\item\em Create T\+Directories as labeled in the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory}. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf write\+Monitor\+Elements} ({\bf D\+Q\+M\+Directory} $\ast$p\+Directory, T\+Directory $\ast$p\+R\+O\+O\+T\+Dir)
+\begin{DoxyCompactList}\small\item\em Write the monitor elements contained in the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory} in the T\+Directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+file\+Name}
+\item 
+std\+::string {\bf m\+\_\+opening\+Mode}
+\item 
+bool {\bf m\+\_\+is\+Opened}
+\item 
+bool {\bf m\+\_\+first\+Archive}
+\item 
+T\+File $\ast$ {\bf m\+\_\+p\+Archive\+File}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Monitor\+Element\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Archiver}{p.}{classdqm4hep_1_1DQMArchiver} class. 
+
+Definition at line 50 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!D\+Q\+M\+Archiver@{D\+Q\+M\+Archiver}}
+\index{D\+Q\+M\+Archiver@{D\+Q\+M\+Archiver}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{D\+Q\+M\+Archiver}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Archiver\+::\+D\+Q\+M\+Archiver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_afc7c107c5a6bb62d06d184434336f331}
+
+
+Constructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Archiver.\+cc.
+
+
+\begin{DoxyCode}
+49                          :
+50     m_fileName(\textcolor{stringliteral}{""}),
+51     m_openingMode(\textcolor{stringliteral}{""}),
+52     m_pArchiveFile(NULL),
+53     m_isOpened(\textcolor{keyword}{false}),
+54     m_firstArchive(\textcolor{keyword}{true})
+55 \{
+56   \textcolor{comment}{/* nop */}
+57 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!D\+Q\+M\+Archiver@{D\+Q\+M\+Archiver}}
+\index{D\+Q\+M\+Archiver@{D\+Q\+M\+Archiver}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{D\+Q\+M\+Archiver}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Archiver\+::\+D\+Q\+M\+Archiver (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{archive\+File\+Name, }
+\item[{const std\+::string \&}]{opening\+Mode = {\ttfamily \char`\"{}RECREATE\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_a6701654be5b7aaef61f69227f626752a}
+
+
+Constructor with file name and opening mode. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References open(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+62 \{
+63   THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, open(archiveFileName, openingMode));
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!````~D\+Q\+M\+Archiver@{$\sim$\+D\+Q\+M\+Archiver}}
+\index{````~D\+Q\+M\+Archiver@{$\sim$\+D\+Q\+M\+Archiver}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Archiver}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Archiver\+::$\sim$\+D\+Q\+M\+Archiver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMArchiver_aae525c0c7428cfb5070ca8030a5e158a}
+
+
+Destructor. 
+
+
+
+Definition at line 68 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References close(), and m\+\_\+is\+Opened.
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{if}(m_isOpened)
+71     close();
+72 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!archive@{archive}}
+\index{archive@{archive}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{archive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::archive (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Module} $\ast$}]{p\+Module, }
+\item[{bool}]{archive\+All = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_a40bc8d6e58d43ce24e7ee17e89df0eaa}
+
+
+Archive the monitor element list of the given module Monitor elements that are set to \char`\"{}non-\/publish\char`\"{} can be written passing the flag to true (default) 
+
+
+
+Definition at line 146 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Detector\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Module\+Application(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Manager\+::get\+Storage(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Version(), is\+Opened(), m\+\_\+first\+Archive, m\+\_\+p\+Archive\+File, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Version\+::to\+String().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+147 \{
+148   \textcolor{keywordflow}{if}(!isOpened())
+149     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+150 
+151   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Archiving monitor elements of module : "} << pModule->getName() << std::endl;
+152 
+153   \textcolor{comment}{// archive directory}
+154   m_pArchiveFile->cd();
+155 
+156   TDirectory *pArchiveDirectory = m_pArchiveFile->GetDirectory(\textcolor{stringliteral}{"root"});
+157 
+158   \textcolor{keywordflow}{if}(pArchiveDirectory)
+159     m_pArchiveFile->rmdir(\textcolor{stringliteral}{"root"});
+160 
+161   pArchiveDirectory = m_pArchiveFile->mkdir(\textcolor{stringliteral}{"root"});
+162 
+163   \textcolor{keywordflow}{if}(!pArchiveDirectory)
+164     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+165 
+166   \textcolor{keywordflow}{if}(m_firstArchive)
+167   \{
+168     \textcolor{comment}{// write module info in the file}
+169     TObjString *pModuleNameString = \textcolor{keyword}{new} TObjString();
+170     pModuleNameString->SetString(pModule->getName().c\_str());
+171     m_pArchiveFile->WriteTObject(pModuleNameString);
+172     \textcolor{keyword}{delete} pModuleNameString;
+173 
+174     TObjString *pModuleVersionString = \textcolor{keyword}{new} TObjString();
+175     pModuleVersionString->SetString(pModule->getVersion().toString().c\_str());
+176     m_pArchiveFile->WriteTObject(pModuleVersionString);
+177     \textcolor{keyword}{delete} pModuleVersionString;
+178 
+179     TObjString *pModuleDetectorString = \textcolor{keyword}{new} TObjString();
+180     pModuleDetectorString->SetString(pModule->getDetectorName().c\_str());
+181     m_pArchiveFile->WriteTObject(pModuleDetectorString);
+182     \textcolor{keyword}{delete} pModuleDetectorString;
+183 
+184     m_firstArchive = \textcolor{keyword}{false};
+185   \}
+186 
+187   \textcolor{comment}{// get the storage of the module}
+188   DQMStorage *pStorage = pModule->getModuleApplication()->getMonitorElementManager()->getStorage();
+189 
+190   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, archive(pStorage, pArchiveDirectory));
+191 
+192   \textcolor{keyword}{delete} pArchiveDirectory;
+193 
+194   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+195 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!archive@{archive}}
+\index{archive@{archive}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{archive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::archive (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Storage} $\ast$}]{p\+Storage, }
+\item[{T\+Directory $\ast$}]{p\+Directory}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_ae9dfc99eed4457ed2542217351b16397}
+
+
+Archive the current state of the storage in the root T\+Directory. 
+
+
+
+Definition at line 199 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Storage\+::get\+Root\+Directory(), m\+\_\+p\+Archive\+File, recursive\+Fill(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+200 \{
+201   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, recursiveFill(pStorage->getRootDirectory(), pDirectory));
+202 
+203   m_pArchiveFile->cd();
+204   m_pArchiveFile->Write();
+205 
+206   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+207 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!close@{close}}
+\index{close@{close}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_a946ccd48ba63853814a98cf85c462068}
+
+
+Close the current archive. 
+
+
+
+Definition at line 127 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References m\+\_\+first\+Archive, m\+\_\+is\+Opened, m\+\_\+opening\+Mode, and m\+\_\+p\+Archive\+File.
+
+
+
+Referenced by open(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), and $\sim$\+D\+Q\+M\+Archiver().
+
+
+\begin{DoxyCode}
+128 \{
+129   \textcolor{keywordflow}{if}(!m_isOpened)
+130     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+131 
+132   m_pArchiveFile->Close();
+133   \textcolor{keyword}{delete} m_pArchiveFile;
+134 
+135   m_pArchiveFile = NULL;
+136 
+137   m_isOpened = \textcolor{keyword}{false};
+138   m_firstArchive = \textcolor{keyword}{false};
+139   m_openingMode = \textcolor{stringliteral}{""};
+140 
+141   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+142 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!create\+T\+Directories@{create\+T\+Directories}}
+\index{create\+T\+Directories@{create\+T\+Directories}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{create\+T\+Directories}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::create\+T\+Directories (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Directory} $\ast$}]{p\+Directory, }
+\item[{T\+Directory $\ast$}]{p\+R\+O\+O\+T\+Dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMArchiver_a7eefce11e665b98a36a1802b46ce0b4e}
+
+
+Create T\+Directories as labeled in the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory}. 
+
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{get\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Archiver\+::get\+File\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMArchiver_a43952ad23f2302fedcbb69eca6899264}
+
+
+Get the file name. 
+
+
+
+Definition at line 211 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References m\+\_\+file\+Name.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+212 \{
+213   \textcolor{keywordflow}{return} m_fileName;
+214 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!get\+Opening\+Mode@{get\+Opening\+Mode}}
+\index{get\+Opening\+Mode@{get\+Opening\+Mode}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{get\+Opening\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Archiver\+::get\+Opening\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMArchiver_a0a926d512f1b708872ba8a1e30994956}
+
+
+Get the opening mode of this archive. 
+
+
+
+Definition at line 225 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References m\+\_\+opening\+Mode.
+
+
+\begin{DoxyCode}
+226 \{
+227   \textcolor{keywordflow}{return} m_openingMode;
+228 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!is\+Opened@{is\+Opened}}
+\index{is\+Opened@{is\+Opened}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{is\+Opened}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Archiver\+::is\+Opened (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMArchiver_a970673513f6f7b7514042b58c1e21c41}
+
+
+Whether the archive is opened. 
+
+
+
+Definition at line 218 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References m\+\_\+is\+Opened.
+
+
+
+Referenced by archive().
+
+
+\begin{DoxyCode}
+219 \{
+220   \textcolor{keywordflow}{return} m_isOpened;
+221 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!open@{open}}
+\index{open@{open}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::open (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{archive\+File\+Name, }
+\item[{const std\+::string \&}]{opening\+Mode = {\ttfamily \char`\"{}RECREATE\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMArchiver_aa5cfa522fec6851c81f67f8da53bffaf}
+
+
+Open a new archive. 
+
+Close the current file if opened. Supported opening mode are the T\+File opening mode option (see T\+File) 
+
+Definition at line 76 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References close(), m\+\_\+file\+Name, m\+\_\+first\+Archive, m\+\_\+is\+Opened, m\+\_\+opening\+Mode, m\+\_\+p\+Archive\+File, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G.
+
+
+
+Referenced by D\+Q\+M\+Archiver(), dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+77 \{
+78   \textcolor{comment}{// if already open write the archive if not done}
+79   \textcolor{comment}{// and close it before to re-open}
+80   \textcolor{keywordflow}{if}(m_isOpened)
+81     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, close());
+82 
+83   \textcolor{keywordflow}{if}(archiveFileName.empty())
+84     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+85 
+86   std::string fullArchiveName;
+87   std::string baseArchiveName;
+88 
+89   \textcolor{keywordflow}{if}(archiveFileName.size() > 5 && archiveFileName.substr(archiveFileName.size()-5) == \textcolor{stringliteral}{".root"})
+90   \{
+91     fullArchiveName = archiveFileName;
+92     baseArchiveName = archiveFileName.substr(0, archiveFileName.size()-5);
+93   \}
+94   \textcolor{keywordflow}{else}
+95   \{
+96     fullArchiveName = archiveFileName + \textcolor{stringliteral}{".root"};
+97     baseArchiveName = archiveFileName;
+98   \}
+99 
+100   \textcolor{keywordtype}{int} fileId = 0;
+101 
+102   \textcolor{keywordflow}{while}(!gSystem->AccessPathName(fullArchiveName.c\_str()))
+103   \{
+104     streamlog\_out(WARNING) << fullArchiveName << \textcolor{stringliteral}{" file already exists ..."} << std::endl;
+105     fileId ++;
+106     std::stringstream ss;
+107     ss << baseArchiveName << \textcolor{stringliteral}{"\_"} << fileId << \textcolor{stringliteral}{".root"};
+108     fullArchiveName = ss.str();
+109   \}
+110 
+111   m_fileName = fullArchiveName;
+112   m_openingMode = openingMode;
+113 
+114   m_pArchiveFile = \textcolor{keyword}{new} TFile(m_fileName.c\_str(), openingMode.c\_str());
+115 
+116   \textcolor{keywordflow}{if}(NULL == m_pArchiveFile)
+117     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+118 
+119   m_isOpened = \textcolor{keyword}{true};
+120   m_firstArchive = \textcolor{keyword}{true};
+121 
+122   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+123 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!recursive\+Fill@{recursive\+Fill}}
+\index{recursive\+Fill@{recursive\+Fill}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{recursive\+Fill}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::recursive\+Fill (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Directory} $\ast$}]{p\+Directory, }
+\item[{T\+Directory $\ast$}]{p\+R\+O\+O\+T\+Dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMArchiver_a86ddd95a21a7508ec31712d6b168bddd}
+
+
+Fill recursively the T\+Directory with the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory}. 
+
+
+
+Definition at line 232 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Sub\+Dir\+List(), dqm4hep\+::\+D\+Q\+M\+Directory\+::mkdir(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and write\+Monitor\+Elements().
+
+
+
+Referenced by archive().
+
+
+\begin{DoxyCode}
+233 \{
+234   \textcolor{keywordflow}{if}(NULL == pDirectory || NULL == pROOTDir)
+235     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+236 
+237   pROOTDir->cd();
+238 
+239   \textcolor{keyword}{const} std::vector<DQMDirectory*> &subDirList(pDirectory->getSubDirList());
+240 
+241   \textcolor{keywordflow}{if}(!subDirList.empty())
+242   \{
+243     \textcolor{keywordflow}{for}(std::vector<DQMDirectory*>::const\_iterator iter = subDirList.begin(), endIter = subDirList.end() ;
+244         endIter != iter ; ++iter)
+245     \{
+246       DQMDirectory *pSubDir = *iter;
+247       TDirectory *pROOTSubDir = pROOTDir->mkdir(pSubDir->getName().c\_str());
+248 
+249       \textcolor{keywordflow}{if}(NULL != pROOTSubDir)
+250       \{
+251         RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, recursiveFill(pSubDir, pROOTSubDir));
+252       \}
+253     \}
+254   \}
+255 
+256   \textcolor{keyword}{const} std::vector<DQMMonitorElement*> &monitorElementList(pDirectory->getMonitorElementList());
+257 
+258   \textcolor{comment}{// write the monitor elements}
+259   \textcolor{keywordflow}{if}(!monitorElementList.empty())
+260   \{
+261     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, writeMonitorElements(pDirectory, pROOTDir));
+262   \}
+263 
+264   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+265 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!write\+Monitor\+Elements@{write\+Monitor\+Elements}}
+\index{write\+Monitor\+Elements@{write\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{write\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Archiver\+::write\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Directory} $\ast$}]{p\+Directory, }
+\item[{T\+Directory $\ast$}]{p\+R\+O\+O\+T\+Dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMArchiver_a01954fa6b7ac6340046b419dd6948a56}
+
+
+Write the monitor elements contained in the \doxyref{D\+Q\+M\+Directory}{p.}{classdqm4hep_1_1DQMDirectory} in the T\+Directory. 
+
+
+
+Definition at line 269 of file D\+Q\+M\+Archiver.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Directory\+::get\+Monitor\+Element\+List(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Name(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Object().
+
+
+
+Referenced by recursive\+Fill().
+
+
+\begin{DoxyCode}
+270 \{
+271   \textcolor{keywordflow}{if}(NULL == pDirectory || NULL == pROOTDir)
+272     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+273 
+274   pROOTDir->cd();
+275 
+276   \textcolor{keyword}{const} DQMMonitorElementList &monitorElementList(pDirectory->getMonitorElementList());
+277 
+278   \textcolor{keywordflow}{for}(DQMMonitorElementList::const\_iterator iter = monitorElementList.begin(), endIter = monitorElementList
+      .end() ;
+279       endIter != iter ; ++iter)
+280   \{
+281     DQMMonitorElement *pMonitorElement = *iter;
+282 
+283     TObject *pObject = pMonitorElement->getObject();
+284     pROOTDir->WriteObjectAny(pObject, pObject->IsA(), pMonitorElement->getName().c\_str());
+285   \}
+286 
+287   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+288 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!D\+Q\+M\+Monitor\+Element\+Manager@{D\+Q\+M\+Monitor\+Element\+Manager}}
+\index{D\+Q\+M\+Monitor\+Element\+Manager@{D\+Q\+M\+Monitor\+Element\+Manager}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+Manager}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Monitor\+Element\+Manager}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMArchiver_abf4f43d77cde6c1a22eeca13e12acac0}
+
+
+Definition at line 52 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!m\+\_\+file\+Name@{m\+\_\+file\+Name}}
+\index{m\+\_\+file\+Name@{m\+\_\+file\+Name}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{m\+\_\+file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Archiver\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMArchiver_a02b1dc52a01a57829528259a36acaf3a}
+
+
+Definition at line 112 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+Referenced by get\+File\+Name(), and open().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!m\+\_\+first\+Archive@{m\+\_\+first\+Archive}}
+\index{m\+\_\+first\+Archive@{m\+\_\+first\+Archive}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{m\+\_\+first\+Archive}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Archiver\+::m\+\_\+first\+Archive\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMArchiver_a6a15b30b2a8cc4c7bdb62c4ca7ab6098}
+
+
+Definition at line 115 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+Referenced by archive(), close(), and open().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!m\+\_\+is\+Opened@{m\+\_\+is\+Opened}}
+\index{m\+\_\+is\+Opened@{m\+\_\+is\+Opened}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{m\+\_\+is\+Opened}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Archiver\+::m\+\_\+is\+Opened\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMArchiver_ada36f22fc0c9d6783e5ffeffe8fbbd6d}
+
+
+Definition at line 114 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+Referenced by close(), is\+Opened(), open(), and $\sim$\+D\+Q\+M\+Archiver().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!m\+\_\+opening\+Mode@{m\+\_\+opening\+Mode}}
+\index{m\+\_\+opening\+Mode@{m\+\_\+opening\+Mode}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{m\+\_\+opening\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Archiver\+::m\+\_\+opening\+Mode\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMArchiver_a9257bf90ebcccbbb572f1b61bf5e1d95}
+
+
+Definition at line 113 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+Referenced by close(), get\+Opening\+Mode(), and open().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}!m\+\_\+p\+Archive\+File@{m\+\_\+p\+Archive\+File}}
+\index{m\+\_\+p\+Archive\+File@{m\+\_\+p\+Archive\+File}!dqm4hep\+::\+D\+Q\+M\+Archiver@{dqm4hep\+::\+D\+Q\+M\+Archiver}}
+\subsubsection[{m\+\_\+p\+Archive\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File$\ast$ dqm4hep\+::\+D\+Q\+M\+Archiver\+::m\+\_\+p\+Archive\+File\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMArchiver_aec9ac388b45cc642df7f508558767163}
+
+
+Definition at line 117 of file D\+Q\+M\+Archiver.\+h.
+
+
+
+Referenced by archive(), close(), and open().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Archiver.\+h}\item 
+{\bf D\+Q\+M\+Archiver.\+cc}\end{DoxyCompactItemize}

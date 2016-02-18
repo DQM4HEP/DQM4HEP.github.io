@@ -1,0 +1,219 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Standalone\+Module\+Application\+:\+:Settings Class Reference}
+\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings}\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+
+
+\doxyref{Settings}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Standalone\+Module\+Application.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Settings} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf print} ()
+\begin{DoxyCompactList}\small\item\em Print settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+settings\+File\+Name}
+\item 
+unsigned int {\bf m\+\_\+sleep\+Time}
+\item 
+float {\bf m\+\_\+cycle\+Period}
+\item 
+std\+::string {\bf m\+\_\+module\+Type}
+\item 
+std\+::string {\bf m\+\_\+module\+Name}
+\item 
+std\+::string {\bf m\+\_\+monitor\+Element\+Collector}
+\item 
+std\+::string {\bf m\+\_\+archive\+Directory}
+\item 
+bool {\bf m\+\_\+open\+Archive}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Settings}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings} class. 
+
+Definition at line 50 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!Settings@{Settings}}
+\index{Settings@{Settings}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{Settings}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::\+Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a65231c04c4e79c8699ee3d50201a9701}
+
+
+Constructor. 
+
+
+
+Definition at line 352 of file D\+Q\+M\+Standalone\+Module\+Application.\+cc.
+
+
+\begin{DoxyCode}
+352                                                  :
+353     m_sleepTime(10),   \textcolor{comment}{// in ms}
+354     m_cyclePeriod(5.f),
+355     m_monitorElementCollector(\textcolor{stringliteral}{"DEFAULT"}),
+356     m_archiveDirectory(\textcolor{stringliteral}{"/tmp"}),
+357     m_openArchive(\textcolor{keyword}{false})
+358 \{
+359   \textcolor{comment}{/* nop */}
+360 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!print@{print}}
+\index{print@{print}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a6ed64444a0e160f713999dd4e3b58288}
+
+
+Print settings. 
+
+
+
+Definition at line 364 of file D\+Q\+M\+Standalone\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::m\+\_\+module\+Name, dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::m\+\_\+module\+Type, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+365 \{
+366   std::string openArchive = m_openArchive ? \textcolor{stringliteral}{"yes"} : \textcolor{stringliteral}{"no"};
+367   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************"} << std::endl;
+368   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"******* Application parameters *******"} << std::endl;
+369   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Settings file name :             "} << 
+      m_settingsFileName << std::endl;
+370   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Module type :                    "} << 
+      m_moduleType << std::endl;
+371   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Module name :                    "} << 
+      m_moduleName << std::endl;
+372   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Cycle period :                   "} << 
+      m_cyclePeriod << std::endl;
+373   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Open archive ?                   "} << openArchive << std::endl;
+374   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Archive directory :              "} << 
+      m_archiveDirectory << std::endl;
+375   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Monitor element collector name : "} << 
+      m_monitorElementCollector << std::endl;
+376   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************"} << std::endl;
+377 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+archive\+Directory@{m\+\_\+archive\+Directory}}
+\index{m\+\_\+archive\+Directory@{m\+\_\+archive\+Directory}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+archive\+Directory}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+archive\+Directory}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a87c7322e57c02649c148d0c391ce5583}
+
+
+Definition at line 71 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+cycle\+Period@{m\+\_\+cycle\+Period}}
+\index{m\+\_\+cycle\+Period@{m\+\_\+cycle\+Period}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+cycle\+Period}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Period}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a2e25d8a1d7ff1c6a45ed234cafc1af5c}
+
+
+Definition at line 65 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+module\+Name@{m\+\_\+module\+Name}}
+\index{m\+\_\+module\+Name@{m\+\_\+module\+Name}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+module\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+module\+Name}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a677c797a515ba277cfd197e88631c9b6}
+
+
+Definition at line 68 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+module\+Type@{m\+\_\+module\+Type}}
+\index{m\+\_\+module\+Type@{m\+\_\+module\+Type}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+module\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+module\+Type}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a910c6bc7690153f311b233ad80a611f2}
+
+
+Definition at line 67 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+monitor\+Element\+Collector@{m\+\_\+monitor\+Element\+Collector}}
+\index{m\+\_\+monitor\+Element\+Collector@{m\+\_\+monitor\+Element\+Collector}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+monitor\+Element\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+monitor\+Element\+Collector}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a240bc84f17937dc067f3d222c38c81d9}
+
+
+Definition at line 69 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+open\+Archive@{m\+\_\+open\+Archive}}
+\index{m\+\_\+open\+Archive@{m\+\_\+open\+Archive}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+open\+Archive}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+open\+Archive}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_aaeabf239e013e38adb71ea495a0e854e}
+
+
+Definition at line 72 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+settings\+File\+Name@{m\+\_\+settings\+File\+Name}}
+\index{m\+\_\+settings\+File\+Name@{m\+\_\+settings\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+settings\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+settings\+File\+Name}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_a4272029f2512940ae64fb3d728a86fa2}
+
+
+Definition at line 62 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}!m\+\_\+sleep\+Time@{m\+\_\+sleep\+Time}}
+\index{m\+\_\+sleep\+Time@{m\+\_\+sleep\+Time}!dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings@{dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings}}
+\subsubsection[{m\+\_\+sleep\+Time}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::\+Settings\+::m\+\_\+sleep\+Time}\label{classdqm4hep_1_1DQMStandaloneModuleApplication_1_1Settings_ae0482422fa714a3fc3a4d9fa5e49d59a}
+
+
+Definition at line 64 of file D\+Q\+M\+Standalone\+Module\+Application.\+h.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Standalone\+Module\+Application.\+h}\item 
+{\bf D\+Q\+M\+Standalone\+Module\+Application.\+cc}\end{DoxyCompactItemize}

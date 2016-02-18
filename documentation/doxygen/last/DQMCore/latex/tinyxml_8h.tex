@@ -1,0 +1,135 @@
+\section{tinyxml.\+h File Reference}
+\label{tinyxml_8h}\index{tinyxml.\+h@{tinyxml.\+h}}
+{\ttfamily \#include $<$ctype.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$assert.\+h$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf dqm4hep\+::\+Ti\+Xml\+Cursor}
+\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Visitor}
+\begin{DoxyCompactList}\small\item\em Implements the interface to the \char`\"{}\+Visitor pattern\char`\"{} (see the Accept() method.) If you call the Accept() method, it requires being passed a \doxyref{Ti\+Xml\+Visitor}{p.}{classdqm4hep_1_1TiXmlVisitor} class to handle callbacks. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Base}
+\begin{DoxyCompactList}\small\item\em \doxyref{Ti\+Xml\+Base}{p.}{classdqm4hep_1_1TiXmlBase} is a base class for every class in Tiny\+Xml. \end{DoxyCompactList}\item 
+struct {\bf dqm4hep\+::\+Ti\+Xml\+Base\+::\+Entity}
+\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Node}
+\begin{DoxyCompactList}\small\item\em The parent class for everything in the Document Object Model. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Attribute}
+\begin{DoxyCompactList}\small\item\em An attribute is a name-\/value pair. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Attribute\+Set}
+\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Element}
+\begin{DoxyCompactList}\small\item\em The element is a container class. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Comment}
+\begin{DoxyCompactList}\small\item\em An X\+M\+L comment. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Text}
+\begin{DoxyCompactList}\small\item\em X\+M\+L text. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Declaration}
+\begin{DoxyCompactList}\small\item\em In correct X\+M\+L the declaration is the first entry in the file. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Unknown}
+\begin{DoxyCompactList}\small\item\em Any tag that tiny\+Xml doesn't recognize is saved as an unknown. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Document}
+\begin{DoxyCompactList}\small\item\em Always the top level node. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Handle}
+\begin{DoxyCompactList}\small\item\em A \doxyref{Ti\+Xml\+Handle}{p.}{classdqm4hep_1_1TiXmlHandle} is a class that wraps a node pointer with null checks; this is an incredibly useful thing. \end{DoxyCompactList}\item 
+class {\bf dqm4hep\+::\+Ti\+Xml\+Printer}
+\begin{DoxyCompactList}\small\item\em Print to memory functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ {\bf dqm4hep}
+\begin{DoxyCompactList}\small\item\em -- std headers \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D}
+\item 
+\#define {\bf T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G}~std\+::string
+\item 
+\#define {\bf T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E}
+\item 
+\#define {\bf T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F}~snprintf
+\item 
+\#define {\bf T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F}~sscanf
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+S\+U\+C\+C\+E\+S\+S}, 
+{\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+N\+O\+\_\+\+A\+T\+T\+R\+I\+B\+U\+T\+E}, 
+{\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+W\+R\+O\+N\+G\+\_\+\+T\+Y\+P\+E}
+ \}
+\item 
+enum {\bf dqm4hep\+::\+Ti\+Xml\+Encoding} \{ {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N}, 
+{\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+T\+F8}, 
+{\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+L\+E\+G\+A\+C\+Y}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+M\+A\+J\+O\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N} = 2
+\item 
+const int {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+M\+I\+N\+O\+R\+\_\+\+V\+E\+R\+S\+I\+O\+N} = 6
+\item 
+const int {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+P\+A\+T\+C\+H\+\_\+\+V\+E\+R\+S\+I\+O\+N} = 1
+\item 
+const Ti\+Xml\+Encoding {\bf dqm4hep\+::\+T\+I\+X\+M\+L\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G} = T\+I\+X\+M\+L\+\_\+\+E\+N\+C\+O\+D\+I\+N\+G\+\_\+\+U\+N\+K\+N\+O\+W\+N
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{tinyxml.\+h@{tinyxml.\+h}!T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D@{T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D}}
+\index{T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D@{T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D}!tinyxml.\+h@{tinyxml.\+h}}
+\subsubsection[{T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+N\+Y\+X\+M\+L\+\_\+\+I\+N\+C\+L\+U\+D\+E\+D}\label{tinyxml_8h_a1334bd64feead8930c316d98266af7a3}
+
+
+Definition at line 30 of file tinyxml.\+h.
+
+\index{tinyxml.\+h@{tinyxml.\+h}!T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E@{T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E}}
+\index{T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E@{T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E}!tinyxml.\+h@{tinyxml.\+h}}
+\subsubsection[{T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+X\+M\+L\+\_\+\+S\+A\+F\+E}\label{tinyxml_8h_a5cdc3f402b6b8788f13a408d2be12e8d}
+
+
+Definition at line 63 of file tinyxml.\+h.
+
+\index{tinyxml.\+h@{tinyxml.\+h}!T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F@{T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F}}
+\index{T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F@{T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F}!tinyxml.\+h@{tinyxml.\+h}}
+\subsubsection[{T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+X\+M\+L\+\_\+\+S\+N\+P\+R\+I\+N\+T\+F~snprintf}\label{tinyxml_8h_afc6433f9b56e4f18833089b1df629e0a}
+
+
+Definition at line 81 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Base\+::\+Encode\+String(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Double\+Value(), and dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Set\+Int\+Value().
+
+\index{tinyxml.\+h@{tinyxml.\+h}!T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F@{T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F}}
+\index{T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F@{T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F}!tinyxml.\+h@{tinyxml.\+h}}
+\subsubsection[{T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+X\+M\+L\+\_\+\+S\+S\+C\+A\+N\+F~sscanf}\label{tinyxml_8h_a96f54d7c855ad92e705510904a040393}
+
+
+Definition at line 82 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Query\+Double\+Value(), and dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Query\+Int\+Value().
+
+\index{tinyxml.\+h@{tinyxml.\+h}!T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G@{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G}}
+\index{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G@{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G}!tinyxml.\+h@{tinyxml.\+h}}
+\subsubsection[{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+N\+G~std\+::string}\label{tinyxml_8h_a92bada05fd84d9a0c9a5bbe53de26887}
+
+
+Definition at line 53 of file tinyxml.\+h.
+
+
+
+Referenced by dqm4hep\+::\+Ti\+Xml\+Attribute\+Set\+::\+Add(), dqm4hep\+::\+Ti\+Xml\+Base\+::\+Get\+Entity(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Parse(), dqm4hep\+::\+Ti\+Xml\+Attribute\+::\+Print(), dqm4hep\+::\+Ti\+Xml\+Text\+::\+Print(), dqm4hep\+::\+Ti\+Xml\+Element\+::\+Remove\+Attribute(), and dqm4hep\+::\+Ti\+Xml\+Printer\+::\+Visit().
+

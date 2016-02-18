@@ -1,0 +1,1111 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Dim\+Event\+Collector Class Reference}
+\label{classdqm4hep_1_1DQMDimEventCollector}\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+
+
+\doxyref{D\+Q\+M\+Dim\+Event\+Collector}{p.}{classdqm4hep_1_1DQMDimEventCollector} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Event\+Collector.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Dim\+Event\+Collector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMDimEventCollector}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Client}
+\begin{DoxyCompactList}\small\item\em \doxyref{Client}{p.}{classdqm4hep_1_1DQMDimEventCollector_1_1Client} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Dim\+Event\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Collector\+Name} (const std\+::string \&collector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the collector name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Collector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the collector name. \end{DoxyCompactList}\item 
+bool {\bf is\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Whether the collector server is running. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Start the collector server. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf stop\+Collector} ()
+\begin{DoxyCompactList}\small\item\em Stop the collector server. \end{DoxyCompactList}\item 
+void {\bf set\+Event\+Streamer} ({\bf D\+Q\+M\+Event\+Streamer} $\ast$p\+Event\+Streamer)
+\begin{DoxyCompactList}\small\item\em Set the event streamer to serialize/deserialize the in/out-\/coming events. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Event\+Streamer} $\ast$ {\bf get\+Event\+Streamer} () const 
+\begin{DoxyCompactList}\small\item\em Get the event streamer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, {\bf Client} $>$ {\bf Client\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf command\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim command handler. \end{DoxyCompactList}\item 
+void {\bf client\+Exit\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim client exit handler. \end{DoxyCompactList}\item 
+void {\bf handle\+Event\+Reception} (Dim\+Command $\ast$p\+Dim\+Command)
+\item 
+void {\bf handle\+Event\+Request} ({\bf Dim\+Event\+Request\+Rpc} $\ast$p\+Dim\+Rpc)
+\item 
+{\bf Client} \& {\bf get\+Client} (int client\+Id)
+\begin{DoxyCompactList}\small\item\em Get a client by id. \end{DoxyCompactList}\item 
+void {\bf update\+Event\+Service} ()
+\begin{DoxyCompactList}\small\item\em Update the event service for clients that have specified an update mode. \end{DoxyCompactList}\item 
+void {\bf remove\+Client} (int client\+Id)
+\begin{DoxyCompactList}\small\item\em Remove a client from the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+collector\+Name}
+\item 
+bool {\bf m\+\_\+is\+Running}
+\item 
+int {\bf m\+\_\+state}
+\item 
+int {\bf m\+\_\+client\+Registered\+Id}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Server\+State\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Client\+Registered\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Event\+Update\+Service}
+\item 
+{\bf D\+Q\+M\+Statistics\+Service} $\ast$ {\bf m\+\_\+p\+Statistics\+Service}
+\item 
+Dim\+Command $\ast$ {\bf m\+\_\+p\+Collect\+Event\+Command}
+\item 
+Dim\+Command $\ast$ {\bf m\+\_\+p\+Update\+Mode\+Command}
+\item 
+Dim\+Command $\ast$ {\bf m\+\_\+p\+Sub\+Event\+Identifier\+Command}
+\item 
+Dim\+Command $\ast$ {\bf m\+\_\+p\+Client\+Regitration\+Command}
+\item 
+{\bf Dim\+Event\+Request\+Rpc} $\ast$ {\bf m\+\_\+p\+Event\+Request\+Rpc}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+sub\+Event\+Data\+Stream}
+\item 
+{\bf D\+Q\+M\+Event\+Streamer} $\ast$ {\bf m\+\_\+p\+Event\+Streamer}
+\item 
+{\bf D\+Q\+M\+Event} $\ast$ {\bf m\+\_\+p\+Current\+Event}
+\item 
+{\bf Client\+Map} {\bf m\+\_\+client\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Dim\+Event\+Request\+Rpc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Dim\+Event\+Collector}{p.}{classdqm4hep_1_1DQMDimEventCollector} class. 
+
+Definition at line 67 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!Client\+Map@{Client\+Map}}
+\index{Client\+Map@{Client\+Map}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{Client\+Map}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<$int, {\bf Client}$>$ {\bf dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+Client\+Map}\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a06837db015522cab3d42b82fee876862}
+
+
+Definition at line 153 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!D\+Q\+M\+Dim\+Event\+Collector@{D\+Q\+M\+Dim\+Event\+Collector}}
+\index{D\+Q\+M\+Dim\+Event\+Collector@{D\+Q\+M\+Dim\+Event\+Collector}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{D\+Q\+M\+Dim\+Event\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+D\+Q\+M\+Dim\+Event\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDimEventCollector_a768abcb5aabe2949701727303d46635a}
+
+
+Constructor. 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+data\+Stream, T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+53                                            :
+54     m_collectorName(\textcolor{stringliteral}{"DEFAULT"}),
+55     m_isRunning(\textcolor{keyword}{false}),
+56     m_pCollectEventCommand(NULL),
+57     m_pEventRequestRpc(NULL),
+58     m_pUpdateModeCommand(NULL),
+59     m_pEventUpdateService(NULL),
+60     m_pEventStreamer(NULL),
+61     m_pCurrentEvent(NULL),
+62     m_state(0),
+63     m_clientRegisteredId(0),
+64     m_dataStream(5*1024*1024),
+65     m_subEventDataStream(5*1024*1024)
+66 \{
+67   THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.write(std::string(\textcolor{stringliteral}{"EMPTY"})));
+68   DimServer::addClientExitHandler(\textcolor{keyword}{this});
+69 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!````~D\+Q\+M\+Dim\+Event\+Collector@{$\sim$\+D\+Q\+M\+Dim\+Event\+Collector}}
+\index{````~D\+Q\+M\+Dim\+Event\+Collector@{$\sim$\+D\+Q\+M\+Dim\+Event\+Collector}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Dim\+Event\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::$\sim$\+D\+Q\+M\+Dim\+Event\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a8164be79f91f20b36333f4cc7159ad4c}
+
+
+Destructor. 
+
+
+
+Definition at line 73 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References is\+Running(), m\+\_\+p\+Current\+Event, m\+\_\+p\+Event\+Streamer, and stop\+Collector().
+
+
+\begin{DoxyCode}
+74 \{
+75   \textcolor{keywordflow}{if}(isRunning())
+76     stopCollector();
+77 
+78   \textcolor{keywordflow}{if}(m_pEventStreamer)
+79     \textcolor{keyword}{delete} m_pEventStreamer;
+80 
+81   \textcolor{keywordflow}{if}(m_pCurrentEvent)
+82     \textcolor{keyword}{delete} m_pCurrentEvent;
+83 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!client\+Exit\+Handler@{client\+Exit\+Handler}}
+\index{client\+Exit\+Handler@{client\+Exit\+Handler}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{client\+Exit\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::client\+Exit\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a0decfa42049f3762fcfbc12b593d6f0e}
+
+
+Dim client exit handler. 
+
+
+
+Definition at line 372 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References remove\+Client().
+
+
+\begin{DoxyCode}
+373 \{
+374   this->removeClient(getClientId());
+375 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!command\+Handler@{command\+Handler}}
+\index{command\+Handler@{command\+Handler}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{command\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::command\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a599b6cccd1cf6882585115670879a1d5}
+
+
+Dim command handler. 
+
+
+
+Definition at line 298 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+E\+B\+U\+G, get\+Client(), handle\+Event\+Reception(), m\+\_\+client\+Registered\+Id, m\+\_\+p\+Client\+Registered\+Service, m\+\_\+p\+Client\+Regitration\+Command, m\+\_\+p\+Collect\+Event\+Command, m\+\_\+p\+Sub\+Event\+Identifier\+Command, m\+\_\+p\+Update\+Mode\+Command, dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+Client\+::m\+\_\+sub\+Event\+Identifier, dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+Client\+::m\+\_\+update\+Mode, and remove\+Client().
+
+
+\begin{DoxyCode}
+299 \{
+300   DimCommand *pCommand = getCommand();
+301 
+302   \textcolor{keywordflow}{if}(!pCommand)
+303     \textcolor{keywordflow}{return};
+304 
+305   \textcolor{keywordflow}{if}(pCommand == m_pUpdateModeCommand)
+306   \{
+307     \textcolor{keywordtype}{bool} updateMode = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{bool}\textcolor{keyword}{>}(pCommand->getInt());
+308     \textcolor{keywordtype}{int} clientId = getClientId();
+309 
+310     \textcolor{keywordflow}{if}(clientId < 0)
+311       \textcolor{keywordflow}{return};
+312 
+313     Client &client = getClient(clientId);
+314     client.m\_updateMode = updateMode;
+315     \textcolor{keywordflow}{return};
+316   \}
+317 
+318   \textcolor{keywordflow}{if}(pCommand == m_pSubEventIdentifierCommand)
+319   \{
+320     \textcolor{keywordtype}{char} *pSubEventIdentifier = pCommand->getString();
+321     \textcolor{keywordtype}{int} clientId = getClientId();
+322     std::string subEventIdentifier;
+323 
+324     \textcolor{keywordflow}{if}(NULL != pSubEventIdentifier)
+325       subEventIdentifier = pSubEventIdentifier;
+326 
+327     \textcolor{keywordflow}{if}(clientId < 0)
+328       \textcolor{keywordflow}{return};
+329 
+330     Client &client = getClient(clientId);
+331     client.m\_subEventIdentifier = subEventIdentifier;
+332     \textcolor{keywordflow}{return};
+333   \}
+334 
+335   \textcolor{keywordflow}{if}(pCommand == m_pCollectEventCommand)
+336   \{
+337     this->handleEventReception(pCommand);
+338     \textcolor{keywordflow}{return};
+339   \}
+340 
+341   \textcolor{keywordflow}{if}(pCommand == m_pClientRegitrationCommand)
+342   \{
+343     \textcolor{keywordtype}{int} clientId = getClientId();
+344 
+345     \textcolor{keywordflow}{if}(clientId < 0)
+346       \textcolor{keywordflow}{return};
+347 
+348     \textcolor{keywordtype}{int} registerClient = pCommand->getInt();
+349 
+350     \textcolor{keywordflow}{if}(registerClient)
+351     \{
+352       Client &client = getClient(clientId);
+353       streamlog\_out(DEBUG) << \textcolor{stringliteral}{"Client "} << clientId << \textcolor{stringliteral}{" added to server !"} << std::endl;
+354 
+355       \textcolor{keywordtype}{int} clientIds[2];
+356       clientIds[0] = clientId;
+357       clientIds[1] = 0;
+358 
+359       m_clientRegisteredId = clientId;
+360       m_pClientRegisteredService->selectiveUpdateService(m_clientRegisteredId, &clientIds[0]);
+361       m_clientRegisteredId = 0;
+362     \}
+363     \textcolor{keywordflow}{else}
+364     \{
+365       this->removeClient(clientId);
+366     \}
+367   \}
+368 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!get\+Client@{get\+Client}}
+\index{get\+Client@{get\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{get\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Dim\+Event\+Collector\+::\+Client} \& dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::get\+Client (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a80378b9b4178be53c174ab2ba3504d28}
+
+
+Get a client by id. 
+
+Create it if not registered 
+
+Definition at line 279 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::\+Client\+::m\+\_\+client\+Id, and m\+\_\+client\+Map.
+
+
+
+Referenced by command\+Handler().
+
+
+\begin{DoxyCode}
+280 \{
+281   ClientMap::iterator findIter = m_clientMap.find(clientId);
+282 
+283   \textcolor{keywordflow}{if}(m_clientMap.end() != findIter)
+284     \textcolor{keywordflow}{return} findIter->second;
+285 
+286   Client newClient;
+287   newClient.m\_clientId = clientId;
+288   newClient.m\_updateMode = \textcolor{keyword}{false};
+289   newClient.m\_subEventIdentifier = \textcolor{stringliteral}{""};
+290 
+291   m_clientMap.insert(std::pair<int, Client>(clientId, newClient));
+292 
+293   \textcolor{keywordflow}{return} m_clientMap.find(clientId)->second;
+294 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!get\+Collector\+Name@{get\+Collector\+Name}}
+\index{get\+Collector\+Name@{get\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{get\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::get\+Collector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a38a9e06681d3348c2cef9e5efba00347}
+
+
+Get the collector name. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_a4d43a74838a7d1d4b7ffcdd230a30d4d}.
+
+
+
+Definition at line 99 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+collector\+Name.
+
+
+
+Referenced by start\+Collector().
+
+
+\begin{DoxyCode}
+100 \{
+101   \textcolor{keywordflow}{return} m_collectorName;
+102 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!get\+Event\+Streamer@{get\+Event\+Streamer}}
+\index{get\+Event\+Streamer@{get\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{get\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Streamer} $\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::get\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_aeabfafccdb40afab06453eea478b2fd2}
+
+
+Get the event streamer. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_ac9ad55f2bcd2b6d674cfaa3bfa68f2b8}.
+
+
+
+Definition at line 189 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Event\+Streamer.
+
+
+\begin{DoxyCode}
+190 \{
+191   \textcolor{keywordflow}{return} m_pEventStreamer;
+192 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!handle\+Event\+Reception@{handle\+Event\+Reception}}
+\index{handle\+Event\+Reception@{handle\+Event\+Reception}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{handle\+Event\+Reception}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Reception (
+\begin{DoxyParamCaption}
+\item[{Dim\+Command $\ast$}]{p\+Dim\+Command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a3282d6b3ab7008f9548c02e7ad546095}
+
+
+Definition at line 196 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::deserialize(), dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), m\+\_\+data\+Stream, m\+\_\+p\+Current\+Event, m\+\_\+p\+Event\+Streamer, m\+\_\+p\+Statistics\+Service, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Statistics\+Service\+::update(), and update\+Event\+Service().
+
+
+
+Referenced by command\+Handler().
+
+
+\begin{DoxyCode}
+197 \{
+198   dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(pDimCommand->getData());
+199   dqm_uint bufferSize = pDimCommand->getSize();
+200 
+201   \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+202     \textcolor{keywordflow}{return};
+203 
+204   m_pStatisticsService->update(bufferSize);
+205   DQMEvent *pEvent = NULL;
+206 
+207   \textcolor{keywordflow}{try}
+208   \{
+209     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.setBuffer(pBuffer, bufferSize));
+210 
+211     \textcolor{comment}{// if streamer is available, de-serialize the event}
+212     \textcolor{keywordflow}{if}(NULL != m_pEventStreamer)
+213     \{
+214       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pEventStreamer->deserialize(pEvent, &
+      m_dataStream));
+215 
+216       \textcolor{comment}{// replace the current event}
+217       \textcolor{keywordflow}{if}(NULL != pEvent)
+218       \{
+219         \textcolor{keywordflow}{if}(NULL != m_pCurrentEvent)
+220           \textcolor{keyword}{delete} m_pCurrentEvent;
+221 
+222         m_pCurrentEvent = pEvent;
+223       \}
+224     \}
+225   \}
+226   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+227   \{
+228     \textcolor{keywordflow}{if}(NULL != pEvent)
+229       \textcolor{keyword}{delete} pEvent;
+230 
+231     streamlog\_out(ERROR) << \textcolor{stringliteral}{"Couldn't deserialize the buffer : "} << exception.getStatusCode() << std::endl;
+232 
+233     \textcolor{keywordflow}{return};
+234   \}
+235 
+236   this->updateEventService();
+237 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!handle\+Event\+Request@{handle\+Event\+Request}}
+\index{handle\+Event\+Request@{handle\+Event\+Request}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{handle\+Event\+Request}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request (
+\begin{DoxyParamCaption}
+\item[{{\bf Dim\+Event\+Request\+Rpc} $\ast$}]{p\+Dim\+Rpc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a5668f454a6ee64d8825ae08a58f01a79}
+
+
+Definition at line 241 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), m\+\_\+data\+Stream, m\+\_\+p\+Current\+Event, m\+\_\+p\+Event\+Streamer, m\+\_\+sub\+Event\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::serialize(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+Dim\+Event\+Request\+Rpc\+::rpc\+Handler().
+
+
+\begin{DoxyCode}
+242 \{
+243   \textcolor{keywordtype}{char} *pSubEventIdentifier = pDimRpc->getString();
+244   std::string subEventIdentifier;
+245 
+246   \textcolor{keywordflow}{if}(NULL != pSubEventIdentifier)
+247     subEventIdentifier = pSubEventIdentifier;
+248 
+249   \textcolor{keywordflow}{if}(NULL != m_pEventStreamer && NULL != m_pCurrentEvent && !subEventIdentifier.empty())
+250   \{
+251     \textcolor{keywordflow}{try}
+252     \{
+253       m_subEventDataStream.reset();
+254       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pEventStreamer->serialize(
+      m_pCurrentEvent, subEventIdentifier, &m_subEventDataStream));
+255 
+256       dqm_char *pEventBuffer = m_subEventDataStream.getBuffer();
+257       \textcolor{keywordtype}{int} bufferSize = m_subEventDataStream.getBufferSize();
+258 
+259       pDimRpc->setData((\textcolor{keywordtype}{void} *) pEventBuffer, bufferSize);
+260     \}
+261     \textcolor{keywordflow}{catch}(...)
+262     \{
+263     \}
+264   \}
+265   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(NULL != m_dataStream.getBuffer() && 0 != m_dataStream.getBufferSize())
+266   \{
+267     pDimRpc->setData((\textcolor{keywordtype}{void} *) m_dataStream.getBuffer(), m_dataStream.
+      getBufferSize());
+268   \}
+269   \textcolor{keywordflow}{else}
+270   \{
+271     dqm_char empty [] = \textcolor{stringliteral}{"EMPTY"};
+272     pDimRpc->setData((\textcolor{keywordtype}{void} *) empty, 5);
+273   \}
+274 
+275 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a5fedb202ddf13d4382fb32e52986e8de}
+
+
+Whether the collector server is running. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_a7588b758cf32de97b1c1d49a55f11261}.
+
+
+
+Definition at line 106 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+is\+Running.
+
+
+
+Referenced by set\+Collector\+Name(), start\+Collector(), stop\+Collector(), update\+Event\+Service(), and $\sim$\+D\+Q\+M\+Dim\+Event\+Collector().
+
+
+\begin{DoxyCode}
+107 \{
+108   \textcolor{keywordflow}{return} m_isRunning;
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!remove\+Client@{remove\+Client}}
+\index{remove\+Client@{remove\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{remove\+Client}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::remove\+Client (
+\begin{DoxyParamCaption}
+\item[{int}]{client\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a51f152a4afc2bbc59daaa0f4b7f79151}
+
+
+Remove a client from the map. 
+
+
+
+Definition at line 439 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+client\+Map, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+
+Referenced by client\+Exit\+Handler(), and command\+Handler().
+
+
+\begin{DoxyCode}
+440 \{
+441   \textcolor{keywordflow}{if}(clientId < 0)
+442     \textcolor{keywordflow}{return};
+443 
+444   ClientMap::iterator findIter = m_clientMap.find(clientId);
+445 
+446   \textcolor{keywordflow}{if}(m_clientMap.end() == findIter)
+447     \textcolor{keywordflow}{return};
+448 
+449   m_clientMap.erase(findIter);
+450 
+451   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Client "} << clientId << \textcolor{stringliteral}{" removed from server !"} << std::endl;
+452 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!set\+Collector\+Name@{set\+Collector\+Name}}
+\index{set\+Collector\+Name@{set\+Collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{set\+Collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::set\+Collector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a61f103cd22047630a1675021d08031c8}
+
+
+Set the collector name. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_a5ee8c4e1a66ec2309237968600ad8c9a}.
+
+
+
+Definition at line 87 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References is\+Running(), and m\+\_\+collector\+Name.
+
+
+\begin{DoxyCode}
+88 \{
+89   \textcolor{keywordflow}{if}(isRunning())
+90     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+91 
+92   m_collectorName = collectorName;
+93 
+94   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+95 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!set\+Event\+Streamer@{set\+Event\+Streamer}}
+\index{set\+Event\+Streamer@{set\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{set\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::set\+Event\+Streamer (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event\+Streamer} $\ast$}]{p\+Event\+Streamer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a8e516a2927040fb392d4a34ec0473b8e}
+
+
+Set the event streamer to serialize/deserialize the in/out-\/coming events. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_af821be6ae3404262795cb567d4c37da7}.
+
+
+
+Definition at line 179 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References m\+\_\+p\+Event\+Streamer.
+
+
+\begin{DoxyCode}
+180 \{
+181   \textcolor{keywordflow}{if}(m_pEventStreamer)
+182     \textcolor{keyword}{delete} m_pEventStreamer;
+183 
+184   m_pEventStreamer = pEventStreamer;
+185 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!start\+Collector@{start\+Collector}}
+\index{start\+Collector@{start\+Collector}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{start\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::start\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_ac356924a7940f67ceb82c21c85be54e7}
+
+
+Start the collector server. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_a836693a1fd5853fd05d2893c313d1631}.
+
+
+
+Definition at line 113 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References Dim\+Event\+Request\+Rpc, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), get\+Collector\+Name(), is\+Running(), m\+\_\+client\+Registered\+Id, m\+\_\+data\+Stream, m\+\_\+is\+Running, m\+\_\+p\+Client\+Registered\+Service, m\+\_\+p\+Client\+Regitration\+Command, m\+\_\+p\+Collect\+Event\+Command, m\+\_\+p\+Event\+Request\+Rpc, m\+\_\+p\+Event\+Update\+Service, m\+\_\+p\+Server\+State\+Service, m\+\_\+p\+Statistics\+Service, m\+\_\+p\+Sub\+Event\+Identifier\+Command, m\+\_\+p\+Update\+Mode\+Command, m\+\_\+state, and dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E.
+
+
+\begin{DoxyCode}
+114 \{
+115   \textcolor{keywordflow}{if}(this->isRunning())
+116     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+117 
+118   m_pEventRequestRpc = \textcolor{keyword}{new}  DimEventRequestRpc(\textcolor{keyword}{this});
+119 
+120   m_pUpdateModeCommand = \textcolor{keyword}{new} DimCommand((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/UPDATE\_MODE"}).c\_str(), \textcolor{stringliteral}{"I"}, \textcolor{keyword}{this});
+121   m_pCollectEventCommand = \textcolor{keyword}{new} DimCommand((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/COLLECT\_RAW\_EVENT"}).c\_str(), \textcolor{stringliteral}{"C"}, \textcolor{keyword}{this});
+122   m_pSubEventIdentifierCommand = \textcolor{keyword}{new} DimCommand((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/SUB\_EVENT\_IDENTIFIER"}).c\_str(), \textcolor{stringliteral}{"C"}, \textcolor{keyword}{this});
+123   m_pClientRegitrationCommand = \textcolor{keyword}{new} DimCommand((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTRATION"}).c\_str(), \textcolor{stringliteral}{"I"}, \textcolor{keyword}{this});
+124 
+125   m_pEventUpdateService = \textcolor{keyword}{new} DimService((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/EVENT\_RAW\_UPDATE"}).c\_str(), \textcolor{stringliteral}{"C"}, (\textcolor{keywordtype}{void}*) m_dataStream.
+      getBuffer(), m_dataStream.getBufferSize());
+126   m_pStatisticsService = \textcolor{keyword}{new} DQMStatisticsService(\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/STATS"});
+127   m_pClientRegisteredService = \textcolor{keyword}{new} DimService((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/CLIENT\_REGISTERED"}).c\_str(), m_clientRegisteredId);
+128   m_pServerStateService = \textcolor{keyword}{new} DimService((\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + 
+      getCollectorName() + \textcolor{stringliteral}{"/SERVER\_STATE"}).c\_str(), m_state);
+129 
+130   \textcolor{comment}{// inform clients that the server is available for registrations}
+131   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Changing server application to running !"} << std::endl;
+132 
+133   DimServer::start( (\textcolor{stringliteral}{"DQM4HEP/EventCollector/"} + getCollectorName()).c\_str() );
+134 
+135   \textcolor{comment}{// time needed for registration on dns node}
+136   sleep(1);
+137 
+138   m_state = 1;
+139   m_pServerStateService->updateService(m_state);
+140 
+141   m_isRunning = \textcolor{keyword}{true};
+142 
+143   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+144 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!stop\+Collector@{stop\+Collector}}
+\index{stop\+Collector@{stop\+Collector}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{stop\+Collector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::stop\+Collector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimEventCollector_a00bff5f75b9b1b22d95faa6981ee8183}
+
+
+Stop the collector server. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Imp} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorImp_a88b0502610cdb257da0ab4cb1a09525f}.
+
+
+
+Definition at line 148 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References is\+Running(), m\+\_\+data\+Stream, m\+\_\+is\+Running, m\+\_\+p\+Client\+Registered\+Service, m\+\_\+p\+Client\+Regitration\+Command, m\+\_\+p\+Collect\+Event\+Command, m\+\_\+p\+Event\+Request\+Rpc, m\+\_\+p\+Event\+Update\+Service, m\+\_\+p\+Server\+State\+Service, m\+\_\+p\+Statistics\+Service, m\+\_\+p\+Sub\+Event\+Identifier\+Command, m\+\_\+p\+Update\+Mode\+Command, m\+\_\+state, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by $\sim$\+D\+Q\+M\+Dim\+Event\+Collector().
+
+
+\begin{DoxyCode}
+149 \{
+150   \textcolor{keywordflow}{if}(!this->isRunning())
+151     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+152 
+153   m_state = 0;
+154   \textcolor{comment}{// inform clients that the server is shut down}
+155   m_pServerStateService->updateService(m_state);
+156 
+157   \textcolor{keyword}{delete} m_pCollectEventCommand;
+158   \textcolor{keyword}{delete} m_pUpdateModeCommand;
+159   \textcolor{keyword}{delete} m_pSubEventIdentifierCommand;
+160   \textcolor{keyword}{delete} m_pClientRegitrationCommand;
+161 
+162   \textcolor{keyword}{delete} m_pEventUpdateService;
+163   \textcolor{keyword}{delete} m_pStatisticsService;
+164   \textcolor{keyword}{delete} m_pClientRegisteredService;
+165   \textcolor{keyword}{delete} m_pServerStateService;
+166 
+167   \textcolor{keyword}{delete} m_pEventRequestRpc;
+168 
+169   m_dataStream.reset();
+170   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.write(std::string(\textcolor{stringliteral}{"EMPTY"})));
+171 
+172   m_isRunning = \textcolor{keyword}{false};
+173 
+174   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+175 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!update\+Event\+Service@{update\+Event\+Service}}
+\index{update\+Event\+Service@{update\+Event\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{update\+Event\+Service}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::update\+Event\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a43d0472f86424f6e20b81d386cee338e}
+
+
+Update the event service for clients that have specified an update mode. 
+
+
+
+Definition at line 379 of file D\+Q\+M\+Dim\+Event\+Collector.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Running(), m\+\_\+client\+Map, m\+\_\+data\+Stream, m\+\_\+p\+Current\+Event, m\+\_\+p\+Event\+Streamer, m\+\_\+p\+Event\+Update\+Service, m\+\_\+sub\+Event\+Data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), and dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::serialize().
+
+
+
+Referenced by handle\+Event\+Reception().
+
+
+\begin{DoxyCode}
+380 \{
+381   \textcolor{comment}{// if not running, do not update}
+382   \textcolor{keywordflow}{if}(!isRunning())
+383     \textcolor{keywordflow}{return};
+384 
+385   \textcolor{comment}{// event available ?}
+386   \textcolor{keywordflow}{if}(NULL == m_dataStream.getBuffer() || 0 == m_dataStream.getBufferSize())
+387     \textcolor{keywordflow}{return};
+388 
+389   \textcolor{keywordtype}{int} *clientIds = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[m_clientMap.size()];
+390   memset(&clientIds[0], 0, m_clientMap.size());
+391   \textcolor{keywordtype}{int} currentId = 0;
+392 
+393   \textcolor{keywordflow}{for}(ClientMap::iterator iter = m_clientMap.begin(), endIter = m_clientMap.end() ;
+394       endIter != iter ; ++iter)
+395   \{
+396     \textcolor{comment}{// check for update mode}
+397     \textcolor{keywordflow}{if}(!iter->second.m\_updateMode)
+398       \textcolor{keywordflow}{continue};
+399 
+400     \textcolor{comment}{// specific case where the client has queried a sub part of the event}
+401     \textcolor{keywordflow}{if}(!iter->second.m\_subEventIdentifier.empty()
+402     && (NULL != m_pEventStreamer && NULL != m_pCurrentEvent))
+403     \{
+404       \textcolor{comment}{// try to serialize the sub event}
+405       m_subEventDataStream.reset();
+406 
+407       \textcolor{keywordflow}{if}(STATUS\_CODE\_SUCCESS != m_pEventStreamer->serialize(m_pCurrentEvent, iter->second.
+      m\_subEventIdentifier, &m_subEventDataStream))
+408         \textcolor{keywordflow}{continue};
+409 
+410       dqm_char *pEventBuffer = m_subEventDataStream.getBuffer();
+411       \textcolor{keywordtype}{int} bufferSize = m_subEventDataStream.getBufferSize();
+412 
+413       \textcolor{keywordflow}{if}(NULL == pEventBuffer || 0 == bufferSize)
+414         \textcolor{keywordflow}{continue};
+415 
+416       \textcolor{keywordtype}{int} clientIdArray[2];
+417       clientIdArray[0] = iter->first;
+418       clientIdArray[1] = 0;
+419 
+420       m_pEventUpdateService->selectiveUpdateService((\textcolor{keywordtype}{void} *) pEventBuffer, bufferSize, &clientIdArray[0]);
+421 
+422       \textcolor{keywordflow}{continue};
+423     \}
+424 
+425     clientIds[currentId] = iter->first;
+426     currentId ++;
+427   \}
+428 
+429   \textcolor{keywordflow}{if}(currentId != 0)
+430     m_pEventUpdateService->selectiveUpdateService((\textcolor{keywordtype}{void} *) m_dataStream.
+      getBuffer(), m_dataStream.getBufferSize(), clientIds);
+431 
+432   \textcolor{keyword}{delete} [] clientIds;
+433 
+434   \textcolor{keywordflow}{return};
+435 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!Dim\+Event\+Request\+Rpc@{Dim\+Event\+Request\+Rpc}}
+\index{Dim\+Event\+Request\+Rpc@{Dim\+Event\+Request\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{Dim\+Event\+Request\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Dim\+Event\+Request\+Rpc}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMDimEventCollector_a7dbda6d040967bb25c83b2ad81640826}
+
+
+Definition at line 70 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by start\+Collector().
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+client\+Map@{m\+\_\+client\+Map}}
+\index{m\+\_\+client\+Map@{m\+\_\+client\+Map}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+client\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Client\+Map} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+client\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_af1f0269d9fbe23a42889a89920e6432a}
+
+
+Definition at line 183 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by get\+Client(), remove\+Client(), and update\+Event\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+client\+Registered\+Id@{m\+\_\+client\+Registered\+Id}}
+\index{m\+\_\+client\+Registered\+Id@{m\+\_\+client\+Registered\+Id}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+client\+Registered\+Id}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+client\+Registered\+Id\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a72a5d341afc38a432ccfb243996570cb}
+
+
+Definition at line 158 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), and start\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+collector\+Name@{m\+\_\+collector\+Name}}
+\index{m\+\_\+collector\+Name@{m\+\_\+collector\+Name}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+collector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+collector\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_ab56faa182e5330d3b7547f29dd36ee6b}
+
+
+Definition at line 155 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by get\+Collector\+Name(), and set\+Collector\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_ae5bbfa589343274237425a24c832ec27}
+
+
+Definition at line 175 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by D\+Q\+M\+Dim\+Event\+Collector(), handle\+Event\+Reception(), handle\+Event\+Request(), start\+Collector(), stop\+Collector(), and update\+Event\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+is\+Running@{m\+\_\+is\+Running}}
+\index{m\+\_\+is\+Running@{m\+\_\+is\+Running}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+is\+Running\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_aa195a372d2872023cdf681accb824475}
+
+
+Definition at line 156 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by is\+Running(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Client\+Registered\+Service@{m\+\_\+p\+Client\+Registered\+Service}}
+\index{m\+\_\+p\+Client\+Registered\+Service@{m\+\_\+p\+Client\+Registered\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Client\+Registered\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Client\+Registered\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a52206f58841e3fc6a98603792ff8f449}
+
+
+Definition at line 162 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Client\+Regitration\+Command@{m\+\_\+p\+Client\+Regitration\+Command}}
+\index{m\+\_\+p\+Client\+Regitration\+Command@{m\+\_\+p\+Client\+Regitration\+Command}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Client\+Regitration\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Command$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Client\+Regitration\+Command\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a978acd7186bcd53fcda4e406108fba3d}
+
+
+Definition at line 170 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Collect\+Event\+Command@{m\+\_\+p\+Collect\+Event\+Command}}
+\index{m\+\_\+p\+Collect\+Event\+Command@{m\+\_\+p\+Collect\+Event\+Command}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Collect\+Event\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Command$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Collect\+Event\+Command\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a50ad082803b459c200232df61c523470}
+
+
+Definition at line 167 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Current\+Event@{m\+\_\+p\+Current\+Event}}
+\index{m\+\_\+p\+Current\+Event@{m\+\_\+p\+Current\+Event}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Current\+Event}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event}$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Current\+Event\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a47a8bdf39c99d34b8d7e0e780f6565d9}
+
+
+Definition at line 181 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by handle\+Event\+Reception(), handle\+Event\+Request(), update\+Event\+Service(), and $\sim$\+D\+Q\+M\+Dim\+Event\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Event\+Request\+Rpc@{m\+\_\+p\+Event\+Request\+Rpc}}
+\index{m\+\_\+p\+Event\+Request\+Rpc@{m\+\_\+p\+Event\+Request\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Event\+Request\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dim\+Event\+Request\+Rpc}$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Event\+Request\+Rpc\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a492252914ff17792850a58561f4d88f1}
+
+
+Definition at line 173 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Event\+Streamer@{m\+\_\+p\+Event\+Streamer}}
+\index{m\+\_\+p\+Event\+Streamer@{m\+\_\+p\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Streamer}$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Event\+Streamer\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a3cf6d02b0b94c975fc15b396cadc1aee}
+
+
+Definition at line 177 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by get\+Event\+Streamer(), handle\+Event\+Reception(), handle\+Event\+Request(), set\+Event\+Streamer(), update\+Event\+Service(), and $\sim$\+D\+Q\+M\+Dim\+Event\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Event\+Update\+Service@{m\+\_\+p\+Event\+Update\+Service}}
+\index{m\+\_\+p\+Event\+Update\+Service@{m\+\_\+p\+Event\+Update\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Event\+Update\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Event\+Update\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a6a93bb840043546e20254ef23f077ec4}
+
+
+Definition at line 163 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by start\+Collector(), stop\+Collector(), and update\+Event\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Server\+State\+Service@{m\+\_\+p\+Server\+State\+Service}}
+\index{m\+\_\+p\+Server\+State\+Service@{m\+\_\+p\+Server\+State\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Server\+State\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Server\+State\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_aac0eb7aed5ff23f7d63bc5384f62aac4}
+
+
+Definition at line 161 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Statistics\+Service@{m\+\_\+p\+Statistics\+Service}}
+\index{m\+\_\+p\+Statistics\+Service@{m\+\_\+p\+Statistics\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Statistics\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Statistics\+Service}$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Statistics\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_af12a9fb33ce8aa20b96697dede5eeb5f}
+
+
+Definition at line 164 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by handle\+Event\+Reception(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Sub\+Event\+Identifier\+Command@{m\+\_\+p\+Sub\+Event\+Identifier\+Command}}
+\index{m\+\_\+p\+Sub\+Event\+Identifier\+Command@{m\+\_\+p\+Sub\+Event\+Identifier\+Command}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Sub\+Event\+Identifier\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Command$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Sub\+Event\+Identifier\+Command\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a691f28776833ca10d9a350f77add0172}
+
+
+Definition at line 169 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+p\+Update\+Mode\+Command@{m\+\_\+p\+Update\+Mode\+Command}}
+\index{m\+\_\+p\+Update\+Mode\+Command@{m\+\_\+p\+Update\+Mode\+Command}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+p\+Update\+Mode\+Command}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Command$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+p\+Update\+Mode\+Command\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a1359e08026b47116139077988f17254e}
+
+
+Definition at line 168 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by command\+Handler(), start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+state@{m\+\_\+state}}
+\index{m\+\_\+state@{m\+\_\+state}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a6de401a641d708e12c594dd865e7fcc6}
+
+
+Definition at line 157 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by start\+Collector(), and stop\+Collector().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}!m\+\_\+sub\+Event\+Data\+Stream@{m\+\_\+sub\+Event\+Data\+Stream}}
+\index{m\+\_\+sub\+Event\+Data\+Stream@{m\+\_\+sub\+Event\+Data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector@{dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector}}
+\subsubsection[{m\+\_\+sub\+Event\+Data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::m\+\_\+sub\+Event\+Data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimEventCollector_a4e4fb4919bfd8b1045efb8e58841fd3f}
+
+
+Definition at line 176 of file D\+Q\+M\+Dim\+Event\+Collector.\+h.
+
+
+
+Referenced by handle\+Event\+Request(), and update\+Event\+Service().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Event\+Collector.\+cc}\end{DoxyCompactItemize}

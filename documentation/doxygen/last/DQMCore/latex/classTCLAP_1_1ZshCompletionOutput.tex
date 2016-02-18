@@ -1,0 +1,527 @@
+\section{T\+C\+L\+A\+P\+:\+:Zsh\+Completion\+Output Class Reference}
+\label{classTCLAP_1_1ZshCompletionOutput}\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+
+
+A class that generates a Zsh completion function as output from the \doxyref{usage()}{p.}{classTCLAP_1_1ZshCompletionOutput_a3ea685b174fce7ddf2353129863b49d7} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args.  
+
+
+
+
+{\ttfamily \#include $<$Zsh\+Completion\+Output.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Zsh\+Completion\+Output\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1ZshCompletionOutput}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Zsh\+Completion\+Output} ()
+\item 
+virtual void {\bf usage} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the usage to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf version} ({\bf Cmd\+Line\+Interface} \&c)
+\begin{DoxyCompactList}\small\item\em Prints the version to stdout. \end{DoxyCompactList}\item 
+virtual void {\bf failure} ({\bf Cmd\+Line\+Interface} \&c, {\bf Arg\+Exception} \&e)
+\begin{DoxyCompactList}\small\item\em Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf basename} (std\+::string \&s)
+\item 
+void {\bf quote\+Special\+Chars} (std\+::string \&s)
+\item 
+std\+::string {\bf get\+Mutex\+List} ({\bf Cmd\+Line\+Interface} \&\+\_\+cmd, {\bf Arg} $\ast$a)
+\item 
+void {\bf print\+Option} ({\bf Arg} $\ast$it, std\+::string mutex)
+\item 
+void {\bf print\+Arg} ({\bf Arg} $\ast$it)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::string, \\*
+std\+::string $>$ {\bf common}
+\item 
+char {\bf the\+Delimiter}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that generates a Zsh completion function as output from the \doxyref{usage()}{p.}{classTCLAP_1_1ZshCompletionOutput_a3ea685b174fce7ddf2353129863b49d7} method for the given \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} and its Args. 
+
+Definition at line 43 of file Zsh\+Completion\+Output.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!Zsh\+Completion\+Output@{Zsh\+Completion\+Output}}
+\index{Zsh\+Completion\+Output@{Zsh\+Completion\+Output}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{Zsh\+Completion\+Output}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::\+Zsh\+Completion\+Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classTCLAP_1_1ZshCompletionOutput_a3bf15bc96487b014092eb2bc97fdf1de}
+
+
+Definition at line 86 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References common.
+
+
+\begin{DoxyCode}
+87 : common(std::map<std::string, std::string>()),
+88   theDelimiter(\textcolor{charliteral}{'='})
+89 \{
+90   common[\textcolor{stringliteral}{"host"}] = \textcolor{stringliteral}{"\_hosts"};
+91   common[\textcolor{stringliteral}{"hostname"}] = \textcolor{stringliteral}{"\_hosts"};
+92   common[\textcolor{stringliteral}{"file"}] = \textcolor{stringliteral}{"\_files"};
+93   common[\textcolor{stringliteral}{"filename"}] = \textcolor{stringliteral}{"\_files"};
+94   common[\textcolor{stringliteral}{"user"}] = \textcolor{stringliteral}{"\_users"};
+95   common[\textcolor{stringliteral}{"username"}] = \textcolor{stringliteral}{"\_users"};
+96   common[\textcolor{stringliteral}{"directory"}] = \textcolor{stringliteral}{"\_directories"};
+97   common[\textcolor{stringliteral}{"path"}] = \textcolor{stringliteral}{"\_directories"};
+98   common[\textcolor{stringliteral}{"url"}] = \textcolor{stringliteral}{"\_urls"};
+99 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!basename@{basename}}
+\index{basename@{basename}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{basename}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::basename (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_a3fff80665ab8d6161de6451924c2b954}
+
+
+Definition at line 155 of file Zsh\+Completion\+Output.\+h.
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+156 \{
+157   \textcolor{keywordtype}{size\_t} p = s.find\_last\_of(\textcolor{charliteral}{'/'});
+158   \textcolor{keywordflow}{if} ( p != std::string::npos )
+159   \{
+160     s.erase(0, p + 1);
+161   \}
+162 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!failure@{failure}}
+\index{failure@{failure}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{failure}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::failure (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c, }
+\item[{{\bf Arg\+Exception} \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1ZshCompletionOutput_abcd0ba63a2ac7675d085877fc4d3e8cf}
+
+
+Prints (to stderr) an error message, short usage Can be overridden to produce alternative behavior. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+{\em e} & -\/ The \doxyref{Arg\+Exception}{p.}{classTCLAP_1_1ArgException} that caused the failure. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ad23a57ac3d8d957a4328fc78aec94e16}.
+
+
+
+Definition at line 129 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+Exception\+::what().
+
+
+\begin{DoxyCode}
+131 \{
+132   \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void}\textcolor{keyword}{>}(\_cmd); \textcolor{comment}{// unused}
+133   std::cout << e.what() << std::endl;
+134 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!get\+Mutex\+List@{get\+Mutex\+List}}
+\index{get\+Mutex\+List@{get\+Mutex\+List}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{get\+Mutex\+List}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::get\+Mutex\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{\+\_\+cmd, }
+\item[{{\bf Arg} $\ast$}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_af3fceb65fc2c22ae8cc3c1df8a503184}
+
+
+Definition at line 271 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::accepts\+Multiple\+Values(), T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+Char(), T\+C\+L\+A\+P\+::\+Arg\+::get\+Flag(), T\+C\+L\+A\+P\+::\+Arg\+::get\+Name(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Xor\+Handler(), T\+C\+L\+A\+P\+::\+Xor\+Handler\+::get\+Xor\+List(), and T\+C\+L\+A\+P\+::\+Arg\+::name\+Start\+String().
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+272 \{
+273   XorHandler xorHandler = \_cmd.getXorHandler();
+274   std::vector< std::vector<Arg*> > xorList = xorHandler.getXorList();
+275   
+276   \textcolor{keywordflow}{if} (a->getName() == \textcolor{stringliteral}{"help"} || a->getName() == \textcolor{stringliteral}{"version"})
+277   \{
+278     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"(-)"};
+279   \}
+280 
+281   std::ostringstream list;
+282   \textcolor{keywordflow}{if} ( a->acceptsMultipleValues() )
+283   \{
+284     list << \textcolor{charliteral}{'*'};
+285   \}
+286 
+287   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{int} i = 0; \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(i) < xorList.size(); i++ )
+288   \{
+289     \textcolor{keywordflow}{for} ( ArgVectorIterator it = xorList[i].begin();
+290       it != xorList[i].end();
+291       it++)
+292     \textcolor{keywordflow}{if} ( a == (*it) )
+293     \{
+294       list << \textcolor{charliteral}{'('};
+295       \textcolor{keywordflow}{for} ( ArgVectorIterator iu = xorList[i].begin();
+296         iu != xorList[i].end();
+297         iu++ )
+298       \{
+299         \textcolor{keywordtype}{bool} notCur = (*iu) != a;
+300         \textcolor{keywordtype}{bool} hasFlag = !(*iu)->getFlag().empty();
+301         \textcolor{keywordflow}{if} ( iu != xorList[i].begin() && (notCur || hasFlag) )
+302           list << \textcolor{charliteral}{' '};
+303         \textcolor{keywordflow}{if} (hasFlag)
+304           list << (*iu)->flagStartChar() << (*iu)->getFlag() << \textcolor{charliteral}{' '};
+305         \textcolor{keywordflow}{if} ( notCur || hasFlag )
+306           list << (*iu)->nameStartString() << (*iu)->getName();
+307       \}
+308       list << \textcolor{charliteral}{')'};
+309       \textcolor{keywordflow}{return} list.str();
+310     \}
+311   \}
+312   
+313   \textcolor{comment}{// wasn't found in xor list}
+314   \textcolor{keywordflow}{if} (!a->getFlag().empty()) \{
+315     list << \textcolor{stringliteral}{"("} << a->flagStartChar() << a->getFlag() << \textcolor{charliteral}{' '} <<
+316       a->nameStartString() << a->getName() << \textcolor{charliteral}{')'};
+317   \}
+318   
+319   \textcolor{keywordflow}{return} list.str();
+320 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!print\+Arg@{print\+Arg}}
+\index{print\+Arg@{print\+Arg}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{print\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Arg (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{it}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_a1d079ecf271977419432fb0caa72d035}
+
+
+Definition at line 164 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::accepts\+Multiple\+Values(), common, T\+C\+L\+A\+P\+::\+Arg\+::get\+Name(), and T\+C\+L\+A\+P\+::\+Arg\+::is\+Required().
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+165 \{
+166   \textcolor{keyword}{static} \textcolor{keywordtype}{int} count = 1;
+167 
+168   std::cout << \textcolor{stringliteral}{" \(\backslash\)\(\backslash\)"} << std::endl << \textcolor{stringliteral}{"  '"};
+169   \textcolor{keywordflow}{if} ( a->acceptsMultipleValues() )
+170     std::cout << \textcolor{charliteral}{'*'};
+171   \textcolor{keywordflow}{else}
+172     std::cout << count++;
+173   std::cout << \textcolor{charliteral}{':'};
+174   \textcolor{keywordflow}{if} ( !a->isRequired() )
+175     std::cout << \textcolor{charliteral}{':'};
+176 
+177   std::cout << a->getName() << \textcolor{charliteral}{':'};
+178   std::map<std::string, std::string>::iterator compArg = common.find(a->getName());
+179   \textcolor{keywordflow}{if} ( compArg != common.end() )
+180   \{
+181     std::cout << compArg->second;
+182   \}
+183   \textcolor{keywordflow}{else}
+184   \{
+185     std::cout << \textcolor{stringliteral}{"\_guard \(\backslash\)"^-*\(\backslash\)" "} << a->getName();
+186   \}
+187   std::cout << \textcolor{charliteral}{'\(\backslash\)''};
+188 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!print\+Option@{print\+Option}}
+\index{print\+Option@{print\+Option}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{print\+Option}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::print\+Option (
+\begin{DoxyParamCaption}
+\item[{{\bf Arg} $\ast$}]{it, }
+\item[{std\+::string}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_a33903e3aef02f50799726eb7789fb4d4}
+
+
+Definition at line 190 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References common, T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+Char(), T\+C\+L\+A\+P\+::\+Arg\+::get\+Description(), T\+C\+L\+A\+P\+::\+Arg\+::get\+Flag(), T\+C\+L\+A\+P\+::\+Arg\+::get\+Name(), T\+C\+L\+A\+P\+::\+Arg\+::is\+Value\+Required(), T\+C\+L\+A\+P\+::\+Arg\+::name\+Start\+String(), quote\+Special\+Chars(), T\+C\+L\+A\+P\+::\+Arg\+::short\+I\+D(), and the\+Delimiter.
+
+
+
+Referenced by usage().
+
+
+\begin{DoxyCode}
+191 \{
+192   std::string flag = a->flagStartChar() + a->getFlag();
+193   std::string name = a->nameStartString() + a->getName();
+194   std::string desc = a->getDescription();
+195 
+196   \textcolor{comment}{// remove full stop and capitalisation from description as}
+197   \textcolor{comment}{// this is the convention for zsh function}
+198   \textcolor{keywordflow}{if} (!desc.compare(0, 12, \textcolor{stringliteral}{"(required)  "}))
+199   \{
+200     desc.erase(0, 12);
+201   \}
+202   \textcolor{keywordflow}{if} (!desc.compare(0, 15, \textcolor{stringliteral}{"(OR required)  "}))
+203   \{
+204     desc.erase(0, 15);
+205   \}
+206   \textcolor{keywordtype}{size\_t} len = desc.length();
+207   \textcolor{keywordflow}{if} (len && desc.at(--len) == \textcolor{charliteral}{'.'})
+208   \{
+209     desc.erase(len);
+210   \}
+211   \textcolor{keywordflow}{if} (len)
+212   \{
+213     desc.replace(0, 1, 1, tolower(desc.at(0)));
+214   \}
+215 
+216   std::cout << \textcolor{stringliteral}{" \(\backslash\)\(\backslash\)"} << std::endl << \textcolor{stringliteral}{"  '"} << mutex;
+217 
+218   \textcolor{keywordflow}{if} ( a->getFlag().empty() )
+219   \{
+220     std::cout << name;
+221   \}
+222   \textcolor{keywordflow}{else}
+223   \{
+224     std::cout << \textcolor{stringliteral}{"'\{"} << flag << \textcolor{charliteral}{','} << name << \textcolor{stringliteral}{"\}'"};
+225   \}
+226   \textcolor{keywordflow}{if} ( theDelimiter == \textcolor{charliteral}{'='} && a->isValueRequired() )
+227     std::cout << \textcolor{stringliteral}{"=-"};
+228   quoteSpecialChars(desc);
+229   std::cout << \textcolor{charliteral}{'['} << desc << \textcolor{charliteral}{']'};
+230 
+231   \textcolor{keywordflow}{if} ( a->isValueRequired() )
+232   \{
+233     std::string arg = a->shortID();
+234     arg.erase(0, arg.find\_last\_of(theDelimiter) + 1);
+235     \textcolor{keywordflow}{if} ( arg.at(arg.length()-1) == \textcolor{charliteral}{']'} )
+236       arg.erase(arg.length()-1);
+237     \textcolor{keywordflow}{if} ( arg.at(arg.length()-1) == \textcolor{charliteral}{']'} )
+238     \{
+239       arg.erase(arg.length()-1);
+240     \}
+241     \textcolor{keywordflow}{if} ( arg.at(0) == \textcolor{charliteral}{'<'} )
+242     \{
+243       arg.erase(arg.length()-1);
+244       arg.erase(0, 1);
+245     \}
+246     \textcolor{keywordtype}{size\_t} p = arg.find(\textcolor{charliteral}{'|'});
+247     \textcolor{keywordflow}{if} ( p != std::string::npos )
+248     \{
+249       \textcolor{keywordflow}{do}
+250       \{
+251         arg.replace(p, 1, 1, \textcolor{charliteral}{' '});
+252       \}
+253       \textcolor{keywordflow}{while} ( (p = arg.find\_first\_of(\textcolor{charliteral}{'|'}, p)) != std::string::npos );
+254       quoteSpecialChars(arg);
+255       std::cout << \textcolor{stringliteral}{": :("} << arg << \textcolor{charliteral}{')'};
+256     \}
+257     \textcolor{keywordflow}{else}
+258     \{
+259       std::cout << \textcolor{charliteral}{':'} << arg;
+260       std::map<std::string, std::string>::iterator compArg = common.find(arg);
+261       \textcolor{keywordflow}{if} ( compArg != common.end() )
+262       \{
+263         std::cout << \textcolor{charliteral}{':'} << compArg->second;
+264       \}
+265     \}
+266   \}
+267 
+268   std::cout << \textcolor{charliteral}{'\(\backslash\)''};
+269 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!quote\+Special\+Chars@{quote\+Special\+Chars}}
+\index{quote\+Special\+Chars@{quote\+Special\+Chars}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{quote\+Special\+Chars}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::quote\+Special\+Chars (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_aacd678921212eb6654d7f704da360361}
+
+
+Definition at line 136 of file Zsh\+Completion\+Output.\+h.
+
+
+
+Referenced by print\+Option().
+
+
+\begin{DoxyCode}
+137 \{
+138   \textcolor{keywordtype}{size\_t} idx = s.find\_last\_of(\textcolor{charliteral}{':'});
+139   \textcolor{keywordflow}{while} ( idx != std::string::npos )
+140   \{
+141     s.insert(idx, 1, \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
+142     idx = s.find\_last\_of(\textcolor{charliteral}{':'}, idx);
+143   \}
+144   idx = s.find\_last\_of(\textcolor{charliteral}{'\(\backslash\)''});
+145   \textcolor{keywordflow}{while} ( idx != std::string::npos )
+146   \{
+147     s.insert(idx, \textcolor{stringliteral}{"'\(\backslash\)\(\backslash\)'"});
+148     \textcolor{keywordflow}{if} (idx == 0)
+149       idx = std::string::npos;
+150     \textcolor{keywordflow}{else}
+151       idx = s.find\_last\_of(\textcolor{charliteral}{'\(\backslash\)''}, --idx);
+152   \}
+153 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!usage@{usage}}
+\index{usage@{usage}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{usage}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::usage (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1ZshCompletionOutput_a3ea685b174fce7ddf2353129863b49d7}
+
+
+Prints the usage to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_a685b13db5bf6bbe5159e49169cd96bbe}.
+
+
+
+Definition at line 106 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References basename(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Arg\+List(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Delimiter(), get\+Mutex\+List(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Program\+Name(), T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Version(), print\+Arg(), print\+Option(), and the\+Delimiter.
+
+
+\begin{DoxyCode}
+107 \{
+108   std::list<Arg*> argList = \_cmd.getArgList();
+109   std::string progName = \_cmd.getProgramName();
+110   std::string xversion = \_cmd.getVersion();
+111   theDelimiter = \_cmd.getDelimiter();
+112   basename(progName);
+113 
+114   std::cout << \textcolor{stringliteral}{"#compdef "} << progName << std::endl << std::endl <<
+115     \textcolor{stringliteral}{"# "} << progName << \textcolor{stringliteral}{" version "} << \_cmd.getVersion() << std::endl << std::endl <<
+116     \textcolor{stringliteral}{"\_arguments -s -S"};
+117 
+118   \textcolor{keywordflow}{for} (ArgListIterator it = argList.begin(); it != argList.end(); it++)
+119   \{
+120     \textcolor{keywordflow}{if} ( (*it)->shortID().at(0) == \textcolor{charliteral}{'<'} )
+121       printArg((*it));
+122     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( (*it)->getFlag() != \textcolor{stringliteral}{"-"} )
+123       printOption((*it), getMutexList(\_cmd, *it));
+124   \}
+125 
+126   std::cout << std::endl;
+127 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!version@{version}}
+\index{version@{version}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::version (
+\begin{DoxyParamCaption}
+\item[{{\bf Cmd\+Line\+Interface} \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1ZshCompletionOutput_a543e705918d769d3d6f4090c403ed0c9}
+
+
+Prints the version to stdout. 
+
+Can be overridden to produce alternative behavior. 
+\begin{DoxyParams}{Parameters}
+{\em c} & -\/ The \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} object the output is generated for. \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Cmd\+Line\+Output} \doxyref{}{p.}{classTCLAP_1_1CmdLineOutput_ae052fea473132482296de55edb3dd480}.
+
+
+
+Definition at line 101 of file Zsh\+Completion\+Output.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::get\+Version().
+
+
+\begin{DoxyCode}
+102 \{
+103   std::cout << \_cmd.getVersion() << std::endl;
+104 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!common@{common}}
+\index{common@{common}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{common}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, std\+::string$>$ T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::common\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_aaa1f1d51a31c32ca28df97c951aaad81}
+
+
+Definition at line 82 of file Zsh\+Completion\+Output.\+h.
+
+
+
+Referenced by print\+Arg(), print\+Option(), and Zsh\+Completion\+Output().
+
+\index{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}!the\+Delimiter@{the\+Delimiter}}
+\index{the\+Delimiter@{the\+Delimiter}!T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output@{T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output}}
+\subsubsection[{the\+Delimiter}]{\setlength{\rightskip}{0pt plus 5cm}char T\+C\+L\+A\+P\+::\+Zsh\+Completion\+Output\+::the\+Delimiter\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1ZshCompletionOutput_a170dd4ecb233984f3e2b6f853c82b1b0}
+
+
+Definition at line 83 of file Zsh\+Completion\+Output.\+h.
+
+
+
+Referenced by print\+Option(), and usage().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Zsh\+Completion\+Output.\+h}\end{DoxyCompactItemize}

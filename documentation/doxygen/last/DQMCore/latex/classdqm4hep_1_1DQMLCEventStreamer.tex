@@ -1,0 +1,469 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+L\+C\+Event\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMLCEventStreamer}\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+L\+C\+Event\+Streamer}{p.}{classdqm4hep_1_1DQMLCEventStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+L\+C\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+L\+C\+Event\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMLCEventStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Event, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize the event and store it into a data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Event} $\ast$\&p\+Event, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em De-\/serialize the lcio event. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Object, const std\+::string \&sub\+Event\+Identifier, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Serialize the a part of the event and store it into a data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Collection\+Streamer\+Map} {\bf m\+\_\+lc\+Collection\+Streamer\+Map}
+\item 
+{\bf D\+Q\+M\+L\+C\+Parameters\+Streamer} {\bf m\+\_\+lc\+Parameters\+Streamer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+L\+C\+Event\+Streamer}{p.}{classdqm4hep_1_1DQMLCEventStreamer} class. 
+
+Definition at line 73 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!D\+Q\+M\+L\+C\+Event\+Streamer@{D\+Q\+M\+L\+C\+Event\+Streamer}}
+\index{D\+Q\+M\+L\+C\+Event\+Streamer@{D\+Q\+M\+L\+C\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{D\+Q\+M\+L\+C\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::\+D\+Q\+M\+L\+C\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCEventStreamer_ad22b961a639194339726642a84ad16c0}
+
+
+Constructor. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+\begin{DoxyCode}
+62 \{
+63   m_lcCollectionStreamerMap[EVENT::LCIO::LCGENERICOBJECT] = \textcolor{keyword}{new} DQMLCCollectionStreamer(
+      EVENT::LCIO::LCGENERICOBJECT, \textcolor{keyword}{new} DQMLCGenericObjectStreamer());
+64   m_lcCollectionStreamerMap[EVENT::LCIO::CALORIMETERHIT]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(
+      EVENT::LCIO::CALORIMETERHIT,  \textcolor{keyword}{new} DQMCalorimeterHitStreamer());
+65   m_lcCollectionStreamerMap[EVENT::LCIO::RAWCALORIMETERHIT]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(
+      EVENT::LCIO::RAWCALORIMETERHIT,  \textcolor{keyword}{new} DQMRawCalorimeterHitStreamer());
+66   m_lcCollectionStreamerMap[EVENT::LCIO::TPCHIT]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::TPCHIT,  \textcolor{keyword}{new} 
+      DQMTPCHitStreamer());
+67   m_lcCollectionStreamerMap[EVENT::LCIO::CLUSTER]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::CLUSTER,  \textcolor{keyword}{new}
+       DQMClusterStreamer());
+68   m_lcCollectionStreamerMap[EVENT::LCIO::PARTICLEID]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::PARTICLEID
+      ,  \textcolor{keyword}{new} DQMParticleIDStreamer());
+69   m_lcCollectionStreamerMap[EVENT::LCIO::LCFLOATVEC]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::LCFLOATVEC
+      ,  \textcolor{keyword}{new} DQMLCFloatVecStreamer());
+70   m_lcCollectionStreamerMap[EVENT::LCIO::LCINTVEC]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::LCINTVEC,  \textcolor{keyword}{
+      new} DQMLCIntVecStreamer());
+71   m_lcCollectionStreamerMap[EVENT::LCIO::LCSTRVEC]  = \textcolor{keyword}{new} DQMLCCollectionStreamer(EVENT::LCIO::LCSTRVEC,  \textcolor{keyword}{
+      new} DQMLCStrVecStreamer());
+72 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!````~D\+Q\+M\+L\+C\+Event\+Streamer@{$\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\index{````~D\+Q\+M\+L\+C\+Event\+Streamer@{$\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{$\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::$\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLCEventStreamer_aaeb019ba921d633876ba7fe62c9960c7}
+
+
+Destructor. 
+
+
+
+Definition at line 76 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References m\+\_\+lc\+Collection\+Streamer\+Map.
+
+
+\begin{DoxyCode}
+77 \{
+78   \textcolor{keywordflow}{for}(DQMLCCollectionStreamerMap::iterator iter = m_lcCollectionStreamerMap.begin() , endIter = 
+      m_lcCollectionStreamerMap.end() ;
+79       endIter != iter ; ++iter)
+80     \textcolor{keyword}{delete} iter->second;
+81 
+82   m_lcCollectionStreamerMap.clear();
+83 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$\&}]{p\+Event, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEventStreamer_a9f54db23849818556fe1c898d1019b17}
+
+
+De-\/serialize the lcio event. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMEventStreamer_a063e71f73dd06404b736438c3f42b602}.
+
+
+
+Definition at line 149 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::is\+Valid(), m\+\_\+lc\+Collection\+Streamer\+Map, m\+\_\+lc\+Parameters\+Streamer, P\+R\+O\+C\+E\+S\+S\+\_\+\+C\+O\+D\+E\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+R\+E\+T\+U\+R\+N, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Event\+::set\+Event(), and dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G.
+
+
+\begin{DoxyCode}
+150 \{
+151   pEvent = NULL;
+152 
+153   \textcolor{keywordflow}{if}(!pDataStream->isValid())
+154   \{
+155     streamlog\_out(WARNING) << \textcolor{stringliteral}{"Invalid buffer while deserializing a LCEvent !"} << std::endl;
+156     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+157   \}
+158 
+159   pEvent = \textcolor{keyword}{new} DQMLCEvent();
+160   IMPL::LCEventImpl *pTmpLCEvent = \textcolor{keyword}{new} IMPL::LCEventImpl();
+161 
+162   pEvent->setEvent<EVENT::LCEvent>(pTmpLCEvent);
+163 
+164   dqm_int runNumber = 0;
+165   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(runNumber));
+166   pTmpLCEvent->setRunNumber(runNumber);
+167 
+168   dqm_int eventNumber = 0;
+169   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(eventNumber));
+170   pTmpLCEvent->setEventNumber(eventNumber);
+171 
+172   std::string detectorName;
+173   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(detectorName));
+174   pTmpLCEvent->setDetectorName(detectorName);
+175 
+176   dqm_lint timeStamp = 0;
+177   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(timeStamp));
+178   pTmpLCEvent->setTimeStamp(timeStamp);
+179 
+180   dqm_double weight = 0.;
+181   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(weight));
+182   pTmpLCEvent->setWeight(weight);
+183 
+184   EVENT::LCParameters *pLCParameters = &pTmpLCEvent->parameters();
+185 
+186   PROCESS_CODE_IF_AND_RETURN(STATUS\_CODE\_SUCCESS, !=, m_lcParametersStreamer.
+      deserialize(pLCParameters, pDataStream),
+187     \textcolor{keyword}{delete} pEvent;
+188   );
+189 
+190   dqm_int nCollections = 0;
+191   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nCollections));
+192 
+193   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<nCollections ; i++)
+194   \{
+195     EVENT::LCCollection *pCollection = NULL;
+196 
+197     std::string collectionName;
+198     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(collectionName));
+199 
+200     std::string collectionType;
+201     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(collectionType));
+202 
+203     DQMLCCollectionStreamerMap::const\_iterator findIter = 
+      m_lcCollectionStreamerMap.find(collectionType);
+204 
+205     \textcolor{keywordflow}{if}(m_lcCollectionStreamerMap.end() == findIter)
+206     \{
+207       streamlog\_out(WARNING) << \textcolor{stringliteral}{"Couldn't deserialize collection of type '"} << collectionType << \textcolor{stringliteral}{"'. "} << 
+      std::endl
+208             << \textcolor{stringliteral}{"The serializer for this collection type is not yet implemented!"} << std::endl;
+209 
+210       \textcolor{keyword}{delete} pEvent;
+211 
+212       \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+213     \}
+214 
+215     PROCESS_CODE_IF_AND_RETURN(STATUS\_CODE\_SUCCESS, !=, findIter->second->deserialize(pCollection, 
+      pDataStream),
+216       \textcolor{keyword}{delete} pEvent;
+217     );
+218 
+219     pTmpLCEvent->addCollection(pCollection, collectionName);
+220   \}
+221 
+222   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+223 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEventStreamer_a308293cdebf98ee5dcfbad4c34f31d38}
+
+
+Serialize the event and store it into a data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMEventStreamer_a9f6ffa9b9977ca02564bb0c8cd248be4}.
+
+
+
+Definition at line 87 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+::get\+Event(), m\+\_\+lc\+Collection\+Streamer\+Map, m\+\_\+lc\+Parameters\+Streamer, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::serialize(), dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by serialize().
+
+
+\begin{DoxyCode}
+88 \{
+89   \textcolor{keywordflow}{if}(NULL == pEvent)
+90     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+91 
+92   EVENT::LCEvent *pLCEvent = pEvent->getEvent<EVENT::LCEvent>();
+93 
+94   \textcolor{keywordflow}{if}(NULL == pLCEvent)
+95     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+96 
+97   \textcolor{comment}{// start filling with event parameters}
+98   dqm_int runNumber = pLCEvent->getRunNumber();
+99   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(runNumber));
+100 
+101   dqm_int eventNumber = pLCEvent->getEventNumber();
+102   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(eventNumber));
+103 
+104   std::string detectorName = pLCEvent->getDetectorName();
+105   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(detectorName));
+106 
+107   dqm_lint timeStamp = pLCEvent->getTimeStamp();
+108   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(timeStamp));
+109 
+110   dqm_double weight = pLCEvent->getWeight();
+111   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(weight));
+112 
+113   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_lcParametersStreamer.serialize(&pLCEvent->parameters(), 
+      pDataStream));
+114 
+115   \textcolor{keyword}{const} std::vector<std::string> *collectionNames = pLCEvent->getCollectionNames();
+116 
+117   dqm_int nCollections = collectionNames->size();
+118   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nCollections));
+119 
+120   \textcolor{comment}{// write all collections if possible}
+121   \textcolor{keywordflow}{for}(std::vector<std::string>::const\_iterator iter = collectionNames->begin() , endIter = collectionNames
+      ->end() ;
+122       endIter != iter ; ++iter)
+123   \{
+124     EVENT::LCCollection *pCollection = pLCEvent->getCollection(*iter);
+125     DQMLCCollectionStreamerMap::const\_iterator findIter = 
+      m_lcCollectionStreamerMap.find(pCollection->getTypeName());
+126 
+127     \textcolor{keywordflow}{if}(m_lcCollectionStreamerMap.end() == findIter)
+128     \{
+129       streamlog\_out(WARNING) << \textcolor{stringliteral}{"Couldn't serialize collection of type '"} << pCollection->getTypeName() << \textcolor{stringliteral}{
+      "'. "} << std::endl
+130             << \textcolor{stringliteral}{"The serializer for this collection type is not yet implemented!"} << std::endl
+131             << \textcolor{stringliteral}{"Will skip this collection"} << std::endl;;
+132       \textcolor{keywordflow}{continue};
+133     \}
+134 
+135     std::string collectionName = (*iter);
+136     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(collectionName));
+137 
+138     std::string collectionType = pCollection->getTypeName();
+139     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(collectionType));
+140 
+141     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, findIter->second->serialize(pCollection, pDataStream));
+142   \}
+143 
+144   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+145 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Object, }
+\item[{const std\+::string \&}]{sub\+Event\+Identifier, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMLCEventStreamer_afabcb0328b2d2be0e9c08ef38a5c81f3}
+
+
+Serialize the a part of the event and store it into a data stream. 
+
+The sub event identifier is a string of the collection names concatenated with semi columns \+: \char`\"{}collection\+Name1\+:collection\+Name2\+:collection\+Name3\char`\"{} If the sub event identifier is empty the whole event is serialized 
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMEventStreamer_a015898c0d96bdbcb523fa54431fb2a45}.
+
+
+
+Definition at line 227 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+cc.
+
+
+
+References dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+D\+Q\+M\+Event\+::get\+Event(), m\+\_\+lc\+Collection\+Streamer\+Map, m\+\_\+lc\+Parameters\+Streamer, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+L\+C\+Parameters\+Streamer\+::serialize(), serialize(), dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::tokenize(), dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+\begin{DoxyCode}
+228 \{
+229   \textcolor{comment}{// no sub event queried -> serialize the whole event}
+230   \textcolor{keywordflow}{if}(subEventIdentifier.empty())
+231     \textcolor{keywordflow}{return} this->serialize(pEvent, pDataStream);
+232 
+233   \textcolor{comment}{// split the collection names separated by semi columns}
+234   StringVector collectionNames;
+235   DQM4HEP::tokenize(subEventIdentifier, collectionNames, \textcolor{stringliteral}{":"});
+236 
+237   \textcolor{keywordflow}{if}(collectionNames.empty())
+238     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+239 
+240   \textcolor{keywordflow}{if}(NULL == pEvent)
+241     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+242 
+243   EVENT::LCEvent *pLCEvent = pEvent->getEvent<EVENT::LCEvent>();
+244 
+245   \textcolor{keywordflow}{if}(NULL == pLCEvent)
+246     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+247 
+248   \textcolor{keyword}{const} std::vector<std::string> *pAvailableCollections = pLCEvent->getCollectionNames();
+249   StringVector serializeCollectionNames;
+250 
+251   \textcolor{keywordflow}{for}(StringVector::iterator iter = collectionNames.begin(), endIter = collectionNames.end() ;
+252       endIter != iter ; ++iter)
+253   \{
+254     \textcolor{keyword}{const} std::string &collectionName(*iter);
+255 
+256     \textcolor{keywordflow}{if}(std::find(pAvailableCollections->begin(), pAvailableCollections->end(), collectionName) != 
+      pAvailableCollections->end())
+257     \{
+258       serializeCollectionNames.push\_back(collectionName);
+259     \}
+260   \}
+261 
+262   collectionNames = serializeCollectionNames;
+263 
+264   \textcolor{keywordflow}{if}(collectionNames.empty())
+265   \{
+266     streamlog\_out(ERROR) << \textcolor{stringliteral}{"None of the specified collections is available. Couldn't serialize the event !
+      "} << std::endl;
+267     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+268   \}
+269 
+270   \textcolor{comment}{// start filling with event parameters}
+271   dqm_int runNumber = pLCEvent->getRunNumber();
+272   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(runNumber));
+273 
+274   dqm_int eventNumber = pLCEvent->getEventNumber();
+275   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(eventNumber));
+276 
+277   std::string detectorName = pLCEvent->getDetectorName();
+278   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(detectorName));
+279 
+280   dqm_lint timeStamp = pLCEvent->getTimeStamp();
+281   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(timeStamp));
+282 
+283   dqm_double weight = pLCEvent->getWeight();
+284   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(weight));
+285 
+286   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_lcParametersStreamer.serialize(&pLCEvent->parameters(), 
+      pDataStream));
+287 
+288   dqm_int nCollections = collectionNames.size();
+289   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(nCollections));
+290 
+291   \textcolor{keywordflow}{for}(std::vector<std::string>::const\_iterator iter = collectionNames.begin() , endIter = collectionNames.
+      end() ;
+292       endIter != iter ; ++iter)
+293   \{
+294     EVENT::LCCollection *pCollection = pLCEvent->getCollection(*iter);
+295     DQMLCCollectionStreamerMap::const\_iterator findIter = 
+      m_lcCollectionStreamerMap.find(pCollection->getTypeName());
+296 
+297     \textcolor{keywordflow}{if}(m_lcCollectionStreamerMap.end() == findIter)
+298     \{
+299       streamlog\_out(WARNING) << \textcolor{stringliteral}{"Couldn't serialize collection of type '"} << pCollection->getTypeName() << \textcolor{stringliteral}{
+      "'. "} << std::endl
+300             << \textcolor{stringliteral}{"The serializer for this collection type is not yet implemented!"} << std::endl;
+301 
+302       \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+303     \}
+304 
+305     std::string collectionName = (*iter);
+306     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(collectionName));
+307 
+308     std::string collectionType = pCollection->getTypeName();
+309     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(collectionType));
+310 
+311     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, findIter->second->serialize(pCollection, pDataStream));
+312   \}
+313 
+314   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+315 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!m\+\_\+lc\+Collection\+Streamer\+Map@{m\+\_\+lc\+Collection\+Streamer\+Map}}
+\index{m\+\_\+lc\+Collection\+Streamer\+Map@{m\+\_\+lc\+Collection\+Streamer\+Map}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{m\+\_\+lc\+Collection\+Streamer\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+L\+C\+Collection\+Streamer\+Map} dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::m\+\_\+lc\+Collection\+Streamer\+Map\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLCEventStreamer_a635756f66e74d97e5aa822fd5a2f4e09}
+
+
+Definition at line 101 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+Referenced by deserialize(), serialize(), and $\sim$\+D\+Q\+M\+L\+C\+Event\+Streamer().
+
+\index{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}!m\+\_\+lc\+Parameters\+Streamer@{m\+\_\+lc\+Parameters\+Streamer}}
+\index{m\+\_\+lc\+Parameters\+Streamer@{m\+\_\+lc\+Parameters\+Streamer}!dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer}}
+\subsubsection[{m\+\_\+lc\+Parameters\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+L\+C\+Parameters\+Streamer} dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::m\+\_\+lc\+Parameters\+Streamer\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLCEventStreamer_a43ae54799ed95237dba966baaaa0ccd9}
+
+
+Definition at line 102 of file D\+Q\+M\+L\+C\+Event\+Streamer.\+h.
+
+
+
+Referenced by deserialize(), and serialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+h}\item 
+{\bf D\+Q\+M\+L\+C\+Event\+Streamer.\+cc}\end{DoxyCompactItemize}

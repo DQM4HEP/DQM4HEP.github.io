@@ -1,0 +1,827 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Run\+Control\+Service Class Reference}
+\label{classdqm4hep_1_1DQMRunControlService}\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+
+
+\doxyref{D\+Q\+M\+Run\+Control\+Service}{p.}{classdqm4hep_1_1DQMRunControlService} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Run\+Control\+Service.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Service} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Run\+Control\+Service} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start} ()
+\begin{DoxyCompactList}\small\item\em Start the service. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the service. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf pause} ()
+\begin{DoxyCompactList}\small\item\em Pause the service until restart is called. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf restart} ()
+\begin{DoxyCompactList}\small\item\em Restart the service. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+State} {\bf get\+State} () const 
+\begin{DoxyCompactList}\small\item\em Get the service state. \end{DoxyCompactList}\item 
+bool {\bf is\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Whether the service is running. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf set\+Run\+Control\+Name} (const std\+::string \&run\+Control\+Name)
+\begin{DoxyCompactList}\small\item\em Set the run control name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Run\+Control\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the run control name. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+New\+Run} (unsigned int run\+Number, const std\+::string \&description=\char`\"{}\char`\"{}, const std\+::string \&detector\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a new run. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+New\+Run} ({\bf D\+Q\+M\+Run} $\ast$p\+Run)
+\begin{DoxyCompactList}\small\item\em Create a new run. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf end\+Current\+Run} ()
+\begin{DoxyCompactList}\small\item\em End the current run. \end{DoxyCompactList}\item 
+int {\bf get\+Current\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Get the current run number. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+State} {\bf get\+Run\+State} () const 
+\begin{DoxyCompactList}\small\item\em Get the run state (running or not) \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Run} $\ast$ {\bf get\+Current\+Run} () const 
+\begin{DoxyCompactList}\small\item\em Get the current run. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Current\+Run\+Rpc} (Dim\+Rpc $\ast$p\+Rpc)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\+\_\+current\+Run\+Number}
+\item 
+{\bf D\+Q\+M\+State} {\bf m\+\_\+service\+State}
+\item 
+{\bf D\+Q\+M\+Run\+Control} $\ast$ {\bf m\+\_\+p\+Run\+Control}
+\item 
+std\+::string {\bf m\+\_\+run\+Control\+Name}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+Start\+Of\+Run\+Service}
+\item 
+Dim\+Service $\ast$ {\bf m\+\_\+p\+End\+Of\+Run\+Service}
+\item 
+Dim\+Rpc $\ast$ {\bf m\+\_\+p\+Current\+Run\+Rpc}
+\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\item 
+{\bf dqm\+\_\+char} $\ast$ {\bf m\+\_\+p\+Run\+Buffer}
+\item 
+{\bf dqm\+\_\+uint} {\bf m\+\_\+run\+Buffer\+Size}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Current\+Run\+Rpc}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Run\+Control\+Service}{p.}{classdqm4hep_1_1DQMRunControlService} class. 
+
+Definition at line 72 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!D\+Q\+M\+Run\+Control\+Service@{D\+Q\+M\+Run\+Control\+Service}}
+\index{D\+Q\+M\+Run\+Control\+Service@{D\+Q\+M\+Run\+Control\+Service}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{D\+Q\+M\+Run\+Control\+Service}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::\+D\+Q\+M\+Run\+Control\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_ad30108f2859bcd4819dd449def69a730}
+
+
+Constructor. 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References m\+\_\+p\+Run\+Control.
+
+
+\begin{DoxyCode}
+53                                            :
+54     m_currentRunNumber(-1),
+55     m_serviceState(STOPPED\_STATE),
+56     m_pStartOfRunService(NULL),
+57     m_pEndOfRunService(NULL),
+58     m_pRunControl(NULL),
+59     m_pCurrentRunRpc(NULL),
+60     m_runControlName(\textcolor{stringliteral}{"DEFAULT"}),
+61     m_dataStream(1024)
+62 \{
+63   m_pRunControl = \textcolor{keyword}{new} DQMRunControl();
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!````~D\+Q\+M\+Run\+Control\+Service@{$\sim$\+D\+Q\+M\+Run\+Control\+Service}}
+\index{````~D\+Q\+M\+Run\+Control\+Service@{$\sim$\+D\+Q\+M\+Run\+Control\+Service}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Run\+Control\+Service}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::$\sim$\+D\+Q\+M\+Run\+Control\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a0ee9142422796955bd989d5e2fcb8cd8}
+
+
+Destructor. 
+
+
+
+Definition at line 68 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Run\+State(), is\+Running(), m\+\_\+p\+Run\+Buffer, m\+\_\+p\+Run\+Control, and stop().
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{if}(isRunning())
+71   \{
+72     \textcolor{keywordflow}{if}(RUNNING\_STATE == m_pRunControl->getRunState())
+73       endCurrentRun();
+74 
+75     stop();
+76   \}
+77 
+78   \textcolor{keyword}{delete} m_pRunControl;
+79 
+80   \textcolor{keywordflow}{if}(m_pRunBuffer)
+81     \textcolor{keyword}{delete} [] m_pRunBuffer;
+82 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!end\+Current\+Run@{end\+Current\+Run}}
+\index{end\+Current\+Run@{end\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{end\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a669f4aaebcffa4ec4688e6aeac940471}
+
+
+End the current run. 
+
+
+
+Definition at line 194 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), get\+Run\+State(), is\+Running(), m\+\_\+current\+Run\+Number, m\+\_\+data\+Stream, m\+\_\+p\+End\+Of\+Run\+Service, m\+\_\+p\+Run\+Control, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), and dqm4hep\+::\+D\+Q\+M\+Run\+::set\+End\+Time().
+
+
+
+Referenced by start\+New\+Run(), and $\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+
+\begin{DoxyCode}
+195 \{
+196   \textcolor{keywordflow}{if}(!isRunning())
+197     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+198 
+199   \textcolor{keywordflow}{if}(RUNNING\_STATE != getRunState())
+200     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+201 
+202   m_currentRunNumber = -1;
+203 
+204   m_pRunControl->getCurrentRun()->setEndTime(time(0));
+205 
+206   m_dataStream.reset();
+207   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->getCurrentRun()->
+      serialize(&m_dataStream));
+208 
+209   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->endCurrentRun());
+210 
+211   m_pEndOfRunService->updateService(m_dataStream.getBuffer(), m_dataStream.
+      getBufferSize());
+212 
+213   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+214 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!get\+Current\+Run@{get\+Current\+Run}}
+\index{get\+Current\+Run@{get\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{get\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run} $\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Current\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_a2266c31f474c3210ac289076b6c22dad}
+
+
+Get the current run. 
+
+Return N\+U\+L\+L if not running 
+
+Definition at line 265 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), and m\+\_\+p\+Run\+Control.
+
+
+\begin{DoxyCode}
+266 \{
+267   \textcolor{keywordflow}{return} m_pRunControl->getCurrentRun();
+268 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!get\+Current\+Run\+Number@{get\+Current\+Run\+Number}}
+\index{get\+Current\+Run\+Number@{get\+Current\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{get\+Current\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Current\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_a7c43146c92e6fd93411408df28b47c0a}
+
+
+Get the current run number. 
+
+
+
+Definition at line 218 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References m\+\_\+current\+Run\+Number.
+
+
+\begin{DoxyCode}
+219 \{
+220   \textcolor{keywordflow}{return} m_currentRunNumber;
+221 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!get\+Run\+Control\+Name@{get\+Run\+Control\+Name}}
+\index{get\+Run\+Control\+Name@{get\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{get\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_a6a7d40b1e7a6a8eb52d393729053e3ab}
+
+
+Get the run control name. 
+
+
+
+Definition at line 258 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References m\+\_\+run\+Control\+Name.
+
+
+\begin{DoxyCode}
+259 \{
+260   \textcolor{keywordflow}{return} m_runControlName;
+261 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!get\+Run\+State@{get\+Run\+State}}
+\index{get\+Run\+State@{get\+Run\+State}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{get\+Run\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Run\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_aea7cabbb534f861543c57899adb09d75}
+
+
+Get the run state (running or not) 
+
+
+
+Definition at line 225 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Run\+State(), and m\+\_\+p\+Run\+Control.
+
+
+
+Referenced by end\+Current\+Run(), and start\+New\+Run().
+
+
+\begin{DoxyCode}
+226 \{
+227   \textcolor{keywordflow}{return} m_pRunControl->getRunState();
+228 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{get\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_a1aa172fd04d8b3f6d8cc1cb886f93394}
+
+
+Get the service state. 
+
+See D\+Q\+M\+State enum (\doxyref{D\+Q\+M4\+H\+E\+P.\+h}{p.}{DQM4HEP_8h}) 
+
+Definition at line 239 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References m\+\_\+service\+State.
+
+
+\begin{DoxyCode}
+240 \{
+241   \textcolor{keywordflow}{return} m_serviceState;
+242 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!handle\+Current\+Run\+Rpc@{handle\+Current\+Run\+Rpc}}
+\index{handle\+Current\+Run\+Rpc@{handle\+Current\+Run\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{handle\+Current\+Run\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc (
+\begin{DoxyParamCaption}
+\item[{Dim\+Rpc $\ast$}]{p\+Rpc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_a8bb36d0f8aec193f6de3b6c94bdf7e3b}
+
+
+Definition at line 272 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), is\+Running(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::is\+Running(), m\+\_\+data\+Stream, m\+\_\+p\+Run\+Control, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+Status\+Code\+Exception\+::to\+String().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+::rpc\+Handler().
+
+
+\begin{DoxyCode}
+273 \{
+274   \textcolor{keywordflow}{if}(!this->isRunning())
+275     \textcolor{keywordflow}{return};
+276 
+277   std::cout << \textcolor{stringliteral}{"Handling current run rpc !"} << std::endl;
+278 
+279   \textcolor{keywordflow}{try}
+280   \{
+281     \textcolor{comment}{// if running send the current run}
+282     \textcolor{comment}{// else send back an empty run}
+283     \textcolor{keywordflow}{if}(m_pRunControl->isRunning())
+284     \{
+285       \textcolor{comment}{// stream}
+286       m_dataStream.reset();
+287       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->getCurrentRun()->
+      serialize(&m_dataStream));
+288 
+289       \textcolor{comment}{// send back current run}
+290       pRpc->setData( (\textcolor{keywordtype}{void} *) m_dataStream.getBuffer() , m_dataStream.
+      getBufferSize() );
+291 
+292       \textcolor{comment}{// reset}
+293       m_dataStream.reset();
+294     \}
+295     \textcolor{keywordflow}{else}
+296     \{
+297       DQMRun emptyRun;
+298 
+299       \textcolor{comment}{// stream}
+300       m_dataStream.reset();
+301       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, emptyRun.serialize(&m_dataStream));
+302 
+303       \textcolor{comment}{// send back empty run}
+304       pRpc->setData( (\textcolor{keywordtype}{void} *) m_dataStream.getBuffer() , m_dataStream.
+      getBufferSize() );
+305 
+306       \textcolor{comment}{// reset}
+307       m_dataStream.reset();
+308     \}
+309   \}
+310   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+311   \{
+312     std::cout << \textcolor{stringliteral}{"Couldn't send back current run : "} << exception.toString() << std::endl;
+313   \}
+314 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControlService_a42c114e41b83cae50186a3fd49f75074}
+
+
+Whether the service is running. 
+
+
+
+Definition at line 232 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References m\+\_\+service\+State.
+
+
+
+Referenced by end\+Current\+Run(), handle\+Current\+Run\+Rpc(), restart(), set\+Run\+Control\+Name(), start(), start\+New\+Run(), stop(), and $\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+
+\begin{DoxyCode}
+233 \{
+234   \textcolor{keywordflow}{return} (m_serviceState == RUNNING\_STATE);
+235 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!pause@{pause}}
+\index{pause@{pause}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a7713f7c5439591994de1be7bdbde7a37}
+
+
+Pause the service until restart is called. 
+
+
+
+Definition at line 124 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References stop().
+
+
+\begin{DoxyCode}
+125 \{
+126   \textcolor{keywordflow}{return} stop();
+127 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!restart@{restart}}
+\index{restart@{restart}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a7f302c80970bd7b9d4765a4cb90495d6}
+
+
+Restart the service. 
+
+
+
+Definition at line 131 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References is\+Running(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, start(), and stop().
+
+
+\begin{DoxyCode}
+132 \{
+133   \textcolor{keywordflow}{if}(isRunning())
+134   \{
+135     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, stop());
+136     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, start());
+137 
+138     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+139   \}
+140   \textcolor{keywordflow}{else}
+141   \{
+142     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, start());
+143 
+144     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+145   \}
+146 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!set\+Run\+Control\+Name@{set\+Run\+Control\+Name}}
+\index{set\+Run\+Control\+Name@{set\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{set\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::set\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{run\+Control\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_aea77c0080915ac66c533dd8fff0559bf}
+
+
+Set the run control name. 
+
+
+
+Definition at line 246 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References is\+Running(), and m\+\_\+run\+Control\+Name.
+
+
+\begin{DoxyCode}
+247 \{
+248   \textcolor{keywordflow}{if}(isRunning())
+249     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_ALLOWED;
+250 
+251   m_runControlName = runControlName;
+252 
+253   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+254 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!start@{start}}
+\index{start@{start}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a3d742f1b54fe76db1d98a6867836e2f0}
+
+
+Start the service. 
+
+
+
+Definition at line 86 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References D\+Q\+M\+Current\+Run\+Rpc, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), is\+Running(), m\+\_\+data\+Stream, m\+\_\+p\+Current\+Run\+Rpc, m\+\_\+p\+End\+Of\+Run\+Service, m\+\_\+p\+Start\+Of\+Run\+Service, m\+\_\+run\+Control\+Name, and m\+\_\+service\+State.
+
+
+
+Referenced by restart().
+
+
+\begin{DoxyCode}
+87 \{
+88   \textcolor{keywordflow}{if}(isRunning())
+89     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_INITIALIZED;
+90 
+91   std::string sorServiceName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + m_runControlName + \textcolor{stringliteral}{"/START\_OF\_RUN"};
+92   std::string eorServiceName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + m_runControlName + \textcolor{stringliteral}{"/END\_OF\_RUN"};
+93   std::string currentRunRpcName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + m_runControlName + \textcolor{stringliteral}{"/CURRENT\_RUN"};
+94 
+95   m_pStartOfRunService = \textcolor{keyword}{new} DimService(sorServiceName.c\_str(), \textcolor{stringliteral}{"C"}, (\textcolor{keywordtype}{void}*) 
+      m_dataStream.getBuffer(), m_dataStream.getBufferSize());
+96   m_pEndOfRunService   = \textcolor{keyword}{new} DimService(eorServiceName.c\_str(), \textcolor{stringliteral}{"C"}, (\textcolor{keywordtype}{void}*) 
+      m_dataStream.getBuffer(), m_dataStream.getBufferSize());
+97   m_pCurrentRunRpc = \textcolor{keyword}{new} DQMCurrentRunRpc( (\textcolor{keywordtype}{char} *) currentRunRpcName.c\_str(), \textcolor{keyword}{this});
+98 
+99   m_serviceState = RUNNING\_STATE;
+100 
+101   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+102 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!start\+New\+Run@{start\+New\+Run}}
+\index{start\+New\+Run@{start\+New\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{start\+New\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{run\+Number, }
+\item[{const std\+::string \&}]{description = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{detector\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a19c630660a2a997ecfb7d2eb4639ef6d}
+
+
+Create a new run. 
+
+End the current run if there is one. 
+
+Definition at line 150 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), get\+Run\+State(), is\+Running(), m\+\_\+current\+Run\+Number, m\+\_\+data\+Stream, m\+\_\+p\+Run\+Control, m\+\_\+p\+Start\+Of\+Run\+Service, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+151 \{
+152   \textcolor{keywordflow}{if}(!isRunning())
+153     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+154 
+155   \textcolor{keywordflow}{if}(RUNNING\_STATE == getRunState())
+156     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, endCurrentRun());
+157 
+158   m_currentRunNumber = runNumber;
+159   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->startNewRun(
+      m_currentRunNumber, description, detectorName));
+160 
+161   m_dataStream.reset();
+162   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->getCurrentRun()->
+      serialize(&m_dataStream));
+163 
+164   m_pStartOfRunService->updateService(m_dataStream.getBuffer(), m_dataStream.
+      getBufferSize());
+165   m_dataStream.reset();
+166 
+167   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+168 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!start\+New\+Run@{start\+New\+Run}}
+\index{start\+New\+Run@{start\+New\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{start\+New\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Run} $\ast$}]{p\+Run}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_a5cda58ca315da6de690287ad9dd20258}
+
+
+Create a new run. 
+
+End the current run if there is one. 
+
+Definition at line 172 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::get\+Buffer\+Size(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Run\+Number(), get\+Run\+State(), is\+Running(), m\+\_\+current\+Run\+Number, m\+\_\+data\+Stream, m\+\_\+p\+Run\+Control, m\+\_\+p\+Start\+Of\+Run\+Service, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Run\+::serialize(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+173 \{
+174   \textcolor{keywordflow}{if}(!isRunning())
+175     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+176 
+177   \textcolor{keywordflow}{if}(RUNNING\_STATE == getRunState())
+178     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, endCurrentRun());
+179 
+180   m_currentRunNumber = pRun->getRunNumber();
+181   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->startNewRun(pRun));
+182 
+183   m_dataStream.reset();
+184   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControl->getCurrentRun()->
+      serialize(&m_dataStream));
+185 
+186   m_pStartOfRunService->updateService(m_dataStream.getBuffer(), m_dataStream.
+      getBufferSize());
+187   m_dataStream.reset();
+188 
+189   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+190 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!stop@{stop}}
+\index{stop@{stop}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControlService_abae79f836b1463000b9aeeab04c2b6b4}
+
+
+Stop the service. 
+
+Remove all connections and clean up the service. Use pause to stop the service temporarily. 
+
+Definition at line 106 of file D\+Q\+M\+Run\+Control\+Service.\+cc.
+
+
+
+References is\+Running(), m\+\_\+p\+End\+Of\+Run\+Service, m\+\_\+p\+Start\+Of\+Run\+Service, and m\+\_\+service\+State.
+
+
+
+Referenced by pause(), restart(), and $\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+
+\begin{DoxyCode}
+107 \{
+108   \textcolor{keywordflow}{if}(!isRunning())
+109     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+110 
+111   \textcolor{keyword}{delete} m_pStartOfRunService;
+112   \textcolor{keyword}{delete} m_pEndOfRunService;
+113 
+114   m_pStartOfRunService = NULL;
+115   m_pEndOfRunService = NULL;
+116 
+117   m_serviceState = STOPPED\_STATE;
+118 
+119   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+120 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!D\+Q\+M\+Current\+Run\+Rpc@{D\+Q\+M\+Current\+Run\+Rpc}}
+\index{D\+Q\+M\+Current\+Run\+Rpc@{D\+Q\+M\+Current\+Run\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{D\+Q\+M\+Current\+Run\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Current\+Run\+Rpc}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMRunControlService_a02c95441c13c70056eef8cb6a5fd53f3}
+
+
+Definition at line 165 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by start().
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+current\+Run\+Number@{m\+\_\+current\+Run\+Number}}
+\index{m\+\_\+current\+Run\+Number@{m\+\_\+current\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+current\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+current\+Run\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_aeef7351a34d4c513931f245c45b81762}
+
+
+Definition at line 150 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by end\+Current\+Run(), get\+Current\+Run\+Number(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_ab0aa058156481ea5abb87cdf87137834}
+
+
+Definition at line 160 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by end\+Current\+Run(), handle\+Current\+Run\+Rpc(), start(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+p\+Current\+Run\+Rpc@{m\+\_\+p\+Current\+Run\+Rpc}}
+\index{m\+\_\+p\+Current\+Run\+Rpc@{m\+\_\+p\+Current\+Run\+Rpc}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+p\+Current\+Run\+Rpc}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Rpc$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+p\+Current\+Run\+Rpc\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_aa6a633f67f6ed2375aa996516ada60c7}
+
+
+Definition at line 158 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by start().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+p\+End\+Of\+Run\+Service@{m\+\_\+p\+End\+Of\+Run\+Service}}
+\index{m\+\_\+p\+End\+Of\+Run\+Service@{m\+\_\+p\+End\+Of\+Run\+Service}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+p\+End\+Of\+Run\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+p\+End\+Of\+Run\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_a8a878f3ca173fa0343338b76c10813ac}
+
+
+Definition at line 157 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by end\+Current\+Run(), start(), and stop().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+p\+Run\+Buffer@{m\+\_\+p\+Run\+Buffer}}
+\index{m\+\_\+p\+Run\+Buffer@{m\+\_\+p\+Run\+Buffer}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+p\+Run\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+char}$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+p\+Run\+Buffer\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_aad10824d44bce995065bde6b398c16fb}
+
+
+Definition at line 162 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by $\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+p\+Run\+Control@{m\+\_\+p\+Run\+Control}}
+\index{m\+\_\+p\+Run\+Control@{m\+\_\+p\+Run\+Control}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+p\+Run\+Control}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run\+Control}$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+p\+Run\+Control\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_aae11a41799dbb0e05eda1e12e0523ee3}
+
+
+Definition at line 152 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by D\+Q\+M\+Run\+Control\+Service(), end\+Current\+Run(), get\+Current\+Run(), get\+Run\+State(), handle\+Current\+Run\+Rpc(), start\+New\+Run(), and $\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+p\+Start\+Of\+Run\+Service@{m\+\_\+p\+Start\+Of\+Run\+Service}}
+\index{m\+\_\+p\+Start\+Of\+Run\+Service@{m\+\_\+p\+Start\+Of\+Run\+Service}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+p\+Start\+Of\+Run\+Service}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Service$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+p\+Start\+Of\+Run\+Service\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_acbddb5b92e366c31edd7d1456f3897c3}
+
+
+Definition at line 156 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by start(), start\+New\+Run(), and stop().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+run\+Buffer\+Size@{m\+\_\+run\+Buffer\+Size}}
+\index{m\+\_\+run\+Buffer\+Size@{m\+\_\+run\+Buffer\+Size}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+run\+Buffer\+Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dqm\+\_\+uint} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+run\+Buffer\+Size\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_a5623108d86e633f42fb91315d57313c6}
+
+
+Definition at line 163 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}}
+\index{m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+run\+Control\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_a3fd3d6afcefeaf17106f027c22bb9ea9}
+
+
+Definition at line 154 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by get\+Run\+Control\+Name(), set\+Run\+Control\+Name(), and start().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}!m\+\_\+service\+State@{m\+\_\+service\+State}}
+\index{m\+\_\+service\+State@{m\+\_\+service\+State}!dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service@{dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service}}
+\subsubsection[{m\+\_\+service\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::m\+\_\+service\+State\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMRunControlService_a79c97f88aa83a164092db8940d865a6d}
+
+
+Definition at line 151 of file D\+Q\+M\+Run\+Control\+Service.\+h.
+
+
+
+Referenced by get\+State(), is\+Running(), start(), and stop().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Service.\+h}\item 
+{\bf D\+Q\+M\+Run\+Control\+Service.\+cc}\end{DoxyCompactItemize}

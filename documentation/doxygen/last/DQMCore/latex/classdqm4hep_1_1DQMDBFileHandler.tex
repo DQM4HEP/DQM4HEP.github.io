@@ -1,0 +1,314 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+D\+B\+File\+Handler Class Reference}
+\label{classdqm4hep_1_1DQMDBFileHandler}\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+
+
+\doxyref{D\+Q\+M\+D\+B\+File\+Handler}{p.}{classdqm4hep_1_1DQMDBFileHandler} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+D\+B\+File\+Handler.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+D\+B\+File\+Handler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMDBFileHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+D\+B\+File\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+D\+B\+File\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf type} () const 
+\begin{DoxyCompactList}\small\item\em Get the file handler type as string. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf download} (const std\+::string \&pattern)
+\begin{DoxyCompactList}\small\item\em Download the file locally using the target pattern. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Local\+File\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the full file name after the download step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+D\+B\+Interface} $\ast$ {\bf m\+\_\+p\+D\+B\+Interface}
+\item 
+std\+::string {\bf m\+\_\+type}
+\item 
+std\+::string {\bf m\+\_\+local\+File\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+D\+B\+File\+Handler}{p.}{classdqm4hep_1_1DQMDBFileHandler} class. 
+
+Definition at line 41 of file D\+Q\+M\+D\+B\+File\+Handler.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!D\+Q\+M\+D\+B\+File\+Handler@{D\+Q\+M\+D\+B\+File\+Handler}}
+\index{D\+Q\+M\+D\+B\+File\+Handler@{D\+Q\+M\+D\+B\+File\+Handler}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{D\+Q\+M\+D\+B\+File\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::\+D\+Q\+M\+D\+B\+File\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBFileHandler_afa9537d684b7d1a3eb5b43072a084082}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+D\+B\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+p\+D\+B\+Interface.
+
+
+\begin{DoxyCode}
+38                                    :
+39     m_type(\textcolor{stringliteral}{"db"})
+40 \{
+41   m_pDBInterface = \textcolor{keyword}{new} DQMDBInterface();
+42 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!````~D\+Q\+M\+D\+B\+File\+Handler@{$\sim$\+D\+Q\+M\+D\+B\+File\+Handler}}
+\index{````~D\+Q\+M\+D\+B\+File\+Handler@{$\sim$\+D\+Q\+M\+D\+B\+File\+Handler}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{$\sim$\+D\+Q\+M\+D\+B\+File\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::$\sim$\+D\+Q\+M\+D\+B\+File\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDBFileHandler_ab565c76f78c107d6598e933c618f8be1}
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+D\+B\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+p\+D\+B\+Interface.
+
+
+\begin{DoxyCode}
+47 \{
+48   \textcolor{keyword}{delete} m_pDBInterface;
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!download@{download}}
+\index{download@{download}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{download}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::download (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{pattern}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDBFileHandler_a598f1400a750b95348169db1337cfb5f}
+
+
+Download the file locally using the target pattern. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_afc41f890cb9390e88fb0c79a991cc270}.
+
+
+
+Definition at line 60 of file D\+Q\+M\+D\+B\+File\+Handler.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::connect(), dqm4hep\+::\+D\+E\+B\+U\+G, dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::disconnect(), dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::is\+Connected(), m\+\_\+local\+File\+Name, m\+\_\+p\+D\+B\+Interface, dqm4hep\+::\+D\+Q\+M\+D\+B\+Interface\+::query\+Config\+File\+Content(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+61 \{
+62   streamlog\_out(ERROR) << \textcolor{stringliteral}{"DQMDBFileHandler: Performing download step ... "} << std::endl;
+63 
+64   m_localFileName = \textcolor{stringliteral}{""};
+65 
+66   \textcolor{keywordflow}{if}(pattern.empty())
+67     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+68 
+69   \textcolor{comment}{// pattern is :}
+70   \textcolor{comment}{// "HOST:hostname:USER:username:PWD=password:FILE=filename"}
+71   \textcolor{keywordtype}{size\_t} hostStart = pattern.find(\textcolor{stringliteral}{"HOST"});
+72   \textcolor{keywordtype}{size\_t} userStart = pattern.find(\textcolor{stringliteral}{"USER"});
+73   \textcolor{keywordtype}{size\_t} pwdStart = pattern.find(\textcolor{stringliteral}{"PWD"});
+74   \textcolor{keywordtype}{size\_t} fileStart = pattern.find(\textcolor{stringliteral}{"FILE"});
+75 
+76   \textcolor{keywordtype}{bool} invalidPattern = hostStart != 0
+77   || hostStart == std::string::npos
+78   || userStart == std::string::npos
+79   || pwdStart == std::string::npos
+80   || fileStart == std::string::npos;
+81 
+82   \textcolor{keywordflow}{if}(!invalidPattern)
+83   \{
+84     \textcolor{keywordflow}{if}(hostStart > userStart
+85     || userStart > pwdStart
+86     || pwdStart > fileStart)
+87       invalidPattern = \textcolor{keyword}{true};
+88   \}
+89 
+90   \textcolor{keywordflow}{if}(invalidPattern)
+91   \{
+92     streamlog\_out(ERROR) << \textcolor{stringliteral}{"DQMDBFileHandler: Invalid pattern => "} << pattern << std::endl;
+93     streamlog\_out(ERROR) << \textcolor{stringliteral}{"Expected pattern : 'HOST=hostname:USER=username:PWD=password:FILE=filename'"} <
+      < std::endl;
+94 
+95     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+96   \}
+97 
+98   \textcolor{keyword}{const} std::string host = pattern.substr(5, userStart-1-5);
+99   \textcolor{keyword}{const} std::string user = pattern.substr(userStart+5, pwdStart-1-userStart-5);
+100   \textcolor{keyword}{const} std::string password = pattern.substr(pwdStart+4, fileStart-1-pwdStart-4);
+101   \textcolor{keyword}{const} std::string fileName = pattern.substr(fileStart+5);
+102 
+103   streamlog\_out(DEBUG) << \textcolor{stringliteral}{"host : "} << host << std::endl;
+104   streamlog\_out(DEBUG) << \textcolor{stringliteral}{"user : "} << user << std::endl;
+105   streamlog\_out(DEBUG) << \textcolor{stringliteral}{"password : "} << password << std::endl;
+106   streamlog\_out(DEBUG) << \textcolor{stringliteral}{"fileName : "} << fileName << std::endl;
+107 
+108   \textcolor{keywordflow}{if}(m_pDBInterface->isConnected())
+109     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pDBInterface->disconnect());
+110 
+111   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pDBInterface->connect(host, user, password, \textcolor{stringliteral}{"DQM4HEP"}));
+112 
+113   std::string fileContents;
+114   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pDBInterface->
+      queryConfigFileContent(fileName, fileContents));
+115 
+116   \textcolor{keywordtype}{char} templateFile[] = \textcolor{stringliteral}{"/tmp/dqmdbfilehandler\_XXXXXX.xml"};
+117   \textcolor{keywordtype}{int} ret = mkstemps(templateFile, 4);
+118 
+119   \textcolor{keywordflow}{if}(ret < 0)
+120   \{
+121     streamlog\_out(ERROR) << \textcolor{stringliteral}{"Counldn't create tmp file for db download !"} << std::endl;
+122     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+123   \}
+124 
+125   m_localFileName = templateFile;
+126 
+127   std::ofstream file;
+128   file.open(m_localFileName.c\_str(), std::ios::out);
+129 
+130   \textcolor{keywordflow}{if}(!file.is\_open())
+131   \{
+132     streamlog\_out(ERROR) << \textcolor{stringliteral}{"Counldn't open tmp file for db download !"} << std::endl;
+133     m_localFileName = \textcolor{stringliteral}{""};
+134 
+135     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+136   \}
+137 
+138   file << fileContents;
+139   file.close();
+140 
+141   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+142 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!get\+Local\+File\+Name@{get\+Local\+File\+Name}}
+\index{get\+Local\+File\+Name@{get\+Local\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{get\+Local\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::get\+Local\+File\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDBFileHandler_a192527a0753ae800575c1712f97ce196}
+
+
+Get the full file name after the download step. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_a5a6dfa3bfb3965f897a1b7ee60f24ed8}.
+
+
+
+Definition at line 146 of file D\+Q\+M\+D\+B\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+local\+File\+Name.
+
+
+\begin{DoxyCode}
+147 \{
+148   \textcolor{keywordflow}{return} m_localFileName;
+149 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!type@{type}}
+\index{type@{type}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDBFileHandler_ab681c7360694b65b36ac07bf2eb80231}
+
+
+Get the file handler type as string. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+File\+Handler} \doxyref{}{p.}{classdqm4hep_1_1DQMFileHandler_adb64ac2dba492916a7e6105eacfc6837}.
+
+
+
+Definition at line 53 of file D\+Q\+M\+D\+B\+File\+Handler.\+cc.
+
+
+
+References m\+\_\+type.
+
+
+\begin{DoxyCode}
+54 \{
+55   \textcolor{keywordflow}{return} m_type;
+56 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!m\+\_\+local\+File\+Name@{m\+\_\+local\+File\+Name}}
+\index{m\+\_\+local\+File\+Name@{m\+\_\+local\+File\+Name}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{m\+\_\+local\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::m\+\_\+local\+File\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBFileHandler_af95175b18a5b60cfc442690c9a528d7b}
+
+
+Definition at line 67 of file D\+Q\+M\+D\+B\+File\+Handler.\+h.
+
+
+
+Referenced by download(), and get\+Local\+File\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!m\+\_\+p\+D\+B\+Interface@{m\+\_\+p\+D\+B\+Interface}}
+\index{m\+\_\+p\+D\+B\+Interface@{m\+\_\+p\+D\+B\+Interface}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{m\+\_\+p\+D\+B\+Interface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+D\+B\+Interface}$\ast$ dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::m\+\_\+p\+D\+B\+Interface\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBFileHandler_ad33bfad0431497c30558a4779247586e}
+
+
+Definition at line 65 of file D\+Q\+M\+D\+B\+File\+Handler.\+h.
+
+
+
+Referenced by download(), D\+Q\+M\+D\+B\+File\+Handler(), and $\sim$\+D\+Q\+M\+D\+B\+File\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler@{dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler}}
+\subsubsection[{m\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+D\+B\+File\+Handler\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDBFileHandler_a9cbbb7512287fa1adbe7a2ee7f8d32bc}
+
+
+Definition at line 66 of file D\+Q\+M\+D\+B\+File\+Handler.\+h.
+
+
+
+Referenced by type().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+D\+B\+File\+Handler.\+h}\item 
+{\bf D\+Q\+M\+D\+B\+File\+Handler.\+cc}\end{DoxyCompactItemize}

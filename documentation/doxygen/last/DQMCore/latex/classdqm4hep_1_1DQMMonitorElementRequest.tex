@@ -1,0 +1,124 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Request Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementRequest}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+Request}{p.}{classdqm4hep_1_1DQMMonitorElementRequest} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Messaging.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+Request\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.964912cm]{classdqm4hep_1_1DQMMonitorElementRequest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize a monitor element request and store it in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em De-\/serialize a monitor element request from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+Request}{p.}{classdqm4hep_1_1DQMMonitorElementRequest} class. 
+
+Definition at line 160 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementRequest_a6026fec115e837cd0c67abe377ecca20}
+
+
+De-\/serialize a monitor element request from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 244 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+245 \{
+246   dqm_uint requestListSize = 0;
+247   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(requestListSize));
+248 
+249   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<requestListSize ; i++)
+250   \{
+251     value\_type requestedPair;
+252 
+253     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(requestedPair.first));
+254     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(requestedPair.second));
+255 
+256     this->push\_back(requestedPair);
+257   \}
+258 
+259   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+260 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Request\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementRequest_a37df81cd96b855c20bd2c12e4ea5b2eb}
+
+
+Serialize a monitor element request and store it in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 229 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::query\+Subscribed\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::replace\+Subscription(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::subscribe(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Client\+::unsubscribe().
+
+
+\begin{DoxyCode}
+230 \{
+231   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write((
+      dqm_uint)this->size()));
+232 
+233   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<this->size() ; i++)
+234   \{
+235     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(this->at(i).first));
+236     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(this->at(i).second));
+237   \}
+238 
+239   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+240 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Messaging.\+h}\item 
+{\bf D\+Q\+M\+Messaging.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,662 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Run Class Reference}
+\label{classdqm4hep_1_1DQMRun}\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+
+
+\doxyref{D\+Q\+M\+Run}{p.}{classdqm4hep_1_1DQMRun} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Run.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Run\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMRun}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run} (int run\+Number=0, const std\+::string \&description=\char`\"{}\char`\"{}, const std\+::string \&detector\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor with run number (optional) \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Run} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int {\bf get\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Get the run number. \end{DoxyCompactList}\item 
+time\+\_\+t {\bf get\+Start\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the start time. \end{DoxyCompactList}\item 
+time\+\_\+t {\bf get\+End\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the end time. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Description} () const 
+\begin{DoxyCompactList}\small\item\em Get the run description. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Detector\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the detector name related to this run. \end{DoxyCompactList}\item 
+void {\bf set\+Run\+Number} (int run\+Number)
+\begin{DoxyCompactList}\small\item\em Set the run number. \end{DoxyCompactList}\item 
+void {\bf set\+Start\+Time} (time\+\_\+t start\+Time)
+\begin{DoxyCompactList}\small\item\em Set the start time. \end{DoxyCompactList}\item 
+void {\bf set\+End\+Time} (time\+\_\+t end\+Time)
+\begin{DoxyCompactList}\small\item\em Set the end time. \end{DoxyCompactList}\item 
+void {\bf set\+Description} (const std\+::string \&description)
+\begin{DoxyCompactList}\small\item\em Set the run description. \end{DoxyCompactList}\item 
+void {\bf set\+Detector\+Name} (const std\+::string \&detector\+Name)
+\begin{DoxyCompactList}\small\item\em Set the detector name related to this run. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set\+Parameter} (const std\+::string \&key, const T \&value)
+\begin{DoxyCompactList}\small\item\em Set a parameter. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf get\+Parameter} (const std\+::string \&key, T \&value) const 
+\begin{DoxyCompactList}\small\item\em Get a parameter. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+N\+Parameters} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of parameters. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize the object and store the result in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em Deserialize the object from the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf m\+\_\+run\+Number}
+\item 
+time\+\_\+t {\bf m\+\_\+start\+Time}
+\item 
+time\+\_\+t {\bf m\+\_\+end\+Time}
+\item 
+std\+::string {\bf m\+\_\+detector\+Name}
+\item 
+std\+::string {\bf m\+\_\+description}
+\item 
+std\+::map$<$ std\+::string, \\*
+std\+::string $>$ {\bf m\+\_\+parameters\+Map}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Run}{p.}{classdqm4hep_1_1DQMRun} class. 
+
+Definition at line 45 of file D\+Q\+M\+Run.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!D\+Q\+M\+Run@{D\+Q\+M\+Run}}
+\index{D\+Q\+M\+Run@{D\+Q\+M\+Run}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{D\+Q\+M\+Run}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+::\+D\+Q\+M\+Run (
+\begin{DoxyParamCaption}
+\item[{int}]{run\+Number = {\ttfamily 0}, }
+\item[{const std\+::string \&}]{description = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{detector\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRun_ad78e3d69443c9936a06ffdd662935750}
+
+
+Constructor with run number (optional) 
+
+
+
+Definition at line 37 of file D\+Q\+M\+Run.\+cc.
+
+
+\begin{DoxyCode}
+37                                                                                          :
+38     m_runNumber(runNumber),
+39     m_description(description),
+40     m_detectorName(detectorName),
+41     m_startTime(time(0)),
+42     m_endTime(0)
+43 \{
+44   \textcolor{comment}{/* nop */}
+45 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!````~D\+Q\+M\+Run@{$\sim$\+D\+Q\+M\+Run}}
+\index{````~D\+Q\+M\+Run@{$\sim$\+D\+Q\+M\+Run}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Run}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+::$\sim$\+D\+Q\+M\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRun_ac62d1afc39dfa7384246d2e52a52f3f5}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Run.\+cc.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{comment}{/* nop */}
+52 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRun_a7049d8c0382efecda1421fd1ce0c32bd}
+
+
+Deserialize the object from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 77 of file D\+Q\+M\+Run.\+cc.
+
+
+
+References m\+\_\+description, m\+\_\+detector\+Name, m\+\_\+end\+Time, m\+\_\+parameters\+Map, m\+\_\+run\+Number, m\+\_\+start\+Time, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info().
+
+
+\begin{DoxyCode}
+78 \{
+79   dqm_int runNumber = 0;
+80   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(runNumber));
+81   m_runNumber = runNumber;
+82 
+83   dqm_uint startTime = 0;
+84   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(startTime));
+85   m_startTime = startTime;
+86 
+87   dqm_uint endTime = 0;
+88   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(endTime));
+89   m_endTime = endTime;
+90 
+91   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_detectorName));
+92   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_description));
+93 
+94   dqm_uint nParameters = 0;
+95   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nParameters));
+96 
+97   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<nParameters ; i++)
+98   \{
+99     std::string key;
+100     std::string value;
+101 
+102     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(key));
+103     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->read(value));
+104 
+105     m_parametersMap[key] = value;
+106   \}
+107 
+108   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+109 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+Description@{get\+Description}}
+\index{get\+Description@{get\+Description}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+Description}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a7ebd56e1c38fd6f31383aad7c9816c2c}
+
+
+Get the run description. 
+
+
+
+Definition at line 150 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+description.
+
+
+\begin{DoxyCode}
+151 \{
+152   \textcolor{keywordflow}{return} m_description;
+153 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+Detector\+Name@{get\+Detector\+Name}}
+\index{get\+Detector\+Name@{get\+Detector\+Name}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+Detector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Detector\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a15c99c8124c7065c8953210e79e0a512}
+
+
+Get the detector name related to this run. 
+
+
+
+Definition at line 157 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+detector\+Name.
+
+
+\begin{DoxyCode}
+158 \{
+159   \textcolor{keywordflow}{return} m_detectorName;
+160 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+End\+Time@{get\+End\+Time}}
+\index{get\+End\+Time@{get\+End\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+End\+Time}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t dqm4hep\+::\+D\+Q\+M\+Run\+::get\+End\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a9c34a6f82c665bb5fa7d7fcb2bf1a042}
+
+
+Get the end time. 
+
+
+
+Definition at line 143 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+end\+Time.
+
+
+\begin{DoxyCode}
+144 \{
+145   \textcolor{keywordflow}{return} m_endTime;
+146 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+N\+Parameters@{get\+N\+Parameters}}
+\index{get\+N\+Parameters@{get\+N\+Parameters}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+N\+Parameters}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Run\+::get\+N\+Parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_aae50f6fa6d3fc3c9c2b2b6d0406be25c}
+
+
+Get the number of parameters. 
+
+
+
+Definition at line 220 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+parameters\+Map.
+
+
+\begin{DoxyCode}
+221 \{
+222   \textcolor{keywordflow}{return} m_parametersMap.size();
+223 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+Parameter@{get\+Parameter}}
+\index{get\+Parameter@{get\+Parameter}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Parameter (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key, }
+\item[{T \&}]{value}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_adc271a14186501b9dd190871f7c0b8e1}
+
+
+Get a parameter. 
+
+The value is converted into asked type. If the parameter is not found, the value remains unchanged 
+
+Definition at line 208 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+parameters\+Map, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::string\+To\+Type().
+
+
+\begin{DoxyCode}
+209 \{
+210   std::map<std::string, std::string>::const\_iterator findIter = m_parametersMap.find(key);
+211 
+212   \textcolor{keywordflow}{if}(m_parametersMap.end() == findIter)
+213     \textcolor{keywordflow}{return};
+214 
+215   DQM4HEP::stringToType(findIter->second, value);
+216 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+Run\+Number@{get\+Run\+Number}}
+\index{get\+Run\+Number@{get\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_aa690836fef838e111dc47994a46859c7}
+
+
+Get the run number. 
+
+
+
+Definition at line 129 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+run\+Number.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run\+Number(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+130 \{
+131   \textcolor{keywordflow}{return} m_runNumber;
+132 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!get\+Start\+Time@{get\+Start\+Time}}
+\index{get\+Start\+Time@{get\+Start\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{get\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Start\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a9690e4ca28359ac3fa24e14a2d9003b8}
+
+
+Get the start time. 
+
+
+
+Definition at line 136 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+start\+Time.
+
+
+\begin{DoxyCode}
+137 \{
+138   \textcolor{keywordflow}{return} m_startTime;
+139 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRun_a4047cac2bc7f413688eee9c9a93bc00b}
+
+
+Serialize the object and store the result in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 56 of file D\+Q\+M\+Run.\+cc.
+
+
+
+References m\+\_\+description, m\+\_\+detector\+Name, m\+\_\+end\+Time, m\+\_\+parameters\+Map, m\+\_\+run\+Number, m\+\_\+start\+Time, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+57 \{
+58   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(static\_cast<dqm\_int>(
+      m_runNumber)));
+59   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(static\_cast<dqm\_uint>(
+      m_startTime)));
+60   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(static\_cast<dqm\_uint>(
+      m_endTime)));
+61   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_detectorName));
+62   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(m_description));
+63   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(static\_cast<dqm\_uint>(this->getNParameters()
+      )));
+64 
+65   \textcolor{keywordflow}{for}(std::map<std::string, std::string>::const\_iterator iter = m_parametersMap.begin(), endIter = 
+      m_parametersMap.end() ;
+66       endIter != iter ; ++iter)
+67   \{
+68     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(iter->first));
+69     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pDataStream->write(iter->second));
+70   \}
+71 
+72   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+73 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+Description@{set\+Description}}
+\index{set\+Description@{set\+Description}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+Description}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+Description (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{description}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a35d036304a7c1a0e31326abfe35799f7}
+
+
+Set the run description. 
+
+
+
+Definition at line 185 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+description.
+
+
+\begin{DoxyCode}
+186 \{
+187   m_description = description;
+188 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+Detector\+Name@{set\+Detector\+Name}}
+\index{set\+Detector\+Name@{set\+Detector\+Name}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+Detector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+Detector\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{detector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a7e92dd45c2f686b31797e01e77e764ad}
+
+
+Set the detector name related to this run. 
+
+
+
+Definition at line 192 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+detector\+Name.
+
+
+\begin{DoxyCode}
+193 \{
+194   m_detectorName = detectorName;
+195 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+End\+Time@{set\+End\+Time}}
+\index{set\+End\+Time@{set\+End\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+End\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+End\+Time (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{end\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_afc6d500a38d7f47d8e98af1f2c84f45b}
+
+
+Set the end time. 
+
+
+
+Definition at line 178 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+end\+Time.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+179 \{
+180   m_endTime = endTime;
+181 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+Parameter@{set\+Parameter}}
+\index{set\+Parameter@{set\+Parameter}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+Parameter}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+Parameter (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key, }
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a8da8b99e0bcce989822ca4291bb98caa}
+
+
+Set a parameter. 
+
+The template value is converted into string 
+
+Definition at line 200 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+parameters\+Map.
+
+
+\begin{DoxyCode}
+201 \{
+202   m_parametersMap[key] = DQM4HEP::typeToString<T>(value);
+203 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+Run\+Number@{set\+Run\+Number}}
+\index{set\+Run\+Number@{set\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+Run\+Number (
+\begin{DoxyParamCaption}
+\item[{int}]{run\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a4f7af9b7f31a70a1268df07a73ad9d78}
+
+
+Set the run number. 
+
+
+
+Definition at line 164 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+run\+Number.
+
+
+\begin{DoxyCode}
+165 \{
+166   m_runNumber = runNumber;
+167 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!set\+Start\+Time@{set\+Start\+Time}}
+\index{set\+Start\+Time@{set\+Start\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{set\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+::set\+Start\+Time (
+\begin{DoxyParamCaption}
+\item[{time\+\_\+t}]{start\+Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMRun_a13959b055ba633ecf900673acfd38a2b}
+
+
+Set the start time. 
+
+
+
+Definition at line 171 of file D\+Q\+M\+Run.\+h.
+
+
+
+References m\+\_\+start\+Time.
+
+
+\begin{DoxyCode}
+172 \{
+173   m_startTime = startTime;
+174 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+description@{m\+\_\+description}}
+\index{m\+\_\+description@{m\+\_\+description}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+description}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+description\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_a6524149e7c1a053d54e0ce00822b4be1}
+
+
+Definition at line 122 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+Description(), serialize(), and set\+Description().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+detector\+Name@{m\+\_\+detector\+Name}}
+\index{m\+\_\+detector\+Name@{m\+\_\+detector\+Name}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+detector\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+detector\+Name\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_aafc56727cfe96d4512eeb345b8403534}
+
+
+Definition at line 121 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+Detector\+Name(), serialize(), and set\+Detector\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+end\+Time@{m\+\_\+end\+Time}}
+\index{m\+\_\+end\+Time@{m\+\_\+end\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+end\+Time}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+end\+Time\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_a5ebf0139ad919c5e38fdb415df5bcae3}
+
+
+Definition at line 120 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+End\+Time(), serialize(), and set\+End\+Time().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+parameters\+Map@{m\+\_\+parameters\+Map}}
+\index{m\+\_\+parameters\+Map@{m\+\_\+parameters\+Map}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+parameters\+Map}]{\setlength{\rightskip}{0pt plus 5cm}std\+::map$<$std\+::string, std\+::string$>$ dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+parameters\+Map\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_a8f0895e6fb7c437fb2e012d803564c92}
+
+
+Definition at line 123 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+N\+Parameters(), get\+Parameter(), serialize(), and set\+Parameter().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+run\+Number@{m\+\_\+run\+Number}}
+\index{m\+\_\+run\+Number@{m\+\_\+run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+run\+Number\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_ae411d1799bc617a66457cff1a4341a84}
+
+
+Definition at line 118 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+Run\+Number(), serialize(), and set\+Run\+Number().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}!m\+\_\+start\+Time@{m\+\_\+start\+Time}}
+\index{m\+\_\+start\+Time@{m\+\_\+start\+Time}!dqm4hep\+::\+D\+Q\+M\+Run@{dqm4hep\+::\+D\+Q\+M\+Run}}
+\subsubsection[{m\+\_\+start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}time\+\_\+t dqm4hep\+::\+D\+Q\+M\+Run\+::m\+\_\+start\+Time\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRun_a9634d96912c88a4ed81b3cbcd54fb4a9}
+
+
+Definition at line 119 of file D\+Q\+M\+Run.\+h.
+
+
+
+Referenced by deserialize(), get\+Start\+Time(), serialize(), and set\+Start\+Time().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run.\+h}\item 
+{\bf D\+Q\+M\+Run.\+cc}\end{DoxyCompactItemize}

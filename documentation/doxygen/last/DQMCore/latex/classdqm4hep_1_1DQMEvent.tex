@@ -1,0 +1,250 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event Class Reference}
+\label{classdqm4hep_1_1DQMEvent}\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+
+
+\doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.947368cm]{classdqm4hep_1_1DQMEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Event} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ {\bf get\+Event} () const 
+\begin{DoxyCompactList}\small\item\em Returns the event converted to asked type. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set\+Event} (T $\ast$p\+Event, bool {\bf is\+Owner}=true)
+\begin{DoxyCompactList}\small\item\em Set the event. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the event (normally delete the event structure) \end{DoxyCompactList}\item 
+bool {\bf is\+Owner} () const 
+\begin{DoxyCompactList}\small\item\em Whether the dqm event is the owner of the wrapped event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event} ()
+\begin{DoxyCompactList}\small\item\em Private constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+is\+Owner}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} class. 
+
+Main interface to a monitored event through the framework. This class is passed to modules in order to monitor its contents. The real data structure can be accessed via the get\+Event methods which convert the interface into a \doxyref{D\+Q\+M\+Event\+Base}{p.}{singletondqm4hep_1_1DQMEventBase} (see below).
+
+To define an event, the user should always inherits the \doxyref{D\+Q\+M\+Event\+Base}{p.}{singletondqm4hep_1_1DQMEventBase} class in order to have valid operations. 
+
+Definition at line 51 of file D\+Q\+M\+Event.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!````~D\+Q\+M\+Event@{$\sim$\+D\+Q\+M\+Event}}
+\index{````~D\+Q\+M\+Event@{$\sim$\+D\+Q\+M\+Event}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+::$\sim$\+D\+Q\+M\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEvent_a575c5d7cc907c301b12236ac1927c0b2}
+
+
+Destructor. 
+
+
+
+Definition at line 122 of file D\+Q\+M\+Event.\+h.
+
+
+\begin{DoxyCode}
+123 \{
+124 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!D\+Q\+M\+Event@{D\+Q\+M\+Event}}
+\index{D\+Q\+M\+Event@{D\+Q\+M\+Event}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{D\+Q\+M\+Event}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+::\+D\+Q\+M\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classdqm4hep_1_1DQMEvent_a1e91cdbbdee8172bcc9d07d1308d522d}
+
+
+Private constructor. 
+
+
+
+Definition at line 115 of file D\+Q\+M\+Event.\+h.
+
+
+\begin{DoxyCode}
+115                           :
+116     m_isOwner(\textcolor{keyword}{true})
+117 \{
+118 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void dqm4hep\+::\+D\+Q\+M\+Event\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMEvent_af2c9017b9953c2b11114003ddb706f56}
+
+
+Clear the event (normally delete the event structure) 
+
+
+
+Definition at line 156 of file D\+Q\+M\+Event.\+h.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$\+::clear(), and m\+\_\+is\+Owner.
+
+
+\begin{DoxyCode}
+157 \{
+158   \textcolor{keywordflow}{if}(m_isOwner)
+159   \{
+160     DQMEventBase<T> *pBaseEvent = \textcolor{keyword}{dynamic\_cast<}DQMEventBase<T>*\textcolor{keyword}{>}(\textcolor{keyword}{this});
+161 
+162     \textcolor{keywordflow}{if}(NULL == pBaseEvent)
+163       \textcolor{keywordflow}{return};
+164 
+165     pBaseEvent->clear();
+166   \}
+167 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!get\+Event@{get\+Event}}
+\index{get\+Event@{get\+Event}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{get\+Event}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ dqm4hep\+::\+D\+Q\+M\+Event\+::get\+Event (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMEvent_ada841cbe41f65f2baf6e2ebc4501565b}
+
+
+Returns the event converted to asked type. 
+
+
+
+Definition at line 129 of file D\+Q\+M\+Event.\+h.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$\+::get\+Event().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::serialize().
+
+
+\begin{DoxyCode}
+130 \{
+131   \textcolor{keyword}{const} DQMEventBase<T> *pBaseEvent = \textcolor{keyword}{dynamic\_cast<}\textcolor{keyword}{const }DQMEventBase<T>*\textcolor{keyword}{>}(\textcolor{keyword}{this});
+132 
+133   \textcolor{keywordflow}{if}(NULL == pBaseEvent)
+134     \textcolor{keywordflow}{return} 0;
+135 
+136   \textcolor{keywordflow}{return} pBaseEvent->getEvent();
+137 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!is\+Owner@{is\+Owner}}
+\index{is\+Owner@{is\+Owner}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{is\+Owner}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Event\+::is\+Owner (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMEvent_ad623d9befb698e59b9e8b9327335bf2b}
+
+
+Whether the dqm event is the owner of the wrapped event. 
+
+
+
+Definition at line 171 of file D\+Q\+M\+Event.\+h.
+
+
+
+References m\+\_\+is\+Owner.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+::clear(), and set\+Event().
+
+
+\begin{DoxyCode}
+172 \{
+173   \textcolor{keywordflow}{return} m_isOwner;
+174 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!set\+Event@{set\+Event}}
+\index{set\+Event@{set\+Event}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{set\+Event}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void dqm4hep\+::\+D\+Q\+M\+Event\+::set\+Event (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p\+Event, }
+\item[{bool}]{is\+Owner = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMEvent_ac590d787912a2b34cdb15259ea594aad}
+
+
+Set the event. 
+
+The dqm event can own the wrapped event is the second arguement is set to true 
+
+Definition at line 142 of file D\+Q\+M\+Event.\+h.
+
+
+
+References is\+Owner(), m\+\_\+is\+Owner, and dqm4hep\+::\+D\+Q\+M\+Event\+Base$<$ T $>$\+::set\+Event().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer\+::deserialize(), and dqm4hep\+::\+D\+Q\+M\+Lcio\+Reader\+Listener\+::process\+Event().
+
+
+\begin{DoxyCode}
+143 \{
+144   DQMEventBase<T> *pBaseEvent = \textcolor{keyword}{dynamic\_cast<}DQMEventBase<T>*\textcolor{keyword}{>}(\textcolor{keyword}{this});
+145 
+146   \textcolor{keywordflow}{if}(NULL == pBaseEvent)
+147     \textcolor{keywordflow}{return};
+148 
+149   pBaseEvent->setEvent(pEvent);
+150   m_isOwner = isOwner;
+151 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}!m\+\_\+is\+Owner@{m\+\_\+is\+Owner}}
+\index{m\+\_\+is\+Owner@{m\+\_\+is\+Owner}!dqm4hep\+::\+D\+Q\+M\+Event@{dqm4hep\+::\+D\+Q\+M\+Event}}
+\subsubsection[{m\+\_\+is\+Owner}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Event\+::m\+\_\+is\+Owner\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMEvent_aa1b71739e26c5c96b794c18480eb7230}
+
+
+Definition at line 85 of file D\+Q\+M\+Event.\+h.
+
+
+
+Referenced by clear(), is\+Owner(), and set\+Event().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event.\+h}\end{DoxyCompactItemize}

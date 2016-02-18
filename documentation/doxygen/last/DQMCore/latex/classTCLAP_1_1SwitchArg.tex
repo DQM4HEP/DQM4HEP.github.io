@@ -1,0 +1,447 @@
+\section{T\+C\+L\+A\+P\+:\+:Switch\+Arg Class Reference}
+\label{classTCLAP_1_1SwitchArg}\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+
+
+A simple switch argument.  
+
+
+
+
+{\ttfamily \#include $<$Switch\+Arg.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Switch\+Arg\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classTCLAP_1_1SwitchArg}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Switch\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, bool def=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em \doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg} constructor. \end{DoxyCompactList}\item 
+{\bf Switch\+Arg} (const std\+::string \&flag, const std\+::string \&name, const std\+::string \&desc, {\bf Cmd\+Line\+Interface} \&parser, bool def=false, {\bf Visitor} $\ast$v=N\+U\+L\+L)
+\begin{DoxyCompactList}\small\item\em \doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg} constructor. \end{DoxyCompactList}\item 
+virtual bool {\bf process\+Arg} (int $\ast$i, std\+::vector$<$ std\+::string $>$ \&args)
+\begin{DoxyCompactList}\small\item\em Handles the processing of the argument. \end{DoxyCompactList}\item 
+bool {\bf combined\+Switches\+Match} (std\+::string \&combined)
+\begin{DoxyCompactList}\small\item\em Checks a string to see if any of the chars in the string match the flag for this Switch. \end{DoxyCompactList}\item 
+bool {\bf get\+Value} ()
+\begin{DoxyCompactList}\small\item\em Returns bool, whether or not the switch has been set. \end{DoxyCompactList}\item 
+virtual void {\bf reset} ()
+\begin{DoxyCompactList}\small\item\em Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \+\_\+value}
+\begin{DoxyCompactList}\small\item\em The value of the switch. \end{DoxyCompactList}\item 
+bool {\bf \+\_\+default}
+\begin{DoxyCompactList}\small\item\em Used to support the \doxyref{reset()}{p.}{classTCLAP_1_1SwitchArg_af8561d903ec3c11f5f2175e6db179d9c} method so that \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} can be reset to their constructed value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf last\+Combined} (std\+::string \&combined)
+\begin{DoxyCompactList}\small\item\em Checks to see if we've found the last match in a combined string. \end{DoxyCompactList}\item 
+void {\bf common\+Processing} ()
+\begin{DoxyCompactList}\small\item\em Does the common processing of process\+Arg. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A simple switch argument. 
+
+If the switch is set on the command line, then the get\+Value method will return the opposite of the default value for the switch. 
+
+Definition at line 39 of file Switch\+Arg.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!Switch\+Arg@{Switch\+Arg}}
+\index{Switch\+Arg@{Switch\+Arg}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{Switch\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Switch\+Arg\+::\+Switch\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{bool}]{def = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1SwitchArg_a3895b036fa2d36e4fcfa41dfcdb298c1}
+
+
+\doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em def} & -\/ The default value for this Switch. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file Switch\+Arg.\+h.
+
+
+\begin{DoxyCode}
+140 : Arg(flag, name, desc, \textcolor{keyword}{false}, \textcolor{keyword}{false}, v),
+141   _value( default\_val ),
+142   _default( default\_val )
+143 \{ \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!Switch\+Arg@{Switch\+Arg}}
+\index{Switch\+Arg@{Switch\+Arg}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{Switch\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Switch\+Arg\+::\+Switch\+Arg (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{flag, }
+\item[{const std\+::string \&}]{name, }
+\item[{const std\+::string \&}]{desc, }
+\item[{{\bf Cmd\+Line\+Interface} \&}]{parser, }
+\item[{bool}]{def = {\ttfamily false}, }
+\item[{{\bf Visitor} $\ast$}]{v = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1SwitchArg_af7e9628155772af0686f6a2114dfe78b}
+
+
+\doxyref{Switch\+Arg}{p.}{classTCLAP_1_1SwitchArg} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & -\/ The one character flag that identifies this argument on the command line. \\
+\hline
+{\em name} & -\/ A one word name for the argument. Can be used as a long flag on the command line. \\
+\hline
+{\em desc} & -\/ A description of what the argument is for or does. \\
+\hline
+{\em parser} & -\/ A \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} parser object to add this \doxyref{Arg}{p.}{classTCLAP_1_1Arg} to \\
+\hline
+{\em def} & -\/ The default value for this Switch. \\
+\hline
+{\em v} & -\/ An optional visitor. You probably should not use this unless you have a very good reason. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 145 of file Switch\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Cmd\+Line\+Interface\+::add().
+
+
+\begin{DoxyCode}
+151 : Arg(flag, name, desc, \textcolor{keyword}{false}, \textcolor{keyword}{false}, v),
+152   _value( default\_val ),
+153   _default(default\_val)
+154 \{ 
+155   parser.add( \textcolor{keyword}{this} );
+156 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!combined\+Switches\+Match@{combined\+Switches\+Match}}
+\index{combined\+Switches\+Match@{combined\+Switches\+Match}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{combined\+Switches\+Match}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::combined\+Switches\+Match (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{combined}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1SwitchArg_af5fbd44d462539941b09e960034d692c}
+
+
+Checks a string to see if any of the chars in the string match the flag for this Switch. 
+
+
+
+Definition at line 169 of file Switch\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+flag, T\+C\+L\+A\+P\+::\+Arg\+::blank\+Char(), T\+C\+L\+A\+P\+::\+Arg\+::delimiter(), T\+C\+L\+A\+P\+::\+Arg\+::flag\+Start\+String(), and T\+C\+L\+A\+P\+::\+Arg\+::name\+Start\+String().
+
+
+
+Referenced by process\+Arg(), and T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg\+::process\+Arg().
+
+
+\begin{DoxyCode}
+170 \{
+171   \textcolor{comment}{// make sure this is actually a combined switch}
+172   \textcolor{keywordflow}{if} ( combinedSwitches.length() > 0 &&
+173        combinedSwitches[0] != Arg::flagStartString()[0] )
+174     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+175 
+176   \textcolor{comment}{// make sure it isn't a long name }
+177   \textcolor{keywordflow}{if} ( combinedSwitches.substr( 0, Arg::nameStartString().length() ) == 
+178        Arg::nameStartString() )
+179     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+180 
+181   \textcolor{comment}{// make sure the delimiter isn't in the string }
+182   \textcolor{keywordflow}{if} ( combinedSwitches.find\_first\_of( Arg::delimiter() ) != std::string::npos )
+183     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+184 
+185   \textcolor{comment}{// ok, we're not specifying a ValueArg, so we know that we have}
+186   \textcolor{comment}{// a combined switch list.  }
+187   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1; i < combinedSwitches.length(); i++ )
+188     \textcolor{keywordflow}{if} ( _flag.length() > 0 && 
+189          combinedSwitches[i] == _flag[0] &&
+190          _flag[0] != Arg::flagStartString()[0] ) 
+191     \{
+192       \textcolor{comment}{// update the combined switches so this one is no longer present}
+193       \textcolor{comment}{// this is necessary so that no unlabeled args are matched}
+194       \textcolor{comment}{// later in the processing.}
+195       \textcolor{comment}{//combinedSwitches.erase(i,1);}
+196       combinedSwitches[i] = Arg::blankChar(); 
+197       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+198     \}
+199 
+200   \textcolor{comment}{// none of the switches passed in the list match. }
+201   \textcolor{keywordflow}{return} \textcolor{keyword}{false}; 
+202 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!common\+Processing@{common\+Processing}}
+\index{common\+Processing@{common\+Processing}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{common\+Processing}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Switch\+Arg\+::common\+Processing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTCLAP_1_1SwitchArg_aa8febb767176919bd220b235bf4ea158}
+
+
+Does the common processing of process\+Arg. 
+
+
+
+Definition at line 204 of file Switch\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+already\+Set, T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+check\+With\+Visitor(), \+\_\+value, T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+xor\+Set, and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+
+Referenced by process\+Arg().
+
+
+\begin{DoxyCode}
+205 \{
+206   \textcolor{keywordflow}{if} ( _xorSet )
+207     \textcolor{keywordflow}{throw}(CmdLineParseException(
+208           \textcolor{stringliteral}{"Mutually exclusive argument already set!"}, toString()));
+209 
+210   \textcolor{keywordflow}{if} ( _alreadySet ) 
+211     \textcolor{keywordflow}{throw}(CmdLineParseException(\textcolor{stringliteral}{"Argument already set!"}, toString()));
+212 
+213   _alreadySet = \textcolor{keyword}{true};
+214 
+215   \textcolor{keywordflow}{if} ( _value == \textcolor{keyword}{true} )
+216     _value = \textcolor{keyword}{false};
+217   \textcolor{keywordflow}{else}
+218     _value = \textcolor{keyword}{true};
+219 
+220   _checkWithVisitor();
+221 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{get\+Value}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::get\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1SwitchArg_aed1bc8a81a9bda4013cfcf407ccc7716}
+
+
+Returns bool, whether or not the switch has been set. 
+
+
+
+Definition at line 158 of file Switch\+Arg.\+h.
+
+
+
+References \+\_\+value.
+
+
+\begin{DoxyCode}
+158 \{ \textcolor{keywordflow}{return} _value; \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!last\+Combined@{last\+Combined}}
+\index{last\+Combined@{last\+Combined}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{last\+Combined}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::last\+Combined (
+\begin{DoxyParamCaption}
+\item[{std\+::string \&}]{combined}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\label{classTCLAP_1_1SwitchArg_a8b609b058744c2bdc04f14ffabb4197f}
+
+
+Checks to see if we've found the last match in a combined string. 
+
+
+
+Definition at line 160 of file Switch\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::blank\+Char().
+
+
+
+Referenced by process\+Arg().
+
+
+\begin{DoxyCode}
+161 \{
+162   \textcolor{keywordflow}{for} ( \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 1; i < combinedSwitches.length(); i++ )
+163     \textcolor{keywordflow}{if} ( combinedSwitches[i] != Arg::blankChar() )
+164       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+165   
+166   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+167 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!process\+Arg@{process\+Arg}}
+\index{process\+Arg@{process\+Arg}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{process\+Arg}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::process\+Arg (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{i, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1SwitchArg_a624f98df6c4907efec95ffc353e9d08c}
+
+
+Handles the processing of the argument. 
+
+This re-\/implements the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} version of this method to set the \+\_\+value of the argument appropriately. 
+\begin{DoxyParams}{Parameters}
+{\em i} & -\/ Pointer the the current argument in the list. \\
+\hline
+{\em args} & -\/ Mutable list of strings. Passed in from main(). \\
+\hline
+\end{DoxyParams}
+
+
+Implements {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_a61ffe2f660a76111d256f7b22a686146}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_a91c3d349570f21d8af6dc90767d747a2}.
+
+
+
+Definition at line 223 of file Switch\+Arg.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::\+\_\+ignoreable, T\+C\+L\+A\+P\+::\+Arg\+::arg\+Matches(), combined\+Switches\+Match(), common\+Processing(), T\+C\+L\+A\+P\+::\+Arg\+::ignore\+Rest(), last\+Combined(), and T\+C\+L\+A\+P\+::\+Arg\+::to\+String().
+
+
+\begin{DoxyCode}
+224 \{
+225   \textcolor{keywordflow}{if} ( _ignoreable && Arg::ignoreRest() )
+226     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+227 
+228   \textcolor{comment}{// if the whole string matches the flag or name string}
+229   \textcolor{keywordflow}{if} ( argMatches( args[*i] ) )
+230   \{
+231     commonProcessing();
+232 
+233     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+234   \}
+235   \textcolor{comment}{// if a substring matches the flag as part of a combination}
+236   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( combinedSwitchesMatch( args[*i] ) )
+237   \{
+238     \textcolor{comment}{// check again to ensure we don't misinterpret }
+239     \textcolor{comment}{// this as a MultiSwitchArg }
+240     \textcolor{keywordflow}{if} ( combinedSwitchesMatch( args[*i] ) )
+241       \textcolor{keywordflow}{throw}(CmdLineParseException(\textcolor{stringliteral}{"Argument already set!"}, 
+242                                   toString()));
+243 
+244     commonProcessing();
+245 
+246     \textcolor{comment}{// We only want to return true if we've found the last combined}
+247     \textcolor{comment}{// match in the string, otherwise we return true so that other }
+248     \textcolor{comment}{// switches in the combination will have a chance to match.}
+249     \textcolor{keywordflow}{return} lastCombined( args[*i] );
+250   \}
+251   \textcolor{keywordflow}{else}
+252     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+253 \}
+\end{DoxyCode}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!reset@{reset}}
+\index{reset@{reset}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Switch\+Arg\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1SwitchArg_af8561d903ec3c11f5f2175e6db179d9c}
+
+
+Clears the \doxyref{Arg}{p.}{classTCLAP_1_1Arg} object and allows it to be reused by new command lines. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Arg} \doxyref{}{p.}{classTCLAP_1_1Arg_ab5b5dc9a9b0381561f0684523f943a2c}.
+
+
+
+Reimplemented in {\bf T\+C\+L\+A\+P\+::\+Multi\+Switch\+Arg} \doxyref{}{p.}{classTCLAP_1_1MultiSwitchArg_ac320530811dbca7fdcb2a41ab252fce4}.
+
+
+
+Definition at line 255 of file Switch\+Arg.\+h.
+
+
+
+References \+\_\+default, \+\_\+value, and T\+C\+L\+A\+P\+::\+Arg\+::reset().
+
+
+\begin{DoxyCode}
+256 \{
+257   Arg::reset();
+258   _value = _default;  
+259 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!\+\_\+default@{\+\_\+default}}
+\index{\+\_\+default@{\+\_\+default}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{\+\_\+default}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::\+\_\+default\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1SwitchArg_ae25a99eb06fc2ee75a3b98edba1d5d8d}
+
+
+Used to support the \doxyref{reset()}{p.}{classTCLAP_1_1SwitchArg_af8561d903ec3c11f5f2175e6db179d9c} method so that \doxyref{Value\+Arg}{p.}{classTCLAP_1_1ValueArg} can be reset to their constructed value. 
+
+
+
+Definition at line 52 of file Switch\+Arg.\+h.
+
+
+
+Referenced by reset().
+
+\index{T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}!\+\_\+value@{\+\_\+value}}
+\index{\+\_\+value@{\+\_\+value}!T\+C\+L\+A\+P\+::\+Switch\+Arg@{T\+C\+L\+A\+P\+::\+Switch\+Arg}}
+\subsubsection[{\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}bool T\+C\+L\+A\+P\+::\+Switch\+Arg\+::\+\_\+value\hspace{0.3cm}{\ttfamily [protected]}}\label{classTCLAP_1_1SwitchArg_a0389ecebecc504d9756703d46e8cf3ca}
+
+
+The value of the switch. 
+
+
+
+Definition at line 46 of file Switch\+Arg.\+h.
+
+
+
+Referenced by common\+Processing(), get\+Value(), and reset().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Switch\+Arg.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\section{T\+C\+L\+A\+P\+:\+:Ignore\+Rest\+Visitor Class Reference}
+\label{classTCLAP_1_1IgnoreRestVisitor}\index{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor@{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor}}
+
+
+A Vistor that tells the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} to begin ignoring arguments after this one is parsed.  
+
+
+
+
+{\ttfamily \#include $<$Ignore\+Rest\+Visitor.\+h$>$}
+
+Inheritance diagram for T\+C\+L\+A\+P\+:\+:Ignore\+Rest\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTCLAP_1_1IgnoreRestVisitor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ignore\+Rest\+Visitor} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf visit} ()
+\begin{DoxyCompactList}\small\item\em Sets Arg\+::\+\_\+ignore\+Rest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Vistor that tells the \doxyref{Cmd\+Line}{p.}{classTCLAP_1_1CmdLine} to begin ignoring arguments after this one is parsed. 
+
+Definition at line 35 of file Ignore\+Rest\+Visitor.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor@{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor}!Ignore\+Rest\+Visitor@{Ignore\+Rest\+Visitor}}
+\index{Ignore\+Rest\+Visitor@{Ignore\+Rest\+Visitor}!T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor@{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor}}
+\subsubsection[{Ignore\+Rest\+Visitor}]{\setlength{\rightskip}{0pt plus 5cm}T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor\+::\+Ignore\+Rest\+Visitor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classTCLAP_1_1IgnoreRestVisitor_a4cd949b7aeff99fba4a8494e02a1cb01}
+
+
+Constructor. 
+
+
+
+Definition at line 42 of file Ignore\+Rest\+Visitor.\+h.
+
+
+\begin{DoxyCode}
+42 : Visitor() \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor@{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor}!visit@{visit}}
+\index{visit@{visit}!T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor@{T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}void T\+C\+L\+A\+P\+::\+Ignore\+Rest\+Visitor\+::visit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classTCLAP_1_1IgnoreRestVisitor_ac2a054ed72b16608a32021c65a600722}
+
+
+Sets Arg\+::\+\_\+ignore\+Rest. 
+
+
+
+Reimplemented from {\bf T\+C\+L\+A\+P\+::\+Visitor} \doxyref{}{p.}{classTCLAP_1_1Visitor_a08625664637579a24ba2f0ab3e713670}.
+
+
+
+Definition at line 47 of file Ignore\+Rest\+Visitor.\+h.
+
+
+
+References T\+C\+L\+A\+P\+::\+Arg\+::begin\+Ignoring().
+
+
+\begin{DoxyCode}
+47 \{ Arg::beginIgnoring();  \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf Ignore\+Rest\+Visitor.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,355 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitoring Class Reference}
+\label{classdqm4hep_1_1DQMMonitoring}\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+
+
+\doxyref{D\+Q\+M\+Monitoring}{p.}{classdqm4hep_1_1DQMMonitoring} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitoring.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Monitoring} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf set\+Controller} ({\bf D\+Q\+M\+Monitoring\+Controller} $\ast$p\+Controller)
+\begin{DoxyCompactList}\small\item\em Set the monitoring controller. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring\+Controller} $\ast$ {\bf get\+Controller} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring controller. \end{DoxyCompactList}\item 
+void {\bf set\+Model} ({\bf D\+Q\+M\+Monitoring\+Model} $\ast$p\+Model)
+\begin{DoxyCompactList}\small\item\em Set the monitoring model. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring\+Model} $\ast$ {\bf get\+Model} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring model. \end{DoxyCompactList}\item 
+void {\bf set\+View} ({\bf D\+Q\+M\+Monitoring\+View} $\ast$p\+View)
+\begin{DoxyCompactList}\small\item\em Set the monitoring view. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring\+View} $\ast$ {\bf get\+View} () const 
+\begin{DoxyCompactList}\small\item\em get the monitoring controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring\+Controller} $\ast$ {\bf m\+\_\+p\+Controller}
+\begin{DoxyCompactList}\small\item\em The monitoring controller. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring\+Model} $\ast$ {\bf m\+\_\+p\+Model}
+\begin{DoxyCompactList}\small\item\em The monitoring model. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring\+View} $\ast$ {\bf m\+\_\+p\+View}
+\begin{DoxyCompactList}\small\item\em The monitoring view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitoring}{p.}{classdqm4hep_1_1DQMMonitoring} class. 
+
+Definition at line 44 of file D\+Q\+M\+Monitoring.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!D\+Q\+M\+Monitoring@{D\+Q\+M\+Monitoring}}
+\index{D\+Q\+M\+Monitoring@{D\+Q\+M\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{D\+Q\+M\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+::\+D\+Q\+M\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoring_a9ed7608a683608f813618405d7b87169}
+
+
+Constructor. 
+
+
+
+Definition at line 37 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+\begin{DoxyCode}
+37                              :
+38   m_pController(NULL),
+39   m_pModel(NULL),
+40   m_pView(NULL)
+41 \{
+42   \textcolor{comment}{/* nop */}
+43 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!````~D\+Q\+M\+Monitoring@{$\sim$\+D\+Q\+M\+Monitoring}}
+\index{````~D\+Q\+M\+Monitoring@{$\sim$\+D\+Q\+M\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitoring\+::$\sim$\+D\+Q\+M\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitoring_a6750c56ed984f4511e1f90d61e6c4668}
+
+
+Destructor. 
+
+
+
+Definition at line 47 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+Controller, m\+\_\+p\+Model, and m\+\_\+p\+View.
+
+
+\begin{DoxyCode}
+48 \{
+49   \textcolor{keywordflow}{if}(m_pController)
+50     \textcolor{keyword}{delete} m_pController;
+51 
+52   \textcolor{keywordflow}{if}(m_pModel)
+53     \textcolor{keyword}{delete} m_pModel;
+54 
+55   \textcolor{keywordflow}{if}(m_pView)
+56     \textcolor{keyword}{delete} m_pView;
+57 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!get\+Controller@{get\+Controller}}
+\index{get\+Controller@{get\+Controller}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{get\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+Controller} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Controller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoring_a2b32d24096586b9b9ba6bc189a284644}
+
+
+Get the monitoring controller. 
+
+
+
+Definition at line 74 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+Controller.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Main\+Window\+::close\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::drop\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::handle\+Auto\+Update\+Button\+Clicked(), dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Collector\+Selection(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Replace\+Button\+Clicked(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::handle\+Save\+As\+Action\+Triggered(), dqm4hep\+::\+D\+Q\+M\+Browser\+Widget\+::handle\+Update\+Button\+Clicked(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::open\+R\+O\+O\+T\+Panel(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::query\+Update(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::query\+Update(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::save\+As(), dqm4hep\+::\+Tree\+Widget\+Item\+::set\+Data(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Monitor\+Element\+Info(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::show\+Q\+Test\+Results(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::start\+Drag(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::update\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+75 \{
+76   \textcolor{keywordflow}{return} m_pController;
+77 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!get\+Model@{get\+Model}}
+\index{get\+Model@{get\+Model}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{get\+Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+Model} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoring_a085f84ccfcfac14f0105565c361c0d72}
+
+
+Get the monitoring model. 
+
+
+
+Definition at line 94 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+Model.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+View\+And\+Model(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::create\+Empty\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Canvas\+Area\+::drop\+Event(), dqm4hep\+::\+D\+Q\+M\+Canvas\+View\+::from\+Xml(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::key\+Press\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::query\+Update(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::receive\+Monitor\+Element\+Publication().
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keywordflow}{return} m_pModel;
+97 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!get\+View@{get\+View}}
+\index{get\+View@{get\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{get\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+View} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::get\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitoring_aba6fc86a9f6b82e30c7d62f3da58b0cc}
+
+
+get the monitoring controller 
+
+
+
+Definition at line 114 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+Monitoring(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::clear\+View\+And\+Model(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::create\+Context\+Menu(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::draw\+Selected\+Monitor\+Elements(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::get\+Or\+Create\+Gui\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::handle\+Item\+Double\+Click(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::key\+Press\+Event(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::load\+Monitor\+Element\+Info\+List(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::log(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::move\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::open\+File(), dqm4hep\+::\+D\+Q\+M\+Root\+Widget\+::remove\+Canvas(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::remove\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::save\+As(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::show\+Context\+Menu(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+115 \{
+116   \textcolor{keywordflow}{return} m_pView;
+117 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!set\+Controller@{set\+Controller}}
+\index{set\+Controller@{set\+Controller}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{set\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+::set\+Controller (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring\+Controller} $\ast$}]{p\+Controller}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoring_a85adffed8d8a4245b806a637c03d642e}
+
+
+Set the monitoring controller. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+Controller.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::\+D\+Q\+M\+Monitoring\+Controller().
+
+
+\begin{DoxyCode}
+62 \{
+63   \textcolor{keywordflow}{if}(m_pController == pController)
+64     \textcolor{keywordflow}{return};
+65 
+66   \textcolor{keywordflow}{if}(NULL != m_pController)
+67     \textcolor{keyword}{delete} m_pController;
+68 
+69   m_pController = pController;
+70 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!set\+Model@{set\+Model}}
+\index{set\+Model@{set\+Model}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{set\+Model}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+::set\+Model (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring\+Model} $\ast$}]{p\+Model}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoring_a63dfac5b8f234d3dfd2843111085ea33}
+
+
+Set the monitoring model. 
+
+
+
+Definition at line 81 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+Model.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::\+D\+Q\+M\+Monitoring\+Model().
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{keywordflow}{if}(m_pModel == pModel)
+84     \textcolor{keywordflow}{return};
+85 
+86   \textcolor{keywordflow}{if}(NULL != m_pModel)
+87     \textcolor{keyword}{delete} m_pModel;
+88 
+89   m_pModel = pModel;
+90 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!set\+View@{set\+View}}
+\index{set\+View@{set\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{set\+View}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitoring\+::set\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring\+View} $\ast$}]{p\+View}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitoring_a2794c5fecf03acaf9bda2994bdc21e8d}
+
+
+Set the monitoring view. 
+
+
+
+Definition at line 101 of file D\+Q\+M\+Monitoring.\+cc.
+
+
+
+References m\+\_\+p\+View.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::\+D\+Q\+M\+Monitoring\+View().
+
+
+\begin{DoxyCode}
+102 \{
+103   \textcolor{keywordflow}{if}(m_pView == pView)
+104     \textcolor{keywordflow}{return};
+105 
+106   \textcolor{keywordflow}{if}(NULL != m_pView)
+107     \textcolor{keyword}{delete} m_pView;
+108 
+109   m_pView = pView;
+110 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!m\+\_\+p\+Controller@{m\+\_\+p\+Controller}}
+\index{m\+\_\+p\+Controller@{m\+\_\+p\+Controller}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{m\+\_\+p\+Controller}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+Controller}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::m\+\_\+p\+Controller\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoring_ac29c0bea2a3c354152c5d3563d1a55b4}
+
+
+The monitoring controller. 
+
+
+
+Definition at line 81 of file D\+Q\+M\+Monitoring.\+h.
+
+
+
+Referenced by get\+Controller(), set\+Controller(), and $\sim$\+D\+Q\+M\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!m\+\_\+p\+Model@{m\+\_\+p\+Model}}
+\index{m\+\_\+p\+Model@{m\+\_\+p\+Model}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{m\+\_\+p\+Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+Model}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::m\+\_\+p\+Model\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoring_ad52837a314be74f2889b83441d112eb8}
+
+
+The monitoring model. 
+
+
+
+Definition at line 82 of file D\+Q\+M\+Monitoring.\+h.
+
+
+
+Referenced by get\+Model(), set\+Model(), and $\sim$\+D\+Q\+M\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}!m\+\_\+p\+View@{m\+\_\+p\+View}}
+\index{m\+\_\+p\+View@{m\+\_\+p\+View}!dqm4hep\+::\+D\+Q\+M\+Monitoring@{dqm4hep\+::\+D\+Q\+M\+Monitoring}}
+\subsubsection[{m\+\_\+p\+View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring\+View}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitoring\+::m\+\_\+p\+View\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMonitoring_a9d07cdafbab272239687194113b1bf81}
+
+
+The monitoring view. 
+
+
+
+Definition at line 83 of file D\+Q\+M\+Monitoring.\+h.
+
+
+
+Referenced by get\+View(), set\+View(), and $\sim$\+D\+Q\+M\+Monitoring().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring.\+h}\item 
+{\bf D\+Q\+M\+Monitoring.\+cc}\end{DoxyCompactItemize}

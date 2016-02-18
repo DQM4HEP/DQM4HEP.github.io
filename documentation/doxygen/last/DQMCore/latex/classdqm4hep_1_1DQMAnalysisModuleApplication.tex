@@ -1,0 +1,1146 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Analysis\+Module\+Application Class Reference}
+\label{classdqm4hep_1_1DQMAnalysisModuleApplication}\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+
+
+\doxyref{D\+Q\+M\+Analysis\+Module\+Application}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Analysis\+Module\+Application.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Analysis\+Module\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMAnalysisModuleApplication}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Settings}
+\begin{DoxyCompactList}\small\item\em \doxyref{Settings}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_1_1Settings} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Analysis\+Module\+Application} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Analysis\+Module\+Application} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Type} () const 
+\begin{DoxyCompactList}\small\item\em Get the application type (\char`\"{}\+Analysis\+Module\char`\"{}) \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the application name (\char`\"{}\+Module\+Type/\+Module\+Name\char`\"{}) \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf read\+Settings} (const std\+::string \&settings\+File)
+\begin{DoxyCompactList}\small\item\em Read settings from a xml file. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf run} ()
+\begin{DoxyCompactList}\small\item\em Run the application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf configure\+Module} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Configure the module. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf configure\+Network} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Configure network interface. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf configure\+Cycle} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Configure the workflow cycle. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf configure\+Archiver} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Configure the archiver. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+Services} ()
+\begin{DoxyCompactList}\small\item\em Start all services. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf stop\+Services} ()
+\begin{DoxyCompactList}\small\item\em Stop all services. \end{DoxyCompactList}\item 
+int {\bf get\+Current\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Get the current run number that was started (not from run control) \end{DoxyCompactList}\item 
+void {\bf on\+Event\+Processed} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle, const {\bf D\+Q\+M\+Event} $\ast$const p\+Event)
+\begin{DoxyCompactList}\small\item\em Call back function when an event is processed by the framework. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Started} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle)
+\begin{DoxyCompactList}\small\item\em Call back function when the cycle is started by the framework. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Stopped} (const {\bf D\+Q\+M\+Cycle} $\ast$const p\+Cycle)
+\begin{DoxyCompactList}\small\item\em Call back function when the cycle is stopped by the framework. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Settings} {\bf m\+\_\+settings}
+\item 
+{\bf D\+Q\+M\+Event\+Client} $\ast$ {\bf m\+\_\+p\+Event\+Client}
+\item 
+{\bf D\+Q\+M\+Run\+Control\+Client} $\ast$ {\bf m\+\_\+p\+Run\+Control\+Client}
+\item 
+{\bf D\+Q\+M\+Cycle} $\ast$ {\bf m\+\_\+p\+Cycle}
+\item 
+{\bf D\+Q\+M\+Archiver} $\ast$ {\bf m\+\_\+p\+Archiver}
+\item 
+std\+::string {\bf m\+\_\+application\+Type}
+\item 
+std\+::string {\bf m\+\_\+application\+Name}
+\item 
+int {\bf m\+\_\+run\+Number}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Analysis\+Module\+Application}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication} class. 
+
+Definition at line 49 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!D\+Q\+M\+Analysis\+Module\+Application@{D\+Q\+M\+Analysis\+Module\+Application}}
+\index{D\+Q\+M\+Analysis\+Module\+Application@{D\+Q\+M\+Analysis\+Module\+Application}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{D\+Q\+M\+Analysis\+Module\+Application}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+D\+Q\+M\+Analysis\+Module\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a4d117b05bc4ddf26988a41fc00bfa733}
+
+
+Constructor. 
+
+
+
+Definition at line 59 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::\+D\+Q\+M\+Archiver, and m\+\_\+p\+Archiver.
+
+
+\begin{DoxyCode}
+59                                                            :
+60     DQMModuleApplication(),
+61     m_pEventClient(NULL),
+62     m_pRunControlClient(NULL),
+63     m_pCycle(NULL),
+64     m_applicationType(\textcolor{stringliteral}{"AnalysisModule"}),
+65     m_applicationName(\textcolor{stringliteral}{"UNKNOWN"}),
+66     m_runNumber(-1)
+67 \{
+68   m_pArchiver = \textcolor{keyword}{new} DQMArchiver();
+69 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!````~D\+Q\+M\+Analysis\+Module\+Application@{$\sim$\+D\+Q\+M\+Analysis\+Module\+Application}}
+\index{````~D\+Q\+M\+Analysis\+Module\+Application@{$\sim$\+D\+Q\+M\+Analysis\+Module\+Application}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Analysis\+Module\+Application}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::$\sim$\+D\+Q\+M\+Analysis\+Module\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a663febee6eaaeee2bc8a920ee9204eb7}
+
+
+Destructor. 
+
+
+
+Definition at line 73 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References m\+\_\+p\+Archiver, m\+\_\+p\+Cycle, m\+\_\+p\+Event\+Client, and m\+\_\+p\+Run\+Control\+Client.
+
+
+\begin{DoxyCode}
+74 \{
+75   \textcolor{keyword}{delete} m_pArchiver;
+76 
+77   \textcolor{keywordflow}{if}(m_pEventClient)
+78     \textcolor{keyword}{delete} m_pEventClient;
+79 
+80   \textcolor{keywordflow}{if}(m_pRunControlClient)
+81     \textcolor{keyword}{delete} m_pRunControlClient;
+82 
+83   \textcolor{keywordflow}{if}(m_pCycle)
+84     \textcolor{keyword}{delete} m_pCycle;
+85 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!configure\+Archiver@{configure\+Archiver}}
+\index{configure\+Archiver@{configure\+Archiver}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{configure\+Archiver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Archiver (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_aaa1b0aae6e493636cbedc6194ac1ed2b}
+
+
+Configure the archiver. 
+
+
+
+Definition at line 547 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child\+Element(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute(), dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+archive\+Directory, m\+\_\+settings, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+should\+Open\+Archive, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+548 \{
+549   \textcolor{keywordflow}{try}
+550   \{
+551     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureArchiver: configuring ..."} << 
+      std::endl;
+552 
+553     \textcolor{keyword}{const} TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChildElement(\textcolor{stringliteral}{"archiver"}).Element();
+554 
+555     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"open"}, 
+      m_settings.m_shouldOpenArchive));
+556     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"directory"}, 
+      m_settings.m_archiveDirectory));
+557 
+558     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureArchiver: configuring ... OK"} << 
+      std::endl;
+559   \}
+560   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+561   \{
+562     \textcolor{keywordflow}{return} exception.getStatusCode();
+563   \}
+564 
+565   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+566 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!configure\+Cycle@{configure\+Cycle}}
+\index{configure\+Cycle@{configure\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{configure\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a56b20945afabbcfee49e1b9b2fc23257}
+
+
+Configure the workflow cycle. 
+
+
+
+Definition at line 447 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Cycle\+::add\+Listener(), dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::create\+Plugin\+Class(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child\+Element(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute(), dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$\+::instance(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Timeout, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Type, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+cycle\+Value, m\+\_\+p\+Cycle, m\+\_\+settings, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, dqm4hep\+::\+D\+Q\+M\+Cycle\+::set\+Cycle\+Value(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::set\+Timeout(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+448 \{
+449   \textcolor{keywordflow}{try}
+450   \{
+451     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureCycle: configuring ..."} << std::endl;
+452 
+453     \textcolor{keyword}{const} TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChildElement(\textcolor{stringliteral}{"cycle"}).Element();
+454 
+455     \textcolor{comment}{// default values}
+456     m_settings.m_cycleType = \textcolor{stringliteral}{"TimerCycle"};
+457     m_settings.m_cycleValue = 10; \textcolor{comment}{// 10 seconds}
+458     m_settings.m_cycleTimeout = 3; \textcolor{comment}{// 3 seconds}
+459 
+460     \textcolor{keywordflow}{if}(pXmlElement)
+461     \{
+462       THROW_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"type"}, m_settings.m_cycleType));
+463       THROW_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"value"}, m_settings.m_cycleValue));
+464       THROW_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"timeout"}, m_settings.m_cycleTimeout));
+465     \}
+466 
+467     \textcolor{comment}{// find the cycle plug-in}
+468     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureCycle: querying cycle to
+       PluginManager ... OK"} << std::endl;
+469     m_pCycle = DQMPluginManager::instance()->createPluginClass<DQMCycle>(
+      m_settings.m_cycleType);
+470 
+471     \textcolor{keywordflow}{if}(!m_pCycle)
+472       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+473 
+474     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureCycle: querying cycle to
+       PluginManager ... OK"} << std::endl;
+475 
+476     m_pCycle->setCycleValue(m_settings.m_cycleValue);
+477     m_pCycle->setTimeout(m_settings.m_cycleTimeout);
+478     m_pCycle->addListener(\textcolor{keyword}{this});
+479 
+480     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureCycle: configuring ... OK"} << 
+      std::endl;
+481   \}
+482   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+483   \{
+484     \textcolor{keywordflow}{return} exception.getStatusCode();
+485   \}
+486 
+487   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+488 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!configure\+Module@{configure\+Module}}
+\index{configure\+Module@{configure\+Module}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{configure\+Module}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Module (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_aa8c1ca33abf7a1807e93d1b2738bfcfc}
+
+
+Configure the module. 
+
+
+
+Definition at line 492 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::create\+Plugin\+Class(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child\+Element(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module\+Type(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$\+::instance(), m\+\_\+application\+Name, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::set\+Module(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::set\+Module\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::set\+Module\+Type(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+493 \{
+494   \textcolor{keywordflow}{try}
+495   \{
+496     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureModule: configuring ..."} << std::endl
+      ;
+497 
+498     TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChildElement(\textcolor{stringliteral}{"module"}).Element();
+499 
+500     std::string type;
+501     std::string name;
+502 
+503     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"type"}, type));
+504     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pXmlElement, \textcolor{stringliteral}{"name"}, name));
+505 
+506     \textcolor{keywordflow}{if}(this->getModuleType().empty())
+507       this->setModuleType(type);
+508 
+509     \textcolor{keywordflow}{if}(this->getModuleName().empty())
+510       this->setModuleName(name);
+511 
+512     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Query analysis module to PluginManager ... "} << std::endl;
+513 
+514     DQMAnalysisModule *pAnalysisModule = DQMPluginManager::instance()->
+      createPluginClass<DQMAnalysisModule>(this->getModuleType());
+515 
+516     \textcolor{keywordflow}{if}(!pAnalysisModule)
+517       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+518 
+519     this->setModule(pAnalysisModule);
+520 
+521     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Query analysis module to PluginManager ... OK"} << std::endl;
+522 
+523     TiXmlHandle moduleHandle(pXmlElement);
+524 
+525     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Reading settings of active module '"} << this->
+      getModule()->getName() << \textcolor{stringliteral}{"' ..."} << std::endl;
+526     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getModule()->readSettings(moduleHandle));
+527     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Reading settings of active module '"} << this->
+      getModule()->getName() << \textcolor{stringliteral}{"' ... OK"} << std::endl;
+528 
+529     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Initializing active module '"} << this->
+      getModule()->getName() << \textcolor{stringliteral}{"' ..."} << std::endl;
+530     THROW_RESULT_IF( STATUS\_CODE\_SUCCESS, !=, this->getModule()->initModule() );
+531     streamlog\_out( MESSAGE ) << \textcolor{stringliteral}{"Initializing active module '"} << this->
+      getModule()->getName() << \textcolor{stringliteral}{"' ... OK"} << std::endl;
+532 
+533     m_applicationName = this->getModule()->getName();
+534 
+535     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureModule: configuring ... OK"} << 
+      std::endl;
+536   \}
+537   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+538   \{
+539     \textcolor{keywordflow}{return} exception.getStatusCode();
+540   \}
+541 
+542   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+543 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!configure\+Network@{configure\+Network}}
+\index{configure\+Network@{configure\+Network}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{configure\+Network}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a05f3c887175b3e44191876f9ab89953f}
+
+
+Configure network interface. 
+
+
+
+Definition at line 371 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Plugin\+Manager\+::create\+Plugin\+Class(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child\+Element(), dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::get\+Attribute(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+Status\+Code\+Exception\+::get\+Status\+Code(), dqm4hep\+::\+D\+Q\+M\+Singleton$<$ D\+Q\+M\+Plugin\+Manager $>$\+::instance(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+event\+Client\+Type, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+monitor\+Element\+Collector, m\+\_\+p\+Event\+Client, m\+\_\+p\+Run\+Control\+Client, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+run\+Control\+Name, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+run\+Control\+Type, m\+\_\+settings, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::read\+Settings(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::set\+Collector\+Name(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::set\+Run\+Control\+Name(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Update\+Mode(), T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F\+\_\+\+A\+N\+D\+\_\+\+I\+F.
+
+
+
+Referenced by read\+Settings().
+
+
+\begin{DoxyCode}
+372 \{
+373   \textcolor{keywordflow}{try}
+374   \{
+375     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureNetwork: configuring ..."} << 
+      std::endl;
+376 
+377     \textcolor{comment}{//}
+378     \textcolor{comment}{// Get all xml attributes needed to configure network options !}
+379     \textcolor{comment}{//}
+380 
+381     TiXmlElement *\textcolor{keyword}{const} pXmlElement = xmlHandle.FirstChildElement(\textcolor{stringliteral}{"network"}).Element();
+382 
+383     \textcolor{keywordflow}{if}(NULL == pXmlElement)
+384     \{
+385       streamlog\_out(ERROR) << \textcolor{stringliteral}{"<network> element not found !"} << std::endl;
+386       \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+387     \}
+388 
+389     \textcolor{keyword}{const} TiXmlHandle networkHandle(pXmlElement);
+390 
+391     TiXmlElement *\textcolor{keyword}{const} pRunControlXmlElement = networkHandle.FirstChildElement(\textcolor{stringliteral}{"runcontrol"}).Element();
+392     TiXmlElement *\textcolor{keyword}{const} pEventCollectorXmlElement = networkHandle.FirstChildElement(\textcolor{stringliteral}{"eventcollector"}).
+      Element();
+393     TiXmlElement *\textcolor{keyword}{const} pMonitorElementCollectorXmlElement = networkHandle.FirstChildElement(\textcolor{stringliteral}{"
+      monitorelementcollector"}).Element();
+394 
+395     \textcolor{keywordflow}{if}(NULL == pRunControlXmlElement
+396     || NULL == pEventCollectorXmlElement
+397     || NULL == pMonitorElementCollectorXmlElement)
+398     \{
+399       streamlog\_out(ERROR) << \textcolor{stringliteral}{"Incomplete network xml element"} << std::endl;
+400       \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_FOUND;
+401     \}
+402 
+403     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pRunControlXmlElement, \textcolor{stringliteral}{"name"}, 
+      m_settings.m_runControlName));
+404     THROW_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::getAttribute(pRunControlXmlElement, \textcolor{stringliteral}{"type"}, m_settings.
+      m_runControlType));
+405     THROW_RESULT_IF_AND_IF(STATUS\_CODE\_SUCCESS, STATUS\_CODE\_NOT\_FOUND, !=, 
+      DQMXmlHelper::getAttribute(pEventCollectorXmlElement, \textcolor{stringliteral}{"type"}, m_settings.
+      m_eventClientType));
+406     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::getAttribute(pMonitorElementCollectorXmlElement,
+       \textcolor{stringliteral}{"name"}, m_settings.m_monitorElementCollector));
+407 
+408     \textcolor{comment}{//}
+409     \textcolor{comment}{// Configure network form the extracted xml values}
+410     \textcolor{comment}{//}
+411 
+412     \textcolor{comment}{// monitor element collector name}
+413     this->getMonitorElementSender()->setCollectorName(m_settings.
+      m_monitorElementCollector);
+414 
+415     \textcolor{comment}{// event client}
+416     DQMEventClient *pEventClient = DQMPluginManager::instance()->
+      createPluginClass<DQMEventClient>(m_settings.m_eventClientType);
+417 
+418     \textcolor{keywordflow}{if}( ! pEventClient )
+419       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+420 
+421     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pEventClient->readSettings( TiXmlHandle(
+      pEventCollectorXmlElement) ));
+422     \textcolor{comment}{// force update mode to false for the moment}
+423     pEventClient->setUpdateMode(\textcolor{keyword}{false});
+424     m_pEventClient = pEventClient;
+425 
+426     \textcolor{comment}{// configure run control}
+427     DQMRunControlClient *pRunControlClient = DQMPluginManager::instance()->
+      createPluginClass<DQMRunControlClient>(m_settings.m_runControlType);
+428 
+429     \textcolor{keywordflow}{if}(NULL == pRunControlClient)
+430       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_NOT\_FOUND);
+431 
+432     pRunControlClient->setRunControlName( m_settings.m_runControlName );
+433     m_pRunControlClient = pRunControlClient;
+434 
+435     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::configureNetwork: configuring ... OK"} << 
+      std::endl;
+436   \}
+437   \textcolor{keywordflow}{catch}(\textcolor{keyword}{const} StatusCodeException &exception)
+438   \{
+439     \textcolor{keywordflow}{return} exception.getStatusCode();
+440   \}
+441 
+442   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+443 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!get\+Current\+Run\+Number@{get\+Current\+Run\+Number}}
+\index{get\+Current\+Run\+Number@{get\+Current\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{get\+Current\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::get\+Current\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_ac3b9e852cbe4bb1cb64d941a83681cda}
+
+
+Get the current run number that was started (not from run control) 
+
+
+
+Definition at line 599 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References m\+\_\+run\+Number.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+600 \{
+601   \textcolor{keywordflow}{return} m_runNumber;
+602 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a248fc1511e714851215dd49406897906}
+
+
+Get the application name (\char`\"{}\+Module\+Type/\+Module\+Name\char`\"{}) 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_afb07e2e9bc98060f2b1529f30355e4b9}.
+
+
+
+Definition at line 364 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References m\+\_\+application\+Name.
+
+
+\begin{DoxyCode}
+365 \{
+366   \textcolor{keywordflow}{return} m_applicationName;
+367 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_aeccec8976c667b3e644e87c82043d1ff}
+
+
+Get the application type (\char`\"{}\+Analysis\+Module\char`\"{}) 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_ac24026bb5647c3f0de1889318a14cf88}.
+
+
+
+Definition at line 357 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References m\+\_\+application\+Type.
+
+
+\begin{DoxyCode}
+358 \{
+359   \textcolor{keywordflow}{return} m_applicationType;
+360 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!on\+Cycle\+Started@{on\+Cycle\+Started}}
+\index{on\+Cycle\+Started@{on\+Cycle\+Started}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{on\+Cycle\+Started}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::on\+Cycle\+Started (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a74934c636524b8c2aa2488d083000610}
+
+
+Call back function when the cycle is started by the framework. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener} \doxyref{}{p.}{classdqm4hep_1_1DQMCycleListener_ab9d238178efd278dd88237fcfeb634bc}.
+
+
+
+Definition at line 606 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+607 \{
+608   THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getModule()->startOfCycle());
+609 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!on\+Cycle\+Stopped@{on\+Cycle\+Stopped}}
+\index{on\+Cycle\+Stopped@{on\+Cycle\+Stopped}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{on\+Cycle\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::on\+Cycle\+Stopped (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a9faa5faf7ce5f4d825d45a9be6e7b5e3}
+
+
+Call back function when the cycle is stopped by the framework. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener} \doxyref{}{p.}{classdqm4hep_1_1DQMCycleListener_a24aa4e203342ab35794b41df9a6c37ec}.
+
+
+
+Definition at line 613 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+614 \{
+615   THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getModule()->endOfCycle());
+616 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!on\+Event\+Processed@{on\+Event\+Processed}}
+\index{on\+Event\+Processed@{on\+Event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{on\+Event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::on\+Event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Cycle} $\ast$const}]{p\+Cycle, }
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_adaa1b8a34ba4e04e66b37c982f716e32}
+
+
+Call back function when an event is processed by the framework. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle\+Listener} \doxyref{}{p.}{classdqm4hep_1_1DQMCycleListener_a2845abc69dbb59cfaf4fb6fc491bec8b}.
+
+
+
+Definition at line 135 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+\begin{DoxyCode}
+135 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{settings\+File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a4b460e8713534da56d6bfcb775a1f5b0}
+
+
+Read settings from a xml file. 
+
+Initialize the application. Declare all the services, load the shared libraries, configure the active module 
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_a994bb2bea7b1def71198ea1864460806}.
+
+
+
+Definition at line 89 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References configure\+Archiver(), configure\+Cycle(), configure\+Module(), configure\+Network(), dqm4hep\+::\+D\+Q\+M\+File\+Handler\+Factory\+::create\+File\+Handler(), dqm4hep\+::\+D\+E\+B\+U\+G, dqm4hep\+::\+D\+Q\+M\+File\+Handler\+::download(), dqm4hep\+::\+Ti\+Xml\+Handle\+::\+Element(), dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+Ti\+Xml\+Handle\+::\+First\+Child\+Element(), dqm4hep\+::\+D\+Q\+M\+File\+Handler\+::get\+Local\+File\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::is\+Initialized(), dqm4hep\+::\+Ti\+Xml\+Document\+::\+Load\+File(), m\+\_\+settings, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+settings\+File\+Name, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::print(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::set\+Initialized().
+
+
+
+Referenced by configure\+Module().
+
+
+\begin{DoxyCode}
+90 \{
+91   \textcolor{keywordflow}{if}(this->isInitialized())
+92     \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_INITIALIZED;
+93 
+94   \textcolor{keywordtype}{size\_t} splitterPosition = settingsFileName.find(\textcolor{stringliteral}{":"});
+95 
+96   std::string fileHandlerType;
+97   std::string filePattern;
+98 
+99   \textcolor{keywordflow}{if}(splitterPosition != std::string::npos)
+100   \{
+101     fileHandlerType = settingsFileName.substr(0, splitterPosition);
+102     filePattern = settingsFileName.substr(splitterPosition+1);
+103   \}
+104   \textcolor{keywordflow}{else}
+105   \{
+106     fileHandlerType = \textcolor{stringliteral}{""};
+107     filePattern = settingsFileName;
+108   \}
+109 
+110   streamlog\_out(DEBUG) << \textcolor{stringliteral}{"File handler type : "} << fileHandlerType << std::endl;
+111 
+112   DQMFileHandlerFactory fileHandlerFactory;
+113   DQMFileHandler *pFileHandler = fileHandlerFactory.createFileHandler(fileHandlerType);
+114 
+115   \textcolor{keywordflow}{if}(!pFileHandler)
+116     \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+117 
+118   StatusCode statusCode = pFileHandler->download(filePattern);
+119 
+120   \textcolor{keywordflow}{if}(statusCode != STATUS\_CODE\_SUCCESS)
+121   \{
+122     \textcolor{keyword}{delete} pFileHandler;
+123     \textcolor{keywordflow}{return} statusCode;
+124   \}
+125 
+126   std::string localSettingsFile = pFileHandler->getLocalFileName();
+127   \textcolor{keyword}{delete} pFileHandler;
+128 
+129   TiXmlDocument xmlDocument(localSettingsFile);
+130 
+131     \textcolor{keywordflow}{if} (!xmlDocument.LoadFile())
+132     \{
+133         std::cout << \textcolor{stringliteral}{"DQMAnalysisModuleApplication::readSettings - Invalid xml file."} << std::endl;
+134         \textcolor{keywordflow}{return} STATUS\_CODE\_FAILURE;
+135     \}
+136 
+137     \textcolor{keyword}{const} TiXmlHandle xmlDocumentHandle(&xmlDocument);
+138     \textcolor{keyword}{const} TiXmlHandle xmlHandle = TiXmlHandle(xmlDocumentHandle.FirstChildElement().Element());
+139 
+140   \textcolor{comment}{// configure module}
+141   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, configureModule(xmlHandle));
+142 
+143   DimBrowser browser;
+144   \textcolor{keywordtype}{int} nServers = browser.getServers();
+145 
+146   std::string moduleServerName = \textcolor{stringliteral}{"DQM4HEP/Module/"} + this->getModule()->getName();
+147 
+148   \textcolor{keywordflow}{if}(nServers)
+149   \{
+150     \textcolor{keywordtype}{char} *serverName;
+151     \textcolor{keywordtype}{char} *node;
+152 
+153     \textcolor{keywordflow}{while}(browser.getNextServer(serverName, node))
+154     \{
+155       \textcolor{keywordflow}{if}(moduleServerName == serverName)
+156       \{
+157         streamlog\_out(ERROR) << \textcolor{stringliteral}{"Module '"} << this->getModule()->getName() << \textcolor{stringliteral}{"' already registered over
+       the network.\(\backslash\)n"}
+158             << \textcolor{stringliteral}{"Please, change the module name or stop the other module application with the same name !"} <
+      < std::endl;
+159         \textcolor{keywordflow}{return} STATUS\_CODE\_ALREADY\_PRESENT;
+160       \}
+161     \}
+162   \}
+163 
+164   DimServer::start( moduleServerName.c\_str() );
+165 
+166   \textcolor{comment}{// configure remaining part of the application}
+167   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->configureCycle(xmlHandle));
+168   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->configureArchiver(xmlHandle));
+169   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->configureNetwork(xmlHandle));
+170 
+171   m_settings.m_settingsFileName = settingsFileName;
+172   m_settings.print();
+173 
+174   setInitialized(\textcolor{keyword}{true});
+175 
+176   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+177 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!run@{run}}
+\index{run@{run}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_abf3fd5d59491e8f99c9ed964a487079f}
+
+
+Run the application. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_a42114dcd51bf17af14479345145e5988}.
+
+
+
+Definition at line 181 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Archiver\+::archive(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::clear\+Queue(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::close(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+::end\+Of\+Run(), dqm4hep\+::\+E\+R\+R\+O\+R, dqm4hep\+::\+D\+Q\+M\+Cycle\+::event\+Processed(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run\+Number(), get\+Current\+Run\+Number(), dqm4hep\+::\+D\+Q\+M\+Archiver\+::get\+File\+Name(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Module(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Manager(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Module\+::get\+Name(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+N\+Processed\+Events(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Processing\+Rate(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Return\+Code(), dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Run\+Number(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Total\+Cycle\+Time(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::is\+End\+Of\+Cycle\+Reached(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::is\+Initialized(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::is\+Running(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::is\+Timeout\+Reached(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+archive\+Directory, m\+\_\+p\+Archiver, m\+\_\+p\+Cycle, m\+\_\+p\+Event\+Client, m\+\_\+p\+Run\+Control\+Client, m\+\_\+run\+Number, m\+\_\+settings, dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::\+Settings\+::m\+\_\+should\+Open\+Archive, dqm4hep\+::\+M\+E\+S\+S\+A\+G\+E, dqm4hep\+::\+D\+Q\+M\+Archiver\+::open(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+::process\+Event(), R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+D\+Q\+M\+Run\+::set\+End\+Time(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::set\+Update\+Mode(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::should\+Stop\+Application(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::start\+Cycle(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+::start\+Of\+Run(), start\+Services(), dqm4hep\+::\+D\+Q\+M\+Cycle\+::stop\+Cycle(), stop\+Services(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::take\+Event(), and dqm4hep\+::\+Status\+Code\+Exception\+::to\+String().
+
+
+\begin{DoxyCode}
+182 \{
+183   \textcolor{keywordflow}{if}(!this->isInitialized())
+184     \textcolor{keywordflow}{return} STATUS\_CODE\_NOT\_INITIALIZED;
+185 
+186   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->startServices());
+187 
+188   \textcolor{comment}{// get casted module for easier manipulation}
+189   DQMAnalysisModule *pAnalysisModule = \textcolor{keyword}{dynamic\_cast<}DQMAnalysisModule *\textcolor{keyword}{>}(this->
+      getModule());
+190   std::string moduleName = pAnalysisModule->getName();
+191 
+192   \textcolor{comment}{// infinite loop}
+193   \textcolor{keywordflow}{while}(!this->shouldStopApplication())
+194   \{
+195     \textcolor{comment}{// wait for a start of run}
+196     \textcolor{keywordtype}{bool} firstMessage = \textcolor{keyword}{true};
+197 
+198     \textcolor{keywordflow}{while}(!m_pRunControlClient->isRunning() && !this->shouldStopApplication())
+199     \{
+200       \textcolor{keywordflow}{if}(firstMessage)
+201       \{
+202         streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"... Waiting for next run ..."} << std::endl;
+203         firstMessage = \textcolor{keyword}{false};
+204       \}
+205 
+206       timespec timesleep;
+207       timesleep.tv\_sec = 0;
+208       timesleep.tv\_nsec = 1000000L;
+209       nanosleep(&timesleep, NULL);
+210     \}
+211 
+212     \textcolor{keywordflow}{if}(this->shouldStopApplication())
+213       \textcolor{keywordflow}{break};
+214 
+215     DQMRun *pRun = m_pRunControlClient->getCurrentRun();
+216 
+217     \textcolor{keywordflow}{if}(NULL == pRun)
+218       \textcolor{keywordflow}{continue};
+219 
+220     m_runNumber = pRun->getRunNumber();
+221 
+222     streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Starting new run no "} << pRun->getRunNumber() << std::endl;
+223 
+224     \textcolor{comment}{// open an archive}
+225     \textcolor{keywordflow}{if}(m_settings.m_shouldOpenArchive)
+226     \{
+227       std::stringstream archiveFileName;
+228       std::string directory =
+229           m_settings.m_archiveDirectory.at(m_settings.m_archiveDirectory.size() - 1) == \textcolor{charliteral}{'/'} ?
+230               m_settings.m_archiveDirectory : m_settings.m_archiveDirectory + \textcolor{stringliteral}{"/"};
+231 
+232       archiveFileName << directory
+233           << \textcolor{stringliteral}{"DQMArchive"}
+234           << \textcolor{stringliteral}{"\_M"} << moduleName
+235           <<  \textcolor{stringliteral}{"\_I"} << pRun->getRunNumber();
+236 
+237       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pArchiver->open(archiveFileName.str(), \textcolor{stringliteral}{"RECREATE"}));
+238       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"Archive '"} << m_pArchiver->getFileName() << \textcolor{stringliteral}{"' opened"} << std::endl;
+239     \}
+240 
+241     \textcolor{comment}{// start of run !}
+242     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pAnalysisModule->startOfRun(pRun));
+243 
+244     \textcolor{comment}{// start receiving data}
+245     m_pEventClient->setUpdateMode(\textcolor{keyword}{true});
+246 
+247     \textcolor{comment}{// while run has not ended, process cycles}
+248     \textcolor{keywordflow}{while}( m_pRunControlClient->isRunning() && !this->shouldStopApplication() )
+249     \{
+250       \textcolor{comment}{// process a cycle}
+251       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************************"} << std::endl;
+252       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"***                Start of cycle              ***"} << std::endl;
+253       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************************"} << std::endl;
+254       m_pCycle->startCycle();
+255 
+256       \textcolor{keywordflow}{while}(1)
+257       \{
+258         \textcolor{keywordflow}{if}( m_pCycle->isEndOfCycleReached() )
+259           \textcolor{keywordflow}{break};
+260 
+261         \textcolor{keywordflow}{if}( m_pCycle->isTimeoutReached() )
+262           \textcolor{keywordflow}{break};
+263 
+264         \textcolor{keywordflow}{if}( this->shouldStopApplication() )
+265           \textcolor{keywordflow}{break};
+266 
+267         DQMEvent *pEvent = NULL;
+268         m_pEventClient->takeEvent(pEvent);
+269 
+270         \textcolor{keywordflow}{if}(NULL == pEvent)
+271           \textcolor{keywordflow}{continue};
+272 
+273         \textcolor{keywordflow}{try}
+274         \{
+275           StatusCode statusCode = pAnalysisModule->processEvent(pEvent);
+276           m_pCycle->eventProcessed(pEvent);
+277         \}
+278         \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+279         \{
+280           streamlog\_out(ERROR) << \textcolor{stringliteral}{"Module::processEvent(evt) returned "} << exception.toString() << \textcolor{stringliteral}{" !"} << 
+      std::endl;
+281         \}
+282         \textcolor{keywordflow}{catch}(...)
+283         \{
+284           streamlog\_out(ERROR) << \textcolor{stringliteral}{"Module::processEvent(evt) : caught unknown exception !"} << std::endl;
+285         \}
+286 
+287         \textcolor{keywordflow}{if}(pEvent)
+288           \textcolor{keyword}{delete} pEvent;
+289       \}
+290 
+291       m_pCycle->stopCycle();
+292 
+293       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************************"} << std::endl;
+294       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"***            End of cycle reached            ***"} << std::endl;
+295       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************************"} << std::endl;
+296       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"***                STATISTICS                  ***"} << std::endl;
+297       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** N processed events : "} << m_pCycle->
+      getNProcessedEvents() << std::endl;
+298       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Event rate :         "} << m_pCycle->
+      getProcessingRate()*1000.f << \textcolor{stringliteral}{" evts/s"} << std::endl;
+299       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"*** Processing time :    "} << m_pCycle->
+      getTotalCycleTime().operator \textcolor{keywordtype}{long} long()/1000.f << \textcolor{stringliteral}{" s"} << std::endl;
+300       streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"**************************************************"} << std::endl;
+301 
+302       \textcolor{comment}{// archive publication if user asked for}
+303       \textcolor{keywordflow}{if}(m_settings.m_shouldOpenArchive)
+304         RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pArchiver->archive(pAnalysisModule));
+305 
+306 
+307 \textcolor{comment}{//      DQMMonitorElementList monitorElementListToPublish;}
+308 \textcolor{comment}{//      RETURN\_RESULT\_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementManager()}
+309 \textcolor{comment}{//          ->getMonitorElementListToPublish(monitorElementListToPublish));}
+310 
+311       \textcolor{comment}{// TODO find a way to update the run number in monitor elements}
+312 \textcolor{comment}{//      // set monitor elements infos}
+313 \textcolor{comment}{//      for(DQMMonitorElementList::iterator iter = monitorElementListToPublish.begin(), endIter =
+       monitorElementListToPublish.end() ;}
+314 \textcolor{comment}{//          endIter != iter ; ++iter)}
+315 \textcolor{comment}{//        (*iter)->setRunNumber(this->getCurrentRunNumber());}
+316 
+317       \textcolor{comment}{// send monitor elements to collector}
+318       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementSender()->sendMonitorElements());
+319 
+320       \textcolor{comment}{// reset the monitor elements with end of run reset policy}
+321       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementManager()
+322           ->resetMonitorElements(END\_OF\_CYCLE\_RESET\_POLICY));
+323 
+324       \textcolor{comment}{// stop current run if run number has changed or run stopped}
+325       \textcolor{keywordflow}{if}(m_pRunControlClient->getCurrentRunNumber() != this->getCurrentRunNumber())
+326         \textcolor{keywordflow}{break};
+327     \}
+328 
+329     \textcolor{comment}{// stop receive data and clear contents}
+330     m_pEventClient->setUpdateMode(\textcolor{keyword}{false});
+331     m_pEventClient->clearQueue();
+332 
+333     \textcolor{comment}{// fill the run end time}
+334     pRun->setEndTime(time(NULL));
+335 
+336     \textcolor{comment}{// process the end of run module stuff}
+337     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pAnalysisModule->endOfRun(pRun));
+338 
+339     \textcolor{comment}{// reset the monitor elements that have been reset at end of run}
+340     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementManager()
+341         ->resetMonitorElements(END\_OF\_RUN\_RESET\_POLICY));
+342 
+343     \textcolor{comment}{// archive the monitor element if archive is opened}
+344     \textcolor{keywordflow}{if}(m_settings.m_shouldOpenArchive)
+345       RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pArchiver->close());
+346   \}
+347 
+348   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, stopServices());
+349 
+350   streamlog\_out(MESSAGE) << \textcolor{stringliteral}{"DQMAnalysisModuleApplication: Exiting application ..."} << std::endl;
+351 
+352   \textcolor{keywordflow}{return} this->getReturnCode();
+353 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!start\+Services@{start\+Services}}
+\index{start\+Services@{start\+Services}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{start\+Services}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::start\+Services (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a68298b9a893895b242bb505f9fe90edb}
+
+
+Start all services. 
+
+Called just at beginning of \doxyref{run()}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_abf3fd5d59491e8f99c9ed964a487079f} 
+
+Definition at line 570 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), m\+\_\+p\+Event\+Client, m\+\_\+p\+Run\+Control\+Client, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+571 \{
+572   \textcolor{comment}{// start clients}
+573   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pEventClient->connectToService());
+574   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlClient->
+      connectToService());
+575   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementSender()->connectToService());
+576 
+577   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+578 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!stop\+Services@{stop\+Services}}
+\index{stop\+Services@{stop\+Services}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{stop\+Services}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::stop\+Services (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a40aecd3b413dd5517535a1835e7d148b}
+
+
+Stop all services. 
+
+Called at the end of \doxyref{run()}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_abf3fd5d59491e8f99c9ed964a487079f} before exit 
+
+Definition at line 582 of file D\+Q\+M\+Analysis\+Module\+Application.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::connect\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Module\+Application\+::get\+Monitor\+Element\+Sender(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client\+::is\+Connected\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Sender\+::is\+Connected\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Event\+Client\+::is\+Connected\+To\+Service(), m\+\_\+p\+Event\+Client, m\+\_\+p\+Run\+Control\+Client, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by run().
+
+
+\begin{DoxyCode}
+583 \{
+584   \textcolor{comment}{// start clients}
+585   \textcolor{keywordflow}{if}(m_pEventClient && m_pEventClient->isConnectedToService())
+586     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pEventClient->connectToService());
+587 
+588   \textcolor{keywordflow}{if}(m_pRunControlClient && m_pRunControlClient->isConnectedToService())
+589     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_pRunControlClient->
+      connectToService());
+590 
+591   \textcolor{keywordflow}{if}(this->getMonitorElementSender() && this->getMonitorElementSender()->
+      isConnectedToService())
+592     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->getMonitorElementSender()->
+      connectToService());
+593 
+594   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+595 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+application\+Name@{m\+\_\+application\+Name}}
+\index{m\+\_\+application\+Name@{m\+\_\+application\+Name}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+application\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+application\+Name\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a552f0b539da7771eb8f2247aad5d3190}
+
+
+Definition at line 149 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by configure\+Module(), and get\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+application\+Type@{m\+\_\+application\+Type}}
+\index{m\+\_\+application\+Type@{m\+\_\+application\+Type}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+application\+Type}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+application\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a642567b57ee0697ba70b260104d51ced}
+
+
+Definition at line 148 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by get\+Type().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+p\+Archiver@{m\+\_\+p\+Archiver}}
+\index{m\+\_\+p\+Archiver@{m\+\_\+p\+Archiver}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+p\+Archiver}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Archiver}$\ast$ dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+p\+Archiver\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_aa04afd96ed054fcdd2351cb6a91f2c6f}
+
+
+Definition at line 146 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by D\+Q\+M\+Analysis\+Module\+Application(), run(), and $\sim$\+D\+Q\+M\+Analysis\+Module\+Application().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+p\+Cycle@{m\+\_\+p\+Cycle}}
+\index{m\+\_\+p\+Cycle@{m\+\_\+p\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+p\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Cycle}$\ast$ dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+p\+Cycle\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_ad3748e369a10a5b630b3edde5d078937}
+
+
+Definition at line 145 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by configure\+Cycle(), run(), and $\sim$\+D\+Q\+M\+Analysis\+Module\+Application().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}}
+\index{m\+\_\+p\+Event\+Client@{m\+\_\+p\+Event\+Client}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+p\+Event\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Event\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+p\+Event\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_ab3d81db1c043fa87b128161ae2bbb0c0}
+
+
+Definition at line 143 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by configure\+Network(), run(), start\+Services(), stop\+Services(), and $\sim$\+D\+Q\+M\+Analysis\+Module\+Application().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+p\+Run\+Control\+Client@{m\+\_\+p\+Run\+Control\+Client}}
+\index{m\+\_\+p\+Run\+Control\+Client@{m\+\_\+p\+Run\+Control\+Client}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+p\+Run\+Control\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run\+Control\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+p\+Run\+Control\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_ac1626c131c6fd7e70c53ea3513271658}
+
+
+Definition at line 144 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by configure\+Network(), run(), start\+Services(), stop\+Services(), and $\sim$\+D\+Q\+M\+Analysis\+Module\+Application().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+run\+Number@{m\+\_\+run\+Number}}
+\index{m\+\_\+run\+Number@{m\+\_\+run\+Number}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+run\+Number\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a7b8cb55766ae4e64670fc25a7b1d2de5}
+
+
+Definition at line 151 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by get\+Current\+Run\+Number(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}!m\+\_\+settings@{m\+\_\+settings}}
+\index{m\+\_\+settings@{m\+\_\+settings}!dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application@{dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application}}
+\subsubsection[{m\+\_\+settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Settings} dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::m\+\_\+settings\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMAnalysisModuleApplication_a84915f5f19ca241bd24df85f4831100c}
+
+
+Definition at line 141 of file D\+Q\+M\+Analysis\+Module\+Application.\+h.
+
+
+
+Referenced by configure\+Archiver(), configure\+Cycle(), configure\+Network(), read\+Settings(), and run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Analysis\+Module\+Application.\+h}\item 
+{\bf D\+Q\+M\+Analysis\+Module\+Application.\+cc}\end{DoxyCompactItemize}

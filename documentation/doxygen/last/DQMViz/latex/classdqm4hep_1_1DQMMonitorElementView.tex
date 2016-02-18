@@ -1,0 +1,774 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+View Class Reference}
+\label{classdqm4hep_1_1DQMMonitorElementView}\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+
+
+\doxyref{D\+Q\+M\+Monitor\+Element\+View}{p.}{classdqm4hep_1_1DQMMonitorElementView} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Monitor\+Element\+View.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Monitor\+Element\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMonitorElementView}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\+Monitor\+Element} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Add a monitor element to the view. \end{DoxyCompactList}\item 
+void {\bf remove\+Monitor\+Element} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Gui\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Remove a monitor element from the view. \end{DoxyCompactList}\item 
+void {\bf update\+Monitor\+Element} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Update the monitor element. \end{DoxyCompactList}\item 
+void {\bf replace\+Monitor\+Element} ({\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+Old\+Monitor\+Element, {\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$p\+New\+Monitor\+Element)
+\item 
+void {\bf clear} ()
+\item 
+void {\bf clear} (const std\+::string \&collector\+Name)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View} ({\bf D\+Q\+M\+Monitoring} $\ast$p\+Monitoring)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Monitor\+Element\+View} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf get\+Monitoring} () const 
+\begin{DoxyCompactList}\small\item\em Get the monitoring instance. \end{DoxyCompactList}\item 
+Q\+String\+List {\bf get\+Collector\+Names} () const 
+\item 
+Q\+List$<$ Q\+Tree\+Widget\+Item $\ast$ $>$ {\bf get\+Checked\+Monitor\+Elements} () const 
+\item 
+Q\+List$<$ Q\+Tree\+Widget\+Item $\ast$ $>$ {\bf get\+Checked\+Monitor\+Elements} (const std\+::string \&collector\+Name) const 
+\item 
+void {\bf uncheck\+All\+Monitor\+Elements} (const std\+::string \&collector\+Name)
+\item 
+void {\bf enable\+Subscription} (const std\+::string \&collector\+Name, bool enable=true)
+\begin{DoxyCompactList}\small\item\em Enable subscription of monitor elements. \end{DoxyCompactList}\item 
+Ti\+Xml\+Element $\ast$ {\bf to\+Xml} () const 
+\begin{DoxyCompactList}\small\item\em Export settings to xml element. \end{DoxyCompactList}\item 
+void {\bf from\+Xml} (Ti\+Xml\+Element $\ast$const p\+Xml\+Element)
+\begin{DoxyCompactList}\small\item\em Import settings from xml element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf handle\+Monitor\+Element\+Update} ()
+\item 
+void {\bf handle\+Monitor\+Element\+Deletion} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitoring} $\ast$ {\bf m\+\_\+p\+Monitoring}
+\item 
+Q\+Tool\+Box $\ast$ {\bf m\+\_\+p\+Tool\+Box}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Monitor\+Element\+View}{p.}{classdqm4hep_1_1DQMMonitorElementView} class. 
+
+Definition at line 263 of file D\+Q\+M\+Monitor\+Element\+View.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!D\+Q\+M\+Monitor\+Element\+View@{D\+Q\+M\+Monitor\+Element\+View}}
+\index{D\+Q\+M\+Monitor\+Element\+View@{D\+Q\+M\+Monitor\+Element\+View}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{D\+Q\+M\+Monitor\+Element\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::\+D\+Q\+M\+Monitor\+Element\+View (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitoring} $\ast$}]{p\+Monitoring}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementView_a353546c370fc02dd379a2e70fbdc8ef9}
+
+
+Constructor. 
+
+
+
+Definition at line 1196 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tool\+Box.
+
+
+\begin{DoxyCode}
+1196                                                                        :
+1197     m_pMonitoring(pMonitoring)
+1198 \{
+1199   setLayout(\textcolor{keyword}{new} QVBoxLayout());
+1200 
+1201   m_pToolBox = \textcolor{keyword}{new} QToolBox();
+1202   layout()->addWidget(m_pToolBox);
+1203 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!````~D\+Q\+M\+Monitor\+Element\+View@{$\sim$\+D\+Q\+M\+Monitor\+Element\+View}}
+\index{````~D\+Q\+M\+Monitor\+Element\+View@{$\sim$\+D\+Q\+M\+Monitor\+Element\+View}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Monitor\+Element\+View}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::$\sim$\+D\+Q\+M\+Monitor\+Element\+View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMonitorElementView_a25fb703dd14dc2d656ef70ad19a9f2bf}
+
+
+Destructor. 
+
+
+
+Definition at line 1207 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+\begin{DoxyCode}
+1208 \{
+1209   \textcolor{comment}{/* nop */}
+1210 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!add\+Monitor\+Element@{add\+Monitor\+Element}}
+\index{add\+Monitor\+Element@{add\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{add\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::add\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_a5193e90981fc4e6cc0bb455266598531}
+
+
+Add a monitor element to the view. 
+
+
+
+Definition at line 1410 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References update\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::get\+Or\+Create\+Gui\+Monitor\+Element(), dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::load\+Monitor\+Element\+Info\+List(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1411 \{
+1412   this->updateMonitorElement(pMonitorElement);
+1413 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_abcbf0b748f9ee0f4b34bf88362a3f199}
+
+
+Definition at line 1473 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::clear(), and m\+\_\+p\+Tool\+Box.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::clear(), and from\+Xml().
+
+
+\begin{DoxyCode}
+1474 \{
+1475   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1476   \{
+1477     DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(i));
+1478     pNavigator->clear();
+1479     m_pToolBox->removeItem(i);
+1480     pNavigator->deleteLater();
+1481   \}
+1482 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!clear@{clear}}
+\index{clear@{clear}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::clear (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_a99a230dc2a3611e6f507b186c976ce8d}
+
+
+Definition at line 1486 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::clear(), and m\+\_\+p\+Tool\+Box.
+
+
+\begin{DoxyCode}
+1487 \{
+1488   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1489   \{
+1490     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i) == QString(collectorName.c\_str()))
+1491     \{
+1492       DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(i));
+1493       pNavigator->clear();
+1494       \textcolor{keywordflow}{break};
+1495     \}
+1496   \}
+1497 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!enable\+Subscription@{enable\+Subscription}}
+\index{enable\+Subscription@{enable\+Subscription}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{enable\+Subscription}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::enable\+Subscription (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name, }
+\item[{bool}]{enable = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementView_a8ebc160c41eedc78035099468f2f3317}
+
+
+Enable subscription of monitor elements. 
+
+
+
+Definition at line 1285 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::enable\+Subscription(), and m\+\_\+p\+Tool\+Box.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup().
+
+
+\begin{DoxyCode}
+1286 \{
+1287   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1288   \{
+1289     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i).toStdString() == collectorName)
+1290     \{
+1291       DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(i));
+1292       pNavigator->enableSubscription(enable);
+1293       \textcolor{keywordflow}{break};
+1294     \}
+1295   \}
+1296 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!from\+Xml@{from\+Xml}}
+\index{from\+Xml@{from\+Xml}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{from\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::from\+Xml (
+\begin{DoxyParamCaption}
+\item[{Ti\+Xml\+Element $\ast$const}]{p\+Xml\+Element}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementView_ab8b40f991f9e84d693024f8eba292d65}
+
+
+Import settings from xml element. 
+
+
+
+Definition at line 1351 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::add\+Monitor\+Element(), clear(), get\+Monitoring(), m\+\_\+p\+Tool\+Box, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::mkdir().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::from\+Xml().
+
+
+\begin{DoxyCode}
+1352 \{
+1353   \textcolor{keywordflow}{if}(!pXmlElement)
+1354     \textcolor{keywordflow}{return};
+1355 
+1356   this->clear();
+1357 
+1358     TiXmlHandle elementHandle(pXmlElement);
+1359 
+1360     \textcolor{keywordflow}{for} (TiXmlElement *pCollectorElement = elementHandle.FirstChild(\textcolor{stringliteral}{"collector"}).Element(); NULL != 
+      pCollectorElement;
+1361         pCollectorElement = pCollectorElement->NextSiblingElement(\textcolor{stringliteral}{"collector"}))
+1362     \{
+1363       std::string collectorName;
+1364         \textcolor{keywordflow}{if}(pCollectorElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &collectorName))
+1365             \textcolor{keywordflow}{continue};
+1366 
+1367         DQMMonitorElementNavigator *pNavigator = \textcolor{keyword}{new} DQMMonitorElementNavigator(collectorName.c\_str(), 
+      this->getMonitoring());
+1368     m_pToolBox->addItem(pNavigator, collectorName.c\_str());
+1369 
+1370         TiXmlHandle collectorHandle(pCollectorElement);
+1371 
+1372         \textcolor{keywordflow}{for} (TiXmlElement *pModuleElement = collectorHandle.FirstChild(\textcolor{stringliteral}{"module"}).Element(); NULL != 
+      pModuleElement;
+1373             pModuleElement = pModuleElement->NextSiblingElement(\textcolor{stringliteral}{"module"}))
+1374         \{
+1375           std::string moduleName;
+1376             \textcolor{keywordflow}{if}(pModuleElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &moduleName))
+1377                 \textcolor{keywordflow}{continue};
+1378 
+1379             QTreeWidgetItem *pModuleItem = pNavigator->mkdir(moduleName.c\_str());
+1380 
+1381             TiXmlHandle moduleHandle(pModuleElement);
+1382 
+1383             \textcolor{keywordflow}{for} (TiXmlElement *pItemElement = moduleHandle.FirstChild(\textcolor{stringliteral}{"item"}).Element(); NULL != 
+      pItemElement;
+1384                 pItemElement = pItemElement->NextSiblingElement(\textcolor{stringliteral}{"item"}))
+1385             \{
+1386               std::string name;
+1387                 \textcolor{keywordflow}{if}(pItemElement->QueryStringAttribute(\textcolor{stringliteral}{"name"}, &name))
+1388                     \textcolor{keywordflow}{continue};
+1389 
+1390               std::string path;
+1391                 \textcolor{keywordflow}{if}(pItemElement->QueryStringAttribute(\textcolor{stringliteral}{"path"}, &path))
+1392                     \textcolor{keywordflow}{continue};
+1393 
+1394               \textcolor{keywordtype}{bool} checked = \textcolor{keyword}{false};
+1395                 \textcolor{keywordflow}{if}(pItemElement->QueryValueAttribute(\textcolor{stringliteral}{"checked"}, &checked))
+1396                     \textcolor{keywordflow}{continue};
+1397 
+1398                 QTreeWidgetItem *pDirectoryItem = pNavigator->mkdir(moduleName.c\_str(), path.c\_str());
+1399                 QTreeWidgetItem *pMonitorElementItem = pNavigator->addMonitorElement(pDirectoryItem, name.
+      c\_str());
+1400 
+1401                 \textcolor{keywordflow}{if}(pMonitorElementItem)
+1402                   pMonitorElementItem->setCheckState(0, checked ? Qt::Checked : Qt::Unchecked);
+1403             \}
+1404         \}
+1405     \}
+1406 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!get\+Checked\+Monitor\+Elements@{get\+Checked\+Monitor\+Elements}}
+\index{get\+Checked\+Monitor\+Elements@{get\+Checked\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{get\+Checked\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+Tree\+Widget\+Item $\ast$ $>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::get\+Checked\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementView_a8ec0831c375f368e72c688d426ef4eba}
+
+
+Definition at line 1233 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Checked\+Monitor\+Elements(), and m\+\_\+p\+Tool\+Box.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Startup().
+
+
+\begin{DoxyCode}
+1234 \{
+1235   QList<QTreeWidgetItem*> checkedMonitorElements;
+1236 
+1237   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1238   \{
+1239     DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(i));
+1240     checkedMonitorElements.append(pNavigator->getCheckedMonitorElements());
+1241   \}
+1242 
+1243   \textcolor{keywordflow}{return} checkedMonitorElements;
+1244 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!get\+Checked\+Monitor\+Elements@{get\+Checked\+Monitor\+Elements}}
+\index{get\+Checked\+Monitor\+Elements@{get\+Checked\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{get\+Checked\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+Tree\+Widget\+Item $\ast$ $>$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::get\+Checked\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementView_a49f26a31c9fa765867aa30cb56d71431}
+
+
+Definition at line 1248 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Checked\+Monitor\+Elements(), and m\+\_\+p\+Tool\+Box.
+
+
+\begin{DoxyCode}
+1249 \{
+1250   QList<QTreeWidgetItem*> checkedMonitorElements;
+1251   DQMMonitorElementNavigator *pNavigator = NULL;
+1252 
+1253   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1254   \{
+1255     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i).toStdString() == collectorName)
+1256     \{
+1257       pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(m_pToolBox->widget(i));
+1258       \textcolor{keywordflow}{break};
+1259     \}
+1260   \}
+1261 
+1262   \textcolor{keywordflow}{if}(NULL == pNavigator)
+1263     \textcolor{keywordflow}{return} checkedMonitorElements;
+1264 
+1265   \textcolor{keywordflow}{return} pNavigator->getCheckedMonitorElements();
+1266 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!get\+Collector\+Names@{get\+Collector\+Names}}
+\index{get\+Collector\+Names@{get\+Collector\+Names}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{get\+Collector\+Names}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String\+List dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::get\+Collector\+Names (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementView_a99e1c988be8596cdf26a843024996f34}
+
+
+Definition at line 1221 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tool\+Box.
+
+
+\begin{DoxyCode}
+1222 \{
+1223   QStringList collectorNames;
+1224 
+1225   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1226     collectorNames << m_pToolBox->itemText(i);
+1227 
+1228   \textcolor{keywordflow}{return} collectorNames;
+1229 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!get\+Monitoring@{get\+Monitoring}}
+\index{get\+Monitoring@{get\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{get\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring} $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::get\+Monitoring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementView_a2e008a8f002f9028698611fc7726cab7}
+
+
+Get the monitoring instance. 
+
+
+
+Definition at line 1214 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References m\+\_\+p\+Monitoring.
+
+
+
+Referenced by from\+Xml(), and update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1215 \{
+1216   \textcolor{keywordflow}{return} m_pMonitoring;
+1217 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!handle\+Monitor\+Element\+Deletion@{handle\+Monitor\+Element\+Deletion}}
+\index{handle\+Monitor\+Element\+Deletion@{handle\+Monitor\+Element\+Deletion}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{handle\+Monitor\+Element\+Deletion}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::handle\+Monitor\+Element\+Deletion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_a402dd32dd2264a198ddd5985201bd4ea}
+
+
+Definition at line 1509 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References remove\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1510 \{
+1511   DQMGuiMonitorElement *pGuiMonitorElement = qobject\_cast<DQMGuiMonitorElement*>(sender());
+1512   this->removeMonitorElement(pGuiMonitorElement);
+1513 
+1514 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!handle\+Monitor\+Element\+Update@{handle\+Monitor\+Element\+Update}}
+\index{handle\+Monitor\+Element\+Update@{handle\+Monitor\+Element\+Update}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{handle\+Monitor\+Element\+Update}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::handle\+Monitor\+Element\+Update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_acb6184ed228be4b79e01f04862db1f19}
+
+
+Definition at line 1501 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1502 \{
+1503   DQMGuiMonitorElement *pGuiMonitorElement = qobject\_cast<DQMGuiMonitorElement*>(sender());
+1504   this->updateMonitorElement(pGuiMonitorElement);
+1505 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!remove\+Monitor\+Element@{remove\+Monitor\+Element}}
+\index{remove\+Monitor\+Element@{remove\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{remove\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::remove\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Gui\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_ad4047f57b6d74bd9920310684edf4d10}
+
+
+Remove a monitor element from the view. 
+
+
+
+Definition at line 1417 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), m\+\_\+p\+Tool\+Box, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::remove\+Monitor\+Element().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::clear(), handle\+Monitor\+Element\+Deletion(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::remove\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1418 \{
+1419   QString collectorName = pMonitorElement->getMonitorElement()->getCollectorName().c\_str();
+1420 
+1421   DQMMonitorElementNavigator *pNavigator = NULL;
+1422 
+1423   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1424   \{
+1425     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i) == collectorName)
+1426     \{
+1427       pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(m_pToolBox->widget(i));
+1428       \textcolor{keywordflow}{break};
+1429     \}
+1430   \}
+1431 
+1432   \textcolor{keywordflow}{if}(NULL == pNavigator)
+1433     \textcolor{keywordflow}{return};
+1434 
+1435   pNavigator->removeMonitorElement(pMonitorElement);
+1436 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!replace\+Monitor\+Element@{replace\+Monitor\+Element}}
+\index{replace\+Monitor\+Element@{replace\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{replace\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::replace\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Old\+Monitor\+Element, }
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+New\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_adc6a66fb2967fc98e7869715afff4896}
+
+
+Definition at line 1466 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1467 \{
+1468   this->updateMonitorElement(pNewMonitorElement);
+1469 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!to\+Xml@{to\+Xml}}
+\index{to\+Xml@{to\+Xml}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{to\+Xml}]{\setlength{\rightskip}{0pt plus 5cm}Ti\+Xml\+Element $\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::to\+Xml (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMMonitorElementView_a48dff184c5f32ea488b22d19b2bc4f47}
+
+
+Export settings to xml element. 
+
+
+
+Definition at line 1300 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+All\+Monitor\+Element\+Items(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Full\+Path\+Name(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::get\+Module\+Names(), and m\+\_\+p\+Tool\+Box.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+View\+::to\+Xml().
+
+
+\begin{DoxyCode}
+1301 \{
+1302   TiXmlElement *pXmlElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"meView"});
+1303 
+1304   \textcolor{comment}{// loop over collectors}
+1305   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} c=0 ; c<m_pToolBox->count() ; c++)
+1306   \{
+1307     TiXmlElement *pCollectorElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"collector"});
+1308     pXmlElement->LinkEndChild(pCollectorElement);
+1309 
+1310     std::string collectorName = m_pToolBox->itemText(c).toStdString();
+1311     pCollectorElement->SetAttribute(\textcolor{stringliteral}{"name"}, collectorName);
+1312 
+1313     DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(c));
+1314 
+1315     QStringList moduleNames = pNavigator->getModuleNames();
+1316 
+1317     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} m=0 ; m<moduleNames.count() ; m++)
+1318     \{
+1319       QString moduleName(moduleNames.at(m));
+1320 
+1321       TiXmlElement *pModuleElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"module"});
+1322       pCollectorElement->LinkEndChild(pModuleElement);
+1323 
+1324       pModuleElement->SetAttribute(\textcolor{stringliteral}{"name"}, moduleName.toStdString());
+1325 
+1326       QList<QTreeWidgetItem*> monitorElementItems = pNavigator->getAllMonitorElementItems(moduleName);
+1327 
+1328       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<monitorElementItems.count() ; i++)
+1329       \{
+1330         QTreeWidgetItem *pMonitorElementItem = monitorElementItems.at(i);
+1331 
+1332         QString fullPath(pNavigator->getFullPathName(pMonitorElementItem));
+1333         QString name(pMonitorElementItem->text(0));
+1334         \textcolor{keywordtype}{bool} checked(pMonitorElementItem->checkState(0) == Qt::Checked);
+1335 
+1336         TiXmlElement *pItemElement = \textcolor{keyword}{new} TiXmlElement(\textcolor{stringliteral}{"item"});
+1337         pModuleElement->LinkEndChild(pItemElement);
+1338 
+1339         pItemElement->SetAttribute(\textcolor{stringliteral}{"path"}, fullPath.toStdString());
+1340         pItemElement->SetAttribute(\textcolor{stringliteral}{"name"}, name.toStdString());
+1341         pItemElement->SetAttribute(\textcolor{stringliteral}{"checked"}, checked);
+1342       \}
+1343     \}
+1344   \}
+1345 
+1346   \textcolor{keywordflow}{return} pXmlElement;
+1347 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!uncheck\+All\+Monitor\+Elements@{uncheck\+All\+Monitor\+Elements}}
+\index{uncheck\+All\+Monitor\+Elements@{uncheck\+All\+Monitor\+Elements}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{uncheck\+All\+Monitor\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::uncheck\+All\+Monitor\+Elements (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{collector\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMonitorElementView_a9706714bdf021b87b59ce0e2fa429b65}
+
+
+Definition at line 1270 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References m\+\_\+p\+Tool\+Box, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::uncheck\+All\+Monitor\+Elements().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitoring\+Controller\+::handle\+Server\+Shutdown().
+
+
+\begin{DoxyCode}
+1271 \{
+1272   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1273   \{
+1274     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i).toStdString() == collectorName)
+1275     \{
+1276       DQMMonitorElementNavigator *pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(
+      m_pToolBox->widget(i));
+1277       pNavigator->uncheckAllMonitorElements();
+1278       \textcolor{keywordflow}{break};
+1279     \}
+1280   \}
+1281 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!update\+Monitor\+Element@{update\+Monitor\+Element}}
+\index{update\+Monitor\+Element@{update\+Monitor\+Element}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{update\+Monitor\+Element}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::update\+Monitor\+Element (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Gui\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classdqm4hep_1_1DQMMonitorElementView_a11d0566845f05fcddc69da30a8552028}
+
+
+Update the monitor element. 
+
+
+
+Definition at line 1440 of file D\+Q\+M\+Monitor\+Element\+View.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Gui\+Monitor\+Element\+::get\+Monitor\+Element(), get\+Monitoring(), m\+\_\+p\+Tool\+Box, and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Navigator\+::update\+Monitor\+Element().
+
+
+
+Referenced by add\+Monitor\+Element(), handle\+Monitor\+Element\+Update(), replace\+Monitor\+Element(), and dqm4hep\+::\+D\+Q\+M\+Monitoring\+Model\+::update\+Monitor\+Element().
+
+
+\begin{DoxyCode}
+1441 \{
+1442   QString collectorName = pMonitorElement->getMonitorElement()->getCollectorName().c\_str();
+1443 
+1444   DQMMonitorElementNavigator *pNavigator = NULL;
+1445 
+1446   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0 ; i<m_pToolBox->count() ; i++)
+1447   \{
+1448     \textcolor{keywordflow}{if}(m_pToolBox->itemText(i) == collectorName)
+1449     \{
+1450       pNavigator = qobject\_cast<DQMMonitorElementNavigator*>(m_pToolBox->widget(i));
+1451       \textcolor{keywordflow}{break};
+1452     \}
+1453   \}
+1454 
+1455   \textcolor{keywordflow}{if}(NULL == pNavigator)
+1456   \{
+1457     pNavigator = \textcolor{keyword}{new} DQMMonitorElementNavigator(collectorName, this->
+      getMonitoring());
+1458     m_pToolBox->addItem(pNavigator, collectorName);
+1459   \}
+1460 
+1461   pNavigator->updateMonitorElement(pMonitorElement);
+1462 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}}
+\index{m\+\_\+p\+Monitoring@{m\+\_\+p\+Monitoring}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{m\+\_\+p\+Monitoring}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Monitoring}$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::m\+\_\+p\+Monitoring\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementView_a90070a57854004c3deafd63b970360ff}
+
+
+Definition at line 344 of file D\+Q\+M\+Monitor\+Element\+View.\+h.
+
+
+
+Referenced by get\+Monitoring().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}!m\+\_\+p\+Tool\+Box@{m\+\_\+p\+Tool\+Box}}
+\index{m\+\_\+p\+Tool\+Box@{m\+\_\+p\+Tool\+Box}!dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View@{dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View}}
+\subsubsection[{m\+\_\+p\+Tool\+Box}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Tool\+Box$\ast$ dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+View\+::m\+\_\+p\+Tool\+Box\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMMonitorElementView_abb683ce91da12202d1818d81a42ee55b}
+
+
+Definition at line 345 of file D\+Q\+M\+Monitor\+Element\+View.\+h.
+
+
+
+Referenced by clear(), D\+Q\+M\+Monitor\+Element\+View(), enable\+Subscription(), from\+Xml(), get\+Checked\+Monitor\+Elements(), get\+Collector\+Names(), remove\+Monitor\+Element(), to\+Xml(), uncheck\+All\+Monitor\+Elements(), and update\+Monitor\+Element().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View.\+h}\item 
+{\bf D\+Q\+M\+Monitor\+Element\+View.\+cc}\end{DoxyCompactItemize}

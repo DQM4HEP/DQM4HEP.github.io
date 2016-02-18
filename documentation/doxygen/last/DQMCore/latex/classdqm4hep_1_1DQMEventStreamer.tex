@@ -1,0 +1,132 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Streamer Class Reference}
+\label{classdqm4hep_1_1DQMEventStreamer}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}}
+
+
+\doxyref{D\+Q\+M\+Event\+Streamer}{p.}{classdqm4hep_1_1DQMEventStreamer} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event\+Streamer.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Event\+Streamer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMEventStreamer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Event\+Streamer} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf serialize} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)=0
+\begin{DoxyCompactList}\small\item\em Serialize a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} object and store it in the data stream. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Event} $\ast$\&p\+Object, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)=0
+\begin{DoxyCompactList}\small\item\em De-\/serialize a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} given from the data stream. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf serialize} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Object, const std\+::string \&sub\+Event\+Identifier, {\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)=0
+\begin{DoxyCompactList}\small\item\em Serialize a part of a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} object identified by the reg exp 'sub\+Event\+Identifier' and store it in the data stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event\+Streamer}{p.}{classdqm4hep_1_1DQMEventStreamer} class. 
+
+Definition at line 41 of file D\+Q\+M\+Event\+Streamer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}!````~D\+Q\+M\+Event\+Streamer@{$\sim$\+D\+Q\+M\+Event\+Streamer}}
+\index{````~D\+Q\+M\+Event\+Streamer@{$\sim$\+D\+Q\+M\+Event\+Streamer}!dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Streamer}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::$\sim$\+D\+Q\+M\+Event\+Streamer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventStreamer_ae17d9b98e09dacc41ccbd3ec40fe1c30}
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+Event\+Streamer.\+h.
+
+
+\begin{DoxyCode}
+46 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Event} $\ast$\&}]{p\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventStreamer_a063e71f73dd06404b736438c3f42b602}
+
+
+De-\/serialize a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} given from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamer$<$ D\+Q\+M\+Event $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMStreamer_a45424f285015b093ccbd7bfd3a38249d}.
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEventStreamer_a9f54db23849818556fe1c898d1019b17}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Reception(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Client\+::query\+Event().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Object, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventStreamer_a9f6ffa9b9977ca02564bb0c8cd248be4}
+
+
+Serialize a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} object and store it in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamer$<$ D\+Q\+M\+Event $>$} \doxyref{}{p.}{singletondqm4hep_1_1DQMStreamer_abc54751ecafff0a88046f41fa4110fcf}.
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEventStreamer_a308293cdebf98ee5dcfbad4c34f31d38}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::handle\+Event\+Request(), and dqm4hep\+::\+D\+Q\+M\+Dim\+Event\+Collector\+::update\+Event\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Event\+Streamer@{dqm4hep\+::\+D\+Q\+M\+Event\+Streamer}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Event\+Streamer\+::serialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Object, }
+\item[{const std\+::string \&}]{sub\+Event\+Identifier, }
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMEventStreamer_a015898c0d96bdbcb523fa54431fb2a45}
+
+
+Serialize a part of a \doxyref{D\+Q\+M\+Event}{p.}{classdqm4hep_1_1DQMEvent} object identified by the reg exp 'sub\+Event\+Identifier' and store it in the data stream. 
+
+Example \+: sub\+Event\+Identifier = \char`\"{}\+My\+Collection1\+:\+My\+Collection2\char`\"{} sub\+Event\+Identifier = \char`\"{}$\ast$\+Tpc\+Collection\char`\"{}
+
+The identifier decoding has to be performed by the user, based on the event contents itself 
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+L\+C\+Event\+Streamer} \doxyref{}{p.}{classdqm4hep_1_1DQMLCEventStreamer_afabcb0328b2d2be0e9c08ef38a5c81f3}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Streamer.\+h}\end{DoxyCompactItemize}

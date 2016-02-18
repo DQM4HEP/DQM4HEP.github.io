@@ -1,0 +1,198 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Event\+Counter\+Cycle Class Reference}
+\label{classdqm4hep_1_1DQMEventCounterCycle}\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+
+
+\doxyref{D\+Q\+M\+Event\+Counter\+Cycle}{p.}{classdqm4hep_1_1DQMEventCounterCycle} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Event\+Counter\+Cycle.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Event\+Counter\+Cycle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMEventCounterCycle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Counter\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Event\+Counter\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Started} ()
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+void {\bf on\+Cycle\+Stopped} ()
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+void {\bf on\+Event\+Processed} (const {\bf D\+Q\+M\+Event} $\ast$const )
+\begin{DoxyCompactList}\small\item\em Specific call back function when an event is processed, depends on cycle type. \end{DoxyCompactList}\item 
+bool {\bf is\+End\+Of\+Cycle\+Reached} () const 
+\begin{DoxyCompactList}\small\item\em Specific function to tell the application to know whether the cycle has reached the end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Event\+Counter\+Cycle}{p.}{classdqm4hep_1_1DQMEventCounterCycle} class. 
+
+Definition at line 40 of file D\+Q\+M\+Event\+Counter\+Cycle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!D\+Q\+M\+Event\+Counter\+Cycle@{D\+Q\+M\+Event\+Counter\+Cycle}}
+\index{D\+Q\+M\+Event\+Counter\+Cycle@{D\+Q\+M\+Event\+Counter\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{D\+Q\+M\+Event\+Counter\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::\+D\+Q\+M\+Event\+Counter\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCounterCycle_a4e3141a8ad947fce074400f344fb8a86}
+
+
+Constructor. 
+
+
+
+Definition at line 40 of file D\+Q\+M\+Event\+Counter\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+40                                            :
+41     DQMCycle()
+42 \{
+43   \textcolor{comment}{// default value}
+44   setCycleValue(100);
+45 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!````~D\+Q\+M\+Event\+Counter\+Cycle@{$\sim$\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\index{````~D\+Q\+M\+Event\+Counter\+Cycle@{$\sim$\+D\+Q\+M\+Event\+Counter\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Event\+Counter\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::$\sim$\+D\+Q\+M\+Event\+Counter\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMEventCounterCycle_a45c712eedc2265c41c81ea3301f1b2a4}
+
+
+Destructor. 
+
+
+
+Definition at line 49 of file D\+Q\+M\+Event\+Counter\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+50 \{
+51   \textcolor{comment}{/* nop */}
+52 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}}
+\index{is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{is\+End\+Of\+Cycle\+Reached}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::is\+End\+Of\+Cycle\+Reached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventCounterCycle_a2b36be8cb34b293b7598cfebb8e2675c}
+
+
+Specific function to tell the application to know whether the cycle has reached the end. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a2b177a69fc0585fbef12dda7b54065d5}.
+
+
+
+Definition at line 56 of file D\+Q\+M\+Event\+Counter\+Cycle.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Cycle\+Value(), and dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+N\+Processed\+Events().
+
+
+\begin{DoxyCode}
+57 \{
+58   \textcolor{keywordflow}{if}( this->getNProcessedEvents() >= static\_cast<unsigned int>(this->
+      getCycleValue()) )
+59     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+60 
+61   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+62 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!on\+Cycle\+Started@{on\+Cycle\+Started}}
+\index{on\+Cycle\+Started@{on\+Cycle\+Started}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{on\+Cycle\+Started}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::on\+Cycle\+Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventCounterCycle_a50af57684ff7a09ff91370d3b1250040}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a9ee9c093280a5c87802529233f7ef97d}.
+
+
+
+Definition at line 51 of file D\+Q\+M\+Event\+Counter\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+51 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!on\+Cycle\+Stopped@{on\+Cycle\+Stopped}}
+\index{on\+Cycle\+Stopped@{on\+Cycle\+Stopped}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{on\+Cycle\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::on\+Cycle\+Stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventCounterCycle_afae6e5fb980fc77e20dafc5d0769a392}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a9563479df6411c34811e820d49dc242f}.
+
+
+
+Definition at line 52 of file D\+Q\+M\+Event\+Counter\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+52 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}!on\+Event\+Processed@{on\+Event\+Processed}}
+\index{on\+Event\+Processed@{on\+Event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle}}
+\subsubsection[{on\+Event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::on\+Event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMEventCounterCycle_a6bce65f8d3a5331d96868dd28931c842}
+
+
+Specific call back function when an event is processed, depends on cycle type. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMCycle_a98871dce48f954a8299a8f130125ad59}.
+
+
+
+Definition at line 53 of file D\+Q\+M\+Event\+Counter\+Cycle.\+h.
+
+
+\begin{DoxyCode}
+53 \{ \textcolor{comment}{/* nop */} \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Event\+Counter\+Cycle.\+h}\item 
+{\bf D\+Q\+M\+Event\+Counter\+Cycle.\+cc}\end{DoxyCompactItemize}

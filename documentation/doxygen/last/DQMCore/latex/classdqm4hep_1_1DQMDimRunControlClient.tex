@@ -1,0 +1,481 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Dim\+Run\+Control\+Client Class Reference}
+\label{classdqm4hep_1_1DQMDimRunControlClient}\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+
+
+\doxyref{D\+Q\+M\+Run\+Control\+Client}{p.}{classdqm4hep_1_1DQMRunControlClient} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Run\+Control\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Dim\+Run\+Control\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMDimRunControlClient}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf $\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf connect\+To\+Service} ()
+\begin{DoxyCompactList}\small\item\em Connect to the service. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf disconnect\+From\+Service} ()
+\begin{DoxyCompactList}\small\item\em Disconnect from the service. \end{DoxyCompactList}\item 
+bool {\bf is\+Connected\+To\+Service} () const 
+\begin{DoxyCompactList}\small\item\em Whether the client is connected to the service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim info handler. \end{DoxyCompactList}\item 
+void {\bf handle\+Current\+Run\+Rpc\+Info} (Dim\+Rpc\+Info $\ast$p\+Rpc\+Info)
+\begin{DoxyCompactList}\small\item\em Handle the dim current run rpc info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf m\+\_\+is\+Connected}
+\begin{DoxyCompactList}\small\item\em Whether the client is connected to the server instance. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Data\+Stream} {\bf m\+\_\+data\+Stream}
+\begin{DoxyCompactList}\small\item\em The data stream to deserialize the run at start of run. \end{DoxyCompactList}\item 
+Dim\+Info $\ast$ {\bf m\+\_\+p\+Start\+Of\+Run\+Info}
+\begin{DoxyCompactList}\small\item\em The dim start of run info. \end{DoxyCompactList}\item 
+Dim\+Info $\ast$ {\bf m\+\_\+p\+End\+Of\+Run\+Info}
+\begin{DoxyCompactList}\small\item\em The dim end of run info. \end{DoxyCompactList}\item 
+Dim\+Rpc\+Info $\ast$ {\bf m\+\_\+p\+Current\+Run\+Rpc\+Info}
+\begin{DoxyCompactList}\small\item\em The dim current run rpc info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf D\+Q\+M\+Current\+Run\+Rpc\+Info}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Run\+Control\+Client}{p.}{classdqm4hep_1_1DQMRunControlClient} class. 
+
+Definition at line 69 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!D\+Q\+M\+Dim\+Run\+Control\+Client@{D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\index{D\+Q\+M\+Dim\+Run\+Control\+Client@{D\+Q\+M\+Dim\+Run\+Control\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{D\+Q\+M\+Dim\+Run\+Control\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDimRunControlClient_aec198294723799dd8482435b797409a5}
+
+
+Constructor. 
+
+
+
+Definition at line 59 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+\begin{DoxyCode}
+59                                                :
+60     DQMRunControlClient(),
+61     m_isConnected(\textcolor{keyword}{false}),
+62     m_pStartOfRunInfo(NULL),
+63     m_pEndOfRunInfo(NULL),
+64     m_dataStream(1024) \textcolor{comment}{// 1 ko to start}
+65 \{
+66   \textcolor{comment}{/* nop */}
+67 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!````~D\+Q\+M\+Dim\+Run\+Control\+Client@{$\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\index{````~D\+Q\+M\+Dim\+Run\+Control\+Client@{$\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::$\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMDimRunControlClient_a9897f34d33b6b548d6cec468fc9e3334}
+
+
+Destructor. 
+
+
+
+Definition at line 71 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References disconnect\+From\+Service(), and is\+Connected\+To\+Service().
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{keywordflow}{if}(isConnectedToService())
+74     disconnectFromService();
+75 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!connect\+To\+Service@{connect\+To\+Service}}
+\index{connect\+To\+Service@{connect\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{connect\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::connect\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimRunControlClient_ac075d9fd330093e16e260d28c54517cb}
+
+
+Connect to the service. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMRunControlClient_a095786e35595c4536eba3513923d30f8}.
+
+
+
+Definition at line 79 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References D\+Q\+M\+Current\+Run\+Rpc\+Info, dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Run\+Control\+Name(), is\+Connected\+To\+Service(), m\+\_\+is\+Connected, m\+\_\+p\+Current\+Run\+Rpc\+Info, m\+\_\+p\+End\+Of\+Run\+Info, and m\+\_\+p\+Start\+Of\+Run\+Info.
+
+
+\begin{DoxyCode}
+80 \{
+81   \textcolor{keywordflow}{if}(isConnectedToService())
+82     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+83 
+84   std::string sorServiceName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + this->getRunControlName() + \textcolor{stringliteral}{"/START\_OF\_RUN"};
+85   std::string eorServiceName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + this->getRunControlName() + \textcolor{stringliteral}{"/END\_OF\_RUN"};
+86   std::string currentRunRpcName = \textcolor{stringliteral}{"DQM4HEP/RunControl/"} + this->
+      getRunControlName() + \textcolor{stringliteral}{"/CURRENT\_RUN"};
+87 
+88   m_pStartOfRunInfo = \textcolor{keyword}{new} DimUpdatedInfo(sorServiceName.c\_str(), (\textcolor{keywordtype}{void}*) NULL, 0, \textcolor{keyword}{this});
+89   m_pEndOfRunInfo = \textcolor{keyword}{new} DimUpdatedInfo(eorServiceName.c\_str(), (\textcolor{keywordtype}{void}*) NULL, 0, \textcolor{keyword}{this});
+90   m_pCurrentRunRpcInfo = \textcolor{keyword}{new} DQMCurrentRunRpcInfo( (\textcolor{keywordtype}{char} *) currentRunRpcName.c\_str() , this );
+91 
+92   m_isConnected = \textcolor{keyword}{true};
+93 
+94   sleep(1);
+95   \textcolor{keywordtype}{int} dummy = 0;
+96   m_pCurrentRunRpcInfo->setData(dummy);
+97 
+98   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!disconnect\+From\+Service@{disconnect\+From\+Service}}
+\index{disconnect\+From\+Service@{disconnect\+From\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{disconnect\+From\+Service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::disconnect\+From\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimRunControlClient_ac193d2ea248ff481e5cf15cc69d234fe}
+
+
+Disconnect from the service. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMRunControlClient_a9af1ffa45f59b8767c5b7583557fd396}.
+
+
+
+Definition at line 103 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References is\+Connected\+To\+Service(), m\+\_\+is\+Connected, m\+\_\+p\+Current\+Run\+Rpc\+Info, m\+\_\+p\+End\+Of\+Run\+Info, and m\+\_\+p\+Start\+Of\+Run\+Info.
+
+
+
+Referenced by $\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client().
+
+
+\begin{DoxyCode}
+104 \{
+105   \textcolor{keywordflow}{if}(!isConnectedToService())
+106     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+107 
+108   \textcolor{keyword}{delete} m_pStartOfRunInfo; m_pStartOfRunInfo = NULL;
+109   \textcolor{keyword}{delete} m_pEndOfRunInfo; m_pEndOfRunInfo = NULL;
+110   \textcolor{keyword}{delete} m_pCurrentRunRpcInfo; m_pCurrentRunRpcInfo = NULL;
+111 
+112   m_isConnected = \textcolor{keyword}{false};
+113 
+114   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+115 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!handle\+Current\+Run\+Rpc\+Info@{handle\+Current\+Run\+Rpc\+Info}}
+\index{handle\+Current\+Run\+Rpc\+Info@{handle\+Current\+Run\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{handle\+Current\+Run\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{Dim\+Rpc\+Info $\ast$}]{p\+Rpc\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_a888d18d42eb23e47c37380448eae66f2}
+
+
+Handle the dim current run rpc info. 
+
+
+
+Definition at line 185 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+::deserialize(), dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Run\+Number(), is\+Connected\+To\+Service(), m\+\_\+data\+Stream, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run(), and T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info\+::rpc\+Info\+Handler().
+
+
+\begin{DoxyCode}
+186 \{
+187   \textcolor{keywordflow}{if}( ! this->isConnectedToService() )
+188     \textcolor{keywordflow}{return};
+189 
+190   DQMRun *pRun = \textcolor{keyword}{new} DQMRun();
+191 
+192   \textcolor{keywordflow}{try}
+193   \{
+194     dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char*\textcolor{keyword}{>}(pRpcInfo->getData());
+195     dqm_uint  bufferSize = pRpcInfo->getSize();
+196 
+197     \textcolor{keywordflow}{if}(NULL == pBuffer || 0 == bufferSize)
+198       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_FAILURE);
+199 
+200     m_dataStream.reset();
+201     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.setBuffer(pBuffer, bufferSize));
+202     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pRun->deserialize(&m_dataStream));
+203 
+204     \textcolor{comment}{// run number is invalid, meaning not running}
+205     \textcolor{keywordflow}{if}(pRun->getRunNumber() <= 0)
+206       \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_SUCCESS);
+207 
+208     \textcolor{comment}{// run is adopted here by the run control. No need to delete}
+209     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->startNewRun(pRun));
+210 
+211     \textcolor{comment}{// return avoids run deletion}
+212     \textcolor{keywordflow}{return};
+213   \}
+214   \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+215   \{
+216   \}
+217 
+218   \textcolor{keywordflow}{if}(pRun)
+219     \textcolor{keyword}{delete} pRun;
+220 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!info\+Handler@{info\+Handler}}
+\index{info\+Handler@{info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_a8d53d42d94c6545be49fc67f7f1da4a7}
+
+
+Dim info handler. 
+
+
+
+Definition at line 126 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::end\+Current\+Run(), is\+Connected\+To\+Service(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::is\+Running(), m\+\_\+data\+Stream, m\+\_\+p\+End\+Of\+Run\+Info, m\+\_\+p\+Start\+Of\+Run\+Info, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::reset(), dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::set\+Buffer(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run(), T\+H\+R\+O\+W\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, dqm4hep\+::\+Status\+Code\+Exception\+::to\+String(), and dqm4hep\+::\+W\+A\+R\+N\+I\+N\+G.
+
+
+\begin{DoxyCode}
+127 \{
+128   DimInfo *pCurrentDimInfo = getInfo();
+129 
+130   \textcolor{keywordflow}{if}(m_pStartOfRunInfo == pCurrentDimInfo)
+131   \{
+132     \textcolor{keywordflow}{if}(this->isRunning() || !this->isConnectedToService())
+133       \textcolor{keywordflow}{return};
+134 
+135     dqm_char *pBuffer = \textcolor{keyword}{static\_cast<}dqm_char*\textcolor{keyword}{>}(pCurrentDimInfo->getData());
+136     dqm_uint  bufferSize = pCurrentDimInfo->getSize();
+137 
+138     \textcolor{keywordflow}{if}(pBuffer == NULL || bufferSize == 0)
+139       \textcolor{keywordflow}{return};
+140 
+141     m_dataStream.reset();
+142     THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, m_dataStream.setBuffer(pBuffer, bufferSize));
+143 
+144     DQMRun *pRun = \textcolor{keyword}{new} DQMRun();
+145 
+146     \textcolor{keywordflow}{try}
+147     \{
+148       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, pRun->deserialize(&m_dataStream));
+149 
+150       \textcolor{keywordflow}{if}(pRun->getRunNumber() < 0)
+151         \textcolor{keywordflow}{throw} StatusCodeException(STATUS\_CODE\_INVALID\_PARAMETER);
+152 
+153       \textcolor{comment}{// run is adopted here by the run control. No need to delete}
+154       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->startNewRun(pRun));
+155     \}
+156     \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+157     \{
+158       \textcolor{keywordflow}{if}(pRun)
+159         \textcolor{keyword}{delete} pRun;
+160     \}
+161   \}
+162   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(m_pEndOfRunInfo == pCurrentDimInfo)
+163   \{
+164     \textcolor{keywordflow}{if}(!this->isRunning() || !this->isConnectedToService())
+165       \textcolor{keywordflow}{return};
+166 
+167     \textcolor{keywordflow}{try}
+168     \{
+169       THROW_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, this->endCurrentRun());
+170     \}
+171     \textcolor{keywordflow}{catch}(StatusCodeException &exception)
+172     \{
+173       streamlog\_out(WARNING) << \textcolor{stringliteral}{"Couldn't stop the run (at stop) : "} << exception.toString() << std::endl;
+174       \textcolor{keywordflow}{return};
+175     \}
+176   \}
+177   \textcolor{keywordflow}{else}
+178   \{
+179     streamlog\_out(WARNING) << \textcolor{stringliteral}{"Unknown info handled by the run control client : "} << pCurrentDimInfo->
+      getName() << std::endl;
+180   \}
+181 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!is\+Connected\+To\+Service@{is\+Connected\+To\+Service}}
+\index{is\+Connected\+To\+Service@{is\+Connected\+To\+Service}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{is\+Connected\+To\+Service}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::is\+Connected\+To\+Service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMDimRunControlClient_aaffa69541d61219872149542f6d980d9}
+
+
+Whether the client is connected to the service. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Client} \doxyref{}{p.}{classdqm4hep_1_1DQMRunControlClient_a2a7c21f48da48207f41668d44dec3b3c}.
+
+
+
+Definition at line 119 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References m\+\_\+is\+Connected.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), handle\+Current\+Run\+Rpc\+Info(), info\+Handler(), and $\sim$\+D\+Q\+M\+Dim\+Run\+Control\+Client().
+
+
+\begin{DoxyCode}
+120 \{
+121   \textcolor{keywordflow}{return} m_isConnected;
+122 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!D\+Q\+M\+Current\+Run\+Rpc\+Info@{D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+\index{D\+Q\+M\+Current\+Run\+Rpc\+Info@{D\+Q\+M\+Current\+Run\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{D\+Q\+M\+Current\+Run\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf D\+Q\+M\+Current\+Run\+Rpc\+Info}\hspace{0.3cm}{\ttfamily [friend]}}\label{classdqm4hep_1_1DQMDimRunControlClient_ab62f65ba861ffa2d158987e43dbf5928}
+
+
+Definition at line 109 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service().
+
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!m\+\_\+data\+Stream@{m\+\_\+data\+Stream}}
+\index{m\+\_\+data\+Stream@{m\+\_\+data\+Stream}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{m\+\_\+data\+Stream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Data\+Stream} dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::m\+\_\+data\+Stream\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_aab6825e9c8109ed896c081eb9ed4959d}
+
+
+The data stream to deserialize the run at start of run. 
+
+
+
+Definition at line 103 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by handle\+Current\+Run\+Rpc\+Info(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!m\+\_\+is\+Connected@{m\+\_\+is\+Connected}}
+\index{m\+\_\+is\+Connected@{m\+\_\+is\+Connected}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{m\+\_\+is\+Connected}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::m\+\_\+is\+Connected\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_a6f0b280b3b9a95238d6c5e13159bc1ae}
+
+
+Whether the client is connected to the server instance. 
+
+
+
+Definition at line 102 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and is\+Connected\+To\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!m\+\_\+p\+Current\+Run\+Rpc\+Info@{m\+\_\+p\+Current\+Run\+Rpc\+Info}}
+\index{m\+\_\+p\+Current\+Run\+Rpc\+Info@{m\+\_\+p\+Current\+Run\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{m\+\_\+p\+Current\+Run\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Rpc\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::m\+\_\+p\+Current\+Run\+Rpc\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_af835dea4e0997f261844214308b1482a}
+
+
+The dim current run rpc info. 
+
+
+
+Definition at line 107 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), and disconnect\+From\+Service().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!m\+\_\+p\+End\+Of\+Run\+Info@{m\+\_\+p\+End\+Of\+Run\+Info}}
+\index{m\+\_\+p\+End\+Of\+Run\+Info@{m\+\_\+p\+End\+Of\+Run\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{m\+\_\+p\+End\+Of\+Run\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::m\+\_\+p\+End\+Of\+Run\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_a1ab40674b8da9c4adca3286ecaca1440}
+
+
+The dim end of run info. 
+
+
+
+Definition at line 106 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and info\+Handler().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}!m\+\_\+p\+Start\+Of\+Run\+Info@{m\+\_\+p\+Start\+Of\+Run\+Info}}
+\index{m\+\_\+p\+Start\+Of\+Run\+Info@{m\+\_\+p\+Start\+Of\+Run\+Info}!dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client@{dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client}}
+\subsubsection[{m\+\_\+p\+Start\+Of\+Run\+Info}]{\setlength{\rightskip}{0pt plus 5cm}Dim\+Info$\ast$ dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::m\+\_\+p\+Start\+Of\+Run\+Info\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMDimRunControlClient_a4dbb0e67c521c37df740c7c39f719c7c}
+
+
+The dim start of run info. 
+
+
+
+Definition at line 105 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by connect\+To\+Service(), disconnect\+From\+Service(), and info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc}\end{DoxyCompactItemize}

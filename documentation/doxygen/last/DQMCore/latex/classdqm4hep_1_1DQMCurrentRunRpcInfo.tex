@@ -1,0 +1,110 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Current\+Run\+Rpc\+Info Class Reference}
+\label{classdqm4hep_1_1DQMCurrentRunRpcInfo}\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Dim\+Run\+Control\+Client.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Current\+Run\+Rpc\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCurrentRunRpcInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Current\+Run\+Rpc\+Info} (char $\ast$rpc\+Name, {\bf D\+Q\+M\+Dim\+Run\+Control\+Client} $\ast$p\+Client)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf rpc\+Info\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Dim rpc info handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client} $\ast$ {\bf m\+\_\+p\+Client}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 48 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}!D\+Q\+M\+Current\+Run\+Rpc\+Info@{D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+\index{D\+Q\+M\+Current\+Run\+Rpc\+Info@{D\+Q\+M\+Current\+Run\+Rpc\+Info}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+\subsubsection[{D\+Q\+M\+Current\+Run\+Rpc\+Info}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{rpc\+Name, }
+\item[{{\bf D\+Q\+M\+Dim\+Run\+Control\+Client} $\ast$}]{p\+Client}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCurrentRunRpcInfo_ac2bea6ccb2ba8f76a2357bd9fdc6e0aa}
+
+
+Constructor. 
+
+
+
+Definition at line 42 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+\begin{DoxyCode}
+42                                                                                          :
+43   DimRpcInfo(rpcName, (\textcolor{keywordtype}{void} *) NULL, 0),
+44   m_pClient(pClient)
+45 \{
+46   \textcolor{comment}{/* nop */}
+47 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}!rpc\+Info\+Handler@{rpc\+Info\+Handler}}
+\index{rpc\+Info\+Handler@{rpc\+Info\+Handler}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+\subsubsection[{rpc\+Info\+Handler}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info\+::rpc\+Info\+Handler (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCurrentRunRpcInfo_a4547a2fb431604c7a49e364558671817}
+
+
+Dim rpc info handler. 
+
+
+
+Definition at line 51 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), and m\+\_\+p\+Client.
+
+
+\begin{DoxyCode}
+52 \{
+53   m_pClient->handleCurrentRunRpcInfo(\textcolor{keyword}{this});
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}!m\+\_\+p\+Client@{m\+\_\+p\+Client}}
+\index{m\+\_\+p\+Client@{m\+\_\+p\+Client}!dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info@{dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info}}
+\subsubsection[{m\+\_\+p\+Client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Dim\+Run\+Control\+Client}$\ast$ dqm4hep\+::\+D\+Q\+M\+Current\+Run\+Rpc\+Info\+::m\+\_\+p\+Client\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCurrentRunRpcInfo_ade89eb1899535749835656a8da60fe47}
+
+
+Definition at line 61 of file D\+Q\+M\+Dim\+Run\+Control\+Client.\+h.
+
+
+
+Referenced by rpc\+Info\+Handler().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client.\+h}\item 
+{\bf D\+Q\+M\+Dim\+Run\+Control\+Client.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,270 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Collector\+Info Class Reference}
+\label{classdqm4hep_1_1DQMCollectorInfo}\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+
+
+\doxyref{D\+Q\+M\+Collector\+Info}{p.}{classdqm4hep_1_1DQMCollectorInfo} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Messaging.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Collector\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCollectorInfo}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Status\+Code} {\bf serialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream) const 
+\begin{DoxyCompactList}\small\item\em Serialize collector infos and store it in the data stream. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf deserialize} ({\bf D\+Q\+M\+Data\+Stream} $\ast$const p\+Data\+Stream)
+\begin{DoxyCompactList}\small\item\em De-\/serialize collector infos from the data stream. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Collector\+Info} \& {\bf operator=} (const {\bf D\+Q\+M\+Collector\+Info} \&collector\+Info)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bf m\+\_\+system\+Name}
+\item 
+std\+::string {\bf m\+\_\+node\+Name}
+\item 
+std\+::string {\bf m\+\_\+release}
+\item 
+std\+::string {\bf m\+\_\+version}
+\item 
+std\+::string {\bf m\+\_\+machine}
+\item 
+std\+::string {\bf m\+\_\+host\+Name}
+\item 
+std\+::vector$<$ std\+::string $>$ {\bf m\+\_\+module\+List\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Collector\+Info}{p.}{classdqm4hep_1_1DQMCollectorInfo} class. 
+
+Definition at line 98 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{deserialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::deserialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCollectorInfo_ab3094c332ef50dc346a296e590dcaf9f}
+
+
+De-\/serialize collector infos from the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_a7858bb00272667c30e61490a18ca0a6f}.
+
+
+
+Definition at line 179 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References m\+\_\+host\+Name, m\+\_\+machine, m\+\_\+module\+List\+Name, m\+\_\+node\+Name, m\+\_\+release, m\+\_\+system\+Name, m\+\_\+version, dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::read(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+180 \{
+181   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_systemName));
+182   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_nodeName));
+183   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_release));
+184   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_version));
+185   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(m_machine));
+186   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(
+      m_hostName));
+187 
+188   dqm_uint nModules = 0;
+189   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(nModules));
+190 
+191   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<nModules ; i++)
+192   \{
+193     std::string moduleName;
+194     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->read(moduleName));
+195     m_moduleListName.push\_back(moduleName);
+196   \}
+197 
+198   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+199 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!operator=@{operator=}}
+\index{operator=@{operator=}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Collector\+Info}\& dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Collector\+Info} \&}]{collector\+Info}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classdqm4hep_1_1DQMCollectorInfo_a219722cffe03c09d259ac3d4a54b6efe}
+
+
+Definition at line 118 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+References m\+\_\+host\+Name, m\+\_\+machine, m\+\_\+module\+List\+Name, m\+\_\+node\+Name, m\+\_\+release, m\+\_\+system\+Name, and m\+\_\+version.
+
+
+\begin{DoxyCode}
+119   \{
+120     m_systemName = collectorInfo.m\_systemName;
+121     m_nodeName = collectorInfo.m\_nodeName;
+122     m_release = collectorInfo.m\_release;
+123     m_version = collectorInfo.m\_version;
+124     m_machine = collectorInfo.m\_machine;
+125     m_hostName = collectorInfo.m\_hostName;
+126     m_moduleListName = collectorInfo.m\_moduleListName;
+127 
+128     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+129   \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!serialize@{serialize}}
+\index{serialize@{serialize}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Data\+Stream} $\ast$const}]{p\+Data\+Stream}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCollectorInfo_a657e303a9348ba314046eca335229077}
+
+
+Serialize collector infos and store it in the data stream. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Streamable} \doxyref{}{p.}{classdqm4hep_1_1DQMStreamable_aa6b45693d3b2b18cc15a76744d01b732}.
+
+
+
+Definition at line 160 of file D\+Q\+M\+Messaging.\+cc.
+
+
+
+References m\+\_\+host\+Name, m\+\_\+machine, m\+\_\+module\+List\+Name, m\+\_\+node\+Name, m\+\_\+release, m\+\_\+system\+Name, m\+\_\+version, R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F, and dqm4hep\+::\+D\+Q\+M\+Data\+Stream\+::write().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler().
+
+
+\begin{DoxyCode}
+161 \{
+162   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_systemName));
+163   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_nodeName));
+164   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_release));
+165   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_version));
+166   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_machine));
+167   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_hostName));
+168 
+169   RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write((
+      dqm_uint)m_moduleListName.size()));
+170 
+171   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i=0 ; i<m_moduleListName.size() ; i++)
+172     RETURN_RESULT_IF(dqm4hep::STATUS\_CODE\_SUCCESS, !=, pDataStream->write(
+      m_moduleListName.at(i)));
+173 
+174   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+175 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+host\+Name@{m\+\_\+host\+Name}}
+\index{m\+\_\+host\+Name@{m\+\_\+host\+Name}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+host\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+host\+Name}\label{classdqm4hep_1_1DQMCollectorInfo_ace94b37a8a5e4fb076395d69164dcc3b}
+
+
+Definition at line 115 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+machine@{m\+\_\+machine}}
+\index{m\+\_\+machine@{m\+\_\+machine}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+machine}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+machine}\label{classdqm4hep_1_1DQMCollectorInfo_af55f7ccca62e73406d44c130e2ef7e2f}
+
+
+Definition at line 114 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+module\+List\+Name@{m\+\_\+module\+List\+Name}}
+\index{m\+\_\+module\+List\+Name@{m\+\_\+module\+List\+Name}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+module\+List\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+module\+List\+Name}\label{classdqm4hep_1_1DQMCollectorInfo_aa4c7746e1267209afcf1301cddd82b14}
+
+
+Definition at line 116 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+node\+Name@{m\+\_\+node\+Name}}
+\index{m\+\_\+node\+Name@{m\+\_\+node\+Name}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+node\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+node\+Name}\label{classdqm4hep_1_1DQMCollectorInfo_ab549830bf7df64bf89040f4f0db219a7}
+
+
+Definition at line 111 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+release@{m\+\_\+release}}
+\index{m\+\_\+release@{m\+\_\+release}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+release}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+release}\label{classdqm4hep_1_1DQMCollectorInfo_a21eb99edc4727e3facec004ef9f9243f}
+
+
+Definition at line 112 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+system\+Name@{m\+\_\+system\+Name}}
+\index{m\+\_\+system\+Name@{m\+\_\+system\+Name}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+system\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+system\+Name}\label{classdqm4hep_1_1DQMCollectorInfo_ac44806f609c248e2de929780fd4f49c6}
+
+
+Definition at line 110 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}!m\+\_\+version@{m\+\_\+version}}
+\index{m\+\_\+version@{m\+\_\+version}!dqm4hep\+::\+D\+Q\+M\+Collector\+Info@{dqm4hep\+::\+D\+Q\+M\+Collector\+Info}}
+\subsubsection[{m\+\_\+version}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Collector\+Info\+::m\+\_\+version}\label{classdqm4hep_1_1DQMCollectorInfo_ac0cc8ea4e0fafb5bb7af5213091b70c0}
+
+
+Definition at line 113 of file D\+Q\+M\+Messaging.\+h.
+
+
+
+Referenced by deserialize(), operator=(), dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Info\+Rpc\+::rpc\+Handler(), and serialize().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Messaging.\+h}\item 
+{\bf D\+Q\+M\+Messaging.\+cc}\end{DoxyCompactItemize}

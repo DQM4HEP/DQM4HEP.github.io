@@ -1,0 +1,844 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Cycle Class Reference}
+\label{classdqm4hep_1_1DQMCycle}\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+
+
+\doxyref{D\+Q\+M\+Cycle}{p.}{classdqm4hep_1_1DQMCycle} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Cycle.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Cycle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMCycle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+float {\bf get\+Cycle\+Value} () const 
+\begin{DoxyCompactList}\small\item\em Get the cycle value (time, nb of events, event size) \end{DoxyCompactList}\item 
+void {\bf set\+Cycle\+Value} (float value)
+\begin{DoxyCompactList}\small\item\em Set the cycle value. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+Timeout} () const 
+\begin{DoxyCompactList}\small\item\em Get the cycle timeout (in seconds) Maximum time between two process\+Event(evt) call. \end{DoxyCompactList}\item 
+void {\bf set\+Timeout} (unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Set the timeout. \end{DoxyCompactList}\item 
+float {\bf get\+Processing\+Rate} () const 
+\begin{DoxyCompactList}\small\item\em Get the processing rate. \end{DoxyCompactList}\item 
+unsigned int {\bf get\+N\+Processed\+Events} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of processed events at the end of cycle. \end{DoxyCompactList}\item 
+T\+Time {\bf get\+Total\+Cycle\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the total time spent to process the last cycle. \end{DoxyCompactList}\item 
+void {\bf event\+Processed} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Event)
+\begin{DoxyCompactList}\small\item\em Called back when the application has processed an event. \end{DoxyCompactList}\item 
+const T\+Time \& {\bf get\+Start\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the start time of the current cycle. \end{DoxyCompactList}\item 
+const T\+Time \& {\bf get\+End\+Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the end time of the last cycle. \end{DoxyCompactList}\item 
+void {\bf start\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Start the cycle. \end{DoxyCompactList}\item 
+void {\bf stop\+Cycle} ()
+\begin{DoxyCompactList}\small\item\em Stop the cycle. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+State} {\bf get\+State} () const 
+\begin{DoxyCompactList}\small\item\em Get the cycle state (running, stopped) \end{DoxyCompactList}\item 
+bool {\bf is\+Timeout\+Reached} () const 
+\begin{DoxyCompactList}\small\item\em Whether the timeout is reached. \end{DoxyCompactList}\item 
+void {\bf add\+Listener} ({\bf D\+Q\+M\+Cycle\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Add a cycle listener. \end{DoxyCompactList}\item 
+void {\bf remove\+Listener} ({\bf D\+Q\+M\+Cycle\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Remove a cycle listener. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Cycle\+Started} ()=0
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Cycle\+Stopped} ()=0
+\begin{DoxyCompactList}\small\item\em Specific call back function when a cycle is stopped. \end{DoxyCompactList}\item 
+virtual void {\bf on\+Event\+Processed} (const {\bf D\+Q\+M\+Event} $\ast$const p\+Event)=0
+\begin{DoxyCompactList}\small\item\em Specific call back function when an event is processed, depends on cycle type. \end{DoxyCompactList}\item 
+virtual bool {\bf is\+End\+Of\+Cycle\+Reached} () const =0
+\begin{DoxyCompactList}\small\item\em Specific function to tell the application to know whether the cycle has reached the end. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bf m\+\_\+processing\+Rate}
+\item 
+float {\bf m\+\_\+cycle\+Value}
+\item 
+unsigned int {\bf m\+\_\+cycle\+Timeout}
+\item 
+unsigned int {\bf m\+\_\+n\+Processed\+Events}
+\item 
+T\+Time {\bf m\+\_\+start\+Time}
+\item 
+T\+Time {\bf m\+\_\+end\+Time}
+\item 
+T\+Time {\bf m\+\_\+last\+Event\+Processed\+Time}
+\item 
+std\+::set$<$ {\bf D\+Q\+M\+Cycle\+Listener} $\ast$ $>$ {\bf m\+\_\+listeners}
+\item 
+{\bf D\+Q\+M\+State} {\bf m\+\_\+state}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Cycle}{p.}{classdqm4hep_1_1DQMCycle} class. 
+
+Process a cycle of process\+Event(evt) call for a \doxyref{D\+Q\+M\+Analysis\+Module}{p.}{classdqm4hep_1_1DQMAnalysisModule}. See implementation for cycle types.
+
+The cycle value is the value for which the cycle should normally ends.
+
+The timeout value is the maximum time between two process\+Event(evt) call When the timeout is reached, the cycle ends. The default timeout value is 10 seconds and can be changed via the method set\+Timeout(secs) 
+
+Definition at line 78 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!D\+Q\+M\+Cycle@{D\+Q\+M\+Cycle}}
+\index{D\+Q\+M\+Cycle@{D\+Q\+M\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{D\+Q\+M\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Cycle\+::\+D\+Q\+M\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a966bbd1bee5a074bd67c4b77e6726687}
+
+
+Constructor. 
+
+
+
+Definition at line 36 of file D\+Q\+M\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+36                    :
+37     m_processingRate(0.f),
+38     m_cycleValue(0.f),
+39     m_cycleTimeout(10), \textcolor{comment}{// 10 seconds is the default value}
+40     m_nProcessedEvents(0)
+41 \{
+42   \textcolor{comment}{/* nop */}
+43 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!````~D\+Q\+M\+Cycle@{$\sim$\+D\+Q\+M\+Cycle}}
+\index{````~D\+Q\+M\+Cycle@{$\sim$\+D\+Q\+M\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Cycle\+::$\sim$\+D\+Q\+M\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMCycle_a61d4e10a3f4fe8b23dad3a650455f468}
+
+
+Destructor. 
+
+
+
+Definition at line 47 of file D\+Q\+M\+Cycle.\+cc.
+
+
+\begin{DoxyCode}
+48 \{
+49   \textcolor{comment}{/* nop */}
+50 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Cycle\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a6ecd73e365ab8be6d56ad0b334a9a129}
+
+
+Add a cycle listener. 
+
+
+
+Definition at line 201 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+202 \{
+203   \textcolor{keywordflow}{if}(NULL != pListener)
+204     m_listeners.insert(pListener);
+205 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!event\+Processed@{event\+Processed}}
+\index{event\+Processed@{event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a46cec3dc6534d947e6a4c982172de1ad}
+
+
+Called back when the application has processed an event. 
+
+
+
+Definition at line 103 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References get\+State(), m\+\_\+last\+Event\+Processed\+Time, m\+\_\+listeners, m\+\_\+n\+Processed\+Events, and on\+Event\+Processed().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+104 \{
+105   \textcolor{keywordflow}{if}(this->getState() != RUNNING\_STATE)
+106     \textcolor{keywordflow}{return};
+107 
+108   \textcolor{keywordflow}{if}(NULL == pEvent)
+109     \textcolor{keywordflow}{return};
+110 
+111   m_nProcessedEvents++;
+112   m_lastEventProcessedTime = gSystem->Now();
+113 
+114   \textcolor{comment}{// call back for daughter class}
+115   this->onEventProcessed(pEvent);
+116 
+117   \textcolor{comment}{// call back from listeners}
+118   \textcolor{keywordflow}{for}(std::set<DQMCycleListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+119       endIter != iter ; ++iter)
+120     (*iter)->onEventProcessed(\textcolor{keyword}{this}, pEvent);
+121 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+Cycle\+Value@{get\+Cycle\+Value}}
+\index{get\+Cycle\+Value@{get\+Cycle\+Value}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+Cycle\+Value}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Cycle\+Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a4e8b30ce1ee03863b646ac07372a719f}
+
+
+Get the cycle value (time, nb of events, event size) 
+
+
+
+Definition at line 54 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+cycle\+Value.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::is\+End\+Of\+Cycle\+Reached(), and dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::is\+End\+Of\+Cycle\+Reached().
+
+
+\begin{DoxyCode}
+55 \{
+56   \textcolor{keywordflow}{return} m_cycleValue;
+57 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+End\+Time@{get\+End\+Time}}
+\index{get\+End\+Time@{get\+End\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+End\+Time}]{\setlength{\rightskip}{0pt plus 5cm}const T\+Time \& dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+End\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a8ea8a001130535696e3ccce40fb19431}
+
+
+Get the end time of the last cycle. 
+
+Valid only between two cycle after \doxyref{stop\+Cycle()}{p.}{classdqm4hep_1_1DQMCycle_a531f953ad482c9c051d8eb6f6f7ccad7} call 
+
+Definition at line 132 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+end\+Time.
+
+
+\begin{DoxyCode}
+133 \{
+134   \textcolor{keywordflow}{return} m_endTime;
+135 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+N\+Processed\+Events@{get\+N\+Processed\+Events}}
+\index{get\+N\+Processed\+Events@{get\+N\+Processed\+Events}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+N\+Processed\+Events}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+N\+Processed\+Events (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a8444637bddfb54d8b784a80d2bd36ad7}
+
+
+Get the number of processed events at the end of cycle. 
+
+
+
+Definition at line 89 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+n\+Processed\+Events.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle\+::is\+End\+Of\+Cycle\+Reached(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+90 \{
+91   \textcolor{keywordflow}{return} m_nProcessedEvents;
+92 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+Processing\+Rate@{get\+Processing\+Rate}}
+\index{get\+Processing\+Rate@{get\+Processing\+Rate}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+Processing\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Processing\+Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_ab4f51f9b35ae0d935c28470a3cf3a0a2}
+
+
+Get the processing rate. 
+
+May be called after \doxyref{stop\+Cycle()}{p.}{classdqm4hep_1_1DQMCycle_a531f953ad482c9c051d8eb6f6f7ccad7} to get the correct value 
+
+Definition at line 82 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+processing\+Rate.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+83 \{
+84   \textcolor{keywordflow}{return} m_processingRate;
+85 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+Start\+Time@{get\+Start\+Time}}
+\index{get\+Start\+Time@{get\+Start\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+Start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}const T\+Time \& dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Start\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a1dfb0b1b4e1ff9f2b6ce0d84632c4fe5}
+
+
+Get the start time of the current cycle. 
+
+
+
+Definition at line 125 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+start\+Time.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle\+::is\+End\+Of\+Cycle\+Reached().
+
+
+\begin{DoxyCode}
+126 \{
+127   \textcolor{keywordflow}{return} m_startTime;
+128 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a63ee6b7eca9fcdbc85d057cb4ae44a46}
+
+
+Get the cycle state (running, stopped) 
+
+
+
+Definition at line 181 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+state.
+
+
+
+Referenced by event\+Processed().
+
+
+\begin{DoxyCode}
+182 \{
+183   \textcolor{keywordflow}{return} m_state;
+184 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+Timeout@{get\+Timeout}}
+\index{get\+Timeout@{get\+Timeout}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Timeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a22cffb345526af938af9b4510671ddc3}
+
+
+Get the cycle timeout (in seconds) Maximum time between two process\+Event(evt) call. 
+
+When the timeout is reached, the cycle ends 
+
+Definition at line 68 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+cycle\+Timeout.
+
+
+
+Referenced by is\+Timeout\+Reached().
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{return} m_cycleTimeout;
+71 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!get\+Total\+Cycle\+Time@{get\+Total\+Cycle\+Time}}
+\index{get\+Total\+Cycle\+Time@{get\+Total\+Cycle\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{get\+Total\+Cycle\+Time}]{\setlength{\rightskip}{0pt plus 5cm}T\+Time dqm4hep\+::\+D\+Q\+M\+Cycle\+::get\+Total\+Cycle\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_ac25ff87dda4fd7449e08df696d37d6c8}
+
+
+Get the total time spent to process the last cycle. 
+
+
+
+Definition at line 96 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+end\+Time, and m\+\_\+start\+Time.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), and stop\+Cycle().
+
+
+\begin{DoxyCode}
+97 \{
+98   \textcolor{keywordflow}{return} (m_endTime - m_startTime);
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}}
+\index{is\+End\+Of\+Cycle\+Reached@{is\+End\+Of\+Cycle\+Reached}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{is\+End\+Of\+Cycle\+Reached}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool dqm4hep\+::\+D\+Q\+M\+Cycle\+::is\+End\+Of\+Cycle\+Reached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycle_a2b177a69fc0585fbef12dda7b54065d5}
+
+
+Specific function to tell the application to know whether the cycle has reached the end. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMTimerCycle_aee022855f2262249aba47be919b404e6}, and {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCounterCycle_a2b36be8cb34b293b7598cfebb8e2675c}.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!is\+Timeout\+Reached@{is\+Timeout\+Reached}}
+\index{is\+Timeout\+Reached@{is\+Timeout\+Reached}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{is\+Timeout\+Reached}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Cycle\+::is\+Timeout\+Reached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMCycle_a154c78d3b744c5b4d6edb3ccfe3ba0e4}
+
+
+Whether the timeout is reached. 
+
+
+
+Definition at line 188 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References get\+Timeout(), and m\+\_\+last\+Event\+Processed\+Time.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+189 \{
+190   \textcolor{keywordflow}{if}(m_lastEventProcessedTime == TTime(0))
+191     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+192 
+193   \textcolor{keywordflow}{if}( gSystem->Now() > m_lastEventProcessedTime + TTime(this->getTimeout()*1000) )
+194     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+195 
+196   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+197 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!on\+Cycle\+Started@{on\+Cycle\+Started}}
+\index{on\+Cycle\+Started@{on\+Cycle\+Started}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{on\+Cycle\+Started}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+::on\+Cycle\+Started (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycle_a9ee9c093280a5c87802529233f7ef97d}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMTimerCycle_a5f55ba5578ad39a8cd2899fe90b538df}, and {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCounterCycle_a50af57684ff7a09ff91370d3b1250040}.
+
+
+
+Referenced by start\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!on\+Cycle\+Stopped@{on\+Cycle\+Stopped}}
+\index{on\+Cycle\+Stopped@{on\+Cycle\+Stopped}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{on\+Cycle\+Stopped}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+::on\+Cycle\+Stopped (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycle_a9563479df6411c34811e820d49dc242f}
+
+
+Specific call back function when a cycle is stopped. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMTimerCycle_af772fe5694a7463452828d257ff5310d}, and {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCounterCycle_afae6e5fb980fc77e20dafc5d0769a392}.
+
+
+
+Referenced by stop\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!on\+Event\+Processed@{on\+Event\+Processed}}
+\index{on\+Event\+Processed@{on\+Event\+Processed}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{on\+Event\+Processed}]{\setlength{\rightskip}{0pt plus 5cm}virtual void dqm4hep\+::\+D\+Q\+M\+Cycle\+::on\+Event\+Processed (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+Q\+M\+Event} $\ast$const}]{p\+Event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMCycle_a98871dce48f954a8299a8f130125ad59}
+
+
+Specific call back function when an event is processed, depends on cycle type. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Timer\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMTimerCycle_a8aa69a62d2c1df9fb9ad7a64eb5c732f}, and {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Counter\+Cycle} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCounterCycle_a6bce65f8d3a5331d96868dd28931c842}.
+
+
+
+Referenced by event\+Processed().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Cycle\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_aa86327ae5b294509c55ac2a59508dc58}
+
+
+Remove a cycle listener. 
+
+
+
+Definition at line 209 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+\begin{DoxyCode}
+210 \{
+211   m_listeners.erase(pListener);
+212 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!set\+Cycle\+Value@{set\+Cycle\+Value}}
+\index{set\+Cycle\+Value@{set\+Cycle\+Value}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{set\+Cycle\+Value}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::set\+Cycle\+Value (
+\begin{DoxyParamCaption}
+\item[{float}]{value}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a896e3a4d95a97af6a8cc7d7670ae766a}
+
+
+Set the cycle value. 
+
+
+
+Definition at line 61 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+cycle\+Value.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+62 \{
+63   m_cycleValue = value;
+64 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!set\+Timeout@{set\+Timeout}}
+\index{set\+Timeout@{set\+Timeout}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{set\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::set\+Timeout (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{timeout}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a5e7f3271bedf4c4a1b501fa815004793}
+
+
+Set the timeout. 
+
+
+
+Definition at line 75 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+cycle\+Timeout.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Cycle(), and dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::read\+Settings().
+
+
+\begin{DoxyCode}
+76 \{
+77   m_cycleTimeout = timeout;
+78 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!start\+Cycle@{start\+Cycle}}
+\index{start\+Cycle@{start\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{start\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::start\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a60d18bef9a1b7ee71e19062a3a467bb8}
+
+
+Start the cycle. 
+
+
+
+Definition at line 139 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References m\+\_\+end\+Time, m\+\_\+last\+Event\+Processed\+Time, m\+\_\+listeners, m\+\_\+n\+Processed\+Events, m\+\_\+processing\+Rate, m\+\_\+start\+Time, m\+\_\+state, and on\+Cycle\+Started().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+140 \{
+141   m_startTime = gSystem->Now();
+142   m_lastEventProcessedTime = m_startTime;
+143   m_endTime = TTime(0);
+144 
+145   m_nProcessedEvents = 0;
+146   m_processingRate = 0.f;
+147   m_state = RUNNING\_STATE;
+148 
+149   \textcolor{comment}{// call back for daughter class}
+150   this->onCycleStarted();
+151 
+152   \textcolor{comment}{// call back from listeners}
+153   \textcolor{keywordflow}{for}(std::set<DQMCycleListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+154       endIter != iter ; ++iter)
+155     (*iter)->onCycleStarted(\textcolor{keyword}{this});
+156 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!stop\+Cycle@{stop\+Cycle}}
+\index{stop\+Cycle@{stop\+Cycle}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{stop\+Cycle}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Cycle\+::stop\+Cycle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMCycle_a531f953ad482c9c051d8eb6f6f7ccad7}
+
+
+Stop the cycle. 
+
+
+
+Definition at line 160 of file D\+Q\+M\+Cycle.\+cc.
+
+
+
+References get\+Total\+Cycle\+Time(), m\+\_\+end\+Time, m\+\_\+listeners, m\+\_\+n\+Processed\+Events, m\+\_\+processing\+Rate, m\+\_\+state, and on\+Cycle\+Stopped().
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+161 \{
+162   m_endTime = gSystem->Now();
+163   m_state = STOPPED\_STATE;
+164 
+165   TTime timeDifference = this->getTotalCycleTime();
+166 
+167   \textcolor{keywordflow}{if}(timeDifference != TTime(0))
+168     m_processingRate = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(m_nProcessedEvents) / timeDifference.operator \textcolor{keywordtype}{long} \textcolor{keywordtype}{long}());
+169 
+170   \textcolor{comment}{// call back for daughter class}
+171   this->onCycleStopped();
+172 
+173   \textcolor{comment}{// call back from listeners}
+174   \textcolor{keywordflow}{for}(std::set<DQMCycleListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+175       endIter != iter ; ++iter)
+176     (*iter)->onCycleStopped(\textcolor{keyword}{this});
+177 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+cycle\+Timeout@{m\+\_\+cycle\+Timeout}}
+\index{m\+\_\+cycle\+Timeout@{m\+\_\+cycle\+Timeout}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+cycle\+Timeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+cycle\+Timeout\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_a8a16ce54f049dd97e9b482fb3c922261}
+
+
+Definition at line 177 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+Timeout(), and set\+Timeout().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+cycle\+Value@{m\+\_\+cycle\+Value}}
+\index{m\+\_\+cycle\+Value@{m\+\_\+cycle\+Value}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+cycle\+Value}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+cycle\+Value\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_ab8d0221e559b3809defbdac288654c80}
+
+
+Definition at line 176 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+Cycle\+Value(), and set\+Cycle\+Value().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+end\+Time@{m\+\_\+end\+Time}}
+\index{m\+\_\+end\+Time@{m\+\_\+end\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+end\+Time}]{\setlength{\rightskip}{0pt plus 5cm}T\+Time dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+end\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_aadb15f297e6797add280064cb88881de}
+
+
+Definition at line 180 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+End\+Time(), get\+Total\+Cycle\+Time(), start\+Cycle(), and stop\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+last\+Event\+Processed\+Time@{m\+\_\+last\+Event\+Processed\+Time}}
+\index{m\+\_\+last\+Event\+Processed\+Time@{m\+\_\+last\+Event\+Processed\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+last\+Event\+Processed\+Time}]{\setlength{\rightskip}{0pt plus 5cm}T\+Time dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+last\+Event\+Processed\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_a7c94da449c29cc8f388bda89143ea7d3}
+
+
+Definition at line 181 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by event\+Processed(), is\+Timeout\+Reached(), and start\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+listeners@{m\+\_\+listeners}}
+\index{m\+\_\+listeners@{m\+\_\+listeners}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+listeners}]{\setlength{\rightskip}{0pt plus 5cm}std\+::set$<${\bf D\+Q\+M\+Cycle\+Listener}$\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+listeners\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_a728589d4f82dddda1d83ab8207b3a287}
+
+
+Definition at line 182 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by add\+Listener(), event\+Processed(), remove\+Listener(), start\+Cycle(), and stop\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+n\+Processed\+Events@{m\+\_\+n\+Processed\+Events}}
+\index{m\+\_\+n\+Processed\+Events@{m\+\_\+n\+Processed\+Events}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+n\+Processed\+Events}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+n\+Processed\+Events\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_afb9cb101e6be9eb5032fbd29815b25fd}
+
+
+Definition at line 178 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by event\+Processed(), get\+N\+Processed\+Events(), start\+Cycle(), and stop\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+processing\+Rate@{m\+\_\+processing\+Rate}}
+\index{m\+\_\+processing\+Rate@{m\+\_\+processing\+Rate}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+processing\+Rate}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+processing\+Rate\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_a337c715a3452e4ab3c593b61e200fab5}
+
+
+Definition at line 175 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+Processing\+Rate(), start\+Cycle(), and stop\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+start\+Time@{m\+\_\+start\+Time}}
+\index{m\+\_\+start\+Time@{m\+\_\+start\+Time}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+start\+Time}]{\setlength{\rightskip}{0pt plus 5cm}T\+Time dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+start\+Time\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_a072a6568cf90fa587632c7823cc090f1}
+
+
+Definition at line 179 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+Start\+Time(), get\+Total\+Cycle\+Time(), and start\+Cycle().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}!m\+\_\+state@{m\+\_\+state}}
+\index{m\+\_\+state@{m\+\_\+state}!dqm4hep\+::\+D\+Q\+M\+Cycle@{dqm4hep\+::\+D\+Q\+M\+Cycle}}
+\subsubsection[{m\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Cycle\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMCycle_af9c7b185b1f92bf1c80206c6450ab351}
+
+
+Definition at line 183 of file D\+Q\+M\+Cycle.\+h.
+
+
+
+Referenced by get\+State(), start\+Cycle(), and stop\+Cycle().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Cycle.\+h}\item 
+{\bf D\+Q\+M\+Cycle.\+cc}\end{DoxyCompactItemize}

@@ -1,0 +1,567 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Run\+Control Class Reference}
+\label{classdqm4hep_1_1DQMRunControl}\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+
+
+\doxyref{D\+Q\+M\+Run\+Control}{p.}{classdqm4hep_1_1DQMRunControl} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Run\+Control.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Run\+Control\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classdqm4hep_1_1DQMRunControl}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Run\+Control} (const std\+::string \&run\+Control\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor with name. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Run\+Control} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void {\bf set\+Run\+Control\+Name} (const std\+::string \&run\+Control\+Name)
+\begin{DoxyCompactList}\small\item\em Set the run control name. \end{DoxyCompactList}\item 
+const std\+::string \& {\bf get\+Run\+Control\+Name} () const 
+\begin{DoxyCompactList}\small\item\em Get the run control name. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+New\+Run} ({\bf D\+Q\+M\+Run} $\ast$p\+Run)
+\begin{DoxyCompactList}\small\item\em Create a new run from a \doxyref{D\+Q\+M\+Run}{p.}{classdqm4hep_1_1DQMRun} The run control is the owner the run. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf start\+New\+Run} (int run\+Number, const std\+::string \&description=\char`\"{}\char`\"{}, const std\+::string \&detector\+Name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Create a new run. \end{DoxyCompactList}\item 
+{\bf Status\+Code} {\bf end\+Current\+Run} ()
+\begin{DoxyCompactList}\small\item\em End the current run. \end{DoxyCompactList}\item 
+int {\bf get\+Current\+Run\+Number} () const 
+\begin{DoxyCompactList}\small\item\em Get the current run number. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+Run} $\ast$ {\bf get\+Current\+Run} () const 
+\begin{DoxyCompactList}\small\item\em Get the current run header. \end{DoxyCompactList}\item 
+{\bf D\+Q\+M\+State} {\bf get\+Run\+State} () const 
+\begin{DoxyCompactList}\small\item\em Get the run state (running or not) \end{DoxyCompactList}\item 
+bool {\bf is\+Running} () const 
+\begin{DoxyCompactList}\small\item\em Whether a run has been started. \end{DoxyCompactList}\item 
+void {\bf add\+Listener} ({\bf D\+Q\+M\+Run\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Add a listener to the run control. \end{DoxyCompactList}\item 
+void {\bf remove\+Listener} ({\bf D\+Q\+M\+Run\+Listener} $\ast$p\+Listener)
+\begin{DoxyCompactList}\small\item\em Remove a listener from the run control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+State} {\bf m\+\_\+run\+State}
+\item 
+{\bf D\+Q\+M\+Run} $\ast$ {\bf m\+\_\+p\+Current\+Run}
+\item 
+std\+::string {\bf m\+\_\+run\+Control\+Name}
+\item 
+std\+::vector$<$ {\bf D\+Q\+M\+Run\+Listener} $\ast$ $>$ {\bf m\+\_\+listeners}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Run\+Control}{p.}{classdqm4hep_1_1DQMRunControl} class. 
+
+Definition at line 63 of file D\+Q\+M\+Run\+Control.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!D\+Q\+M\+Run\+Control@{D\+Q\+M\+Run\+Control}}
+\index{D\+Q\+M\+Run\+Control@{D\+Q\+M\+Run\+Control}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{D\+Q\+M\+Run\+Control}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::\+D\+Q\+M\+Run\+Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a2c7571a6bf2b89451b4506f34564160e}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+\begin{DoxyCode}
+38                              :
+39     m_runState(STOPPED\_STATE),
+40     m_pCurrentRun(NULL),
+41     m_runControlName(\textcolor{stringliteral}{"DEFAULT"})
+42 \{
+43   \textcolor{comment}{/* nop */}
+44 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!D\+Q\+M\+Run\+Control@{D\+Q\+M\+Run\+Control}}
+\index{D\+Q\+M\+Run\+Control@{D\+Q\+M\+Run\+Control}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{D\+Q\+M\+Run\+Control}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::\+D\+Q\+M\+Run\+Control (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{run\+Control\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a140fa36f89f924d6f1bf8f5c1400e8ba}
+
+
+Constructor with name. 
+
+
+
+Definition at line 48 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+\begin{DoxyCode}
+48                                                             :
+49     m_runState(STOPPED\_STATE),
+50     m_pCurrentRun(NULL),
+51     m_runControlName(runControlName)
+52 \{
+53   \textcolor{comment}{/* nop */}
+54 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!````~D\+Q\+M\+Run\+Control@{$\sim$\+D\+Q\+M\+Run\+Control}}
+\index{````~D\+Q\+M\+Run\+Control@{$\sim$\+D\+Q\+M\+Run\+Control}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Run\+Control}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::$\sim$\+D\+Q\+M\+Run\+Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMRunControl_af08906c0390f5546fbbf3614f7f81fb2}
+
+
+Destructor. 
+
+
+
+Definition at line 58 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References end\+Current\+Run(), and is\+Running().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{keywordflow}{if}(isRunning())
+61     endCurrentRun();
+62 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!add\+Listener@{add\+Listener}}
+\index{add\+Listener@{add\+Listener}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{add\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::add\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Run\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_adbeef0ad83d0239e941a6593f8803fcc}
+
+
+Add a listener to the run control. 
+
+
+
+Definition at line 175 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+\begin{DoxyCode}
+176 \{
+177   \textcolor{keywordflow}{if}(NULL == pListener)
+178     \textcolor{keywordflow}{return};
+179 
+180   \textcolor{keywordflow}{if}(std::find(m_listeners.begin(), m_listeners.end(), pListener) == m_listeners.end())
+181     m_listeners.push\_back(pListener);
+182 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!end\+Current\+Run@{end\+Current\+Run}}
+\index{end\+Current\+Run@{end\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{end\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::end\+Current\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a3295db984345a11244b42e1aef1dfe73}
+
+
+End the current run. 
+
+
+
+Definition at line 120 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References is\+Running(), m\+\_\+listeners, m\+\_\+p\+Current\+Run, and m\+\_\+run\+State.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), set\+Run\+Control\+Name(), start\+New\+Run(), and $\sim$\+D\+Q\+M\+Run\+Control().
+
+
+\begin{DoxyCode}
+121 \{
+122   \textcolor{keywordflow}{if}(!isRunning())
+123     \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+124 
+125   m_runState = STOPPED\_STATE;
+126 
+127   \textcolor{keywordflow}{if}(NULL != m_pCurrentRun)
+128   \{
+129     \textcolor{comment}{// notify before deletion}
+130     \textcolor{keywordflow}{for}(std::vector<DQMRunListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+131         endIter != iter ; ++iter)
+132       (*iter)->onEndOfRun(m_pCurrentRun);
+133 
+134     \textcolor{keyword}{delete} m_pCurrentRun;
+135   \}
+136 
+137   m_pCurrentRun = NULL;
+138 
+139   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+140 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!get\+Current\+Run@{get\+Current\+Run}}
+\index{get\+Current\+Run@{get\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{get\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run} $\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControl_ae932b007a80cf8e239eddd50fc722397}
+
+
+Get the current run header. 
+
+
+
+Definition at line 154 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+p\+Current\+Run.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+155 \{
+156   \textcolor{keywordflow}{return} m_pCurrentRun;
+157 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!get\+Current\+Run\+Number@{get\+Current\+Run\+Number}}
+\index{get\+Current\+Run\+Number@{get\+Current\+Run\+Number}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{get\+Current\+Run\+Number}]{\setlength{\rightskip}{0pt plus 5cm}int dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Current\+Run\+Number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControl_a1b937da754377b3e3b240cf50ddc3468}
+
+
+Get the current run number. 
+
+
+
+Definition at line 144 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Run\+::get\+Run\+Number(), and m\+\_\+p\+Current\+Run.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run().
+
+
+\begin{DoxyCode}
+145 \{
+146   \textcolor{keywordflow}{if}(NULL != m_pCurrentRun)
+147     \textcolor{keywordflow}{return} m_pCurrentRun->getRunNumber();
+148   \textcolor{keywordflow}{else}
+149     \textcolor{keywordflow}{return} 0;
+150 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!get\+Run\+Control\+Name@{get\+Run\+Control\+Name}}
+\index{get\+Run\+Control\+Name@{get\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{get\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string \& dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControl_a5e42e50bbe23cbbc8b169a0f8d00ded7}
+
+
+Get the run control name. 
+
+
+
+Definition at line 76 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+run\+Control\+Name.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::connect\+To\+Service().
+
+
+\begin{DoxyCode}
+77 \{
+78   \textcolor{keywordflow}{return} m_runControlName;
+79 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!get\+Run\+State@{get\+Run\+State}}
+\index{get\+Run\+State@{get\+Run\+State}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{get\+Run\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::get\+Run\+State (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControl_af648f712be43893e92ed671dfa8c742b}
+
+
+Get the run state (running or not) 
+
+
+
+Definition at line 161 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+run\+State.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::get\+Run\+State(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::$\sim$\+D\+Q\+M\+Run\+Control\+Service().
+
+
+\begin{DoxyCode}
+162 \{
+163   \textcolor{keywordflow}{return} m_runState;
+164 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!is\+Running@{is\+Running}}
+\index{is\+Running@{is\+Running}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{is\+Running}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classdqm4hep_1_1DQMRunControl_a7eac6fc3ec0070d156ecd4649a8b0b24}
+
+
+Whether a run has been started. 
+
+
+
+Definition at line 168 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+run\+State.
+
+
+
+Referenced by end\+Current\+Run(), dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::handle\+Current\+Run\+Rpc(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::run(), set\+Run\+Control\+Name(), start\+New\+Run(), and $\sim$\+D\+Q\+M\+Run\+Control().
+
+
+\begin{DoxyCode}
+169 \{
+170   \textcolor{keywordflow}{return} m_runState == RUNNING\_STATE;
+171 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!remove\+Listener@{remove\+Listener}}
+\index{remove\+Listener@{remove\+Listener}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{remove\+Listener}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::remove\+Listener (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Run\+Listener} $\ast$}]{p\+Listener}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a7e327fb8c7fbfe29106132aee0da90d1}
+
+
+Remove a listener from the run control. 
+
+
+
+Definition at line 186 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References m\+\_\+listeners.
+
+
+\begin{DoxyCode}
+187 \{
+188   std::vector<DQMRunListener*>::iterator findIter = std::find(m_listeners.begin(), 
+      m_listeners.end(), pListener);
+189 
+190   \textcolor{keywordflow}{if}(findIter != m_listeners.end())
+191     m_listeners.erase(findIter);
+192 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!set\+Run\+Control\+Name@{set\+Run\+Control\+Name}}
+\index{set\+Run\+Control\+Name@{set\+Run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{set\+Run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::set\+Run\+Control\+Name (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{run\+Control\+Name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a1ac93242398b11a7f6cdc412038ab601}
+
+
+Set the run control name. 
+
+This stops the current before 
+
+Definition at line 66 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References end\+Current\+Run(), is\+Running(), and m\+\_\+run\+Control\+Name.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application\+::configure\+Network().
+
+
+\begin{DoxyCode}
+67 \{
+68   \textcolor{keywordflow}{if}(this->isRunning())
+69     endCurrentRun();
+70 
+71   m_runControlName = runControlName;
+72 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!start\+New\+Run@{start\+New\+Run}}
+\index{start\+New\+Run@{start\+New\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{start\+New\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Run} $\ast$}]{p\+Run}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_a042b1107acd6aed4b265f79304296db8}
+
+
+Create a new run from a \doxyref{D\+Q\+M\+Run}{p.}{classdqm4hep_1_1DQMRun} The run control is the owner the run. 
+
+
+
+Definition at line 83 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References end\+Current\+Run(), is\+Running(), m\+\_\+listeners, m\+\_\+p\+Current\+Run, m\+\_\+run\+State, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::handle\+Current\+Run\+Rpc\+Info(), dqm4hep\+::\+D\+Q\+M\+Dim\+Run\+Control\+Client\+::info\+Handler(), and dqm4hep\+::\+D\+Q\+M\+Run\+Control\+Service\+::start\+New\+Run().
+
+
+\begin{DoxyCode}
+84 \{
+85   \textcolor{keywordflow}{if}(NULL == pRun)
+86     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PTR;
+87 
+88   \textcolor{keywordflow}{if}(isRunning())
+89     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, endCurrentRun());
+90 
+91   m_pCurrentRun = pRun;
+92   m_runState = RUNNING\_STATE;
+93 
+94   \textcolor{keywordflow}{for}(std::vector<DQMRunListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+95       endIter != iter ; ++iter)
+96     (*iter)->onStartOfRun(m_pCurrentRun);
+97 
+98   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+99 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!start\+New\+Run@{start\+New\+Run}}
+\index{start\+New\+Run@{start\+New\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{start\+New\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::start\+New\+Run (
+\begin{DoxyParamCaption}
+\item[{int}]{run\+Number, }
+\item[{const std\+::string \&}]{description = {\ttfamily \char`\"{}\char`\"{}}, }
+\item[{const std\+::string \&}]{detector\+Name = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMRunControl_ad6a45ffad8cfbe9ff08de62c88bd9a36}
+
+
+Create a new run. 
+
+End the current run if running 
+
+Definition at line 103 of file D\+Q\+M\+Run\+Control.\+cc.
+
+
+
+References end\+Current\+Run(), is\+Running(), m\+\_\+listeners, m\+\_\+p\+Current\+Run, m\+\_\+run\+State, and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+104 \{
+105   \textcolor{keywordflow}{if}(isRunning())
+106     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, endCurrentRun());
+107 
+108   m_pCurrentRun = \textcolor{keyword}{new} DQMRun(runNumber, description, detectorName);
+109   m_runState = RUNNING\_STATE;
+110 
+111   \textcolor{keywordflow}{for}(std::vector<DQMRunListener*>::iterator iter = m_listeners.begin(), endIter = 
+      m_listeners.end() ;
+112       endIter != iter ; ++iter)
+113     (*iter)->onStartOfRun(m_pCurrentRun);
+114 
+115   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+116 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!m\+\_\+listeners@{m\+\_\+listeners}}
+\index{m\+\_\+listeners@{m\+\_\+listeners}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{m\+\_\+listeners}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf D\+Q\+M\+Run\+Listener} $\ast$$>$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::m\+\_\+listeners\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRunControl_a3cb67f28e32fc3c5cc11d59fc0898c3e}
+
+
+Definition at line 128 of file D\+Q\+M\+Run\+Control.\+h.
+
+
+
+Referenced by add\+Listener(), end\+Current\+Run(), remove\+Listener(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!m\+\_\+p\+Current\+Run@{m\+\_\+p\+Current\+Run}}
+\index{m\+\_\+p\+Current\+Run@{m\+\_\+p\+Current\+Run}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{m\+\_\+p\+Current\+Run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+Run}$\ast$ dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::m\+\_\+p\+Current\+Run\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRunControl_a3eb4aac24bc7168bd42c6ad9cc8e864d}
+
+
+Definition at line 126 of file D\+Q\+M\+Run\+Control.\+h.
+
+
+
+Referenced by end\+Current\+Run(), get\+Current\+Run(), get\+Current\+Run\+Number(), and start\+New\+Run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}}
+\index{m\+\_\+run\+Control\+Name@{m\+\_\+run\+Control\+Name}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{m\+\_\+run\+Control\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::m\+\_\+run\+Control\+Name\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRunControl_a1b0865c046558c15c9e935dea50b1848}
+
+
+Definition at line 127 of file D\+Q\+M\+Run\+Control.\+h.
+
+
+
+Referenced by get\+Run\+Control\+Name(), and set\+Run\+Control\+Name().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}!m\+\_\+run\+State@{m\+\_\+run\+State}}
+\index{m\+\_\+run\+State@{m\+\_\+run\+State}!dqm4hep\+::\+D\+Q\+M\+Run\+Control@{dqm4hep\+::\+D\+Q\+M\+Run\+Control}}
+\subsubsection[{m\+\_\+run\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\+Q\+M\+State} dqm4hep\+::\+D\+Q\+M\+Run\+Control\+::m\+\_\+run\+State\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMRunControl_a60fae61793212c99f6a4628827fe0a39}
+
+
+Definition at line 125 of file D\+Q\+M\+Run\+Control.\+h.
+
+
+
+Referenced by end\+Current\+Run(), get\+Run\+State(), is\+Running(), and start\+New\+Run().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Run\+Control.\+h}\item 
+{\bf D\+Q\+M\+Run\+Control.\+cc}\end{DoxyCompactItemize}

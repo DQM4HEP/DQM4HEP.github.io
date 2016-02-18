@@ -1,0 +1,240 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Logger\+Widget Class Reference}
+\label{classdqm4hep_1_1DQMLoggerWidget}\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+
+
+\doxyref{D\+Q\+M\+Logger\+Widget}{p.}{classdqm4hep_1_1DQMLoggerWidget} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Logger\+Widget.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Logger\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMLoggerWidget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Logger\+Widget} (Q\+Widget $\ast$p\+Parent=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void {\bf log} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with the default level (M\+E\+S\+S\+A\+G\+E) \end{DoxyCompactList}\item 
+void {\bf log} (Log\+Level level, const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Log a message with a log level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Qt\+::\+Global\+Color {\bf get\+Color} (Log\+Level level) const 
+\item 
+std\+::string {\bf get\+Log\+Message\+Head} (Log\+Level level) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Text\+Edit $\ast$ {\bf m\+\_\+p\+Logging\+Widget}
+\begin{DoxyCompactList}\small\item\em the text widget used for logging \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Logger\+Widget}{p.}{classdqm4hep_1_1DQMLoggerWidget} class. 
+
+Definition at line 46 of file D\+Q\+M\+Logger\+Widget.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!D\+Q\+M\+Logger\+Widget@{D\+Q\+M\+Logger\+Widget}}
+\index{D\+Q\+M\+Logger\+Widget@{D\+Q\+M\+Logger\+Widget}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{D\+Q\+M\+Logger\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::\+D\+Q\+M\+Logger\+Widget (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{p\+Parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLoggerWidget_aa879525504381e025bb02b932c12a1ec}
+
+
+Constructor. 
+
+
+
+Definition at line 38 of file D\+Q\+M\+Logger\+Widget.\+cc.
+
+
+
+References m\+\_\+p\+Logging\+Widget.
+
+
+\begin{DoxyCode}
+38                                                  :
+39     QGroupBox(\textcolor{stringliteral}{"Logging"}, pParent)
+40 \{
+41   setMaximumHeight(200);
+42 
+43   QHBoxLayout *pLoggingLayout = \textcolor{keyword}{new} QHBoxLayout();
+44   setLayout(pLoggingLayout);
+45 
+46   m_pLoggingWidget = \textcolor{keyword}{new} QTextEdit();
+47   m_pLoggingWidget->setReadOnly(\textcolor{keyword}{true});
+48   pLoggingLayout->addWidget(m_pLoggingWidget);
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{get\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Global\+Color dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::get\+Color (
+\begin{DoxyParamCaption}
+\item[{Log\+Level}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLoggerWidget_a4a3ce5fd8c585a5cafe842ad7637c6c5}
+
+
+Definition at line 85 of file D\+Q\+M\+Logger\+Widget.\+cc.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+86 \{
+87   \textcolor{keywordflow}{switch} (level)
+88   \{
+89   \textcolor{keywordflow}{case} DEBUG :
+90     \textcolor{keywordflow}{return} Qt::darkBlue;
+91   \textcolor{keywordflow}{case} MESSAGE :
+92     \textcolor{keywordflow}{return} Qt::darkGreen;
+93   \textcolor{keywordflow}{case} WARNING :
+94     \textcolor{keywordflow}{return} Qt::darkYellow;
+95   \textcolor{keywordflow}{case} ERROR :
+96     \textcolor{keywordflow}{return} Qt::darkRed;
+97   \textcolor{keywordflow}{default}:
+98     \textcolor{keywordflow}{return} Qt::black;
+99   \}
+100 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!get\+Log\+Message\+Head@{get\+Log\+Message\+Head}}
+\index{get\+Log\+Message\+Head@{get\+Log\+Message\+Head}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{get\+Log\+Message\+Head}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::get\+Log\+Message\+Head (
+\begin{DoxyParamCaption}
+\item[{Log\+Level}]{level}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLoggerWidget_a3adbc75b7204f745a0e1c1c9b8e3f88f}
+
+
+Definition at line 104 of file D\+Q\+M\+Logger\+Widget.\+cc.
+
+
+
+Referenced by log().
+
+
+\begin{DoxyCode}
+105 \{
+106   \textcolor{keywordflow}{switch} (level)
+107   \{
+108   \textcolor{keywordflow}{case} DEBUG :
+109     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"[DEBUG]       "};
+110   \textcolor{keywordflow}{case} MESSAGE :
+111     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"[MESSAGE]  "};
+112   \textcolor{keywordflow}{case} WARNING :
+113     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"[WARNING] "};
+114   \textcolor{keywordflow}{case} ERROR :
+115     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"[ERROR]       "};
+116   \textcolor{keywordflow}{default}:
+117     \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+118   \}
+119 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::log (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLoggerWidget_a7a93d18aabd959b7d53aa14b8878f958}
+
+
+Log a message with the default level (M\+E\+S\+S\+A\+G\+E) 
+
+
+
+Definition at line 53 of file D\+Q\+M\+Logger\+Widget.\+cc.
+
+
+\begin{DoxyCode}
+54 \{
+55   log(MESSAGE, message);
+56 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!log@{log}}
+\index{log@{log}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::log (
+\begin{DoxyParamCaption}
+\item[{Log\+Level}]{level, }
+\item[{const std\+::string \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMLoggerWidget_a60db9e7e500d1accf17a7f05ffa51831}
+
+
+Log a message with a log level. 
+
+
+
+Definition at line 60 of file D\+Q\+M\+Logger\+Widget.\+cc.
+
+
+
+References get\+Color(), get\+Log\+Message\+Head(), and m\+\_\+p\+Logging\+Widget.
+
+
+\begin{DoxyCode}
+61 \{
+62   Qt::GlobalColor color = getColor(level);
+63 
+64   QString messageHead(getLogMessageHead(level).c\_str());
+65 
+66   \textcolor{comment}{// scroll to the end of text edit}
+67   m_pLoggingWidget->horizontalScrollBar()->setValue(m_pLoggingWidget->horizontalScrollBar()->maximum());
+68 
+69   \textcolor{comment}{// set the cursor at the end}
+70   QTextCursor cursor = m_pLoggingWidget->textCursor();
+71   cursor.movePosition(QTextCursor::End, QTextCursor::MoveAnchor);
+72   m_pLoggingWidget->setTextCursor(cursor);
+73 
+74   \textcolor{comment}{// put the message}
+75   m_pLoggingWidget->setTextColor(QColor(color));
+76   m_pLoggingWidget->insertPlainText(messageHead);
+77   m_pLoggingWidget->setTextColor(QColor(Qt::black));
+78   m_pLoggingWidget->insertPlainText(\textcolor{stringliteral}{" "});
+79   m_pLoggingWidget->insertPlainText(QString(message.c\_str()));
+80   m_pLoggingWidget->insertPlainText(\textcolor{stringliteral}{"\(\backslash\)n"});
+81 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}!m\+\_\+p\+Logging\+Widget@{m\+\_\+p\+Logging\+Widget}}
+\index{m\+\_\+p\+Logging\+Widget@{m\+\_\+p\+Logging\+Widget}!dqm4hep\+::\+D\+Q\+M\+Logger\+Widget@{dqm4hep\+::\+D\+Q\+M\+Logger\+Widget}}
+\subsubsection[{m\+\_\+p\+Logging\+Widget}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Text\+Edit$\ast$ dqm4hep\+::\+D\+Q\+M\+Logger\+Widget\+::m\+\_\+p\+Logging\+Widget\hspace{0.3cm}{\ttfamily [private]}}\label{classdqm4hep_1_1DQMLoggerWidget_a1585de3aab0c62368e24a7a06fe7bcb4}
+
+
+the text widget used for logging 
+
+
+
+Definition at line 66 of file D\+Q\+M\+Logger\+Widget.\+h.
+
+
+
+Referenced by D\+Q\+M\+Logger\+Widget(), and log().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Logger\+Widget.\+h}\item 
+{\bf D\+Q\+M\+Logger\+Widget.\+cc}\end{DoxyCompactItemize}

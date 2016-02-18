@@ -1,0 +1,381 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Mean\+Within\+Expected\+Test Class Reference}
+\label{classdqm4hep_1_1DQMMeanWithinExpectedTest}\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+
+
+\doxyref{D\+Q\+M\+Mean\+Within\+Expected\+Test}{p.}{classdqm4hep_1_1DQMMeanWithinExpectedTest} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Quality\+Test.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Mean\+Within\+Expected\+Test\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdqm4hep_1_1DQMMeanWithinExpectedTest}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Factory}
+\begin{DoxyCompactList}\small\item\em \doxyref{Factory}{p.}{classdqm4hep_1_1DQMMeanWithinExpectedTest_1_1Factory} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Mean\+Within\+Expected\+Test} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructor with name. \end{DoxyCompactList}\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Mean\+Within\+Expected\+Test} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf read\+Settings} (const {\bf Ti\+Xml\+Handle} xml\+Handle)
+\begin{DoxyCompactList}\small\item\em Read the settings from the xml handle. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Initialize the quality test. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf run} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element)
+\begin{DoxyCompactList}\small\item\em Runs a quality test on the given monitor element. \end{DoxyCompactList}\item 
+virtual bool {\bf can\+Run} ({\bf D\+Q\+M\+Monitor\+Element} $\ast$p\+Monitor\+Element) const 
+\begin{DoxyCompactList}\small\item\em Whether the quality test can be run on the monitor element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf m\+\_\+strategy}
+\item 
+float {\bf m\+\_\+x\+Min}
+\item 
+float {\bf m\+\_\+x\+Max}
+\item 
+float {\bf m\+\_\+expected\+Mean}
+\item 
+float {\bf m\+\_\+sigma}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Mean\+Within\+Expected\+Test}{p.}{classdqm4hep_1_1DQMMeanWithinExpectedTest} class. 
+
+Definition at line 185 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!D\+Q\+M\+Mean\+Within\+Expected\+Test@{D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\index{D\+Q\+M\+Mean\+Within\+Expected\+Test@{D\+Q\+M\+Mean\+Within\+Expected\+Test}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{D\+Q\+M\+Mean\+Within\+Expected\+Test}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_aca2acf79499cd07e402629ae4dd7611a}
+
+
+Constructor with name. 
+
+
+
+Definition at line 183 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+Referenced by dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::\+Factory\+::create\+Quality\+Test().
+
+
+\begin{DoxyCode}
+183                                                                           :
+184   DQMQualityTest(name),
+185   m_strategy(0),
+186   m_xMin(0.f),
+187   m_xMax(0.f),
+188   m_expectedMean(0.f),
+189   m_sigma(0.f)
+190 \{
+191   \textcolor{comment}{/* nop */}
+192 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!````~D\+Q\+M\+Mean\+Within\+Expected\+Test@{$\sim$\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\index{````~D\+Q\+M\+Mean\+Within\+Expected\+Test@{$\sim$\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Mean\+Within\+Expected\+Test}]{\setlength{\rightskip}{0pt plus 5cm}dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::$\sim$\+D\+Q\+M\+Mean\+Within\+Expected\+Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_aaa2bc1d88e9f352d5b6ef69096a65362}
+
+
+Destructor. 
+
+
+
+Definition at line 196 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+197 \{
+198   \textcolor{comment}{/* nop */}
+199 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!can\+Run@{can\+Run}}
+\index{can\+Run@{can\+Run}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{can\+Run}]{\setlength{\rightskip}{0pt plus 5cm}bool dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::can\+Run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a7ff8e4b3c3e92338fd268e46504231d1}
+
+
+Whether the quality test can be run on the monitor element. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a94070d01ec18eac873e21f3b653ca391}.
+
+
+
+Definition at line 299 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get(), and dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get\+Type().
+
+
+\begin{DoxyCode}
+300 \{
+301   \textcolor{keywordflow}{if}(NULL == pMonitorElement)
+302     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+303 
+304   DQMMonitorElementType type = pMonitorElement->getType();
+305   TH1 *pHistogram = pMonitorElement->get<TH1>();
+306 
+307   \textcolor{comment}{// asking for a histo 1D}
+308   \textcolor{keywordflow}{if}(type < INT\_HISTOGRAM\_1D\_ELEMENT\_TYPE || type > CHAR\_HISTOGRAM\_1D\_ELEMENT\_TYPE)
+309     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+310 
+311   \textcolor{keywordflow}{if}(NULL == pHistogram)
+312     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+313 
+314   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+315 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!init@{init}}
+\index{init@{init}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_acde69f485735b67223f538a66735e1e3}
+
+
+Initialize the quality test. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a1500cae4000edbc8cae148e5ec612239}.
+
+
+
+Definition at line 237 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+\begin{DoxyCode}
+238 \{
+239   \textcolor{comment}{/* nop */}
+240   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+241 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ti\+Xml\+Handle}}]{xml\+Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a8100bc47c0143e319fa42f0ab4dbbd7a}
+
+
+Read the settings from the xml handle. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a34c620c4f331f22d2676eb0401997b7b}.
+
+
+
+Definition at line 203 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References m\+\_\+expected\+Mean, m\+\_\+sigma, m\+\_\+strategy, m\+\_\+x\+Max, m\+\_\+x\+Min, dqm4hep\+::\+D\+Q\+M\+Xml\+Helper\+::read\+Value(), and R\+E\+T\+U\+R\+N\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+I\+F.
+
+
+\begin{DoxyCode}
+204 \{
+205   RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+206       \textcolor{stringliteral}{"Strategy"}, m_strategy));
+207 
+208   \textcolor{keywordflow}{if}(0 == m_strategy)
+209   \{
+210     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+211         \textcolor{stringliteral}{"XMin"}, m_xMin));
+212 
+213     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+214         \textcolor{stringliteral}{"XMax"}, m_xMax));
+215   \}
+216   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(1 == m_strategy)
+217   \{
+218     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+219         \textcolor{stringliteral}{"ExpectedMean"}, m_expectedMean));
+220 
+221     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+222         \textcolor{stringliteral}{"Sigma"}, m_sigma));
+223   \}
+224   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(2 == m_strategy)
+225   \{
+226     RETURN_RESULT_IF(STATUS\_CODE\_SUCCESS, !=, DQMXmlHelper::readValue(xmlHandle,
+227         \textcolor{stringliteral}{"ExpectedMean"}, m_expectedMean));
+228   \}
+229   \textcolor{keywordflow}{else}
+230     \textcolor{keywordflow}{return} STATUS\_CODE\_INVALID\_PARAMETER;
+231 
+232   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+233 \}
+\end{DoxyCode}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!run@{run}}
+\index{run@{run}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::run (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+Q\+M\+Monitor\+Element} $\ast$}]{p\+Monitor\+Element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a4eb11a126fc4150c171031d10ae37124}
+
+
+Runs a quality test on the given monitor element. 
+
+
+
+Implements {\bf dqm4hep\+::\+D\+Q\+M\+Quality\+Test} \doxyref{}{p.}{classdqm4hep_1_1DQMQualityTest_a228419cd9e4cfa60ee51ad0acc77ad0b}.
+
+
+
+Definition at line 245 of file D\+Q\+M\+Quality\+Test.\+cc.
+
+
+
+References dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+::get(), m\+\_\+expected\+Mean, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+is\+Successful, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+message, dqm4hep\+::\+D\+Q\+M\+Quality\+Test\+::m\+\_\+quality, m\+\_\+sigma, m\+\_\+strategy, m\+\_\+x\+Max, and dqm4hep\+::\+D\+Q\+M4\+H\+E\+P\+::scale\+To\+Quality().
+
+
+\begin{DoxyCode}
+246 \{
+247   m_isSuccessful = \textcolor{keyword}{false};
+248   m_quality = NO\_QUALITY;
+249   m_message = \textcolor{stringliteral}{""};
+250 
+251   TH1 *pHistogram = pMonitorElement->get<TH1>();
+252 
+253   \textcolor{keywordflow}{if}(0 == m_strategy)
+254   \{
+255     \textcolor{keywordtype}{float} mean = pHistogram->GetMean();
+256 
+257     \textcolor{comment}{// test failed ?}
+258     \textcolor{keywordflow}{if}(mean < m\_xMin || mean > m_xMax)
+259     \{
+260       m_quality = VERY\_BAD\_QUALITY;
+261       m_message = \textcolor{stringliteral}{"Out of range !"};
+262     \}
+263     \textcolor{keywordflow}{else}
+264     \{
+265       m_quality = VERY\_GOOD\_QUALITY;
+266       m_message = \textcolor{stringliteral}{""};
+267     \}
+268 
+269     m_isSuccessful = \textcolor{keyword}{true};
+270   \}
+271   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(1 == m_strategy)
+272   \{
+273     \textcolor{keywordtype}{float} chi = (pHistogram->GetMean() - m_expectedMean)/m_sigma;
+274     \textcolor{keywordtype}{float} probability = TMath::Prob(chi*chi, 1);
+275 
+276     m_quality = DQM4HEP::scaleToQuality(probability);
+277     m_isSuccessful = \textcolor{keyword}{true};
+278   \}
+279   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(2 == m_strategy)
+280   \{
+281     \textcolor{keywordtype}{float} chi = (pHistogram->GetMean() - m_expectedMean)/pHistogram->GetRMS();
+282     \textcolor{keywordtype}{float} probability = TMath::Prob(chi*chi, 1);
+283 
+284     m_quality = DQM4HEP::scaleToQuality(probability);
+285     m_isSuccessful = \textcolor{keyword}{true};
+286   \}
+287   \textcolor{keywordflow}{else}
+288   \{
+289     m_isSuccessful = \textcolor{keyword}{false};
+290     m_quality = NO\_QUALITY;
+291     m_message = \textcolor{stringliteral}{"Undefined strategy for this test"};
+292   \}
+293 
+294   \textcolor{keywordflow}{return} STATUS\_CODE\_SUCCESS;
+295 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!m\+\_\+expected\+Mean@{m\+\_\+expected\+Mean}}
+\index{m\+\_\+expected\+Mean@{m\+\_\+expected\+Mean}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{m\+\_\+expected\+Mean}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::m\+\_\+expected\+Mean\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a4e2f16e85646b29865f906cf73a45590}
+
+
+Definition at line 227 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!m\+\_\+sigma@{m\+\_\+sigma}}
+\index{m\+\_\+sigma@{m\+\_\+sigma}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{m\+\_\+sigma}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::m\+\_\+sigma\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_ac3083377b81d36dc9f3418ac8f6d664f}
+
+
+Definition at line 228 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!m\+\_\+strategy@{m\+\_\+strategy}}
+\index{m\+\_\+strategy@{m\+\_\+strategy}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{m\+\_\+strategy}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::m\+\_\+strategy\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_ab60169780c06713711816a82c2dfc3ae}
+
+
+Definition at line 224 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!m\+\_\+x\+Max@{m\+\_\+x\+Max}}
+\index{m\+\_\+x\+Max@{m\+\_\+x\+Max}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{m\+\_\+x\+Max}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::m\+\_\+x\+Max\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a7ec1a7ced83c6c2085df2bc99632e337}
+
+
+Definition at line 226 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings(), and run().
+
+\index{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}!m\+\_\+x\+Min@{m\+\_\+x\+Min}}
+\index{m\+\_\+x\+Min@{m\+\_\+x\+Min}!dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test@{dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test}}
+\subsubsection[{m\+\_\+x\+Min}]{\setlength{\rightskip}{0pt plus 5cm}float dqm4hep\+::\+D\+Q\+M\+Mean\+Within\+Expected\+Test\+::m\+\_\+x\+Min\hspace{0.3cm}{\ttfamily [protected]}}\label{classdqm4hep_1_1DQMMeanWithinExpectedTest_a80a9ec34763cbbfca2e88b1030402392}
+
+
+Definition at line 225 of file D\+Q\+M\+Quality\+Test.\+h.
+
+
+
+Referenced by read\+Settings().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Quality\+Test.\+h}\item 
+{\bf D\+Q\+M\+Quality\+Test.\+cc}\end{DoxyCompactItemize}

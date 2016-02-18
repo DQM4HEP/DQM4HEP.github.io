@@ -1,0 +1,144 @@
+\section{dqm4hep\+:\+:D\+Q\+M\+Application Class Reference}
+\label{classdqm4hep_1_1DQMApplication}\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+
+
+\doxyref{D\+Q\+M\+Application}{p.}{classdqm4hep_1_1DQMApplication} class.  
+
+
+
+
+{\ttfamily \#include $<$D\+Q\+M\+Application.\+h$>$}
+
+Inheritance diagram for dqm4hep\+:\+:D\+Q\+M\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.824104cm]{classdqm4hep_1_1DQMApplication}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$\+D\+Q\+M\+Application} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf run} ()=0
+\begin{DoxyCompactList}\small\item\em Run the application. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf exit} (int return\+Code)=0
+\begin{DoxyCompactList}\small\item\em Stop the application. \end{DoxyCompactList}\item 
+virtual {\bf Status\+Code} {\bf read\+Settings} (const std\+::string \&settings\+File)=0
+\begin{DoxyCompactList}\small\item\em Read the settings from file. \end{DoxyCompactList}\item 
+virtual const std\+::string \& {\bf get\+Type} () const =0
+\begin{DoxyCompactList}\small\item\em Get the application type. \end{DoxyCompactList}\item 
+virtual const std\+::string \& {\bf get\+Name} () const =0
+\begin{DoxyCompactList}\small\item\em Get the application name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{D\+Q\+M\+Application}{p.}{classdqm4hep_1_1DQMApplication} class. 
+
+Definition at line 41 of file D\+Q\+M\+Application.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!````~D\+Q\+M\+Application@{$\sim$\+D\+Q\+M\+Application}}
+\index{````~D\+Q\+M\+Application@{$\sim$\+D\+Q\+M\+Application}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{$\sim$\+D\+Q\+M\+Application}]{\setlength{\rightskip}{0pt plus 5cm}virtual dqm4hep\+::\+D\+Q\+M\+Application\+::$\sim$\+D\+Q\+M\+Application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classdqm4hep_1_1DQMApplication_aae9b6931ff64054a4a01fbad941766c2}
+
+
+Destructor. 
+
+
+
+Definition at line 46 of file D\+Q\+M\+Application.\+h.
+
+
+\begin{DoxyCode}
+46 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!exit@{exit}}
+\index{exit@{exit}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{exit}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Application\+::exit (
+\begin{DoxyParamCaption}
+\item[{int}]{return\+Code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMApplication_ad61139a41c4ba6669d26e3a0013c0f6d}
+
+
+Stop the application. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_aca8244e836f802675b9c11188804414d}, {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorApplication_a7f9c7d86ca591f92bf43618dfaf12443}, and {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a490f3e5f3678bde74a21e7f3f6c51927}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{get\+Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Application\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMApplication_a90d2e587390835cf90b38888498e922b}
+
+
+Get the application name. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_a248fc1511e714851215dd49406897906}, {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_af67e009daf617aa7d07cbffeca8b9d54}, {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_afb07e2e9bc98060f2b1529f30355e4b9}, {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorApplication_ab38b4de8474b46f560bbf97b4ceba02d}, and {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a8b014998c8c2dafbd6c54ad4fb935fe4}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{get\+Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std\+::string\& dqm4hep\+::\+D\+Q\+M\+Application\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMApplication_aff587d33b27ff25115a7da7655e5ab3b}
+
+
+Get the application type. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_aeccec8976c667b3e644e87c82043d1ff}, {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_a9aba02cf03c4faecd87e47b480c984ca}, {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_ac24026bb5647c3f0de1889318a14cf88}, {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorApplication_a8bb630d63433e17105f8a07f7c54ba4a}, and {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication_a120fd6fc6660b27f850cbdcfe0b7e5eb}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!read\+Settings@{read\+Settings}}
+\index{read\+Settings@{read\+Settings}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{read\+Settings}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Application\+::read\+Settings (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{settings\+File}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMApplication_a8b2e28cf09eef6b6a8bde547949c37dc}
+
+
+Read the settings from file. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_a4b460e8713534da56d6bfcb775a1f5b0}, {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_ac5450df61d38db926fe44d2557183fb8}, {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorApplication_afaf52f63edcb95265f397682a9915198}, {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication_afab8d464da2e7430b46667262d6b3e8a}, and {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_a994bb2bea7b1def71198ea1864460806}.
+
+\index{dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}!run@{run}}
+\index{run@{run}!dqm4hep\+::\+D\+Q\+M\+Application@{dqm4hep\+::\+D\+Q\+M\+Application}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Status\+Code} dqm4hep\+::\+D\+Q\+M\+Application\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classdqm4hep_1_1DQMApplication_aa9a37abef624ec9656478c7211cc5a48}
+
+
+Run the application. 
+
+
+
+Implemented in {\bf dqm4hep\+::\+D\+Q\+M\+Analysis\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMAnalysisModuleApplication_abf3fd5d59491e8f99c9ed964a487079f}, {\bf dqm4hep\+::\+D\+Q\+M\+Standalone\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMStandaloneModuleApplication_a3b2039cbf186ddf83bff16ded2c2dfb4}, {\bf dqm4hep\+::\+D\+Q\+M\+Module\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMModuleApplication_a42114dcd51bf17af14479345145e5988}, {\bf dqm4hep\+::\+D\+Q\+M\+Event\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMEventCollectorApplication_ad86399bda3c734d4924043250d7e1cc6}, and {\bf dqm4hep\+::\+D\+Q\+M\+Monitor\+Element\+Collector\+Application} \doxyref{}{p.}{classdqm4hep_1_1DQMMonitorElementCollectorApplication_afac92cccea4c52718235c2a59349623f}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+{\bf D\+Q\+M\+Application.\+h}\end{DoxyCompactItemize}
